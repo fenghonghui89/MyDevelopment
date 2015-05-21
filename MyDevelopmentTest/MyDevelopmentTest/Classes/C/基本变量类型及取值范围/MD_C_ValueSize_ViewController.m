@@ -14,11 +14,21 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self valueTest];
+    [self valueTest0];
 }
 
+-(void)valueTest0
+{
+    bool bc = true;//C:or false
+    BOOL boc = YES;//OC:or no
+    
+    int *ic = NULL;//C
+    int *ioc = nil;//OC
+    
+    id pid = nil;//oc的id类型相当于void*
+}
 
--(void)valueTest
+-(void)valueTest1
 {
     /*
      sizeof计算数据类型所占空间

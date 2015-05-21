@@ -303,6 +303,11 @@
 		14E232DA1B038FAD00F91C00 /* MD_C_Const_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E232D81B038FAD00F91C00 /* MD_C_Const_CFile.c */; };
 		14E232DD1B03918D00F91C00 /* MD_C_Keyword3_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E232DB1B03918D00F91C00 /* MD_C_Keyword3_CFile.c */; };
 		14E3C3531AA06FF800EADB06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E3C3521AA06FF800EADB06 /* Main.storyboard */; };
+		14F7FE001B0D7BB10091DA18 /* MD_OC_Property_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FDFF1B0D7BB10091DA18 /* MD_OC_Property_ViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14F7FE031B0D7BCB0091DA18 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE021B0D7BCB0091DA18 /* Student.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14F7FE061B0D7CB20091DA18 /* Student1.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE051B0D7CB20091DA18 /* Student1.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14F7FE091B0D7E7B0091DA18 /* Student2.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE081B0D7E7B0091DA18 /* Student2.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14F7FE0C1B0D875F0091DA18 /* XYPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE0B1B0D875F0091DA18 /* XYPoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -570,6 +575,16 @@
 		14E232DB1B03918D00F91C00 /* MD_C_Keyword3_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword3_CFile.c; sourceTree = "<group>"; };
 		14E232DC1B03918D00F91C00 /* MD_C_Keyword3_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword3_CFile.h; sourceTree = "<group>"; };
 		14E3C3521AA06FF800EADB06 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		14F7FDFE1B0D7BB10091DA18 /* MD_OC_Property_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_Property_ViewController.h; sourceTree = "<group>"; };
+		14F7FDFF1B0D7BB10091DA18 /* MD_OC_Property_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_Property_ViewController.m; sourceTree = "<group>"; };
+		14F7FE011B0D7BCB0091DA18 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		14F7FE021B0D7BCB0091DA18 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		14F7FE041B0D7CB20091DA18 /* Student1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student1.h; sourceTree = "<group>"; };
+		14F7FE051B0D7CB20091DA18 /* Student1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student1.m; sourceTree = "<group>"; };
+		14F7FE071B0D7E7B0091DA18 /* Student2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student2.h; sourceTree = "<group>"; };
+		14F7FE081B0D7E7B0091DA18 /* Student2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student2.m; sourceTree = "<group>"; };
+		14F7FE0A1B0D875F0091DA18 /* XYPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPoint.h; sourceTree = "<group>"; };
+		14F7FE0B1B0D875F0091DA18 /* XYPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -698,6 +713,7 @@
 		142A78501ACBC22100CB83F7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				14F7FDFC1B0D7B2E0091DA18 /* oc */,
 				142A78511ACBC22100CB83F7 /* block */,
 			);
 			path = Other;
@@ -1461,6 +1477,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		14F7FDFC1B0D7B2E0091DA18 /* oc */ = {
+			isa = PBXGroup;
+			children = (
+				14F7FDFD1B0D7B720091DA18 /* 属性 */,
+			);
+			path = oc;
+			sourceTree = "<group>";
+		};
+		14F7FDFD1B0D7B720091DA18 /* 属性 */ = {
+			isa = PBXGroup;
+			children = (
+				14F7FDFE1B0D7BB10091DA18 /* MD_OC_Property_ViewController.h */,
+				14F7FDFF1B0D7BB10091DA18 /* MD_OC_Property_ViewController.m */,
+				14F7FE011B0D7BCB0091DA18 /* Student.h */,
+				14F7FE021B0D7BCB0091DA18 /* Student.m */,
+				14F7FE041B0D7CB20091DA18 /* Student1.h */,
+				14F7FE051B0D7CB20091DA18 /* Student1.m */,
+				14F7FE071B0D7E7B0091DA18 /* Student2.h */,
+				14F7FE081B0D7E7B0091DA18 /* Student2.m */,
+				14F7FE0A1B0D875F0091DA18 /* XYPoint.h */,
+				14F7FE0B1B0D875F0091DA18 /* XYPoint.m */,
+			);
+			path = "属性";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1776,6 +1817,7 @@
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				14CE0DB61AB6B14400CA5536 /* MDCDefineViewController.m in Sources */,
+				14F7FE061B0D7CB20091DA18 /* Student1.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
 				14E232D31B038D9100F91C00 /* MD_C_Keyword2_CFile.c in Sources */,
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,
@@ -1803,6 +1845,7 @@
 				1463C6061AF7741400A99840 /* MDChar1.c in Sources */,
 				1450C6D91AFA0B4100DA8B8B /* MD_C_Struct_CFile.c in Sources */,
 				141B433D1AA40202008F2711 /* MDPageViewController.m in Sources */,
+				14F7FE091B0D7E7B0091DA18 /* Student2.m in Sources */,
 				148CD72C1AAEC62700FAED9D /* MDNSValueViewController.m in Sources */,
 				146D82761AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */,
 				148CD7441AAECC9800FAED9D /* TRStudent5.m in Sources */,
@@ -1821,6 +1864,7 @@
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
 				1450C6D61AFA0B1900DA8B8B /* MD_C_Type_ViewController.m in Sources */,
 				148CD7141AAEC21600FAED9D /* MDObject1ViewController.m in Sources */,
+				14F7FE001B0D7BB10091DA18 /* MD_OC_Property_ViewController.m in Sources */,
 				141B43451AA4038C008F2711 /* MDPage2ViewController.m in Sources */,
 				14DB40DA1AEA497000DA1682 /* MD_C1_ViewController.m in Sources */,
 				146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */,
@@ -1838,6 +1882,7 @@
 				148CD7401AAECC7700FAED9D /* MDNSEnumeratorViewController.m in Sources */,
 				14E232D11B038D9100F91C00 /* MD_C_Keyword_CFile.c in Sources */,
 				148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */,
+				14F7FE031B0D7BCB0091DA18 /* Student.m in Sources */,
 				141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */,
 				147DB1841A8C7FA600F38EA4 /* main.m in Sources */,
 				14DB40C51AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.m in Sources */,
@@ -1858,6 +1903,7 @@
 				148CD7641AAED72A00FAED9D /* MDNSSetNormalViewController.m in Sources */,
 				148CD7311AAEC67A00FAED9D /* MDNSDateViewController.m in Sources */,
 				146D82821AA6DDBE00F0C7FD /* MDTBVC2ViewController.m in Sources */,
+				14F7FE0C1B0D875F0091DA18 /* XYPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
