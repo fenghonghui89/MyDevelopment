@@ -10,7 +10,10 @@
 #import "Student.h"
 #import "Student1.h"
 #import "Student2.h"
+
 #import "XYPoint.h"
+#import "MDAnimal.h"
+#import "MDCat.h"
 @interface MD_OC_Property_ViewController ()
 
 @end
@@ -25,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self animal];
 }
 
 #pragma mark - 实例变量、属性
@@ -66,12 +71,34 @@
 -(void)xypoint
 {
     //用不带初始化的类方法创建对象
-    //XYPoint* xy = [XYPoint xypoint];
-    //[xy xpoint:3 ypoint:4];
-    //[xy show];
+    XYPoint* xy = [XYPoint xypoint];
+    [xy xpoint:3 ypoint:4];
+    [xy show];
     
     //用工厂方法创建对象
-    XYPoint* xy = [XYPoint xypointWithXpoint:5 yPoint:1];
-    [xy show];
+    XYPoint* xy1 = [XYPoint xypointWithXpoint:5 yPoint:1];
+    [xy1 show];
 }
+
+#pragma mark - 实例变量及其修饰符、继承
+-(void)animal
+{
+    //虽然引用->可以访问实例变量,但通常我们使用属性来访问实例变量
+    MDAnimal *animal = [[MDAnimal alloc] init];
+//    animal->_i = 1;//默认为protect
+    animal->_ipackage = 1;//package
+    animal->_ipublic = 1;//public
+//    animal->_iprivate = 1;//private
+//    animal ->_iprotected = 1;//protected
+//    animal->iimplement = 1;//实现部分
+    
+    MDCat *cat = [[MDCat alloc] init];
+    [cat eat];
+}
+
+
+
+
+
+
 @end

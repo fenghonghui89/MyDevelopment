@@ -41,11 +41,6 @@
 		141B43691AA4734B008F2711 /* MDModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B43671AA4734B008F2711 /* MDModalViewController.m */; };
 		141B436C1AA47394008F2711 /* MDModal1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B436B1AA47394008F2711 /* MDModal1ViewController.m */; };
 		141B436D1AA47394008F2711 /* MDModal1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B436B1AA47394008F2711 /* MDModal1ViewController.m */; };
-		142A78551ACBC26A00CB83F7 /* MDBlockNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142A78541ACBC26A00CB83F7 /* MDBlockNormalViewController.m */; };
-		142A78561ACBC26A00CB83F7 /* MDBlockNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142A78541ACBC26A00CB83F7 /* MDBlockNormalViewController.m */; };
-		1450C6D21AFA0A7200DA8B8B /* 结构体、联合、枚举、大型软件开发.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1450C6D11AFA0A7200DA8B8B /* 结构体、联合、枚举、大型软件开发.rtf */; };
-		1450C6D61AFA0B1900DA8B8B /* MD_C_Type_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450C6D51AFA0B1900DA8B8B /* MD_C_Type_ViewController.m */; };
-		1450C6D91AFA0B4100DA8B8B /* MD_C_Struct_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 1450C6D71AFA0B4100DA8B8B /* MD_C_Struct_CFile.c */; };
 		1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */; };
 		1463B2111AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */; };
 		1463B2121AA162C2006AE8D2 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2091AA162C2006AE8D2 /* button.png */; };
@@ -106,7 +101,6 @@
 		1463B2BB1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2B91AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m */; };
 		1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2BD1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m */; };
 		1463B2BF1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2BD1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m */; };
-		1463C6061AF7741400A99840 /* MDChar1.c in Sources */ = {isa = PBXBuildFile; fileRef = 1463C6041AF7741400A99840 /* MDChar1.c */; };
 		146D82761AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82751AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m */; };
 		146D82771AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82751AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m */; };
 		146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82791AA6DDA400F0C7FD /* MDTBVC1ViewController.m */; };
@@ -264,25 +258,6 @@
 		148CD7711AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */; };
 		148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7731AAEDACD00FAED9D /* TRStudent8.m */; };
 		148CD7751AAEDACD00FAED9D /* TRStudent8.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7731AAEDACD00FAED9D /* TRStudent8.m */; };
-		14AC4C7C1ACE881C00C35208 /* MDBlockValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AC4C7B1ACE881C00C35208 /* MDBlockValueViewController.m */; };
-		14B086191AF8679200DD4DB7 /* 指针.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14B086181AF8679200DD4DB7 /* 指针.rtf */; };
-		14B0861D1AF8686700DD4DB7 /* MD_C_Point_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0861C1AF8686700DD4DB7 /* MD_C_Point_ViewController.m */; };
-		14B0861E1AF8686700DD4DB7 /* MD_C_Point_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0861C1AF8686700DD4DB7 /* MD_C_Point_ViewController.m */; };
-		14B086211AF8695F00DD4DB7 /* MD_C_Point_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14B0861F1AF8695F00DD4DB7 /* MD_C_Point_CFile.c */; };
-		14B086221AF8695F00DD4DB7 /* MD_C_Point_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14B0861F1AF8695F00DD4DB7 /* MD_C_Point_CFile.c */; };
-		14CE0DB61AB6B14400CA5536 /* MDCDefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0DB51AB6B14400CA5536 /* MDCDefineViewController.m */; };
-		14CE0DB71AB6B14400CA5536 /* MDCDefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0DB51AB6B14400CA5536 /* MDCDefineViewController.m */; };
-		14DB40C51AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40C41AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.m */; };
-		14DB40CF1AEA47E200DA1682 /* MDC_Char_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40CD1AEA47E200DA1682 /* MDC_Char_ViewController.m */; };
-		14DB40D51AEA484C00DA1682 /* 基本数据类型及取值范围.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40D31AEA484C00DA1682 /* 基本数据类型及取值范围.rtf */; };
-		14DB40D61AEA484C00DA1682 /* ASC.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40D41AEA484C00DA1682 /* ASC.png */; };
-		14DB40DA1AEA497000DA1682 /* MD_C1_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40D91AEA497000DA1682 /* MD_C1_ViewController.m */; };
-		14DB40DC1AEA4CBE00DA1682 /* 运算符.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40DB1AEA4CBE00DA1682 /* 运算符.rtf */; };
-		14DB40E11AEA550D00DA1682 /* MD_C_Function_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40E01AEA550D00DA1682 /* MD_C_Function_ViewController.m */; };
-		14DB40E41AEA553600DA1682 /* MD_C_Array_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40E31AEA553600DA1682 /* MD_C_Array_ViewController.m */; };
-		14DB40E91AEA63A900DA1682 /* 数组.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40E81AEA63A900DA1682 /* 数组.rtf */; };
-		14DB40EB1AEA680200DA1682 /* 函数.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40EA1AEA680200DA1682 /* 函数.rtf */; };
-		14DB40EE1AEA6FC000DA1682 /* MD_C_Function_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40EC1AEA6FC000DA1682 /* MD_C_Function_CFile.c */; };
 		14DB41001AEA752D00DA1682 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40F11AEA752D00DA1682 /* back_icon.png */; };
 		14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F41AEA752D00DA1682 /* MDAppDelegate.m */; };
 		14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F61AEA752D00DA1682 /* MDBaseViewController.m */; };
@@ -292,22 +267,7 @@
 		14DB41071AEA752D00DA1682 /* MDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40FD1AEA752D00DA1682 /* MDTool.m */; };
 		14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FE1AEA752D00DA1682 /* TitleList.plist */; };
 		14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FF1AEA752D00DA1682 /* 记录.rtf */; };
-		14DFAC1C1AFB6927008B943D /* MD_C_Union_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14DFAC1A1AFB6927008B943D /* MD_C_Union_CFile.c */; };
-		14DFAC1F1AFB6DF5008B943D /* MD_C_Enum_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14DFAC1D1AFB6DF5008B943D /* MD_C_Enum_CFile.c */; };
-		14E214F21B099164008A5C8B /* MD_C_String_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E214F01B099164008A5C8B /* MD_C_String_CFile.c */; };
-		14E214F51B099599008A5C8B /* MD_C_Memory_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E214F31B099599008A5C8B /* MD_C_Memory_CFile.c */; };
-		14E232D11B038D9100F91C00 /* MD_C_Keyword_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E232CB1B038D9100F91C00 /* MD_C_Keyword_CFile.c */; };
-		14E232D21B038D9100F91C00 /* MD_C_Keyword1_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E232CD1B038D9100F91C00 /* MD_C_Keyword1_CFile.c */; };
-		14E232D31B038D9100F91C00 /* MD_C_Keyword2_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E232CF1B038D9100F91C00 /* MD_C_Keyword2_CFile.c */; };
-		14E232D61B038E9600F91C00 /* MD_C_Keyword_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E232D51B038E9600F91C00 /* MD_C_Keyword_ViewController.m */; };
-		14E232DA1B038FAD00F91C00 /* MD_C_Const_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E232D81B038FAD00F91C00 /* MD_C_Const_CFile.c */; };
-		14E232DD1B03918D00F91C00 /* MD_C_Keyword3_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14E232DB1B03918D00F91C00 /* MD_C_Keyword3_CFile.c */; };
 		14E3C3531AA06FF800EADB06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E3C3521AA06FF800EADB06 /* Main.storyboard */; };
-		14F7FE001B0D7BB10091DA18 /* MD_OC_Property_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FDFF1B0D7BB10091DA18 /* MD_OC_Property_ViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14F7FE031B0D7BCB0091DA18 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE021B0D7BCB0091DA18 /* Student.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14F7FE061B0D7CB20091DA18 /* Student1.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE051B0D7CB20091DA18 /* Student1.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14F7FE091B0D7E7B0091DA18 /* Student2.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE081B0D7E7B0091DA18 /* Student2.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14F7FE0C1B0D875F0091DA18 /* XYPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F7FE0B1B0D875F0091DA18 /* XYPoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -340,13 +300,6 @@
 		141B43671AA4734B008F2711 /* MDModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModalViewController.m; sourceTree = "<group>"; };
 		141B436A1AA47394008F2711 /* MDModal1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDModal1ViewController.h; sourceTree = "<group>"; };
 		141B436B1AA47394008F2711 /* MDModal1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModal1ViewController.m; sourceTree = "<group>"; };
-		142A78531ACBC26A00CB83F7 /* MDBlockNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBlockNormalViewController.h; sourceTree = "<group>"; };
-		142A78541ACBC26A00CB83F7 /* MDBlockNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBlockNormalViewController.m; sourceTree = "<group>"; };
-		1450C6D11AFA0A7200DA8B8B /* 结构体、联合、枚举、大型软件开发.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "结构体、联合、枚举、大型软件开发.rtf"; sourceTree = "<group>"; };
-		1450C6D41AFA0B1900DA8B8B /* MD_C_Type_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Type_ViewController.h; sourceTree = "<group>"; };
-		1450C6D51AFA0B1900DA8B8B /* MD_C_Type_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_Type_ViewController.m; sourceTree = "<group>"; };
-		1450C6D71AFA0B4100DA8B8B /* MD_C_Struct_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Struct_CFile.c; sourceTree = "<group>"; };
-		1450C6D81AFA0B4100DA8B8B /* MD_C_Struct_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Struct_CFile.h; sourceTree = "<group>"; };
 		1463B2051AA162C2006AE8D2 /* MDCountStringRectangleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCountStringRectangleViewController.h; sourceTree = "<group>"; };
 		1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCountStringRectangleViewController.m; sourceTree = "<group>"; };
 		1463B2091AA162C2006AE8D2 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
@@ -390,8 +343,6 @@
 		1463B2B91AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUIScrollView3ViewController.m; sourceTree = "<group>"; };
 		1463B2BC1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUIScrollView4ViewController.h; sourceTree = "<group>"; };
 		1463B2BD1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUIScrollView4ViewController.m; sourceTree = "<group>"; };
-		1463C6041AF7741400A99840 /* MDChar1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MDChar1.c; sourceTree = "<group>"; };
-		1463C6051AF7741400A99840 /* MDChar1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDChar1.h; sourceTree = "<group>"; };
 		146D82741AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTabBarVCNormalViewController.h; sourceTree = "<group>"; };
 		146D82751AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTabBarVCNormalViewController.m; sourceTree = "<group>"; };
 		146D82781AA6DDA400F0C7FD /* MDTBVC1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTBVC1ViewController.h; sourceTree = "<group>"; };
@@ -514,32 +465,6 @@
 		148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDicNormalViewController.m; sourceTree = "<group>"; };
 		148CD7721AAEDACD00FAED9D /* TRStudent8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent8.h; sourceTree = "<group>"; };
 		148CD7731AAEDACD00FAED9D /* TRStudent8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent8.m; sourceTree = "<group>"; };
-		14AC4C7A1ACE881C00C35208 /* MDBlockValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBlockValueViewController.h; sourceTree = "<group>"; };
-		14AC4C7B1ACE881C00C35208 /* MDBlockValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBlockValueViewController.m; sourceTree = "<group>"; };
-		14B086181AF8679200DD4DB7 /* 指针.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "指针.rtf"; sourceTree = "<group>"; };
-		14B0861B1AF8686700DD4DB7 /* MD_C_Point_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Point_ViewController.h; sourceTree = "<group>"; };
-		14B0861C1AF8686700DD4DB7 /* MD_C_Point_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_Point_ViewController.m; sourceTree = "<group>"; };
-		14B0861F1AF8695F00DD4DB7 /* MD_C_Point_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Point_CFile.c; sourceTree = "<group>"; };
-		14B086201AF8695F00DD4DB7 /* MD_C_Point_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Point_CFile.h; sourceTree = "<group>"; };
-		14CE0DB41AB6B14400CA5536 /* MDCDefineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCDefineViewController.h; sourceTree = "<group>"; };
-		14CE0DB51AB6B14400CA5536 /* MDCDefineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCDefineViewController.m; sourceTree = "<group>"; };
-		14DB40C31AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_ValueSize_ViewController.h; sourceTree = "<group>"; };
-		14DB40C41AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_ValueSize_ViewController.m; sourceTree = "<group>"; };
-		14DB40CC1AEA47E200DA1682 /* MDC_Char_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDC_Char_ViewController.h; sourceTree = "<group>"; };
-		14DB40CD1AEA47E200DA1682 /* MDC_Char_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDC_Char_ViewController.m; sourceTree = "<group>"; };
-		14DB40D31AEA484C00DA1682 /* 基本数据类型及取值范围.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "基本数据类型及取值范围.rtf"; sourceTree = "<group>"; };
-		14DB40D41AEA484C00DA1682 /* ASC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ASC.png; sourceTree = "<group>"; };
-		14DB40D81AEA497000DA1682 /* MD_C1_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C1_ViewController.h; sourceTree = "<group>"; };
-		14DB40D91AEA497000DA1682 /* MD_C1_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C1_ViewController.m; sourceTree = "<group>"; };
-		14DB40DB1AEA4CBE00DA1682 /* 运算符.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "运算符.rtf"; sourceTree = "<group>"; };
-		14DB40DF1AEA550D00DA1682 /* MD_C_Function_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Function_ViewController.h; sourceTree = "<group>"; };
-		14DB40E01AEA550D00DA1682 /* MD_C_Function_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_Function_ViewController.m; sourceTree = "<group>"; };
-		14DB40E21AEA553600DA1682 /* MD_C_Array_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Array_ViewController.h; sourceTree = "<group>"; };
-		14DB40E31AEA553600DA1682 /* MD_C_Array_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_Array_ViewController.m; sourceTree = "<group>"; };
-		14DB40E81AEA63A900DA1682 /* 数组.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "数组.rtf"; sourceTree = "<group>"; };
-		14DB40EA1AEA680200DA1682 /* 函数.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "函数.rtf"; sourceTree = "<group>"; };
-		14DB40EC1AEA6FC000DA1682 /* MD_C_Function_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Function_CFile.c; sourceTree = "<group>"; };
-		14DB40ED1AEA6FC000DA1682 /* MD_C_Function_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Function_CFile.h; sourceTree = "<group>"; };
 		14DB40F11AEA752D00DA1682 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		14DB40F31AEA752D00DA1682 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
 		14DB40F41AEA752D00DA1682 /* MDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
@@ -554,37 +479,7 @@
 		14DB40FD1AEA752D00DA1682 /* MDTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTool.m; sourceTree = "<group>"; };
 		14DB40FE1AEA752D00DA1682 /* TitleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TitleList.plist; sourceTree = "<group>"; };
 		14DB40FF1AEA752D00DA1682 /* 记录.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "记录.rtf"; sourceTree = "<group>"; };
-		14DFAC1A1AFB6927008B943D /* MD_C_Union_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Union_CFile.c; sourceTree = "<group>"; };
-		14DFAC1B1AFB6927008B943D /* MD_C_Union_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Union_CFile.h; sourceTree = "<group>"; };
-		14DFAC1D1AFB6DF5008B943D /* MD_C_Enum_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Enum_CFile.c; sourceTree = "<group>"; };
-		14DFAC1E1AFB6DF5008B943D /* MD_C_Enum_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Enum_CFile.h; sourceTree = "<group>"; };
-		14E214F01B099164008A5C8B /* MD_C_String_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_String_CFile.c; sourceTree = "<group>"; };
-		14E214F11B099164008A5C8B /* MD_C_String_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_String_CFile.h; sourceTree = "<group>"; };
-		14E214F31B099599008A5C8B /* MD_C_Memory_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Memory_CFile.c; sourceTree = "<group>"; };
-		14E214F41B099599008A5C8B /* MD_C_Memory_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Memory_CFile.h; sourceTree = "<group>"; };
-		14E232CB1B038D9100F91C00 /* MD_C_Keyword_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword_CFile.c; sourceTree = "<group>"; };
-		14E232CC1B038D9100F91C00 /* MD_C_Keyword_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword_CFile.h; sourceTree = "<group>"; };
-		14E232CD1B038D9100F91C00 /* MD_C_Keyword1_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword1_CFile.c; sourceTree = "<group>"; };
-		14E232CE1B038D9100F91C00 /* MD_C_Keyword1_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword1_CFile.h; sourceTree = "<group>"; };
-		14E232CF1B038D9100F91C00 /* MD_C_Keyword2_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword2_CFile.c; sourceTree = "<group>"; };
-		14E232D01B038D9100F91C00 /* MD_C_Keyword2_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword2_CFile.h; sourceTree = "<group>"; };
-		14E232D41B038E9600F91C00 /* MD_C_Keyword_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword_ViewController.h; sourceTree = "<group>"; };
-		14E232D51B038E9600F91C00 /* MD_C_Keyword_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_Keyword_ViewController.m; sourceTree = "<group>"; };
-		14E232D81B038FAD00F91C00 /* MD_C_Const_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Const_CFile.c; sourceTree = "<group>"; };
-		14E232D91B038FAD00F91C00 /* MD_C_Const_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Const_CFile.h; sourceTree = "<group>"; };
-		14E232DB1B03918D00F91C00 /* MD_C_Keyword3_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword3_CFile.c; sourceTree = "<group>"; };
-		14E232DC1B03918D00F91C00 /* MD_C_Keyword3_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword3_CFile.h; sourceTree = "<group>"; };
 		14E3C3521AA06FF800EADB06 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		14F7FDFE1B0D7BB10091DA18 /* MD_OC_Property_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_Property_ViewController.h; sourceTree = "<group>"; };
-		14F7FDFF1B0D7BB10091DA18 /* MD_OC_Property_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_Property_ViewController.m; sourceTree = "<group>"; };
-		14F7FE011B0D7BCB0091DA18 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		14F7FE021B0D7BCB0091DA18 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		14F7FE041B0D7CB20091DA18 /* Student1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student1.h; sourceTree = "<group>"; };
-		14F7FE051B0D7CB20091DA18 /* Student1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student1.m; sourceTree = "<group>"; };
-		14F7FE071B0D7E7B0091DA18 /* Student2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student2.h; sourceTree = "<group>"; };
-		14F7FE081B0D7E7B0091DA18 /* Student2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student2.m; sourceTree = "<group>"; };
-		14F7FE0A1B0D875F0091DA18 /* XYPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPoint.h; sourceTree = "<group>"; };
-		14F7FE0B1B0D875F0091DA18 /* XYPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -710,53 +605,9 @@
 			path = "跳转";
 			sourceTree = "<group>";
 		};
-		142A78501ACBC22100CB83F7 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				14F7FDFC1B0D7B2E0091DA18 /* oc */,
-				142A78511ACBC22100CB83F7 /* block */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		142A78511ACBC22100CB83F7 /* block */ = {
-			isa = PBXGroup;
-			children = (
-				14AC4C791ACE87D900C35208 /* 存储变量 */,
-				142A78521ACBC24D00CB83F7 /* 基础用法 */,
-			);
-			path = block;
-			sourceTree = "<group>";
-		};
-		142A78521ACBC24D00CB83F7 /* 基础用法 */ = {
-			isa = PBXGroup;
-			children = (
-				142A78531ACBC26A00CB83F7 /* MDBlockNormalViewController.h */,
-				142A78541ACBC26A00CB83F7 /* MDBlockNormalViewController.m */,
-			);
-			path = "基础用法";
-			sourceTree = "<group>";
-		};
-		1450C6D31AFA0AFB00DA8B8B /* 结构体、联合、枚举 */ = {
-			isa = PBXGroup;
-			children = (
-				1450C6D41AFA0B1900DA8B8B /* MD_C_Type_ViewController.h */,
-				1450C6D51AFA0B1900DA8B8B /* MD_C_Type_ViewController.m */,
-				1450C6D81AFA0B4100DA8B8B /* MD_C_Struct_CFile.h */,
-				1450C6D71AFA0B4100DA8B8B /* MD_C_Struct_CFile.c */,
-				14DFAC1B1AFB6927008B943D /* MD_C_Union_CFile.h */,
-				14DFAC1A1AFB6927008B943D /* MD_C_Union_CFile.c */,
-				14DFAC1E1AFB6DF5008B943D /* MD_C_Enum_CFile.h */,
-				14DFAC1D1AFB6DF5008B943D /* MD_C_Enum_CFile.c */,
-			);
-			path = "结构体、联合、枚举";
-			sourceTree = "<group>";
-		};
 		1463B2011AA162C2006AE8D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				142A78501ACBC22100CB83F7 /* Other */,
-				14CE0DB21AB6B0D500CA5536 /* C */,
 				1463B2021AA162C2006AE8D2 /* Foundation */,
 				1463B2071AA162C2006AE8D2 /* UIKit */,
 			);
@@ -1301,119 +1152,6 @@
 			path = NSSet;
 			sourceTree = "<group>";
 		};
-		14AC4C791ACE87D900C35208 /* 存储变量 */ = {
-			isa = PBXGroup;
-			children = (
-				14AC4C7A1ACE881C00C35208 /* MDBlockValueViewController.h */,
-				14AC4C7B1ACE881C00C35208 /* MDBlockValueViewController.m */,
-			);
-			path = "存储变量";
-			sourceTree = "<group>";
-		};
-		14B0861A1AF8684800DD4DB7 /* 指针与字符串 */ = {
-			isa = PBXGroup;
-			children = (
-				14B0861B1AF8686700DD4DB7 /* MD_C_Point_ViewController.h */,
-				14B0861C1AF8686700DD4DB7 /* MD_C_Point_ViewController.m */,
-				14B086201AF8695F00DD4DB7 /* MD_C_Point_CFile.h */,
-				14B0861F1AF8695F00DD4DB7 /* MD_C_Point_CFile.c */,
-				14E214F11B099164008A5C8B /* MD_C_String_CFile.h */,
-				14E214F01B099164008A5C8B /* MD_C_String_CFile.c */,
-				14E214F41B099599008A5C8B /* MD_C_Memory_CFile.h */,
-				14E214F31B099599008A5C8B /* MD_C_Memory_CFile.c */,
-			);
-			path = "指针与字符串";
-			sourceTree = "<group>";
-		};
-		14CE0DB21AB6B0D500CA5536 /* C */ = {
-			isa = PBXGroup;
-			children = (
-				14E232C91B038D4E00F91C00 /* 关键字 */,
-				1450C6D31AFA0AFB00DA8B8B /* 结构体、联合、枚举 */,
-				14B0861A1AF8684800DD4DB7 /* 指针与字符串 */,
-				14DB40DE1AEA54A300DA1682 /* 函数 */,
-				14DB40DD1AEA549A00DA1682 /* 数组 */,
-				14DB40C21AEA3F3900DA1682 /* 基本变量类型及取值范围 */,
-				14DB40D71AEA497000DA1682 /* 转义字符、输入输出、运算符 */,
-				14DB40C81AEA47E200DA1682 /* char与ascii的转换、进制转换 */,
-				14CE0DB31AB6B0D500CA5536 /* 宏定义 */,
-				14DB40C61AEA473F00DA1682 /* 笔记与资料 */,
-			);
-			path = C;
-			sourceTree = "<group>";
-		};
-		14CE0DB31AB6B0D500CA5536 /* 宏定义 */ = {
-			isa = PBXGroup;
-			children = (
-				14CE0DB41AB6B14400CA5536 /* MDCDefineViewController.h */,
-				14CE0DB51AB6B14400CA5536 /* MDCDefineViewController.m */,
-			);
-			path = "宏定义";
-			sourceTree = "<group>";
-		};
-		14DB40C21AEA3F3900DA1682 /* 基本变量类型及取值范围 */ = {
-			isa = PBXGroup;
-			children = (
-				14DB40C31AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.h */,
-				14DB40C41AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.m */,
-			);
-			path = "基本变量类型及取值范围";
-			sourceTree = "<group>";
-		};
-		14DB40C61AEA473F00DA1682 /* 笔记与资料 */ = {
-			isa = PBXGroup;
-			children = (
-				1450C6D11AFA0A7200DA8B8B /* 结构体、联合、枚举、大型软件开发.rtf */,
-				14B086181AF8679200DD4DB7 /* 指针.rtf */,
-				14DB40EA1AEA680200DA1682 /* 函数.rtf */,
-				14DB40E81AEA63A900DA1682 /* 数组.rtf */,
-				14DB40DB1AEA4CBE00DA1682 /* 运算符.rtf */,
-				14DB40D31AEA484C00DA1682 /* 基本数据类型及取值范围.rtf */,
-				14DB40D41AEA484C00DA1682 /* ASC.png */,
-			);
-			path = "笔记与资料";
-			sourceTree = "<group>";
-		};
-		14DB40C81AEA47E200DA1682 /* char与ascii的转换、进制转换 */ = {
-			isa = PBXGroup;
-			children = (
-				14DB40CC1AEA47E200DA1682 /* MDC_Char_ViewController.h */,
-				14DB40CD1AEA47E200DA1682 /* MDC_Char_ViewController.m */,
-				1463C6051AF7741400A99840 /* MDChar1.h */,
-				1463C6041AF7741400A99840 /* MDChar1.c */,
-			);
-			path = "char与ascii的转换、进制转换";
-			sourceTree = "<group>";
-		};
-		14DB40D71AEA497000DA1682 /* 转义字符、输入输出、运算符 */ = {
-			isa = PBXGroup;
-			children = (
-				14DB40D81AEA497000DA1682 /* MD_C1_ViewController.h */,
-				14DB40D91AEA497000DA1682 /* MD_C1_ViewController.m */,
-			);
-			path = "转义字符、输入输出、运算符";
-			sourceTree = "<group>";
-		};
-		14DB40DD1AEA549A00DA1682 /* 数组 */ = {
-			isa = PBXGroup;
-			children = (
-				14DB40E21AEA553600DA1682 /* MD_C_Array_ViewController.h */,
-				14DB40E31AEA553600DA1682 /* MD_C_Array_ViewController.m */,
-			);
-			path = "数组";
-			sourceTree = "<group>";
-		};
-		14DB40DE1AEA54A300DA1682 /* 函数 */ = {
-			isa = PBXGroup;
-			children = (
-				14DB40DF1AEA550D00DA1682 /* MD_C_Function_ViewController.h */,
-				14DB40E01AEA550D00DA1682 /* MD_C_Function_ViewController.m */,
-				14DB40ED1AEA6FC000DA1682 /* MD_C_Function_CFile.h */,
-				14DB40EC1AEA6FC000DA1682 /* MD_C_Function_CFile.c */,
-			);
-			path = "函数";
-			sourceTree = "<group>";
-		};
 		14DB40F01AEA752D00DA1682 /* main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1435,71 +1173,11 @@
 			path = main;
 			sourceTree = "<group>";
 		};
-		14E232C91B038D4E00F91C00 /* 关键字 */ = {
-			isa = PBXGroup;
-			children = (
-				14E232D41B038E9600F91C00 /* MD_C_Keyword_ViewController.h */,
-				14E232D51B038E9600F91C00 /* MD_C_Keyword_ViewController.m */,
-				14E232D71B038F8E00F91C00 /* const */,
-				14E232CA1B038D4E00F91C00 /* extern、static */,
-			);
-			path = "关键字";
-			sourceTree = "<group>";
-		};
-		14E232CA1B038D4E00F91C00 /* extern、static */ = {
-			isa = PBXGroup;
-			children = (
-				14E232CC1B038D9100F91C00 /* MD_C_Keyword_CFile.h */,
-				14E232CB1B038D9100F91C00 /* MD_C_Keyword_CFile.c */,
-				14E232CE1B038D9100F91C00 /* MD_C_Keyword1_CFile.h */,
-				14E232CD1B038D9100F91C00 /* MD_C_Keyword1_CFile.c */,
-				14E232D01B038D9100F91C00 /* MD_C_Keyword2_CFile.h */,
-				14E232CF1B038D9100F91C00 /* MD_C_Keyword2_CFile.c */,
-				14E232DC1B03918D00F91C00 /* MD_C_Keyword3_CFile.h */,
-				14E232DB1B03918D00F91C00 /* MD_C_Keyword3_CFile.c */,
-			);
-			path = "extern、static";
-			sourceTree = "<group>";
-		};
-		14E232D71B038F8E00F91C00 /* const */ = {
-			isa = PBXGroup;
-			children = (
-				14E232D91B038FAD00F91C00 /* MD_C_Const_CFile.h */,
-				14E232D81B038FAD00F91C00 /* MD_C_Const_CFile.c */,
-			);
-			path = const;
-			sourceTree = "<group>";
-		};
 		14E3C34B1AA0661B00EADB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		14F7FDFC1B0D7B2E0091DA18 /* oc */ = {
-			isa = PBXGroup;
-			children = (
-				14F7FDFD1B0D7B720091DA18 /* 属性 */,
-			);
-			path = oc;
-			sourceTree = "<group>";
-		};
-		14F7FDFD1B0D7B720091DA18 /* 属性 */ = {
-			isa = PBXGroup;
-			children = (
-				14F7FDFE1B0D7BB10091DA18 /* MD_OC_Property_ViewController.h */,
-				14F7FDFF1B0D7BB10091DA18 /* MD_OC_Property_ViewController.m */,
-				14F7FE011B0D7BCB0091DA18 /* Student.h */,
-				14F7FE021B0D7BCB0091DA18 /* Student.m */,
-				14F7FE041B0D7CB20091DA18 /* Student1.h */,
-				14F7FE051B0D7CB20091DA18 /* Student1.m */,
-				14F7FE071B0D7E7B0091DA18 /* Student2.h */,
-				14F7FE081B0D7E7B0091DA18 /* Student2.m */,
-				14F7FE0A1B0D875F0091DA18 /* XYPoint.h */,
-				14F7FE0B1B0D875F0091DA18 /* XYPoint.m */,
-			);
-			path = "属性";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1656,16 +1334,12 @@
 				1463B2121AA162C2006AE8D2 /* button.png in Resources */,
 				1463B29E1AA1CAE4006AE8D2 /* small.jpg in Resources */,
 				146D83111AA709F600F0C7FD /* Slovakia.png in Resources */,
-				14DB40DC1AEA4CBE00DA1682 /* 运算符.rtf in Resources */,
 				146D831F1AA709F600F0C7FD /* USA.png in Resources */,
 				1463B27F1AA1BD4D006AE8D2 /* provinces_cities.plist in Resources */,
 				146D82EF1AA709F600F0C7FD /* Denmark.png in Resources */,
-				14DB40D61AEA484C00DA1682 /* ASC.png in Resources */,
 				146D829C1AA6FC6600F0C7FD /* index.html in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,
-				14DB40EB1AEA680200DA1682 /* 函数.rtf in Resources */,
 				141B43391AA401BC008F2711 /* 达芬奇-蒙娜丽莎.png in Resources */,
-				14DB40D51AEA484C00DA1682 /* 基本数据类型及取值范围.rtf in Resources */,
 				141B43271AA3FC12008F2711 /* Sky.jpg in Resources */,
 				146D82EB1AA709F600F0C7FD /* Chile.png in Resources */,
 				146D83051AA709F600F0C7FD /* NewZealand.png in Resources */,
@@ -1690,7 +1364,6 @@
 				146D83151AA709F600F0C7FD /* SouthAfrica.png in Resources */,
 				146D83071AA709F600F0C7FD /* Nigeria.png in Resources */,
 				146D82F51AA709F600F0C7FD /* Germany.png in Resources */,
-				14DB40E91AEA63A900DA1682 /* 数组.rtf in Resources */,
 				1463B2861AA1BD87006AE8D2 /* MDPickerViewViewController.xib in Resources */,
 				146D83171AA709F600F0C7FD /* SouthKorea.png in Resources */,
 				146D82F11AA709F600F0C7FD /* England.png in Resources */,
@@ -1709,9 +1382,7 @@
 				1463B2741AA1B593006AE8D2 /* SecondViewController.xib in Resources */,
 				1463B28B1AA1C00F006AE8D2 /* big.jpg in Resources */,
 				146D82E71AA709F600F0C7FD /* Brazil.png in Resources */,
-				1450C6D21AFA0A7200DA8B8B /* 结构体、联合、枚举、大型软件开发.rtf in Resources */,
 				14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */,
-				14B086191AF8679200DD4DB7 /* 指针.rtf in Resources */,
 				1463B2B61AA1CD5D006AE8D2 /* shu.jpg in Resources */,
 				146D82F91AA709F600F0C7FD /* Greece.png in Resources */,
 				146D83091AA709F600F0C7FD /* NorthKorea.png in Resources */,
@@ -1742,7 +1413,6 @@
 				1463B2731AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7191AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				146D82891AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
-				14CE0DB71AB6B14400CA5536 /* MDCDefineViewController.m in Sources */,
 				1463B2BB1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
 				148CD71D1AAEC21600FAED9D /* TRStudent2.m in Sources */,
 				146D82B01AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
@@ -1759,19 +1429,16 @@
 				148CD7751AAEDACD00FAED9D /* TRStudent8.m in Sources */,
 				148CD74A1AAECFDD00FAED9D /* TRStudent6.m in Sources */,
 				148CD7381AAEC98800FAED9D /* MDNSArrayNormalViewController.m in Sources */,
-				14B086221AF8695F00DD4DB7 /* MD_C_Point_CFile.c in Sources */,
 				141B433E1AA40202008F2711 /* MDPageViewController.m in Sources */,
 				1404866A1A8CAC3500B97356 /* main.m in Sources */,
 				148CD72D1AAEC62700FAED9D /* MDNSValueViewController.m in Sources */,
 				146D82771AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */,
 				148CD7451AAECC9800FAED9D /* TRStudent5.m in Sources */,
 				148CD7711AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */,
-				14B0861E1AF8686700DD4DB7 /* MD_C_Point_ViewController.m in Sources */,
 				148CD6A01AAE977700FAED9D /* MDStringNormalViewController.m in Sources */,
 				148CD7541AAED37700FAED9D /* TRTelphoneInfo.m in Sources */,
 				148CD71B1AAEC21600FAED9D /* TRCat2.m in Sources */,
 				146D82981AA6FA2C00F0C7FD /* MDWVViewController.m in Sources */,
-				142A78561ACBC26A00CB83F7 /* MDBlockNormalViewController.m in Sources */,
 				1463B2B41AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
 				148CD75F1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74E1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,
@@ -1811,41 +1478,28 @@
 			files = (
 				141B436C1AA47394008F2711 /* MDModal1ViewController.m in Sources */,
 				148CD7231AAEC54700FAED9D /* MDNSNumberViewController.m in Sources */,
-				14B0861D1AF8686700DD4DB7 /* MD_C_Point_ViewController.m in Sources */,
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
-				14CE0DB61AB6B14400CA5536 /* MDCDefineViewController.m in Sources */,
-				14F7FE061B0D7CB20091DA18 /* Student1.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
-				14E232D31B038D9100F91C00 /* MD_C_Keyword2_CFile.c in Sources */,
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,
 				146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
 				1463B2761AA1B593006AE8D2 /* ThirdViewController.m in Sources */,
 				1463B2701AA1B593006AE8D2 /* MDMainViewController.m in Sources */,
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
-				14E214F51B099599008A5C8B /* MD_C_Memory_CFile.c in Sources */,
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
-				14DB40E11AEA550D00DA1682 /* MD_C_Function_ViewController.m in Sources */,
-				14DB40CF1AEA47E200DA1682 /* MDC_Char_ViewController.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
-				14E232DA1B038FAD00F91C00 /* MD_C_Const_CFile.c in Sources */,
-				14B086211AF8695F00DD4DB7 /* MD_C_Point_CFile.c in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
-				14E214F21B099164008A5C8B /* MD_C_String_CFile.c in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
 				148CD7491AAECFDD00FAED9D /* TRStudent6.m in Sources */,
 				148CD7371AAEC98800FAED9D /* MDNSArrayNormalViewController.m in Sources */,
-				1463C6061AF7741400A99840 /* MDChar1.c in Sources */,
-				1450C6D91AFA0B4100DA8B8B /* MD_C_Struct_CFile.c in Sources */,
 				141B433D1AA40202008F2711 /* MDPageViewController.m in Sources */,
-				14F7FE091B0D7E7B0091DA18 /* Student2.m in Sources */,
 				148CD72C1AAEC62700FAED9D /* MDNSValueViewController.m in Sources */,
 				146D82761AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */,
 				148CD7441AAECC9800FAED9D /* TRStudent5.m in Sources */,
@@ -1854,41 +1508,28 @@
 				148CD7531AAED37700FAED9D /* TRTelphoneInfo.m in Sources */,
 				148CD71A1AAEC21600FAED9D /* TRCat2.m in Sources */,
 				146D82971AA6FA2C00F0C7FD /* MDWVViewController.m in Sources */,
-				142A78551ACBC26A00CB83F7 /* MDBlockNormalViewController.m in Sources */,
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
 				148CD75E1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,
-				14DB40E41AEA553600DA1682 /* MD_C_Array_ViewController.m in Sources */,
-				14DFAC1C1AFB6927008B943D /* MD_C_Union_CFile.c in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
-				1450C6D61AFA0B1900DA8B8B /* MD_C_Type_ViewController.m in Sources */,
 				148CD7141AAEC21600FAED9D /* MDObject1ViewController.m in Sources */,
-				14F7FE001B0D7BB10091DA18 /* MD_OC_Property_ViewController.m in Sources */,
 				141B43451AA4038C008F2711 /* MDPage2ViewController.m in Sources */,
-				14DB40DA1AEA497000DA1682 /* MD_C1_ViewController.m in Sources */,
 				146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */,
-				14AC4C7C1ACE881C00C35208 /* MDBlockValueViewController.m in Sources */,
 				1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */,
 				1463B26C1AA1B593006AE8D2 /* FirstViewController.m in Sources */,
 				141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */,
-				14E232DD1B03918D00F91C00 /* MD_C_Keyword3_CFile.c in Sources */,
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
-				14DFAC1F1AFB6DF5008B943D /* MD_C_Enum_CFile.c in Sources */,
 				14DB41071AEA752D00DA1682 /* MDTool.m in Sources */,
 				148CD70C1AAEC21600FAED9D /* MDObject3ViewController.m in Sources */,
 				148CD7401AAECC7700FAED9D /* MDNSEnumeratorViewController.m in Sources */,
-				14E232D11B038D9100F91C00 /* MD_C_Keyword_CFile.c in Sources */,
 				148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */,
-				14F7FE031B0D7BCB0091DA18 /* Student.m in Sources */,
 				141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */,
 				147DB1841A8C7FA600F38EA4 /* main.m in Sources */,
-				14DB40C51AEA3F5A00DA1682 /* MD_C_ValueSize_ViewController.m in Sources */,
 				148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */,
 				1463B2841AA1BD87006AE8D2 /* MDPickerViewViewController.m in Sources */,
-				14DB40EE1AEA6FC000DA1682 /* MD_C_Function_CFile.c in Sources */,
 				1463B2141AA162C2006AE8D2 /* MDUIButtonViewController.m in Sources */,
 				148CD7551AAED37700FAED9D /* TRUserInfo.m in Sources */,
 				141B432F1AA3FDD3008F2711 /* MDPageControlViewController.m in Sources */,
@@ -1896,14 +1537,11 @@
 				148CD7601AAED70E00FAED9D /* TRXYZ.m in Sources */,
 				148CD7121AAEC21600FAED9D /* TRStudent3.m in Sources */,
 				1463B2911AA1C0AF006AE8D2 /* MDUIImageViewViewController.m in Sources */,
-				14E232D61B038E9600F91C00 /* MD_C_Keyword_ViewController.m in Sources */,
-				14E232D21B038D9100F91C00 /* MD_C_Keyword1_CFile.c in Sources */,
 				141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */,
 				148CD73B1AAECA3200FAED9D /* TRStudent4.m in Sources */,
 				148CD7641AAED72A00FAED9D /* MDNSSetNormalViewController.m in Sources */,
 				148CD7311AAEC67A00FAED9D /* MDNSDateViewController.m in Sources */,
 				146D82821AA6DDBE00F0C7FD /* MDTBVC2ViewController.m in Sources */,
-				14F7FE0C1B0D875F0091DA18 /* XYPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
