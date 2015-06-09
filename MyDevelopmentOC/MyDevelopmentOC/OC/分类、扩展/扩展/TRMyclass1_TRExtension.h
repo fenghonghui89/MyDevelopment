@@ -7,9 +7,9 @@
 //
 
 //创建扩展类的方法2：
-#import "TRMyclass.h"
+#import "TRMyclass1.h"
 
-@interface TRMyclass ()
+@interface TRMyclass1 ()
 
 //可以在扩展类中声明属性和实例变量，但是私有的，只能类里面调用
 //方法也是私有的，但main可以手动输入方法名使用
@@ -17,3 +17,4 @@
 -(void)methodExtension;
 
 @end
+

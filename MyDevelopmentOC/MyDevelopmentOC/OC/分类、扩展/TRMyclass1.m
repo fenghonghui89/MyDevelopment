@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 Hany. All rights reserved.
 //
 
-#import "TRMyclass.h"
-#import "TRMyclass_TRExtension.h"
+#import "TRMyclass1.h"
+#import "TRMyclass1_TRExtension.h"
 
 /*
 扩展的方法是私有的，有两种方法：
@@ -16,7 +16,7 @@
  */
 
 //方法1：
-@interface TRMyclass ()
+@interface TRMyclass1 ()
 //@property int age;
 @property(nonatomic,assign)int age1;
 -(void)methodExtension;//扩展方法
@@ -24,7 +24,7 @@
 
 /////////////////////////////////////////////////////////////////
 
-@implementation TRMyclass
+@implementation TRMyclass1
 
 -(void)methodMyclass
 {

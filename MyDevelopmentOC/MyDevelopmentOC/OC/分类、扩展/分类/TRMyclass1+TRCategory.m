@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 Hany. All rights reserved.
 //
 
-#import "TRMyclass+TRCategory.h"
+#import "TRMyclass1+TRCategory.h"
 
-@implementation TRMyclass (TRCategory)
+@implementation TRMyclass1 (TRCategory)
 
 -(void)methodCategory
 {

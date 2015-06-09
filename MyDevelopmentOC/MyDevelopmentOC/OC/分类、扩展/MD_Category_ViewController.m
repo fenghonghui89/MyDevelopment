@@ -7,8 +7,8 @@
 //
 
 #import "MD_Category_ViewController.h"
-#import "TRMyclass.h"
-#import "TRMyclass+TRCategory.h"
+#import "TRMyclass1.h"
+#import "TRMyclass1+TRCategory.h"
 #import "NSString+TRJson.h"//可以对官方类进行分类以添加方法
 @interface MD_Category_ViewController ()
 
@@ -25,7 +25,7 @@
 
 -(void)categoryTest
 {
-    TRMyclass* myclass = [[TRMyclass alloc] init];
+    TRMyclass1* myclass = [[TRMyclass1 alloc] init];
     
     //分类创建的方法是公有的
     [myclass methodMyclass];

@@ -1,15 +1,15 @@
 //
-//  TRMyclass+TRCategory.h
+//  TRMyclass.h
 //  my01
 //
 //  Created by apple on 13-10-24.
 //  Copyright (c) 2013年 Hany. All rights reserved.
 //
 
-#import "TRMyclass.h"
+#import <Foundation/Foundation.h>
 
-@interface TRMyclass (TRCategory)
+@interface TRMyclass1 : NSObject
 
--(void)methodCategory;
+-(void)methodMyclass;
 
 @end

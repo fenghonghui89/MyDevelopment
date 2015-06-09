@@ -11,6 +11,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>协议</string>
+				<key>className</key>
+				<string>MD_OC_Protocol_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>分类、扩展</string>
 				<key>className</key>
 				<string>MD_Category_ViewController</string>

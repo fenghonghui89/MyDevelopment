@@ -32,8 +32,8 @@
 		143EA62C1B0F3AEC007B2D02 /* MDCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA62B1B0F3AEC007B2D02 /* MDCat.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		149232A51B130C5E0013BBA3 /* 属性关键字.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 149232A41B130C5E0013BBA3 /* 属性关键字.rtf */; };
 		149232BF1B131A2F0013BBA3 /* MD_Category_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B41B131A2F0013BBA3 /* MD_Category_ViewController.m */; };
-		149232C01B131A2F0013BBA3 /* TRMyclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B61B131A2F0013BBA3 /* TRMyclass.m */; };
-		149232C11B131A2F0013BBA3 /* TRMyclass+TRCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B91B131A2F0013BBA3 /* TRMyclass+TRCategory.m */; };
+		149232C01B131A2F0013BBA3 /* TRMyclass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B61B131A2F0013BBA3 /* TRMyclass1.m */; };
+		149232C11B131A2F0013BBA3 /* TRMyclass1+TRCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B91B131A2F0013BBA3 /* TRMyclass1+TRCategory.m */; };
 		149232C21B131A2F0013BBA3 /* NSString+TRJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232BC1B131A2F0013BBA3 /* NSString+TRJson.m */; };
 		149232C61B131E750013BBA3 /* MD_OC_Protocol_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232C51B131E750013BBA3 /* MD_OC_Protocol_ViewController.m */; };
 		149232D01B131FC80013BBA3 /* TRMyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232CC1B131FC80013BBA3 /* TRMyClass.m */; };
@@ -82,13 +82,13 @@
 		149232A41B130C5E0013BBA3 /* 属性关键字.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "属性关键字.rtf"; sourceTree = "<group>"; };
 		149232B31B131A2F0013BBA3 /* MD_Category_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Category_ViewController.h; sourceTree = "<group>"; };
 		149232B41B131A2F0013BBA3 /* MD_Category_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Category_ViewController.m; sourceTree = "<group>"; };
-		149232B51B131A2F0013BBA3 /* TRMyclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRMyclass.h; sourceTree = "<group>"; };
-		149232B61B131A2F0013BBA3 /* TRMyclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRMyclass.m; sourceTree = "<group>"; };
-		149232B81B131A2F0013BBA3 /* TRMyclass+TRCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TRMyclass+TRCategory.h"; sourceTree = "<group>"; };
-		149232B91B131A2F0013BBA3 /* TRMyclass+TRCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TRMyclass+TRCategory.m"; sourceTree = "<group>"; };
+		149232B51B131A2F0013BBA3 /* TRMyclass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRMyclass1.h; sourceTree = "<group>"; };
+		149232B61B131A2F0013BBA3 /* TRMyclass1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRMyclass1.m; sourceTree = "<group>"; };
+		149232B81B131A2F0013BBA3 /* TRMyclass1+TRCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TRMyclass1+TRCategory.h"; sourceTree = "<group>"; };
+		149232B91B131A2F0013BBA3 /* TRMyclass1+TRCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TRMyclass1+TRCategory.m"; sourceTree = "<group>"; };
 		149232BB1B131A2F0013BBA3 /* NSString+TRJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TRJson.h"; sourceTree = "<group>"; };
 		149232BC1B131A2F0013BBA3 /* NSString+TRJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TRJson.m"; sourceTree = "<group>"; };
-		149232BE1B131A2F0013BBA3 /* TRMyclass_TRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRMyclass_TRExtension.h; sourceTree = "<group>"; };
+		149232BE1B131A2F0013BBA3 /* TRMyclass1_TRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRMyclass1_TRExtension.h; sourceTree = "<group>"; };
 		149232C41B131E750013BBA3 /* MD_OC_Protocol_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_Protocol_ViewController.h; sourceTree = "<group>"; };
 		149232C51B131E750013BBA3 /* MD_OC_Protocol_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_Protocol_ViewController.m; sourceTree = "<group>"; };
 		149232CB1B131FC80013BBA3 /* TRMyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRMyClass.h; sourceTree = "<group>"; };
@@ -275,8 +275,8 @@
 			children = (
 				149232B31B131A2F0013BBA3 /* MD_Category_ViewController.h */,
 				149232B41B131A2F0013BBA3 /* MD_Category_ViewController.m */,
-				149232B51B131A2F0013BBA3 /* TRMyclass.h */,
-				149232B61B131A2F0013BBA3 /* TRMyclass.m */,
+				149232B51B131A2F0013BBA3 /* TRMyclass1.h */,
+				149232B61B131A2F0013BBA3 /* TRMyclass1.m */,
 				149232B71B131A2F0013BBA3 /* 分类 */,
 				149232BA1B131A2F0013BBA3 /* 官方类的分类 */,
 				149232BD1B131A2F0013BBA3 /* 扩展 */,
@@ -287,8 +287,8 @@
 		149232B71B131A2F0013BBA3 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
-				149232B81B131A2F0013BBA3 /* TRMyclass+TRCategory.h */,
-				149232B91B131A2F0013BBA3 /* TRMyclass+TRCategory.m */,
+				149232B81B131A2F0013BBA3 /* TRMyclass1+TRCategory.h */,
+				149232B91B131A2F0013BBA3 /* TRMyclass1+TRCategory.m */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 		149232BD1B131A2F0013BBA3 /* 扩展 */ = {
 			isa = PBXGroup;
 			children = (
-				149232BE1B131A2F0013BBA3 /* TRMyclass_TRExtension.h */,
+				149232BE1B131A2F0013BBA3 /* TRMyclass1_TRExtension.h */,
 			);
 			path = "扩展";
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 			files = (
 				143EA60D1B0F3023007B2D02 /* MD_OC_Property_ViewController.m in Sources */,
 				143EA6251B0F3ABA007B2D02 /* Student.m in Sources */,
-				149232C11B131A2F0013BBA3 /* TRMyclass+TRCategory.m in Sources */,
+				149232C11B131A2F0013BBA3 /* TRMyclass1+TRCategory.m in Sources */,
 				143EA5DD1B0F2CF9007B2D02 /* MDClassesTableViewCell.m in Sources */,
 				149232BF1B131A2F0013BBA3 /* MD_Category_ViewController.m in Sources */,
 				149232D01B131FC80013BBA3 /* TRMyClass.m in Sources */,
@@ -416,7 +416,7 @@
 				143EA5DF1B0F2CF9007B2D02 /* MDClassesViewController.m in Sources */,
 				143EA6241B0F3ABA007B2D02 /* XYPoint.m in Sources */,
 				143EA6231B0F3ABA007B2D02 /* Student2.m in Sources */,
-				149232C01B131A2F0013BBA3 /* TRMyclass.m in Sources */,
+				149232C01B131A2F0013BBA3 /* TRMyclass1.m in Sources */,
 				143EA62C1B0F3AEC007B2D02 /* MDCat.m in Sources */,
 				143EA5E71B0F2CF9007B2D02 /* main.m in Sources */,
 				143EA6291B0F3ADF007B2D02 /* MDAnimal.m in Sources */,
