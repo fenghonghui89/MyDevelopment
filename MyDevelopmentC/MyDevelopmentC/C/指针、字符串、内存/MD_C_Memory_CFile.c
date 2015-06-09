@@ -8,7 +8,7 @@
 
 #include "MD_C_Memory_CFile.h"
 #include <stdlib.h>
-#import <malloc/malloc.h>
+#include <malloc/malloc.h>
 void cMemoryTest0();
 
 

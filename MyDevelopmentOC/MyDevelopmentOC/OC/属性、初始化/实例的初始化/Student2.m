@@ -10,6 +10,11 @@
 
 @implementation Student2
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    Student2 *stundent2 = [[Student2 allocWithZone:zone] initWithAge:self.age andSex:self.sex];
+    return stundent2;
+}
 
 //init为无参数的属性初始化
 -(id)init

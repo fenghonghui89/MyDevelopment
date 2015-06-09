@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Student2 : NSObject
+@interface Student2 : NSObject<NSCopying>
 @property int age;
 @property char sex;
 

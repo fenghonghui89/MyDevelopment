@@ -8,10 +8,13 @@
 
 #include "MD_C_String_CFile.h"
 #include <string.h>
-
+#include <stdlib.h>
+#include <malloc/malloc.h>
 void cStringTest0();
 void cStringTest1();
 void cStringTest2();
+void GetMemory(char *p, int num);
+void GetMemory2(char **p, int num);
 
 void cStringTest()
 {
@@ -87,7 +90,7 @@ void cStringTest1()
 }
 
 
-#pragma mark - 字符串函数库（要先#include <string.h>）
+#pragma mark - 字符串函数库（要先#include <string.h>）、值传递、地址传递（e.g.char **p）
 void cStringTest2()
 {
     char str[10] = "abc";
@@ -110,9 +113,27 @@ void cStringTest2()
     
     
     /*
-     以指针声明的字符串不能用于strcpy,strcat，但可用于strlen和strcmp
+     以指针声明的字符串不能直接用于strcpy,strcat，但可用于strlen和strcmp
      因为那是指针指向字符串所在的地址，不能对指针和字符串进行复制或连接操作
+     需要用地址传递的方式 分配内存才能用
      */
-    //    char *stra = "abc";
-    //    char *strb = "def";
+    char *stra = "abc";
+    char *strb = "def";
+//    GetMemory(*stra, 100);//值传递
+    GetMemory2(&stra, 100);//地址传递
+    stpcpy(stra, strb);
+    printf("%s %p",str,str);
+    free(stra);
+}
+
+//值传递
+void GetMemory(char *p, int num)
+{
+    p = (char *)malloc(sizeof(char) * num);
+}
+
+//地址传递
+void GetMemory2(char **p, int num)
+{
+    *p = (char *)malloc(sizeof(char) * num) ;
 }

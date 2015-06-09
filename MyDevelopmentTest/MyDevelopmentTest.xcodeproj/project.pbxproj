@@ -195,6 +195,7 @@
 		146D83201AA709F600F0C7FD /* USA.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D82DE1AA709F600F0C7FD /* USA.png */; };
 		146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D83221AA70A3500F0C7FD /* MDSearchBarViewController.m */; };
 		146D83241AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D83221AA70A3500F0C7FD /* MDSearchBarViewController.m */; };
+		14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */; };
 		147DB1841A8C7FA600F38EA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 147DB1831A8C7FA600F38EA4 /* main.m */; };
 		147DB18F1A8C7FA600F38EA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147DB18E1A8C7FA600F38EA4 /* Images.xcassets */; };
 		147DB1921A8C7FA600F38EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147DB1901A8C7FA600F38EA4 /* LaunchScreen.xib */; };
@@ -400,6 +401,8 @@
 		146D82DE1AA709F600F0C7FD /* USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USA.png; sourceTree = "<group>"; };
 		146D83211AA70A3500F0C7FD /* MDSearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSearchBarViewController.h; sourceTree = "<group>"; };
 		146D83221AA70A3500F0C7FD /* MDSearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSearchBarViewController.m; sourceTree = "<group>"; };
+		14720F621B15708100773E5C /* MD_OC_UIView_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_UIView_ViewController.h; sourceTree = "<group>"; };
+		14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_UIView_ViewController.m; sourceTree = "<group>"; };
 		147DB17E1A8C7FA600F38EA4 /* MyDevelopmentTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		147DB1821A8C7FA600F38EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		147DB1831A8C7FA600F38EA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -651,6 +654,7 @@
 		1463B2071AA162C2006AE8D2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				14720F611B156E3C00773E5C /* UIView */,
 				146D82BB1AA709F600F0C7FD /* UISearchBar */,
 				146D82921AA6F84600F0C7FD /* UIWebView */,
 				146D828D1AA6F3D100F0C7FD /* UIAlertView,UIActionSheet */,
@@ -944,6 +948,15 @@
 				146D82DE1AA709F600F0C7FD /* USA.png */,
 			);
 			path = "球队图片";
+			sourceTree = "<group>";
+		};
+		14720F611B156E3C00773E5C /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				14720F621B15708100773E5C /* MD_OC_UIView_ViewController.h */,
+				14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		147DB1751A8C7FA600F38EA4 = {
@@ -1484,6 +1497,7 @@
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,
+				14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */,
 				146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
 				1463B2761AA1B593006AE8D2 /* ThirdViewController.m in Sources */,
 				1463B2701AA1B593006AE8D2 /* MDMainViewController.m in Sources */,
