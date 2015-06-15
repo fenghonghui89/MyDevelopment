@@ -144,6 +144,7 @@
 		14DB41071AEA752D00DA1682 /* MDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40FD1AEA752D00DA1682 /* MDTool.m */; };
 		14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FE1AEA752D00DA1682 /* TitleList.plist */; };
 		14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FF1AEA752D00DA1682 /* 记录.rtf */; };
+		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -352,6 +353,9 @@
 		14DB40FD1AEA752D00DA1682 /* MDTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTool.m; sourceTree = "<group>"; };
 		14DB40FE1AEA752D00DA1682 /* TitleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TitleList.plist; sourceTree = "<group>"; };
 		14DB40FF1AEA752D00DA1682 /* 记录.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "记录.rtf"; sourceTree = "<group>"; };
+		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
+		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
+		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +475,7 @@
 		1463B2071AA162C2006AE8D2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				14E331B41B2716EF00B356C7 /* UIImagePickerController */,
 				14720F611B156E3C00773E5C /* UIView */,
 				146D82BB1AA709F600F0C7FD /* UISearchBar */,
 				146D82921AA6F84600F0C7FD /* UIWebView */,
@@ -995,10 +1000,20 @@
 				14DB40FB1AEA752D00DA1682 /* MDClassesViewController.m */,
 				14DB40FC1AEA752D00DA1682 /* MDTool.h */,
 				14DB40FD1AEA752D00DA1682 /* MDTool.m */,
+				14EF68BC1B271F1A00ADA1BE /* MDDefine.h */,
 				14DB40FE1AEA752D00DA1682 /* TitleList.plist */,
 				14DB40FF1AEA752D00DA1682 /* 记录.rtf */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		14E331B41B2716EF00B356C7 /* UIImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */,
+				14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */,
+			);
+			path = UIImagePickerController;
 			sourceTree = "<group>";
 		};
 		14E3C34B1AA0661B00EADB06 /* Frameworks */ = {
@@ -1157,6 +1172,7 @@
 				146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
 				1463B2761AA1B593006AE8D2 /* ThirdViewController.m in Sources */,
 				1463B2701AA1B593006AE8D2 /* MDMainViewController.m in Sources */,
+				14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */,
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,

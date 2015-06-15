@@ -30,7 +30,7 @@
     view.opaque = YES;//不透明，默认为YES，这样绘图系统就可以优化一些绘制操作以提升性能
     view.autoresizingMask = UIViewAutoresizingNone;//自适应匹配
     view.autoresizesSubviews = YES;//子视图是否自动适应父类的尺寸变化，默认为YES
-    view.clipsToBounds = YES;//When YES, content and subviews are clipped to the bounds of the view. Default is NO.
+    view.clipsToBounds = YES;//超出显示范围的内容不显示
     
 #pragma mark 方法
     [self.view bringSubviewToFront:view];

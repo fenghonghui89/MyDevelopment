@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MDDefine.h"
+#import "MDTool.h"
 @interface MDBaseViewController : UIViewController
 
 @end

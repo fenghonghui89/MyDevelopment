@@ -7,7 +7,8 @@
 //
 
 #import "MDBaseViewController.h"
-#import "MDTool.h"
+
+
 @interface MDBaseViewController ()
 
 @end
@@ -18,7 +19,7 @@
 {
     [super viewDidLoad];
 
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = NO;//不透明
     self.tabBarController.tabBar.translucent = NO;
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self.view setFrame:[MDTool setRectX:0 y:0 w:[MDTool screenWidth] h:[MDTool screenHeight]-[MDTool navigationBarHeight]]];
