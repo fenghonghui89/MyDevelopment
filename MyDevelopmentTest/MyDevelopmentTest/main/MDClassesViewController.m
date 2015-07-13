@@ -8,6 +8,7 @@
 
 #import "MDClassesViewController.h"
 #import "MDTool.h"
+#import "MDDefine.h"
 #import "MDClassesTableViewCell.h"
 @interface MDClassesViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView *tv;
@@ -26,21 +27,31 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.translucent = YES;
-    self.tabBarController.tabBar.translucent = YES;
+    self.navigationController.navigationBar.translucent = NO;
+//    self.tabBarController.tabBar.translucent = YES;
 }
 
 -(void)customInitUI
 {
-    UITableView *tv = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    [self.view setBackgroundColor:[UIColor redColor]];
+//    UITableView *tv = [[UITableView alloc] initWithFrame:[MDTool setRectX:0 y:0 w:screenW h:screenH-naviH] style:UITableViewStyleGrouped];
+    UITableView *tv = [[UITableView alloc] initWithFrame:viewBounds style:UITableViewStyleGrouped];
     [tv setBackgroundColor:[UIColor greenColor]];
     tv.delegate = self;
     tv.dataSource = self;
     [tv registerNib:[UINib nibWithNibName:@"MDClassesTableViewCell" bundle:nil]forCellReuseIdentifier:@"cell"];
     [self.view addSubview:tv];
+    NSLog(@"screenW:%f screenH:%f naviH:%f",screenW,screenH,naviH);
+    NSLog(@"viewW:%f viewH:%f",viewW,viewH);
+    NSLog(@"tvW:%f tvH:%f",tv.frame.size.width,tv.frame.size.height);
 }
 
 #pragma mark - call back
+//-(BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self.isLastsetLayer == NO) {
