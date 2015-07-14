@@ -27,31 +27,43 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.translucent = NO;
-//    self.tabBarController.tabBar.translucent = YES;
 }
 
 -(void)customInitUI
 {
+    //self.view/navi/tabbar
     [self.view setBackgroundColor:[UIColor redColor]];
-//    UITableView *tv = [[UITableView alloc] initWithFrame:[MDTool setRectX:0 y:0 w:screenW h:screenH-naviH] style:UITableViewStyleGrouped];
-    UITableView *tv = [[UITableView alloc] initWithFrame:viewBounds style:UITableViewStyleGrouped];
+    self.automaticallyAdjustsScrollViewInsets = NO;//不自动设置内边距，防止ios7以后tv下移
+    self.navigationController.navigationBar.translucent = YES;//渗透（ios6默认为no，ios7之后为yes）
+    self.tabBarController.tabBar.translucent = NO;
+    
+    //bgView
+    UIView *bgView = [[UIView alloc] init];
+    [bgView setBackgroundColor:[UIColor blueColor]];
+    CGFloat bgViewY = 0;
+    CGFloat bgViewW = screenW;
+    CGFloat bgViewH = 0;
+    CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (systemVersion < 7.0) {
+        bgViewY = naviH;
+        bgViewH = screenH - stateH - naviH;
+    }else{
+        bgViewY = naviH;
+        bgViewH = screenH - naviH;
+    }
+    [bgView setFrame:[MDTool setRectX:0 y:bgViewY w:bgViewW h:bgViewH]];
+    [self.view addSubview:bgView];
+    
+    //tv
+    UITableView *tv = [[UITableView alloc] initWithFrame:[MDTool setRectX:0 y:0 w:bgViewW h:bgViewH] style:UITableViewStyleGrouped];
     [tv setBackgroundColor:[UIColor greenColor]];
     tv.delegate = self;
     tv.dataSource = self;
     [tv registerNib:[UINib nibWithNibName:@"MDClassesTableViewCell" bundle:nil]forCellReuseIdentifier:@"cell"];
-    [self.view addSubview:tv];
-    NSLog(@"screenW:%f screenH:%f naviH:%f",screenW,screenH,naviH);
-    NSLog(@"viewW:%f viewH:%f",viewW,viewH);
-    NSLog(@"tvW:%f tvH:%f",tv.frame.size.width,tv.frame.size.height);
+    [bgView addSubview:tv];
 }
 
 #pragma mark - call back
-//-(BOOL)prefersStatusBarHidden
-//{
-//    return YES;
-//}
-
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self.isLastsetLayer == NO) {

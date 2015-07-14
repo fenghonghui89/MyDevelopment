@@ -109,11 +109,11 @@
 + (CGFloat)navigationBarHeight
 {
     CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-    if (systemVersion < 7.0) {
+    if (systemVersion < 7.0) {//ios6及以下
         return 44.0;
-    }else if(systemVersion < 8.0){
+    }else if(systemVersion < 8.0){//ios7
         return 64.0;
-    }else{
+    }else{//ios8及以后
         return 64.0;
     }
 }

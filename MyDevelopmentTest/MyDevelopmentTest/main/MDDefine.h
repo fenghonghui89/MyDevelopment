@@ -20,7 +20,7 @@
 #define viewW self.view.bounds.size.width
 #define viewH self.view.bounds.size.height
 
-#define naviH [MDTool navigationBarHeight]
+#define naviH [MDTool navigationBarHeight]//<ios7=44,>ios7=64（44+状态栏20）
 #define stateH 20
 #define toolBarH 44
 #define tarBarH 49
