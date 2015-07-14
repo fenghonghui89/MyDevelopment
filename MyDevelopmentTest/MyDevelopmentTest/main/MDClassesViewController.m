@@ -27,15 +27,15 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = YES;//渗透（ios6默认为no，ios7之后为yes）
+    self.tabBarController.tabBar.translucent = NO;
 }
 
 -(void)customInitUI
 {
-    //self.view/navi/tabbar
+    //self.view
     [self.view setBackgroundColor:[UIColor redColor]];
     self.automaticallyAdjustsScrollViewInsets = NO;//不自动设置内边距，防止ios7以后tv下移
-    self.navigationController.navigationBar.translucent = YES;//渗透（ios6默认为no，ios7之后为yes）
-    self.tabBarController.tabBar.translucent = NO;
     
     //bgView
     UIView *bgView = [[UIView alloc] init];

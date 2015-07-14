@@ -55,12 +55,12 @@
 {
     UIView *editView = [[UIView alloc] init];
     [editView setBackgroundColor:[UIColor grayColor]];
-    [editView setFrame:[MDTool setRectX:10 y:40 w:viewW-20 h:viewH-80]];
+    [editView setFrame:[MDTool setRectX:10 y:50 w:viewW-20 h:viewH-50-50]];
     [editView setClipsToBounds:YES];
     self.editView = editView;
     [self.view addSubview:editView];
     
-    CGFloat y = viewH-40-5;
+    CGFloat y = viewH-40;
     UIButton *btn = [[UIButton alloc] initWithFrame:[MDTool setRectX:10 y:y w:50 h:30]];
     [btn setTitle:@"获取相册" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -68,7 +68,7 @@
     [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 
-    CGFloat x = viewW-10-50;
+    CGFloat x = screenW-10-50;
     UIButton *btn2 = [[UIButton alloc] initWithFrame:[MDTool setRectX:x y:y w:50 h:30]];
     [btn2 setTitle:@"生成图片" forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];

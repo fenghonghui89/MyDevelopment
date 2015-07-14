@@ -19,10 +19,28 @@
 {
     [super viewDidLoad];
 
-    self.navigationController.navigationBar.translucent = NO;//不透明
+    //self.view/navi/tabbar
+    self.navigationController.navigationBar.translucent = NO;
     self.tabBarController.tabBar.translucent = NO;
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self.view setFrame:[MDTool setRectX:0 y:0 w:[MDTool screenWidth] h:[MDTool screenHeight]-[MDTool navigationBarHeight]]];
+    [self.view setBackgroundColor:[UIColor clearColor]];
+    
+//    //bgview
+//    UIView *bgView = [[UIView alloc] init];
+//    [bgView setBackgroundColor:[UIColor clearColor]];
+//    CGFloat bgViewY = 0;
+//    CGFloat bgViewW = screenW;
+//    CGFloat bgViewH = 0;
+//    CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+//    if (systemVersion < 7.0) {
+//        bgViewY = naviH;
+//        bgViewH = screenH - stateH - naviH;
+//    }else{
+//        bgViewY = naviH;
+//        bgViewH = screenH - naviH;
+//    }
+//    [bgView setFrame:[MDTool setRectX:0 y:bgViewY w:bgViewW h:bgViewH]];
+//    [self.view addSubview:bgView];
+//    self.bgView = bgView;
     
     NSLog(@"视图尺寸：%@",NSStringFromCGRect(self.view.frame));
 }

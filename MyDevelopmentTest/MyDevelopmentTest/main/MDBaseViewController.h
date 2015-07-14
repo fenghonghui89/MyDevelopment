@@ -10,5 +10,5 @@
 #import "MDDefine.h"
 #import "MDTool.h"
 @interface MDBaseViewController : UIViewController
-
+//@property(nonatomic,strong)UIView *bgView;
 @end
