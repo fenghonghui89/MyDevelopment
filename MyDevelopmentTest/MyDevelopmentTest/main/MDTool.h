@@ -58,7 +58,7 @@
 +(CGFloat)navigationBarHeight;
 
 /**
- *  状态栏高度
+ *  默认状态栏高度
  *
  *  @return 高度
  */

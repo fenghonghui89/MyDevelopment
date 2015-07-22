@@ -22,9 +22,9 @@
     [super viewDidLoad];
     
     [self customInitUI];
-    NSLog(@"初始化screen%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
-    NSLog(@"初始化view%@",NSStringFromCGSize(self.view.bounds.size));
-    NSLog(@"初始化navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
+    NSLog(@"默认screen%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
+    NSLog(@"默认view%@",NSStringFromCGSize(self.view.bounds.size));
+    NSLog(@"默认navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -38,6 +38,7 @@
 {
     //self.view
     [self.view setBackgroundColor:[UIColor redColor]];
+    self.view.backgroundColor = [UIColor redColor];
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
         self.automaticallyAdjustsScrollViewInsets = NO;//不自动设置内边距，防止ios7以后tv下移
     }
