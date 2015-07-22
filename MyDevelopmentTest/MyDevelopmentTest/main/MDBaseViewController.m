@@ -22,9 +22,15 @@
     //self.view/navi/tabbar
     self.navigationController.navigationBar.translucent = NO;
     self.tabBarController.tabBar.translucent = NO;
+    
     [self.view setBackgroundColor:[UIColor clearColor]];
     
-    [self.view setFrame:[MDTool setRectX:0 y:0 w:screenW h:screenH-naviH]];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+        [self.view setFrame:[MDTool setRectX:0 y:0 w:defaultViewW h:defaultViewH-naviH]];
+    }else{
+        [self.view setFrame:[MDTool setRectX:0 y:0 w:defaultViewW h:defaultViewH-naviH-stateH]];
+    }
+
     NSLog(@"视图尺寸：%@",NSStringFromCGRect(self.view.frame));
 }
 

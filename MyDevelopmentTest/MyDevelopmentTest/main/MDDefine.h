@@ -11,17 +11,19 @@
 #endif
 
 #define screenBounds [[UIScreen mainScreen] bounds]
-#define screenW [[UIScreen mainScreen] bounds].size.width
-#define screenH [[UIScreen mainScreen] bounds].size.height
+#define screenW [MDTool screenWidth]
+#define screenH [MDTool screenHeight]
+#define defaultViewW [MDTool viewControllerViewWidth]
+#define defaultViewH [MDTool viewControllerViewHeight]
 
 #define viewBounds self.view.bounds
 #define viewX self.view.frame.origin.x
 #define viewY self.view.frame.origin.y
-#define viewW self.view.bounds.size.width
-#define viewH self.view.bounds.size.height
+#define viewW self.view.frame.size.width
+#define viewH self.view.frame.size.height
 
-#define naviH [MDTool navigationBarHeight]//<ios7=44,>ios7=64（44+状态栏20）
-#define stateH 20
+#define naviH [MDTool navigationBarHeight]
+#define stateH [MDTool stateBarHeight]
 #define toolBarH 44
 #define tarBarH 49
 #define phoneStateH 40 //状态栏20+占用navi20

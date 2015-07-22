@@ -81,6 +81,7 @@
     return CGSizeZero;
 }
 
+#pragma mark - < 坐标系 > -
 /**
  *  屏幕宽度
  *
@@ -102,19 +103,46 @@
 }
 
 /**
- *  自适应导航的高度
+ *  导航栏高度
  *
  *  @return 高度
  */
-+ (CGFloat)navigationBarHeight
++(CGFloat)navigationBarHeight
 {
-    CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-    if (systemVersion < 7.0) {//ios6及以下
-        return 44.0;
-    }else if(systemVersion < 8.0){//ios7
-        return 64.0;
-    }else{//ios8及以后
-        return 64.0;
+    return 44;
+}
+
+/**
+ *  状态栏高度
+ *
+ *  @return 高度
+ */
++(CGFloat)stateBarHeight
+{
+    return 20;
+}
+
+/**
+ *  默认根vc.view的宽度
+ *
+ *  @return 宽度
+ */
++(CGFloat)viewControllerViewWidth
+{
+    return [self screenWidth];
+}
+
+/**
+ *  默认根vc.view的高度
+ *
+ *  @return 高度
+ */
++(CGFloat)viewControllerViewHeight
+{
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+        return [self screenHeight] - 20;//减去状态栏高度
+    }else{
+        return [self screenHeight];
     }
 }
 

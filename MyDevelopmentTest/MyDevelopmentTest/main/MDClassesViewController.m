@@ -22,6 +22,9 @@
     [super viewDidLoad];
     
     [self customInitUI];
+    NSLog(@"初始化screen%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
+    NSLog(@"初始化view%@",NSStringFromCGSize(self.view.bounds.size));
+    NSLog(@"初始化navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -35,7 +38,7 @@
 {
     //self.view
     [self.view setBackgroundColor:[UIColor redColor]];
-    if([[[UIDevice currentDevice] systemVersion] floatValue]>6.9){
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
         self.automaticallyAdjustsScrollViewInsets = NO;//不自动设置内边距，防止ios7以后tv下移
     }
     
@@ -43,15 +46,15 @@
     UIView *bgView = [[UIView alloc] init];
     [bgView setBackgroundColor:[UIColor blueColor]];
     CGFloat bgViewY = 0;
-    CGFloat bgViewW = screenW;
+    CGFloat bgViewW = defaultViewW;
     CGFloat bgViewH = 0;
     CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (systemVersion < 7.0) {
         bgViewY = naviH;
-        bgViewH = screenH - stateH - naviH;
+        bgViewH = defaultViewH - naviH;
     }else{
-        bgViewY = naviH;
-        bgViewH = screenH - naviH;
+        bgViewY = stateH + naviH;
+        bgViewH = defaultViewH - stateH - naviH;
     }
     [bgView setFrame:[MDTool setRectX:0 y:bgViewY w:bgViewW h:bgViewH]];
     [self.view addSubview:bgView];

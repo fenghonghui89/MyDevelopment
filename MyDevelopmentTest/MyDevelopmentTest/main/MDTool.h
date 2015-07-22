@@ -34,6 +34,8 @@
                          andFont:(float)fontSize
                         andWidth:(float)width andHeight:(float)height;
 
+
+#pragma mark - <坐标系> -
 /**
  *  屏幕宽度
  *
@@ -49,11 +51,32 @@
 +(CGFloat)screenHeight;
 
 /**
- *  自适应导航的高度
+ *  导航栏高度
  *
  *  @return 高度
  */
 +(CGFloat)navigationBarHeight;
+
+/**
+ *  状态栏高度
+ *
+ *  @return 高度
+ */
++(CGFloat)stateBarHeight;
+
+/**
+ *  默认根vc.view的宽度
+ *
+ *  @return 宽度
+ */
++(CGFloat)viewControllerViewWidth;
+
+/**
+ *  默认根vc.view的高度
+ *
+ *  @return 高度
+ */
++(CGFloat)viewControllerViewHeight;
 
 /**
  *  设置rect
