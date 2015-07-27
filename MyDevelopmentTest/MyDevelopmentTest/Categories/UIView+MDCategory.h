@@ -11,21 +11,24 @@
 @interface UIView (MDCategory)
 
 #pragma mark - < 快速坐标 > -
+#pragma mark x y w h size origin
 @property (nonatomic, getter = getX_, setter = setX_:) CGFloat x;
 @property (nonatomic, getter = getY_, setter = setY_:) CGFloat y;
 @property (nonatomic, getter = getWidth_, setter = setWidth_:) CGFloat width;
 @property (nonatomic, getter = getHeight_, setter = setHeight_:) CGFloat height;
 @property (nonatomic, getter = getSize_, setter = setSize_:)CGSize size;
 @property (nonatomic, getter = getOrigin_, setter = setOrigin_:)CGPoint origin;
+#pragma mark top left right bottom center
 @property (nonatomic, setter = setTop_:, getter = getTop_) CGFloat top;
 @property (nonatomic, setter = setLeft_:, getter = getLeft_) CGFloat left;
 @property (nonatomic, setter = setBotm_:, getter = getBotm_) CGFloat botm;
 @property (nonatomic, setter = setRight_:, getter = getRight_) CGFloat right;
 @property (nonatomic, getter = getCenterX_, setter = setCenterX_:) CGFloat centerX;
 @property (nonatomic, getter = getCenterY_, setter = setCenterY_:) CGFloat centerY;
+#pragma mark frame xy wh ApplyAffineTransform
 @property (nonatomic, readonly, getter = getFrameApplyAffineTransform_) CGRect frameApplyAffineTransform;
 @property (nonatomic, readonly, getter = getBoundsApplyAffineTransform_) CGRect boundsApplyAffineTransform;
-- (void)setFrame:(CGFloat)x y:(CGFloat)y w:(CGFloat)w h:(CGFloat)h;
+- (void)setFrameX:(CGFloat)x y:(CGFloat)y w:(CGFloat)w h:(CGFloat)h;
 - (void)setXY:(CGFloat)x Y:(CGFloat)y;
 - (void)setSizew:(CGFloat)w h:(CGFloat)h;
 

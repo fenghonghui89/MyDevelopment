@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     
-    [self test0];
+    [self test2];
 }
 
 -(void)test0
@@ -47,31 +47,39 @@
     [btn setTitle:@"改变" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn setBackgroundColor:[UIColor greenColor]];
-    [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
+    btn.showsTouchWhenHighlighted = YES;//点击时高亮
+//    [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 }
 
 -(void)test2
 {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 200, 100)];
+    UIButton *btn = [[UIButton alloc] init];
     [self.view addSubview:btn];
     
-    //设置图片
-    //    [btn setImage:[UIImage imageNamed:@"button.png"] forState:UIControlStateNormal];//跟文字冲突
-    [btn setImageEdgeInsets:UIEdgeInsetsMake(50, 0, 0, 0)];
-    [btn setBackgroundColor:[UIColor clearColor]];
-    [btn setBackgroundImage:[UIImage imageNamed:@"button.png"] forState:UIControlStateNormal];
-    btn.showsTouchWhenHighlighted = YES;//点击时高亮
+    //设置文字左边的图标
+    [btn setImage:[UIImage imageNamed:@"Brazil"] forState:UIControlStateNormal];
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
     
-    [btn setTintColor:[UIColor redColor]];
+    //设置文字
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [btn setTitle:@"哈哈" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn setTitle:@"嘻嘻" forState:UIControlStateHighlighted];
+    [btn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
     
+    //文字边距
+//    btn.titleEdgeInsets = UIEdgeInsetsMake(50, 0, 0, 0);//文字距离四边的距离：上左下右
+//    btn.titleEdgeInsets = UIEdgeInsetsMake(25, 0, -25, 0);//与上面一样
+//    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//文字水平排列：居中、左右、充满
     
+    //设置背景
+    [btn setBackgroundColor:[MDTool TColor:@"0x1177ff"]];
+//    [btn setBackgroundImage:[UIImage imageNamed:@"button.png"] forState:UIControlStateNormal];
     
-    btn.titleEdgeInsets = UIEdgeInsetsMake(50, 0, 0, 0);//文字距离四边的距离：上左下右
-    btn.titleEdgeInsets = UIEdgeInsetsMake(25, 0, -25, 0);//与上面一样
-    //    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//文字水平排列：居中、左右、充满
+    //设置坐标
+    [btn sizeToFit];//如果有背景图，会受背景图大小影响
+    [btn setOrigin_:CGPointMake((viewW-btn.width)*0.5, (viewH-btn.height)*0.5)];
 }
 
 -(void)test3
@@ -92,7 +100,8 @@
 {
     //阴影
     UIButton *signBtn = [[UIButton alloc] init];
-    signBtn.frame = CGRectMake(0, 0, 80, 40);
+    signBtn.size = CGSizeMake(80, 40);
+    signBtn.origin = CGPointMake((viewW-signBtn.width)*0.5, (viewH-signBtn.height)*0.5);
     [signBtn.layer setShadowColor:[UIColor redColor].CGColor];
     [signBtn.layer setShadowOffset:CGSizeMake(5, 5)];
     [signBtn.layer setShadowOpacity:1];

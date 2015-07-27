@@ -89,4 +89,24 @@
  *  @return rect
  */
 +(CGRect)setRectX:(CGFloat)x y:(CGFloat)y w:(CGFloat)w h:(CGFloat)h;
+
+/**
+ *  获取到颜色UICOLOR
+ *
+ *  @param hexColor “987567”
+ *
+ *  @return UIColor*
+ */
++ (UIColor *)TColor:(NSString *)hexColor;
+
+
+/**
+ *  获取到颜色UICOLOR
+ *
+ *  @param hexColor “987567”
+ *  @param alpha    0 ~ 1
+ *
+ *  @return UIColor
+ */
++ (UIColor *)TColor:(NSString *)hexColor colorAlpha:(CGFloat)alpha;
 @end

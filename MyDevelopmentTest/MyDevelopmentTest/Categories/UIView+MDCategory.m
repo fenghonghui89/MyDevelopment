@@ -11,6 +11,8 @@
 @implementation UIView(MDCategory)
 
 #pragma mark - < 设置坐标 > -
+
+#pragma mark x y w h size origin
 - (void)setX_:(CGFloat)x
 {
     CGRect rect = self.frame;
@@ -83,6 +85,7 @@
     return self.frame.origin;
 }
 
+#pragma mark top left right bottom center
 - (void)setTop_:(CGFloat)top
 {
     self.y = top;
@@ -93,16 +96,6 @@
     return self.y;
 }
 
-- (void)setLeft_:(CGFloat)left
-{
-    self.x = left;
-}
-
-- (CGFloat)getLeft_
-{
-    return self.x;
-}
-
 - (void)setBotm_:(CGFloat)botm
 {
     self.y += botm - self.botm;
@@ -111,6 +104,16 @@
 - (CGFloat)getBotm_
 {
     return self.y + self.height;
+}
+
+- (void)setLeft_:(CGFloat)left
+{
+    self.x = left;
+}
+
+- (CGFloat)getLeft_
+{
+    return self.x;
 }
 
 - (void)setRight_:(CGFloat)right
@@ -143,7 +146,8 @@
     return self.center.y;
 }
 
-- (void)setFrame:(CGFloat)x y:(CGFloat)y w:(CGFloat)w h:(CGFloat)h
+#pragma mark frame xy wh ApplyAffineTransform
+- (void)setFrameX:(CGFloat)x y:(CGFloat)y w:(CGFloat)w h:(CGFloat)h
 {
     [self setFrame:CGRectMake(x, y, w, h)];
 }
