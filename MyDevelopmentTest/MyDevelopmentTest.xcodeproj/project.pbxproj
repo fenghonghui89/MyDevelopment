@@ -22,6 +22,7 @@
 		141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B43621AA4708C008F2711 /* MDNavi1ViewController.m */; };
 		141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B43671AA4734B008F2711 /* MDModalViewController.m */; };
 		141B436C1AA47394008F2711 /* MDModal1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B436B1AA47394008F2711 /* MDModal1ViewController.m */; };
+		1463A9C71B6612160087F38F /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463A9C61B6612160087F38F /* UIView+MDCategory.m */; };
 		1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */; };
 		1463B2121AA162C2006AE8D2 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2091AA162C2006AE8D2 /* button.png */; };
 		1463B2141AA162C2006AE8D2 /* MDUIButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B20B1AA162C2006AE8D2 /* MDUIButtonViewController.m */; };
@@ -174,6 +175,8 @@
 		141B43671AA4734B008F2711 /* MDModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModalViewController.m; sourceTree = "<group>"; };
 		141B436A1AA47394008F2711 /* MDModal1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDModal1ViewController.h; sourceTree = "<group>"; };
 		141B436B1AA47394008F2711 /* MDModal1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModal1ViewController.m; sourceTree = "<group>"; };
+		1463A9C51B6612160087F38F /* UIView+MDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDCategory.h"; sourceTree = "<group>"; };
+		1463A9C61B6612160087F38F /* UIView+MDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDCategory.m"; sourceTree = "<group>"; };
 		1463B2051AA162C2006AE8D2 /* MDCountStringRectangleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCountStringRectangleViewController.h; sourceTree = "<group>"; };
 		1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCountStringRectangleViewController.m; sourceTree = "<group>"; };
 		1463B2091AA162C2006AE8D2 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
@@ -706,6 +709,8 @@
 			children = (
 				146D82AD1AA7036700F0C7FD /* NSString+URLEncoding.h */,
 				146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */,
+				1463A9C51B6612160087F38F /* UIView+MDCategory.h */,
+				1463A9C61B6612160087F38F /* UIView+MDCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1246,6 +1251,7 @@
 				141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */,
 				148CD73B1AAECA3200FAED9D /* TRStudent4.m in Sources */,
 				148CD7641AAED72A00FAED9D /* MDNSSetNormalViewController.m in Sources */,
+				1463A9C71B6612160087F38F /* UIView+MDCategory.m in Sources */,
 				148CD7311AAEC67A00FAED9D /* MDNSDateViewController.m in Sources */,
 				146D82821AA6DDBE00F0C7FD /* MDTBVC2ViewController.m in Sources */,
 			);
