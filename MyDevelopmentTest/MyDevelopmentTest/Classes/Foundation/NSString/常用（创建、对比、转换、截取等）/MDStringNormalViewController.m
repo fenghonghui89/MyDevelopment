@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     
-    [self string1];
+    [self string4];
 }
 
 #pragma mark 字符串的创建
