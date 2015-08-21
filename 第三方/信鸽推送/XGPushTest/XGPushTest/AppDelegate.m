@@ -25,8 +25,7 @@
     
     //TODO:注销之后需要再次注册前的准备
     void (^successCallback)(void) = ^(void){
-        if(![XGPush isUnRegisterStatus])
-        {
+        if(![XGPush isUnRegisterStatus]){
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
             float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
             if(sysVer < 8){
