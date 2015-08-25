@@ -38,7 +38,7 @@
 		1463B27F1AA1BD4D006AE8D2 /* provinces_cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1463B27E1AA1BD4D006AE8D2 /* provinces_cities.plist */; };
 		1463B2841AA1BD87006AE8D2 /* MDPickerViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2821AA1BD87006AE8D2 /* MDPickerViewViewController.m */; };
 		1463B2861AA1BD87006AE8D2 /* MDPickerViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2831AA1BD87006AE8D2 /* MDPickerViewViewController.xib */; };
-		1463B28B1AA1C00F006AE8D2 /* big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2891AA1C00F006AE8D2 /* big.jpg */; };
+		1463B28B1AA1C00F006AE8D2 /* big1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2891AA1C00F006AE8D2 /* big1.jpg */; };
 		1463B28D1AA1C00F006AE8D2 /* small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1463B28A1AA1C00F006AE8D2 /* small.jpg */; };
 		1463B2911AA1C0AF006AE8D2 /* MDUIImageViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2901AA1C0AF006AE8D2 /* MDUIImageViewViewController.m */; };
 		1463B29E1AA1CAE4006AE8D2 /* small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2951AA1CAE4006AE8D2 /* small.jpg */; };
@@ -135,6 +135,7 @@
 		149A1E621B26E5CB00986FA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5D1B26E5CB00986FA6 /* Info.plist */; };
 		149A1E631B26E5CB00986FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A1E5E1B26E5CB00986FA6 /* main.m */; };
 		149A1E991B26EC2300986FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E971B26EC2300986FA6 /* Main.storyboard */; };
+		149CE9291B8B5508008E7309 /* UIImage+UIImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 149CE9281B8B5508008E7309 /* UIImage+UIImageScale.m */; };
 		14C1E6B11B53CD4800C7E5DF /* Default-375w-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AC1B53CD4800C7E5DF /* Default-375w-667h@2x.png */; };
 		14C1E6B21B53CD4800C7E5DF /* Default-414w-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AD1B53CD4800C7E5DF /* Default-414w-736h@3x.png */; };
 		14C1E6B31B53CD4800C7E5DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */; };
@@ -200,7 +201,7 @@
 		1463B2811AA1BD87006AE8D2 /* MDPickerViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPickerViewViewController.h; sourceTree = "<group>"; };
 		1463B2821AA1BD87006AE8D2 /* MDPickerViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPickerViewViewController.m; sourceTree = "<group>"; };
 		1463B2831AA1BD87006AE8D2 /* MDPickerViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDPickerViewViewController.xib; sourceTree = "<group>"; };
-		1463B2891AA1C00F006AE8D2 /* big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = big.jpg; sourceTree = "<group>"; };
+		1463B2891AA1C00F006AE8D2 /* big1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = big1.jpg; sourceTree = "<group>"; };
 		1463B28A1AA1C00F006AE8D2 /* small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = small.jpg; sourceTree = "<group>"; };
 		1463B28F1AA1C0AF006AE8D2 /* MDUIImageViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUIImageViewViewController.h; sourceTree = "<group>"; };
 		1463B2901AA1C0AF006AE8D2 /* MDUIImageViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUIImageViewViewController.m; sourceTree = "<group>"; };
@@ -344,6 +345,8 @@
 		149A1E5D1B26E5CB00986FA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149A1E5E1B26E5CB00986FA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		149A1E981B26EC2300986FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		149CE9271B8B5508008E7309 /* UIImage+UIImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageScale.h"; sourceTree = "<group>"; };
+		149CE9281B8B5508008E7309 /* UIImage+UIImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageScale.m"; sourceTree = "<group>"; };
 		14C1E6AC1B53CD4800C7E5DF /* Default-375w-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-375w-667h@2x.png"; sourceTree = "<group>"; };
 		14C1E6AD1B53CD4800C7E5DF /* Default-414w-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-414w-736h@3x.png"; sourceTree = "<group>"; };
 		14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -571,10 +574,12 @@
 		1463B2881AA1C00F006AE8D2 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
-				1463B2891AA1C00F006AE8D2 /* big.jpg */,
+				1463B2891AA1C00F006AE8D2 /* big1.jpg */,
 				1463B28A1AA1C00F006AE8D2 /* small.jpg */,
 				1463B28F1AA1C0AF006AE8D2 /* MDUIImageViewViewController.h */,
 				1463B2901AA1C0AF006AE8D2 /* MDUIImageViewViewController.m */,
+				149CE9271B8B5508008E7309 /* UIImage+UIImageScale.h */,
+				149CE9281B8B5508008E7309 /* UIImage+UIImageScale.m */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
@@ -1156,7 +1161,7 @@
 				146D82F71AA709F600F0C7FD /* Ghana.png in Resources */,
 				146D830B1AA709F600F0C7FD /* Paraguay.png in Resources */,
 				1463B2741AA1B593006AE8D2 /* SecondViewController.xib in Resources */,
-				1463B28B1AA1C00F006AE8D2 /* big.jpg in Resources */,
+				1463B28B1AA1C00F006AE8D2 /* big1.jpg in Resources */,
 				146D82E71AA709F600F0C7FD /* Brazil.png in Resources */,
 				14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */,
 				14C1E6B11B53CD4800C7E5DF /* Default-375w-667h@2x.png in Resources */,
@@ -1205,6 +1210,7 @@
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
+				149CE9291B8B5508008E7309 /* UIImage+UIImageScale.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
