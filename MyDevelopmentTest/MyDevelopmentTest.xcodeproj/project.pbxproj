@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403E3271B8C68ED009C8CAC /* myUILabel.m */; };
 		141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43211AA3FC12008F2711 /* Shapes.jpg */; };
 		141B43271AA3FC12008F2711 /* Sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43221AA3FC12008F2711 /* Sky.jpg */; };
 		141B43291AA3FC12008F2711 /* Snow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43231AA3FC12008F2711 /* Snow.jpg */; };
@@ -153,6 +154,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1403E3261B8C68ED009C8CAC /* myUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myUILabel.h; sourceTree = "<group>"; };
+		1403E3271B8C68ED009C8CAC /* myUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myUILabel.m; sourceTree = "<group>"; };
 		141B43211AA3FC12008F2711 /* Shapes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shapes.jpg; sourceTree = "<group>"; };
 		141B43221AA3FC12008F2711 /* Sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sky.jpg; sourceTree = "<group>"; };
 		141B43231AA3FC12008F2711 /* Snow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Snow.jpg; sourceTree = "<group>"; };
@@ -381,6 +384,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1403E3251B8C68EC009C8CAC /* UICustom */ = {
+			isa = PBXGroup;
+			children = (
+				1403E3261B8C68ED009C8CAC /* myUILabel.h */,
+				1403E3271B8C68ED009C8CAC /* myUILabel.m */,
+			);
+			path = UICustom;
+			sourceTree = "<group>";
+		};
 		141B43201AA3FC12008F2711 /* UIPageControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +829,7 @@
 			isa = PBXGroup;
 			children = (
 				14DB40F01AEA752D00DA1682 /* main */,
+				1403E3251B8C68EC009C8CAC /* UICustom */,
 				146D82AC1AA7036700F0C7FD /* Categories */,
 				1463B2011AA162C2006AE8D2 /* Classes */,
 				14E3C34B1AA0661B00EADB06 /* Frameworks */,
@@ -1195,6 +1208,7 @@
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
+				1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */,
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "MDCountStringRectangleViewController.h"
+#import "myUILabel.h"
 
 @interface MDCountStringRectangleViewController ()
 
@@ -18,10 +19,10 @@
 {
     [super viewDidLoad];
 
-    [self customInitUI];
+    [self stringtest2];
 }
 
--(void)customInitUI
+-(void)stringtest1
 {
     NSString *txt= @"dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffaa";
     
@@ -56,20 +57,78 @@
     NSLog(@"%@",NSStringFromCGRect(testLabel3.frame));
     [self.view addSubview:testLabel3];
     
-    //IOS7 - 改变label字体为Helvetica，大小为12号字
-    //    UILabel *testLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(10, 300, 200, 21)];
-    //    [testLabel3 setBackgroundColor:[UIColor greenColor]];
-    //    testLabel3.numberOfLines = 8;
-    //    testLabel3.text = txt;
-    //
-    //    //字体名称：点击NSFontAttributeName，旁边绿色的注释有写  字体大小
-    //    [testLabel3 setFont:[UIFont fontWithName:@"Helvetica" size:12.0]];
-    //
-    //    CGSize labelSize3 = [self getStringRect:txt];
-    //    testLabel3.frame = CGRectMake(testLabel3.frame.origin.x, testLabel3.frame.origin.y, labelSize3.width, labelSize3.height);
-    //    NSLog(@"%@",NSStringFromCGRect(testLabel3.frame));
-    //    [self.view addSubview:testLabel3];
 }
+
+
+-(void)stringtest2
+{
+    NSString *str1 = @"测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n结束";
+//    NSString *str1 = @"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试结束";
+    
+
+    UIFont *fontBold = [UIFont fontWithName:@"Helvetica Bold Oblique" size:14];
+    UIFont *fontNormal = [UIFont systemFontOfSize:14];
+    NSDictionary *dic = @{NSFontAttributeName:fontBold};
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.lineSpacing = 10;
+    NSDictionary *dic1 = @{NSParagraphStyleAttributeName:style};
+    
+//    NSDictionary *dicsum1 = [NSDictionary dictionaryWithObjects:@[fontBold,style] forKeys:@[NSFontAttributeName,NSParagraphStyleAttributeName]];
+    NSDictionary *dicsum2 = [NSDictionary dictionaryWithObjectsAndKeys:fontBold,NSFontAttributeName,style,NSParagraphStyleAttributeName, nil];
+    
+    
+    CGSize sizeedit = CGSizeMake(300, MAXFLOAT);
+//    CGSize size = [self getStringSizeWithString:str1 andFont:14 andWidth:300 andHeight:0];
+    CGRect rect = [str1 boundingRectWithSize:sizeedit options:NSStringDrawingUsesLineFragmentOrigin attributes:dicsum2 context:nil];
+
+    
+    
+    NSMutableAttributedString *astr = [[NSMutableAttributedString alloc] initWithString:str1];
+    [astr addAttributes:dicsum2 range:NSMakeRange(0, str1.length)];
+    
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, rect.size.width,rect.size.height)];
+    [label setBackgroundColor:[UIColor greenColor]];
+    [label setFont:fontBold];
+//    [label setVerticalAlignment:VerticalAlignmentTop];
+    [label setNumberOfLines:0];
+//    [label setText:str1];
+    [label setAttributedText:astr];
+    [self.view addSubview:label];
+    
+}
+
+#pragma mark - < 工具 > -
+-(CGSize)getStringSizeWithString:(NSString *)content andFont:(float)fontSize andWidth:(float)width andHeight:(float)height
+{
+    float twidth = (width == 0?MAXFLOAT:width);
+    float theight = (height == 0?MAXFLOAT:height);
+    UIFont *font = [UIFont systemFontOfSize:fontSize];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+        //获取字符串的大小  ios6
+        CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(twidth, theight) lineBreakMode:NSLineBreakByCharWrapping];
+        return size;
+        
+    }else{
+        
+        //获取字符串的大小  ios7s
+        NSDictionary *attribute_dic = @{NSFontAttributeName: font};
+        
+        //Helvetica字体默认大小：12号字（点击NSFontAttributeName，旁边绿色的注释有写）
+        //    NSAttributedString* atrString = [[NSAttributedString alloc] initWithString:aString];
+        //    NSRange range = NSMakeRange(0, atrString.length);
+        //    NSDictionary *dic = [atrString attributesAtIndex:0 effectiveRange:&range];
+        
+        CGRect rect = [content boundingRectWithSize:CGSizeMake(twidth, theight)  options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute_dic context:nil];
+        
+        return  rect.size;
+    }
+    
+    return CGSizeZero;
+}
+
 
 //获取字符串的大小  ios6
 - (CGSize)getStringRect_IOS6:(NSString *)aString andFont:(UIFont *)aFont

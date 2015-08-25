@@ -44,7 +44,9 @@
     [self.view addSubview:iv];
     
     UIImage *i = [UIImage imageNamed:@"big1.jpg"];
-   UIImage *ii =  [MDTool scaleImage:i toSize:CGSizeMake(200, 300)];
-    iv.image = ii;
+//   UIImage *ii =  [MDTool scaleImage:i toSize:CGSizeMake(200, 300)];
+    iv.image = i;
+    [iv setContentMode:UIViewContentModeScaleAspectFill];
+    [iv setClipsToBounds:YES];
 }
 @end
