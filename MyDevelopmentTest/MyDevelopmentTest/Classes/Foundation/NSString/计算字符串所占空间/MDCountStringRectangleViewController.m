@@ -59,44 +59,33 @@
     
 }
 
-
+//计算字符串所占空间
 -(void)stringtest2
 {
-    NSString *str1 = @"测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n结束";
-//    NSString *str1 = @"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试结束";
     
+    UILabel *label = [UILabel new];
+    [label setBackgroundColor:[UIColor greenColor]];
+    [label setFont:[UIFont systemFontOfSize:15]];
+//    [label setVerticalAlignment:VerticalAlignmentTop];
+    [label setNumberOfLines:0];
+    [self.view addSubview:label];
+    
+    NSString *str1 = @"测试测试测试测试测试测试测              试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试             测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n结束";
 
-    UIFont *fontBold = [UIFont fontWithName:@"Helvetica Bold Oblique" size:14];
-    UIFont *fontNormal = [UIFont systemFontOfSize:14];
-    NSDictionary *dic = @{NSFontAttributeName:fontBold};
-    
+//    UIFont *fontBold = [UIFont fontWithName:@"Helvetica" size:14];
+    UIFont *fontNormal = [UIFont systemFontOfSize:15];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    style.lineSpacing = 10;
-    NSDictionary *dic1 = @{NSParagraphStyleAttributeName:style};
+    style.lineSpacing = 2;
+    NSDictionary *dicsum2 = [NSDictionary dictionaryWithObjectsAndKeys:fontNormal,NSFontAttributeName,style,NSParagraphStyleAttributeName, nil];
     
-//    NSDictionary *dicsum1 = [NSDictionary dictionaryWithObjects:@[fontBold,style] forKeys:@[NSFontAttributeName,NSParagraphStyleAttributeName]];
-    NSDictionary *dicsum2 = [NSDictionary dictionaryWithObjectsAndKeys:fontBold,NSFontAttributeName,style,NSParagraphStyleAttributeName, nil];
-    
-    
-    CGSize sizeedit = CGSizeMake(300, MAXFLOAT);
-//    CGSize size = [self getStringSizeWithString:str1 andFont:14 andWidth:300 andHeight:0];
-    CGRect rect = [str1 boundingRectWithSize:sizeedit options:NSStringDrawingUsesLineFragmentOrigin attributes:dicsum2 context:nil];
+    CGRect rect = [str1 boundingRectWithSize:CGSizeMake(300, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dicsum2 context:nil];
 
-    
-    
     NSMutableAttributedString *astr = [[NSMutableAttributedString alloc] initWithString:str1];
     [astr addAttributes:dicsum2 range:NSMakeRange(0, str1.length)];
     
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, rect.size.width,rect.size.height)];
-    [label setBackgroundColor:[UIColor greenColor]];
-    [label setFont:fontBold];
-//    [label setVerticalAlignment:VerticalAlignmentTop];
-    [label setNumberOfLines:0];
-//    [label setText:str1];
+
     [label setAttributedText:astr];
-    [self.view addSubview:label];
-    
+    [label setFrameX:10 y:50 w:rect.size.width h:rect.size.height];
 }
 
 #pragma mark - < 工具 > -
