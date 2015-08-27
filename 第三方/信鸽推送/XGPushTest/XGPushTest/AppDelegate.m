@@ -104,6 +104,12 @@
 
 
 #pragma mark - 1.注册苹果推送服务
+
+- (void)registerPush
+{
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+}
+
 - (void)registerPushForIOS8
 {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
@@ -114,14 +120,14 @@
     //Categories(Actions)
     UIMutableUserNotificationAction *acceptAction1 = [[UIMutableUserNotificationAction alloc] init];
     acceptAction1.identifier = @"ACCEPT_IDENTIFIER1";
-    acceptAction1.title = @"Accept";
+    acceptAction1.title = @"Accept1";
     acceptAction1.activationMode = UIUserNotificationActivationModeForeground;
     acceptAction1.destructive = NO;
     acceptAction1.authenticationRequired = NO;
     
     UIMutableUserNotificationAction *acceptAction2 = [[UIMutableUserNotificationAction alloc] init];
     acceptAction2.identifier = @"ACCEPT_IDENTIFIER2";
-    acceptAction2.title = @"Accept";
+    acceptAction2.title = @"Accept2";
     acceptAction2.activationMode = UIUserNotificationActivationModeForeground;
     acceptAction2.destructive = NO;
     acceptAction2.authenticationRequired = NO;
@@ -141,23 +147,16 @@
 #endif
 }
 
-- (void)registerPush
-{
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-}
+
 
 #pragma mark - 2.注册设备信息
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    void (^successBlock)(void) = ^(void){
+    NSString * deviceTokenStr = [XGPush registerDevice:deviceToken successCallback:^{
         NSLog(@"~~~[XGPush]register successBlock");
-    };
-    
-    void (^errorBlock)(void) = ^(void){
+    } errorCallback:^{
         NSLog(@"~~~[XGPush]register errorBlock");
-    };
-    
-    NSString * deviceTokenStr = [XGPush registerDevice:deviceToken successCallback:successBlock errorCallback:errorBlock];
+    }];
     
     NSLog(@"~~~deviceTokenStr is %@",deviceTokenStr);
 }
@@ -169,56 +168,32 @@
 }
 
 #pragma mark - 3.收到远程推送
-//-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-//{
-//    NSLog(@"~~~didReceiveRemote");
-//    if (application.applicationState == UIApplicationStateActive) {
-//        NSLog(@"~~~active");
-//    }else if(application.applicationState == UIApplicationStateInactive){
-//        NSLog(@"~~~inactive");
-//    }else if(application.applicationState == UIApplicationStateBackground){
-//        NSLog(@"~~~Background");
-//    }
-//    
-//    void (^successBlock)(void) = ^(void){
-//        NSLog(@"~~~[XGPush]ReceiveRemoteNotification successBlock");
-//    };
-//    
-//    void (^errorBlock)(void) = ^(void){
-//        NSLog(@"~~~[XGPush]ReceiveRemoteNotification errorBlock");
-//    };
-//    
-//    void (^completionBlock)(void) = ^(void){
-//        NSLog(@"~~~[XGPush]ReceiveRemoteNotification completionBlock");
-//    };
-//    NSDictionary *dic = userInfo;
-//    [XGPush handleReceiveNotification:dic successCallback:successBlock errorCallback:errorBlock completion:completionBlock];
-//}
-
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
     NSLog(@"~~~didReceiveRemote--fetch");
-    if (application.applicationState == UIApplicationStateActive) {
-        NSLog(@"~~~active");
-    }else if(application.applicationState == UIApplicationStateInactive){
-        NSLog(@"~~~inactive");
-    }else if(application.applicationState == UIApplicationStateBackground){
-        NSLog(@"~~~Background");
+    
+    switch (application.applicationState) {
+        case UIApplicationStateActive:
+            NSLog(@"~~~active");
+            break;
+        case UIApplicationStateInactive:
+            NSLog(@"~~~inactive");
+            break;
+        case UIApplicationStateBackground:
+            NSLog(@"~~~Background");
+            break;
+        default:
+            break;
     }
     
-    void (^successBlock)(void) = ^(void){
-        NSLog(@"~~~[XGPush]ReceiveRemoteNotification successBlock");
-    };
-    
-    void (^errorBlock)(void) = ^(void){
-        NSLog(@"~~~[XGPush]ReceiveRemoteNotification errorBlock");
-    };
-    
-    void (^completionBlock)(void) = ^(void){
-        NSLog(@"~~~[XGPush]ReceiveRemoteNotification completionBlock");
-    };
     NSDictionary *dic = userInfo;
-    [XGPush handleReceiveNotification:dic successCallback:successBlock errorCallback:errorBlock completion:completionBlock];
+    [XGPush handleReceiveNotification:dic successCallback:^{
+        NSLog(@"~~~[XGPush]ReceiveRemoteNotification successBlock");
+    } errorCallback:^{
+        NSLog(@"~~~[XGPush]ReceiveRemoteNotification errorBlock");
+    } completion:^{
+        NSLog(@"~~~[XGPush]ReceiveRemoteNotification completionBlock");
+    }];
     
     if(completionHandler){
         completionHandler(UIBackgroundFetchResultNewData);
@@ -229,12 +204,13 @@
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     NSLog(@"~~~didReceiveLocalNotification");
+    
     //默认App在前台运行时不会进行弹窗，通过此接口可实现指定的推送弹窗
     [XGPush localNotificationAtFrontEnd:notification userInfoKey:@"clockID" userInfoValue:@"myid"];
     
     //删除推送列表中的这一条
-    [XGPush delLocalNotification:notification];
-    //[XGPush delLocalNotification:@"clockID" userInfoValue:@"myid"];
+    [XGPush delLocalNotification:@"clockID" userInfoValue:@"myid"];
+//    [XGPush delLocalNotification:notification];
     
     //清空推送列表
     //[XGPush clearLocalNotifications];
