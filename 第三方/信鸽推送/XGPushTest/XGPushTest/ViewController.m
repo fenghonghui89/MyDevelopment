@@ -26,7 +26,7 @@
 {
     NSDate *fireDate = [[NSDate new] dateByAddingTimeInterval:3];
     NSMutableDictionary *dicUserInfo = [[NSMutableDictionary alloc] init];
-    [dicUserInfo setValue:@"myid" forKey:@"clockID"];
+    [dicUserInfo setValue:@"123" forKey:@"myId"];
     [XGPush localNotification:fireDate alertBody:@"测试本地推送" badge:1 alertAction:@"确定" userInfo:dicUserInfo];
 }
 

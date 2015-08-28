@@ -17,7 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[MDXGPushManager share] startXGPush];
-    [[MDXGPushManager share]application:application didFinishLaunchingWithOptions:launchOptions];
+    [[MDXGPushManager share] application:application didFinishLaunchingWithOptions:launchOptions];
     
     return YES;
 }
@@ -47,139 +47,43 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-
-#pragma mark - 1.注册苹果推送服务
-
-- (void)registerPush
-{
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-}
-
-- (void)registerPushForIOS8
-{
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
-    
-    //Types
-    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-    
-    //Categories(Actions)
-    UIMutableUserNotificationAction *acceptAction1 = [[UIMutableUserNotificationAction alloc] init];
-    acceptAction1.identifier = @"ACCEPT_IDENTIFIER1";
-    acceptAction1.title = @"Accept1";
-    acceptAction1.activationMode = UIUserNotificationActivationModeForeground;
-    acceptAction1.destructive = NO;
-    acceptAction1.authenticationRequired = NO;
-    
-    UIMutableUserNotificationAction *acceptAction2 = [[UIMutableUserNotificationAction alloc] init];
-    acceptAction2.identifier = @"ACCEPT_IDENTIFIER2";
-    acceptAction2.title = @"Accept2";
-    acceptAction2.activationMode = UIUserNotificationActivationModeForeground;
-    acceptAction2.destructive = NO;
-    acceptAction2.authenticationRequired = NO;
-
-    UIMutableUserNotificationCategory *inviteCategory = [[UIMutableUserNotificationCategory alloc] init];
-    inviteCategory.identifier = @"INVITE_CATEGORY";
-    [inviteCategory setActions:@[acceptAction1,acceptAction2] forContext:UIUserNotificationActionContextDefault];
-    [inviteCategory setActions:@[acceptAction1,acceptAction2] forContext:UIUserNotificationActionContextMinimal];
-    NSSet *categories = [NSSet setWithObjects:inviteCategory, nil];
-    
-    //UserNotificationSettings(Types+Categories(Actions))
-    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
-    
-    //注册
-    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-#endif
-}
-
-
-
 #pragma mark - 2.注册设备信息
+
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [[MDXGPushManager share] application:application didRegisterUserNotificationSettings:notificationSettings];
+}
+
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    NSString * deviceTokenStr = [XGPush registerDevice:deviceToken successCallback:^{
-        NSLog(@"~~~[XGPush]register successBlock");
-    } errorCallback:^{
-        NSLog(@"~~~[XGPush]register errorBlock");
-    }];
-    
-    NSLog(@"~~~deviceTokenStr is %@",deviceTokenStr);
+    [[MDXGPushManager share] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err
 {
-    NSString *str = [NSString stringWithFormat: @"Error: %@",err];
-    NSLog(@"~~~error:%@",str);
+    [[MDXGPushManager share] application:app didFailToRegisterForRemoteNotificationsWithError:err];
 }
 
 #pragma mark - 3.收到远程推送
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
 {
-    NSLog(@"~~~didReceiveRemote--fetch");
-    
-    switch (application.applicationState) {
-        case UIApplicationStateActive:
-            NSLog(@"~~~active");
-            break;
-        case UIApplicationStateInactive:
-            NSLog(@"~~~inactive");
-            break;
-        case UIApplicationStateBackground:
-            NSLog(@"~~~Background");
-            break;
-        default:
-            break;
-    }
-    
-    NSDictionary *dic = userInfo;
-    [XGPush handleReceiveNotification:dic successCallback:^{
-        NSLog(@"~~~[XGPush]ReceiveRemoteNotification successBlock");
-    } errorCallback:^{
-        NSLog(@"~~~[XGPush]ReceiveRemoteNotification errorBlock");
-    } completion:^{
-        NSLog(@"~~~[XGPush]ReceiveRemoteNotification completionBlock");
-    }];
-    
-    if(completionHandler){
-        completionHandler(UIBackgroundFetchResultNewData);
-    }
+    [[MDXGPushManager share] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
-#pragma mark - 弹出远程推送弹窗
+#pragma mark - 收到本地推送
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    NSLog(@"~~~didReceiveLocalNotification");
-    
-    //默认App在前台运行时不会进行弹窗，通过此接口可实现指定的推送弹窗
-    [XGPush localNotificationAtFrontEnd:notification userInfoKey:@"clockID" userInfoValue:@"myid"];
-    
-    //删除推送列表中的这一条
-    [XGPush delLocalNotification:@"clockID" userInfoValue:@"myid"];
-//    [XGPush delLocalNotification:notification];
-    
-    //清空推送列表
-    //[XGPush clearLocalNotifications];
+    [[MDXGPushManager share] application:application didReceiveLocalNotification:notification];
 }
 
 #pragma mark - 按钮点击事件回调
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
 {
-    if([identifier isEqualToString:@"ACCEPT_IDENTIFIER1"]){
-        NSLog(@"~~~ACCEPT_IDENTIFIER1 is clicked");
-    }
-    
-    if([identifier isEqualToString:@"ACCEPT_IDENTIFIER2"]){
-        NSLog(@"~~~ACCEPT_IDENTIFIER2 is clicked");
-    }
-    
-    if (completionHandler) {
-        completionHandler();
-    }
+    [[MDXGPushManager share] application:application handleActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
 }
 
 -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler
 {
-
+    [[MDXGPushManager share] application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
 }
 @end
