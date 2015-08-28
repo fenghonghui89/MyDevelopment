@@ -29,12 +29,11 @@
 //                                            kCFStringEncodingUTF8);
     
     //ARC下写法
-    NSString *result = (NSString *)
-    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                            (CFStringRef)self,
-                                            NULL,
-                                            CFSTR("!*'();:@&amp;=+$,/?%#[] "),
-                                            kCFStringEncodingUTF8));
+    NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                                             (CFStringRef)self,
+                                                                                             NULL,
+                                                                                             CFSTR("!*'();:@&amp;=+$,/?%#[] "),
+                                                                                             kCFStringEncodingUTF8));
     
     return result;
 }
@@ -47,11 +46,10 @@
 //                                                            CFSTR(""),
 //                                                            kCFStringEncodingUTF8);
     
-    NSString *result = (NSString *)
-    CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
-                                                            (CFStringRef)self,
-                                                            CFSTR(""),
-                                                            kCFStringEncodingUTF8));
+    NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
+                                                                                                             (CFStringRef)self,
+                                                                                                             CFSTR(""),
+                                                                                                             kCFStringEncodingUTF8));
     
     return result;
 }

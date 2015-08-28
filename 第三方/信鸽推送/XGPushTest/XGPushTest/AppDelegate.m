@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "XGPush.h"
-#import "XGSetting.h"
+#import "MDXGPushManager.h"
 @interface AppDelegate ()
 
 @end
@@ -17,61 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLog(@"~~~didFinishLaunching");
-    
-    //TODO:启动信鸽推送
-    [XGPush startApp:2200097828 appKey:@"I3B1ULI2S95H"];
-    
-    
-    //TODO:注销之后需要再次注册前的准备
-    void (^successCallback)(void) = ^(void){
-        if(![XGPush isUnRegisterStatus]){
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
-            float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
-            if(sysVer < 8){
-                [self registerPush];
-            }
-            else{
-                [self registerPushForIOS8];
-            }
-#else
-            [self registerPush];
-#endif
-        }
-    };
-    [XGPush initForReregister:successCallback];
-    
-    
-    //TODO:如果收到推送时程序还没有启动，则在这里处理推送消息
-    if(launchOptions){
-        NSLog(@"launchOptions:%@",launchOptions);
-        NSDictionary* launchOptionsDic = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
-        if (launchOptionsDic){
-            NSDictionary *apsInfo = [launchOptionsDic objectForKey:@"aps"];
-            if(apsInfo){
-                NSLog(@"~~处理推送");
-            }
-            
-        }
-    }
-    
-    
-    //TODO:推送反馈
-    void (^successBlock)(void) = ^(void){
-        NSLog(@"~~~[XGPush]handleLaunching's successBlock");
-    };
-    
-    void (^errorBlock)(void) = ^(void){
-        NSLog(@"~~~[XGPush]handleLaunching's errorBlock");
-    };
-    
-    //角标清0
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    
-    //清除所有通知(包含本地通知)
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    
-    [XGPush handleLaunching:launchOptions successCallback:successBlock errorCallback:errorBlock];
+    [[MDXGPushManager share] startXGPush];
+    [[MDXGPushManager share]application:application didFinishLaunchingWithOptions:launchOptions];
     
     return YES;
 }

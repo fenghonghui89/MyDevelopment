@@ -18,9 +18,10 @@
 {
     [super viewDidLoad];
     
-    [self ivtest2];
+    [self ivtest3];
 }
 
+//全屏缩放
 -(void)ivtest1
 {
     UIImage *image = [UIImage imageNamed:@"small.jpg"];
@@ -31,22 +32,32 @@
     imageView.frame = self.view.frame;
     
     //2.然后设置contentMode
-    //    imageView.contentMode = UIViewContentModeScaleToFill;//充满屏幕（系统默认）
-    //    imageView.contentMode = UIViewContentModeScaleAspectFill;//充满屏幕，切除超出屏幕部分
+//    imageView.contentMode = UIViewContentModeScaleToFill;//充满屏幕（系统默认）
+//    imageView.contentMode = UIViewContentModeScaleAspectFill;//保持宽高比，充满屏幕，切除超出屏幕部分
     imageView.contentMode = UIViewContentModeScaleAspectFit;//缩放居中，保留全图，保持宽高比
 }
 
+//等比例缩放
 -(void)ivtest2
 {
-    //等比例缩放
     UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 200, 300)];
     [iv setBackgroundColor:[UIColor orangeColor]];
     [self.view addSubview:iv];
     
     UIImage *i = [UIImage imageNamed:@"big1.jpg"];
-//   UIImage *ii =  [MDTool scaleImage:i toSize:CGSizeMake(200, 300)];
     iv.image = i;
     [iv setContentMode:UIViewContentModeScaleAspectFill];
     [iv setClipsToBounds:YES];
+}
+
+//九切片
+-(void)ivtest3
+{
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, screenW, 50)];
+    [self.view addSubview:iv];
+    
+    UIImage* image3 = [UIImage imageNamed:@"bg94w100h.png"];
+    UIImage* resizableImage3 = [image3 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 47, 0, 47) resizingMode:UIImageResizingModeStretch];
+    iv.image = resizableImage3;
 }
 @end

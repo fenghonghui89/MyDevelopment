@@ -110,5 +110,5 @@
  */
 + (UIColor *)TColor:(NSString *)hexColor colorAlpha:(CGFloat)alpha;
 
-+ (UIImage*)scaleImage:(UIImage*)img toSize:(CGSize)size;
+
 @end

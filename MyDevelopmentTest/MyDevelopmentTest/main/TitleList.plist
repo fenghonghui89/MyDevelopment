@@ -234,6 +234,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>NSAttributedString</string>
+				<key>className</key>
+				<string>MDNSAttributedStringViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>NSDictionary</string>
 				<key>className</key>
 				<string>MDDicNormalViewController</string>

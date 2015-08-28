@@ -102,6 +102,9 @@
 		146D831F1AA709F600F0C7FD /* USA.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D82DE1AA709F600F0C7FD /* USA.png */; };
 		146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D83221AA70A3500F0C7FD /* MDSearchBarViewController.m */; };
 		14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */; };
+		147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF391B8FFD380006A2C4 /* MDNSAttributedStringViewController.m */; };
+		147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 147FDF3B1B900E670006A2C4 /* bg94w100h@2x.png */; };
+		147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */; };
 		148CD69B1AAE972700FAED9D /* abc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 148CD69A1AAE972700FAED9D /* abc.txt */; };
 		148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */; };
 		148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD6A21AAE99C400FAED9D /* TRStudent.m */; };
@@ -136,7 +139,6 @@
 		149A1E621B26E5CB00986FA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5D1B26E5CB00986FA6 /* Info.plist */; };
 		149A1E631B26E5CB00986FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A1E5E1B26E5CB00986FA6 /* main.m */; };
 		149A1E991B26EC2300986FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E971B26EC2300986FA6 /* Main.storyboard */; };
-		149CE9291B8B5508008E7309 /* UIImage+UIImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 149CE9281B8B5508008E7309 /* UIImage+UIImageScale.m */; };
 		14C1E6B11B53CD4800C7E5DF /* Default-375w-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AC1B53CD4800C7E5DF /* Default-375w-667h@2x.png */; };
 		14C1E6B21B53CD4800C7E5DF /* Default-414w-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AD1B53CD4800C7E5DF /* Default-414w-736h@3x.png */; };
 		14C1E6B31B53CD4800C7E5DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */; };
@@ -284,6 +286,11 @@
 		14720F621B15708100773E5C /* MD_OC_UIView_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_UIView_ViewController.h; sourceTree = "<group>"; };
 		14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_UIView_ViewController.m; sourceTree = "<group>"; };
 		147DB17E1A8C7FA600F38EA4 /* MyDevelopmentTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		147FDF381B8FFD380006A2C4 /* MDNSAttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSAttributedStringViewController.h; sourceTree = "<group>"; };
+		147FDF391B8FFD380006A2C4 /* MDNSAttributedStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSAttributedStringViewController.m; sourceTree = "<group>"; };
+		147FDF3B1B900E670006A2C4 /* bg94w100h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg94w100h@2x.png"; sourceTree = "<group>"; };
+		147FDF3D1B9012690006A2C4 /* UIImage+UIImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageScale.h"; sourceTree = "<group>"; };
+		147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageScale.m"; sourceTree = "<group>"; };
 		148CD69A1AAE972700FAED9D /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 		148CD69D1AAE977700FAED9D /* MDStringNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStringNormalViewController.h; sourceTree = "<group>"; };
 		148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStringNormalViewController.m; sourceTree = "<group>"; };
@@ -348,8 +355,6 @@
 		149A1E5D1B26E5CB00986FA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149A1E5E1B26E5CB00986FA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		149A1E981B26EC2300986FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		149CE9271B8B5508008E7309 /* UIImage+UIImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageScale.h"; sourceTree = "<group>"; };
-		149CE9281B8B5508008E7309 /* UIImage+UIImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageScale.m"; sourceTree = "<group>"; };
 		14C1E6AC1B53CD4800C7E5DF /* Default-375w-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-375w-667h@2x.png"; sourceTree = "<group>"; };
 		14C1E6AD1B53CD4800C7E5DF /* Default-414w-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-414w-736h@3x.png"; sourceTree = "<group>"; };
 		14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -474,6 +479,7 @@
 				148CD6F31AAEC21600FAED9D /* NSObjcet */,
 				146D82B11AA7077E00F0C7FD /* NSPredicate */,
 				1463B2031AA162C2006AE8D2 /* NSString */,
+				147FDF371B8FFCCF0006A2C4 /* NSAttributedString */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -586,12 +592,11 @@
 		1463B2881AA1C00F006AE8D2 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
+				147FDF3B1B900E670006A2C4 /* bg94w100h@2x.png */,
 				1463B2891AA1C00F006AE8D2 /* big1.jpg */,
 				1463B28A1AA1C00F006AE8D2 /* small.jpg */,
 				1463B28F1AA1C0AF006AE8D2 /* MDUIImageViewViewController.h */,
 				1463B2901AA1C0AF006AE8D2 /* MDUIImageViewViewController.m */,
-				149CE9271B8B5508008E7309 /* UIImage+UIImageScale.h */,
-				149CE9281B8B5508008E7309 /* UIImage+UIImageScale.m */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
@@ -724,6 +729,8 @@
 		146D82AC1AA7036700F0C7FD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				147FDF3D1B9012690006A2C4 /* UIImage+UIImageScale.h */,
+				147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */,
 				146D82AD1AA7036700F0C7FD /* NSString+URLEncoding.h */,
 				146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */,
 				1463A9C51B6612160087F38F /* UIView+MDCategory.h */,
@@ -832,10 +839,26 @@
 				1403E3251B8C68EC009C8CAC /* UICustom */,
 				146D82AC1AA7036700F0C7FD /* Categories */,
 				1463B2011AA162C2006AE8D2 /* Classes */,
-				14E3C34B1AA0661B00EADB06 /* Frameworks */,
+				147FDF401B902FDF0006A2C4 /* Frameworks */,
 				149A1E591B26E5CB00986FA6 /* Supporting Files */,
 			);
 			path = MyDevelopmentTest;
+			sourceTree = "<group>";
+		};
+		147FDF371B8FFCCF0006A2C4 /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				147FDF381B8FFD380006A2C4 /* MDNSAttributedStringViewController.h */,
+				147FDF391B8FFD380006A2C4 /* MDNSAttributedStringViewController.m */,
+			);
+			path = NSAttributedString;
+			sourceTree = "<group>";
+		};
+		147FDF401B902FDF0006A2C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		148CD6991AAE972700FAED9D /* 常用（创建、对比、转换、截取等） */ = {
@@ -1056,13 +1079,6 @@
 			path = UIImagePickerController;
 			sourceTree = "<group>";
 		};
-		14E3C34B1AA0661B00EADB06 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1140,6 +1156,7 @@
 				146D83051AA709F600F0C7FD /* NewZealand.png in Resources */,
 				141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */,
 				146D82FD1AA709F600F0C7FD /* Honduras.png in Resources */,
+				147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */,
 				14C1E6B41B53CD4800C7E5DF /* Default.png in Resources */,
 				146D83011AA709F600F0C7FD /* Japan.png in Resources */,
 				1463B2A41AA1CAE4006AE8D2 /* small.jpg in Resources */,
@@ -1213,6 +1230,7 @@
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,
 				14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */,
+				147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */,
 				146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
 				1463B2761AA1B593006AE8D2 /* ThirdViewController.m in Sources */,
 				1463B2701AA1B593006AE8D2 /* MDMainViewController.m in Sources */,
@@ -1224,7 +1242,6 @@
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
-				149CE9291B8B5508008E7309 /* UIImage+UIImageScale.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
@@ -1250,6 +1267,7 @@
 				146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */,
 				1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */,
 				1463B26C1AA1B593006AE8D2 /* FirstViewController.m in Sources */,
+				147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */,
 				141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */,
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
