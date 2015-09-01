@@ -23,4 +23,5 @@
 {
     MDCustomView *view = [[MDCustomView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     [self.view addSubview:view];
-}@end
+}
+@end

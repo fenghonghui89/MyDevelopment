@@ -34,8 +34,8 @@
     CGRect rect = [str1 boundingRectWithSize:CGSizeMake(300, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dicsum2 context:nil];
     
     NSMutableAttributedString *astr = [[NSMutableAttributedString alloc] initWithString:str1];
-    [astr addAttributes:dicsum2 range:NSMakeRange(0, str1.length)];
-    
+    [astr addAttributes:dicsum2 range:NSMakeRange(0, str1.length)];//对全部文本设置
+//    [astr addAttribute:<#(NSString *)#> value:<#(id)#> range:<#(NSRange)#>];//对部分文本设置
     
     
     UILabel *label = [UILabel new];

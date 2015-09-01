@@ -7,7 +7,7 @@
 //
 
 #import "MDUIImageViewViewController.h"
-#import "UIImage+UIImageScale.h"
+#import "MD_UIIV_CustomView.h"
 @interface MDUIImageViewViewController ()
 
 @end
@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
     
-    [self ivtest3];
+    [self uiimagetest];
 }
 
 //全屏缩放
@@ -46,6 +46,7 @@
     
     UIImage *i = [UIImage imageNamed:@"big1.jpg"];
     iv.image = i;
+
     [iv setContentMode:UIViewContentModeScaleAspectFill];
     [iv setClipsToBounds:YES];
 }
@@ -59,5 +60,11 @@
     UIImage* image3 = [UIImage imageNamed:@"bg94w100h.png"];
     UIImage* resizableImage3 = [image3 resizableImageWithCapInsets:UIEdgeInsetsMake(0, 47, 0, 47) resizingMode:UIImageResizingModeStretch];
     iv.image = resizableImage3;
+}
+
+-(void)uiimagetest
+{
+    MD_UIIV_CustomView *cv = [[MD_UIIV_CustomView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:cv];
 }
 @end

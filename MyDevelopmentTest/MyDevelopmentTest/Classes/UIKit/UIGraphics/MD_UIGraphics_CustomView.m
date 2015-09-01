@@ -1,14 +1,15 @@
+
 //
-//  MDCustomView.m
+//  MD_UIGraphics_CustomView.m
 //  MyDevelopmentTest
 //
 //  Created by hanyfeng on 15/9/1.
 //  Copyright (c) 2015年 hanyfeng. All rights reserved.
 //
 
-#import "MDCustomView.h"
+#import "MD_UIGraphics_CustomView.h"
 
-@implementation MDCustomView
+@implementation MD_UIGraphics_CustomView
 -(void)drawRect:(CGRect)rect
 {
     [[UIColor redColor] setFill];//填充当前上下文颜色
