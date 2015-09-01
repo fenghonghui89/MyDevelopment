@@ -153,6 +153,13 @@
 		14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FE1AEA752D00DA1682 /* TitleList.plist */; };
 		14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FF1AEA752D00DA1682 /* 记录.rtf */; };
 		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
+		14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */; };
+		14F073911B95B9E80029A653 /* MDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073901B95B9E80029A653 /* MDCustomView.m */; };
+		14F073991B95BC660029A653 /* MD_UIBezierPath_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073981B95BC660029A653 /* MD_UIBezierPath_ViewController.m */; };
+		14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0739B1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m */; };
+		14F0739F1B95BCAD0029A653 /* MD_CGContext_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0739E1B95BCAD0029A653 /* MD_CGContext_ViewController.m */; };
+		14F073A21B95BCC50029A653 /* MD_CGimage_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073A11B95BCC50029A653 /* MD_CGimage_ViewController.m */; };
+		14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073A51B95BDD30029A653 /* MD_UIGraphics_ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -376,6 +383,20 @@
 		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
 		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
 		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
+		14F0738C1B95B9200029A653 /* MD_UIColor_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIColor_ViewController.h; sourceTree = "<group>"; };
+		14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIColor_ViewController.m; sourceTree = "<group>"; };
+		14F0738F1B95B9E80029A653 /* MDCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomView.h; sourceTree = "<group>"; };
+		14F073901B95B9E80029A653 /* MDCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomView.m; sourceTree = "<group>"; };
+		14F073971B95BC660029A653 /* MD_UIBezierPath_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIBezierPath_ViewController.h; sourceTree = "<group>"; };
+		14F073981B95BC660029A653 /* MD_UIBezierPath_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIBezierPath_ViewController.m; sourceTree = "<group>"; };
+		14F0739A1B95BC960029A653 /* MD_CGAffineTransform_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGAffineTransform_ViewController.h; sourceTree = "<group>"; };
+		14F0739B1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGAffineTransform_ViewController.m; sourceTree = "<group>"; };
+		14F0739D1B95BCAD0029A653 /* MD_CGContext_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_ViewController.h; sourceTree = "<group>"; };
+		14F0739E1B95BCAD0029A653 /* MD_CGContext_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGContext_ViewController.m; sourceTree = "<group>"; };
+		14F073A01B95BCC50029A653 /* MD_CGimage_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGimage_ViewController.h; sourceTree = "<group>"; };
+		14F073A11B95BCC50029A653 /* MD_CGimage_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGimage_ViewController.m; sourceTree = "<group>"; };
+		14F073A41B95BDD30029A653 /* MD_UIGraphics_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIGraphics_ViewController.h; sourceTree = "<group>"; };
+		14F073A51B95BDD30029A653 /* MD_UIGraphics_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIGraphics_ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +482,7 @@
 		1463B2011AA162C2006AE8D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				14F073931B95BC4B0029A653 /* CoreGraphics */,
 				1463B2021AA162C2006AE8D2 /* Foundation */,
 				1463B2071AA162C2006AE8D2 /* UIKit */,
 			);
@@ -505,6 +527,9 @@
 		1463B2071AA162C2006AE8D2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				14F073A31B95BDC10029A653 /* UIGraphics */,
+				14F073921B95BC2C0029A653 /* UIBezierPath */,
+				14F0738B1B95B9010029A653 /* UIColor */,
 				14E331B41B2716EF00B356C7 /* UIImagePickerController */,
 				14720F611B156E3C00773E5C /* UIView */,
 				146D82BB1AA709F600F0C7FD /* UISearchBar */,
@@ -1079,6 +1104,72 @@
 			path = UIImagePickerController;
 			sourceTree = "<group>";
 		};
+		14F0738B1B95B9010029A653 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				14F0738C1B95B9200029A653 /* MD_UIColor_ViewController.h */,
+				14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */,
+				14F0738F1B95B9E80029A653 /* MDCustomView.h */,
+				14F073901B95B9E80029A653 /* MDCustomView.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		14F073921B95BC2C0029A653 /* UIBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				14F073971B95BC660029A653 /* MD_UIBezierPath_ViewController.h */,
+				14F073981B95BC660029A653 /* MD_UIBezierPath_ViewController.m */,
+			);
+			path = UIBezierPath;
+			sourceTree = "<group>";
+		};
+		14F073931B95BC4B0029A653 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				14F073941B95BC4B0029A653 /* CGAffineTransform */,
+				14F073951B95BC4B0029A653 /* CGContext */,
+				14F073961B95BC4B0029A653 /* CGImage */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		14F073941B95BC4B0029A653 /* CGAffineTransform */ = {
+			isa = PBXGroup;
+			children = (
+				14F0739A1B95BC960029A653 /* MD_CGAffineTransform_ViewController.h */,
+				14F0739B1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m */,
+			);
+			path = CGAffineTransform;
+			sourceTree = "<group>";
+		};
+		14F073951B95BC4B0029A653 /* CGContext */ = {
+			isa = PBXGroup;
+			children = (
+				14F0739D1B95BCAD0029A653 /* MD_CGContext_ViewController.h */,
+				14F0739E1B95BCAD0029A653 /* MD_CGContext_ViewController.m */,
+			);
+			path = CGContext;
+			sourceTree = "<group>";
+		};
+		14F073961B95BC4B0029A653 /* CGImage */ = {
+			isa = PBXGroup;
+			children = (
+				14F073A01B95BCC50029A653 /* MD_CGimage_ViewController.h */,
+				14F073A11B95BCC50029A653 /* MD_CGimage_ViewController.m */,
+			);
+			path = CGImage;
+			sourceTree = "<group>";
+		};
+		14F073A31B95BDC10029A653 /* UIGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				14F073A41B95BDD30029A653 /* MD_UIGraphics_ViewController.h */,
+				14F073A51B95BDD30029A653 /* MD_UIGraphics_ViewController.m */,
+			);
+			path = UIGraphics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1225,6 +1316,7 @@
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
+				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
 				1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */,
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
@@ -1239,6 +1331,7 @@
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
+				14F0739F1B95BCAD0029A653 /* MD_CGContext_ViewController.m in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
@@ -1260,11 +1353,14 @@
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
 				148CD75E1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,
+				14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
 				148CD7141AAEC21600FAED9D /* MDObject1ViewController.m in Sources */,
 				141B43451AA4038C008F2711 /* MDPage2ViewController.m in Sources */,
 				146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */,
+				14F073991B95BC660029A653 /* MD_UIBezierPath_ViewController.m in Sources */,
+				14F073A21B95BCC50029A653 /* MD_CGimage_ViewController.m in Sources */,
 				1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */,
 				1463B26C1AA1B593006AE8D2 /* FirstViewController.m in Sources */,
 				147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */,
@@ -1274,9 +1370,11 @@
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
 				14DB41071AEA752D00DA1682 /* MDTool.m in Sources */,
 				148CD70C1AAEC21600FAED9D /* MDObject3ViewController.m in Sources */,
+				14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */,
 				148CD7401AAECC7700FAED9D /* MDNSEnumeratorViewController.m in Sources */,
 				148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */,
 				141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */,
+				14F073911B95B9E80029A653 /* MDCustomView.m in Sources */,
 				148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */,
 				1463B2841AA1BD87006AE8D2 /* MDPickerViewViewController.m in Sources */,
 				1463B2141AA162C2006AE8D2 /* MDUIButtonViewController.m in Sources */,

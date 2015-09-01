@@ -4,11 +4,76 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>CoreGraphics</string>
+		<key>className</key>
+		<string></string>
+		<key>sub</key>
+		<array>
+			<dict>
+				<key>desc</key>
+				<string>CGContext</string>
+				<key>className</key>
+				<string>MD_CGContext_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>CGImage</string>
+				<key>className</key>
+				<string>MD_CGimage_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>CGAffineTransform</string>
+				<key>className</key>
+				<string>MD_CGAffineTransform_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>UIKit</string>
 		<key>className</key>
 		<string></string>
 		<key>sub</key>
 		<array>
+			<dict>
+				<key>desc</key>
+				<string>UIGraphics</string>
+				<key>className</key>
+				<string>MD_UIGraphics_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>UIBezierPath</string>
+				<key>className</key>
+				<string>MD_UIBezierPath_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>UIColor</string>
+				<key>className</key>
+				<string>MD_UIColor_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>UIView</string>
+				<key>className</key>
+				<string>MD_OC_UIView_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
 			<dict>
 				<key>desc</key>
 				<string>UIImagePickerController</string>
