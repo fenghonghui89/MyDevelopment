@@ -1,0 +1,484 @@
+{\rtf1\ansi\ansicpg936\cocoartf1265
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17260\viewh8400\viewkind0
+\deftab866
+\pard\tx866\pardeftab866\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 day11\
+\{AM1\}\
+
+\f1 \'d2\'bb\'a1\'a2
+\f0 	
+\f1 \'c9\'ee\'c8\'eb
+\f0 UIImage\
+	1.	@2x\
+		1)	
+\f1 \'c9\'e8\'b1\'b8\'c7\'f8\'b7\'d6
+\f0 \
+			iOS
+\f1 \'c9\'e8\'b1\'b8\'b0\'b4
+\f0 dpi
+\f1 \'b7\'d6
+\f0  
+\f1 \'b7\'d6
+\f0 2
+\f1 \'b4\'f3\'d6\'d6
+\f0 \
+			\
+			
+\f1 \'b2\'bb\'ca\'c7
+\f0 retina
+\f1 \'c6\'c1\'c4\'bb
+\f0 \
+			
+\f1 \'d2\'bb\'b0\'e3
+\f0 dpi\
+			iPhone 3Gs 
+\f1 \'d2\'d4\'c7\'b0\'a3\'a8\'ba\'ac\'a3\'a9
+\f0 \
+			iPod touch 3 
+\f1 \'d2\'d4\'c7\'b0\'a3\'a8\'ba\'ac\'a3\'a9
+\f0 \
+			iPad 2 
+\f1 \'d2\'d4\'c7\'b0\'a3\'a8\'ba\'ac\'a3\'a9
+\f0 \
+			iPad mini 1 
+\f1 \'d2\'d4\'c7\'b0\'a3\'a8\'ba\'ac\'a3\'a9
+\f0 \
+			\
+			
+\f1 \'ca\'c7
+\f0 retina
+\f1 \'c6\'c1\'c4\'bb
+\f0 \
+			
+\f1 \'d4\'ad\'cf\'c8\'ba\'e1\'cf\'f2\'b7\'c5
+\f0 320
+\f1 \'b8\'f6\'cf\'f1\'cb\'d8
+\f0  
+\f1 \'cf\'d6\'d4\'da\'ba\'e1\'cf\'f2\'b7\'c5
+\f0 640
+\f1 \'b8\'f6\'cf\'f1\'cb\'d8
+\f0 \
+			\
+		2)	CGPoint vs 
+\f1 \'cf\'f1\'cb\'d8
+\f0 \
+			CGPoint 
+\f1 \'b5\'e3
+\f0  
+\f1 \'c2\'df\'bc\'ad\'d6\'b5
+\f0 \
+			
+\f1 \'b2\'bb\'ca\'c7
+\f0 retina
+\f1 \'b5\'c4
+\f0 \
+			1
+\f1 \'b8\'f6\'b5\'e3
+\f0  = 1
+\f1 \'b8\'f6\'cf\'f1\'cb\'d8\'b5\'e3
+\f0 \
+			
+\f1 \'ca\'c7
+\f0 retina
+\f1 \'b5\'c4
+\f0 \
+			1
+\f1 \'b8\'f6\'b5\'e3
+\f0  = 2x2
+\f1 \'b8\'f6\'cf\'f1\'cb\'d8\'b5\'e3
+\f0 \
+			\
+			
+\f1 \'b1\'e0\'b3\'cc\'b5\'c4\'ca\'b1\'ba\'f2\'d2\'c0\'d5\'d5
+\f0  
+\f1 \'b5\'e3
+\f0  
+\f1 \'c8\'a5\'b1\'e0\'b3\'cc
+\f0 \
+			
+\f1 \'d7\'ee\'d6\'d5\'d4\'da\'cf\'d4\'ca\'be\'b5\'c4\'ca\'b1\'ba\'f2
+\f0  
+\f1 \'bb\'e1\'ca\'ca\'c5\'e4\'b5\'bd
+\f0  
+\f1 \'cf\'f1\'cb\'d8
+\f0 \
+			\
+		3)	
+\f1 \'bc\'d3\'d4\'d8\'cd\'bc\'c6\'ac
+\f0 \
+			[Demo1]\
+			
+\f1 \'cf\'b5\'cd\'b3\'c2\'df\'bc\'ad
+\f0 \
+			[UIImage imageNamed:@"Elephant.jpg"];\
+			if(
+\f1 \'b5\'b1\'c7\'b0\'c9\'e8\'b1\'b8\'d6\'a7\'b3\'d6
+\f0 retina)\{\
+				if (
+\f1 \'bc\'ec\'b2\'e9\'ca\'c7\'b7\'f1\'b4\'e6\'d4\'da
+\f0  Elephant@2x.jpg 
+\f1 \'b5\'c4\'cd\'bc\'cf\'f1
+\f0 )\{\
+					return 
+\f1 \'bc\'d3\'d4\'d8
+\f0  Elephant@2x.jpg\
+				\} else \{\
+					return 
+\f1 \'bc\'d3\'d4\'d8
+\f0  Elephant.jpg\
+				\}\
+			\} else \{\
+				return 
+\f1 \'bc\'d3\'d4\'d8
+\f0  Elephant.jpg\
+			\}\
+			\
+		4)	
+\f1 \'b3\'cc\'d0\'f2\'d4\'b1\'b5\'c4\'d6\'b0\'d4\'f0
+\f0 \
+			1.	
+\f1 \'b5\'bc\'c8\'eb\'b7\'c7
+\f0 @2x
+\f1 \'ba\'cd
+\f0 @2x
+\f1 \'b5\'c4\'cd\'bc\'cf\'f1
+\f0 \
+			2.	
+\f1 \'ce\'de\'ca\'d3
+\f0 @2x
+\f1 \'ce\'c4\'bc\'fe\'a3\'ac\'b4\'fa\'c2\'eb\'ba\'cd\'d6\'ae\'c7\'b0\'d2\'bb\'d1\'f9
+\f0 \
+			\
+		\
+	2.	9
+\f1 \'c7\'d0\'c6\'ac\'bc\'bc\'ca\'f5\'a3\'a8\'bf\'c9\'b1\'e4\'b4\'f3\'d0\'a1\'b5\'c4
+\f0 UIImage
+\f1 \'a3\'a9
+\f0 \
+		1)	
+\f1 \'c4\'bf\'b5\'c4\'a3\'ba
+\f0 \
+			
+\f1 \'bd\'e2\'be\'f6\'b2\'bb\'cd\'ac\'b3\'df\'b4\'e7\'cd\'ac\'d1\'f9\'c9\'e8\'bc\'c6\'b7\'e7\'b8\'f1\'b5\'c4\'d4\'aa\'bc\'fe\'a3\'ac\'d0\'e8\'d2\'aa\'b3\'f6\'b6\'e0\'d5\'c5\'cd\'bc\'b5\'c4\'ce\'ca\'cc\'e2\'a3\'ac\'b7\'f1\'d4\'f2\'be\'cd\'b5\'c3\'b4\'fa\'c2\'eb\'d6\'d8\'bb\'e6
+\f0 \
+			
+\f1 \'cf\'d6\'d4\'da\'d6\'bb\'d0\'e8\'d2\'aa\'d2\'bb\'d5\'c5\'cd\'bc\'ba\'cd\'d2\'bb\'b5\'e3\'b5\'e3\'b4\'fa\'c2\'eb
+\f0 *
+\f1 \'be\'cd\'c4\'dc\'b9\'bb\'c0\'ad\'c9\'ec\'d2\'bb\'d5\'c5\'cd\'bc\'c6\'ac\'b5\'bd\'c8\'ce\'d2\'e2\'b4\'f3\'d0\'a1\'b2\'a2\'b1\'a3\'c1\'f4\'d4\'ad\'d3\'d0\'c9\'e8\'bc\'c6
+\f0 \
+		\
+		2)	
+\f1 \'d3\'c3\'d4\'da\'c4\'c4
+\f0 \
+			
+\f1 \'cf\'fb\'cf\'a2\'bf\'f2\'a1\'a2\'d0\'c2\'ce\'c5\'bf\'f2\'a1\'a2\'c0\'b8\'c4\'bf\'bf\'f2\'a1\'a2\'b8\'f7\'d6\'d6\'bf\'f2
+\f0 \
+			
+\f1 \'b0\'b4\'c5\'a5
+\f0 \
+			\
+		3)	
+\f1 \'bb\'f9\'b1\'be\'d4\'ad\'d4\'f2
+\f0 \
+			
+\f1 \'cb\'c4\'b8\'f6\'bd\'c7\'b2\'bb\'b1\'e4
+\f0 \
+			
+\f1 \'c9\'cf\'cf\'c2\'c1\'bd\'b1\'df\'ba\'e1\'cf\'f2\'c9\'ec\'cb\'f5
+\f0 \
+			
+\f1 \'d7\'f3\'d3\'d2\'c1\'bd\'b1\'df\'d7\'dd\'cf\'f2\'c9\'ec\'cb\'f5
+\f0 \
+			
+\f1 \'d6\'d0\'bc\'e4\'ba\'e1\'cf\'f2\'d7\'dd\'cf\'f2\'b6\'bc\'c9\'ec\'cb\'f5
+\f0 \
+			[Demo2]\
+		\
+		4)	
+\f1 \'c4\'a3\'ca\'bd
+\f0 \
+			Stretch	
+\f1 \'b1\'e4\'bb\'af\'ca\'b1\'c0\'ad\'c9\'ec
+\f0 \
+			Tile	
+\f1 \'b1\'e4\'bb\'af\'ca\'b1\'b8\'b4\'d6\'c6
+\f0 \
+			\
+		5)	Asset Catalog\
+			1>	
+\f1 \'b8\'c9\'c2\'ef\'b5\'c4\'a3\'bf
+\f0 \
+				
+\f1 \'cd\'b3\'d2\'bb\'b9\'dc\'c0\'ed\'cd\'bc\'c6\'ac\'ca\'ca\'c5\'e4\'c9\'e8\'b1\'b8\'a1\'a2\'b8\'df\'c7\'e5\'a1\'a2\'c0\'ad\'c9\'ec\'ce\'ca\'cc\'e2
+\f0 \
+			\
+			2>	
+\f1 \'be\'d6\'cf\'de\'d0\'d4
+\f0 \
+				
+\f1 \'d6\'bb\'c4\'dc\'d4\'da
+\f0 Xcode5
+\f1 \'cf\'c2\'bf\'b4\'bc\'fb
+\f0 \
+				
+\f1 \'d6\'bb\'c4\'dc\'d4\'cb\'d0\'d0\'d4\'da
+\f0 iOS7
+\f1 \'d2\'d4\'c9\'cf\'b2\'d9\'d7\'f7\'cf\'b5\'cd\'b3
+\f0 \
+				\
+			[Demo3]\
+	\
+\{PM1\}\
+	[
+\f1 \'c1\'b7\'cf\'b0\'a3\'ba
+\f0  TMessage
+\f1 \'ca\'e4\'c8\'eb\'c3\'e6\'b0\'e5
+\f0 ]\
+	[Demo4]\
+	\
+\
+\{PM2\}\
+
+\f1 \'b6\'fe\'a1\'a2
+\f0 	
+\f1 \'cf\'b5\'cd\'b3\'b1\'ea\'d7\'bc\'c3\'c0\'bb\'af
+\f0 \
+\
+	
+\f1 \'cc\'f9\'cd\'bc\'c3\'c0\'bb\'af
+\f0 \
+	1.	button\
+		[Demo5]\
+		1)	
+\f1 \'bf\'d8\'bc\'fe\'d7\'b4\'cc\'ac
+\f0 \
+			1.	normal			
+\f1 \'d5\'fd\'b3\'a3
+\f0 \
+			2.	highighted		
+\f1 \'b8\'df\'c1\'c1\'d7\'b4\'cc\'ac
+\f0  
+\f1 \'b1\'bb\'d3\'c3\'bb\'a7\'b0\'b4\'d7\'a1
+\f0 \
+			3.	disabled		
+\f1 \'b2\'bb\'bf\'c9\'d1\'a1\'d7\'b4\'cc\'ac .enabled
+\f0 \
+			4.	selected		
+\f1 \'d1\'a1\'d6\'d0\'d7\'b4\'cc\'ac .selected
+\f0 \
+		\
+		2)	
+\f1 \'bb\'f9\'d3\'da\'d7\'b4\'cc\'ac\'c9\'e8\'d6\'c3\'cd\'bc\'c6\'ac
+\f0 \
+		 	1>	
+\f1 \'b4\'fa\'c2\'eb\'b7\'bd\'ca\'bd
+\f0 \
+		 	2>	xib
+\f1 \'b7\'bd\'ca\'bd
+\f0 \
+		\
+		3)	
+\f1 \'d2\'bb\'b0\'e3\'c7\'e9\'bf\'f6\'cf\'c2\'c3\'c0\'b9\'a4\'b5\'c4\'c3\'fc\'c3\'fb\'b9\'e6\'b7\'b6
+\f0 \
+			xxxxxxx.png\
+			xxxxxxx@2x.png\
+			\
+			HL						iOS\
+			highlight(ed)\
+			hover					Web\
+			selected				\
+			on\
+			\
+			Image.2_1.png\
+			Image_35.2.png\
+			Image_2.png\
+			Image_25(2).png\
+			Image_27 copy.png\
+			\
+	2.	UINavigationBar\
+		[Demo6]\
+		navigationController.navigationBar\
+		setBackgroundImage:forBarMetrics:\
+		\
+		iOS7
+\f1 \'d2\'d4\'c9\'cf
+\f0 navi
+\f1 \'bb\'e1\'b0\'fc\'ba\'ac\'d7\'b4\'cc\'ac\'c0\'b8
+\f0 \
+		iOS7
+\f1 \'d2\'d4\'cf\'c2\'a3\'a8\'b2\'bb\'b0\'fc\'ba\'ac\'a3\'a9
+\f0 navi
+\f1 \'b2\'bb\'bb\'e1\'b0\'fc\'ba\'ac\'d7\'b4\'cc\'ac\'c0\'b8
+\f0 \
+\{PM3\}\
+	3.	UITableViewCell\
+		[Demo7]\
+		.backgroundView\
+		.selectedBackgrondView\
+		\
+	
+\f1 \'d1\'d5\'c9\'ab\'c3\'c0\'bb\'af
+\f0 \
+		[Demo8]\
+		\
+	4.	
+\f1 \'bf\'d8\'bc\'fe\'b5\'c4
+\f0 tintColor\
+		1)	
+\f1 \'d3\'d0\'bc\'cc\'b3\'d0
+\f0 UIView
+\f1 \'b9\'fd\'c0\'b4\'b5\'c4
+\f0 tintColor\
+		2)	
+\f1 \'d7\'d4\'bc\'ba\'c0\'e0\'c4\'da\'d2\'b2\'d3\'d0
+\f0 xxxxTintColor\
+		ios6:
+\f1 \'a1\'a3\'a1\'a3\'a1\'a3
+\f0 .tinColor\
+		ios7:
+\f1 \'a1\'a3\'a1\'a3\'a1\'a3
+\f0 .barTintColor\
+	5.	VC
+\f1 \'b5\'c4
+\f0 VC
+\f1 \'b5\'c4
+\f0 tintColor\
+		\
+	6.	
+\f1 \'c5\'fa\'c1\'bf\'c9\'e8\'d6\'c3\'d6\'f7\'cc\'e2\'d1\'d5\'c9\'ab
+\f0 \
+		1)	view\
+			
+\f1 \'c9\'e8\'d6\'c3
+\f0 VC
+\f1 \'b5\'c4
+\f0 view
+\f1 \'b5\'c4
+\f0 tintColor\
+			
+\f1 \'bb\'e1\'b5\'bc\'d6\'c2\'b5\'b1\'c7\'b0
+\f0 VC
+\f1 \'cb\'f9\'d3\'d0\'d7\'d3
+\f0 view
+\f1 \'b5\'c4
+\f0 tintColor
+\f1 \'b5\'c4\'d0\'de\'b8\'c4
+\f0 \
+			
+\f1 \'b3\'fd\'b7\'c7\'d7\'d3
+\f0 view
+\f1 \'cc\'d8\'b1\'f0\'c9\'e8\'d6\'c3\'b5\'c4\'cb\'fc\'d7\'d4\'bc\'ba\'b5\'c4
+\f0 tintColor\
+		2)	windows\
+			
+\f1 \'c9\'e8\'d6\'c3
+\f0 AppDelegate
+\f1 \'b5\'c4
+\f0 window
+\f1 \'b5\'c4
+\f0 tintColor\
+			
+\f1 \'bb\'e1\'b5\'bc\'d6\'c2\'d5\'fb\'b8\'f6\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'cb\'f9\'d3\'d0\'b5\'c4
+\f0 view
+\f1 \'b5\'c4
+\f0 tintColor
+\f1 \'b5\'c4\'d0\'de\'b8\'c4
+\f0 \
+			
+\f1 \'b3\'fd\'b7\'c7\'c4\'b3\'b8\'f6
+\f0 view
+\f1 \'cc\'d8\'b1\'f0\'c9\'e8\'d6\'c3\'c1\'cb\'cb\'fc\'d7\'d4\'bc\'ba\'b5\'c4
+\f0 tintColor\
+	\
+	7.	UIAppearance\
+		1)	
+\f1 \'ca\'b2\'c3\'b4\'ca\'c7\'a3\'bf
+\f0 \
+			
+\f1 \'d5\'eb\'b6\'d4\'c4\'b3\'d2\'bb\'c0\'e0\'bf\'d8\'bc\'fe\'c5\'fa\'c1\'bf\'c9\'e8\'d6\'c3\'cd\'bc\'c6\'ac
+\f0 /
+\f1 \'d1\'d5\'c9\'ab
+\f0 \
+		2)	
+\f1 \'d4\'f5\'c3\'b4\'d3\'c3\'a3\'bf
+\f0 \
+			
+\f1 \'cb\'f9\'d3\'d0\'b5\'c4
+\f0 view
+\f1 \'b5\'c4\'d7\'d3\'c0\'e0\'bb\'f9\'b1\'be\'b6\'bc\'bf\'c9\'d2\'d4\'d5\'d2\'b5\'bd
+\f0 appearance
+\f1 \'ca\'f4\'d0\'d4
+\f0 \
+			\
+			
+\f1 \'d5\'eb\'b6\'d4\'cb\'f9\'d3\'d0\'b6\'d4\'cf\'f3\'b5\'c4\'b8\'fa\'bd\'e7\'c3\'e6\'cf\'e0\'b9\'d8\'b5\'c4\'d0\'de\'b8\'c4
+\f0 \
+			
+\f1 \'b6\'bc\'bf\'c9\'d2\'d4\'bd\'ab\'b6\'d4\'cf\'f3\'b5\'f7\'d3\'c3\'b8\'c4\'ce\'aa
+\f0 \
+			[
+\f1 \'c0\'e0\'c3\'fb
+\f0  appearance] 
+\f1 \'b5\'f7\'d3\'c3
+\f0 \
+			
+\f1 \'d0\'de\'b8\'c4\'ba\'f3\'bd\'ab\'c9\'fa\'d0\'a7\'d3\'da\'cb\'f9\'d3\'d0\'b8\'c3\'c0\'e0\'d0\'cd\'b5\'c4\'b6\'d4\'cf\'f3
+\f0 \
+			\
+	\
+
+\f1 \'d7\'f7\'d2\'b5\'a1\'a2
+\f0 \
+	1.	
+\f1 \'b8\'f9\'be\'dd
+\f0 H01
+\f1 \'d7\'ca\'d4\'b4\'b0\'fc
+\f0 \
+		
+\f1 \'c3\'c0\'bb\'af
+\f0 Slider\
+		
+\f1 \'cf\'ea\'c7\'e9\'c7\'eb\'b2\'e9\'d1\'af\'ce\'c4\'b5\'b5
+\f0 \
+		\
+	2.	TMessage 
+\f1 \'b9\'e1\'b4\'a9
+\f0  *\
+		TRMessageView\
+		\
+		+	message:NSString\
+		+ 	fromMe:BOOL\
+		\
+		+	messageLabel:UILabel\
+		+	messagePopImageView:UIImageView\
+		\
+		-(void)refresh;\
+		\
+		
+\f1 \'d4\'da\'c7\'f8\'d3\'f2\'c4\'da\'d6\'bb\'cf\'d4\'ca\'be\'d2\'bb\'b8\'f6\'c6\'f8\'c5\'dd
+\f0 \
+		if(fromMe)\{\
+			
+\f1 \'c0\'b6\'c9\'ab\'c5\'dd\'c5\'dd\'d4\'da\'d3\'d2\'c9\'cf\'bd\'c7
+\f0 \
+			
+\f1 \'ce\'c4\'d7\'d6\'d1\'d5\'c9\'ab\'ca\'c7\'b0\'d7\'c9\'ab
+\f0 \
+			
+\f1 \'b4\'f3\'d0\'a1\'b8\'f9\'be\'dd\'d7\'d6\'b7\'fb\'b4\'ae\'bc\'c6\'cb\'e3
+\f0 \
+		\} else \{\
+			
+\f1 \'bb\'d2\'c9\'ab\'c5\'dd\'c5\'dd\'d4\'da\'d7\'f3\'c9\'cf\'bd\'c7
+\f0 \
+			
+\f1 \'ce\'c4\'d7\'d6\'d1\'d5\'c9\'ab\'ca\'c7\'c9\'ee\'bb\'d2\'c9\'ab
+\f0 \
+			
+\f1 \'b4\'f3\'d0\'a1\'b8\'f9\'be\'dd\'d7\'d6\'b7\'fb\'b4\'ae\'bc\'c6\'cb\'e3
+\f0 \
+		\}\
+		}
