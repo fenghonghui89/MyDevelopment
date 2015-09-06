@@ -16,6 +16,5 @@
     
     [[UIColor greenColor] setStroke];//填充当前上下文描边
     UIRectFrame(CGRectMake(10, 10, 50, 50));//矩形描边
-//    UIRectFill(CGRectMake(10, 10, 50, 50));
 }
 @end

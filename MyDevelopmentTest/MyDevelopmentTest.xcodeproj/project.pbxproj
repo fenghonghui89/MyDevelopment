@@ -153,6 +153,7 @@
 		14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FE1AEA752D00DA1682 /* TitleList.plist */; };
 		14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FF1AEA752D00DA1682 /* 记录.rtf */; };
 		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
+		14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */; };
 		14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */; };
 		14F073911B95B9E80029A653 /* MDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073901B95B9E80029A653 /* MDCustomView.m */; };
 		14F073991B95BC660029A653 /* MD_UIBezierPath_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073981B95BC660029A653 /* MD_UIBezierPath_ViewController.m */; };
@@ -384,6 +385,8 @@
 		14DB40FF1AEA752D00DA1682 /* 记录.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "记录.rtf"; sourceTree = "<group>"; };
 		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
 		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
+		14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_CustomView.h; sourceTree = "<group>"; };
+		14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGContext_CustomView.m; sourceTree = "<group>"; };
 		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
 		14F0738C1B95B9200029A653 /* MD_UIColor_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIColor_ViewController.h; sourceTree = "<group>"; };
 		14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIColor_ViewController.m; sourceTree = "<group>"; };
@@ -1156,6 +1159,8 @@
 			children = (
 				14F0739D1B95BCAD0029A653 /* MD_CGContext_ViewController.h */,
 				14F0739E1B95BCAD0029A653 /* MD_CGContext_ViewController.m */,
+				14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */,
+				14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */,
 			);
 			path = CGContext;
 			sourceTree = "<group>";
@@ -1379,6 +1384,7 @@
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
+				14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */,
 				14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */,
 				14DB41071AEA752D00DA1682 /* MDTool.m in Sources */,
 				148CD70C1AAEC21600FAED9D /* MDObject3ViewController.m in Sources */,

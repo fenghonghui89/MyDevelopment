@@ -62,7 +62,7 @@
     iv.image = resizableImage3;
 }
 
-//UIImage - drawAtPoint drawInRect
+//UIImage - drawAtPoint drawInRect drawAsPatternInRect
 -(void)uiimagetest
 {
     MD_UIIV_CustomView *cv = [[MD_UIIV_CustomView alloc] initWithFrame:self.view.bounds];
