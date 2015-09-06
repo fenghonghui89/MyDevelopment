@@ -18,7 +18,7 @@
     [self uicolortest];
 }
 
-#pragma mark other
+//setFill setStroke
 -(void)uicolortest
 {
     MDCustomView *view = [[MDCustomView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
