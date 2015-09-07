@@ -15,7 +15,8 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self uicolortest];
+    
+    [[UIColor redColor]setFill];
 }
 
 //setFill setStroke

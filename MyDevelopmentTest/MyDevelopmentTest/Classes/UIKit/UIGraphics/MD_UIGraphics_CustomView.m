@@ -10,7 +10,23 @@
 #import "MD_UIGraphics_CustomView.h"
 
 @implementation MD_UIGraphics_CustomView
+
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+    }
+    return self;
+}
+
 -(void)drawRect:(CGRect)rect
+{
+    [self customdrawRect:rect];
+}
+
+#pragma mark - < ation > -
+-(void)customdrawRect:(CGRect)rect
 {
     [[UIColor redColor] setFill];//填充当前上下文颜色
     UIRectFill(rect);//填充矩形
