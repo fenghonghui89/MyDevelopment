@@ -27,7 +27,7 @@
     
     [self customDrawRect:rect];
 }
-
+#pragma mark - < action > -
 #pragma mark CGContextRef
 -(void)customDrawRect:(CGRect)rect
 {

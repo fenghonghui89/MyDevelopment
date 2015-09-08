@@ -25,7 +25,7 @@
      注意代码顺序所造成的图层覆盖
      */
     
-    [self customdrawRect:rect];
+    [self custom3drawRect:rect];
 }
 
 #pragma mark - < ation > -
@@ -64,11 +64,91 @@
     [[UIColor greenColor] setStroke];
     
     path.lineWidth = 10;
-    path.lineJoinStyle = kCGLineJoinRound;
+    path.lineJoinStyle = kCGLineJoinRound;//两线交点类型
     
     [path fill];
     [path stroke];
 }
 
+#pragma mark 画圆弧
+-(void)custom2drawRect:(CGRect)rect
+{
+    [[UIColor orangeColor] setFill];
+    UIRectFill(rect);
 
+    //起点不在圆心
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(0, 0)];
+    [path addArcWithCenter:CGPointMake(100, 100)//圆心
+                    radius:100//半径
+                startAngle:0//起始角度对应的sin
+                  endAngle:M_PI_2//终点角度对应的sin
+                 clockwise:YES];//YES：顺时针画 NO：逆时针画
+    [path closePath];
+    
+    [[UIColor redColor] setFill];
+    [path fill];
+    
+    //起点在圆心
+    UIBezierPath *path1 = [UIBezierPath bezierPath];
+    [path1 moveToPoint:CGPointMake(100, 100)];
+    [path1 addArcWithCenter:CGPointMake(100, 100)//圆心
+                    radius:100//半径
+                startAngle:0//起始角度对应的sin
+                  endAngle:M_PI_2//终点角度对应的sin
+                 clockwise:YES];//YES：顺时针画 NO：逆时针画
+    [path1 closePath];
+    
+    [[UIColor greenColor] setFill];
+    [path1 fill];
+    
+}
+
+#pragma mark 练习：画正方形
+-(void)custom3drawRect:(CGRect)rect
+{
+    [[UIColor orangeColor] setFill];
+    UIRectFill(rect);
+    
+    UIBezierPath* path = [UIBezierPath bezierPath];
+    
+    [path moveToPoint:CGPointMake(10, 20)];
+    
+    [path addArcWithCenter:CGPointMake(20, 20)
+                    radius:10
+                startAngle:M_PI
+                  endAngle:1.5*M_PI
+                 clockwise:YES];
+    
+    [path addLineToPoint:CGPointMake(self.bounds.size.width-20, 10)];
+    
+    [path addArcWithCenter:CGPointMake(self.bounds.size.width-20, 20)
+                    radius:10
+                startAngle:1.5*M_PI
+                  endAngle:0
+                 clockwise:YES];
+    
+    [path addLineToPoint:CGPointMake(self.bounds.size.width-10, self.bounds.size.height-20)];
+    
+    [path addArcWithCenter:CGPointMake(self.bounds.size.width-20, self.bounds.size.height-20)
+                    radius:10
+                startAngle:0
+                  endAngle:M_PI_2
+                 clockwise:YES];
+    
+    [path addLineToPoint:CGPointMake(20,self.bounds.size.height-10)];
+    
+    [path addArcWithCenter:CGPointMake(20, self.bounds.size.height-20)
+                    radius:10
+                startAngle:M_PI_2
+                  endAngle:M_PI
+                 clockwise:YES];
+    
+    [path closePath];
+    [[UIColor redColor] setFill];
+    [[UIColor greenColor] setStroke];
+    path.lineWidth = 4;
+    [path stroke];
+    [path fill];
+}
 @end

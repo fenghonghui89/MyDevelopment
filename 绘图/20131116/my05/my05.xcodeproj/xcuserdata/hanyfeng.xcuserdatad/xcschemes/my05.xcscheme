@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "185CFE75183749A90082FD35"
-               BuildableName = "my04.app"
-               BlueprintName = "my04"
-               ReferencedContainer = "container:my04.xcodeproj">
+               BlueprintIdentifier = "185CFF82183764110082FD35"
+               BuildableName = "my05.app"
+               BlueprintName = "my05"
+               ReferencedContainer = "container:my05.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "185CFFA3183764110082FD35"
+               BuildableName = "my05Tests.xctest"
+               BlueprintName = "my05Tests"
+               ReferencedContainer = "container:my05.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "185CFE96183749A90082FD35"
-               BuildableName = "my04Tests.xctest"
-               BlueprintName = "my04Tests"
-               ReferencedContainer = "container:my04.xcodeproj">
+               BlueprintIdentifier = "185CFFA3183764110082FD35"
+               BuildableName = "my05Tests.xctest"
+               BlueprintName = "my05Tests"
+               ReferencedContainer = "container:my05.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "185CFE75183749A90082FD35"
-            BuildableName = "my04.app"
-            BlueprintName = "my04"
-            ReferencedContainer = "container:my04.xcodeproj">
+            BlueprintIdentifier = "185CFF82183764110082FD35"
+            BuildableName = "my05.app"
+            BlueprintName = "my05"
+            ReferencedContainer = "container:my05.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -58,13 +72,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "185CFE75183749A90082FD35"
-            BuildableName = "my04.app"
-            BlueprintName = "my04"
-            ReferencedContainer = "container:my04.xcodeproj">
+            BlueprintIdentifier = "185CFF82183764110082FD35"
+            BuildableName = "my05.app"
+            BlueprintName = "my05"
+            ReferencedContainer = "container:my05.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -76,13 +91,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "185CFE75183749A90082FD35"
-            BuildableName = "my04.app"
-            BlueprintName = "my04"
-            ReferencedContainer = "container:my04.xcodeproj">
+            BlueprintIdentifier = "185CFF82183764110082FD35"
+            BuildableName = "my05.app"
+            BlueprintName = "my05"
+            ReferencedContainer = "container:my05.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
