@@ -23,7 +23,7 @@
     [self string7];
 }
 
-#pragma mark -< action >-
+#pragma mark - < action > -
 #pragma mark 字符串的创建
 /**
  *  字符串的创建

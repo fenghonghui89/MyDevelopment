@@ -11,6 +11,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>CGColorSpace</string>
+				<key>className</key>
+				<string>MD_CGColorSpace_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>CGContext</string>
 				<key>className</key>
 				<string>MD_CGContext_ViewController</string>
@@ -42,6 +50,14 @@
 		<string></string>
 		<key>sub</key>
 		<array>
+			<dict>
+				<key>desc</key>
+				<string>UISlider</string>
+				<key>className</key>
+				<string>MD_UISlider_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
 			<dict>
 				<key>desc</key>
 				<string>UIGraphics</string>

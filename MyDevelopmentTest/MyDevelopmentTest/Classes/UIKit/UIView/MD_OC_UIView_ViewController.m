@@ -17,7 +17,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [self uiviewTest2];
 }
 
 
@@ -33,6 +33,7 @@
     view.autoresizingMask = UIViewAutoresizingNone;//自适应匹配
     view.autoresizesSubviews = YES;//子视图是否自动适应父类的尺寸变化，默认为YES
     view.clipsToBounds = YES;//超出显示范围的内容不显示
+    view.tintColor = [UIColor greenColor];//如果设置window的tintColor，会影响整个程序所有view的tintColor，除非某view特别设置
 }
 
 #pragma mark 方法
@@ -52,6 +53,14 @@
     }];
 }
 
-
+#pragma mark appearance
+-(void)uiviewTest2
+{
+    UIImage * image = [UIImage imageNamed:@"delete_btn.png"];
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch];
+    
+    //批量修改该类及其子类下所有对象的属性
+    [[UIButton appearance] setBackgroundImage:image forState:UIControlStateNormal];
+}
 
 @end

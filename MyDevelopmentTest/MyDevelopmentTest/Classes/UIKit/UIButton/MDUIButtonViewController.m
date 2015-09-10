@@ -21,6 +21,7 @@
     [self test2];
 }
 
+#pragma mark - < action > -
 -(void)test0
 {
     UIButton *signBtn = [[UIButton alloc] init];

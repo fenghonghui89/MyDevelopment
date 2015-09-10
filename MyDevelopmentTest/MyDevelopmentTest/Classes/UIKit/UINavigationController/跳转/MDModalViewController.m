@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 200, 100)];
-    [btn setTitle:@"改变" forState:UIControlStateNormal];
+    [btn setTitle:@"present" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn setBackgroundColor:[UIColor greenColor]];
     [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];

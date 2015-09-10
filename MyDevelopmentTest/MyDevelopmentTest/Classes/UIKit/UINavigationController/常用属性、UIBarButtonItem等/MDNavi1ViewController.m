@@ -33,14 +33,16 @@
     [self.view addSubview:btn1];
     
     UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(170, 50, 50, 50)];
-    [btn2 setTitle:@"取消1" forState:UIControlStateNormal];
+    [btn2 setTitle:@"改变2" forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn2 setBackgroundColor:[UIColor greenColor]];
-    [btn2 addTarget:self action:@selector(tap3) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 addTarget:self action:@selector(tap4) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
 }
 
-#pragma mark - action
+#pragma mark - < action > -
+
+
 #pragma mark title/UIBarButtonItem
 -(void)tap
 {
@@ -103,6 +105,23 @@
     UIBarButtonItem* t6= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:nil action:nil];
     UIBarButtonItem* t7 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:nil action:nil];
     self.toolbarItems = @[t1,t5,t3,t6,t4,t7,t2];
+}
+
+#pragma mark navi背景色/背景图/tintColor/渗透状态
+-(void)tap4
+{
+//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];//背景色
+//    self.navigationController.navigationBar.tintColor = [UIColor redColor];//影响navi控件tintColor
+    
+//    self.navigationController.navigationBar.translucent = YES;//渗透（ios6默认为no，ios7之后为yes）
+//    self.navigationController.navigationBar.backgroundColor = [UIColor orangeColor];//毛玻璃效果背景色，渗透yes才有效
+    
+    //背景图
+    UIImage * naviImage = [UIImage imageNamed:@"delete_btn.png"];
+    UIImage * resizedNaviImage =
+    [naviImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 2, 10)
+                              resizingMode:UIImageResizingModeStretch];
+    [self.navigationController.navigationBar setBackgroundImage:resizedNaviImage forBarMetrics:UIBarMetricsDefault];
 }
 
 @end
