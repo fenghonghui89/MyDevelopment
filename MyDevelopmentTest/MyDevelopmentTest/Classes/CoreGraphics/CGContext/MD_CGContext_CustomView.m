@@ -25,7 +25,7 @@
      注意代码顺序所造成的图层覆盖
      */
     
-    [self customDrawRect:rect];
+    [self custom2DrawRect:rect];
 }
 #pragma mark - < action > -
 #pragma mark CGContextRef
@@ -80,7 +80,14 @@
 #pragma mark 线段
 -(void)custom2DrawRect:(CGRect)rect
 {
-
+    [[UIColor orangeColor] setFill];
+    UIRectFill(rect);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextMoveToPoint(context, 10, 10);
+    CGContextAddLineToPoint(context, 30, 100);
+    CGContextSetRGBStrokeColor(context, 0, 1, 0, 1);
+    CGContextStrokePath(context);
 }
 
 #pragma mark 画曲线
@@ -91,9 +98,8 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextMoveToPoint(context, 10, 10);
-    CGContextAddCurveToPoint(context, 333, 0, 332, 26, 330, 26);
-    CGContextAddCurveToPoint(context, 330, 26, 299, 20, 299, 17);
-    CGContextAddLineToPoint(context, 296, 17);
+    CGContextAddCurveToPoint(context, 200, 50, 100, 400, 300, 400);
+    CGContextSetRGBStrokeColor(context, 0, 1, 0, 1);
     CGContextStrokePath(context);
 }
 @end

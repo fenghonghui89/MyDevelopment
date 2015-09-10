@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403E3271B8C68ED009C8CAC /* myUILabel.m */; };
+		1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */; };
+		1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */; };
+		1412B6771BA1991000FA5F2E /* UIBezierPath曲线各点含义.png in Resources */ = {isa = PBXBuildFile; fileRef = 1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */; };
+		1412B6781BA1991000FA5F2E /* 绘图笔记-赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1412B6761BA1991000FA5F2E /* 绘图笔记-赵哲.rtf */; };
 		141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43211AA3FC12008F2711 /* Shapes.jpg */; };
 		141B43271AA3FC12008F2711 /* Sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43221AA3FC12008F2711 /* Sky.jpg */; };
 		141B43291AA3FC12008F2711 /* Snow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43231AA3FC12008F2711 /* Snow.jpg */; };
@@ -169,6 +173,12 @@
 /* Begin PBXFileReference section */
 		1403E3261B8C68ED009C8CAC /* myUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myUILabel.h; sourceTree = "<group>"; };
 		1403E3271B8C68ED009C8CAC /* myUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myUILabel.m; sourceTree = "<group>"; };
+		1412B66E1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIBezierPath_CustomView1.h; sourceTree = "<group>"; };
+		1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIBezierPath_CustomView1.m; sourceTree = "<group>"; };
+		1412B6711BA17BF400FA5F2E /* MD_String_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_String_CustomView.h; sourceTree = "<group>"; };
+		1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_String_CustomView.m; sourceTree = "<group>"; };
+		1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBezierPath曲线各点含义.png"; sourceTree = "<group>"; };
+		1412B6761BA1991000FA5F2E /* 绘图笔记-赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "绘图笔记-赵哲.rtf"; sourceTree = "<group>"; };
 		141B43211AA3FC12008F2711 /* Shapes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shapes.jpg; sourceTree = "<group>"; };
 		141B43221AA3FC12008F2711 /* Sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sky.jpg; sourceTree = "<group>"; };
 		141B43231AA3FC12008F2711 /* Snow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Snow.jpg; sourceTree = "<group>"; };
@@ -429,6 +439,15 @@
 				1403E3271B8C68ED009C8CAC /* myUILabel.m */,
 			);
 			path = UICustom;
+			sourceTree = "<group>";
+		};
+		1412B6741BA1991000FA5F2E /* 笔记与资料 */ = {
+			isa = PBXGroup;
+			children = (
+				1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */,
+				1412B6761BA1991000FA5F2E /* 绘图笔记-赵哲.rtf */,
+			);
+			path = "笔记与资料";
 			sourceTree = "<group>";
 		};
 		141B43201AA3FC12008F2711 /* UIPageControl */ = {
@@ -874,6 +893,7 @@
 		147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */ = {
 			isa = PBXGroup;
 			children = (
+				1412B6741BA1991000FA5F2E /* 笔记与资料 */,
 				14DB40F01AEA752D00DA1682 /* main */,
 				1403E3251B8C68EC009C8CAC /* UICustom */,
 				146D82AC1AA7036700F0C7FD /* Categories */,
@@ -908,6 +928,8 @@
 				148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */,
 				148CD6A11AAE99C400FAED9D /* TRStudent.h */,
 				148CD6A21AAE99C400FAED9D /* TRStudent.m */,
+				1412B6711BA17BF400FA5F2E /* MD_String_CustomView.h */,
+				1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */,
 			);
 			path = "常用（创建、对比、转换、截取等）";
 			sourceTree = "<group>";
@@ -1136,6 +1158,8 @@
 				14F073981B95BC660029A653 /* MD_UIBezierPath_ViewController.m */,
 				144448641B9D90FA009B145F /* MD_UIBezierPath_CustomView.h */,
 				144448651B9D90FA009B145F /* MD_UIBezierPath_CustomView.m */,
+				1412B66E1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.h */,
+				1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */,
 			);
 			path = UIBezierPath;
 			sourceTree = "<group>";
@@ -1266,8 +1290,10 @@
 				146D82EB1AA709F600F0C7FD /* Chile.png in Resources */,
 				146D83051AA709F600F0C7FD /* NewZealand.png in Resources */,
 				141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */,
+				1412B6781BA1991000FA5F2E /* 绘图笔记-赵哲.rtf in Resources */,
 				146D82FD1AA709F600F0C7FD /* Honduras.png in Resources */,
 				147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */,
+				1412B6771BA1991000FA5F2E /* UIBezierPath曲线各点含义.png in Resources */,
 				14C1E6B41B53CD4800C7E5DF /* Default.png in Resources */,
 				146D83011AA709F600F0C7FD /* Japan.png in Resources */,
 				1463B2A41AA1CAE4006AE8D2 /* small.jpg in Resources */,
@@ -1334,6 +1360,7 @@
 				141B436C1AA47394008F2711 /* MDModal1ViewController.m in Sources */,
 				148CD7231AAEC54700FAED9D /* MDNSNumberViewController.m in Sources */,
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
+				1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */,
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
@@ -1389,6 +1416,7 @@
 				141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */,
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
+				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
 				14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */,
 				14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */,

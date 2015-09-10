@@ -25,7 +25,7 @@
      注意代码顺序所造成的图层覆盖
      */
     
-    [self custom3drawRect:rect];
+    [self custom5drawRect:rect];
 }
 
 #pragma mark - < ation > -
@@ -70,7 +70,7 @@
     [path stroke];
 }
 
-#pragma mark 画圆弧
+#pragma mark 画扇形
 -(void)custom2drawRect:(CGRect)rect
 {
     [[UIColor orangeColor] setFill];
@@ -104,7 +104,7 @@
     
 }
 
-#pragma mark 练习：画正方形
+#pragma mark 练习：画带圆角的正方形
 -(void)custom3drawRect:(CGRect)rect
 {
     [[UIColor orangeColor] setFill];
@@ -145,10 +145,64 @@
                  clockwise:YES];
     
     [path closePath];
+    
+    path.lineWidth = 4;
     [[UIColor redColor] setFill];
     [[UIColor greenColor] setStroke];
-    path.lineWidth = 4;
     [path stroke];
     [path fill];
+}
+
+#pragma mark 画曲线
+-(void)custom4drawRect:(CGRect)rect
+{
+    [[UIColor orangeColor] setFill];
+    UIRectFill(rect);
+    
+    UIBezierPath* path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(50, 10)];//起始点p1
+    [path addCurveToPoint:CGPointMake(10, 110)//结束点p2
+            controlPoint1:CGPointMake(10, 10)//控制点cp1-起始点的趋向
+            controlPoint2:CGPointMake(50, 110)];//控制点cp2-结束点从哪来
+    
+    [path addCurveToPoint:CGPointMake(50, 210)
+            controlPoint1:CGPointMake(50, 110)
+            controlPoint2:CGPointMake(10, 210)];
+    
+    [[UIColor grayColor] setStroke];
+    path.lineWidth = 2;
+    [path stroke];
+
+    
+}
+
+#pragma mark 练习：画饼图
+-(void)custom5drawRect:(CGRect)rect
+{
+    [[UIColor orangeColor] setFill];
+    UIRectFill(rect);
+    
+    NSArray *dataArray = @[[NSNumber numberWithFloat:0.2],[NSNumber numberWithFloat:0.2],[NSNumber numberWithFloat:0.2]];
+    float origin = 0;//起点
+    for (int i = 0; i<dataArray.count ; i++) {
+        NSNumber *valueObj = dataArray[i];
+        CGFloat value = [valueObj floatValue];
+        
+        UIBezierPath* path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)];
+        [path addArcWithCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
+                        radius:120
+                    startAngle:M_PI*1.5+M_PI*2*origin
+                      endAngle:M_PI*1.5+M_PI*2*(origin+value)
+                     clockwise:YES];
+        [path closePath];
+        
+        UIColor *color= [UIColor colorWithRed:arc4random()%10*0.1 green:arc4random()%10*0.1 blue:arc4random()%10*0.1 alpha:1];
+        [color setFill];
+        
+        [path fill];
+        
+        origin += value;//下一个扇形的起点=上一个扇形的终点
+    }
 }
 @end

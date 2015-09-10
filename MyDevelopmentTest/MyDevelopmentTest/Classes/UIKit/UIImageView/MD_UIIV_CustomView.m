@@ -19,12 +19,5 @@
     [myImageObj drawInRect:CGRectMake(0, 40, 320, 400)];//图片绘制在指定矩形内
     [myImageObj drawAtPoint:CGPointMake(10, 10)];//以定点开始绘制
     [myImageObj drawAsPatternInRect:CGRectMake(0, 40, 320, 400)];//平铺
-    
-    NSString *str = @"我的小狗";
-    UIFont *font = [UIFont systemFontOfSize:34];
-    UIColor *color = [UIColor redColor];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:color,NSForegroundColorAttributeName,font,NSFontAttributeName, nil];
-    [str drawAtPoint:CGPointMake(100, 20) withAttributes:dic];//设置绘制定点
-//    [str drawInRect:CGRectMake(100, 20, 100, 20) withAttributes:dic];//无效？
 }
 @end

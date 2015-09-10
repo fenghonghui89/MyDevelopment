@@ -8,6 +8,8 @@
 
 #import "MDStringNormalViewController.h"
 #import "TRStudent.h"
+#import "MD_String_CustomView.h"
+
 @interface MDStringNormalViewController ()
 
 @end
@@ -18,9 +20,10 @@
 {
     [super viewDidLoad];
     
-    [self string4];
+    [self string7];
 }
 
+#pragma mark -< action >-
 #pragma mark 字符串的创建
 /**
  *  字符串的创建
@@ -289,5 +292,12 @@
     NSLog(@"str6:%@",str6);
     NSLog(@"str7:%@",str7);
     printf("\n");
+}
+
+#pragma mark drawRect字符串
+-(void)string7
+{
+    MD_String_CustomView *v = [[MD_String_CustomView alloc] initWithFrame:CGRectMake(10, 10, viewW - 20, viewH - 20)];
+    [self.view addSubview:v];
 }
 @end
