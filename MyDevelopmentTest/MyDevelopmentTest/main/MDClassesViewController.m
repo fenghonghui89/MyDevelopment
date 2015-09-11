@@ -126,17 +126,32 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.isLastsetLayer == NO) {
+        //当前级，如UIKit
         NSDictionary *dic = [self.data objectAtIndex:indexPath.section];
+        NSString *className = [dic objectForKey:@"className"];
         NSArray *sub = [dic objectForKey:@"sub"];
+        //下一级，如UIButton
         NSDictionary *subDic = [sub objectAtIndex:indexPath.row];
         NSArray *subSub = [subDic objectForKey:@"sub"];
         NSString *subClassName = [subDic objectForKey:@"className"];
-        if (subSub.count>0) {
+        
+        
+        if(subSub.count>0 && [subClassName isEqualToString:@""]){
             MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
             cVC.data = subSub;
+            cVC.isLastsetLayer = NO;
+        }
+        
+
+        
+        if (subSub.count>0) {
+            MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
+            
+            cVC.data = subSub;
             cVC.isLastsetLayer = YES;
+            
             [self.navigationController pushViewController:cVC animated:YES];
-        }else{
+        }else{//是最底层
             Class class = NSClassFromString(subClassName);
             if ([class isSubclassOfClass:[UIViewController class]]) {
                 NSString *path = [[NSBundle mainBundle] pathForResource:subClassName ofType:@"nib"];

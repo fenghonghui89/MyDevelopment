@@ -52,6 +52,40 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>手势/触控</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>手势</string>
+						<key>className</key>
+						<string></string>
+						<key>sub</key>
+						<array>
+							<dict>
+								<key>desc</key>
+								<string>手势基础使用</string>
+								<key>className</key>
+								<string>MD_GestureRecognizer_VC</string>
+								<key>sub</key>
+								<array/>
+							</dict>
+							<dict>
+								<key>desc</key>
+								<string>手势练习</string>
+								<key>className</key>
+								<string>MD_GestureRecognizerTest_VC</string>
+								<key>sub</key>
+								<array/>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>UISlider</string>
 				<key>className</key>
 				<string>MD_UISlider_ViewController</string>
