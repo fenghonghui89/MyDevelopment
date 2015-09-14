@@ -12,8 +12,4 @@
 
 @property(nonatomic,strong)NSArray *data;
 
-/**
- *  是否最后一层
- */
-@property(nonatomic,assign)BOOL isLastsetLayer;
 @end

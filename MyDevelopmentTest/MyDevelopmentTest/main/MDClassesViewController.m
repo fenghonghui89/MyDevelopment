@@ -72,7 +72,22 @@
 #pragma mark - call back
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.isLastsetLayer == NO) {
+    /*
+     判断数据源所有元素是否有className
+     如果其中一个有className，代表是最下层
+     都没有classname则代表不是最下层
+     */
+    
+    BOOL b = NO;
+    for (NSDictionary *dic in self.data) {
+        NSString *className = [dic objectForKey:@"className"];
+        if (![className isEqualToString:@""]) {
+            b = YES;
+            break;
+        }
+    }
+    
+    if (b == NO) {
         return self.data.count;
     }else{
         return 1;
@@ -81,10 +96,19 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.isLastsetLayer == NO){
-        NSDictionary *dic = [self.data objectAtIndex:section];
-        NSArray *sub = [dic objectForKey:@"sub"];
-        return sub.count;
+    BOOL b = NO;
+    for (NSDictionary *dic in self.data) {
+        NSString *className = [dic objectForKey:@"className"];
+        if (![className isEqualToString:@""]) {
+            b = YES;
+            break;
+        }
+    }
+
+    if(b == NO){
+        NSDictionary *firstDic = [self.data objectAtIndex:section];
+        NSArray *firstSub = [firstDic objectForKey:@"sub"];
+        return firstSub.count;
     }else{
         return self.data.count;
     }
@@ -94,14 +118,24 @@
 {
     static NSString *identifier = @"cell";
     MDClassesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (self.isLastsetLayer == NO) {
-        NSDictionary *dic = [self.data objectAtIndex:indexPath.section];
-        NSArray *sub = [dic objectForKey:@"sub"];
-        NSDictionary *subDic = [sub objectAtIndex:indexPath.row];
-        cell.dic = subDic;
+    
+    BOOL b = NO;//yes最下层 no不是最下层
+    for (NSDictionary *dic in self.data) {
+        NSString *className = [dic objectForKey:@"className"];
+        if (![className isEqualToString:@""]) {
+            b = YES;
+            break;
+        }
+    }
+    
+    if (b == NO) {
+        NSDictionary *firstDic = [self.data objectAtIndex:indexPath.section];
+        NSArray *firstSub = [firstDic objectForKey:@"sub"];
+        NSDictionary *secondDic = [firstSub objectAtIndex:indexPath.row];
+        cell.dic = secondDic;
     }else{
-        NSDictionary *dic = [self.data objectAtIndex:indexPath.row];
-        cell.dic = dic;
+        NSDictionary *firstDic = [self.data objectAtIndex:indexPath.row];
+        cell.dic = firstDic;
     }
     
     return cell;
@@ -114,64 +148,36 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (self.isLastsetLayer == NO) {
-        NSDictionary *dic = [self.data objectAtIndex:section];
-        NSString *desc = [dic objectForKey:@"desc"];
-        return desc;
+    BOOL b = NO;//yes最下层 no不是最下层
+    for (NSDictionary *dic in self.data) {
+        NSString *className = [dic objectForKey:@"className"];
+        if (![className isEqualToString:@""]) {
+            b = YES;
+            break;
+        }
+    }
+    
+    if(b == NO){
+        NSDictionary *firstDic = [self.data objectAtIndex:section];
+        NSString *firstDesc = [firstDic objectForKey:@"desc"];
+        return firstDesc;
     }else{
-        return nil;
+        return @"最下层";
     }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.isLastsetLayer == NO) {
-        //当前级，如UIKit
-        NSDictionary *dic = [self.data objectAtIndex:indexPath.section];
-        NSString *className = [dic objectForKey:@"className"];
-        NSArray *sub = [dic objectForKey:@"sub"];
-        //下一级，如UIButton
-        NSDictionary *subDic = [sub objectAtIndex:indexPath.row];
-        NSArray *subSub = [subDic objectForKey:@"sub"];
-        NSString *subClassName = [subDic objectForKey:@"className"];
-        
-        
-        if(subSub.count>0 && [subClassName isEqualToString:@""]){
-            MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
-            cVC.data = subSub;
-            cVC.isLastsetLayer = NO;
-        }
-        
-
-        
-        if (subSub.count>0) {
-            MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
-            
-            cVC.data = subSub;
-            cVC.isLastsetLayer = YES;
-            
-            [self.navigationController pushViewController:cVC animated:YES];
-        }else{//是最底层
-            Class class = NSClassFromString(subClassName);
-            if ([class isSubclassOfClass:[UIViewController class]]) {
-                NSString *path = [[NSBundle mainBundle] pathForResource:subClassName ofType:@"nib"];
-                UIViewController *instance = nil;
-                
-                if (path == nil || path.length == 0) {
-                    instance = [[class alloc] init];
-                }else{
-                    instance = [[class alloc] initWithNibName:subClassName bundle:nil];
-                }
-                
-                [self.navigationController pushViewController:instance animated:YES];
-            }else{
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"错误" message:@"没有相关类" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
-                [av show];
-            }
-        }
+    MDClassesTableViewCell *cell = (MDClassesTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    NSArray *sub = [cell.dic objectForKey:@"sub"];
+    
+    if(sub.count > 0){
+        MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
+        cVC.data = [cell.dic objectForKey:@"sub"];
+        cVC.title = [cell.dic objectForKey:@"desc"];
+        [self.navigationController pushViewController:cVC animated:YES];
     }else{
-        NSDictionary *dic = [self.data objectAtIndex:indexPath.row];
-        NSString *className = [dic objectForKey:@"className"];
+        NSString *className = [cell.dic objectForKey:@"className"];
         Class class = NSClassFromString(className);
         if ([class isSubclassOfClass:[UIViewController class]]) {
             NSString *path = [[NSBundle mainBundle] pathForResource:className ofType:@"nib"];
@@ -188,6 +194,7 @@
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"错误" message:@"没有相关类" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
             [av show];
         }
+
     }
 }
 @end

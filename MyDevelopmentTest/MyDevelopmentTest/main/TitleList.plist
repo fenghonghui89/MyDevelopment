@@ -63,6 +63,14 @@
 						<key>className</key>
 						<string></string>
 						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>触控</string>
+						<key>className</key>
+						<string></string>
+						<key>sub</key>
 						<array>
 							<dict>
 								<key>desc</key>

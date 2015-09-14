@@ -19,7 +19,6 @@
 {
     MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
     cVC.data = [MDTool getPlistDataByName:@"TitleList"];
-    cVC.isLastsetLayer = NO;
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:cVC];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
