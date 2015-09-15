@@ -118,6 +118,7 @@
 		1482B5C81BA1A86400E83090 /* tabbar_item_store@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1482B5C71BA1A86400E83090 /* tabbar_item_store@2x.png */; };
 		14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */; };
 		14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */; };
+		14877C811BA81C6900785B0C /* 手势:坐标笔记-赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14877C801BA81C6900785B0C /* 手势:坐标笔记-赵哲.rtf */; };
 		148CD69B1AAE972700FAED9D /* abc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 148CD69A1AAE972700FAED9D /* abc.txt */; };
 		148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */; };
 		148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD6A21AAE99C400FAED9D /* TRStudent.m */; };
@@ -333,6 +334,7 @@
 		14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GestureRecognizer_VC.m; sourceTree = "<group>"; };
 		14877C7B1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GestureRecognizerTest_VC.h; sourceTree = "<group>"; };
 		14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GestureRecognizerTest_VC.m; sourceTree = "<group>"; };
+		14877C801BA81C6900785B0C /* 手势:坐标笔记-赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "手势:坐标笔记-赵哲.rtf"; sourceTree = "<group>"; };
 		148CD69A1AAE972700FAED9D /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 		148CD69D1AAE977700FAED9D /* MDStringNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStringNormalViewController.h; sourceTree = "<group>"; };
 		148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStringNormalViewController.m; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 		1412B6741BA1991000FA5F2E /* 笔记与资料 */ = {
 			isa = PBXGroup;
 			children = (
+				14877C801BA81C6900785B0C /* 手势:坐标笔记-赵哲.rtf */,
 				1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */,
 				1412B6761BA1991000FA5F2E /* 绘图笔记-赵哲.rtf */,
 			);
@@ -1362,6 +1365,7 @@
 				146D83051AA709F600F0C7FD /* NewZealand.png in Resources */,
 				141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */,
 				1412B6781BA1991000FA5F2E /* 绘图笔记-赵哲.rtf in Resources */,
+				14877C811BA81C6900785B0C /* 手势:坐标笔记-赵哲.rtf in Resources */,
 				146D82FD1AA709F600F0C7FD /* Honduras.png in Resources */,
 				147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */,
 				1412B6771BA1991000FA5F2E /* UIBezierPath曲线各点含义.png in Resources */,
