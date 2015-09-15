@@ -18,9 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 
     //self.view
-    [self.view setBackgroundColor:[UIColor orangeColor]];
+    [self.view setBackgroundColor:[UIColor clearColor]];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
         [self.view setFrame:[MDTool setRectX:0 y:0 w:defaultViewW h:defaultViewH-naviH]];

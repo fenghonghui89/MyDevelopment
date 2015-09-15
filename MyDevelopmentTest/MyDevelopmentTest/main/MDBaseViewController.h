@@ -12,5 +12,5 @@
 #import "UIView+MDCategory.h"
 #import "NSString+URLEncoding.h"
 @interface MDBaseViewController : UIViewController
-//@property(nonatomic,strong)UIView *bgView;
+
 @end

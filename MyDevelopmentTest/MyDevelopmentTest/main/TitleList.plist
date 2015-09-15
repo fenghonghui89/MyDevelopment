@@ -63,7 +63,16 @@
 						<key>className</key>
 						<string></string>
 						<key>sub</key>
-						<array/>
+						<array>
+							<dict>
+								<key>desc</key>
+								<string>触控基础使用</string>
+								<key>className</key>
+								<string>MD_Touch_VC</string>
+								<key>sub</key>
+								<array/>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>desc</key>

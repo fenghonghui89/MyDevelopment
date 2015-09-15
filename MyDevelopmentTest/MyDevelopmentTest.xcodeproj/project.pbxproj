@@ -33,6 +33,15 @@
 		14381BF41BA1BDCC00C06EB7 /* playing_volumn_slide_foreground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BF11BA1BDCC00C06EB7 /* playing_volumn_slide_foreground@2x.png */; };
 		14381BF51BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BF21BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png */; };
 		144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144448651B9D90FA009B145F /* MD_UIBezierPath_CustomView.m */; };
+		145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87051BA836FA00447D35 /* MD_Touch_VC.m */; };
+		145D87091BA8375800447D35 /* MD_Touch_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87081BA8375800447D35 /* MD_Touch_CustomView.m */; };
+		145D870C1BA83BE000447D35 /* MD_Touch_CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D870B1BA83BE000447D35 /* MD_Touch_CustomView1.m */; };
+		145D870F1BA8405E00447D35 /* MD_Touch_CustomView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D870E1BA8405E00447D35 /* MD_Touch_CustomView2.m */; };
+		145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87111BA8417800447D35 /* MD_Touch_Point.m */; };
+		145D871D1BA84DBE00447D35 /* MD_UIViewController_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D871C1BA84DBE00447D35 /* MD_UIViewController_VC.m */; };
+		145D871F1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png in Resources */ = {isa = PBXBuildFile; fileRef = 145D871E1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png */; };
+		145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87211BA8533500447D35 /* MD_Touch_Line.m */; };
+		145D87241BA85DAD00447D35 /* 触控笔记-赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 145D87231BA85DAD00447D35 /* 触控笔记-赵哲.rtf */; };
 		1463A9C71B6612160087F38F /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463A9C61B6612160087F38F /* UIView+MDCategory.m */; };
 		1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */; };
 		1463B2121AA162C2006AE8D2 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2091AA162C2006AE8D2 /* button.png */; };
@@ -219,6 +228,22 @@
 		14381BF21BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_sound_icon@2x.png"; sourceTree = "<group>"; };
 		144448641B9D90FA009B145F /* MD_UIBezierPath_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIBezierPath_CustomView.h; sourceTree = "<group>"; };
 		144448651B9D90FA009B145F /* MD_UIBezierPath_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIBezierPath_CustomView.m; sourceTree = "<group>"; };
+		145D87041BA836FA00447D35 /* MD_Touch_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_VC.h; sourceTree = "<group>"; };
+		145D87051BA836FA00447D35 /* MD_Touch_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_VC.m; sourceTree = "<group>"; };
+		145D87071BA8375800447D35 /* MD_Touch_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_CustomView.h; sourceTree = "<group>"; };
+		145D87081BA8375800447D35 /* MD_Touch_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_CustomView.m; sourceTree = "<group>"; };
+		145D870A1BA83BE000447D35 /* MD_Touch_CustomView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_CustomView1.h; sourceTree = "<group>"; };
+		145D870B1BA83BE000447D35 /* MD_Touch_CustomView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_CustomView1.m; sourceTree = "<group>"; };
+		145D870D1BA8405E00447D35 /* MD_Touch_CustomView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_CustomView2.h; sourceTree = "<group>"; };
+		145D870E1BA8405E00447D35 /* MD_Touch_CustomView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_CustomView2.m; sourceTree = "<group>"; };
+		145D87101BA8417800447D35 /* MD_Touch_Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_Point.h; sourceTree = "<group>"; };
+		145D87111BA8417800447D35 /* MD_Touch_Point.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_Point.m; sourceTree = "<group>"; };
+		145D871B1BA84DBE00447D35 /* MD_UIViewController_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIViewController_VC.h; sourceTree = "<group>"; };
+		145D871C1BA84DBE00447D35 /* MD_UIViewController_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIViewController_VC.m; sourceTree = "<group>"; };
+		145D871E1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png"; sourceTree = "<group>"; };
+		145D87201BA8533500447D35 /* MD_Touch_Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_Line.h; sourceTree = "<group>"; };
+		145D87211BA8533500447D35 /* MD_Touch_Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_Line.m; sourceTree = "<group>"; };
+		145D87231BA85DAD00447D35 /* 触控笔记-赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "触控笔记-赵哲.rtf"; sourceTree = "<group>"; };
 		1463A9C51B6612160087F38F /* UIView+MDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDCategory.h"; sourceTree = "<group>"; };
 		1463A9C61B6612160087F38F /* UIView+MDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDCategory.m"; sourceTree = "<group>"; };
 		1463B2051AA162C2006AE8D2 /* MDCountStringRectangleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCountStringRectangleViewController.h; sourceTree = "<group>"; };
@@ -465,6 +490,8 @@
 		1412B6741BA1991000FA5F2E /* 笔记与资料 */ = {
 			isa = PBXGroup;
 			children = (
+				145D87231BA85DAD00447D35 /* 触控笔记-赵哲.rtf */,
+				145D871E1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png */,
 				14877C801BA81C6900785B0C /* 手势:坐标笔记-赵哲.rtf */,
 				1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */,
 				1412B6761BA1991000FA5F2E /* 绘图笔记-赵哲.rtf */,
@@ -543,6 +570,15 @@
 				14381BEE1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m */,
 			);
 			path = UISlider;
+			sourceTree = "<group>";
+		};
+		145D871A1BA84DAB00447D35 /* 常用 */ = {
+			isa = PBXGroup;
+			children = (
+				145D871B1BA84DBE00447D35 /* MD_UIViewController_VC.h */,
+				145D871C1BA84DBE00447D35 /* MD_UIViewController_VC.m */,
+			);
+			path = "常用";
 			sourceTree = "<group>";
 		};
 		1463B2011AA162C2006AE8D2 /* Classes */ = {
@@ -647,6 +683,7 @@
 		1463B25E1AA1B4C2006AE8D2 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
+				145D871A1BA84DAB00447D35 /* 常用 */,
 				1463B25F1AA1B4ED006AE8D2 /* ChildVC */,
 			);
 			path = UIViewController;
@@ -988,6 +1025,18 @@
 		14877C7D1BA7F15E00785B0C /* 触控 */ = {
 			isa = PBXGroup;
 			children = (
+				145D87041BA836FA00447D35 /* MD_Touch_VC.h */,
+				145D87051BA836FA00447D35 /* MD_Touch_VC.m */,
+				145D87071BA8375800447D35 /* MD_Touch_CustomView.h */,
+				145D87081BA8375800447D35 /* MD_Touch_CustomView.m */,
+				145D870A1BA83BE000447D35 /* MD_Touch_CustomView1.h */,
+				145D870B1BA83BE000447D35 /* MD_Touch_CustomView1.m */,
+				145D870D1BA8405E00447D35 /* MD_Touch_CustomView2.h */,
+				145D870E1BA8405E00447D35 /* MD_Touch_CustomView2.m */,
+				145D87201BA8533500447D35 /* MD_Touch_Line.h */,
+				145D87211BA8533500447D35 /* MD_Touch_Line.m */,
+				145D87101BA8417800447D35 /* MD_Touch_Point.h */,
+				145D87111BA8417800447D35 /* MD_Touch_Point.m */,
 			);
 			path = "触控";
 			sourceTree = "<group>";
@@ -1358,6 +1407,7 @@
 				14C1E6B31B53CD4800C7E5DF /* Default-568h@2x.png in Resources */,
 				146D82EF1AA709F600F0C7FD /* Denmark.png in Resources */,
 				146D829C1AA6FC6600F0C7FD /* index.html in Resources */,
+				145D87241BA85DAD00447D35 /* 触控笔记-赵哲.rtf in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,
 				141B43391AA401BC008F2711 /* 达芬奇-蒙娜丽莎.png in Resources */,
 				141B43271AA3FC12008F2711 /* Sky.jpg in Resources */,
@@ -1417,6 +1467,7 @@
 				146D83191AA709F600F0C7FD /* Spain.png in Resources */,
 				14381BF51BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png in Resources */,
 				1482B5C81BA1A86400E83090 /* tabbar_item_store@2x.png in Resources */,
+				145D871F1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png in Resources */,
 				1463B2781AA1B593006AE8D2 /* ThirdViewController.xib in Resources */,
 				146D831D1AA709F600F0C7FD /* Uruguay.png in Resources */,
 				146D82E91AA709F600F0C7FD /* Cameroon.png in Resources */,
@@ -1436,6 +1487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145D87091BA8375800447D35 /* MD_Touch_CustomView.m in Sources */,
 				141B436C1AA47394008F2711 /* MDModal1ViewController.m in Sources */,
 				148CD7231AAEC54700FAED9D /* MDNSNumberViewController.m in Sources */,
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
@@ -1458,6 +1510,7 @@
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
+				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
 				14F0739F1B95BCAD0029A653 /* MD_CGContext_ViewController.m in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
@@ -1466,6 +1519,7 @@
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
 				149A1E631B26E5CB00986FA6 /* main.m in Sources */,
+				145D870C1BA83BE000447D35 /* MD_Touch_CustomView1.m in Sources */,
 				148CD7491AAECFDD00FAED9D /* TRStudent6.m in Sources */,
 				144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */,
 				148CD7371AAEC98800FAED9D /* MDNSArrayNormalViewController.m in Sources */,
@@ -1493,9 +1547,11 @@
 				14F073A21B95BCC50029A653 /* MD_CGimage_ViewController.m in Sources */,
 				1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */,
 				1463B26C1AA1B593006AE8D2 /* FirstViewController.m in Sources */,
+				145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */,
 				147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */,
 				141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */,
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
+				145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
 				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
@@ -1512,11 +1568,13 @@
 				1463B2841AA1BD87006AE8D2 /* MDPickerViewViewController.m in Sources */,
 				1463B2141AA162C2006AE8D2 /* MDUIButtonViewController.m in Sources */,
 				148CD7551AAED37700FAED9D /* TRUserInfo.m in Sources */,
+				145D870F1BA8405E00447D35 /* MD_Touch_CustomView2.m in Sources */,
 				141B432F1AA3FDD3008F2711 /* MDPageControlViewController.m in Sources */,
 				14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */,
 				148CD7601AAED70E00FAED9D /* TRXYZ.m in Sources */,
 				148CD7121AAEC21600FAED9D /* TRStudent3.m in Sources */,
 				1463B2911AA1C0AF006AE8D2 /* MDUIImageViewViewController.m in Sources */,
+				145D871D1BA84DBE00447D35 /* MD_UIViewController_VC.m in Sources */,
 				141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */,
 				14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */,
 				148CD73B1AAECA3200FAED9D /* TRStudent4.m in Sources */,

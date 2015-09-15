@@ -14,7 +14,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self gestureRecognizerTest];
+    [self gestureRecognizerTest3];
 }
 
 #pragma mark - < test > -
