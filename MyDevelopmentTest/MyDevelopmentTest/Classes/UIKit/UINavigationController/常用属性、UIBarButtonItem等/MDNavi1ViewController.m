@@ -107,14 +107,30 @@
     self.toolbarItems = @[t1,t5,t3,t6,t4,t7,t2];
 }
 
-#pragma mark navi背景色/背景图/tintColor/渗透状态
+#pragma mark navi背景色/stateBar背景色/背景图/tintColor/渗透状态
 -(void)tap4
 {
-//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];//背景色
-//    self.navigationController.navigationBar.tintColor = [UIColor redColor];//影响navi控件tintColor
+    //带navi时stateBar背景色
+    /*
+     注：
+     1.设置barTintColor后，stateBar和navi都会变色，且没有毛玻璃效果，和渗透无关
+     2.设置navi背景图后会无效
+     */
+//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];//stateBar背景色
+//    self.navigationController.navigationBar.tintColor = [UIColor redColor];//navi控件tintColor
     
-//    self.navigationController.navigationBar.translucent = YES;//渗透（ios6默认为no，ios7之后为yes）
-//    self.navigationController.navigationBar.backgroundColor = [UIColor orangeColor];//毛玻璃效果背景色，渗透yes才有效
+    
+    
+    //毛玻璃时背景色、渗透
+    /*
+     注：
+     1.渗透 - ios6默认为no，ios7之后为yes
+     2.backgroundColor在渗透yes才有效，不会影响stateBar背景色，设置barTintColor后效果会无效
+     */
+//    self.navigationController.navigationBar.translucent = YES;//渗透
+//    self.navigationController.navigationBar.backgroundColor = [UIColor orangeColor];//毛玻璃时背景色
+    
+    
     
     //背景图
     UIImage * naviImage = [UIImage imageNamed:@"delete_btn.png"];

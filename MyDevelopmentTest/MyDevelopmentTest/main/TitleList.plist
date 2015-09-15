@@ -59,7 +59,7 @@
 				<array>
 					<dict>
 						<key>desc</key>
-						<string>手势</string>
+						<string>触控</string>
 						<key>className</key>
 						<string></string>
 						<key>sub</key>
@@ -67,7 +67,7 @@
 					</dict>
 					<dict>
 						<key>desc</key>
-						<string>触控</string>
+						<string>手势</string>
 						<key>className</key>
 						<string></string>
 						<key>sub</key>

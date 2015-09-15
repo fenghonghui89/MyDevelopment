@@ -12,7 +12,7 @@
 
 +(void)load
 {
-    NSLog(@"class load");//类默认方法：程序加载
+    NSLog(@"class load ?");//类默认方法：程序加载
 }
 
 +(void)initialize

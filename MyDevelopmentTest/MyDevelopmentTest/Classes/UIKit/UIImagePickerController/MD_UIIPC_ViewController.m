@@ -14,13 +14,14 @@
 @property (nonatomic, strong) NSMutableArray *images;
 @property (strong, nonatomic) UIView         *editView;
 @property (nonatomic, strong) UIImageView    *dragIV;
+@property (nonatomic,strong) UIImagePickerController *ipc;
 @end
 
 
 
 @implementation MD_UIIPC_ViewController
 
-#pragma mark - vc cycle
+#pragma mark - < vc cycle > -
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,6 +34,7 @@
     
     //创建存放图片的scrollView
     UIScrollView *sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, viewW, 80)];
+    [sv setBackgroundColor:[UIColor purpleColor]];
     [sv setContentSize:CGSizeMake(self.images.count*80, 0)];
     [self.view addSubview:sv];
     
@@ -50,46 +52,47 @@
     }
 }
 
-#pragma mark - init
+#pragma mark init
 -(void)customInitUI
 {
     UIView *editView = [[UIView alloc] init];
     [editView setBackgroundColor:[UIColor grayColor]];
-    [editView setFrame:[MDTool setRectX:10 y:50 w:viewW-20 h:viewH-50-50]];
+    [editView setFrame:[MDTool setRectX:10 y:80+10 w:viewW-20 h:viewH-80-10-10-30-10]];
     [editView setClipsToBounds:YES];
     self.editView = editView;
     [self.view addSubview:editView];
     
     CGFloat y = viewH-40;
-    UIButton *btn = [[UIButton alloc] initWithFrame:[MDTool setRectX:10 y:y w:50 h:30]];
+    UIButton *btn = [[UIButton alloc] initWithFrame:[MDTool setRectX:10 y:y w:100 h:30]];
     [btn setTitle:@"获取相册" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn setBackgroundColor:[UIColor greenColor]];
-    [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(getPhoto) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 
-    CGFloat x = screenW-10-50;
-    UIButton *btn2 = [[UIButton alloc] initWithFrame:[MDTool setRectX:x y:y w:50 h:30]];
+    CGFloat x = screenW-10-100;
+    UIButton *btn2 = [[UIButton alloc] initWithFrame:[MDTool setRectX:x y:y w:100 h:30]];
     [btn2 setTitle:@"生成图片" forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn2 setBackgroundColor:[UIColor greenColor]];
-    [btn2 addTarget:self action:@selector(tap2) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 addTarget:self action:@selector(createImage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
 }
 
-#pragma mark - action
+#pragma mark - < action > -
 //获取相册
--(void)tap
+-(void)getPhoto
 {
     self.images = [NSMutableArray array];
     UIImagePickerController *ipc = [[UIImagePickerController alloc]init];
     [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     ipc.delegate = self;
+    _ipc = ipc;
     [self presentViewController:ipc animated:YES completion:Nil];
 }
 
 //生成图片
--(void)tap2
+-(void)createImage
 {
     UIGraphicsBeginImageContext(self.editView.bounds.size);//创建一个画布
     [self.editView.layer renderInContext:UIGraphicsGetCurrentContext()];//把内容渲染到画布当中
@@ -264,7 +267,7 @@
     //    rotation.rotation = 0;
 }
 
-#pragma mark - callback
+#pragma mark - < callback > -
 //保存图片时用到的方法
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
@@ -311,8 +314,9 @@
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     NSLog(@"哈哈 相册已经显示");
+    NSLog(@"ImagePickerController.view%@",NSStringFromCGRect(_ipc.view.frame));
     
-    _v = [[ UIView alloc]initWithFrame:CGRectMake(0, 300, viewW, 100)];
+    _v = [[ UIView alloc]initWithFrame:CGRectMake(0, _ipc.view.frame.size.height-100, viewW, 100)];
     _v.backgroundColor = [UIColor redColor];
     _sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 20, viewW, 80)];
     

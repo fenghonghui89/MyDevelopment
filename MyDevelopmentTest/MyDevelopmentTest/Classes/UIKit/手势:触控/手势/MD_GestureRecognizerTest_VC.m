@@ -1,29 +1,31 @@
 //
-//  TRViewController.m
-//  my06
+//  MD_GestureRecognizerTest_VC.m
+//  MyDevelopmentTest
 //
-//  Created by HanyFeng on 13-11-20.
-//  Copyright (c) 2013年 Hany. All rights reserved.
+//  Created by hanyfeng on 15/9/11.
+//  Copyright (c) 2015年 hanyfeng. All rights reserved.
 //
 
-#import "TRViewController.h"
-
-@interface TRViewController ()<UIGestureRecognizerDelegate>//遵循协议
-
+#import "MD_GestureRecognizerTest_VC.h"
+@interface MD_GestureRecognizerTest_VC()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UIImageView* imageView;
-@property(nonatomic,assign)CGFloat minimumZoomScale;//最小缩放比例（初始化和双击恢复时用到，最好声明为属性延长声明周期）
+@property(nonatomic,assign)CGFloat minimumZoomScale;//最小缩放比例，初始化和双击恢复时用到
 @property(nonatomic,assign)CGFloat scale;//缩放比例
-
 @end
-
-@implementation TRViewController
-
-- (void)viewDidLoad
+@implementation MD_GestureRecognizerTest_VC
+#pragma mark - < vc lifecycle > -
+-(void)viewDidLoad
 {
     [super viewDidLoad];
-//1.添加图片
-    //创建imageView并添加图片
-	self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lion.jpg"]];
+    [self customInitUI];
+}
+
+-(void)customInitUI
+{
+    /*
+     创建图片
+     */
+    self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Sky.jpg"]];
     
     //开启userInteractionEnabled并把imageView移动到图片中间
     self.imageView.userInteractionEnabled = YES;
@@ -33,36 +35,36 @@
     float horizontalScale = self.view.bounds.size.width / self.imageView.image.size.width;
     float verticalScale = self.view.bounds.size.height / self.imageView.image.size.height;
     self.minimumZoomScale = MIN(horizontalScale, verticalScale);
-
+    
     //通过transform缩放图片到屏幕刚好显示所有内容且宽高比不变
     self.imageView.transform = CGAffineTransformMakeScale(self.minimumZoomScale,self.minimumZoomScale);
-
-    //把imageView加入到self.view
+    
     [self.view addSubview:self.imageView];
-
-//2.添加手势识别器
-    //添加旋转
+    
+    /*
+     添加手势
+     */
+    //旋转
     UIRotationGestureRecognizer* rotationGR = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotation:)];
     [self.view addGestureRecognizer:rotationGR];
-    rotationGR.delegate = self;//委托方的delegate设置为自己
+    rotationGR.delegate = self;
     
-    //添加缩放
+    //缩放
     UIPinchGestureRecognizer* pinchGR = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
     [self.view addGestureRecognizer:pinchGR];
-    pinchGR.delegate = self;//同上
+    pinchGR.delegate = self;
     
-    //添加拖动
+    //拖动
     UIPanGestureRecognizer* panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [self.imageView addGestureRecognizer:panGR];
-    panGR.delegate = self;//同上
+    panGR.delegate = self;
     
-    //添加双击恢复原状
+    //双击恢复原状
     UITapGestureRecognizer* tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     tapGR.numberOfTapsRequired = 2;
     [self.imageView addGestureRecognizer:tapGR];
 }
-
-//3.书写响应信息
+#pragma mark - < action > -
 //旋转
 -(void)rotation:(UIRotationGestureRecognizer*)rotationGR
 {
@@ -97,21 +99,18 @@
 {
     self.imageView.transform = CGAffineTransformMakeRotation(0);
     self.imageView.transform = CGAffineTransformMakeScale(self.minimumZoomScale,self.minimumZoomScale);
-    //在一段时间内动画式切换
-    [UIView animateWithDuration:0.5 animations:
-     ^{self.imageView.center = self.view.center;}];
+
+    [UIView animateWithDuration:0.5 animations:^{
+        self.imageView.center = self.view.center;
+    }];
 }
 
-//协议方法-同时响应多种手势
+#pragma mark - < callback > -
+#pragma mark deleage
+//同时响应多种手势
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -14,7 +14,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self gestureRecognizerTest3];
+    [self gestureRecognizerTest];
 }
 
 #pragma mark - < test > -
@@ -23,13 +23,14 @@
 {
     UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     tapGR.numberOfTapsRequired = 2;//点击多少次才响应
-    tapGR.numberOfTouchesRequired = 2;//多少个点同时触控才响应
+    tapGR.numberOfTouchesRequired = 1;//多少个点同时触控才响应
     [self.view addGestureRecognizer:tapGR];
 }
 
--(void)tap:(UITapGestureRecognizer *)sender
+-(void)tap:(UITapGestureRecognizer *)tapGR
 {
-    NSLog(@"点击触发...");
+    CGPoint point = [tapGR locationInView:self.view];
+    NSLog(@"点击触发...%@",NSStringFromCGPoint(point));
 }
 
 #pragma mark pinch 缩放

@@ -25,7 +25,7 @@
      注意代码顺序所造成的图层覆盖
      */
     
-    [self custom2DrawRect:rect];
+    [self custom3DrawRect:rect];
 }
 #pragma mark - < action > -
 #pragma mark CGContextRef
@@ -97,8 +97,16 @@
     UIRectFill(rect);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextMoveToPoint(context, 10, 10);
-    CGContextAddCurveToPoint(context, 200, 50, 100, 400, 300, 400);
+    CGContextMoveToPoint(context, 50, 10);//起始点p1
+    CGContextAddCurveToPoint(context,
+                             10, 40,//控制点cp1-起始点的趋向
+                             50, 110,//控制点cp2-结束点从哪来
+                             10, 110);//结束点p2
+    CGContextAddCurveToPoint(context,
+                             50, 110,
+                             10, 210,
+                             50, 210);
+    
     CGContextSetRGBStrokeColor(context, 0, 1, 0, 1);
     CGContextStrokePath(context);
 }

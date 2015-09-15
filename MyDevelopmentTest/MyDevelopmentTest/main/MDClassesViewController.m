@@ -30,22 +30,27 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.translucent = YES;//渗透（ios6默认为no，ios7之后为yes）
+    
+    //navi
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.backgroundColor = [UIColor yellowColor];
+    self.navigationController.navigationBar.barTintColor = nil;
+    
+    //tabbar
     self.tabBarController.tabBar.translucent = NO;
 }
 
 -(void)customInitUI
 {
     //self.view
-    [self.view setBackgroundColor:[UIColor redColor]];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor blueColor];
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
         self.automaticallyAdjustsScrollViewInsets = NO;//不自动设置内边距，防止ios7以后tv下移
     }
     
     //bgView
     UIView *bgView = [[UIView alloc] init];
-    [bgView setBackgroundColor:[UIColor blueColor]];
+    [bgView setBackgroundColor:[UIColor redColor]];
     CGFloat bgViewY = 0;
     CGFloat bgViewW = defaultViewW;
     CGFloat bgViewH = 0;

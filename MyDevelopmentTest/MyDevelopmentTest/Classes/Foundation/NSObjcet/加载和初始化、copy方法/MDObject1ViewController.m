@@ -14,7 +14,8 @@
 
 @implementation MDObject1ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     TRStudent1* student = [[TRStudent1 alloc] init];//类都是先加载再初始化

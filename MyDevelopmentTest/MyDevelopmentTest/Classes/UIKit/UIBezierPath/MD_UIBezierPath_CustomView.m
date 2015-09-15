@@ -25,7 +25,7 @@
      注意代码顺序所造成的图层覆盖
      */
     
-    [self custom5drawRect:rect];
+    [self custom4drawRect:rect];
 }
 
 #pragma mark - < ation > -
