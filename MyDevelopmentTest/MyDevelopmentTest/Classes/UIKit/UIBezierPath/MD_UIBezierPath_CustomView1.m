@@ -41,7 +41,7 @@
 
 -(void)drawRect:(CGRect)rect
 {
-    UIBezierPath *path = [UIBezierPath bezierPath];
+    UIBezierPath *path = [UIBezierPath bezierPath];//不能提升为属性
     
     [path moveToPoint:CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)];
     [path addArcWithCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)

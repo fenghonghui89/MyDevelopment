@@ -12,7 +12,7 @@
 
 #import "MD_Touch_CustomView2.h"
 #import "MD_Touch_Point.h"
-#import "MD_Touch_Line.h"
+
 @interface MD_Touch_CustomView2()
 @property(nonatomic,strong)UIBezierPath *path;
 @property(nonatomic,strong)NSMutableArray *points;
@@ -31,7 +31,7 @@
 
 -(void)drawRect:(CGRect)rect
 {
-    CGPoint startPoint = ((MD_Touch_Point *)self.points[0]).point;
+    CGPoint startPoint = [self.points[0] cgpoint];
     [_path moveToPoint:startPoint];
 
     for (int i = 1; i<self.points.count; i++) {
@@ -50,7 +50,7 @@
     CGPoint startPoint = [touch locationInView:self];
     MD_Touch_Point *point = [[MD_Touch_Point alloc] initWithPoint:startPoint];
     
-    self.points = [NSMutableArray array];
+    self.points = [NSMutableArray array];//不能在initWithFrame初始化，否则会因为nil对象造成崩溃
     [self.points addObject:point];
 }
 

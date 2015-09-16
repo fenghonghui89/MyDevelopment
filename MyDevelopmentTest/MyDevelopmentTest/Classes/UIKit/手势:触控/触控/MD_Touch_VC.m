@@ -9,7 +9,7 @@
 #import "MD_Touch_VC.h"
 #import "MD_Touch_CustomView.h"//基本使用
 #import "MD_Touch_CustomView1.h"//练习：点击拖动画出矩形
-#import "MD_Touch_CustomView2.h"//练习：画线
+#import "MD_Touch_CustomView2.h"//练习：画多条线
 
 @implementation MD_Touch_VC
 -(void)viewDidLoad

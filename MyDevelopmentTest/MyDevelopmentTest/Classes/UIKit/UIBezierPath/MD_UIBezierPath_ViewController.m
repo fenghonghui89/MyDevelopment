@@ -13,7 +13,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    [self uibezierpathTest];
+    [self uibezierpathTest1];
 }
 
 #pragma mark - < test > -

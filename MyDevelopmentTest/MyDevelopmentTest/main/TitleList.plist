@@ -52,6 +52,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>Animation</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>手势/触控</string>
 				<key>className</key>
 				<string></string>
@@ -364,6 +372,39 @@
 		<string></string>
 		<key>sub</key>
 		<array>
+			<dict>
+				<key>desc</key>
+				<string>NSTimer</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>变速动画</string>
+						<key>className</key>
+						<string>MD_NSTimer_VC3</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>匀速动画</string>
+						<key>className</key>
+						<string>MD_NSTimer_VC2</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>基本使用</string>
+						<key>className</key>
+						<string>MD_NSTimer_VC1</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
 			<dict>
 				<key>desc</key>
 				<string>NSAttributedString</string>

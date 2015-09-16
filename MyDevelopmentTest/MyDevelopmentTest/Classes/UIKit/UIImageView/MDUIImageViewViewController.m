@@ -18,10 +18,11 @@
 {
     [super viewDidLoad];
     
-    [self ivtest3];
+    [self ivtest5];
 }
 
-//全屏缩放
+#pragma mark - < test > -
+#pragma mark 全屏缩放
 -(void)ivtest1
 {
     UIImage *image = [UIImage imageNamed:@"small.jpg"];
@@ -37,7 +38,7 @@
     imageView.contentMode = UIViewContentModeScaleAspectFit;//缩放居中，保留全图，保持宽高比
 }
 
-//等比例缩放
+#pragma mark 等比例缩放
 -(void)ivtest2
 {
     UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(50, 50, 200, 300)];
@@ -51,7 +52,7 @@
     [iv setClipsToBounds:YES];
 }
 
-//九切片
+#pragma mark 九切片
 -(void)ivtest3
 {
     //UIImageResizingModeStretch变化时拉伸
@@ -79,10 +80,18 @@
     iv3.image = resizableImage3;
 }
 
-//UIImage - drawAtPoint drawInRect drawAsPatternInRect
+#pragma mark UIImage - drawAtPoint drawInRect drawAsPatternInRect
 -(void)ivtest4
 {
     MD_UIIV_CustomView *cv = [[MD_UIIV_CustomView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:cv];
+}
+
+#pragma mark UIImage - 动画
+-(void)ivtest5
+{
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 30, 26)];
+    iv.image = [UIImage animatedImageNamed:@"playing" duration:2.0];
+    [self.view addSubview:iv];
 }
 @end
