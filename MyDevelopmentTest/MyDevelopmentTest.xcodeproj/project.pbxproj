@@ -100,6 +100,8 @@
 		14565E8F1BA95FF9009F7B2D /* BurstAircraftAircraftBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 14565E8E1BA95FF9009F7B2D /* BurstAircraftAircraftBig.png */; };
 		14565E921BA96012009F7B2D /* MD_NSTimer_VC3.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E911BA96012009F7B2D /* MD_NSTimer_VC3.m */; };
 		14565E941BA97F43009F7B2D /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14565E931BA97F43009F7B2D /* icon.jpg */; };
+		14565E971BA98C5B009F7B2D /* MD_UICustom_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */; };
+		14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E991BA98F03009F7B2D /* MDCircularSlider.m */; };
 		145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87051BA836FA00447D35 /* MD_Touch_VC.m */; };
 		145D87091BA8375800447D35 /* MD_Touch_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87081BA8375800447D35 /* MD_Touch_CustomView.m */; };
 		145D870C1BA83BE000447D35 /* MD_Touch_CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D870B1BA83BE000447D35 /* MD_Touch_CustomView1.m */; };
@@ -365,6 +367,10 @@
 		14565E901BA96012009F7B2D /* MD_NSTimer_VC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSTimer_VC3.h; sourceTree = "<group>"; };
 		14565E911BA96012009F7B2D /* MD_NSTimer_VC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSTimer_VC3.m; sourceTree = "<group>"; };
 		14565E931BA97F43009F7B2D /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		14565E951BA98C5B009F7B2D /* MD_UICustom_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UICustom_VC.h; sourceTree = "<group>"; };
+		14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UICustom_VC.m; sourceTree = "<group>"; };
+		14565E981BA98F03009F7B2D /* MDCircularSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCircularSlider.h; sourceTree = "<group>"; };
+		14565E991BA98F03009F7B2D /* MDCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCircularSlider.m; sourceTree = "<group>"; };
 		145D87041BA836FA00447D35 /* MD_Touch_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_VC.h; sourceTree = "<group>"; };
 		145D87051BA836FA00447D35 /* MD_Touch_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_VC.m; sourceTree = "<group>"; };
 		145D87071BA8375800447D35 /* MD_Touch_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_CustomView.h; sourceTree = "<group>"; };
@@ -620,6 +626,10 @@
 			children = (
 				1403E3261B8C68ED009C8CAC /* myUILabel.h */,
 				1403E3271B8C68ED009C8CAC /* myUILabel.m */,
+				14565E981BA98F03009F7B2D /* MDCircularSlider.h */,
+				14565E991BA98F03009F7B2D /* MDCircularSlider.m */,
+				14565E951BA98C5B009F7B2D /* MD_UICustom_VC.h */,
+				14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */,
 			);
 			path = UICustom;
 			sourceTree = "<group>";
@@ -1828,6 +1838,7 @@
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
+				14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
 				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
 				14F0739F1B95BCAD0029A653 /* MD_CGContext_ViewController.m in Sources */,
@@ -1896,6 +1907,7 @@
 				148CD7601AAED70E00FAED9D /* TRXYZ.m in Sources */,
 				148CD7121AAEC21600FAED9D /* TRStudent3.m in Sources */,
 				1463B2911AA1C0AF006AE8D2 /* MDUIImageViewViewController.m in Sources */,
+				14565E971BA98C5B009F7B2D /* MD_UICustom_VC.m in Sources */,
 				145D871D1BA84DBE00447D35 /* MD_UIViewController_VC.m in Sources */,
 				141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */,
 				14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */,

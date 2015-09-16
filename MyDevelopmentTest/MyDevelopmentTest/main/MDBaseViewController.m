@@ -21,7 +21,7 @@
     
 
     //self.view
-    [self.view setBackgroundColor:[UIColor clearColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
         [self.view setFrame:[MDTool setRectX:0 y:0 w:defaultViewW h:defaultViewH-naviH]];

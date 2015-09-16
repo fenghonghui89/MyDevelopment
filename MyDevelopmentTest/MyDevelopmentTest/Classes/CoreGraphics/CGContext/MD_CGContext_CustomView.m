@@ -110,4 +110,10 @@
     CGContextSetRGBStrokeColor(context, 0, 1, 0, 1);
     CGContextStrokePath(context);
 }
+
+-(void)custom4DrawRect:(CGRect)rect
+{
+//    UIGraphicsBeginImageContext 画圆弧
+    
+}
 @end

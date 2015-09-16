@@ -4,6 +4,14 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>自定义控件</string>
+		<key>className</key>
+		<string>MD_UICustom_VC</string>
+		<key>sub</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>CoreGraphics</string>
 		<key>className</key>
 		<string></string>
