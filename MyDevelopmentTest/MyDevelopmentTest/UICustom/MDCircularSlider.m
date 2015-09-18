@@ -69,7 +69,7 @@
     return self;
 }
 
-#pragma mark - < UIControl Override > -
+#pragma mark - < UIControl Override 跟踪用户操作> -
 
 /** Tracking is started **/
 -(BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event{
@@ -111,7 +111,7 @@
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
-    /** Draw the Background **/
+    /** 绘制黑色背景 **/
     
     //Create the path
     CGContextAddArc(ctx, self.frame.size.width/2, self.frame.size.height/2, radius, 0, M_PI *2, 0);
@@ -130,7 +130,7 @@
     //** Draw the circle (using a clipped gradient) **/
     
     
-    /** Create THE MASK Image **/
+    /** 创建掩码图 **/
     UIGraphicsBeginImageContext(CGSizeMake(TB_SLIDER_SIZE,TB_SLIDER_SIZE));
     CGContextRef imageCtx = UIGraphicsGetCurrentContext();
     
@@ -158,29 +158,31 @@
     
     
     
-    /** THE GRADIENT **/
+    /** 绘制渐变效果 **/
     
-    //list of components
+    //定义颜色的变化范围
     CGFloat components[8] = {
         0.0, 0.0, 1.0, 1.0,     // Start color - Blue
         1.0, 0.0, 1.0, 1.0 };   // End color - Violet
     
     CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
     CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, components, NULL, 2);
+    
+    //选择颜色空间
     CGColorSpaceRelease(baseSpace), baseSpace = NULL;
     
-    //Gradient direction
+    //定义渐变的方向
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
     
-    //Draw the gradient
+    //绘制渐变
     CGContextDrawLinearGradient(ctx, gradient, startPoint, endPoint, 0);
     CGGradientRelease(gradient), gradient = NULL;
     
     CGContextRestoreGState(ctx);
     
     
-    /** Add some light reflection effects on the background circle**/
+    /** 添加灯光效果**/
     
     CGContextSetLineWidth(ctx, 1);
     CGContextSetLineCap(ctx, kCGLineCapRound);
@@ -198,12 +200,12 @@
     CGContextDrawPath(ctx, kCGPathStroke);
     
     
-    /** Draw the handle **/
+    /** 绘制手柄 **/
     [self drawTheHandle:ctx];
     
 }
 
-/** Draw a white knob over the circle **/
+/** 绘制手柄 **/
 -(void) drawTheHandle:(CGContextRef)ctx{
     
     CGContextSaveGState(ctx);
@@ -224,7 +226,7 @@
 
 #pragma mark - Math -
 
-/** Move the Handle **/
+/** 把任意的位置值转变为手柄可移动的值，重绘 **/
 -(void)movehandle:(CGPoint)lastPoint{
     
     //Get the center
@@ -243,7 +245,7 @@
     [self setNeedsDisplay];
 }
 
-/** Given the angle, get the point position on circumference **/
+/** 给出角度 获取坐标 **/
 -(CGPoint)pointFromAngle:(int)angleInt{
     
     //Circle center
@@ -257,6 +259,7 @@
     return result;
 }
 
+//根据两个point，就会返回一个连接这两点对应的一个角度关系
 //Sourcecode from Apple example clockControl
 //Calculate the direction in degrees from a center point to an arbitrary position.
 static inline float AngleFromNorth(CGPoint p1, CGPoint p2, BOOL flipped) {
