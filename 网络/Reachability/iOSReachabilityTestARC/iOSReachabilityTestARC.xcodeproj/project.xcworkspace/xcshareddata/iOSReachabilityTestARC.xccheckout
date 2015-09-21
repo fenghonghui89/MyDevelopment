@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>37AA2029-9FB4-43CB-903A-55D7CA9BD06A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iOSReachabilityTestARC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F8026FD44A51BFF048FBA4DBAFFD35CB4924B764</key>
+		<string>https://github.com/fenghonghui89/MyDevelopment.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>网络/Reachability/iOSReachabilityTestARC/iOSReachabilityTestARC.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F8026FD44A51BFF048FBA4DBAFFD35CB4924B764</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fenghonghui89/MyDevelopment.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F8026FD44A51BFF048FBA4DBAFFD35CB4924B764</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8026FD44A51BFF048FBA4DBAFFD35CB4924B764</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyDevelopment</string>
+		</dict>
+	</array>
+</dict>
+</plist>
