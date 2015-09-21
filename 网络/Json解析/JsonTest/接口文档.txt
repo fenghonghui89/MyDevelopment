@@ -1,0 +1,23 @@
+1. 登录接口
+参数：phone--手机号, password--密码
+返回：返回登录结果(成功为"success",失败"fail")，名字，token三个字段
+调用示例: 
+http://telematic.sinaapp.com/webservice/getToken?phone=13801369695&password=111111
+
+2. 故障信息接口
+参数：phone--手机号, page--页码，num--每页返回条数,token--登录后获得的令牌
+返回：10条故障信息，每条包含三个字段：故障描述，修车建议，检测时间
+调用示例: 
+http://telematic.sinaapp.com/webservice/getFaultInfo?phone=13801369695&page=1&num=5&token=079a1724ca0e635f9dd7cc2434f6d4d3
+
+3. 修车小贴士接口
+参数：keyword--查询关键词,token--登录后获得的令牌
+返回：1条修车小贴士
+调用示例: http://telematic.sinaapp.com/webservice/getRepairTip?keyword=滤清器&token=079a1724ca0e635f9dd7cc2434f6d4d3
+
+4. 保养小贴士接口
+参数：phone--手机号, page--页码，num--每页返回条数,token--登录后获得的令牌
+返回：1条保养小贴士
+调用示例: 
+http://telematic.sinaapp.com/webservice/getMaintainTip?phone=13801369695&page=1&num=5&token=079a1724ca0e635f9dd7cc2434f6d4d3
+

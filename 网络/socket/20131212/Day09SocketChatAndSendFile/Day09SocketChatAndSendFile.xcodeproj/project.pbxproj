@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		186279B9186186AA00A8BD2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186279B8186186AA00A8BD2B /* Foundation.framework */; };
+		186279BB186186AA00A8BD2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186279BA186186AA00A8BD2B /* CoreGraphics.framework */; };
+		186279BD186186AA00A8BD2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186279BC186186AA00A8BD2B /* UIKit.framework */; };
+		186279C3186186AA00A8BD2B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 186279C1186186AA00A8BD2B /* InfoPlist.strings */; };
+		186279C5186186AA00A8BD2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186279C4186186AA00A8BD2B /* main.m */; };
+		186279C9186186AA00A8BD2B /* TRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186279C8186186AA00A8BD2B /* TRAppDelegate.m */; };
+		186279CC186186AA00A8BD2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186279CA186186AA00A8BD2B /* Main.storyboard */; };
+		186279CF186186AA00A8BD2B /* TRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186279CE186186AA00A8BD2B /* TRViewController.m */; };
+		186279D1186186AA00A8BD2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186279D0186186AA00A8BD2B /* Images.xcassets */; };
+		186279D8186186AA00A8BD2B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186279D7186186AA00A8BD2B /* XCTest.framework */; };
+		186279D9186186AA00A8BD2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186279B8186186AA00A8BD2B /* Foundation.framework */; };
+		186279DA186186AA00A8BD2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186279BC186186AA00A8BD2B /* UIKit.framework */; };
+		186279E2186186AA00A8BD2B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 186279E0186186AA00A8BD2B /* InfoPlist.strings */; };
+		186279E4186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 186279E3186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.m */; };
+		186279EF1861879F00A8BD2B /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 186279EE1861879F00A8BD2B /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		186279F71861CB6B00A8BD2B /* TRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 186279F61861CB6B00A8BD2B /* TRTool.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		186279DB186186AA00A8BD2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186279AD186186AA00A8BD2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 186279B4186186AA00A8BD2B;
+			remoteInfo = Day09SocketChatAndSendFile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		186279B5186186AA00A8BD2B /* Day09SocketChatAndSendFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day09SocketChatAndSendFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		186279B8186186AA00A8BD2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		186279BA186186AA00A8BD2B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		186279BC186186AA00A8BD2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		186279C0186186AA00A8BD2B /* Day09SocketChatAndSendFile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Day09SocketChatAndSendFile-Info.plist"; sourceTree = "<group>"; };
+		186279C2186186AA00A8BD2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		186279C4186186AA00A8BD2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		186279C6186186AA00A8BD2B /* Day09SocketChatAndSendFile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Day09SocketChatAndSendFile-Prefix.pch"; sourceTree = "<group>"; };
+		186279C7186186AA00A8BD2B /* TRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRAppDelegate.h; sourceTree = "<group>"; };
+		186279C8186186AA00A8BD2B /* TRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRAppDelegate.m; sourceTree = "<group>"; };
+		186279CB186186AA00A8BD2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		186279CD186186AA00A8BD2B /* TRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRViewController.h; sourceTree = "<group>"; };
+		186279CE186186AA00A8BD2B /* TRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRViewController.m; sourceTree = "<group>"; };
+		186279D0186186AA00A8BD2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		186279D6186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Day09SocketChatAndSendFileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		186279D7186186AA00A8BD2B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		186279DF186186AA00A8BD2B /* Day09SocketChatAndSendFileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Day09SocketChatAndSendFileTests-Info.plist"; sourceTree = "<group>"; };
+		186279E1186186AA00A8BD2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		186279E3186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Day09SocketChatAndSendFileTests.m; sourceTree = "<group>"; };
+		186279ED1861879F00A8BD2B /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		186279EE1861879F00A8BD2B /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		186279F51861CB6B00A8BD2B /* TRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRTool.h; sourceTree = "<group>"; };
+		186279F61861CB6B00A8BD2B /* TRTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRTool.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		186279B2186186AA00A8BD2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186279BB186186AA00A8BD2B /* CoreGraphics.framework in Frameworks */,
+				186279BD186186AA00A8BD2B /* UIKit.framework in Frameworks */,
+				186279B9186186AA00A8BD2B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186279D3186186AA00A8BD2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186279D8186186AA00A8BD2B /* XCTest.framework in Frameworks */,
+				186279DA186186AA00A8BD2B /* UIKit.framework in Frameworks */,
+				186279D9186186AA00A8BD2B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		186279AC186186AA00A8BD2B = {
+			isa = PBXGroup;
+			children = (
+				186279BE186186AA00A8BD2B /* Day09SocketChatAndSendFile */,
+				186279DD186186AA00A8BD2B /* Day09SocketChatAndSendFileTests */,
+				186279B7186186AA00A8BD2B /* Frameworks */,
+				186279B6186186AA00A8BD2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		186279B6186186AA00A8BD2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				186279B5186186AA00A8BD2B /* Day09SocketChatAndSendFile.app */,
+				186279D6186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		186279B7186186AA00A8BD2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				186279B8186186AA00A8BD2B /* Foundation.framework */,
+				186279BA186186AA00A8BD2B /* CoreGraphics.framework */,
+				186279BC186186AA00A8BD2B /* UIKit.framework */,
+				186279D7186186AA00A8BD2B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		186279BE186186AA00A8BD2B /* Day09SocketChatAndSendFile */ = {
+			isa = PBXGroup;
+			children = (
+				186279ED1861879F00A8BD2B /* AsyncSocket.h */,
+				186279EE1861879F00A8BD2B /* AsyncSocket.m */,
+				186279C7186186AA00A8BD2B /* TRAppDelegate.h */,
+				186279C8186186AA00A8BD2B /* TRAppDelegate.m */,
+				186279CA186186AA00A8BD2B /* Main.storyboard */,
+				186279CD186186AA00A8BD2B /* TRViewController.h */,
+				186279CE186186AA00A8BD2B /* TRViewController.m */,
+				186279F51861CB6B00A8BD2B /* TRTool.h */,
+				186279F61861CB6B00A8BD2B /* TRTool.m */,
+				186279D0186186AA00A8BD2B /* Images.xcassets */,
+				186279BF186186AA00A8BD2B /* Supporting Files */,
+			);
+			path = Day09SocketChatAndSendFile;
+			sourceTree = "<group>";
+		};
+		186279BF186186AA00A8BD2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				186279C0186186AA00A8BD2B /* Day09SocketChatAndSendFile-Info.plist */,
+				186279C1186186AA00A8BD2B /* InfoPlist.strings */,
+				186279C4186186AA00A8BD2B /* main.m */,
+				186279C6186186AA00A8BD2B /* Day09SocketChatAndSendFile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		186279DD186186AA00A8BD2B /* Day09SocketChatAndSendFileTests */ = {
+			isa = PBXGroup;
+			children = (
+				186279E3186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.m */,
+				186279DE186186AA00A8BD2B /* Supporting Files */,
+			);
+			path = Day09SocketChatAndSendFileTests;
+			sourceTree = "<group>";
+		};
+		186279DE186186AA00A8BD2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				186279DF186186AA00A8BD2B /* Day09SocketChatAndSendFileTests-Info.plist */,
+				186279E0186186AA00A8BD2B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		186279B4186186AA00A8BD2B /* Day09SocketChatAndSendFile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186279E7186186AA00A8BD2B /* Build configuration list for PBXNativeTarget "Day09SocketChatAndSendFile" */;
+			buildPhases = (
+				186279B1186186AA00A8BD2B /* Sources */,
+				186279B2186186AA00A8BD2B /* Frameworks */,
+				186279B3186186AA00A8BD2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Day09SocketChatAndSendFile;
+			productName = Day09SocketChatAndSendFile;
+			productReference = 186279B5186186AA00A8BD2B /* Day09SocketChatAndSendFile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		186279D5186186AA00A8BD2B /* Day09SocketChatAndSendFileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186279EA186186AA00A8BD2B /* Build configuration list for PBXNativeTarget "Day09SocketChatAndSendFileTests" */;
+			buildPhases = (
+				186279D2186186AA00A8BD2B /* Sources */,
+				186279D3186186AA00A8BD2B /* Frameworks */,
+				186279D4186186AA00A8BD2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				186279DC186186AA00A8BD2B /* PBXTargetDependency */,
+			);
+			name = Day09SocketChatAndSendFileTests;
+			productName = Day09SocketChatAndSendFileTests;
+			productReference = 186279D6186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		186279AD186186AA00A8BD2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TR;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Hany;
+				TargetAttributes = {
+					186279D5186186AA00A8BD2B = {
+						TestTargetID = 186279B4186186AA00A8BD2B;
+					};
+				};
+			};
+			buildConfigurationList = 186279B0186186AA00A8BD2B /* Build configuration list for PBXProject "Day09SocketChatAndSendFile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 186279AC186186AA00A8BD2B;
+			productRefGroup = 186279B6186186AA00A8BD2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				186279B4186186AA00A8BD2B /* Day09SocketChatAndSendFile */,
+				186279D5186186AA00A8BD2B /* Day09SocketChatAndSendFileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		186279B3186186AA00A8BD2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186279D1186186AA00A8BD2B /* Images.xcassets in Resources */,
+				186279C3186186AA00A8BD2B /* InfoPlist.strings in Resources */,
+				186279CC186186AA00A8BD2B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186279D4186186AA00A8BD2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186279E2186186AA00A8BD2B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		186279B1186186AA00A8BD2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186279C9186186AA00A8BD2B /* TRAppDelegate.m in Sources */,
+				186279F71861CB6B00A8BD2B /* TRTool.m in Sources */,
+				186279C5186186AA00A8BD2B /* main.m in Sources */,
+				186279CF186186AA00A8BD2B /* TRViewController.m in Sources */,
+				186279EF1861879F00A8BD2B /* AsyncSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186279D2186186AA00A8BD2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186279E4186186AA00A8BD2B /* Day09SocketChatAndSendFileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		186279DC186186AA00A8BD2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 186279B4186186AA00A8BD2B /* Day09SocketChatAndSendFile */;
+			targetProxy = 186279DB186186AA00A8BD2B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		186279C1186186AA00A8BD2B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186279C2186186AA00A8BD2B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		186279CA186186AA00A8BD2B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186279CB186186AA00A8BD2B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		186279E0186186AA00A8BD2B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186279E1186186AA00A8BD2B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		186279E5186186AA00A8BD2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		186279E6186186AA00A8BD2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		186279E8186186AA00A8BD2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day09SocketChatAndSendFile/Day09SocketChatAndSendFile-Prefix.pch";
+				INFOPLIST_FILE = "Day09SocketChatAndSendFile/Day09SocketChatAndSendFile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		186279E9186186AA00A8BD2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day09SocketChatAndSendFile/Day09SocketChatAndSendFile-Prefix.pch";
+				INFOPLIST_FILE = "Day09SocketChatAndSendFile/Day09SocketChatAndSendFile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		186279EB186186AA00A8BD2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Day09SocketChatAndSendFile.app/Day09SocketChatAndSendFile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day09SocketChatAndSendFile/Day09SocketChatAndSendFile-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Day09SocketChatAndSendFileTests/Day09SocketChatAndSendFileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		186279EC186186AA00A8BD2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Day09SocketChatAndSendFile.app/Day09SocketChatAndSendFile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day09SocketChatAndSendFile/Day09SocketChatAndSendFile-Prefix.pch";
+				INFOPLIST_FILE = "Day09SocketChatAndSendFileTests/Day09SocketChatAndSendFileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		186279B0186186AA00A8BD2B /* Build configuration list for PBXProject "Day09SocketChatAndSendFile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186279E5186186AA00A8BD2B /* Debug */,
+				186279E6186186AA00A8BD2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186279E7186186AA00A8BD2B /* Build configuration list for PBXNativeTarget "Day09SocketChatAndSendFile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186279E8186186AA00A8BD2B /* Debug */,
+				186279E9186186AA00A8BD2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186279EA186186AA00A8BD2B /* Build configuration list for PBXNativeTarget "Day09SocketChatAndSendFileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186279EB186186AA00A8BD2B /* Debug */,
+				186279EC186186AA00A8BD2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 186279AD186186AA00A8BD2B /* Project object */;
+}
