@@ -86,6 +86,7 @@
     self.images = [NSMutableArray array];
     UIImagePickerController *ipc = [[UIImagePickerController alloc]init];
     [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+//    [ipc setSourceType:UIImagePickerControllerSourceTypeCamera];
     ipc.delegate = self;
     _ipc = ipc;
     [self presentViewController:ipc animated:YES completion:Nil];
@@ -295,6 +296,10 @@
     [iv addSubview:delBtn];
     
     [self.images addObject:image];
+    
+    /*
+     如果是拍照，暂时无法做到拍照后返回到拍照页面，只能在这里dismiss后再弹出
+     */
 }
 
 //协议方法：相册右上角的删除按钮
