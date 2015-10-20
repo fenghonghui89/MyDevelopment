@@ -19,13 +19,13 @@
     [super viewDidLoad];
     
 #pragma mark GET
-    NSString *pathGET = @"http://webservice.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather?theCityCode=江门&theUserID=";
-    pathGET = [pathGET stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *urlGET = [NSURL URLWithString:pathGET];
-    NSURLRequest *requestGET = [NSURLRequest requestWithURL:urlGET];
-    
-    //可设置缓存策略和超时时间的构造方法
-    NSMutableURLRequest *test = [[NSMutableURLRequest alloc] initWithURL:urlGET cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:5.0];
+//    NSString *pathGET = @"http://webservice.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather?theCityCode=江门&theUserID=";
+//    pathGET = [pathGET stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSURL *urlGET = [NSURL URLWithString:pathGET];
+//    NSURLRequest *requestGET = [NSURLRequest requestWithURL:urlGET];
+//    
+//    //可设置缓存策略和超时时间的构造方法
+//    NSMutableURLRequest *test = [[NSMutableURLRequest alloc] initWithURL:urlGET cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:5.0];
     
 #pragma mark POST
     NSString* pathPOST = @"http://webservice.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather";
@@ -40,7 +40,7 @@
     //发出“同步”请求，得到响应头和数据
     NSHTTPURLResponse *hur = nil;
     NSError *error = nil;
-    NSData* data = [NSURLConnection sendSynchronousRequest:requestGET returningResponse:&hur error:&error];
+    NSData* data = [NSURLConnection sendSynchronousRequest:requestPOST returningResponse:&hur error:&error];
     NSLog(@"HTTPURLResponse:%@",[hur allHeaderFields]);
     
     //把得到的数据转为相应类型并输出

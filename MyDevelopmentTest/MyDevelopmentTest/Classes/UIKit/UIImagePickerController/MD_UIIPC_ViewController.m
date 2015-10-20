@@ -269,7 +269,7 @@
 }
 
 #pragma mark - < callback > -
-//保存图片时用到的方法
+//自定义的保存图片后调用方法
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     NSLog(@"哈哈 保存成功！！！");

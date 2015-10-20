@@ -18,14 +18,14 @@
 {
     [super viewDidLoad];
     
-    [self ivtest5];
+    [self ivtest1];
 }
 
 #pragma mark - < test > -
 #pragma mark 全屏缩放
 -(void)ivtest1
 {
-    UIImage *image = [UIImage imageNamed:@"small.jpg"];
+    UIImage *image = [UIImage imageNamed:@"IMG_0309.jpg"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [self.view addSubview:imageView];
     

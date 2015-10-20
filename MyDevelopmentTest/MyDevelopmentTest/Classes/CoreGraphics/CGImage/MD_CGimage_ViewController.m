@@ -7,7 +7,8 @@
 //
 
 #import "MD_CGimage_ViewController.h"
-
+@interface MD_CGimage_ViewController()
+@end
 @implementation MD_CGimage_ViewController
 
 @end
