@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "37A6F3FB7A0380855B7A09657A94F61EF068E21C+++019B19A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "37A6F3FB7A0380855B7A09657A94F61EF068E21C+++A51CDD9" : 0,
+    "37A6F3FB7A0380855B7A09657A94F61EF068E21C+++019B19A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4FBB903C-A36C-44FC-937D-E546BDE29997",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "37A6F3FB7A0380855B7A09657A94F61EF068E21C+++A51CDD9" : "SocialiOSSDK",
+    "37A6F3FB7A0380855B7A09657A94F61EF068E21C+++019B19A" : "SocialiOSSDK_ARM64"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "UMSocial_Sdk_Demo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "UMSocial_Sdk_Demo\/UMSocial_Sdk_Demo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/yejiahuan%2540umeng.com@github.umeng.com\/yeahugo\/Social-SDK-Demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37A6F3FB7A0380855B7A09657A94F61EF068E21C+++019B19A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/yejiahuan%2540umeng.com@github.umeng.com\/yeahugo\/Social-SDK-Demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37A6F3FB7A0380855B7A09657A94F61EF068E21C+++A51CDD9"
+    }
+  ]
+}

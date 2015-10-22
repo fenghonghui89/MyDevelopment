@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <script>
+            //iOS层中调用js层
+            function  helloWorld(msg) {
+                document.getElementById('message').innerHTML = msg;
+            }
+        
+            //js层调用iOS层
+            function showIOSDialog(msg) {
+                var myJSONObject = new Object();
+                myJSONObject.title = 'HelloWorld';
+                myJSONObject.message = msg;
+                var JSONString = JSON.stringify(myJSONObject);
+                var url = 'gap://XXXClass.XXXmethod#' + JSONString;
+                window.location = url;
+            }
+        
+            //js层触发app跳转
+            function appJump(msg){
+                var url = 'appB2://Username-Test123_age-100_address-上海';
+                url = encodeURI(url);
+                //var url = 'appB2://';
+                window.location = url;
+            }
+         </script>
+        
+    </head>
+    <body>
+        <h2>iOS本地与Web互相调用</h2>
+        <button onclick='showIOSDialog("js层调用ios层")'>js层调用iOS层</button>
+        <button onclick='appJump("js层触发app跳转")'>js层触发app跳转</button>
+        <br><br>
+        <div  id='message'></div>
+    </body>
+</html>
