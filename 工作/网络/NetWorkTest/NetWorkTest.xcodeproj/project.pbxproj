@@ -13,20 +13,9 @@
 		149CC1041BAA67EC00546EC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149CC1021BAA67EC00546EC8 /* Main.storyboard */; };
 		149CC1061BAA67EC00546EC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 149CC1051BAA67EC00546EC8 /* Images.xcassets */; };
 		149CC1091BAA67EC00546EC8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149CC1071BAA67EC00546EC8 /* LaunchScreen.xib */; };
-		149CC1151BAA67EC00546EC8 /* NetWorkTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 149CC1141BAA67EC00546EC8 /* NetWorkTestTests.m */; };
 		149CC13E1BAA933B00546EC8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 149CC13D1BAA933B00546EC8 /* Reachability.m */; };
 		14A845C81BAC1F1A00DCC947 /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A845C71BAC1F1A00DCC947 /* ReachabilityManager.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		149CC10F1BAA67EC00546EC8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 149CC0ED1BAA67EC00546EC8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 149CC0F41BAA67EC00546EC8;
-			remoteInfo = NetWorkTest;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		149CC0F51BAA67EC00546EC8 /* NetWorkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,9 +28,6 @@
 		149CC1031BAA67EC00546EC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		149CC1051BAA67EC00546EC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		149CC1081BAA67EC00546EC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		149CC10E1BAA67EC00546EC8 /* NetWorkTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetWorkTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		149CC1131BAA67EC00546EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		149CC1141BAA67EC00546EC8 /* NetWorkTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkTestTests.m; sourceTree = "<group>"; };
 		149CC13C1BAA933B00546EC8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		149CC13D1BAA933B00546EC8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		14A845C61BAC1F1A00DCC947 /* ReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityManager.h; sourceTree = "<group>"; };
@@ -56,13 +42,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		149CC10B1BAA67EC00546EC8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				149CC0F71BAA67EC00546EC8 /* NetWorkTest */,
-				149CC1111BAA67EC00546EC8 /* NetWorkTestTests */,
 				149CC0F61BAA67EC00546EC8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				149CC0F51BAA67EC00546EC8 /* NetWorkTest.app */,
-				149CC10E1BAA67EC00546EC8 /* NetWorkTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,23 +84,6 @@
 			children = (
 				149CC0F91BAA67EC00546EC8 /* Info.plist */,
 				149CC0FA1BAA67EC00546EC8 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		149CC1111BAA67EC00546EC8 /* NetWorkTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				149CC1141BAA67EC00546EC8 /* NetWorkTestTests.m */,
-				149CC1121BAA67EC00546EC8 /* Supporting Files */,
-			);
-			path = NetWorkTestTests;
-			sourceTree = "<group>";
-		};
-		149CC1121BAA67EC00546EC8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				149CC1131BAA67EC00546EC8 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,24 +117,6 @@
 			productReference = 149CC0F51BAA67EC00546EC8 /* NetWorkTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		149CC10D1BAA67EC00546EC8 /* NetWorkTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 149CC11B1BAA67EC00546EC8 /* Build configuration list for PBXNativeTarget "NetWorkTestTests" */;
-			buildPhases = (
-				149CC10A1BAA67EC00546EC8 /* Sources */,
-				149CC10B1BAA67EC00546EC8 /* Frameworks */,
-				149CC10C1BAA67EC00546EC8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				149CC1101BAA67EC00546EC8 /* PBXTargetDependency */,
-			);
-			name = NetWorkTestTests;
-			productName = NetWorkTestTests;
-			productReference = 149CC10E1BAA67EC00546EC8 /* NetWorkTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,10 +128,6 @@
 				TargetAttributes = {
 					149CC0F41BAA67EC00546EC8 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					149CC10D1BAA67EC00546EC8 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 149CC0F41BAA67EC00546EC8;
 					};
 				};
 			};
@@ -207,7 +145,6 @@
 			projectRoot = "";
 			targets = (
 				149CC0F41BAA67EC00546EC8 /* NetWorkTest */,
-				149CC10D1BAA67EC00546EC8 /* NetWorkTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,13 +157,6 @@
 				149CC1041BAA67EC00546EC8 /* Main.storyboard in Resources */,
 				149CC1091BAA67EC00546EC8 /* LaunchScreen.xib in Resources */,
 				149CC1061BAA67EC00546EC8 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		149CC10C1BAA67EC00546EC8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,23 +175,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		149CC10A1BAA67EC00546EC8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				149CC1151BAA67EC00546EC8 /* NetWorkTestTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		149CC1101BAA67EC00546EC8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 149CC0F41BAA67EC00546EC8 /* NetWorkTest */;
-			targetProxy = 149CC10F1BAA67EC00546EC8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		149CC1021BAA67EC00546EC8 /* Main.storyboard */ = {
@@ -389,40 +303,6 @@
 			};
 			name = Release;
 		};
-		149CC11C1BAA67EC00546EC8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NetWorkTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetWorkTest.app/NetWorkTest";
-			};
-			name = Debug;
-		};
-		149CC11D1BAA67EC00546EC8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NetWorkTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetWorkTest.app/NetWorkTest";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -440,15 +320,6 @@
 			buildConfigurations = (
 				149CC1191BAA67EC00546EC8 /* Debug */,
 				149CC11A1BAA67EC00546EC8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		149CC11B1BAA67EC00546EC8 /* Build configuration list for PBXNativeTarget "NetWorkTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				149CC11C1BAA67EC00546EC8 /* Debug */,
-				149CC11D1BAA67EC00546EC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
