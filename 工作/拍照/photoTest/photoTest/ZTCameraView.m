@@ -268,7 +268,7 @@
          
          
          CFStringRef UTI = CGImageSourceGetType(imgSource); //this is the type of image (e.g., public.jpeg)
-         
+         	
          //this will be the data CGImageDestinationRef will write into
          NSMutableData *newImageData = [NSMutableData data];
          
