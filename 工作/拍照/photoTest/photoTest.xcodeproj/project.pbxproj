@@ -18,27 +18,8 @@
 		14D662CC1BD4EC2800FEFBAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D662CA1BD4EC2800FEFBAD /* Main.storyboard */; };
 		14D662CE1BD4EC2800FEFBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D662CD1BD4EC2800FEFBAD /* Assets.xcassets */; };
 		14D662D11BD4EC2800FEFBAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D662CF1BD4EC2800FEFBAD /* LaunchScreen.storyboard */; };
-		14D662DC1BD4EC2800FEFBAD /* photoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D662DB1BD4EC2800FEFBAD /* photoTestTests.m */; };
-		14D662E71BD4EC2800FEFBAD /* photoTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D662E61BD4EC2800FEFBAD /* photoTestUITests.m */; };
 		14D662F71BD4ED8100FEFBAD /* CameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D662F51BD4ED8100FEFBAD /* CameraOverlayViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		14D662D81BD4EC2800FEFBAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14D662B61BD4EC2800FEFBAD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 14D662BD1BD4EC2800FEFBAD;
-			remoteInfo = photoTest;
-		};
-		14D662E31BD4EC2800FEFBAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 14D662B61BD4EC2800FEFBAD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 14D662BD1BD4EC2800FEFBAD;
-			remoteInfo = photoTest;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1421A9731BD60D4E00C561A7 /* IMG_0309.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0309.jpg; sourceTree = "<group>"; };
@@ -58,12 +39,6 @@
 		14D662CD1BD4EC2800FEFBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14D662D01BD4EC2800FEFBAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14D662D21BD4EC2800FEFBAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14D662D71BD4EC2800FEFBAD /* photoTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		14D662DB1BD4EC2800FEFBAD /* photoTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photoTestTests.m; sourceTree = "<group>"; };
-		14D662DD1BD4EC2800FEFBAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14D662E21BD4EC2800FEFBAD /* photoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		14D662E61BD4EC2800FEFBAD /* photoTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = photoTestUITests.m; sourceTree = "<group>"; };
-		14D662E81BD4EC2800FEFBAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D662F41BD4ED8100FEFBAD /* CameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayViewController.h; sourceTree = "<group>"; };
 		14D662F51BD4ED8100FEFBAD /* CameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,20 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14D662D41BD4EC2800FEFBAD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14D662DF1BD4EC2800FEFBAD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -101,8 +62,6 @@
 				145C91C91BD8D0AD004BD2A0 /* ImageIO.framework */,
 				145C91C71BD8D080004BD2A0 /* CoreGraphics.framework */,
 				14D662C01BD4EC2800FEFBAD /* photoTest */,
-				14D662DA1BD4EC2800FEFBAD /* photoTestTests */,
-				14D662E51BD4EC2800FEFBAD /* photoTestUITests */,
 				14D662BF1BD4EC2800FEFBAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,8 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				14D662BE1BD4EC2800FEFBAD /* photoTest.app */,
-				14D662D71BD4EC2800FEFBAD /* photoTestTests.xctest */,
-				14D662E21BD4EC2800FEFBAD /* photoTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,24 +105,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		14D662DA1BD4EC2800FEFBAD /* photoTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				14D662DB1BD4EC2800FEFBAD /* photoTestTests.m */,
-				14D662DD1BD4EC2800FEFBAD /* Info.plist */,
-			);
-			path = photoTestTests;
-			sourceTree = "<group>";
-		};
-		14D662E51BD4EC2800FEFBAD /* photoTestUITests */ = {
-			isa = PBXGroup;
-			children = (
-				14D662E61BD4EC2800FEFBAD /* photoTestUITests.m */,
-				14D662E81BD4EC2800FEFBAD /* Info.plist */,
-			);
-			path = photoTestUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,42 +125,6 @@
 			productReference = 14D662BE1BD4EC2800FEFBAD /* photoTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		14D662D61BD4EC2800FEFBAD /* photoTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14D662EE1BD4EC2800FEFBAD /* Build configuration list for PBXNativeTarget "photoTestTests" */;
-			buildPhases = (
-				14D662D31BD4EC2800FEFBAD /* Sources */,
-				14D662D41BD4EC2800FEFBAD /* Frameworks */,
-				14D662D51BD4EC2800FEFBAD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				14D662D91BD4EC2800FEFBAD /* PBXTargetDependency */,
-			);
-			name = photoTestTests;
-			productName = photoTestTests;
-			productReference = 14D662D71BD4EC2800FEFBAD /* photoTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		14D662E11BD4EC2800FEFBAD /* photoTestUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14D662F11BD4EC2800FEFBAD /* Build configuration list for PBXNativeTarget "photoTestUITests" */;
-			buildPhases = (
-				14D662DE1BD4EC2800FEFBAD /* Sources */,
-				14D662DF1BD4EC2800FEFBAD /* Frameworks */,
-				14D662E01BD4EC2800FEFBAD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				14D662E41BD4EC2800FEFBAD /* PBXTargetDependency */,
-			);
-			name = photoTestUITests;
-			productName = photoTestUITests;
-			productReference = 14D662E21BD4EC2800FEFBAD /* photoTestUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,14 +137,6 @@
 					14D662BD1BD4EC2800FEFBAD = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 9LYPSQQ454;
-					};
-					14D662D61BD4EC2800FEFBAD = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 14D662BD1BD4EC2800FEFBAD;
-					};
-					14D662E11BD4EC2800FEFBAD = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 14D662BD1BD4EC2800FEFBAD;
 					};
 				};
 			};
@@ -259,8 +154,6 @@
 			projectRoot = "";
 			targets = (
 				14D662BD1BD4EC2800FEFBAD /* photoTest */,
-				14D662D61BD4EC2800FEFBAD /* photoTestTests */,
-				14D662E11BD4EC2800FEFBAD /* photoTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,20 +167,6 @@
 				1421A9741BD60D4E00C561A7 /* IMG_0309.jpg in Resources */,
 				14D662CE1BD4EC2800FEFBAD /* Assets.xcassets in Resources */,
 				14D662CC1BD4EC2800FEFBAD /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14D662D51BD4EC2800FEFBAD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14D662E01BD4EC2800FEFBAD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,36 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14D662D31BD4EC2800FEFBAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14D662DC1BD4EC2800FEFBAD /* photoTestTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		14D662DE1BD4EC2800FEFBAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14D662E71BD4EC2800FEFBAD /* photoTestUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		14D662D91BD4EC2800FEFBAD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 14D662BD1BD4EC2800FEFBAD /* photoTest */;
-			targetProxy = 14D662D81BD4EC2800FEFBAD /* PBXContainerItemProxy */;
-		};
-		14D662E41BD4EC2800FEFBAD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 14D662BD1BD4EC2800FEFBAD /* photoTest */;
-			targetProxy = 14D662E31BD4EC2800FEFBAD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		14D662CA1BD4EC2800FEFBAD /* Main.storyboard */ = {
@@ -466,54 +316,6 @@
 			};
 			name = Release;
 		};
-		14D662EF1BD4EC2800FEFBAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = photoTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanyphototest.com.photoTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/photoTest.app/photoTest";
-			};
-			name = Debug;
-		};
-		14D662F01BD4EC2800FEFBAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = photoTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanyphototest.com.photoTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/photoTest.app/photoTest";
-			};
-			name = Release;
-		};
-		14D662F21BD4EC2800FEFBAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = photoTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanyphototest.com.photoTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = photoTest;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		14D662F31BD4EC2800FEFBAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = photoTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanyphototest.com.photoTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = photoTest;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -531,24 +333,6 @@
 			buildConfigurations = (
 				14D662EC1BD4EC2800FEFBAD /* Debug */,
 				14D662ED1BD4EC2800FEFBAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14D662EE1BD4EC2800FEFBAD /* Build configuration list for PBXNativeTarget "photoTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14D662EF1BD4EC2800FEFBAD /* Debug */,
-				14D662F01BD4EC2800FEFBAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14D662F11BD4EC2800FEFBAD /* Build configuration list for PBXNativeTarget "photoTestUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14D662F21BD4EC2800FEFBAD /* Debug */,
-				14D662F31BD4EC2800FEFBAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
