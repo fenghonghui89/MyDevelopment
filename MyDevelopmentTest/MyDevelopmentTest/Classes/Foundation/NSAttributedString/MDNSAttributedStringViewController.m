@@ -25,7 +25,7 @@
     
 
     //设置字体和行距
-//    UIFont *fontBold = [UIFont fontWithName:@"Helvetica" size:14];
+    UIFont *fontBold = [UIFont fontWithName:@"Helvetica" size:14];
     UIFont *fontNormal = [UIFont systemFontOfSize:15];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     style.lineSpacing = 2;
