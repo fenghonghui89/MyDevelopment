@@ -24,20 +24,23 @@
 }
 
 - (IBAction)tap:(id)sender {
-    CameraOverlayViewController *cvc = [[CameraOverlayViewController alloc] init];
-    [self presentViewController:cvc animated:YES completion:nil];
+  UIImagePickerController *ipc = [[UIImagePickerController alloc]init];
+  [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+  //    ipc.showsCameraControls = YES;
+  //    ipc.allowsEditing = YES;
+  ipc.delegate = self;
+  _ipc = ipc;
+  [self presentViewController:ipc animated:YES completion:Nil];
 }
 
 
 - (IBAction)photoTap:(id)sender
 {
-    UIImagePickerController *ipc = [[UIImagePickerController alloc]init];
-    [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//    ipc.showsCameraControls = YES;
-//    ipc.allowsEditing = YES;
-    ipc.delegate = self;
-    _ipc = ipc;
-    [self presentViewController:ipc animated:YES completion:Nil];
+
+  
+  CameraOverlayViewController *cvc = [[CameraOverlayViewController alloc] init];
+  [self.navigationController pushViewController:cvc animated:YES];
+
 }
 
 #pragma mark - < callback > -
