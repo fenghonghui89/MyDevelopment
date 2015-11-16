@@ -6,6 +6,7 @@
 //  Copyright © 2015年 hanyfeng. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+
 #import "AFNetworkManager.h"
 
 #import "AFNetworking.h"
@@ -94,6 +95,9 @@
     }];
 }
 
-
+-(void)uploadImageById:(NSInteger)postid img:(NSData *)img
+{
+  
+}
 
 @end

@@ -17,9 +17,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIImageView* imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"big.jpg"]];
-    
+  
+  
+    UIImageView* imageView1 = [[UIImageView alloc] init];
+  [imageView1 setBackgroundColor: [UIColor blueColor]];
+  self.imageView = imageView1;
+  
     UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
     scrollView.contentSize = imageView1.frame.size;
     [scrollView setBackgroundColor:[UIColor redColor]];
@@ -40,6 +43,12 @@
     scrollView.showsVerticalScrollIndicator = YES;
     
     [self.view addSubview:scrollView];
+  [self doimg];
+}
+
+-(void)doimg
+{
+  [self.imageView setImage:[UIImage imageNamed:@"big.jpg"]];
 }
 
 #pragma mark - UIScrollViewDelegate 协议方法 以下方法缩放时调用-
