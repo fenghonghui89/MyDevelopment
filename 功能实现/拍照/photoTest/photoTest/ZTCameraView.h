@@ -18,10 +18,10 @@ typedef void(^ShutterCamera)(UIImage *image, NSError *error);
 
 @interface ZTCameraView : UIView
 
-@property (nonatomic,strong         ) AVCaptureSession           *session;//AVCaptureSession对象用来执行输入设备跟输出设备之间的数据传递
-@property (nonatomic,strong         ) AVCaptureDeviceInput       *videoInput;//AVCaptureDeviceInput对象是输入流
-@property (nonatomic,strong         ) AVCaptureStillImageOutput  *stillImageOutput;//AVCaptureStillImageOutput对象是照片输出流
-@property (nonatomic,strong         ) AVCaptureVideoPreviewLayer *previewLayer;//AVCaptureVideoPreviewLayer预览图层,来显示照相机拍摄到的画面
+@property (nonatomic,strong         ) AVCaptureSession           *session;//用来执行输入设备跟输出设备之间的数据传递
+@property (nonatomic,strong         ) AVCaptureDeviceInput       *videoInput;//输入流
+@property (nonatomic,strong         ) AVCaptureStillImageOutput  *stillImageOutput;//照片输出流
+@property (nonatomic,strong         ) AVCaptureVideoPreviewLayer *previewLayer;//A预览图层,来显示照相机拍摄到的画面
 @property (nonatomic,strong         ) AVCaptureDevice            *device;//摄像头设备
 @property (nonatomic,assign         ) DevicePosition             devicePosition;//前后摄像头
 @property (nonatomic,assign,readonly) BOOL                       isRun;
@@ -42,7 +42,7 @@ typedef void(^ShutterCamera)(UIImage *image, NSError *error);
 ///停止拍照
 -(void)stop;
 
-///拍照
+//拍照
 -(void)shutterCameraWithBlock:(ShutterCamera)shutterCamera;
 
 //添加控件到预览
