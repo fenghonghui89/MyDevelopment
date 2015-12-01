@@ -9,7 +9,7 @@
 
 #import "SvImageInfoUtils.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-
+#import <AVFoundation/AVFoundation.h>
 @interface SvImageInfoUtils ()
 {
   CGImageSourceRef _imageRef;
@@ -146,7 +146,7 @@
 
 #pragma mark - < action > -
 #warning 内存泄露要处理
--(UIImage *)getZipImageWithSourceExif:(NSString *)imageName
+-(NSData *)getZipImageWithSourceExif:(NSString *)imageName
 {
   //获取压缩后图片的data
   NSString *urlStr = [_imageUrl absoluteString];
@@ -176,6 +176,8 @@
     [dic setObject:[self exifDictionary] forKey:@"{TIFF}"];
   }
 
+
+  
   CGImageDestinationAddImageFromSource(destination, imageSource, 0, (CFDictionaryRef)dic);
   
   BOOL success = CGImageDestinationFinalize(destination);
@@ -183,19 +185,69 @@
     NSLog(@"***Could not create data from image destination ***");
   }
   
-  //保存图片
-  NSArray *newZipPaths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-  NSString *newZipPath=[newZipPaths[0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",imageName]];
-  //    NSString *newZipPath = [NSString stringWithFormat:@"%@/Documents/%@.jpg",NSHomeDirectory(),imageName];
   
-  NSFileManager *manager=[NSFileManager defaultManager];
-  [manager createFileAtPath:newZipPath contents:newZipData attributes:nil];
+  //Documents
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *documentsDirectory = [paths objectAtIndex:0];
+  NSLog(@"app_home_doc: %@",documentsDirectory);
+  
+  //文件夹
+  NSFileManager *fm = [NSFileManager defaultManager];
+  NSString *testDirectory = [documentsDirectory stringByAppendingPathComponent:@"imgBuffer"];
+  NSLog(@"testDirectory %@",testDirectory);
+  
+  // 创建目录
+  if ([fm fileExistsAtPath:testDirectory]) {
+    NSLog(@"文件夹存在");
+  }else{
+    NSLog(@"文件夹不存在");
+    BOOL res = [fm createDirectoryAtPath:testDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+    if (res) {
+      NSLog(@"文件夹创建成功");
+    }else{
+      NSLog(@"文件夹创建失败");
+    }
+  }
+
+  //保存图片
+  NSString *newZipPath=[testDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",imageName]];
+  [fm createFileAtPath:newZipPath contents:newZipData attributes:nil];
   
   NSLog(@"\n%@\n%@\n",[newZipPath stringByDeletingLastPathComponent],newZipPath);
   
   UIImage *zipImage = [UIImage imageWithContentsOfFile:newZipPath];
   
-  return zipImage;
+  return newZipData;
 }
+
+-(void)removeBufferImg
+{
+  
+  //Documents
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *documentsDirectory = [paths objectAtIndex:0];
+  NSLog(@"rm app_home_doc: %@",documentsDirectory);
+  
+  //文件夹
+  NSFileManager *fm = [NSFileManager defaultManager];
+  NSString *testDirectory = [documentsDirectory stringByAppendingPathComponent:@"imgBuffer"];
+  NSLog(@"rm testDirectory %@",testDirectory);
+
+  NSArray* fileNames = [fm contentsOfDirectoryAtPath:testDirectory error:nil];//获取文件夹下面所有文件的名称，并用数组存储
+  NSLog(@"fileNames count %ld",(unsigned long)fileNames.count);
+  
+  for(NSString *name in fileNames){
+    NSString *filePath = [testDirectory stringByAppendingPathComponent:name];
+    if ([fm fileExistsAtPath:filePath]) {
+      NSLog(@"文件存在");
+      [fm removeItemAtPath:filePath error:nil];
+    }else{
+      continue;
+    }
+    
+  }
+}
+
+
 
 @end

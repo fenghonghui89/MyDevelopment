@@ -12,10 +12,13 @@
 #import <AssetsLibrary/ALAssetsGroup.h>
 #import <AssetsLibrary/ALAssetRepresentation.h>
 #import "CollectionViewCell.h"
+#import "ImageViewController.h"
+
 @interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *cv;
 @property(nonatomic,strong)NSMutableArray *imageArray;
+@property(nonatomic,strong)NSMutableArray *sourceArr;
 
 
 
@@ -30,12 +33,15 @@
   [self.cv registerNib:[UINib nibWithNibName:@"CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CollectionViewCell"];
   self.cv.delegate = self;
   self.cv.dataSource = self;
+  
+  [self getAlbum0];
 }
 
 #pragma mark - < method > -
 -(void)getAlbum0
 {
   _imageArray = [NSMutableArray array];
+  _sourceArr = [NSMutableArray array];
   
   dispatch_queue_t queue = dispatch_queue_create("myqueue", DISPATCH_QUEUE_SERIAL);
   dispatch_async(queue, ^{
@@ -43,32 +49,38 @@
     [library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
       
       if(group == nil){
-        NSLog(@"全部相册加载完成");
-        [self.cv reloadData];
+        NSLog(@"全部相册加载完成 %d",_imageArray.count);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+          [self.cv reloadData];
+        });
+        
+        
         return ;
       }else{
         NSLog(@"一个相册开始加载");
       }
       
-      NSMutableArray *album = [NSMutableArray array];
+
       [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
         if (result) {
-          //fullScreenImage可以直接初始化为UIImage
-          UIImage *tempImg = [UIImage imageWithCGImage:result.defaultRepresentation.fullScreenImage];
-          
-          //需传入方向和缩放比例，否则方向和尺寸都不对
-          UIImage *tempImg1 = [UIImage imageWithCGImage:result.defaultRepresentation.fullResolutionImage
-                                                 scale:result.defaultRepresentation.scale
-                                           orientation:(UIImageOrientation)result.defaultRepresentation.orientation];
-          
+//          //fullScreenImage可以直接初始化为UIImage
+//          UIImage *tempImg = [UIImage imageWithCGImage:result.defaultRepresentation.fullScreenImage];
+//          
+//          //需传入方向和缩放比例，否则方向和尺寸都不对
+//          UIImage *tempImg1 = [UIImage imageWithCGImage:result.defaultRepresentation.fullResolutionImage
+//                                                 scale:result.defaultRepresentation.scale
+//                                           orientation:(UIImageOrientation)result.defaultRepresentation.orientation];
+
           //缩略图
           UIImage *tempImg2 = [UIImage imageWithCGImage:result.thumbnail];
-          
-          [album addObject:tempImg];
-          NSLog(@"1张图片加载完成 %@ %@ %@",NSStringFromCGSize(tempImg.size),NSStringFromCGSize(tempImg1.size),NSStringFromCGSize(tempImg2.size));
+          [_imageArray addObject:tempImg2];
+          NSURL *url = result.defaultRepresentation.url;
+          [_sourceArr addObject:url];
+          NSLog(@"1张图片加载完成");
         }
       }];
-      [_imageArray addObject:album];
+      
       NSLog(@"一个相册加载完成");
       
     } failureBlock:^(NSError *error) {
@@ -92,20 +104,18 @@
 #pragma mark - < callback > -
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-  return self.imageArray.count;
+  return 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-  NSArray *photos = self.imageArray[section];
-  return photos.count;
+  return self.imageArray.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
   CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCell" forIndexPath:indexPath];
-  NSArray *photos = self.imageArray[indexPath.section];
-  UIImage *img = photos[indexPath.row];
+  UIImage *img = self.imageArray[indexPath.row];
   cell.iv.image = img;
   return cell;
 }
@@ -129,8 +139,24 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  CollectionViewCell *cell = (CollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-  NSLog(@"size:%@",NSStringFromCGSize(cell.iv.image.size));
+
+  
+
+  
+  ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+  NSURL *url = [_sourceArr objectAtIndex:indexPath.row];
+  [library assetForURL:url resultBlock:^(ALAsset *asset) {
+    UIImage *fullImg = [UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+    ImageViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+    vc.img = fullImg;
+    [self.navigationController pushViewController:vc animated:YES];
+  } failureBlock:^(NSError *error) {
+    NSLog(@"获取相册指定照片错误");
+  }];
+//  ALAsset *set = [_sourceArr objectAtIndex:indexPath.row];
+//  UIImage *fimg = [UIImage imageWithCGImage:set.defaultRepresentation.fullScreenImage];
+//  UIImage *img = [_imageArray objectAtIndex:indexPath.row];
+  
 }
 
 @end

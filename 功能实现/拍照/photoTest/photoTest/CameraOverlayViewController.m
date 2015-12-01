@@ -112,7 +112,7 @@
 //      NSData* data = UIImageJPEGRepresentation(image, 1.0);
 //      NSInteger dataSize = data.length/1000;
 //      NSLog(@"图片大小JPG:%d",dataSize);
-//      
+//
 //      data = UIImagePNGRepresentation(image);
 //      dataSize = data.length/1000;
 //      NSLog(@"图片大小PNG:%d",dataSize);

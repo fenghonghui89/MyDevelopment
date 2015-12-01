@@ -16,21 +16,41 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+
   
   NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"IMG_0015" withExtension:@"jpg"];
-  
   SvImageInfoUtils *utils = [[SvImageInfoUtils alloc] initWithURL:fileUrl];
   
   NSLog(@"tiff %@",[utils tiffDictonary]);
   NSLog(@"exif %@",[utils exifDictionary]);
   NSLog(@"gps %@",[utils gpsDictionary]);
   NSLog(@"ip %@",[utils imageProperty]);
-  UIImage *newiv = [utils getZipImageWithSourceExif:@"new"];
-  [self.iv setImage:newiv];
+  NSData *newiv = [utils getZipImageWithSourceExif:@"new"];
+  
+  
+  
+  
+  UIImage *image = [UIImage imageNamed:@"IMG_0015.jpg"];
+  NSData *imgData = UIImageJPEGRepresentation(image, 1);
+  //Documents
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString *documentsDirectory = [paths objectAtIndex:0];
+  NSLog(@"app_home_doc: %@",documentsDirectory);
+  
+  
+  //保存图片
+  NSFileManager *fm = [NSFileManager defaultManager];
+  NSString *newZipPath=[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",@"lalala1"]];
+  [fm createFileAtPath:newZipPath contents:imgData attributes:nil];
+
+  
+  
+//  [utils removeBufferImg];
 }
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1421A9741BD60D4E00C561A7 /* IMG_0309.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1421A9731BD60D4E00C561A7 /* IMG_0309.jpg */; };
 		1421A9771BD6228400C561A7 /* ZTCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A9761BD6228400C561A7 /* ZTCameraView.m */; };
+		142B222C1BFEF776005014C7 /* AGSimpleImageEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B22291BFEF776005014C7 /* AGSimpleImageEditorView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		142B222D1BFEF776005014C7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 142B222A1BFEF776005014C7 /* LICENSE */; };
+		142B222E1BFEF776005014C7 /* transparencyPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 142B222B1BFEF776005014C7 /* transparencyPattern.png */; };
+		142B22311BFEFEC4005014C7 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B22301BFEFEC4005014C7 /* TestViewController.m */; };
+		142B22341BFEFF48005014C7 /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B22331BFEFF48005014C7 /* Test2ViewController.m */; };
 		145C91C81BD8D080004BD2A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145C91C71BD8D080004BD2A0 /* CoreGraphics.framework */; };
 		145C91CA1BD8D0AD004BD2A0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145C91C91BD8D0AD004BD2A0 /* ImageIO.framework */; };
 		14A4DA2D1BD635EF003BB8BF /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A4DA2C1BD635EF003BB8BF /* UIImage+Scale.m */; };
@@ -25,6 +30,14 @@
 		1421A9731BD60D4E00C561A7 /* IMG_0309.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0309.jpg; sourceTree = "<group>"; };
 		1421A9751BD6228400C561A7 /* ZTCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTCameraView.h; sourceTree = "<group>"; };
 		1421A9761BD6228400C561A7 /* ZTCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTCameraView.m; sourceTree = "<group>"; };
+		142B22281BFEF776005014C7 /* AGSimpleImageEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSimpleImageEditorView.h; sourceTree = "<group>"; };
+		142B22291BFEF776005014C7 /* AGSimpleImageEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSimpleImageEditorView.m; sourceTree = "<group>"; };
+		142B222A1BFEF776005014C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		142B222B1BFEF776005014C7 /* transparencyPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparencyPattern.png; sourceTree = "<group>"; };
+		142B222F1BFEFEC4005014C7 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		142B22301BFEFEC4005014C7 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		142B22321BFEFF48005014C7 /* Test2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2ViewController.h; sourceTree = "<group>"; };
+		142B22331BFEFF48005014C7 /* Test2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
 		145C91C71BD8D080004BD2A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		145C91C91BD8D0AD004BD2A0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		14A4DA2B1BD635EF003BB8BF /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
@@ -56,6 +69,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142B22271BFEF776005014C7 /* AGSimpleImageEditorView */ = {
+			isa = PBXGroup;
+			children = (
+				142B22281BFEF776005014C7 /* AGSimpleImageEditorView.h */,
+				142B22291BFEF776005014C7 /* AGSimpleImageEditorView.m */,
+				142B222A1BFEF776005014C7 /* LICENSE */,
+				142B222B1BFEF776005014C7 /* transparencyPattern.png */,
+			);
+			path = AGSimpleImageEditorView;
+			sourceTree = "<group>";
+		};
 		14D662B51BD4EC2800FEFBAD = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +101,7 @@
 		14D662C01BD4EC2800FEFBAD /* photoTest */ = {
 			isa = PBXGroup;
 			children = (
+				142B22271BFEF776005014C7 /* AGSimpleImageEditorView */,
 				14D662C41BD4EC2800FEFBAD /* AppDelegate.h */,
 				14D662C51BD4EC2800FEFBAD /* AppDelegate.m */,
 				14A4DA2B1BD635EF003BB8BF /* UIImage+Scale.h */,
@@ -85,6 +110,10 @@
 				1421A9761BD6228400C561A7 /* ZTCameraView.m */,
 				14D662C71BD4EC2800FEFBAD /* ViewController.h */,
 				14D662C81BD4EC2800FEFBAD /* ViewController.m */,
+				142B222F1BFEFEC4005014C7 /* TestViewController.h */,
+				142B22301BFEFEC4005014C7 /* TestViewController.m */,
+				142B22321BFEFF48005014C7 /* Test2ViewController.h */,
+				142B22331BFEFF48005014C7 /* Test2ViewController.m */,
 				14D662F41BD4ED8100FEFBAD /* CameraOverlayViewController.h */,
 				14D662F51BD4ED8100FEFBAD /* CameraOverlayViewController.m */,
 				1421A9731BD60D4E00C561A7 /* IMG_0309.jpg */,
@@ -136,7 +165,7 @@
 				TargetAttributes = {
 					14D662BD1BD4EC2800FEFBAD = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 9LYPSQQ454;
+						DevelopmentTeam = 3G78AKCD6L;
 					};
 				};
 			};
@@ -163,10 +192,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142B222E1BFEF776005014C7 /* transparencyPattern.png in Resources */,
 				14D662D11BD4EC2800FEFBAD /* LaunchScreen.storyboard in Resources */,
 				1421A9741BD60D4E00C561A7 /* IMG_0309.jpg in Resources */,
 				14D662CE1BD4EC2800FEFBAD /* Assets.xcassets in Resources */,
 				14D662CC1BD4EC2800FEFBAD /* Main.storyboard in Resources */,
+				142B222D1BFEF776005014C7 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,8 +211,11 @@
 				14D662C91BD4EC2800FEFBAD /* ViewController.m in Sources */,
 				14D662C61BD4EC2800FEFBAD /* AppDelegate.m in Sources */,
 				14D662F71BD4ED8100FEFBAD /* CameraOverlayViewController.m in Sources */,
+				142B22341BFEFF48005014C7 /* Test2ViewController.m in Sources */,
 				1421A9771BD6228400C561A7 /* ZTCameraView.m in Sources */,
+				142B222C1BFEF776005014C7 /* AGSimpleImageEditorView.m in Sources */,
 				14A4DA2D1BD635EF003BB8BF /* UIImage+Scale.m in Sources */,
+				142B22311BFEFEC4005014C7 /* TestViewController.m in Sources */,
 				14D662C31BD4EC2800FEFBAD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +332,7 @@
 				INFOPLIST_FILE = photoTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanyphototest.com.photoTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanytest.phototestone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -311,7 +345,7 @@
 				INFOPLIST_FILE = photoTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanyphototest.com.photoTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hanytest.phototestone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

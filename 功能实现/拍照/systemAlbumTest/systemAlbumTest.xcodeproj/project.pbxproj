@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1461A0401C04210800E5F94B /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1461A03F1C04210800E5F94B /* ImageViewController.m */; };
 		14B8AA661BF8AD330065852C /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B8AA651BF8AD330065852C /* Photos.framework */; };
 		14B8AA6A1BF8B1BF0065852C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B8AA681BF8B1BF0065852C /* CollectionViewCell.m */; };
 		14B8AA6B1BF8B1BF0065852C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B8AA691BF8B1BF0065852C /* CollectionViewCell.xib */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1461A03E1C04210800E5F94B /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		1461A03F1C04210800E5F94B /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		14B8AA651BF8AD330065852C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		14B8AA671BF8B1BF0065852C /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		14B8AA681BF8B1BF0065852C /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				14F095BF1BE3090B003BAFC0 /* AppDelegate.m */,
 				14F095C11BE3090B003BAFC0 /* ViewController.h */,
 				14F095C21BE3090B003BAFC0 /* ViewController.m */,
+				1461A03E1C04210800E5F94B /* ImageViewController.h */,
+				1461A03F1C04210800E5F94B /* ImageViewController.m */,
 				14B8AA6C1BF8B7D90065852C /* AssetsViewController.h */,
 				14B8AA6D1BF8B7D90065852C /* AssetsViewController.m */,
 				14B8AA671BF8B1BF0065852C /* CollectionViewCell.h */,
@@ -168,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1461A0401C04210800E5F94B /* ImageViewController.m in Sources */,
 				14B8AA6E1BF8B7D90065852C /* AssetsViewController.m in Sources */,
 				14F095C31BE3090B003BAFC0 /* ViewController.m in Sources */,
 				14F095C01BE3090B003BAFC0 /* AppDelegate.m in Sources */,

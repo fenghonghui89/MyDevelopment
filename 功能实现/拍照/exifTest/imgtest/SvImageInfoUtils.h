@@ -98,5 +98,6 @@ typedef NSInteger ExifOrientation;
  *
  *  @return UIImage
  */
--(UIImage *)getZipImageWithSourceExif:(NSString *)imageName;
+-(NSData *)getZipImageWithSourceExif:(NSString *)imageName;
+-(void)removeBufferImg;
 @end
