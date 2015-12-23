@@ -27,9 +27,9 @@
 		141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B43621AA4708C008F2711 /* MDNavi1ViewController.m */; };
 		141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B43671AA4734B008F2711 /* MDModalViewController.m */; };
 		141B436C1AA47394008F2711 /* MDModal1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B436B1AA47394008F2711 /* MDModal1ViewController.m */; };
-		1421A9721BD60C7200C561A7 /* IMG_0309.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1421A9711BD60C7200C561A7 /* IMG_0309.jpg */; settings = {ASSET_TAGS = (); }; };
-		1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A9791BD62C2100C561A7 /* ZTCameraView.m */; settings = {ASSET_TAGS = (); }; };
-		1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1421A9721BD60C7200C561A7 /* IMG_0309.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1421A9711BD60C7200C561A7 /* IMG_0309.jpg */; };
+		1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A9791BD62C2100C561A7 /* ZTCameraView.m */; };
+		1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */; };
 		14381BEB1BA1B75900C06EB7 /* delete_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BEA1BA1B75900C06EB7 /* delete_btn@2x.png */; };
 		14381BEF1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14381BEE1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m */; };
 		14381BF31BA1BDCC00C06EB7 /* playing_volumn_slide_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BF01BA1BDCC00C06EB7 /* playing_volumn_slide_bg@2x.png */; };
@@ -258,6 +258,7 @@
 		14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073A51B95BDD30029A653 /* MD_UIGraphics_ViewController.m */; };
 		14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073A81B95C0F80029A653 /* MD_UIGraphics_CustomView.m */; };
 		14F073AC1B95C26C0029A653 /* MD_UIIV_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073AB1B95C26C0029A653 /* MD_UIIV_CustomView.m */; };
+		14FBF9661C27B4F700CC0A55 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBF9651C27B4F700CC0A55 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -616,6 +617,7 @@
 		14F073A81B95C0F80029A653 /* MD_UIGraphics_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIGraphics_CustomView.m; sourceTree = "<group>"; };
 		14F073AA1B95C26C0029A653 /* MD_UIIV_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIV_CustomView.h; sourceTree = "<group>"; };
 		14F073AB1B95C26C0029A653 /* MD_UIIV_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIV_CustomView.m; sourceTree = "<group>"; };
+		14FBF9651C27B4F700CC0A55 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -623,6 +625,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14FBF9661C27B4F700CC0A55 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1230,6 +1233,7 @@
 		147DB1751A8C7FA600F38EA4 = {
 			isa = PBXGroup;
 			children = (
+				14FBF9651C27B4F700CC0A55 /* Photos.framework */,
 				147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */,
 				147DB17F1A8C7FA600F38EA4 /* Products */,
 			);

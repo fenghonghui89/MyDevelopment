@@ -7,7 +7,7 @@
 //
 
 #import "MD_UIIPC_ViewController.h"
-
+#import <Photos/Photos.h>
 @interface MD_UIIPC_ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,strong ) UIView         * v;
 @property (nonatomic,strong ) UIScrollView   * sv;
@@ -279,6 +279,9 @@
 //点击相册中的图片后
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 {
+  NSDictionary *dic = [info objectForKey:@"UIImagePickerControllerMediaMetadata"];
+  PHLivePhoto *lp = [info objectForKey:UIImagePickerControllerLivePhoto];
+  
     NSLog(@"点击相册中的图片！！！");
     UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     UIImageView *iv = [[ UIImageView alloc]initWithFrame:CGRectMake(self.images.count *80, 0, 80, 80)];
