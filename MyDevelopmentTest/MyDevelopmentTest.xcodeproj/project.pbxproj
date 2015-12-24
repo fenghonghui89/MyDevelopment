@@ -230,6 +230,8 @@
 		148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7671AAED7B500FAED9D /* TRStudent7.m */; };
 		148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */; };
 		148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7731AAEDACD00FAED9D /* TRStudent8.m */; };
+		14923C591C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */; };
+		14923C5A1C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */; };
 		149A1E601B26E5CB00986FA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5A1B26E5CB00986FA6 /* LaunchScreen.xib */; };
 		149A1E621B26E5CB00986FA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5D1B26E5CB00986FA6 /* Info.plist */; };
 		149A1E631B26E5CB00986FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A1E5E1B26E5CB00986FA6 /* main.m */; };
@@ -572,6 +574,9 @@
 		148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDicNormalViewController.m; sourceTree = "<group>"; };
 		148CD7721AAEDACD00FAED9D /* TRStudent8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent8.h; sourceTree = "<group>"; };
 		148CD7731AAEDACD00FAED9D /* TRStudent8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent8.m; sourceTree = "<group>"; };
+		14923C561C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWebviewUserAgentViewController.h; sourceTree = "<group>"; };
+		14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWebviewUserAgentViewController.m; sourceTree = "<group>"; };
+		14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDWebviewUserAgentViewController.xib; sourceTree = "<group>"; };
 		149A1E5B1B26E5CB00986FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		149A1E5D1B26E5CB00986FA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149A1E5E1B26E5CB00986FA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1104,6 +1109,7 @@
 		146D82921AA6F84600F0C7FD /* UIWebView */ = {
 			isa = PBXGroup;
 			children = (
+				14923C551C2B8E46009CA3A6 /* UserAgent */,
 				146D829E1AA6FF2300F0C7FD /* 构建Hybrid应用 */,
 				146D82931AA6F84600F0C7FD /* 三种请求方式、常用方法及协议 */,
 			);
@@ -1489,6 +1495,16 @@
 			path = NSSet;
 			sourceTree = "<group>";
 		};
+		14923C551C2B8E46009CA3A6 /* UserAgent */ = {
+			isa = PBXGroup;
+			children = (
+				14923C561C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.h */,
+				14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */,
+				14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */,
+			);
+			path = UserAgent;
+			sourceTree = "<group>";
+		};
 		149A1E591B26E5CB00986FA6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1712,6 +1728,7 @@
 				141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */,
 				14565E701BA94CD1009F7B2D /* playing46@2x.png in Resources */,
 				1412B6781BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf in Resources */,
+				14923C5A1C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib in Resources */,
 				14877C811BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf in Resources */,
 				146D82FD1AA709F600F0C7FD /* Honduras.png in Resources */,
 				14565E4E1BA94CD1009F7B2D /* playing15@2x.png in Resources */,
@@ -1853,6 +1870,7 @@
 				146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
 				1463B2761AA1B593006AE8D2 /* ThirdViewController.m in Sources */,
 				1463B2701AA1B593006AE8D2 /* MDMainViewController.m in Sources */,
+				14923C591C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m in Sources */,
 				14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */,
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,

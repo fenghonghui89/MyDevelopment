@@ -191,6 +191,14 @@
 				<array>
 					<dict>
 						<key>desc</key>
+						<string>useragent</string>
+						<key>className</key>
+						<string>MDWebviewUserAgentViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
 						<string>构建Hybrid应用</string>
 						<key>className</key>
 						<string>MDHybridViewController</string>
