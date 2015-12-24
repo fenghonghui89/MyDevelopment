@@ -232,6 +232,7 @@
 		148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7731AAEDACD00FAED9D /* TRStudent8.m */; };
 		14923C591C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */; };
 		14923C5A1C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */; };
+		14923C611C2B98CD009CA3A6 /* MDTestWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14923C5F1C2B98CD009CA3A6 /* MDTestWebView.m */; };
 		149A1E601B26E5CB00986FA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5A1B26E5CB00986FA6 /* LaunchScreen.xib */; };
 		149A1E621B26E5CB00986FA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5D1B26E5CB00986FA6 /* Info.plist */; };
 		149A1E631B26E5CB00986FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A1E5E1B26E5CB00986FA6 /* main.m */; };
@@ -577,6 +578,7 @@
 		14923C561C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWebviewUserAgentViewController.h; sourceTree = "<group>"; };
 		14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWebviewUserAgentViewController.m; sourceTree = "<group>"; };
 		14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDWebviewUserAgentViewController.xib; sourceTree = "<group>"; };
+		14923C5F1C2B98CD009CA3A6 /* MDTestWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestWebView.m; sourceTree = "<group>"; };
 		149A1E5B1B26E5CB00986FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		149A1E5D1B26E5CB00986FA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149A1E5E1B26E5CB00986FA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1109,6 +1111,7 @@
 		146D82921AA6F84600F0C7FD /* UIWebView */ = {
 			isa = PBXGroup;
 			children = (
+				14923C5F1C2B98CD009CA3A6 /* MDTestWebView.m */,
 				14923C551C2B8E46009CA3A6 /* UserAgent */,
 				146D829E1AA6FF2300F0C7FD /* 构建Hybrid应用 */,
 				146D82931AA6F84600F0C7FD /* 三种请求方式、常用方法及协议 */,
@@ -1864,6 +1867,7 @@
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,
+				14923C611C2B98CD009CA3A6 /* MDTestWebView.m in Sources */,
 				14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */,
 				14F073AC1B95C26C0029A653 /* MD_UIIV_CustomView.m in Sources */,
 				147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */,

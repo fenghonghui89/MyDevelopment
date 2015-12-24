@@ -18,6 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+  //开启状态栏动画
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:TRUE];
 }
 
 #pragma mark - action

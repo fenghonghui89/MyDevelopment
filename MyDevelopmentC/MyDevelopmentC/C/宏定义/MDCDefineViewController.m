@@ -95,7 +95,7 @@ const float PI = 3.1415926;//全局常量
 -(void)define2
 {
 #define qidong @"启动"
-    
+  
 #ifndef qidong
     NSLog(@"没有启动");
 #else
