@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
     
-    [self string7];
+    [self string8];
 }
 
 #pragma mark - < action > -
@@ -299,5 +299,19 @@
 {
     MD_String_CustomView *v = [[MD_String_CustomView alloc] initWithFrame:CGRectMake(10, 10, viewW - 20, viewH - 20)];
     [self.view addSubview:v];
+}
+
+#pragma mark 去除两边空格
+-(void)string8
+{
+  //去除两边空格
+  NSString *str = @"    ss sss    ";
+  str = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+  NSLog(@"str:%@",str);
+  
+  //9.按符号将字符串的内容拆开并转换成数组
+  str = @"a.b.c.d.e.f";
+  NSArray* array = [str componentsSeparatedByString:@"."];
+  NSLog(@"array:%@",array);
 }
 @end

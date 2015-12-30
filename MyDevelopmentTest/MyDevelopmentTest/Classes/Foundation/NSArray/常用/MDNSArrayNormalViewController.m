@@ -64,9 +64,7 @@
     NSString* str2 = [array6 componentsJoinedByString:@"."];
     NSLog(@"8.str2:%@",str2);
     
-    //9.按符号将字符串的内容拆开并转换成数组
-    NSArray* array7 = [str2 componentsSeparatedByString:@"."];
-    NSLog(@"9.array7:%@",array7);
+
 }
 
 -(void)arrayNormal2
