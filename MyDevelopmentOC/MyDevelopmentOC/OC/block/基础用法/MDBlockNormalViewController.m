@@ -39,6 +39,7 @@ int sum(int num,int num2){
 //    [self testBlock0];
 //    [self testBlock1];
 //    [self testBlock2];
+  [self testBlock3];
 }
 
 #pragma mark - block常用方法
@@ -169,5 +170,22 @@ void fundation (int (^block1)(int,int))
     NSArray *array3 = [array sortedArrayUsingComparator:selectorBlock];
     NSLog(@"array3:%@",array3);
     
+}
+
+#pragma mark - block做回调参数
+-(void)testBlock3
+{
+  [self.delegate blockDelegate:self block:^(BOOL b) {
+    if (b == YES) {
+      NSLog(@"block delegate 传入yes");
+    }
+  }];
+}
+
+#pragma mark - block做block参数
+-(void)retryBlockMethod:(MDBlockNormalViewControllerRetryBlock)block
+{
+  void(^retryblock)(BOOL b) = ^void(BOOL b){if(b==YES)NSLog(@"block做block参数");};
+  block(YES,retryblock);
 }
 @end

@@ -7,8 +7,8 @@
 //
 
 #import "MDBlockValueViewController.h"
-
-@interface MDBlockValueViewController ()
+#import "MDBlockNormalViewController.h"
+@interface MDBlockValueViewController ()<MDBlockDelegate>
 
 @end
 
@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 
-    [self test2];
+    [self test6];
 }
 
 #pragma mark - action
@@ -87,5 +87,18 @@
     int result = myPtr1();//result的值为5，num的值为6
     result = myPtr2();//result的值为6，num的值为7
     NSLog(@"result:%d", result);//6
+}
+
+//TODO:block delegate
+-(void)test6
+{
+  MDBlockNormalViewController *vc = [MDBlockNormalViewController new];
+  vc.delegate = self;
+  [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)blockDelegate:(MDBlockNormalViewController *)vc block:(MDBlockNormalViewControllerBlock)block
+{
+  block(YES);
 }
 @end

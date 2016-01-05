@@ -8,6 +8,21 @@
 
 #import "MDBaseViewController.h"
 
-@interface MDBlockNormalViewController : MDBaseViewController
+typedef void (^MDBlockNormalViewControllerBlock)(BOOL b);
+typedef void (^MDBlockNormalViewControllerRetryBlock)(BOOL a,void(^block)(BOOL b));
 
+
+@class MDBlockNormalViewController;
+@protocol MDBlockDelegate <NSObject>
+
+@optional
+-(void)blockDelegate:(MDBlockNormalViewController *)vc block:(MDBlockNormalViewControllerBlock)block;
+
+@end
+
+@interface MDBlockNormalViewController : MDBaseViewController
+@property(nonatomic,copy)MDBlockNormalViewControllerBlock block;//block做属性
+@property(nonatomic,weak)id<MDBlockDelegate> delegate;
+
+-(void)retryBlockMethod:(MDBlockNormalViewControllerRetryBlock)block;
 @end
