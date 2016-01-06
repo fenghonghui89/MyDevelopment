@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1417A2251C3CB8AB00968137 /* MDBlockValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417A2241C3CB8AB00968137 /* MDBlockValueViewController.m */; };
 		143EA5DA1B0F2CF9007B2D02 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5C31B0F2CF9007B2D02 /* back_icon.png */; };
 		143EA5DB1B0F2CF9007B2D02 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5C51B0F2CF9007B2D02 /* MDAppDelegate.m */; };
 		143EA5DC1B0F2CF9007B2D02 /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5C71B0F2CF9007B2D02 /* MDBaseViewController.m */; };
@@ -22,7 +23,6 @@
 		143EA5E61B0F2CF9007B2D02 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5D81B0F2CF9007B2D02 /* Info.plist */; };
 		143EA5E71B0F2CF9007B2D02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5D91B0F2CF9007B2D02 /* main.m */; };
 		143EA6001B0F2EE6007B2D02 /* MDBlockNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5F71B0F2EE6007B2D02 /* MDBlockNormalViewController.m */; };
-		143EA6011B0F2EE6007B2D02 /* MDBlockValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5FA1B0F2EE6007B2D02 /* MDBlockValueViewController.m */; };
 		143EA60D1B0F3023007B2D02 /* MD_OC_Property_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA6041B0F3023007B2D02 /* MD_OC_Property_ViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		143EA6231B0F3ABA007B2D02 /* Student2.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA61A1B0F3ABA007B2D02 /* Student2.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		143EA6241B0F3ABA007B2D02 /* XYPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA61C1B0F3ABA007B2D02 /* XYPoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -41,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1417A2231C3CB8AB00968137 /* MDBlockValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBlockValueViewController.h; sourceTree = "<group>"; };
+		1417A2241C3CB8AB00968137 /* MDBlockValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBlockValueViewController.m; sourceTree = "<group>"; };
 		143EA5991B0F2C74007B2D02 /* MyDevelopmentOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		143EA5C31B0F2CF9007B2D02 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		143EA5C41B0F2CF9007B2D02 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
@@ -63,8 +65,6 @@
 		143EA5D91B0F2CF9007B2D02 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		143EA5F61B0F2EE6007B2D02 /* MDBlockNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBlockNormalViewController.h; sourceTree = "<group>"; };
 		143EA5F71B0F2EE6007B2D02 /* MDBlockNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBlockNormalViewController.m; sourceTree = "<group>"; };
-		143EA5F91B0F2EE6007B2D02 /* MDBlockValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBlockValueViewController.h; sourceTree = "<group>"; };
-		143EA5FA1B0F2EE6007B2D02 /* MDBlockValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBlockValueViewController.m; sourceTree = "<group>"; };
 		143EA6031B0F3023007B2D02 /* MD_OC_Property_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_Property_ViewController.h; sourceTree = "<group>"; };
 		143EA6041B0F3023007B2D02 /* MD_OC_Property_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_Property_ViewController.m; sourceTree = "<group>"; };
 		143EA6191B0F3ABA007B2D02 /* Student2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student2.h; sourceTree = "<group>"; };
@@ -110,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1417A2221C3CB8AB00968137 /* 存储变量、调用 */ = {
+			isa = PBXGroup;
+			children = (
+				1417A2231C3CB8AB00968137 /* MDBlockValueViewController.h */,
+				1417A2241C3CB8AB00968137 /* MDBlockValueViewController.m */,
+			);
+			path = "存储变量、调用";
+			sourceTree = "<group>";
+		};
 		143EA5901B0F2C74007B2D02 = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				143EA5F51B0F2EE6007B2D02 /* 基础用法 */,
-				143EA5F81B0F2EE6007B2D02 /* 存储变量 */,
 			);
 			path = block;
 			sourceTree = "<group>";
@@ -195,17 +203,9 @@
 			children = (
 				143EA5F61B0F2EE6007B2D02 /* MDBlockNormalViewController.h */,
 				143EA5F71B0F2EE6007B2D02 /* MDBlockNormalViewController.m */,
+				1417A2221C3CB8AB00968137 /* 存储变量、调用 */,
 			);
 			path = "基础用法";
-			sourceTree = "<group>";
-		};
-		143EA5F81B0F2EE6007B2D02 /* 存储变量 */ = {
-			isa = PBXGroup;
-			children = (
-				143EA5F91B0F2EE6007B2D02 /* MDBlockValueViewController.h */,
-				143EA5FA1B0F2EE6007B2D02 /* MDBlockValueViewController.m */,
-			);
-			path = "存储变量";
 			sourceTree = "<group>";
 		};
 		143EA6021B0F3023007B2D02 /* 属性、初始化 */ = {
@@ -421,7 +421,7 @@
 				143EA5E71B0F2CF9007B2D02 /* main.m in Sources */,
 				143EA6291B0F3ADF007B2D02 /* MDAnimal.m in Sources */,
 				143EA5DB1B0F2CF9007B2D02 /* MDAppDelegate.m in Sources */,
-				143EA6011B0F2EE6007B2D02 /* MDBlockValueViewController.m in Sources */,
+				1417A2251C3CB8AB00968137 /* MDBlockValueViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

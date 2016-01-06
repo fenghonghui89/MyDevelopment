@@ -42,7 +42,7 @@
 				<array>
 					<dict>
 						<key>desc</key>
-						<string>存储变量</string>
+						<string>存储变量、调用</string>
 						<key>className</key>
 						<string>MDBlockValueViewController</string>
 						<key>sub</key>

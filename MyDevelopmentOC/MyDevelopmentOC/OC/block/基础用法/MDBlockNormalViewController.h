@@ -9,7 +9,9 @@
 #import "MDBaseViewController.h"
 
 typedef void (^MDBlockNormalViewControllerBlock)(BOOL b);
-typedef void (^MDBlockNormalViewControllerRetryBlock)(BOOL a,void(^block)(BOOL b));
+
+typedef void (^retryblock)(BOOL b);
+typedef void (^MDBlockNormalViewControllerRetryBlock)(BOOL a,retryblock reb);
 
 
 @class MDBlockNormalViewController;

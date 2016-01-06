@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 
-    [self test6];
+    [self test7];
 }
 
 #pragma mark - action
@@ -100,5 +100,14 @@
 -(void)blockDelegate:(MDBlockNormalViewController *)vc block:(MDBlockNormalViewControllerBlock)block
 {
   block(YES);
+}
+
+//TODO:block做block参数
+-(void)test7
+{
+  MDBlockNormalViewController *vc = [MDBlockNormalViewController new];
+  [vc retryBlockMethod:^(BOOL a, retryblock reb) {
+    reb(YES);
+  }];
 }
 @end

@@ -185,7 +185,10 @@ void fundation (int (^block1)(int,int))
 #pragma mark - block做block参数
 -(void)retryBlockMethod:(MDBlockNormalViewControllerRetryBlock)block
 {
-  void(^retryblock)(BOOL b) = ^void(BOOL b){if(b==YES)NSLog(@"block做block参数");};
-  block(YES,retryblock);
+  retryblock reb= ^void(BOOL b){
+    if (b == YES)
+      NSLog(@"block做block参数");
+  };
+  block(YES,reb);
 }
 @end
