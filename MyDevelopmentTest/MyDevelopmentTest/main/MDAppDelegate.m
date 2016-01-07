@@ -23,7 +23,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
-    self.window.tintColor = [UIColor orangeColor];//tintColor
+    self.window.tintColor = [UIColor orangeColor];
     self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];
 

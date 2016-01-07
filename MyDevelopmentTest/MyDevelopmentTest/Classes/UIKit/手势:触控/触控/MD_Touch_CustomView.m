@@ -22,7 +22,7 @@
 //Began
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"began %d",[touches count]);
+    NSLog(@"began %lu",(unsigned long)[touches count]);
     for (UITouch* touch in touches) {//取出位置
         CGPoint location = [touch locationInView:self.superview];//位置的坐标（相对于指定视图坐标系的）
         NSLog(@"began: %.2f %.2f",location.x,location.y);
@@ -32,7 +32,7 @@
 //Moved
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"moved %d",[touches count]);
+    NSLog(@"moved %lu",(unsigned long)[touches count]);
     for (UITouch* touch in touches) {
         CGPoint location = [touch locationInView:self.superview];
         NSLog(@"moved: %.2f %.2f",location.x,location.y);
@@ -43,7 +43,7 @@
 //Ended
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"ended %d",[touches count]);
+    NSLog(@"ended %lu",(unsigned long)[touches count]);
     for (UITouch* touch in touches) {
         CGPoint location = [touch locationInView:self.superview];
         NSLog(@"ended: %.2f %.2f",location.x,location.y);

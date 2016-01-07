@@ -30,6 +30,9 @@
 		1421A9721BD60C7200C561A7 /* IMG_0309.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1421A9711BD60C7200C561A7 /* IMG_0309.jpg */; };
 		1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A9791BD62C2100C561A7 /* ZTCameraView.m */; };
 		1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */; };
+		1427B4881C3E43C400D4E541 /* MD_AVCamera_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1427B4861C3E43C400D4E541 /* MD_AVCamera_VC.m */; };
+		1427B4891C3E43C400D4E541 /* MD_AVCamera_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1427B4871C3E43C400D4E541 /* MD_AVCamera_VC.xib */; };
+		1427B48C1C3E45F900D4E541 /* MDAVCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1427B48B1C3E45F900D4E541 /* MDAVCameraPreviewView.m */; };
 		14381BEB1BA1B75900C06EB7 /* delete_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BEA1BA1B75900C06EB7 /* delete_btn@2x.png */; };
 		14381BEF1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14381BEE1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m */; };
 		14381BF31BA1BDCC00C06EB7 /* playing_volumn_slide_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BF01BA1BDCC00C06EB7 /* playing_volumn_slide_bg@2x.png */; };
@@ -301,6 +304,11 @@
 		1421A9791BD62C2100C561A7 /* ZTCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTCameraView.m; sourceTree = "<group>"; };
 		1421A97B1BD62C6800C561A7 /* MDCustomUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomUIViewController.h; sourceTree = "<group>"; };
 		1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomUIViewController.m; sourceTree = "<group>"; };
+		1427B4851C3E43C400D4E541 /* MD_AVCamera_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_AVCamera_VC.h; sourceTree = "<group>"; };
+		1427B4861C3E43C400D4E541 /* MD_AVCamera_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_AVCamera_VC.m; sourceTree = "<group>"; };
+		1427B4871C3E43C400D4E541 /* MD_AVCamera_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_AVCamera_VC.xib; sourceTree = "<group>"; };
+		1427B48A1C3E45F900D4E541 /* MDAVCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAVCameraPreviewView.h; sourceTree = "<group>"; };
+		1427B48B1C3E45F900D4E541 /* MDAVCameraPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAVCameraPreviewView.m; sourceTree = "<group>"; };
 		14381BEA1BA1B75900C06EB7 /* delete_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_btn@2x.png"; sourceTree = "<group>"; };
 		14381BED1BA1BCE200C06EB7 /* MD_UISlider_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UISlider_ViewController.h; sourceTree = "<group>"; };
 		14381BEE1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UISlider_ViewController.m; sourceTree = "<group>"; };
@@ -730,6 +738,18 @@
 			path = "跳转";
 			sourceTree = "<group>";
 		};
+		1427B4841C3E125D00D4E541 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				1427B4851C3E43C400D4E541 /* MD_AVCamera_VC.h */,
+				1427B4861C3E43C400D4E541 /* MD_AVCamera_VC.m */,
+				1427B4871C3E43C400D4E541 /* MD_AVCamera_VC.xib */,
+				1427B48A1C3E45F900D4E541 /* MDAVCameraPreviewView.h */,
+				1427B48B1C3E45F900D4E541 /* MDAVCameraPreviewView.m */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
 		14381BEC1BA1BCC500C06EB7 /* UISlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -867,6 +887,7 @@
 		1463B2011AA162C2006AE8D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1427B4841C3E125D00D4E541 /* AVFoundation */,
 				14F073931B95BC4B0029A653 /* CoreGraphics */,
 				1463B2021AA162C2006AE8D2 /* Foundation */,
 				1463B2071AA162C2006AE8D2 /* UIKit */,
@@ -1801,6 +1822,7 @@
 				146D82F71AA709F600F0C7FD /* Ghana.png in Resources */,
 				146D830B1AA709F600F0C7FD /* Paraguay.png in Resources */,
 				1463B2741AA1B593006AE8D2 /* SecondViewController.xib in Resources */,
+				1427B4891C3E43C400D4E541 /* MD_AVCamera_VC.xib in Resources */,
 				1463B28B1AA1C00F006AE8D2 /* big1.jpg in Resources */,
 				14565E4C1BA94CD1009F7B2D /* playing13@2x.png in Resources */,
 				146D82E71AA709F600F0C7FD /* Brazil.png in Resources */,
@@ -1920,6 +1942,7 @@
 				1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */,
 				1463B26C1AA1B593006AE8D2 /* FirstViewController.m in Sources */,
 				145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */,
+				1427B4881C3E43C400D4E541 /* MD_AVCamera_VC.m in Sources */,
 				147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */,
 				141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */,
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
@@ -1936,6 +1959,7 @@
 				14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */,
 				148CD7401AAECC7700FAED9D /* MDNSEnumeratorViewController.m in Sources */,
 				148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */,
+				1427B48C1C3E45F900D4E541 /* MDAVCameraPreviewView.m in Sources */,
 				141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */,
 				14F073911B95B9E80029A653 /* MDCustomView.m in Sources */,
 				148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */,
