@@ -47,9 +47,7 @@
   
   //self.view
   self.view.backgroundColor = [UIColor blueColor];
-  if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
-    self.automaticallyAdjustsScrollViewInsets = NO;//不自动设置内边距，防止ios7以后tv下移
-  }
+
   
   //bgView
   UIView *bgView = [[UIView alloc] init];
