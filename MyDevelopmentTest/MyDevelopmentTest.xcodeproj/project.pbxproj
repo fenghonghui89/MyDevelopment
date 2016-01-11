@@ -240,6 +240,14 @@
 		149A1E621B26E5CB00986FA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5D1B26E5CB00986FA6 /* Info.plist */; };
 		149A1E631B26E5CB00986FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A1E5E1B26E5CB00986FA6 /* main.m */; };
 		149A1E991B26EC2300986FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E971B26EC2300986FA6 /* Main.storyboard */; };
+		14B676F01C43B47E00C11F71 /* MD_PhotosLibrary_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B676EE1C43B47E00C11F71 /* MD_PhotosLibrary_VC.m */; };
+		14B676F11C43B47E00C11F71 /* MD_PhotosLibrary_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B676EF1C43B47E00C11F71 /* MD_PhotosLibrary_VC.xib */; };
+		14B676F51C43B4F800C11F71 /* MD_PhotosLibrary_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B676F31C43B4F800C11F71 /* MD_PhotosLibrary_Cell.m */; };
+		14B676F61C43B4F800C11F71 /* MD_PhotosLibrary_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B676F41C43B4F800C11F71 /* MD_PhotosLibrary_Cell.xib */; };
+		14B676F91C43B5EE00C11F71 /* tickbox_on@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B676F71C43B5EE00C11F71 /* tickbox_on@4x.png */; };
+		14B676FA1C43B5EE00C11F71 /* tickbox@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B676F81C43B5EE00C11F71 /* tickbox@4x.png */; };
+		14B676FE1C43B8FA00C11F71 /* MD_PhotosList_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B676FC1C43B8FA00C11F71 /* MD_PhotosList_VC.m */; };
+		14B676FF1C43B8FA00C11F71 /* MD_PhotosList_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B676FD1C43B8FA00C11F71 /* MD_PhotosList_VC.xib */; };
 		14C1E6B11B53CD4800C7E5DF /* Default-375w-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AC1B53CD4800C7E5DF /* Default-375w-667h@2x.png */; };
 		14C1E6B21B53CD4800C7E5DF /* Default-414w-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AD1B53CD4800C7E5DF /* Default-414w-736h@3x.png */; };
 		14C1E6B31B53CD4800C7E5DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */; };
@@ -591,6 +599,17 @@
 		149A1E5D1B26E5CB00986FA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149A1E5E1B26E5CB00986FA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		149A1E981B26EC2300986FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14B676ED1C43B47E00C11F71 /* MD_PhotosLibrary_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotosLibrary_VC.h; sourceTree = "<group>"; };
+		14B676EE1C43B47E00C11F71 /* MD_PhotosLibrary_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotosLibrary_VC.m; sourceTree = "<group>"; };
+		14B676EF1C43B47E00C11F71 /* MD_PhotosLibrary_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotosLibrary_VC.xib; sourceTree = "<group>"; };
+		14B676F21C43B4F800C11F71 /* MD_PhotosLibrary_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotosLibrary_Cell.h; sourceTree = "<group>"; };
+		14B676F31C43B4F800C11F71 /* MD_PhotosLibrary_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotosLibrary_Cell.m; sourceTree = "<group>"; };
+		14B676F41C43B4F800C11F71 /* MD_PhotosLibrary_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotosLibrary_Cell.xib; sourceTree = "<group>"; };
+		14B676F71C43B5EE00C11F71 /* tickbox_on@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tickbox_on@4x.png"; sourceTree = "<group>"; };
+		14B676F81C43B5EE00C11F71 /* tickbox@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tickbox@4x.png"; sourceTree = "<group>"; };
+		14B676FB1C43B8FA00C11F71 /* MD_PhotosList_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotosList_VC.h; sourceTree = "<group>"; };
+		14B676FC1C43B8FA00C11F71 /* MD_PhotosList_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotosList_VC.m; sourceTree = "<group>"; };
+		14B676FD1C43B8FA00C11F71 /* MD_PhotosList_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotosList_VC.xib; sourceTree = "<group>"; };
 		14C1E6AC1B53CD4800C7E5DF /* Default-375w-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-375w-667h@2x.png"; sourceTree = "<group>"; };
 		14C1E6AD1B53CD4800C7E5DF /* Default-414w-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-414w-736h@3x.png"; sourceTree = "<group>"; };
 		14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -887,6 +906,7 @@
 		1463B2011AA162C2006AE8D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				14B676EC1C43B43400C11F71 /* Photos */,
 				1427B4841C3E125D00D4E541 /* AVFoundation */,
 				14F073931B95BC4B0029A653 /* CoreGraphics */,
 				1463B2021AA162C2006AE8D2 /* Foundation */,
@@ -1540,6 +1560,24 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		14B676EC1C43B43400C11F71 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				14B676FB1C43B8FA00C11F71 /* MD_PhotosList_VC.h */,
+				14B676FC1C43B8FA00C11F71 /* MD_PhotosList_VC.m */,
+				14B676FD1C43B8FA00C11F71 /* MD_PhotosList_VC.xib */,
+				14B676ED1C43B47E00C11F71 /* MD_PhotosLibrary_VC.h */,
+				14B676EE1C43B47E00C11F71 /* MD_PhotosLibrary_VC.m */,
+				14B676EF1C43B47E00C11F71 /* MD_PhotosLibrary_VC.xib */,
+				14B676F21C43B4F800C11F71 /* MD_PhotosLibrary_Cell.h */,
+				14B676F31C43B4F800C11F71 /* MD_PhotosLibrary_Cell.m */,
+				14B676F41C43B4F800C11F71 /* MD_PhotosLibrary_Cell.xib */,
+				14B676F71C43B5EE00C11F71 /* tickbox_on@4x.png */,
+				14B676F81C43B5EE00C11F71 /* tickbox@4x.png */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
 		14C1E6AB1B53CD4800C7E5DF /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -1758,6 +1796,7 @@
 				14565E4E1BA94CD1009F7B2D /* playing15@2x.png in Resources */,
 				147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */,
 				14565E5E1BA94CD1009F7B2D /* playing2@2x.png in Resources */,
+				14B676FA1C43B5EE00C11F71 /* tickbox@4x.png in Resources */,
 				1412B6771BA1991000FA5F2E /* UIBezierPath曲线各点含义.png in Resources */,
 				14C1E6B41B53CD4800C7E5DF /* Default.png in Resources */,
 				146D83011AA709F600F0C7FD /* Japan.png in Resources */,
@@ -1784,6 +1823,7 @@
 				14565E681BA94CD1009F7B2D /* playing39@2x.png in Resources */,
 				146D830D1AA709F600F0C7FD /* Portugal.png in Resources */,
 				14565E5A1BA94CD1009F7B2D /* playing26@2x.png in Resources */,
+				14B676F61C43B4F800C11F71 /* MD_PhotosLibrary_Cell.xib in Resources */,
 				14565E761BA94CD1009F7B2D /* playing51@2x.png in Resources */,
 				14565E6F1BA94CD1009F7B2D /* playing45@2x.png in Resources */,
 				146D83151AA709F600F0C7FD /* SouthAfrica.png in Resources */,
@@ -1807,6 +1847,7 @@
 				146D82DF1AA709F600F0C7FD /* team.plist in Resources */,
 				14565E731BA94CD1009F7B2D /* playing49@2x.png in Resources */,
 				146D83131AA709F600F0C7FD /* Slovenia.png in Resources */,
+				14B676F91C43B5EE00C11F71 /* tickbox_on@4x.png in Resources */,
 				14565E541BA94CD1009F7B2D /* playing20@2x.png in Resources */,
 				1463B2A01AA1CAE4006AE8D2 /* heng.jpg in Resources */,
 				141B43371AA401BC008F2711 /* 罗丹-思想者.png in Resources */,
@@ -1827,6 +1868,7 @@
 				14565E4C1BA94CD1009F7B2D /* playing13@2x.png in Resources */,
 				146D82E71AA709F600F0C7FD /* Brazil.png in Resources */,
 				14565E7E1BA94CD1009F7B2D /* playing59@2x.png in Resources */,
+				14B676FF1C43B8FA00C11F71 /* MD_PhotosList_VC.xib in Resources */,
 				14565E4F1BA94CD1009F7B2D /* playing16@2x.png in Resources */,
 				14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */,
 				14565E7F1BA94CD1009F7B2D /* playing5@2x.png in Resources */,
@@ -1838,6 +1880,7 @@
 				1463B2B61AA1CD5D006AE8D2 /* shu.jpg in Resources */,
 				146D82F91AA709F600F0C7FD /* Greece.png in Resources */,
 				14565E8F1BA95FF9009F7B2D /* BurstAircraftAircraftBig.png in Resources */,
+				14B676F11C43B47E00C11F71 /* MD_PhotosLibrary_VC.xib in Resources */,
 				14381BF41BA1BDCC00C06EB7 /* playing_volumn_slide_foreground@2x.png in Resources */,
 				149A1E621B26E5CB00986FA6 /* Info.plist in Resources */,
 				14565E4A1BA94CD1009F7B2D /* playing11@2x.png in Resources */,
@@ -1904,6 +1947,7 @@
 				14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
 				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
+				14B676F01C43B47E00C11F71 /* MD_PhotosLibrary_VC.m in Sources */,
 				14F0739F1B95BCAD0029A653 /* MD_CGContext_ViewController.m in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
@@ -1931,6 +1975,7 @@
 				148CD75E1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,
 				14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */,
+				14B676F51C43B4F800C11F71 /* MD_PhotosLibrary_Cell.m in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
 				148CD7141AAEC21600FAED9D /* MDObject1ViewController.m in Sources */,
@@ -1951,6 +1996,7 @@
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
 				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
+				14B676FE1C43B8FA00C11F71 /* MD_PhotosList_VC.m in Sources */,
 				14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */,
 				14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */,
 				14DB41071AEA752D00DA1682 /* MDTool.m in Sources */,
