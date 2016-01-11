@@ -17,26 +17,47 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-oK-Pjj">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
-                </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0a-wW-FVD">
-                    <rect key="frame" x="140" y="346" width="46" height="30"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="onclick:" destination="-1" eventType="touchUpInside" id="S2m-mO-r9Z"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-3B-ANl">
-                    <rect key="frame" x="47" y="241" width="233" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWA-Yk-jZI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0a-wW-FVD">
+                            <rect key="frame" x="137" y="245" width="46" height="30"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onclick:" destination="-1" eventType="touchUpInside" id="S2m-mO-r9Z"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-3B-ANl">
+                            <rect key="frame" x="44" y="198" width="233" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-oK-Pjj">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                            <color key="backgroundColor" red="0.97623391130000003" green="1" blue="0.37962458269999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="162" id="5T7-Am-y11"/>
+                            </constraints>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="dkU-oK-Pjj" firstAttribute="top" secondItem="YWA-Yk-jZI" secondAttribute="top" id="59g-mW-yH9"/>
+                        <constraint firstItem="dkU-oK-Pjj" firstAttribute="leading" secondItem="YWA-Yk-jZI" secondAttribute="leading" id="gOy-VQ-Wci"/>
+                        <constraint firstAttribute="trailing" secondItem="dkU-oK-Pjj" secondAttribute="trailing" id="yp1-Yn-OMW"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YWA-Yk-jZI" secondAttribute="trailing" id="1rL-ge-rKG"/>
+                <constraint firstItem="YWA-Yk-jZI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="41d-E9-7ya"/>
+                <constraint firstItem="YWA-Yk-jZI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UaJ-zi-Iuo"/>
+                <constraint firstAttribute="bottom" secondItem="YWA-Yk-jZI" secondAttribute="bottom" id="ZXO-Qg-tTV"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

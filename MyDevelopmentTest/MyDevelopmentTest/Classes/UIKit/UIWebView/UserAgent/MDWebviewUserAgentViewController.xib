@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDWebviewUserAgentViewController">
@@ -17,54 +17,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-pr-2Wu">
-                    <rect key="frame" x="0.0" y="20" width="320" height="528"/>
-                    <animations/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" red="0.49972934790000001" green="1" blue="0.47167137450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiS-1c-PjV">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                    <animations/>
-                    <color key="backgroundColor" red="1" green="0.39390807189999999" blue="0.9510877526" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="wd0-Wb-LlX"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3R-Ug-MuZ">
-                    <rect key="frame" x="0.0" y="548" width="320" height="20"/>
-                    <animations/>
-                    <color key="backgroundColor" red="1" green="0.39390807189999999" blue="0.9510877526" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="riE-DV-Prg"/>
-                    </constraints>
-                </view>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="e3R-Ug-MuZ" firstAttribute="top" secondItem="sJA-pr-2Wu" secondAttribute="bottom" id="0mD-V5-UaN"/>
-                <constraint firstItem="e3R-Ug-MuZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="91d-Ak-tEX"/>
-                <constraint firstAttribute="trailing" secondItem="sJA-pr-2Wu" secondAttribute="trailing" id="DJK-MF-qfy"/>
-                <constraint firstItem="CiS-1c-PjV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Po4-9M-GbH"/>
-                <constraint firstAttribute="trailing" secondItem="sJA-pr-2Wu" secondAttribute="trailing" id="Xlw-go-Y1M"/>
-                <constraint firstItem="sJA-pr-2Wu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xrs-tT-Wzp"/>
-                <constraint firstItem="CiS-1c-PjV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZaE-Px-XdB"/>
-                <constraint firstItem="sJA-pr-2Wu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zwg-TC-tBS"/>
-                <constraint firstAttribute="bottom" secondItem="sJA-pr-2Wu" secondAttribute="bottom" id="hEj-60-Omk"/>
-                <constraint firstAttribute="bottom" secondItem="e3R-Ug-MuZ" secondAttribute="bottom" id="hKP-yF-gFx"/>
-                <constraint firstAttribute="trailing" secondItem="CiS-1c-PjV" secondAttribute="trailing" id="oNt-VX-TAk"/>
-                <constraint firstItem="sJA-pr-2Wu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="s5A-Ue-JTc"/>
-                <constraint firstAttribute="trailing" secondItem="e3R-Ug-MuZ" secondAttribute="trailing" id="ta6-p1-Uis"/>
-                <constraint firstItem="sJA-pr-2Wu" firstAttribute="top" secondItem="CiS-1c-PjV" secondAttribute="bottom" id="zEX-ga-8VT"/>
+                <constraint firstItem="sJA-pr-2Wu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F9C-Hy-3Qk"/>
+                <constraint firstAttribute="bottom" secondItem="sJA-pr-2Wu" secondAttribute="bottom" id="RYu-dj-Dgu"/>
+                <constraint firstItem="sJA-pr-2Wu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZUW-TI-EaU"/>
+                <constraint firstAttribute="trailing" secondItem="sJA-pr-2Wu" secondAttribute="trailing" id="iZ7-j1-skl"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="DJK-MF-qfy"/>
-                    <exclude reference="Xrs-tT-Wzp"/>
-                    <exclude reference="hEj-60-Omk"/>
-                    <exclude reference="s5A-Ue-JTc"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="386" y="206"/>
         </view>
     </objects>

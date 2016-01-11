@@ -16,21 +16,18 @@
 @implementation MDWebviewUserAgentViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+  [super viewDidLoad];
+  
+  
   [self createHttpRequest];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 - (void)createHttpRequest
 {
-  _webview.delegate = self;
-  [_webview loadRequest:[NSURLRequest requestWithURL:
-                         [NSURL URLWithString:@"http://www.eoe.cn"]]];
+  [self.webview setDelegate:self];
+  [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
   NSLog(@"%@", [self userAgentString]);
 }
 
