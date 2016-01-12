@@ -184,7 +184,7 @@
 {
     NSString* str1 = @"abcdefg";
     NSLog(@"str1:%@",str1);
-    
+
     //从指定下标开始到最后(包含开始位置截取字符串)
     NSString* str2 = [str1 substringFromIndex:2];
     NSLog(@"str2:%@",str2);
@@ -192,7 +192,7 @@
     //从0开始到指定位置(不包含指定位置)
     NSString* str3 = [str1 substringToIndex:3];
     NSLog(@"str3:%@",str3);
-    
+
     //指定范围截取字符串，{开始位置（下标），截取的字符数}
     NSRange abc = {3,2};//按command可知NSRange是结构体
     NSString* str4 = [str1 substringWithRange:abc];

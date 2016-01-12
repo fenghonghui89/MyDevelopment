@@ -21,6 +21,7 @@
   
   //开启状态栏动画
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:TRUE];
+  self.webView.scalesPageToFit = YES;//设置为YES则网页内容自适应webview大小，且用户可以用手势来放大或者缩小页面
 }
 
 #pragma mark - action

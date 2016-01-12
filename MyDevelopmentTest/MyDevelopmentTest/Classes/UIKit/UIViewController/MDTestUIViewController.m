@@ -299,7 +299,7 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UIViewController : UIResponder <NSCoding,
 @interface UIViewController (UIViewControllerEditing)
 
 @property(nonatomic,getter=isEditing) BOOL editing;
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated; // Updates the appearance of the Edit|Done button item as necessary. Clients who override it must call super first.
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated; // Updates the appearance of the Edit|Done button item as necessary. Clients who override it must call super first.更新编辑状态（如自定义vc继承于UIViewController,vc.view有子view为tv，要进入编辑模式就要添加该方法）
 
 - (UIBarButtonItem *)editButtonItem; // Return an Edit|Done button that can be used as a navigation item's custom view. Default action toggles the editing state with animation.
 
