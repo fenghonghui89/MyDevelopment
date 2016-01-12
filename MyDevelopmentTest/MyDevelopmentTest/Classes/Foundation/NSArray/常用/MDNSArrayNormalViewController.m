@@ -49,7 +49,7 @@
     for (int i=0; i<[array2 count]; i++) {
         NSLog(@"6.1 array2[%d]:%@",i,[array2 objectAtIndex:i]);//array[i]也可以
     }
-    CFBridgingRetain
+
     for (NSString* temp in array2) {
         NSLog(@"6.2 array2:%@",temp);
     }

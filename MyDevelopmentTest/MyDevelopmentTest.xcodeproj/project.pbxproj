@@ -263,11 +263,6 @@
 		14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073A51B95BDD30029A653 /* MD_UIGraphics_ViewController.m */; };
 		14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073A81B95C0F80029A653 /* MD_UIGraphics_CustomView.m */; };
 		14F073AC1B95C26C0029A653 /* MD_UIIV_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073AB1B95C26C0029A653 /* MD_UIIV_CustomView.m */; };
-		14F977701C44B00000A53FA9 /* MDTestUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F9776F1C44B00000A53FA9 /* MDTestUIView.m */; };
-		14F977731C44B1BE00A53FA9 /* MDTestUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F977721C44B1BE00A53FA9 /* MDTestUIScrollView.m */; };
-		14F977771C44B2D200A53FA9 /* MDTestCFBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F977761C44B2D200A53FA9 /* MDTestCFBase.m */; };
-		14F9777A1C44B35D00A53FA9 /* MDTestNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F977791C44B35D00A53FA9 /* MDTestNSObject.m */; };
-		14F9777D1C44B43800A53FA9 /* MDTestNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F9777C1C44B43800A53FA9 /* MDTestNSString.m */; };
 		14FBF9661C27B4F700CC0A55 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBF9651C27B4F700CC0A55 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
@@ -1963,7 +1958,6 @@
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
 				148CD75E1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,
-				14F9777A1C44B35D00A53FA9 /* MDTestNSObject.m in Sources */,
 				14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
@@ -1995,9 +1989,7 @@
 				148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */,
 				1427B48C1C3E45F900D4E541 /* MDAVCameraPreviewView.m in Sources */,
 				141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */,
-				14F977701C44B00000A53FA9 /* MDTestUIView.m in Sources */,
 				14F073911B95B9E80029A653 /* MDCustomView.m in Sources */,
-				14F9777D1C44B43800A53FA9 /* MDTestNSString.m in Sources */,
 				148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */,
 				14565E921BA96012009F7B2D /* MD_NSTimer_VC3.m in Sources */,
 				1463B2841AA1BD87006AE8D2 /* MDPickerViewViewController.m in Sources */,
@@ -2010,12 +2002,10 @@
 				148CD7601AAED70E00FAED9D /* TRXYZ.m in Sources */,
 				148CD7121AAEC21600FAED9D /* TRStudent3.m in Sources */,
 				1463B2911AA1C0AF006AE8D2 /* MDUIImageViewViewController.m in Sources */,
-				14F977731C44B1BE00A53FA9 /* MDTestUIScrollView.m in Sources */,
 				14565E971BA98C5B009F7B2D /* MD_UICustom_VC.m in Sources */,
 				145D871D1BA84DBE00447D35 /* MD_UIViewController_VC.m in Sources */,
 				141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */,
 				14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */,
-				14F977771C44B2D200A53FA9 /* MDTestCFBase.m in Sources */,
 				148CD73B1AAECA3200FAED9D /* TRStudent4.m in Sources */,
 				148CD7641AAED72A00FAED9D /* MDNSSetNormalViewController.m in Sources */,
 				1463A9C71B6612160087F38F /* UIView+MDCategory.m in Sources */,
