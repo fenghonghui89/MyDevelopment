@@ -24,10 +24,10 @@
 {
   [super viewDidLoad];
   
-//  self.webview.delegate = self;
-//  NSURL *url = [NSURL URLWithString:@"http://mall.tpages.cn"];
-//  NSURLRequest *req = [NSURLRequest requestWithURL:url];
-//  [self.webview loadRequest:req];
+  self.webview.delegate = self;
+  NSURL *url = [NSURL URLWithString:@"http://dev.tpages.net.cn/alipayapp/index.php"];
+  NSURLRequest *req = [NSURLRequest requestWithURL:url];
+  [self.webview loadRequest:req];
 }
 
 #pragma mark - < callback > -
@@ -75,17 +75,17 @@
 - (IBAction)paybtntap:(id)sender
 {
   Order *order = [[Order alloc] init];
-  order.partner = @"2088021590285844";
-  order.seller_id = @"tat_pay@tpages.com";
-  order.out_trade_no = @"1601077488";
-  order.subject = @"\u8ba2\u5355\u53f7:1601077488";
-  order.body = @"\u8ba2\u5355\u53f7:1601077488";
+  order.partner = @"2088021073337277";
+  order.seller_id = @"tp_pay@tpages.com";
+  order.out_trade_no = @"1452574539";
+  order.subject = @"subject";
+  order.body = @"body";
   order.total_fee = @"0.01";
-  order.notify_url = @"http://mall.local.dev.tpages.com/alipaywapcb";
+  order.notify_url = @"http://dev.tpages.net.cn/alipayapp/notify.php";
   order.service = @"mobile.securitypay.pay";
   order.payment_type = @"1";
   order._input_charset = @"utf-8";
-  order.sign = @"qLbgdBGNerS4qrfCqWLw0pRo114sb2XZ%2BQsbXqRNlbJIDFNIwT5gK3yjVAUT6Ui403LWfcmkUAt1FgCK3ojBvVS9EjVjJulKTXuQ0QT9RkbMuBySHkmRel87wyFaHt9jvIgeZ1YlRunQjaPI5PMKUSLqHxB0ouBs%2BCTVJbmdSF0%3D";
+  order.sign = @"T4lZTsHhWIRfFXaZvMEgEtNC6qTeo6jqHe0U4D6qwXcSX38eBDTUysVbfLdpIatoCDp6atz59cG7s0Cf17tRIrkK29rPhdXXiKxGFcM1ATVlGMal2h4rqsgLtxU8S0bKYzZ6oyjIoUR2RxApBesDHp8WPsBmk5%2FtbU870n%2FZS3I%3D";
   order.sign_type = @"RSA";
   
   //将商品信息拼接成字符串
@@ -98,15 +98,15 @@
 }
 - (IBAction)rsaPayBtnTap:(id)sender
 {
-  NSString *partner = @"2088021590285844";
-  NSString *seller = @"tat_pay@tpages.com";
+  NSString *partner = @"2088021073337277";
+  NSString *seller = @"tp_pay@tpages.com";
   NSString *privateKey = @"MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALjgQC6rWplJUj4g0G4zWjseZiDuRJZUBq+ity+kZKM0tvPyuPpSvw444zc9Tqw9mBGup7S8Y2fCyfV5B68tG7Sl4WkHhTP9EnNQuKndHkMBOOWhr/DixHQ/nBNcx1KBrMwXcegCqMWs9uJEuKYq37kVdh9QSYDxN5TLhs40lUn/AgMBAAECgYEAp/s61izkWTuB+umd+UO3zNfGPE3DDES0/ol+oU9iEdkoE2iMIwdkieuuqNaP0Xj137surs4uFG2tS9n43XbDIEngwTmR8sC+Y1IGL981WGLTj9oRPcN+wj52A/MAQqZQZG+8sPa4aQzUnGV7C7mv6O/0c9UDkAEyl6A87NhHHuECQQDdawd42dWNvL0xsQDw187qqIA0F7ljQk3vOQaxhx19Qwo4PtqkoOZ3wySIIS257IpnAYd6fs2qblocUaeqlQMlAkEA1cAoHKl+PH92qljekbKRWviGYuBspf3ECEydgh3Xi3WGX1c642GngQNYgsNiaOLwFnyOTVero1v6aPVvFa+hUwJBAMsAc+tTHL5EitliRVCLLARs1I3uKmRcyANKL17YWCseKeKDjgZeFq861OWSNdA+lG34MvQWCg31+tv36Vc2I5kCQGovfH3IoaKSO7QiU+cTS2xi2/fQv4iyiSkKTpDuHD72kltYrTN6Nsk7jUPgpkmuu1Cgbdz0OZr8vWhYzOd8CWsCQQCbXQGJdC0kKC4A30qzRMmxK445lBrtFuULvrrt9pBdGqNumt8Ng/gNuH7Xef0ffzzeq4q1LEsHJC5i+0JDh+Aw";//pkcs8格式私钥，把头尾和换行去掉
   
   Order *order = [[Order alloc] init];
   order.partner = partner;
   order.seller_id = seller;
-  order.out_trade_no = @"1601077488";
-  order.subject = @"\u8ba2\u5355\u53f7:1601077488";
+  order.out_trade_no = @"1452574539";
+  order.subject = @"subject";
   order.body = @"\u8ba2\u5355\u53f7:1601077488";
   order.total_fee = @"0.01";
   order.notify_url = @"http://mall.local.dev.tpages.com/alipaywapcb";
@@ -135,4 +135,47 @@
 
 }
 
+- (IBAction)webbtnTap:(id)sender
+{
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  manager.responseSerializer = [AFJSONResponseSerializer serializer];
+  manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+  manager.requestSerializer = [AFJSONRequestSerializer serializer];
+  manager.requestSerializer.timeoutInterval = 20;
+  [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+  manager.securityPolicy.allowInvalidCertificates = true;
+  manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+  [manager GET:@"http://dev.tpages.net.cn/alipayapp/index.php?action=pay"
+    parameters:nil
+       success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+         NSDictionary *dic = (NSDictionary *)responseObject;
+         Order *order = [[Order alloc] init];
+         order.partner = [dic objectForKey:@"partner"];
+         order.seller_id = [dic objectForKey:@"seller_id"];
+         order.out_trade_no = [dic objectForKey:@"out_trade_no"];
+         order.subject = [dic objectForKey:@"subject"];
+         order.body = [dic objectForKey:@"body"];
+         order.total_fee = [dic objectForKey:@"total_fee"];
+         order.notify_url = [dic objectForKey:@"notify_url"];
+         order.service = [dic objectForKey:@"service"];
+         order.payment_type = [dic objectForKey:@"payment_type"];
+         order._input_charset = [dic objectForKey:@"_input_charset"];
+         order.sign = [dic objectForKey:@"sign"];
+         order.sign_type = [dic objectForKey:@"sign_type"];
+         
+         //将商品信息拼接成字符串
+         NSString *orderSpec = [order description];
+         NSLog(@"orderSpec = %@",orderSpec);
+         
+         [[AlipaySDK defaultService] payOrder:orderSpec fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+           NSLog(@"reslut = %@",resultDic);
+         }];
+
+       }
+       failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+         NSLog(@"error..%@",error);
+       }];
+
+}
 @end

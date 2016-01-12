@@ -303,6 +303,19 @@
 		1421A9791BD62C2100C561A7 /* ZTCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTCameraView.m; sourceTree = "<group>"; };
 		1421A97B1BD62C6800C561A7 /* MDCustomUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomUIViewController.h; sourceTree = "<group>"; };
 		1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomUIViewController.m; sourceTree = "<group>"; };
+		1426A1701C44D60200FB191D /* MDTestNSURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSURL.m; sourceTree = "<group>"; };
+		1426A1731C44D6CB00FB191D /* MDTestNSURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSURLResponse.m; sourceTree = "<group>"; };
+		1426A1771C44D7A300FB191D /* MDTestNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSThread.m; sourceTree = "<group>"; };
+		1426A17B1C44D85800FB191D /* MDTestNSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSFileManager.m; sourceTree = "<group>"; };
+		1426A17F1C44D93700FB191D /* MDTestNSKeyedArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSKeyedArchiver.m; sourceTree = "<group>"; };
+		1426A1831C44DA6300FB191D /* MDTestNSRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSRunLoop.m; sourceTree = "<group>"; };
+		1426A1851C44DB1B00FB191D /* MDTestNSArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTestNSArray.h; sourceTree = "<group>"; };
+		1426A1861C44DC8000FB191D /* MDTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTestObject.h; sourceTree = "<group>"; };
+		1426A1871C44DCB200FB191D /* MDTestNSPathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTestNSPathUtilities.h; sourceTree = "<group>"; };
+		1426A18B1C44DE2000FB191D /* NSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSBundle.h; sourceTree = "<group>"; };
+		1426A18C1C44DE3300FB191D /* NSByteOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSByteOrder.h; sourceTree = "<group>"; };
+		1426A18D1C44DE3300FB191D /* NSCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCalendar.h; sourceTree = "<group>"; };
+		1426A18E1C44DE3300FB191D /* NSCharacterSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet.h; sourceTree = "<group>"; };
 		1427B4851C3E43C400D4E541 /* MD_AVCamera_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_AVCamera_VC.h; sourceTree = "<group>"; };
 		1427B4861C3E43C400D4E541 /* MD_AVCamera_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_AVCamera_VC.m; sourceTree = "<group>"; };
 		1427B4871C3E43C400D4E541 /* MD_AVCamera_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_AVCamera_VC.xib; sourceTree = "<group>"; };
@@ -636,7 +649,6 @@
 		14F9776F1C44B00000A53FA9 /* MDTestUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestUIView.m; sourceTree = "<group>"; };
 		14F977721C44B1BE00A53FA9 /* MDTestUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestUIScrollView.m; sourceTree = "<group>"; };
 		14F977761C44B2D200A53FA9 /* MDTestCFBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestCFBase.m; sourceTree = "<group>"; };
-		14F977791C44B35D00A53FA9 /* MDTestNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSObject.m; sourceTree = "<group>"; };
 		14F9777C1C44B43800A53FA9 /* MDTestNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSString.m; sourceTree = "<group>"; };
 		14FBF9651C27B4F700CC0A55 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -742,6 +754,65 @@
 				141B436B1AA47394008F2711 /* MDModal1ViewController.m */,
 			);
 			path = "跳转";
+			sourceTree = "<group>";
+		};
+		1426A16E1C44D5F200FB191D /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				1426A1701C44D60200FB191D /* MDTestNSURL.m */,
+				1426A1731C44D6CB00FB191D /* MDTestNSURLResponse.m */,
+			);
+			path = NSURL;
+			sourceTree = "<group>";
+		};
+		1426A1751C44D79000FB191D /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				1426A1771C44D7A300FB191D /* MDTestNSThread.m */,
+			);
+			path = NSThread;
+			sourceTree = "<group>";
+		};
+		1426A1791C44D82A00FB191D /* NSFileManager&NSFileHandle */ = {
+			isa = PBXGroup;
+			children = (
+				1426A17B1C44D85800FB191D /* MDTestNSFileManager.m */,
+			);
+			path = "NSFileManager&NSFileHandle";
+			sourceTree = "<group>";
+		};
+		1426A17D1C44D91100FB191D /* NSKeyedArchiver&NSKeyedUnarchiver */ = {
+			isa = PBXGroup;
+			children = (
+				1426A17F1C44D93700FB191D /* MDTestNSKeyedArchiver.m */,
+			);
+			path = "NSKeyedArchiver&NSKeyedUnarchiver";
+			sourceTree = "<group>";
+		};
+		1426A1811C44DA5000FB191D /* NSRunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				1426A1831C44DA6300FB191D /* MDTestNSRunLoop.m */,
+			);
+			path = NSRunLoop;
+			sourceTree = "<group>";
+		};
+		1426A1881C44DE0A00FB191D /* FoundationOther */ = {
+			isa = PBXGroup;
+			children = (
+				1426A18C1C44DE3300FB191D /* NSByteOrder.h */,
+				1426A18D1C44DE3300FB191D /* NSCalendar.h */,
+				1426A18E1C44DE3300FB191D /* NSCharacterSet.h */,
+			);
+			path = FoundationOther;
+			sourceTree = "<group>";
+		};
+		1426A1891C44DE0A00FB191D /* NSBundle */ = {
+			isa = PBXGroup;
+			children = (
+				1426A18B1C44DE2000FB191D /* NSBundle.h */,
+			);
+			path = NSBundle;
 			sourceTree = "<group>";
 		};
 		1427B4841C3E125D00D4E541 /* AVFoundation */ = {
@@ -905,6 +976,13 @@
 		1463B2021AA162C2006AE8D2 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				1426A1881C44DE0A00FB191D /* FoundationOther */,
+				1426A1891C44DE0A00FB191D /* NSBundle */,
+				1426A1811C44DA5000FB191D /* NSRunLoop */,
+				1426A17D1C44D91100FB191D /* NSKeyedArchiver&NSKeyedUnarchiver */,
+				1426A1791C44D82A00FB191D /* NSFileManager&NSFileHandle */,
+				1426A1751C44D79000FB191D /* NSThread */,
+				1426A16E1C44D5F200FB191D /* NSURL */,
 				14565E071BA94A75009F7B2D /* NSTimer */,
 				148CD7581AAED6B900FAED9D /* NSDictionary */,
 				148CD7591AAED6B900FAED9D /* NSSet */,
@@ -923,6 +1001,7 @@
 		1463B2031AA162C2006AE8D2 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
+				1426A1871C44DCB200FB191D /* MDTestNSPathUtilities.h */,
 				14F9777C1C44B43800A53FA9 /* MDTestNSString.m */,
 				148CD6991AAE972700FAED9D /* 常用（创建、对比、转换、截取等） */,
 				1463B2041AA162C2006AE8D2 /* 计算字符串所占空间 */,
@@ -1382,7 +1461,7 @@
 		148CD6F31AAEC21600FAED9D /* NSObjcet */ = {
 			isa = PBXGroup;
 			children = (
-				14F977791C44B35D00A53FA9 /* MDTestNSObject.m */,
+				1426A1861C44DC8000FB191D /* MDTestObject.h */,
 				148CD6F41AAEC21600FAED9D /* 判断一个类是否另一个类的子类 */,
 				148CD6FD1AAEC21600FAED9D /* 加载和初始化、copy方法 */,
 				148CD7021AAEC21600FAED9D /* 方法选择器、协议选择器 */,
@@ -1462,6 +1541,7 @@
 		148CD7331AAEC7EB00FAED9D /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
+				1426A1851C44DB1B00FB191D /* MDTestNSArray.h */,
 				148CD7461AAECFDD00FAED9D /* 深拷贝、浅拷贝、排序 */,
 				148CD73D1AAECC6000FAED9D /* 迭代器 */,
 				148CD7341AAEC8E600FAED9D /* 常用 */,

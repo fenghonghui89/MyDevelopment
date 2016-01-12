@@ -1,7 +1,7 @@
 /*	CFBase.h
 	Copyright (c) 1998-2015, Apple Inc. All rights reserved.
  */
-#ifdef xxx
+
 
 #if !defined(__COREFOUNDATION_CFBASE__)
 #define __COREFOUNDATION_CFBASE__ 1
@@ -647,5 +647,3 @@ CFTypeRef CFMakeCollectable(CFTypeRef cf) CF_AUTOMATED_REFCOUNT_UNAVAILABLE;
 CF_EXTERN_C_END
 
 #endif /* ! __COREFOUNDATION_CFBASE__ */
-
-#endif

@@ -92,7 +92,7 @@ typedef NS_OPTIONS(NSUInteger, NSStringEncodingConversionOptions) {
  [str substringToIndex:NSMaxRange([str rangeOfComposedCharacterSequenceAtIndex:index])]
  [str substringWithRange:[str rangeOfComposedCharacterSequencesForRange:range]
  */
-- (NSString *)substringFromIndex:(NSUInteger)from;
+- (NSString *)substringFromIndex:(NSUInteger)from;//截取字符串，从指定下标到最后，包含下标的字符
 - (NSString *)substringToIndex:(NSUInteger)to;
 - (NSString *)substringWithRange:(NSRange)range;                // Use with rangeOfComposedCharacterSequencesForRange: to avoid breaking up character sequences
 
@@ -227,7 +227,7 @@ typedef NS_OPTIONS(NSUInteger, NSStringEnumerationOptions) {
 @property (readonly) NSStringEncoding smallestEncoding;   	// Result in O(n) time; the encoding in which the string is most compact
 
 - (nullable NSData *)dataUsingEncoding:(NSStringEncoding)encoding allowLossyConversion:(BOOL)lossy;   // External representation
-- (nullable NSData *)dataUsingEncoding:(NSStringEncoding)encoding;                                    // External representation
+- (nullable NSData *)dataUsingEncoding:(NSStringEncoding)encoding;                                    // External representation把一个字符串用指定编码封装成一个NSData对象
 
 - (BOOL)canBeConvertedToEncoding:(NSStringEncoding)encoding;
 
@@ -272,6 +272,7 @@ typedef NS_OPTIONS(NSUInteger, NSStringEnumerationOptions) {
 - (NSArray<NSString *> *)componentsSeparatedByString:(NSString *)separator;//把一个字符串按所给的参数分割成若干份，每部分都存放到数组中
 - (NSArray<NSString *> *)componentsSeparatedByCharactersInSet:(NSCharacterSet *)separator NS_AVAILABLE(10_5, 2_0);
 
+//把字符串中的指定字符去除
 - (NSString *)stringByTrimmingCharactersInSet:(NSCharacterSet *)set;
 - (NSString *)stringByPaddingToLength:(NSUInteger)newLength withString:(NSString *)padString startingAtIndex:(NSUInteger)padIndex;
 
@@ -281,7 +282,7 @@ typedef NS_OPTIONS(NSUInteger, NSStringEnumerationOptions) {
 
 /* Replace all occurrences of the target string in the specified range with replacement. Specified compare options are used for matching target. If NSRegularExpressionSearch is specified, the replacement is treated as a template, as in the corresponding NSRegularExpression methods, and no other options can apply except NSCaseInsensitiveSearch and NSAnchoredSearch.
  */
-- (NSString *)stringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange NS_AVAILABLE(10_5, 2_0);
+- (NSString *)stringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange NS_AVAILABLE(10_5, 2_0);//把文本中指定的字符串替换掉
 
 /* Replace all occurrences of the target string with replacement. Invokes the above method with 0 options and range of the whole string.
  */
@@ -316,7 +317,7 @@ FOUNDATION_EXPORT NSString * const NSStringTransformStripDiacritics         NS_A
 /* Write to specified url or path using the specified encoding.  The optional error return is to indicate file system or encoding errors.
  */
 - (BOOL)writeToURL:(NSURL *)url atomically:(BOOL)useAuxiliaryFile encoding:(NSStringEncoding)enc error:(NSError **)error;
-- (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile encoding:(NSStringEncoding)enc error:(NSError **)error;
+- (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile encoding:(NSStringEncoding)enc error:(NSError **)error;//把字符串输出到文件
 
 @property (readonly, copy) NSString *description;
 
@@ -352,8 +353,8 @@ FOUNDATION_EXPORT NSString * const NSStringTransformStripDiacritics         NS_A
 /* These use the specified encoding.  If nil is returned, the optional error return indicates problem that was encountered (for instance, file system or encoding errors).
  */
 - (nullable instancetype)initWithContentsOfURL:(NSURL *)url encoding:(NSStringEncoding)enc error:(NSError **)error;
-- (nullable instancetype)initWithContentsOfFile:(NSString *)path encoding:(NSStringEncoding)enc error:(NSError **)error;
-+ (nullable instancetype)stringWithContentsOfURL:(NSURL *)url encoding:(NSStringEncoding)enc error:(NSError **)error;
+- (nullable instancetype)initWithContentsOfFile:(NSString *)path encoding:(NSStringEncoding)enc error:(NSError **)error;//创建一个字符串，并将字符串的内容设置为文件中的内容（例如纯净的txt文档，注意中文解码）
++ (nullable instancetype)stringWithContentsOfURL:(NSURL *)url encoding:(NSStringEncoding)enc error:(NSError **)error;//创建一个字符串，并将字符串的内容设置为URL的内容（例如URL为一个网址，则内容是网页的源代码）
 + (nullable instancetype)stringWithContentsOfFile:(NSString *)path encoding:(NSStringEncoding)enc error:(NSError **)error;
 
 /* These try to determine the encoding, and return the encoding which was used.  Note that these methods might get "smarter" in subsequent releases of the system, and use additional techniques for recognizing encodings. If nil is returned, the optional error return indicates problem that was encountered (for instance, file system or encoding errors).

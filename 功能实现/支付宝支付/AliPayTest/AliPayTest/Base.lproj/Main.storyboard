@@ -35,6 +35,13 @@
                                     <action selector="rsaPayBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bb9-41-zWY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sn5-r9-nab">
+                                <rect key="frame" x="396" y="558" width="30" height="30"/>
+                                <state key="normal" title="web"/>
+                                <connections>
+                                    <action selector="webbtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCW-88-LOu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -43,10 +50,12 @@
                             <constraint firstItem="tkM-hu-din" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DF7-9f-pq5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tkM-hu-din" secondAttribute="bottom" constant="50" id="EiH-zy-hLp"/>
                             <constraint firstItem="tkM-hu-din" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SF3-yc-De1"/>
+                            <constraint firstItem="sn5-r9-nab" firstAttribute="leading" secondItem="iER-gJ-cwA" secondAttribute="trailing" constant="20" id="Tdn-3P-h8D"/>
                             <constraint firstItem="gom-kj-teu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lyp-B7-UHc"/>
                             <constraint firstItem="gom-kj-teu" firstAttribute="top" secondItem="tkM-hu-din" secondAttribute="bottom" constant="8" id="rsX-sH-017"/>
                             <constraint firstItem="iER-gJ-cwA" firstAttribute="centerY" secondItem="gom-kj-teu" secondAttribute="centerY" id="uze-Gg-5ZK"/>
                             <constraint firstItem="iER-gJ-cwA" firstAttribute="leading" secondItem="gom-kj-teu" secondAttribute="trailing" constant="20" id="wJH-SY-CSq"/>
+                            <constraint firstItem="sn5-r9-nab" firstAttribute="centerY" secondItem="iER-gJ-cwA" secondAttribute="centerY" id="zYI-VC-z5t"/>
                         </constraints>
                     </view>
                     <connections>

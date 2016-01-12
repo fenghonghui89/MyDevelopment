@@ -9,7 +9,9 @@
 #import "MDStringNormalViewController.h"
 #import "TRStudent.h"
 #import "MD_String_CustomView.h"
-
+#import <Foundation/NSObjCRuntime.h>
+#import <CoreFoundation/CFByteOrder.h>
+#import <Foundation/NSByteOrder.h>
 @interface MDStringNormalViewController ()
 
 @end
@@ -207,15 +209,12 @@
     //将后字符串（可以由多个字符串按照一定格式）加到前字符串后创建新的字符串（同上）
     NSString* str7 = [str5 stringByAppendingFormat:@"%d%g",10,10.1];
     NSLog(@"str7:%@",str7);
-    
     //得到字符串的前缀与后缀
     NSString* str8 = @"TRStudent.h";
     BOOL b1 = [str8 hasPrefix:@"TR"];
     BOOL b2 = [str8 hasSuffix:@".h"];
     NSLog(@"b1:%d b2:%d",b1,b2);
-    
-    
-    
+
     NSString *str0 = @"中文my name is xuanyusong";
     NSString *temp = @"中文";
     NSRange rang = [str0 rangeOfString:temp];
@@ -226,7 +225,7 @@
     //将搜索中的字符串替换成为一个新的字符串
     NSString *str = [str0 stringByReplacingCharactersInRange:rang withString:@"哇咔咔卡卡咔"];
     NSLog(@"替换后字符串为：%@", str);
-    
+
     //将字符串中" " 全部替换成 *
     str = [str0 stringByReplacingOccurrencesOfString :@" " withString:@"*"];
     NSLog(@"替换后字符串为：%@", str);

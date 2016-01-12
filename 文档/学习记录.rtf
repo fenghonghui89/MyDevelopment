@@ -1,0 +1,183 @@
+{\rtf1\ansi\ansicpg936\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 STHeitiSC-Light;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\froman\fcharset0 Times-Roman;\f4\fnil\fcharset134 STSongti-SC-Regular;\f5\fnil\fcharset0 LucidaGrande;
+\f6\fnil\fcharset0 MicrosoftYaHei;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red92\green38\blue153;\red46\green13\blue110;
+\red196\green26\blue22;\red63\green110\blue116;\red0\green116\blue0;\red28\green0\blue207;\red57\green57\blue57;
+\red190\green0\blue4;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16320\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs22 \cf0 cocoaPacketAnalyzer\
+Axure RP Pro 7.0	\
+http://www.qida.com\
+\
+
+\f1 storyboard\'cf\'c2cell\'d5\'fd\'cf\'f2\'b4\'ab\'d6\'b5\
+\'b7\'bd\'b7\'a81\'a3\'ba\
+1.cell\'c1\'ac\'cf\'df\'b5\'bd\'d6\'b8\'b6\'a8\'d2\'b3\'c3\'e6\'a3\'ac\'c9\'e8\'d6\'c3segue ID\
+2.tvc\'d6\'d0\'d7\'f6\'c8\'e7\'cf\'c2\'c9\'e8\'d6\'c3\'a3\'ba\'a3\'a8\'d7\'a2\'a3\'ba\'c8\'e7\'b9\'fb\'d5\'e2\'ca\'b1\'d3\'c3\'b7\'bd\'b7\'a82\'a3\'ac\'bb\'e1\'b1\'a8\'b6\'af\'bb\'ad\'d6\'d8\'b8\'b4\'be\'af\'b8\'e6\'a3\'ac\'d4\'ec\'b3\'c9\'b4\'ab\'d6\'b5\'b4\'ed\'ce\'f3\'a3\'a9
+\f2 \CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 -(\cf2 void\cf0 )prepareForSegue:(\cf3 UIStoryboardSegue\cf0  *)segue sender:(\cf2 id\cf0 )sender\
+\{\
+    \cf2 if\cf0  ([segue.\cf3 identifier\cf0  \cf4 isEqualToString\cf0 :\cf5 @"changeNote"\cf0 ]) \{\
+        \cf6 HFChangeNoteViewController\cf0  *changeNoteViewController = segue.\cf3 destinationViewController\cf0 ;\
+        changeNoteViewController.\cf6 noteDataIndex\cf0  = [\cf2 self\cf0 .\cf3 tableView\cf0  \cf4 indexPathForSelectedRow\cf0 ].\cf3 row\cf0 ;\
+    \}\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f1 \cf0 \'b7\'bd\'b7\'a82\'a3\'ba\
+\'c8\'e7\'b9\'fb\'d2\'b3\'c3\'e6\'d6\'d0\'d2\'d1\'be\'ad\'d3\'d0\'b0\'b4\'c5\'a5\'d7\'f6segue\'cc\'f8\'d7\'aa\'b5\'bd\'b1\'bb\'cd\'c6\'b3\'f6\'d2\'b3\'c3\'e6\'a3\'ac\'b6\'f8\'b5\'e3\'bb\'f7cell\'ba\'f3\'d2\'b2\'d0\'e8\'d2\'aa\'cc\'f8\'d7\'aa\'b5\'bd\'b8\'c3\'d2\'b3\'c3\'e6\'a3\'ac\'b5\'ab\'b9\'a6\'c4\'dc\'b2\'bb\'d2\'bb\'d1\'f9\'a3\'ac\'d4\'f2cell\'b2\'bb\'d3\'c3\'c1\'ac\'cf\'df\'a3\'actvc\'d6\'d0\'d7\'f6\'c8\'e7\'cf\'c2\'c9\'e8\'d6\'c3\'a3\'ba
+\f2 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 -(\cf2 void\cf0 )tableView:(\cf3 UITableView\cf0  *)tableView didSelectRowAtIndexPath:(\cf3 NSIndexPath\cf0  *)indexPath\
+\{\
+    \cf3 NSNumber\cf0  *sender = [\cf3 NSNumber\cf0  \cf4 numberWithInt\cf0 :indexPath.\cf3 row\cf0 ];\
+    [\cf2 self\cf0  \cf4 performSegueWithIdentifier\cf0 :\cf5 @"changeNote"\cf0  \cf4 sender\cf0 :sender];\
+\}\
+-(\cf2 void\cf0 )prepareForSegue:(\cf3 UIStoryboardSegue\cf0  *)segue sender:(\cf2 id\cf0 )sender\
+\{\
+    \cf2 if\cf0  ([segue.\cf3 identifier\cf0  \cf4 isEqualToString\cf0 :\cf5 @"changeNote"\cf0 ]) \{\
+        \cf6 HFChangeNoteViewController\cf0  *changeNoteViewController = segue.\cf3 destinationViewController\cf0 ;\
+        \cf2 if\cf0  ([sender \cf4 isKindOfClass\cf0 :[\cf3 NSNumber\cf0  \cf4 class\cf0 ]]) \{\
+            \cf2 long\cf0  index = [sender \cf4 longValue\cf0 ];\
+            changeNoteViewController.\cf6 noteDataIndex\cf0  = index;\
+        \}\
+    \}\
+\}\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1 \cf7 \
+@autoreleasepool\{\} \'b7\'c5\'d4\'da\'b3\'d8\'d6\'d0\'b5\'c4\'b6\'d4\'cf\'f3\'a3\'ac\'b6\'bc\'b1\'d8\'d0\'eb\'b7\'a2\'cb\'cdautorelease\
+\'bf\'d8\'bc\'fe\'b5\'c4delegate\'a3\'ac\'bf\'c9\'d2\'d4\'d3\'c3\'b4\'fa\'c2\'eb\'c9\'e8\'d6\'c3\'a3\'ac\'c8\'e7\'b9\'fb\'bf\'d8\'bc\'fe\'ca\'c7\'c0\'ad\'d4\'daxib\'c9\'cf\'a3\'ac\'d4\'f2\'bf\'c9\'d2\'d4\'c0\'ad\'cf\'df\'c0\'b4\'ca\'b5\'cf\'d6\
+\
+myview.subviews superview window\
+\
+\'d3\'d0\'c1\'bd\'d6\'d6\'b0\'b4\'c5\'a5\'a3\'ac\'d2\'bb\'d6\'d6UIButton\'a3\'a8\'bc\'cc\'b3\'d0\'d3\'daUIView\'a3\'a9\'a3\'ac\'d2\'bb\'d6\'d6UIBarButtonItem\'a3\'a8\'bc\'cc\'b3\'d0\'d3\'daUIBarItem\'a3\'a9\
+\'d4\'daviewWillAppear\'d6\'d0\'d7\'a2\'b2\'e1\'cd\'a8\'d6\'aa\'a3\'ac\'d4\'daviewWillDisappear\'d6\'d0\'d7\'a2\'cf\'fa\'cd\'a8\'d6\'aa\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2 \cf2 self\cf0 .\cf3 navigationItem\cf0 .\cf3 title\cf0  = \cf5 @"
+\f1 \'c6\'f3\'d2\'b5\'ce\'c4\'bb\'af
+\f2 "\cf0 ;\
+\cf2 self\cf0 .\cf3 title\cf0  = \cf5 @"
+\f1 \'c6\'f3\'d2\'b5\'ce\'c4\'bb\'af
+\f2 "\cf0 ;\
+\cf2 self\cf0 .\cf3 navigationController\cf0 .\cf3 title\cf0  = \cf5 @"
+\f1 \'c6\'f3\'d2\'b5\'ce\'c4\'bb\'af
+\f2 "\cf0 \
+\
+\pard\tx529\pardeftab529\pardirnatural
+{\field{\*\fldinst{HYPERLINK "http://blog.csdn.net/tongzhitao/article/details/8569279"}}{\fldrslt \cf0 http://blog.csdn.net/tongzhitao/article/details/8569279}}\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1 \cf0 \'bd\'dc\'c9\'d9\'cf\'ee\'c4\'bf
+\f2 \
+
+\f1 \'cc\'ed\'bc\'d3\'c4\'da\'c8\'dd\'ce\'aa\'bf\'d5\'b5\'c4\'c5\'d0\'b6\'cf\
+\'b1\'e0\'bc\'ad\'c4\'a3\'ca\'bd\'d6\'bb\'c4\'dc\'d3\'c3\'d4\'da\'d3\'d0navibar\'b5\'c4\'c7\'e9\'bf\'f6\'cf\'c2\
+\
+\'bd\'e7\'c3\'e6\'cc\'f8\'d7\'aa\
+modal/navi/modal+\'d0\'ad\'d2\'e9\'a3\'a8\'cc\'f8\'d7\'aa\'bb\'d8\'d4\'ad\'bd\'e7\'c3\'e6\'a3\'a9
+\f2 \
+\
+
+\f1 \'ca\'fd\'d7\'e9\'c0\'ef\'c3\'e6\'b5\'c4\'d4\'aa\'cb\'d8 \'c0\'e0\'d0\'cd\'ca\'c7\'b7\'f1\'d2\'aa\'cf\'e0\'cd\'ac\
+\
+self.storyboard \'d3\'c3\'d4\'davc\'c0\'ef\'c3\'e6\
+UIStoryboard *sb = [UIStoryboard storboardWithName@\'a1\'b0xxxx\'a1\'b1] \'d3\'c3\'d4\'daappdelegate\
+\
+scrollview\'ba\'ac\'d3\'d0\'b6\'e0\'d5\'c5\'cd\'bc\'c6\'ac\'a3\'ac\'b7\'c5\'b4\'f3\'c6\'e4\'d6\'d0\'d2\'bb\'d5\'c5\'ba\'f3 \'cb\'f5\'d0\'a1 \'bb\'e1\'bb\'d8\'b5\'bd\'d4\'ad\'c0\'b4\'b5\'c4\'cd\'bc\'c6\'ac\
+\
+\'b4\'fa\'c2\'eb\'cc\'ed\'bc\'d3\'b5\'c4imageview\'d2\'aa\'ca\'d6\'b6\'af\'bf\'aa\'c6\'f4\'ca\'d6\'ca\'c6\'ca\'b6\'b1\'f0\'a3\'ac\'b7\'f1\'d4\'f2\'c8\'ce\'ba\'ce\'b4\'a5\'c3\'fe\'b6\'bc\'c3\'bb\'b7\'b4\'d3\'a6\
+\
+IOS8\'cf\'c2pickview\'b2\'bb\'d3\'a6\'b8\'c3addsubview\'b5\'bdvc.view\'a3\'ac\'b2\'bb\'d3\'a6\'b8\'c3\'d3\'d0\'b8\'b8\'ca\'d3\'cd\'bc\'a3\'bf\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2 \cf3 navigationBar\cf0 .\cf3 barStyle\
+\
+\cf0 [[[\cf3 UIApplication\cf0  \cf4 sharedApplication\cf0 ] \cf4 keyWindow\cf0 ] \cf4 insertSubview\cf0 :centerView \cf4 atIndex\cf0 :\cf8 1001\cf0 ];
+\f1 \'b2\'bb\'c4\'dc\'d6\'b1\'bd\'d3\'d0\'b4\'d4\'da
+\f2 viewDidLoad\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1 \cf0 \'b1\'bb\'cc\'ed\'bc\'d3\'b5\'c4
+\f2 subview 
+\f1 \'cf\'b5\'cd\'b3\'d0\'fd\'c6\'c1\'ce\'de\'d0\'a7 \'d2\'aa\'d7\'d4\'bc\'ba\'d0\'b4\'d0\'fd\'c6\'c1\'ca\'ca\'c5\'e4\
+\
+\
+\'d0\'b4\'b4\'fa\'c2\'eb-\'bf\'d8\'d6\'c6\'ba\'c3\'b3\'f5\'ca\'bc\'d7\'b4\'cc\'ac\'a1\'a2\'bd\'e1\'ca\'f8\'d7\'b4\'cc\'ac\
+\'b9\'fd\'b3\'cc\'bb\'af-\'b2\'bb\'bf\'c9\'c4\'dc\'c7\'b0\'d2\'bb\'b2\'bd\'b8\'c4\'b1\'e4\'ba\'f3\'d2\'bb\'b2\'bd\
+\'b6\'e0\'bf\'b4\'b1\'f0\'c8\'cb\'b5\'c4\'b4\'fa\'c2\'eb\'a3\'ac\'b6\'e0\'d7\'d4\'bc\'ba\'d0\'b4\'a3\'ac\'b8\'d0\'ca\'dc\'c2\'df\'bc\'ad\'a3\'ac\'ca\'b5\'cf\'d6\'c1\'cb\'d0\'a7\'b9\'fb\'d4\'d9\'b0\'d1\'c2\'df\'bc\'ad\'d5\'fb\'c0\'ed\
+\
+\
+\'b4\'b4\'bd\'a8\'b5\'c4\'bf\'d8\'bc\'fe\'b2\'bb\'c4\'dc\'cf\'d4\'ca\'be\'a3\'bf\'b8\'b4\'d6\'c6\'b5\'c4\'b4\'fa\'c2\'eb\'ca\'c7\'b7\'f1\'d2\'aa\'d0\'de\'b8\'c4\'b9\'fd\'c0\'b4\'a3\'bb\'ca\'f4\'d0\'d4\'d3\'d0\'c3\'bb\'d3\'d0\'b6\'d4\'d3\'a6\'ba\'c3\'a3\'bb\'d7\'d6\'ba\'c5\'ca\'c7\'b7\'f1\'d3\'d0\'c9\'e8\'d6\'c3\
+\
+\
+\'c5\'d0\'b6\'cf\'c4\'b3\'bf\'d8\'bc\'fe\'d7\'d4\'c9\'ed\'ca\'c7\'b7\'f1\'bb\'b9\'b4\'e6\'d4\'da \'b2\'bb\'ca\'c7\'d3\'c3if(!self)\'a3\'ac\'b6\'f8\'d3\'a6\'b8\'c3\'d3\'c3if(!self.superView)\
+\
+objectAtIndex\'ca\'c7\'b7\'f1\'d4\'f6\'bc\'d3\'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf7 \'bc\'d3\'d4\'d8\'ce\'c4\'bc\'fe\'bc\'d0\'cf\'c2\'cb\'f9\'d3\'d0\'cd\'bc\'c6\'ac\'ca\'b1\'a3\'ac\'d2\'aa\'c5\'c5\'b3\'fd\'d2\'fe\'b2\'d8\'ce\'c4\'bc\'fe\'a3\'a8\'d2\'d4
+\f2 .
+\f1 \'bf\'aa\'cd\'b7\'a3\'a9\
+\
+\'cd\'bc\'c6\'ac\'b2\'bb\'cf\'d4\'ca\'be\'a3\'ac\'d2\'aa\'c3\'b4\'c2\'b7\'be\'b6\'b4\'ed\'a3\'ac\'d2\'aa\'c3\'b4\'d7\'f8\'b1\'ea\'b4\'ed\'a3\'ac\'d2\'aa\'c3\'b4\'b1\'bb\'d5\'da\'b5\'b2\'a3\'ac\'d2\'aa\'c3\'b4\'c3\'bb\'bc\'d3\'c8\'eb\
+\
+.app\'c4\'bf\'c2\'bc\'cf\'c2\'b5\'c4\'ce\'c4\'bc\'fe\'d4\'da\'b3\'cc\'d0\'f2\'d4\'cb\'d0\'d0\'ca\'b1\'b2\'bb\'c4\'dc\'b8\'c4\'b1\'e4\
+\
+.h\'d0\'b4readonly\'ca\'f4\'d0\'d4 .m\'d0\'b4readwrite(\'b2\'bb\'d0\'b4\'d2\'b2\'bf\'c9\'d2\'d4)\'ca\'f4\'d0\'d4 \'ca\'f4\'d0\'d4\'c3\'fb\'d7\'d6\'cf\'e0\'cd\'ac \'ca\'b5\'cf\'d6\'b6\'c1\'c8\'a1\
+\
+\'c5\'d0\'b6\'cf\'d7\'d6\'b7\'fb\'b4\'ae\'ce\'aa\'bf\'d5\'a3\'baname isEqual:[NSNull null];\
+\
+ReVeal \'b2\'e9\'bf\'b4\'c8\'ed\'bc\'fe\'bc\'dc\'b9\'b9\'c8\'ed\'bc\'fe\
+\
+\pard\pardeftab720
+
+\f3 \cf9 \CocoaLigature1 /Users/hanyfeng/Library/MobileDevice/Provisioning Profiles 
+\f4 \'c8\'a5\'b5\'f4\'ce\'de\'d3\'c3\'b5\'c4\'c3\'e8\'ca\'f6\'ce\'c4\'bc\'fe\
+\
+xcode\'b1\'e0\'d2\'eb\'ca\'a7\'b0\'dc\'b5\'ab\'c3\'bb\'d3\'d0\'b1\'a8\'b4\'ed\'a3\'ac\'bf\'c9\'d2\'d4\'ca\'d4\'cf\'c2\'a3\'ba\
+1.xcode\'b9\'a4\'be\'df\'c0\'b8\'a1\'aawindow\'a1\'aaorganizer\'a1\'aa\'c7\'e5\'bf\'d5\
+2.xcode\'a1\'aapreferences\'a1\'aalocations\'a1\'aaDerived Data \'c8\'a5\'b5\'bd\'cf\'c2\'b7\'bd\'b5\'d8\'d6\'b7\'cb\'f9\'d4\'da\'ce\'c4\'bc\'fe\'bc\'d0\'a3\'ac\'c7\'e5\'bf\'d5\
+scrollview storyboard \'ba\'da\'b1\'df\
+\
+\
+\
+svn\'b3\'e5\'cd\'bb \'cc\'e1\'ca\'bexxx.xcodeproj\'ce\'de\'b7\'a8\'bd\'e2\'ce\'f6 \'b0\'d1== <<< \'b5\'c8\'b5\'d8\'b7\'bd\'c9\'be\'b3\'fd \'c8\'bb\'ba\'f3\'cf\'d4\'ca\'be\'b0\'fc\'ce\'c4\'bc\'fe \'b0\'d1mine/r111/r....\'c9\'be\'b3\'fd\
+\'d2\'aa\'d4\'daproject\'cb\'f9\'d4\'da\'ce\'c4\'bc\'fe\'bc\'d0\'b4\'b4\'bd\'a8\'b6\'d4\'d3\'a6\'ce\'c4\'bc\'fe\'bc\'d0\'a3\'ac\'b2\'c5\'c4\'dc\'d4\'da\'cf\'ee\'c4\'bf\'d6\'d0\'b4\'b4\'bd\'a8\'ce\'c4\'bc\'fe\'bc\'d0\
+\'c8\'e7\'b9\'fb\'cc\'e1\'ca\'be\'ce\'c4\'bc\'fe\'b3\'e5\'cd\'bb\'ce\'de\'b7\'a8\'c9\'cf\'b4\'ab\'a3\'ac\'d5\'d2\'b5\'bd\'b3\'e5\'cd\'bb\'b5\'c4\'b5\'d8\'b7\'bd\'a3\'ac\'b4\'f2\'bf\'aa\'ce\'c4\'bc\'fe\'bc\'d0\'a3\'ac\'bb\'e1\'d3\'d0\'bc\'b8\'b8\'f6.mine .rxxx .rxxx\'ce\'c4\'bc\'fe \'c9\'be\'b3\'fd\'be\'cd\'bf\'c9\'d2\'d4\'c1\'cb\
+http://blog.csdn.net/huanghuanghbc/article/details/8559968\
+\
+\
+\
+xib setframe\'ce\'de\'d0\'a7-\'bf\'c9\'c4\'dc\'c3\'bb\'d3\'d0\'b9\'d8\'b1\'d5autolayout\
+\'cf\'b5\'cd\'b3cell\'c4\'da\'c7\'b6\'d2\'bb\'b8\'f6\'d7\'d4\'b6\'a8\'d2\'e5view \'cf\'d4\'ca\'be\'d2\'ec\'b3\'a3\'d2\'aa\'bb\'ac\'b6\'aftv\'b2\'c5\'c2\'fd\'c2\'fd\'bb\'d6\'b8\'b4 \'bf\'c9\'c4\'dc\'c3\'bb\'d3\'d0\'b9\'d8\'b1\'d5autolayout \'bb\'b9\'d3\'d0autoSizeing\'c3\'bb\'b4\'a6\'c0\'ed\'ba\'c3\
+\
+ios sdk\'c2\'b7\'be\'b6:Xcode_6.11.app 
+\f5 \uc0\u9656 
+\f4  Contents 
+\f5 \uc0\u9656 
+\f4  Developer 
+\f5 \uc0\u9656 
+\f4  Platforms 
+\f5 \uc0\u9656 
+\f4  iPhoneOS.platform 
+\f5 \uc0\u9656 
+\f4  Developer 
+\f5 \uc0\u9656 
+\f4  SDKs\
+\pard\pardeftab720
+
+\f6\fs28 \cf10 \expnd0\expndtw0\kerning0
+\
+\
+http://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html iOS\uc0\u24212 \u29992 \u26550 \u26500 \u35848  \u24320 \u31687 }
