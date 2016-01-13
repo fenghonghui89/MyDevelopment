@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Player_MO" representedClassName="Player_MO" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="team_MO" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team_MO" inverseName="players_MO" inverseEntity="Team_MO" syncable="YES"/>
+    </entity>
+    <entity name="Team_MO" representedClassName="Team_MO" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="players_MO" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player_MO" inverseName="team_MO" inverseEntity="Player_MO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Team_MO" positionX="-297" positionY="-10" width="128" height="88"/>
+        <element name="Player_MO" positionX="-29" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>

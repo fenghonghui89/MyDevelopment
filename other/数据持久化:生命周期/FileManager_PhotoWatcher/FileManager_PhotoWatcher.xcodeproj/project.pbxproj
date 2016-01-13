@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1817A2E91855B9BF00E8D54A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A2E81855B9BF00E8D54A /* Foundation.framework */; };
+		1817A2EB1855B9BF00E8D54A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A2EA1855B9BF00E8D54A /* CoreGraphics.framework */; };
+		1817A2ED1855B9BF00E8D54A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A2EC1855B9BF00E8D54A /* UIKit.framework */; };
+		1817A2F31855B9BF00E8D54A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1817A2F11855B9BF00E8D54A /* InfoPlist.strings */; };
+		1817A2F51855B9BF00E8D54A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817A2F41855B9BF00E8D54A /* main.m */; };
+		1817A2F91855B9BF00E8D54A /* TRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817A2F81855B9BF00E8D54A /* TRAppDelegate.m */; };
+		1817A2FC1855B9BF00E8D54A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1817A2FA1855B9BF00E8D54A /* Main.storyboard */; };
+		1817A3011855B9BF00E8D54A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817A3001855B9BF00E8D54A /* Images.xcassets */; };
+		1817A3081855B9BF00E8D54A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A3071855B9BF00E8D54A /* XCTest.framework */; };
+		1817A3091855B9BF00E8D54A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A2E81855B9BF00E8D54A /* Foundation.framework */; };
+		1817A30A1855B9BF00E8D54A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A2EC1855B9BF00E8D54A /* UIKit.framework */; };
+		1817A3121855B9BF00E8D54A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1817A3101855B9BF00E8D54A /* InfoPlist.strings */; };
+		1817A3141855B9BF00E8D54A /* Day5Photo_myTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817A3131855B9BF00E8D54A /* Day5Photo_myTests.m */; };
+		1817A31F1855BA3E00E8D54A /* TRAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817A31E1855BA3E00E8D54A /* TRAlbum.m */; };
+		1817A3221855BACD00E8D54A /* TRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817A3211855BACD00E8D54A /* TRUtils.m */; };
+		1817A3251855C14900E8D54A /* TRTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817A3241855C14900E8D54A /* TRTableViewController.m */; };
+		1817A32B1855E23200E8D54A /* TRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817A32A1855E23200E8D54A /* TRViewController.m */; };
+		1837F3201856A6D9002E6F28 /* TRCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837F31F1856A6D9002E6F28 /* TRCell.m */; };
+		1837F3671856D78B002E6F28 /* TRBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837F3661856D78B002E6F28 /* TRBigImageViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1817A30B1855B9BF00E8D54A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1817A2DD1855B9BF00E8D54A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1817A2E41855B9BF00E8D54A;
+			remoteInfo = Day5Photo_my;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1817A2E51855B9BF00E8D54A /* FileManager_PhotoWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileManager_PhotoWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1817A2E81855B9BF00E8D54A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1817A2EA1855B9BF00E8D54A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1817A2EC1855B9BF00E8D54A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1817A2F01855B9BF00E8D54A /* FileManager_PhotoWatcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileManager_PhotoWatcher-Info.plist"; sourceTree = "<group>"; };
+		1817A2F21855B9BF00E8D54A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1817A2F41855B9BF00E8D54A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1817A2F61855B9BF00E8D54A /* FileManager_PhotoWatcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FileManager_PhotoWatcher-Prefix.pch"; sourceTree = "<group>"; };
+		1817A2F71855B9BF00E8D54A /* TRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRAppDelegate.h; sourceTree = "<group>"; };
+		1817A2F81855B9BF00E8D54A /* TRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRAppDelegate.m; sourceTree = "<group>"; };
+		1817A2FB1855B9BF00E8D54A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1817A3001855B9BF00E8D54A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1817A3061855B9BF00E8D54A /* FileManager_PhotoWatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileManager_PhotoWatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1817A3071855B9BF00E8D54A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1817A30F1855B9BF00E8D54A /* FileManager_PhotoWatcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileManager_PhotoWatcherTests-Info.plist"; sourceTree = "<group>"; };
+		1817A3111855B9BF00E8D54A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1817A3131855B9BF00E8D54A /* Day5Photo_myTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Day5Photo_myTests.m; sourceTree = "<group>"; };
+		1817A31D1855BA3E00E8D54A /* TRAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRAlbum.h; sourceTree = "<group>"; };
+		1817A31E1855BA3E00E8D54A /* TRAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRAlbum.m; sourceTree = "<group>"; };
+		1817A3201855BACD00E8D54A /* TRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRUtils.h; sourceTree = "<group>"; };
+		1817A3211855BACD00E8D54A /* TRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRUtils.m; sourceTree = "<group>"; };
+		1817A3231855C14900E8D54A /* TRTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRTableViewController.h; sourceTree = "<group>"; };
+		1817A3241855C14900E8D54A /* TRTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRTableViewController.m; sourceTree = "<group>"; };
+		1817A3291855E23200E8D54A /* TRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRViewController.h; sourceTree = "<group>"; };
+		1817A32A1855E23200E8D54A /* TRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRViewController.m; sourceTree = "<group>"; };
+		1837F31E1856A6D9002E6F28 /* TRCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCell.h; sourceTree = "<group>"; };
+		1837F31F1856A6D9002E6F28 /* TRCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCell.m; sourceTree = "<group>"; };
+		1837F3651856D78B002E6F28 /* TRBigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBigImageViewController.h; sourceTree = "<group>"; };
+		1837F3661856D78B002E6F28 /* TRBigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRBigImageViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1817A2E21855B9BF00E8D54A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1817A2EB1855B9BF00E8D54A /* CoreGraphics.framework in Frameworks */,
+				1817A2ED1855B9BF00E8D54A /* UIKit.framework in Frameworks */,
+				1817A2E91855B9BF00E8D54A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1817A3031855B9BF00E8D54A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1817A3081855B9BF00E8D54A /* XCTest.framework in Frameworks */,
+				1817A30A1855B9BF00E8D54A /* UIKit.framework in Frameworks */,
+				1817A3091855B9BF00E8D54A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14B6984C1956DBF5005D4258 /* 数据层 */ = {
+			isa = PBXGroup;
+			children = (
+				1817A31D1855BA3E00E8D54A /* TRAlbum.h */,
+				1817A31E1855BA3E00E8D54A /* TRAlbum.m */,
+				14B6984D1956DC13005D4258 /* 工具类-创建数据模型 */,
+			);
+			name = "数据层";
+			sourceTree = "<group>";
+		};
+		14B6984D1956DC13005D4258 /* 工具类-创建数据模型 */ = {
+			isa = PBXGroup;
+			children = (
+				1817A3201855BACD00E8D54A /* TRUtils.h */,
+				1817A3211855BACD00E8D54A /* TRUtils.m */,
+			);
+			name = "工具类-创建数据模型";
+			sourceTree = "<group>";
+		};
+		1817A2DC1855B9BF00E8D54A = {
+			isa = PBXGroup;
+			children = (
+				1817A2EE1855B9BF00E8D54A /* Day5Photo_my */,
+				1817A30D1855B9BF00E8D54A /* Day5Photo_myTests */,
+				1817A2E71855B9BF00E8D54A /* Frameworks */,
+				1817A2E61855B9BF00E8D54A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1817A2E61855B9BF00E8D54A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1817A2E51855B9BF00E8D54A /* FileManager_PhotoWatcher.app */,
+				1817A3061855B9BF00E8D54A /* FileManager_PhotoWatcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1817A2E71855B9BF00E8D54A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1817A2E81855B9BF00E8D54A /* Foundation.framework */,
+				1817A2EA1855B9BF00E8D54A /* CoreGraphics.framework */,
+				1817A2EC1855B9BF00E8D54A /* UIKit.framework */,
+				1817A3071855B9BF00E8D54A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1817A2EE1855B9BF00E8D54A /* Day5Photo_my */ = {
+			isa = PBXGroup;
+			children = (
+				1817A2F71855B9BF00E8D54A /* TRAppDelegate.h */,
+				1817A2F81855B9BF00E8D54A /* TRAppDelegate.m */,
+				1817A2FA1855B9BF00E8D54A /* Main.storyboard */,
+				1837F3681856ED11002E6F28 /* TableView */,
+				1837F3691856ED50002E6F28 /* imageView */,
+				14B6984C1956DBF5005D4258 /* 数据层 */,
+				1817A3001855B9BF00E8D54A /* Images.xcassets */,
+				1817A2EF1855B9BF00E8D54A /* Supporting Files */,
+			);
+			path = Day5Photo_my;
+			sourceTree = "<group>";
+		};
+		1817A2EF1855B9BF00E8D54A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1817A2F01855B9BF00E8D54A /* FileManager_PhotoWatcher-Info.plist */,
+				1817A2F11855B9BF00E8D54A /* InfoPlist.strings */,
+				1817A2F41855B9BF00E8D54A /* main.m */,
+				1817A2F61855B9BF00E8D54A /* FileManager_PhotoWatcher-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1817A30D1855B9BF00E8D54A /* Day5Photo_myTests */ = {
+			isa = PBXGroup;
+			children = (
+				1817A3131855B9BF00E8D54A /* Day5Photo_myTests.m */,
+				1817A30E1855B9BF00E8D54A /* Supporting Files */,
+			);
+			path = Day5Photo_myTests;
+			sourceTree = "<group>";
+		};
+		1817A30E1855B9BF00E8D54A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1817A30F1855B9BF00E8D54A /* FileManager_PhotoWatcherTests-Info.plist */,
+				1817A3101855B9BF00E8D54A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1837F3681856ED11002E6F28 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				1817A3231855C14900E8D54A /* TRTableViewController.h */,
+				1817A3241855C14900E8D54A /* TRTableViewController.m */,
+				1837F31E1856A6D9002E6F28 /* TRCell.h */,
+				1837F31F1856A6D9002E6F28 /* TRCell.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		1837F3691856ED50002E6F28 /* imageView */ = {
+			isa = PBXGroup;
+			children = (
+				1817A3291855E23200E8D54A /* TRViewController.h */,
+				1817A32A1855E23200E8D54A /* TRViewController.m */,
+				1837F3651856D78B002E6F28 /* TRBigImageViewController.h */,
+				1837F3661856D78B002E6F28 /* TRBigImageViewController.m */,
+			);
+			name = imageView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1817A2E41855B9BF00E8D54A /* FileManager_PhotoWatcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1817A3171855B9BF00E8D54A /* Build configuration list for PBXNativeTarget "FileManager_PhotoWatcher" */;
+			buildPhases = (
+				1817A2E11855B9BF00E8D54A /* Sources */,
+				1817A2E21855B9BF00E8D54A /* Frameworks */,
+				1817A2E31855B9BF00E8D54A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FileManager_PhotoWatcher;
+			productName = Day5Photo_my;
+			productReference = 1817A2E51855B9BF00E8D54A /* FileManager_PhotoWatcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1817A3051855B9BF00E8D54A /* FileManager_PhotoWatcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1817A31A1855B9BF00E8D54A /* Build configuration list for PBXNativeTarget "FileManager_PhotoWatcherTests" */;
+			buildPhases = (
+				1817A3021855B9BF00E8D54A /* Sources */,
+				1817A3031855B9BF00E8D54A /* Frameworks */,
+				1817A3041855B9BF00E8D54A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1817A30C1855B9BF00E8D54A /* PBXTargetDependency */,
+			);
+			name = FileManager_PhotoWatcherTests;
+			productName = Day5Photo_myTests;
+			productReference = 1817A3061855B9BF00E8D54A /* FileManager_PhotoWatcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1817A2DD1855B9BF00E8D54A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TR;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Hany;
+				TargetAttributes = {
+					1817A3051855B9BF00E8D54A = {
+						TestTargetID = 1817A2E41855B9BF00E8D54A;
+					};
+				};
+			};
+			buildConfigurationList = 1817A2E01855B9BF00E8D54A /* Build configuration list for PBXProject "FileManager_PhotoWatcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1817A2DC1855B9BF00E8D54A;
+			productRefGroup = 1817A2E61855B9BF00E8D54A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1817A2E41855B9BF00E8D54A /* FileManager_PhotoWatcher */,
+				1817A3051855B9BF00E8D54A /* FileManager_PhotoWatcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1817A2E31855B9BF00E8D54A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1817A3011855B9BF00E8D54A /* Images.xcassets in Resources */,
+				1817A2F31855B9BF00E8D54A /* InfoPlist.strings in Resources */,
+				1817A2FC1855B9BF00E8D54A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1817A3041855B9BF00E8D54A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1817A3121855B9BF00E8D54A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1817A2E11855B9BF00E8D54A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1817A2F91855B9BF00E8D54A /* TRAppDelegate.m in Sources */,
+				1817A2F51855B9BF00E8D54A /* main.m in Sources */,
+				1817A32B1855E23200E8D54A /* TRViewController.m in Sources */,
+				1817A3221855BACD00E8D54A /* TRUtils.m in Sources */,
+				1817A31F1855BA3E00E8D54A /* TRAlbum.m in Sources */,
+				1837F3201856A6D9002E6F28 /* TRCell.m in Sources */,
+				1817A3251855C14900E8D54A /* TRTableViewController.m in Sources */,
+				1837F3671856D78B002E6F28 /* TRBigImageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1817A3021855B9BF00E8D54A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1817A3141855B9BF00E8D54A /* Day5Photo_myTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1817A30C1855B9BF00E8D54A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1817A2E41855B9BF00E8D54A /* FileManager_PhotoWatcher */;
+			targetProxy = 1817A30B1855B9BF00E8D54A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1817A2F11855B9BF00E8D54A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1817A2F21855B9BF00E8D54A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1817A2FA1855B9BF00E8D54A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1817A2FB1855B9BF00E8D54A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1817A3101855B9BF00E8D54A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1817A3111855B9BF00E8D54A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1817A3151855B9BF00E8D54A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1817A3161855B9BF00E8D54A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1817A3181855B9BF00E8D54A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day5Photo_my/FileManager_PhotoWatcher-Prefix.pch";
+				INFOPLIST_FILE = "Day5Photo_my/FileManager_PhotoWatcher-Info.plist";
+				PRODUCT_NAME = FileManager_PhotoWatcher;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1817A3191855B9BF00E8D54A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day5Photo_my/FileManager_PhotoWatcher-Prefix.pch";
+				INFOPLIST_FILE = "Day5Photo_my/FileManager_PhotoWatcher-Info.plist";
+				PRODUCT_NAME = FileManager_PhotoWatcher;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1817A31B1855B9BF00E8D54A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Day5Photo_my.app/Day5Photo_my";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day5Photo_my/Day5Photo_my-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Day5Photo_myTests/FileManager_PhotoWatcherTests-Info.plist";
+				PRODUCT_NAME = FileManager_PhotoWatcherTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1817A31C1855B9BF00E8D54A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Day5Photo_my.app/Day5Photo_my";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Day5Photo_my/Day5Photo_my-Prefix.pch";
+				INFOPLIST_FILE = "Day5Photo_myTests/FileManager_PhotoWatcherTests-Info.plist";
+				PRODUCT_NAME = FileManager_PhotoWatcherTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1817A2E01855B9BF00E8D54A /* Build configuration list for PBXProject "FileManager_PhotoWatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1817A3151855B9BF00E8D54A /* Debug */,
+				1817A3161855B9BF00E8D54A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1817A3171855B9BF00E8D54A /* Build configuration list for PBXNativeTarget "FileManager_PhotoWatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1817A3181855B9BF00E8D54A /* Debug */,
+				1817A3191855B9BF00E8D54A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1817A31A1855B9BF00E8D54A /* Build configuration list for PBXNativeTarget "FileManager_PhotoWatcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1817A31B1855B9BF00E8D54A /* Debug */,
+				1817A31C1855B9BF00E8D54A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1817A2DD1855B9BF00E8D54A /* Project object */;
+}
