@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18F8941318360CA2003A98E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F8941218360CA2003A98E2 /* UIKit.framework */; };
+		18F8941518360CA2003A98E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F8941418360CA2003A98E2 /* Foundation.framework */; };
+		18F8941718360CA2003A98E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F8941618360CA2003A98E2 /* CoreGraphics.framework */; };
+		18F8941D18360CA2003A98E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18F8941B18360CA2003A98E2 /* InfoPlist.strings */; };
+		18F8941F18360CA2003A98E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8941E18360CA2003A98E2 /* main.m */; };
+		18F8942318360CA2003A98E2 /* TRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8942218360CA2003A98E2 /* TRAppDelegate.m */; };
+		18F8942518360CA2003A98E2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F8942418360CA2003A98E2 /* Default.png */; };
+		18F8942718360CA2003A98E2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F8942618360CA2003A98E2 /* Default@2x.png */; };
+		18F8942918360CA2003A98E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F8942818360CA2003A98E2 /* Default-568h@2x.png */; };
+		18F8942C18360CA2003A98E2 /* TRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8942B18360CA2003A98E2 /* TRViewController.m */; };
+		18F8942F18360CA2003A98E2 /* TRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8942D18360CA2003A98E2 /* TRViewController.xib */; };
+		18F8943818360DC4003A98E2 /* TRSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F8943618360DC4003A98E2 /* TRSecondViewController.m */; };
+		18F8943918360DC4003A98E2 /* TRSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F8943718360DC4003A98E2 /* TRSecondViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18F8940F18360CA2003A98E2 /* ViewController_LifeCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewController_LifeCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F8941218360CA2003A98E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		18F8941418360CA2003A98E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		18F8941618360CA2003A98E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18F8941A18360CA2003A98E2 /* ViewController_LifeCycle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ViewController_LifeCycle-Info.plist"; sourceTree = "<group>"; };
+		18F8941C18360CA2003A98E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18F8941E18360CA2003A98E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18F8942018360CA2003A98E2 /* ViewController_LifeCycle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController_LifeCycle-Prefix.pch"; sourceTree = "<group>"; };
+		18F8942118360CA2003A98E2 /* TRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRAppDelegate.h; sourceTree = "<group>"; };
+		18F8942218360CA2003A98E2 /* TRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRAppDelegate.m; sourceTree = "<group>"; };
+		18F8942418360CA2003A98E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		18F8942618360CA2003A98E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		18F8942818360CA2003A98E2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		18F8942A18360CA2003A98E2 /* TRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TRViewController.h; sourceTree = "<group>"; };
+		18F8942B18360CA2003A98E2 /* TRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TRViewController.m; sourceTree = "<group>"; };
+		18F8942E18360CA2003A98E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TRViewController.xib; sourceTree = "<group>"; };
+		18F8943518360DC4003A98E2 /* TRSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRSecondViewController.h; sourceTree = "<group>"; };
+		18F8943618360DC4003A98E2 /* TRSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRSecondViewController.m; sourceTree = "<group>"; };
+		18F8943718360DC4003A98E2 /* TRSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TRSecondViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18F8940C18360CA2003A98E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18F8941318360CA2003A98E2 /* UIKit.framework in Frameworks */,
+				18F8941518360CA2003A98E2 /* Foundation.framework in Frameworks */,
+				18F8941718360CA2003A98E2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18F8940618360CA2003A98E2 = {
+			isa = PBXGroup;
+			children = (
+				18F8941818360CA2003A98E2 /* my04 */,
+				18F8941118360CA2003A98E2 /* Frameworks */,
+				18F8941018360CA2003A98E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18F8941018360CA2003A98E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18F8940F18360CA2003A98E2 /* ViewController_LifeCycle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18F8941118360CA2003A98E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18F8941218360CA2003A98E2 /* UIKit.framework */,
+				18F8941418360CA2003A98E2 /* Foundation.framework */,
+				18F8941618360CA2003A98E2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18F8941818360CA2003A98E2 /* my04 */ = {
+			isa = PBXGroup;
+			children = (
+				18F8942118360CA2003A98E2 /* TRAppDelegate.h */,
+				18F8942218360CA2003A98E2 /* TRAppDelegate.m */,
+				18F8942A18360CA2003A98E2 /* TRViewController.h */,
+				18F8942B18360CA2003A98E2 /* TRViewController.m */,
+				18F8942D18360CA2003A98E2 /* TRViewController.xib */,
+				18F8943518360DC4003A98E2 /* TRSecondViewController.h */,
+				18F8943618360DC4003A98E2 /* TRSecondViewController.m */,
+				18F8943718360DC4003A98E2 /* TRSecondViewController.xib */,
+				18F8941918360CA2003A98E2 /* Supporting Files */,
+			);
+			path = my04;
+			sourceTree = "<group>";
+		};
+		18F8941918360CA2003A98E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18F8941A18360CA2003A98E2 /* ViewController_LifeCycle-Info.plist */,
+				18F8941B18360CA2003A98E2 /* InfoPlist.strings */,
+				18F8941E18360CA2003A98E2 /* main.m */,
+				18F8942018360CA2003A98E2 /* ViewController_LifeCycle-Prefix.pch */,
+				18F8942418360CA2003A98E2 /* Default.png */,
+				18F8942618360CA2003A98E2 /* Default@2x.png */,
+				18F8942818360CA2003A98E2 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18F8940E18360CA2003A98E2 /* ViewController_LifeCycle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18F8943218360CA2003A98E2 /* Build configuration list for PBXNativeTarget "ViewController_LifeCycle" */;
+			buildPhases = (
+				18F8940B18360CA2003A98E2 /* Sources */,
+				18F8940C18360CA2003A98E2 /* Frameworks */,
+				18F8940D18360CA2003A98E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViewController_LifeCycle;
+			productName = my04;
+			productReference = 18F8940F18360CA2003A98E2 /* ViewController_LifeCycle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18F8940718360CA2003A98E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TR;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Hany;
+			};
+			buildConfigurationList = 18F8940A18360CA2003A98E2 /* Build configuration list for PBXProject "ViewController_LifeCycle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18F8940618360CA2003A98E2;
+			productRefGroup = 18F8941018360CA2003A98E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18F8940E18360CA2003A98E2 /* ViewController_LifeCycle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18F8940D18360CA2003A98E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18F8941D18360CA2003A98E2 /* InfoPlist.strings in Resources */,
+				18F8942518360CA2003A98E2 /* Default.png in Resources */,
+				18F8942718360CA2003A98E2 /* Default@2x.png in Resources */,
+				18F8942918360CA2003A98E2 /* Default-568h@2x.png in Resources */,
+				18F8942F18360CA2003A98E2 /* TRViewController.xib in Resources */,
+				18F8943918360DC4003A98E2 /* TRSecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18F8940B18360CA2003A98E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18F8941F18360CA2003A98E2 /* main.m in Sources */,
+				18F8942318360CA2003A98E2 /* TRAppDelegate.m in Sources */,
+				18F8942C18360CA2003A98E2 /* TRViewController.m in Sources */,
+				18F8943818360DC4003A98E2 /* TRSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18F8941B18360CA2003A98E2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18F8941C18360CA2003A98E2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		18F8942D18360CA2003A98E2 /* TRViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18F8942E18360CA2003A98E2 /* en */,
+			);
+			name = TRViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18F8943018360CA2003A98E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18F8943118360CA2003A98E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18F8943318360CA2003A98E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "my04/ViewController_LifeCycle-Prefix.pch";
+				INFOPLIST_FILE = "my04/ViewController_LifeCycle-Info.plist";
+				PRODUCT_NAME = ViewController_LifeCycle;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		18F8943418360CA2003A98E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "my04/ViewController_LifeCycle-Prefix.pch";
+				INFOPLIST_FILE = "my04/ViewController_LifeCycle-Info.plist";
+				PRODUCT_NAME = ViewController_LifeCycle;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18F8940A18360CA2003A98E2 /* Build configuration list for PBXProject "ViewController_LifeCycle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18F8943018360CA2003A98E2 /* Debug */,
+				18F8943118360CA2003A98E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18F8943218360CA2003A98E2 /* Build configuration list for PBXNativeTarget "ViewController_LifeCycle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18F8943318360CA2003A98E2 /* Debug */,
+				18F8943418360CA2003A98E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18F8940718360CA2003A98E2 /* Project object */;
+}
