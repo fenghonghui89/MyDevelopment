@@ -321,6 +321,8 @@
 		1427B4871C3E43C400D4E541 /* MD_AVCamera_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_AVCamera_VC.xib; sourceTree = "<group>"; };
 		1427B48A1C3E45F900D4E541 /* MDAVCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAVCameraPreviewView.h; sourceTree = "<group>"; };
 		1427B48B1C3E45F900D4E541 /* MDAVCameraPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAVCameraPreviewView.m; sourceTree = "<group>"; };
+		143499F51C464B4800DCD80E /* CGGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGGeometry.h; sourceTree = "<group>"; };
+		143499F61C464BEB00DCD80E /* CGImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGImage.h; sourceTree = "<group>"; };
 		14381BEA1BA1B75900C06EB7 /* delete_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_btn@2x.png"; sourceTree = "<group>"; };
 		14381BED1BA1BCE200C06EB7 /* MD_UISlider_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UISlider_ViewController.h; sourceTree = "<group>"; };
 		14381BEE1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UISlider_ViewController.m; sourceTree = "<group>"; };
@@ -825,6 +827,14 @@
 				1427B48B1C3E45F900D4E541 /* MDAVCameraPreviewView.m */,
 			);
 			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		143499F41C464A1300DCD80E /* CGGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				143499F51C464B4800DCD80E /* CGGeometry.h */,
+			);
+			path = CGGeometry;
 			sourceTree = "<group>";
 		};
 		14381BEC1BA1BCC500C06EB7 /* UISlider */ = {
@@ -1703,6 +1713,7 @@
 		14F073931B95BC4B0029A653 /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
+				143499F41C464A1300DCD80E /* CGGeometry */,
 				1482B5C91BA1AD7B00E83090 /* CGColorSpace */,
 				14F073941B95BC4B0029A653 /* CGAffineTransform */,
 				14F073951B95BC4B0029A653 /* CGContext */,
@@ -1734,6 +1745,7 @@
 		14F073961B95BC4B0029A653 /* CGImage */ = {
 			isa = PBXGroup;
 			children = (
+				143499F61C464BEB00DCD80E /* CGImage.h */,
 				14F073A01B95BCC50029A653 /* MD_CGimage_ViewController.h */,
 				14F073A11B95BCC50029A653 /* MD_CGimage_ViewController.m */,
 			);
