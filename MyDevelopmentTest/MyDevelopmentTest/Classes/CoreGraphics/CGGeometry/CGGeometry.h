@@ -229,7 +229,7 @@ CG_EXTERN bool CGRectContainsRect(CGRect rect1, CGRect rect2)
    intersects `rect2' if the intersection of `rect1' and `rect2' is not the
    null rect. */
 
-CG_EXTERN bool CGRectIntersectsRect(CGRect rect1, CGRect rect2)
+CG_EXTERN bool CGRectIntersectsRect(CGRect rect1, CGRect rect2)////判断两个矩形是否交叉
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /*** Persistent representations. ***/
