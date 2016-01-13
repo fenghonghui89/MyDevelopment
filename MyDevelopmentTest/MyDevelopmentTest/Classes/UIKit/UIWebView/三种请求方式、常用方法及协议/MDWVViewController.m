@@ -65,7 +65,7 @@
 {
     self.webView.delegate = self;
     
-    NSString *path = @"http://www.baidu.com";//不能忽略协议名http://
+    NSString *path = @"http://mall.tpages.cn";//不能忽略协议名http://
     NSURL *url = [NSURL URLWithString:path];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
