@@ -7,7 +7,7 @@
 //
 
 #import "MDModal1ViewController.h"
-
+#import "MDModal2ViewController.h"
 @interface MDModal1ViewController ()
 
 @end
@@ -17,20 +17,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 200, 100)];
-    [btn setTitle:@"dismiss" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [btn setBackgroundColor:[UIColor greenColor]];
-    [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-
+  
+//  //方法1
+//  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"方法1" style:UIBarButtonItemStylePlain target:nil action:NULL];
+//  NSLog(@"%@",self.navigationItem.backBarButtonItem.title);
 }
 
--(void)tap
+
+- (IBAction)dismissTap:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)navipresentTap:(id)sender
+{
+  MDModal2ViewController *vc2 = [[MDModal2ViewController alloc] initWithNibName:@"MDModal2ViewController" bundle:nil];
+  [self.navigationController pushViewController:vc2 animated:YES];
+}
 
 @end

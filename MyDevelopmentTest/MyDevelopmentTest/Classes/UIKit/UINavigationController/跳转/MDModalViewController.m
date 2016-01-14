@@ -17,20 +17,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 200, 100)];
-    [btn setTitle:@"present" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [btn setBackgroundColor:[UIColor greenColor]];
-    [btn addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
 }
 
--(void)tap
-{
-    MDModal1ViewController *vc = [[MDModal1ViewController alloc] init];
-    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:vc animated:YES completion:nil];
+- (IBAction)presentTap:(id)sender {
+  
+  MDModal1ViewController *vc = [[MDModal1ViewController alloc] initWithNibName:@"MDModal1ViewController" bundle:nil];
+  vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+  [self presentViewController:vc animated:YES completion:nil];
+}
+- (IBAction)pushTap:(id)sender {
+  MDModal1ViewController *vc = [[MDModal1ViewController alloc] initWithNibName:@"MDModal1ViewController" bundle:nil];
+  UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+  [self presentViewController:nc animated:YES completion:nil];
 }
 
 @end

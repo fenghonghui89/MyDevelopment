@@ -244,6 +244,11 @@
 		14C1E6B31B53CD4800C7E5DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */; };
 		14C1E6B41B53CD4800C7E5DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6AF1B53CD4800C7E5DF /* Default.png */; };
 		14C1E6B51B53CD4800C7E5DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C1E6B01B53CD4800C7E5DF /* Default@2x.png */; };
+		14D670081C475B1100F911A4 /* MDModal1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D670071C475B1100F911A4 /* MDModal1ViewController.xib */; };
+		14D6700C1C475BCE00F911A4 /* MDModal2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D6700A1C475BCE00F911A4 /* MDModal2ViewController.m */; };
+		14D6700D1C475BCE00F911A4 /* MDModal2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D6700B1C475BCE00F911A4 /* MDModal2ViewController.xib */; };
+		14D6700F1C475D8100F911A4 /* MDModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D6700E1C475D8100F911A4 /* MDModalViewController.xib */; };
+		14D670121C475F8400F911A4 /* UINavigationItem+MDCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D670111C475F8400F911A4 /* UINavigationItem+MDCustom.m */; };
 		14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F41AEA752D00DA1682 /* MDAppDelegate.m */; };
 		14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F61AEA752D00DA1682 /* MDBaseViewController.m */; };
 		14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F81AEA752D00DA1682 /* MDClassesTableViewCell.m */; };
@@ -610,6 +615,13 @@
 		14C1E6AE1B53CD4800C7E5DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		14C1E6AF1B53CD4800C7E5DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		14C1E6B01B53CD4800C7E5DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		14D670071C475B1100F911A4 /* MDModal1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDModal1ViewController.xib; sourceTree = "<group>"; };
+		14D670091C475BCE00F911A4 /* MDModal2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDModal2ViewController.h; sourceTree = "<group>"; };
+		14D6700A1C475BCE00F911A4 /* MDModal2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModal2ViewController.m; sourceTree = "<group>"; };
+		14D6700B1C475BCE00F911A4 /* MDModal2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDModal2ViewController.xib; sourceTree = "<group>"; };
+		14D6700E1C475D8100F911A4 /* MDModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDModalViewController.xib; sourceTree = "<group>"; };
+		14D670101C475F8400F911A4 /* UINavigationItem+MDCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+MDCustom.h"; sourceTree = "<group>"; };
+		14D670111C475F8400F911A4 /* UINavigationItem+MDCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+MDCustom.m"; sourceTree = "<group>"; };
 		14DB40F31AEA752D00DA1682 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
 		14DB40F41AEA752D00DA1682 /* MDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
 		14DB40F51AEA752D00DA1682 /* MDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBaseViewController.h; sourceTree = "<group>"; };
@@ -752,8 +764,15 @@
 			children = (
 				141B43661AA4734B008F2711 /* MDModalViewController.h */,
 				141B43671AA4734B008F2711 /* MDModalViewController.m */,
+				14D6700E1C475D8100F911A4 /* MDModalViewController.xib */,
 				141B436A1AA47394008F2711 /* MDModal1ViewController.h */,
 				141B436B1AA47394008F2711 /* MDModal1ViewController.m */,
+				14D670071C475B1100F911A4 /* MDModal1ViewController.xib */,
+				14D670091C475BCE00F911A4 /* MDModal2ViewController.h */,
+				14D6700A1C475BCE00F911A4 /* MDModal2ViewController.m */,
+				14D6700B1C475BCE00F911A4 /* MDModal2ViewController.xib */,
+				14D670101C475F8400F911A4 /* UINavigationItem+MDCustom.h */,
+				14D670111C475F8400F911A4 /* UINavigationItem+MDCustom.m */,
 			);
 			path = "跳转";
 			sourceTree = "<group>";
@@ -1911,6 +1930,7 @@
 				146D83071AA709F600F0C7FD /* Nigeria.png in Resources */,
 				14565E631BA94CD1009F7B2D /* playing34@2x.png in Resources */,
 				14565E4D1BA94CD1009F7B2D /* playing14@2x.png in Resources */,
+				14D6700D1C475BCE00F911A4 /* MDModal2ViewController.xib in Resources */,
 				146D82F51AA709F600F0C7FD /* Germany.png in Resources */,
 				14C1E6B21B53CD4800C7E5DF /* Default-414w-736h@3x.png in Resources */,
 				14565E641BA94CD1009F7B2D /* playing35@2x.png in Resources */,
@@ -1934,6 +1954,7 @@
 				14565E5B1BA94CD1009F7B2D /* playing27@2x.png in Resources */,
 				14565E791BA94CD1009F7B2D /* playing54@2x.png in Resources */,
 				14565E8C1BA957E8009F7B2D /* Lion.jpg in Resources */,
+				14D670081C475B1100F911A4 /* MDModal1ViewController.xib in Resources */,
 				146D82B71AA7080000F0C7FD /* Bridge.plist in Resources */,
 				14565E661BA94CD1009F7B2D /* playing37@2x.png in Resources */,
 				14565E611BA94CD1009F7B2D /* playing32@2x.png in Resources */,
@@ -1952,6 +1973,7 @@
 				14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */,
 				14565E7F1BA94CD1009F7B2D /* playing5@2x.png in Resources */,
 				14565E511BA94CD1009F7B2D /* playing18@2x.png in Resources */,
+				14D6700F1C475D8100F911A4 /* MDModalViewController.xib in Resources */,
 				14565E6E1BA94CD1009F7B2D /* playing44@2x.png in Resources */,
 				14565E501BA94CD1009F7B2D /* playing17@2x.png in Resources */,
 				14565E721BA94CD1009F7B2D /* playing48@2x.png in Resources */,
@@ -2006,6 +2028,7 @@
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
+				14D670121C475F8400F911A4 /* UINavigationItem+MDCustom.m in Sources */,
 				1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */,
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
@@ -2090,6 +2113,7 @@
 				145D870F1BA8405E00447D35 /* MD_Touch_CustomView2.m in Sources */,
 				141B432F1AA3FDD3008F2711 /* MDPageControlViewController.m in Sources */,
 				1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */,
+				14D6700C1C475BCE00F911A4 /* MDModal2ViewController.m in Sources */,
 				14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */,
 				148CD7601AAED70E00FAED9D /* TRXYZ.m in Sources */,
 				148CD7121AAEC21600FAED9D /* TRStudent3.m in Sources */,
