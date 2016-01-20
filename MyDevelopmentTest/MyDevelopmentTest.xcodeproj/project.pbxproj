@@ -257,6 +257,7 @@
 		14DB41071AEA752D00DA1682 /* MDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40FD1AEA752D00DA1682 /* MDTool.m */; };
 		14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FE1AEA752D00DA1682 /* TitleList.plist */; };
 		14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14DB40FF1AEA752D00DA1682 /* 记录.rtf */; };
+		14DF14A61C4F71C3005C10AA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DF14A51C4F71C3005C10AA /* UIImage+Resize.m */; };
 		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
 		14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */; };
 		14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */; };
@@ -635,6 +636,8 @@
 		14DB40FD1AEA752D00DA1682 /* MDTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTool.m; sourceTree = "<group>"; };
 		14DB40FE1AEA752D00DA1682 /* TitleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TitleList.plist; sourceTree = "<group>"; };
 		14DB40FF1AEA752D00DA1682 /* 记录.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "记录.rtf"; sourceTree = "<group>"; };
+		14DF14A41C4F71C3005C10AA /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		14DF14A51C4F71C3005C10AA /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
 		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
 		14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_CustomView.h; sourceTree = "<group>"; };
@@ -1291,6 +1294,8 @@
 		146D82AC1AA7036700F0C7FD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				14DF14A41C4F71C3005C10AA /* UIImage+Resize.h */,
+				14DF14A51C4F71C3005C10AA /* UIImage+Resize.m */,
 				147FDF3D1B9012690006A2C4 /* UIImage+UIImageScale.h */,
 				147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */,
 				146D82AD1AA7036700F0C7FD /* NSString+URLEncoding.h */,
@@ -2025,6 +2030,7 @@
 				148CD7231AAEC54700FAED9D /* MDNSNumberViewController.m in Sources */,
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */,
+				14DF14A61C4F71C3005C10AA /* UIImage+Resize.m in Sources */,
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,

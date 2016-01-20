@@ -12,6 +12,7 @@
 #import "MD_AVCamera_VC.h"
 #import "MDAVCameraPreviewView.h"
 #import "MDDefine.h"
+#import "UIImage+Resize.h"
 
 static void * CapturingStillImageContext = &CapturingStillImageContext;
 static void * SessionRunningContext = &SessionRunningContext;
@@ -23,6 +24,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 };
 
 @interface MD_AVCamera_VC ()<AVCaptureFileOutputRecordingDelegate>
+@property (weak, nonatomic) IBOutlet UIView *previewBgView;
 
 // For use in the storyboards.
 @property (nonatomic, weak) IBOutlet MDAVCameraPreviewView *previewView;
@@ -118,6 +120,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 #pragma mark customInit
 -(void)customInit
 {
+  self.previewBgView.clipsToBounds = YES;
+  
   self.cameraButton.enabled = NO;
   self.recordButton.enabled = NO;
   self.stillButton.enabled = NO;
@@ -264,7 +268,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   }
 }
 
-#pragma mark 获取device
+#pragma mark 根据方向获取device
 + (AVCaptureDevice *)deviceWithMediaType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position
 {
   NSArray *devices = [AVCaptureDevice devicesWithMediaType:mediaType];
@@ -450,6 +454,33 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   }
 }
 
+#pragma mark 裁剪
+-(UIImage *)cropAndZipImgByBuffer:(CMSampleBufferRef)imageDataSampleBuffer
+{
+  //原图
+  NSData *imageNSData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+  UIImage *image = [UIImage imageWithData:imageNSData];
+  
+  //最终尺寸
+  CGFloat headHeight = 0;
+  CGFloat r = self.previewView.bounds.size.width/1080.f;
+  CGFloat w = self.previewView.bounds.size.width/r;
+  CGFloat h = self.previewView.bounds.size.height/r;
+  CGSize size = CGSizeMake(w, h);
+  
+  //旋转后图片
+  UIImage *scaledImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFill bounds:size interpolationQuality:kCGInterpolationHigh];
+  
+  //裁剪后最终图片
+  CGRect cropFrame = CGRectMake((scaledImage.size.width - size.width) / 2, (scaledImage.size.height - size.height) / 2 + headHeight, size.width, size.height);
+  UIImage *croppedImage = [scaledImage croppedImage:cropFrame];
+  
+  DLog(@"拍照原图尺寸 %@ 裁剪尺寸 %@",NSStringFromCGSize(image.size),NSStringFromCGSize(size));
+  DLog(@"cropFrame %@",NSStringFromCGRect(cropFrame));
+  
+  return croppedImage;
+}
+
 #pragma mark - < actions > -
 
 - (IBAction)resumeInterruptedSession:(id)sender
@@ -590,6 +621,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
       if ( imageDataSampleBuffer ) {
         // The sample buffer is not retained. Create image data before saving the still image to the photo library asynchronously.
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+//        UIImage *image = [self cropAndZipImgByBuffer:imageDataSampleBuffer];
+//        NSData *imageData = UIImageJPEGRepresentation(image, 1);
         [PHPhotoLibrary requestAuthorization:^( PHAuthorizationStatus status ) {
           if ( status == PHAuthorizationStatusAuthorized ) {
             // To preserve the metadata, we create an asset from the JPEG NSData representation.

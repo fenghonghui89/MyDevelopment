@@ -19,8 +19,15 @@
 {
   [super viewDidLoad];
   
-  self.edgesForExtendedLayout = UIRectEdgeNone;
+  self.edgesForExtendedLayout = UIRectEdgeNone;//设置vc不渗透
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  DLog(@"当前screen%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
+  DLog(@"当前navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
+  DLog(@"当前view%@",NSStringFromCGRect(self.view.frame));
+}
 
 @end

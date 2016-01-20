@@ -11,6 +11,7 @@
 #import "MDDefine.h"
 #import "MDClassesTableViewCell.h"
 @interface MDClassesViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,strong)UIView *bgView;
 @property(nonatomic,strong)UITableView *tv;
 @end
 
@@ -20,10 +21,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
-  DLog(@"默认screen%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
-  DLog(@"默认view%@",NSStringFromCGSize(self.view.bounds.size));
-  DLog(@"默认navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -31,6 +28,10 @@
   [super viewDidAppear:animated];
   
   [self customInitUI];
+  DLog(@"默认screen%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
+  DLog(@"默认navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
+  DLog(@"默认view%@",NSStringFromCGRect(self.view.frame));
+  DLog(@"默认bgview%@",NSStringFromCGRect(self.bgView.frame));
 }
 
 #pragma mark - < method > -
@@ -65,6 +66,7 @@
   }
   [bgView setFrame:[MDTool setRectX:0 y:bgViewY w:bgViewW h:bgViewH]];
   [self.view addSubview:bgView];
+  self.bgView = bgView;
   
   //tv
   UITableView *tv = [[UITableView alloc] initWithFrame:[MDTool setRectX:0 y:0 w:bgViewW h:bgViewH] style:UITableViewStyleGrouped];
