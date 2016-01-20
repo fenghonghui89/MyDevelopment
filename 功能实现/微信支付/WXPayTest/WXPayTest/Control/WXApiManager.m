@@ -77,6 +77,10 @@
 //    return @"服务器返回错误";
 //  }
 
+  if(![WXApi isWXAppInstalled]){
+    return @"no";
+  }
+  
   self.dic = dic;
   PayReq* req             = [[PayReq alloc] init];
   req.partnerId           = [dic objectForKey:@"partnerid"];
