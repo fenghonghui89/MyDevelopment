@@ -8,6 +8,7 @@
 
 #import "MDAppDelegate.h"
 #import "MDClassesViewController.h"
+#import "MDNavigationController.h"
 #import "MDTool.h"
 @interface MDAppDelegate ()
 
@@ -19,7 +20,7 @@
 {
     MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
     cVC.data = [MDTool getPlistDataByName:@"TitleList"];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:cVC];
+    MDNavigationController *navi = [[MDNavigationController alloc] initWithRootViewController:cVC];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];

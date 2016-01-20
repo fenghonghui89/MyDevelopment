@@ -30,4 +30,13 @@
   DLog(@"当前view%@",NSStringFromCGRect(self.view.frame));
 }
 
+-(BOOL)shouldAutorotate
+{
+  return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+  return UIInterfaceOrientationMaskPortrait;
+}
 @end

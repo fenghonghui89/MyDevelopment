@@ -24,7 +24,6 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 };
 
 @interface MD_AVCamera_VC ()<AVCaptureFileOutputRecordingDelegate>
-@property (weak, nonatomic) IBOutlet UIView *previewBgView;
 
 // For use in the storyboards.
 @property (nonatomic, weak) IBOutlet MDAVCameraPreviewView *previewView;
@@ -33,6 +32,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 @property (nonatomic, weak) IBOutlet UIButton *recordButton;
 @property (nonatomic, weak) IBOutlet UIButton *cameraButton;
 @property (nonatomic, weak) IBOutlet UIButton *stillButton;
+@property (weak, nonatomic) IBOutlet UIView *previewBgView;
 
 // Session management.
 @property(nonatomic)dispatch_queue_t sessionQueue;
@@ -481,6 +481,28 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   return croppedImage;
 }
 
+#pragma mark 旋屏
+- (BOOL)shouldAutorotate
+{
+  // Disable autorotation of the interface when recording is in progress.
+  return ! self.movieFileOutput.isRecording;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+  return UIInterfaceOrientationMaskAll;
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+  [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+  
+  UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
+  if ( UIDeviceOrientationIsPortrait( deviceOrientation ) || UIDeviceOrientationIsLandscape( deviceOrientation ) ) {
+    AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.previewView.layer;
+    previewLayer.connection.videoOrientation = (AVCaptureVideoOrientation)deviceOrientation;
+  }
+}
 #pragma mark - < actions > -
 
 - (IBAction)resumeInterruptedSession:(id)sender
@@ -608,9 +630,9 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 {
   dispatch_async( self.sessionQueue, ^{
     AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-    AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.previewView.layer;
     
     // Update the orientation on the still image output video connection before capturing.
+    AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.previewView.layer;
     connection.videoOrientation = previewLayer.connection.videoOrientation;
     
     // Flash set to Auto for Still Capture.

@@ -35,7 +35,17 @@
 }
 
 #pragma mark - < method > -
+#pragma mark 旋屏
+-(BOOL)shouldAutorotate
+{
+  return YES;
+}
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+  return UIInterfaceOrientationMaskPortrait;
+}
+#pragma mark customInit
 -(void)customInitUI
 {
   //navi
