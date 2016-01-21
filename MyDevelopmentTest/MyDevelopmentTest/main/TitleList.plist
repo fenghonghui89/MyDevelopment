@@ -415,6 +415,31 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>NSFileManager&amp;NSFileHandle</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>NSFileManager</string>
+						<key>className</key>
+						<string>MD_FileManager_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>NSFileHandle</string>
+						<key>className</key>
+						<string>MD_FileHandle_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>NSTimer</string>
 				<key>className</key>
 				<string></string>

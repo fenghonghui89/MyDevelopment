@@ -12,6 +12,11 @@
 		1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */; };
 		1412B6771BA1991000FA5F2E /* UIBezierPath曲线各点含义.png in Resources */ = {isa = PBXBuildFile; fileRef = 1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */; };
 		1412B6781BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1412B6761BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf */; };
+		141886DA1C5096D600914CD7 /* MD_FileManager_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141886D71C5096D600914CD7 /* MD_FileManager_VC.m */; };
+		141886DB1C5096D600914CD7 /* MD_FileManager_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141886D81C5096D600914CD7 /* MD_FileManager_VC.xib */; };
+		141886DC1C5096D600914CD7 /* MDTestNSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 141886D91C5096D600914CD7 /* MDTestNSFileManager.m */; };
+		141886DF1C50974F00914CD7 /* MD_FileHandle_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141886DE1C50974F00914CD7 /* MD_FileHandle_VC.m */; };
+		141886E11C50977000914CD7 /* MD_FileHandle_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141886E01C50977000914CD7 /* MD_FileHandle_VC.xib */; };
 		141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43211AA3FC12008F2711 /* Shapes.jpg */; };
 		141B43271AA3FC12008F2711 /* Sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43221AA3FC12008F2711 /* Sky.jpg */; };
 		141B43291AA3FC12008F2711 /* Snow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 141B43231AA3FC12008F2711 /* Snow.jpg */; };
@@ -293,6 +298,13 @@
 		1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_String_CustomView.m; sourceTree = "<group>"; };
 		1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBezierPath曲线各点含义.png"; sourceTree = "<group>"; };
 		1412B6761BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "笔记 - 绘图 - 赵哲.rtf"; sourceTree = "<group>"; };
+		141886D61C5096D600914CD7 /* MD_FileManager_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FileManager_VC.h; sourceTree = "<group>"; };
+		141886D71C5096D600914CD7 /* MD_FileManager_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FileManager_VC.m; sourceTree = "<group>"; };
+		141886D81C5096D600914CD7 /* MD_FileManager_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FileManager_VC.xib; sourceTree = "<group>"; };
+		141886D91C5096D600914CD7 /* MDTestNSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSFileManager.m; sourceTree = "<group>"; };
+		141886DD1C50974F00914CD7 /* MD_FileHandle_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FileHandle_VC.h; sourceTree = "<group>"; };
+		141886DE1C50974F00914CD7 /* MD_FileHandle_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FileHandle_VC.m; sourceTree = "<group>"; };
+		141886E01C50977000914CD7 /* MD_FileHandle_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FileHandle_VC.xib; sourceTree = "<group>"; };
 		141B43211AA3FC12008F2711 /* Shapes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shapes.jpg; sourceTree = "<group>"; };
 		141B43221AA3FC12008F2711 /* Sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sky.jpg; sourceTree = "<group>"; };
 		141B43231AA3FC12008F2711 /* Snow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Snow.jpg; sourceTree = "<group>"; };
@@ -324,7 +336,6 @@
 		1426A1701C44D60200FB191D /* MDTestNSURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSURL.m; sourceTree = "<group>"; };
 		1426A1731C44D6CB00FB191D /* MDTestNSURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSURLResponse.m; sourceTree = "<group>"; };
 		1426A1771C44D7A300FB191D /* MDTestNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSThread.m; sourceTree = "<group>"; };
-		1426A17B1C44D85800FB191D /* MDTestNSFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSFileManager.m; sourceTree = "<group>"; };
 		1426A17F1C44D93700FB191D /* MDTestNSKeyedArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSKeyedArchiver.m; sourceTree = "<group>"; };
 		1426A1831C44DA6300FB191D /* MDTestNSRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSRunLoop.m; sourceTree = "<group>"; };
 		1426A1851C44DB1B00FB191D /* MDTestNSArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTestNSArray.h; sourceTree = "<group>"; };
@@ -738,6 +749,27 @@
 			path = "笔记与资料";
 			sourceTree = "<group>";
 		};
+		141886D41C5096D600914CD7 /* NSFileHandle */ = {
+			isa = PBXGroup;
+			children = (
+				141886DD1C50974F00914CD7 /* MD_FileHandle_VC.h */,
+				141886DE1C50974F00914CD7 /* MD_FileHandle_VC.m */,
+				141886E01C50977000914CD7 /* MD_FileHandle_VC.xib */,
+			);
+			path = NSFileHandle;
+			sourceTree = "<group>";
+		};
+		141886D51C5096D600914CD7 /* NSFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				141886D61C5096D600914CD7 /* MD_FileManager_VC.h */,
+				141886D71C5096D600914CD7 /* MD_FileManager_VC.m */,
+				141886D81C5096D600914CD7 /* MD_FileManager_VC.xib */,
+				141886D91C5096D600914CD7 /* MDTestNSFileManager.m */,
+			);
+			path = NSFileManager;
+			sourceTree = "<group>";
+		};
 		141B43201AA3FC12008F2711 /* UIPageControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -826,7 +858,8 @@
 		1426A1791C44D82A00FB191D /* NSFileManager&NSFileHandle */ = {
 			isa = PBXGroup;
 			children = (
-				1426A17B1C44D85800FB191D /* MDTestNSFileManager.m */,
+				141886D41C5096D600914CD7 /* NSFileHandle */,
+				141886D51C5096D600914CD7 /* NSFileManager */,
 			);
 			path = "NSFileManager&NSFileHandle";
 			sourceTree = "<group>";
@@ -2048,6 +2081,7 @@
 				14565E821BA94CD1009F7B2D /* playing7@2x.png in Resources */,
 				148CD69B1AAE972700FAED9D /* abc.txt in Resources */,
 				146D82F71AA709F600F0C7FD /* Ghana.png in Resources */,
+				141886E11C50977000914CD7 /* MD_FileHandle_VC.xib in Resources */,
 				146D830B1AA709F600F0C7FD /* Paraguay.png in Resources */,
 				1463B2741AA1B593006AE8D2 /* SecondViewController.xib in Resources */,
 				1463B28B1AA1C00F006AE8D2 /* big1.jpg in Resources */,
@@ -2067,6 +2101,7 @@
 				1463B2B61AA1CD5D006AE8D2 /* shu.jpg in Resources */,
 				146D82F91AA709F600F0C7FD /* Greece.png in Resources */,
 				14565E8F1BA95FF9009F7B2D /* BurstAircraftAircraftBig.png in Resources */,
+				141886DB1C5096D600914CD7 /* MD_FileManager_VC.xib in Resources */,
 				14381BF41BA1BDCC00C06EB7 /* playing_volumn_slide_foreground@2x.png in Resources */,
 				149A1E621B26E5CB00986FA6 /* Info.plist in Resources */,
 				14565E4A1BA94CD1009F7B2D /* playing11@2x.png in Resources */,
@@ -2136,6 +2171,7 @@
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
 				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
 				14F0739F1B95BCAD0029A653 /* MD_CGContext_ViewController.m in Sources */,
+				141886DC1C5096D600914CD7 /* MDTestNSFileManager.m in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
@@ -2144,6 +2180,7 @@
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
 				149A1E631B26E5CB00986FA6 /* main.m in Sources */,
 				145D870C1BA83BE000447D35 /* MD_Touch_CustomView1.m in Sources */,
+				141886DF1C50974F00914CD7 /* MD_FileHandle_VC.m in Sources */,
 				148CD7491AAECFDD00FAED9D /* TRStudent6.m in Sources */,
 				144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */,
 				14DF14B31C4F76E5005C10AA /* MD_AVQRCode_VC.m in Sources */,
@@ -2188,6 +2225,7 @@
 				14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */,
 				14DB41071AEA752D00DA1682 /* MDTool.m in Sources */,
 				148CD70C1AAEC21600FAED9D /* MDObject3ViewController.m in Sources */,
+				141886DA1C5096D600914CD7 /* MD_FileManager_VC.m in Sources */,
 				1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */,
 				14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */,
 				148CD7401AAECC7700FAED9D /* MDNSEnumeratorViewController.m in Sources */,
