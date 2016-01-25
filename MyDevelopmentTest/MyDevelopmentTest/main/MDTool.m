@@ -27,7 +27,7 @@
 }
 
 
-#pragma mark 坐标系
+#pragma mark - 坐标系
 /**
  *  屏幕宽度
  *
@@ -107,7 +107,7 @@
     return  CGRectMake(x, y, w, h);;
 }
 
-#pragma mark color
+#pragma mark - color
 
 /**
  *  获取到颜色UICOLOR
@@ -174,7 +174,7 @@
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
 }
 
-#pragma mark other
+#pragma mark - other
 /**
  *  展示响应链
  *

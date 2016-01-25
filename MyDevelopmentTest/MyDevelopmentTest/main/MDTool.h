@@ -13,7 +13,7 @@
 +(MDTool *)sharedInstance;
 
 
-#pragma mark 坐标系
+#pragma mark - 坐标系
 /**
  *  屏幕宽度
  *
@@ -68,7 +68,7 @@
  */
 +(CGRect)setRectX:(CGFloat)x y:(CGFloat)y w:(CGFloat)w h:(CGFloat)h;
 
-#pragma mark color
+#pragma mark - color
 /**
  *  获取到颜色UICOLOR
  *
@@ -89,7 +89,7 @@
  */
 + (UIColor *)TColor:(NSString *)hexColor colorAlpha:(CGFloat)alpha;
 
-#pragma mark other 
+#pragma mark - other 
 void STLogResponderChain(UIResponder *responder);
 /**
  *  把plist文件转换成数组返回

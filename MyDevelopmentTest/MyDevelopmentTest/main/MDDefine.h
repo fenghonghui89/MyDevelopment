@@ -8,9 +8,9 @@
 
 #ifndef MyDevelopmentTest_MDDefine_h
 #define MyDevelopmentTest_MDDefine_h
-#endif
 
-#pragma mark 坐标 常用数值
+
+#pragma mark - 坐标 常用数值
 #define screenBounds [[UIScreen mainScreen] bounds]
 #define screenW [MDTool screenWidth]
 #define screenH [MDTool screenHeight]
@@ -29,7 +29,7 @@
 #define tarBarH 49
 #define phoneStateH 40 //状态栏20+占用navi20
 
-#pragma mark log
+#pragma mark - log
 #ifdef DEBUG
 #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
@@ -38,13 +38,13 @@
 
 #define DRLog(fmt,...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
-#pragma mark 字符串
+#pragma mark - 字符串
 #define FIRST_GET_INFO @"FIRST_GET_INFO"
 #define HEADER_VIEW_PRESS @"HEADER_VIEW_PRESS"
 #define FOOTER_VIEW_PRESS @"FOOTER_VIEW_PRESS"
 #define DELEGATE_INFO_KEY @"DELEGATE_INFO_KEY"
 
-#pragma mark 快捷属性
+#pragma mark - 快捷属性
 #define  PROPERTY_NON_ATOMIC_WEAK       @property (nonatomic,weak)
 #define  PROPERTY_NON_ATOMIC_ASSIGN     @property (nonatomic,assign)
 #define  PROPERTY_NON_ATOMIC_COPY       @property (nonatomic,copy  )
@@ -56,5 +56,8 @@
 #define  PROPERTY_ATOMIC_STRONG         @property (atomic,strong)
 #define  PROPERTY_ATOMIC_READONLY       @property (atomic,readonly)
 
-#pragma mark UI/对象
+#pragma mark - 对象
 #define DGC_KEY_WINDOW [[UIApplication sharedApplication] keyWindow]
+
+
+#endif
