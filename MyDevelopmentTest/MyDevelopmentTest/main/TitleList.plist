@@ -415,6 +415,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>NSEnumerator</string>
+				<key>className</key>
+				<string>MDNSEnumeratorViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>NSFileManager&amp;NSFileHandle</string>
 				<key>className</key>
 				<string></string>
@@ -507,14 +515,6 @@
 						<string>深拷贝、浅拷贝、排序</string>
 						<key>className</key>
 						<string>MDNArrayAdvancedViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-					<dict>
-						<key>desc</key>
-						<string>迭代器</string>
-						<key>className</key>
-						<string>MDNSEnumeratorViewController</string>
 						<key>sub</key>
 						<array/>
 					</dict>

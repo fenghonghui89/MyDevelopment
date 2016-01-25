@@ -205,6 +205,8 @@
 		14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */; };
 		14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */; };
 		14877C811BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14877C801BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf */; };
+		148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */; };
+		148829931C55C5A00034ACFC /* TRStudent5.m in Sources */ = {isa = PBXBuildFile; fileRef = 148829911C55C5A00034ACFC /* TRStudent5.m */; };
 		148CD69B1AAE972700FAED9D /* abc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 148CD69A1AAE972700FAED9D /* abc.txt */; };
 		148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */; };
 		148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD6A21AAE99C400FAED9D /* TRStudent.m */; };
@@ -223,8 +225,6 @@
 		148CD7311AAEC67A00FAED9D /* MDNSDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7301AAEC67A00FAED9D /* MDNSDateViewController.m */; };
 		148CD7371AAEC98800FAED9D /* MDNSArrayNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7361AAEC98800FAED9D /* MDNSArrayNormalViewController.m */; };
 		148CD73B1AAECA3200FAED9D /* TRStudent4.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD73A1AAECA3200FAED9D /* TRStudent4.m */; };
-		148CD7401AAECC7700FAED9D /* MDNSEnumeratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD73F1AAECC7700FAED9D /* MDNSEnumeratorViewController.m */; };
-		148CD7441AAECC9800FAED9D /* TRStudent5.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7431AAECC9800FAED9D /* TRStudent5.m */; };
 		148CD7491AAECFDD00FAED9D /* TRStudent6.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7481AAECFDD00FAED9D /* TRStudent6.m */; };
 		148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD74C1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m */; };
 		148CD7531AAED37700FAED9D /* TRTelphoneInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7501AAED37700FAED9D /* TRTelphoneInfo.m */; };
@@ -561,6 +561,11 @@
 		14877C7B1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GestureRecognizerTest_VC.h; sourceTree = "<group>"; };
 		14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GestureRecognizerTest_VC.m; sourceTree = "<group>"; };
 		14877C801BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "笔记 - 手势 - 赵哲.rtf"; sourceTree = "<group>"; };
+		1488298E1C55C5A00034ACFC /* MDNSEnumeratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSEnumeratorViewController.h; sourceTree = "<group>"; };
+		1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSEnumeratorViewController.m; sourceTree = "<group>"; };
+		148829901C55C5A00034ACFC /* TRStudent5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent5.h; sourceTree = "<group>"; };
+		148829911C55C5A00034ACFC /* TRStudent5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent5.m; sourceTree = "<group>"; };
+		148829941C55C6280034ACFC /* NSEnumerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSEnumerator.h; sourceTree = "<group>"; };
 		148CD69A1AAE972700FAED9D /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 		148CD69D1AAE977700FAED9D /* MDStringNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStringNormalViewController.h; sourceTree = "<group>"; };
 		148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStringNormalViewController.m; sourceTree = "<group>"; };
@@ -597,10 +602,6 @@
 		148CD7361AAEC98800FAED9D /* MDNSArrayNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSArrayNormalViewController.m; sourceTree = "<group>"; };
 		148CD7391AAECA3200FAED9D /* TRStudent4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent4.h; sourceTree = "<group>"; };
 		148CD73A1AAECA3200FAED9D /* TRStudent4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent4.m; sourceTree = "<group>"; };
-		148CD73E1AAECC7700FAED9D /* MDNSEnumeratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSEnumeratorViewController.h; sourceTree = "<group>"; };
-		148CD73F1AAECC7700FAED9D /* MDNSEnumeratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSEnumeratorViewController.m; sourceTree = "<group>"; };
-		148CD7421AAECC9800FAED9D /* TRStudent5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent5.h; sourceTree = "<group>"; };
-		148CD7431AAECC9800FAED9D /* TRStudent5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent5.m; sourceTree = "<group>"; };
 		148CD7471AAECFDD00FAED9D /* TRStudent6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent6.h; sourceTree = "<group>"; };
 		148CD7481AAECFDD00FAED9D /* TRStudent6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent6.m; sourceTree = "<group>"; };
 		148CD74B1AAED05E00FAED9D /* MDNArrayAdvancedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNArrayAdvancedViewController.h; sourceTree = "<group>"; };
@@ -1065,6 +1066,7 @@
 			isa = PBXGroup;
 			children = (
 				1426A1881C44DE0A00FB191D /* FoundationOther */,
+				1488298D1C55C5A00034ACFC /* NSEnumerator */,
 				1426A1891C44DE0A00FB191D /* NSBundle */,
 				1426A1811C44DA5000FB191D /* NSRunLoop */,
 				1426A17D1C44D91100FB191D /* NSKeyedArchiver&NSKeyedUnarchiver */,
@@ -1534,6 +1536,18 @@
 			path = "触控";
 			sourceTree = "<group>";
 		};
+		1488298D1C55C5A00034ACFC /* NSEnumerator */ = {
+			isa = PBXGroup;
+			children = (
+				148829941C55C6280034ACFC /* NSEnumerator.h */,
+				1488298E1C55C5A00034ACFC /* MDNSEnumeratorViewController.h */,
+				1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */,
+				148829901C55C5A00034ACFC /* TRStudent5.h */,
+				148829911C55C5A00034ACFC /* TRStudent5.m */,
+			);
+			path = NSEnumerator;
+			sourceTree = "<group>";
+		};
 		148CD6991AAE972700FAED9D /* 常用（创建、对比、转换、截取等） */ = {
 			isa = PBXGroup;
 			children = (
@@ -1633,7 +1647,6 @@
 			children = (
 				1426A1851C44DB1B00FB191D /* MDTestNSArray.h */,
 				148CD7461AAECFDD00FAED9D /* 深拷贝、浅拷贝、排序 */,
-				148CD73D1AAECC6000FAED9D /* 迭代器 */,
 				148CD7341AAEC8E600FAED9D /* 常用 */,
 			);
 			path = NSArray;
@@ -1648,17 +1661,6 @@
 				148CD73A1AAECA3200FAED9D /* TRStudent4.m */,
 			);
 			path = "常用";
-			sourceTree = "<group>";
-		};
-		148CD73D1AAECC6000FAED9D /* 迭代器 */ = {
-			isa = PBXGroup;
-			children = (
-				148CD73E1AAECC7700FAED9D /* MDNSEnumeratorViewController.h */,
-				148CD73F1AAECC7700FAED9D /* MDNSEnumeratorViewController.m */,
-				148CD7421AAECC9800FAED9D /* TRStudent5.h */,
-				148CD7431AAECC9800FAED9D /* TRStudent5.m */,
-			);
-			path = "迭代器";
 			sourceTree = "<group>";
 		};
 		148CD7461AAECFDD00FAED9D /* 深拷贝、浅拷贝、排序 */ = {
@@ -2170,9 +2172,11 @@
 				14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
 				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
+				148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */,
 				14F0739F1B95BCAD0029A653 /* MD_CGContext_ViewController.m in Sources */,
 				141886DC1C5096D600914CD7 /* MDTestNSFileManager.m in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
+				148829931C55C5A00034ACFC /* TRStudent5.m in Sources */,
 				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
@@ -2190,7 +2194,6 @@
 				148CD72C1AAEC62700FAED9D /* MDNSValueViewController.m in Sources */,
 				14DF14AE1C4F7684005C10AA /* MD_AVCamera_VC.m in Sources */,
 				146D82761AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */,
-				148CD7441AAECC9800FAED9D /* TRStudent5.m in Sources */,
 				148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */,
 				148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */,
 				14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */,
@@ -2228,7 +2231,6 @@
 				141886DA1C5096D600914CD7 /* MD_FileManager_VC.m in Sources */,
 				1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */,
 				14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */,
-				148CD7401AAECC7700FAED9D /* MDNSEnumeratorViewController.m in Sources */,
 				148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */,
 				141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */,
 				14F073911B95B9E80029A653 /* MDCustomView.m in Sources */,

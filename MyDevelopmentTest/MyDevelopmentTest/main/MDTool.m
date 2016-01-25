@@ -7,6 +7,8 @@
 //
 
 #import "MDTool.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <sys/utsname.h>
 @interface MDTool ()
 
 @end
@@ -24,64 +26,8 @@
     return sharedInstance;
 }
 
-/**
- *  把plist文件转换成数组返回
- *
- *  @param plistName plist文件名称
- *
- *  @return 转换后的数组
- */
-+(NSArray *)getPlistDataByName:(NSString *)plistName
-{
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
-    
-    NSArray *data = [NSArray arrayWithContentsOfFile:plistPath];
-    
-    return data;
-}
 
-/**
- *  获取 输出指定文字内容所需的size
- *
- *  @param content  文字内容
- *  @param fontSize 字号
- *  @param width    允许显示的最大宽度，传0代表不限制
- *  @param height   允许显示的最大高度，传0代表不限制
- *
- *  @return 输出指定文字内容所需的size
- */
-+(CGSize)getStringSizeWithString:(NSString *)content
-                         andFont:(float)fontSize
-                        andWidth:(float)width andHeight:(float)height
-{
-    float twidth = (width == 0?MAXFLOAT:width);
-    float theight = (height == 0?MAXFLOAT:height);
-    UIFont *font = [UIFont systemFontOfSize:fontSize];
-    
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
-        //获取字符串的大小  ios6
-        CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(twidth, theight) lineBreakMode:NSLineBreakByCharWrapping];
-        return size;
-        
-    }else{
-        
-        //获取字符串的大小  ios7s
-        NSDictionary *attribute_dic = @{NSFontAttributeName: font};
-        
-        //Helvetica字体默认大小：12号字（点击NSFontAttributeName，旁边绿色的注释有写）
-        //    NSAttributedString* atrString = [[NSAttributedString alloc] initWithString:aString];
-        //    NSRange range = NSMakeRange(0, atrString.length);
-        //    NSDictionary *dic = [atrString attributesAtIndex:0 effectiveRange:&range];
-        
-        CGRect rect = [content boundingRectWithSize:CGSizeMake(twidth, theight)  options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute_dic context:nil];
-        
-        return  rect.size;
-    }
-    
-    return CGSizeZero;
-}
-
-#pragma mark - < 坐标系 > -
+#pragma mark 坐标系
 /**
  *  屏幕宽度
  *
@@ -161,6 +107,8 @@
     return  CGRectMake(x, y, w, h);;
 }
 
+#pragma mark color
+
 /**
  *  获取到颜色UICOLOR
  *
@@ -226,5 +174,143 @@
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
 }
 
+#pragma mark other
+/**
+ *  展示响应链
+ *
+ *  @param responder 响应链
+ */
+void STLogResponderChain(UIResponder *responder) {
+  NSLog(@"------------------The Responder Chain------------------");
+  NSMutableString *spaces = [NSMutableString stringWithCapacity:4];
+  while (responder) {
+    NSLog(@"%@%@", spaces, responder.class);
+    responder = responder.nextResponder;
+    [spaces appendString:@"----"];
+  }
+}
 
+/**
+ *  把plist文件转换成数组返回
+ *
+ *  @param plistName plist文件名称
+ *
+ *  @return 转换后的数组
+ */
++(NSArray *)getPlistDataByName:(NSString *)plistName
+{
+  NSString *plistPath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
+  
+  NSArray *data = [NSArray arrayWithContentsOfFile:plistPath];
+  
+  return data;
+}
+
+/**
+ *  获取 输出指定文字内容所需的size
+ *
+ *  @param content  文字内容
+ *  @param fontSize 字号
+ *  @param width    允许显示的最大宽度，传0代表不限制
+ *  @param height   允许显示的最大高度，传0代表不限制
+ *
+ *  @return 输出指定文字内容所需的size
+ */
++(CGSize)getStringSizeWithString:(NSString *)content
+                         andFont:(float)fontSize
+                        andWidth:(float)width andHeight:(float)height
+{
+  float twidth = (width == 0?MAXFLOAT:width);
+  float theight = (height == 0?MAXFLOAT:height);
+  UIFont *font = [UIFont systemFontOfSize:fontSize];
+  
+  if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+    //获取字符串的大小  ios6
+    CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(twidth, theight) lineBreakMode:NSLineBreakByCharWrapping];
+    return size;
+    
+  }else{
+    
+    //获取字符串的大小  ios7s
+    NSDictionary *attribute_dic = @{NSFontAttributeName: font};
+    
+    //Helvetica字体默认大小：12号字（点击NSFontAttributeName，旁边绿色的注释有写）
+    //    NSAttributedString* atrString = [[NSAttributedString alloc] initWithString:aString];
+    //    NSRange range = NSMakeRange(0, atrString.length);
+    //    NSDictionary *dic = [atrString attributesAtIndex:0 effectiveRange:&range];
+    
+    CGRect rect = [content boundingRectWithSize:CGSizeMake(twidth, theight)  options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute_dic context:nil];
+    
+    return  rect.size;
+  }
+  
+  return CGSizeZero;
+}
+
+/**
+ *  md5字符串
+ *
+ *  @param str 字符串
+ *
+ *  @return MD5字符串
+ */
++(NSString *)md5:(NSString *)str
+{
+  const char *cStr = [str UTF8String];
+  unsigned char result[32];
+  CC_MD5(cStr, (CC_LONG)strlen(cStr), result); // This is the md5 call
+  return [NSString stringWithFormat:
+          @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+          result[0], result[1], result[2], result[3],
+          result[4], result[5], result[6], result[7],
+          result[8], result[9], result[10], result[11],
+          result[12], result[13], result[14], result[15]
+          ];
+}
+
+/**
+ *  输出设备型号
+ *
+ */
+- (NSString*) machineName
+{
+  struct utsname systemInfo;
+  uname(&systemInfo);
+  NSString *result = [NSString stringWithCString:systemInfo.machine
+                                        encoding:NSUTF8StringEncoding];
+  
+  return result;
+}
+
+/**
+ *  输出设备相关信息
+ *
+ */
+-(void)showDeviceInfo
+{
+  UIDevice *device_=[[UIDevice alloc] init];
+  NSLog(@"设备所有者的名称－－%@",device_.name);
+  NSLog(@"设备的类别－－－－－%@",device_.model);
+  NSLog(@"设备的的本地化版本－%@",device_.localizedModel);
+  NSLog(@"设备运行的系统－－－%@",device_.systemName);
+  NSLog(@"当前系统的版本－－－%@",device_.systemVersion);
+  NSLog(@"设备识别码－－－－－%@",device_.identifierForVendor.UUIDString);
+}
+
+/**
+ *  获取当前时区的时间
+ *
+ *  @return 时间字符串yyyy-MM-dd
+ */
++(NSString *)getDateTime
+{
+  NSDate *date = [NSDate date];
+  NSDateFormatter *df = [[NSDateFormatter alloc] init];
+  [df setDateFormat:@"yyyy-MM-dd"];
+  NSTimeZone *timezone = [NSTimeZone localTimeZone];
+  [df setTimeZone:timezone];
+  
+  NSString *timeString = [df stringFromDate:date];
+  return timeString;
+}
 @end
