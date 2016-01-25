@@ -157,7 +157,7 @@
 		146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D828F1AA6F3EE00F0C7FD /* MDAVASViewController.m */; };
 		146D82971AA6FA2C00F0C7FD /* MDWVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82951AA6FA2C00F0C7FD /* MDWVViewController.m */; };
 		146D82991AA6FA2C00F0C7FD /* MDWVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146D82961AA6FA2C00F0C7FD /* MDWVViewController.xib */; };
-		146D829C1AA6FC6600F0C7FD /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 146D829B1AA6FC6600F0C7FD /* index.html */; };
+		146D829C1AA6FC6600F0C7FD /* index1.html in Resources */ = {isa = PBXBuildFile; fileRef = 146D829B1AA6FC6600F0C7FD /* index1.html */; };
 		146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82A01AA6FFF300F0C7FD /* MDHybridViewController.m */; };
 		146D82A51AA7016200F0C7FD /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 146D82A41AA7016200F0C7FD /* index.html */; };
 		146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */; };
@@ -503,7 +503,7 @@
 		146D82941AA6FA2C00F0C7FD /* MDWVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWVViewController.h; sourceTree = "<group>"; };
 		146D82951AA6FA2C00F0C7FD /* MDWVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWVViewController.m; sourceTree = "<group>"; };
 		146D82961AA6FA2C00F0C7FD /* MDWVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDWVViewController.xib; sourceTree = "<group>"; };
-		146D829B1AA6FC6600F0C7FD /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		146D829B1AA6FC6600F0C7FD /* index1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index1.html; sourceTree = "<group>"; };
 		146D829F1AA6FFF300F0C7FD /* MDHybridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHybridViewController.h; sourceTree = "<group>"; };
 		146D82A01AA6FFF300F0C7FD /* MDHybridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHybridViewController.m; sourceTree = "<group>"; };
 		146D82A41AA7016200F0C7FD /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -1323,7 +1323,7 @@
 		146D82931AA6F84600F0C7FD /* 三种请求方式、常用方法及协议 */ = {
 			isa = PBXGroup;
 			children = (
-				146D829B1AA6FC6600F0C7FD /* index.html */,
+				146D829B1AA6FC6600F0C7FD /* index1.html */,
 				146D82941AA6FA2C00F0C7FD /* MDWVViewController.h */,
 				146D82951AA6FA2C00F0C7FD /* MDWVViewController.m */,
 				146D82961AA6FA2C00F0C7FD /* MDWVViewController.xib */,
@@ -1986,7 +1986,7 @@
 				1463B27F1AA1BD4D006AE8D2 /* provinces_cities.plist in Resources */,
 				14381BEB1BA1B75900C06EB7 /* delete_btn@2x.png in Resources */,
 				146D82EF1AA709F600F0C7FD /* Denmark.png in Resources */,
-				146D829C1AA6FC6600F0C7FD /* index.html in Resources */,
+				146D829C1AA6FC6600F0C7FD /* index1.html in Resources */,
 				14565E811BA94CD1009F7B2D /* playing6@2x.png in Resources */,
 				145D87241BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,

@@ -29,7 +29,7 @@
 {
     //1.读取html文件
     //取得html文件的路径，把html文件的内容读取到NSString对象中
-    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index1" ofType:@"html"];
     NSError *error = nil;
     NSString *htmlString = [[NSString alloc] initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:&error];
     
@@ -47,7 +47,7 @@
 {
     //1.读取html文件
     //取得html文件的路径，把html文件的内容读取到NSData对象中
-    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index1" ofType:@"html"];
     NSData *htmlData = [[NSData alloc] initWithContentsOfFile:htmlPath];
     
     //2.把html文件的基本路径，即所在的资源目录，转成url
