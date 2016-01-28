@@ -9,7 +9,7 @@
 #import "MD_FileManager_VC.h"
 
 @interface MD_FileManager_VC ()
-
+@property(nonatomic,assign)BOOL isFinish;
 @end
 
 @implementation MD_FileManager_VC
@@ -18,6 +18,14 @@
 {
   [super viewDidLoad];
   
+  dispatch_queue_t myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_PRIORITY_DEFAULT);
+  dispatch_async(myQueue, ^{
+    [self findFileInDirecotryPath:@"/Users/hanyfeng/Desktop/Library" fileName:@"NSKeyValueObserving"];
+  });
+  
+}
+
+-(void)findImg{
   NSFileManager* fm = [NSFileManager defaultManager];//得到文件管理器
   NSString* dircetoryPath = @"/Users/apple/Desktop/img副本";
   NSArray* fileNames = [fm contentsOfDirectoryAtPath:dircetoryPath error:nil];//获取文件夹下面所有文件的名称，并用数组存储
@@ -66,32 +74,48 @@
     NSLog(@"是文件夹");
     //        }
   }
+
 }
 
-- (void)didReceiveMemoryWarning
+-(void)findFileInDirecotryPath:(NSString *)path fileName:(NSString *)fileName
 {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
--(void)findFileInDirecotryPath:(NSString *)path
-{
-  //得到文件管理器
   NSFileManager* fm = [NSFileManager defaultManager];
-  //得到文件夹下所有文件的名称
-  NSArray* fileNames = [fm contentsOfDirectoryAtPath:path error:nil];
   
-  for (NSString* fileName in fileNames) {
-    NSString* filePath = [path stringByAppendingPathComponent:fileName];//得到文件的完整路径
+  //创建保存用文件夹
+  NSString *dicPaht = @"/Users/hanyfeng/Desktop/头文件";
+  if (![fm fileExistsAtPath:dicPaht]) {
+    BOOL b = [fm createDirectoryAtPath:dicPaht withIntermediateDirectories:YES attributes:nil error:nil];
+    if (b){
+      DLog(@"创建文件夹成功");
+    }else{
+      DLog(@"创建文件夹失败");
+    }
+
+  }
+  
+  //得到文件夹下所有文件的名称
+  NSArray* sourceFileNames = [fm contentsOfDirectoryAtPath:path error:nil];
+  for (NSString* sourceFileName in sourceFileNames) {
     
+    //如果同一层次某个子目录下已经找到，则不再找同层次其他子目录
+    if (self.isFinish) {
+      DLog(@"已经完成，退出方法。");
+      return;
+    }
+    
+    NSString* filePath = [path stringByAppendingPathComponent:sourceFileName];//得到文件的完整路径
     BOOL isDirectory;
     if ([fm fileExistsAtPath:filePath isDirectory:&isDirectory] && isDirectory) {//如果是文件夹，则递归方法
-      [self findFileInDirecotryPath:filePath];
-    }else {//如果是文件，则判断后缀，类型符合就复制到文件夹下
-      if ([fileName hasSuffix:@"jpg"]) {
-        NSString* newDirectoryPath = @"/Users/apple/Desktop/未命名文件夹 2";
-        NSString* newFilePath = [newDirectoryPath stringByAppendingPathComponent:fileName];
+        [self findFileInDirecotryPath:filePath fileName:fileName];
+    }else {//如果是文件，则判断前后缀，类型符合就复制到文件夹下
+      if ([sourceFileName hasSuffix:@"h"] && [sourceFileName hasPrefix:fileName]) {
+        DLog(@"找到文件：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
+        NSString* newFilePath = [dicPaht stringByAppendingPathComponent:sourceFileName];
         [fm copyItemAtPath:filePath toPath:newFilePath error:nil];
+        self.isFinish = YES;
+        return;
+      }else{
+        DLog(@"找不到文件：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
       }
     }
   }

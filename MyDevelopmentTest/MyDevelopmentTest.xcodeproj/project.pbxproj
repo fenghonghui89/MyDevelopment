@@ -678,6 +678,7 @@
 		14DF14D51C4F87CC005C10AA /* MDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNavigationController.m; sourceTree = "<group>"; };
 		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
 		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
+		14E9AA2A1C5A25B3007B06DA /* NSKeyValueObserving.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSKeyValueObserving.h; sourceTree = "<group>"; };
 		14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_CustomView.h; sourceTree = "<group>"; };
 		14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGContext_CustomView.m; sourceTree = "<group>"; };
 		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
@@ -884,6 +885,7 @@
 		1426A1881C44DE0A00FB191D /* FoundationOther */ = {
 			isa = PBXGroup;
 			children = (
+				14E9AA2A1C5A25B3007B06DA /* NSKeyValueObserving.h */,
 				1426A18C1C44DE3300FB191D /* NSByteOrder.h */,
 				1426A18D1C44DE3300FB191D /* NSCalendar.h */,
 				1426A18E1C44DE3300FB191D /* NSCharacterSet.h */,

@@ -151,7 +151,7 @@ CG_EXTERN bool CGSizeEqualToSize(CGSize size1, CGSize size2)
 
 /* Return true if `rect1' and `rect2' are the same, false otherwise. */
 
-CG_EXTERN bool CGRectEqualToRect(CGRect rect1, CGRect rect2)
+CG_EXTERN bool CGRectEqualToRect(CGRect rect1, CGRect rect2) //判断两个frame是否一样
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Standardize `rect' -- i.e., convert it to an equivalent rect which has
