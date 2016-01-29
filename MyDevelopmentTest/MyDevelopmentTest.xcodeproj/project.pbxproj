@@ -276,6 +276,11 @@
 		14DF14D31C4F83E7005C10AA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF14C51C4F83E7005C10AA /* Default@2x.png */; };
 		14DF14D61C4F87CC005C10AA /* MDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DF14D51C4F87CC005C10AA /* MDNavigationController.m */; };
 		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
+		14E604D71C5B0538000E0DED /* MDKVO_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604D51C5B0538000E0DED /* MDKVO_VC.m */; };
+		14E604D81C5B0538000E0DED /* MDKVO_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E604D61C5B0538000E0DED /* MDKVO_VC.xib */; };
+		14E604DC1C5B10C1000E0DED /* MDStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604DB1C5B10C1000E0DED /* MDStudent.m */; };
+		14E604DF1C5B1107000E0DED /* MDBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604DE1C5B1107000E0DED /* MDBag.m */; };
+		14E604E21C5B228E000E0DED /* MDKVO_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604E11C5B228E000E0DED /* MDKVO_View.m */; };
 		14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */; };
 		14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */; };
 		14F073911B95B9E80029A653 /* MDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073901B95B9E80029A653 /* MDCustomView.m */; };
@@ -678,7 +683,16 @@
 		14DF14D51C4F87CC005C10AA /* MDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNavigationController.m; sourceTree = "<group>"; };
 		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
 		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
-		14E9AA2A1C5A25B3007B06DA /* NSKeyValueObserving.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSKeyValueObserving.h; sourceTree = "<group>"; };
+		14E604D31C5B041E000E0DED /* NSKeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSKeyValueObserving.h; sourceTree = "<group>"; };
+		14E604D41C5B0538000E0DED /* MDKVO_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKVO_VC.h; sourceTree = "<group>"; };
+		14E604D51C5B0538000E0DED /* MDKVO_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKVO_VC.m; sourceTree = "<group>"; };
+		14E604D61C5B0538000E0DED /* MDKVO_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDKVO_VC.xib; sourceTree = "<group>"; };
+		14E604DA1C5B10C1000E0DED /* MDStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStudent.h; sourceTree = "<group>"; };
+		14E604DB1C5B10C1000E0DED /* MDStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStudent.m; sourceTree = "<group>"; };
+		14E604DD1C5B1107000E0DED /* MDBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBag.h; sourceTree = "<group>"; };
+		14E604DE1C5B1107000E0DED /* MDBag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBag.m; sourceTree = "<group>"; };
+		14E604E01C5B228E000E0DED /* MDKVO_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKVO_View.h; sourceTree = "<group>"; };
+		14E604E11C5B228E000E0DED /* MDKVO_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKVO_View.m; sourceTree = "<group>"; };
 		14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_CustomView.h; sourceTree = "<group>"; };
 		14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGContext_CustomView.m; sourceTree = "<group>"; };
 		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
@@ -885,7 +899,6 @@
 		1426A1881C44DE0A00FB191D /* FoundationOther */ = {
 			isa = PBXGroup;
 			children = (
-				14E9AA2A1C5A25B3007B06DA /* NSKeyValueObserving.h */,
 				1426A18C1C44DE3300FB191D /* NSByteOrder.h */,
 				1426A18D1C44DE3300FB191D /* NSCalendar.h */,
 				1426A18E1C44DE3300FB191D /* NSCharacterSet.h */,
@@ -1068,6 +1081,7 @@
 			isa = PBXGroup;
 			children = (
 				1426A1881C44DE0A00FB191D /* FoundationOther */,
+				14E604D21C5B041E000E0DED /* NSKeyValueObserving */,
 				1488298D1C55C5A00034ACFC /* NSEnumerator */,
 				1426A1891C44DE0A00FB191D /* NSBundle */,
 				1426A1811C44DA5000FB191D /* NSRunLoop */,
@@ -1465,6 +1479,7 @@
 		147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */ = {
 			isa = PBXGroup;
 			children = (
+				14E604D91C5B101D000E0DED /* Model */,
 				1412B6741BA1991000FA5F2E /* 笔记与资料 */,
 				14DB40F01AEA752D00DA1682 /* main */,
 				1403E3251B8C68EC009C8CAC /* UICustom */,
@@ -1819,6 +1834,30 @@
 			path = UIImagePickerController;
 			sourceTree = "<group>";
 		};
+		14E604D21C5B041E000E0DED /* NSKeyValueObserving */ = {
+			isa = PBXGroup;
+			children = (
+				14E604D31C5B041E000E0DED /* NSKeyValueObserving.h */,
+				14E604D41C5B0538000E0DED /* MDKVO_VC.h */,
+				14E604D51C5B0538000E0DED /* MDKVO_VC.m */,
+				14E604D61C5B0538000E0DED /* MDKVO_VC.xib */,
+				14E604E01C5B228E000E0DED /* MDKVO_View.h */,
+				14E604E11C5B228E000E0DED /* MDKVO_View.m */,
+			);
+			path = NSKeyValueObserving;
+			sourceTree = "<group>";
+		};
+		14E604D91C5B101D000E0DED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14E604DA1C5B10C1000E0DED /* MDStudent.h */,
+				14E604DB1C5B10C1000E0DED /* MDStudent.m */,
+				14E604DD1C5B1107000E0DED /* MDBag.h */,
+				14E604DE1C5B1107000E0DED /* MDBag.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		14F0738B1B95B9010029A653 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -2056,6 +2095,7 @@
 				14565E6A1BA94CD1009F7B2D /* playing40@2x.png in Resources */,
 				146D83171AA709F600F0C7FD /* SouthKorea.png in Resources */,
 				14565E841BA94CD1009F7B2D /* playing9@2x.png in Resources */,
+				14E604D81C5B0538000E0DED /* MDKVO_VC.xib in Resources */,
 				146D82F11AA709F600F0C7FD /* England.png in Resources */,
 				14565E5F1BA94CD1009F7B2D /* playing30@2x.png in Resources */,
 				146D830F1AA709F600F0C7FD /* Serbia.png in Resources */,
@@ -2190,6 +2230,7 @@
 				148CD7491AAECFDD00FAED9D /* TRStudent6.m in Sources */,
 				144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */,
 				14DF14B31C4F76E5005C10AA /* MD_AVQRCode_VC.m in Sources */,
+				14E604D71C5B0538000E0DED /* MDKVO_VC.m in Sources */,
 				148CD7371AAEC98800FAED9D /* MDNSArrayNormalViewController.m in Sources */,
 				14DF14B01C4F7684005C10AA /* MDAVCameraPreviewView.m in Sources */,
 				141B433D1AA40202008F2711 /* MDPageViewController.m in Sources */,
@@ -2198,9 +2239,12 @@
 				146D82761AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */,
 				148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */,
 				148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */,
+				14E604DC1C5B10C1000E0DED /* MDStudent.m in Sources */,
+				14E604E21C5B228E000E0DED /* MDKVO_View.m in Sources */,
 				14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */,
 				148CD7531AAED37700FAED9D /* TRTelphoneInfo.m in Sources */,
 				148CD71A1AAEC21600FAED9D /* TRCat2.m in Sources */,
+				14E604DF1C5B1107000E0DED /* MDBag.m in Sources */,
 				14565E8A1BA95590009F7B2D /* MD_NSTimer_VC2.m in Sources */,
 				146D82971AA6FA2C00F0C7FD /* MDWVViewController.m in Sources */,
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,

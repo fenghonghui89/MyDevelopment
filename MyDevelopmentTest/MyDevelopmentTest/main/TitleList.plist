@@ -415,6 +415,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>KVO</string>
+				<key>className</key>
+				<string>MDKVO_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>NSEnumerator</string>
 				<key>className</key>
 				<string>MDNSEnumeratorViewController</string>

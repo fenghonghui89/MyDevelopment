@@ -76,6 +76,10 @@ For an _ordered_ to-many relationship, the change dictionary always contains an 
 If NSKeyValueObservingOptionPrior (introduced in Mac OS 10.5) was specified at observer registration time, and this notification is one being sent prior to a change as a result, the change dictionary contains an NSKeyValueChangeNotificationIsPriorKey entry whose value is an NSNumber wrapping YES (use -[NSNumber boolValue]).
 
 context is always the same pointer that was passed in at observer registration time.
+ keypath - 被监听者.被监听的属性
+ object - 被监听者
+ change - 包含新旧键值的dic
+ context - addObserver的context
 */
 - (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSString*, id> *)change context:(nullable void *)context;
 
@@ -84,6 +88,9 @@ context is always the same pointer that was passed in at observer registration t
 @interface NSObject(NSKeyValueObserverRegistration)
 
 /* Register or deregister as an observer of the value at a key path relative to the receiver. The options determine what is included in observer notifications and when they're sent, as described above, and the context is passed in observer notifications as described above. You should use -removeObserver:forKeyPath:context: instead of -removeObserver:forKeyPath: whenever possible because it allows you to more precisely specify your intent. When the same observer is registered for the same key path multiple times, but with different context pointers each time, -removeObserver:forKeyPath: has to guess at the context pointer when deciding what exactly to remove, and it can guess wrong.
+ 
+ 如果是监听self.xxx keypath为xxx
+ 如果监听self.aaa.bbb keypath为aaa.bbb 则自动通知，不能手动通知；keypath为aaa，则可以手动通知，但接收到的newvalue是aaa,不是aaa.bbb
 */
 - (void)addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context;
 - (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath context:(nullable void *)context NS_AVAILABLE(10_7, 5_0);
@@ -138,6 +145,7 @@ The change dictionaries in notifications resulting from use of these methods con
 
 /*
  要使用手动通知，需要在 automaticallyNotifiesObserversForKey方法中明确告诉cocoa，哪些键值要使用自动通知
+ 要在改变前后成对调用
  */
 - (void)willChangeValueForKey:(NSString *)key;
 - (void)didChangeValueForKey:(NSString *)key;
