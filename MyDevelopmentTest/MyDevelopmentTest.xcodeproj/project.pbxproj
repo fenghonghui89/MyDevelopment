@@ -292,6 +292,9 @@
 		14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073A81B95C0F80029A653 /* MD_UIGraphics_CustomView.m */; };
 		14F073AC1B95C26C0029A653 /* MD_UIIV_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073AB1B95C26C0029A653 /* MD_UIIV_CustomView.m */; };
 		14FBF9661C27B4F700CC0A55 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBF9651C27B4F700CC0A55 /* Photos.framework */; };
+		14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FCC7411C5B6B3000490C99 /* MD_PhotoLibrary_VC.m */; };
+		14FCC7441C5B6B3000490C99 /* MD_PhotoLibrary_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FCC7421C5B6B3000490C99 /* MD_PhotoLibrary_VC.xib */; };
+		14FCC74B1C5B705400490C99 /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FCC74D1C5B705400490C99 /* File.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -721,6 +724,13 @@
 		14F977761C44B2D200A53FA9 /* MDTestCFBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestCFBase.m; sourceTree = "<group>"; };
 		14F9777C1C44B43800A53FA9 /* MDTestNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSString.m; sourceTree = "<group>"; };
 		14FBF9651C27B4F700CC0A55 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		14FCC7401C5B6B3000490C99 /* MD_PhotoLibrary_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotoLibrary_VC.h; sourceTree = "<group>"; };
+		14FCC7411C5B6B3000490C99 /* MD_PhotoLibrary_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotoLibrary_VC.m; sourceTree = "<group>"; };
+		14FCC7421C5B6B3000490C99 /* MD_PhotoLibrary_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotoLibrary_VC.xib; sourceTree = "<group>"; };
+		14FCC7471C5B702700490C99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		14FCC7481C5B702800490C99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		14FCC74E1C5B705700490C99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/File.strings"; sourceTree = "<group>"; };
+		14FCC74F1C5B706400490C99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/File.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -917,6 +927,7 @@
 		1427B4841C3E125D00D4E541 /* AVFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				14FCC73F1C5B6AD700490C99 /* photoLibrary */,
 				14DF14A71C4F7684005C10AA /* camear */,
 				14DF14AD1C4F7684005C10AA /* qrcode */,
 			);
@@ -1739,6 +1750,7 @@
 				149A1E5D1B26E5CB00986FA6 /* Info.plist */,
 				149A1E5E1B26E5CB00986FA6 /* main.m */,
 				14DF14B41C4F8261005C10AA /* image.xcassets */,
+				14FCC74D1C5B705400490C99 /* File.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1951,6 +1963,16 @@
 			path = CoreFoundation;
 			sourceTree = "<group>";
 		};
+		14FCC73F1C5B6AD700490C99 /* photoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				14FCC7401C5B6B3000490C99 /* MD_PhotoLibrary_VC.h */,
+				14FCC7411C5B6B3000490C99 /* MD_PhotoLibrary_VC.m */,
+				14FCC7421C5B6B3000490C99 /* MD_PhotoLibrary_VC.xib */,
+			);
+			path = photoLibrary;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1993,6 +2015,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 147DB1751A8C7FA600F38EA4;
 			productRefGroup = 147DB17F1A8C7FA600F38EA4 /* Products */;
@@ -2019,6 +2042,7 @@
 				14565E601BA94CD1009F7B2D /* playing31@2x.png in Resources */,
 				1463B29E1AA1CAE4006AE8D2 /* small.jpg in Resources */,
 				149A1E601B26E5CB00986FA6 /* LaunchScreen.xib in Resources */,
+				14FCC74B1C5B705400490C99 /* File.strings in Resources */,
 				146D83111AA709F600F0C7FD /* Slovakia.png in Resources */,
 				14DF14D11C4F83E7005C10AA /* Default-568h@2x.png in Resources */,
 				146D831F1AA709F600F0C7FD /* USA.png in Resources */,
@@ -2151,6 +2175,7 @@
 				14565E4A1BA94CD1009F7B2D /* playing11@2x.png in Resources */,
 				14565E7A1BA94CD1009F7B2D /* playing55@2x.png in Resources */,
 				146D83091AA709F600F0C7FD /* NorthKorea.png in Resources */,
+				14FCC7441C5B6B3000490C99 /* MD_PhotoLibrary_VC.xib in Resources */,
 				14565E831BA94CD1009F7B2D /* playing8@2x.png in Resources */,
 				14565E551BA94CD1009F7B2D /* playing21@2x.png in Resources */,
 				14DF14D21C4F83E7005C10AA /* Default.png in Resources */,
@@ -2268,6 +2293,7 @@
 				14565E0B1BA94AB1009F7B2D /* MD_NSTimer_VC1.m in Sources */,
 				145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
+				14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */,
 				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
 				14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */,
@@ -2313,6 +2339,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				149A1E5B1B26E5CB00986FA6 /* Base */,
+				14FCC7481C5B702800490C99 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -2321,8 +2348,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				149A1E981B26EC2300986FA6 /* Base */,
+				14FCC7471C5B702700490C99 /* zh-Hans */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14FCC74D1C5B705400490C99 /* File.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14FCC74E1C5B705700490C99 /* zh-Hans */,
+				14FCC74F1C5B706400490C99 /* en */,
+			);
+			name = File.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
