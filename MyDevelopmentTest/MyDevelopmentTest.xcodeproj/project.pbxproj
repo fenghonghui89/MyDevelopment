@@ -41,6 +41,15 @@
 		14381BF41BA1BDCC00C06EB7 /* playing_volumn_slide_foreground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BF11BA1BDCC00C06EB7 /* playing_volumn_slide_foreground@2x.png */; };
 		14381BF51BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BF21BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png */; };
 		144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 144448651B9D90FA009B145F /* MD_UIBezierPath_CustomView.m */; };
+		144F23E31C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23E11C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.m */; };
+		144F23E41C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144F23E21C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.xib */; };
+		144F23E81C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23E61C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.m */; };
+		144F23E91C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144F23E71C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.xib */; };
+		144F23F01C5F38E2004ED3BC /* CIImage+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23EB1C5F38E2004ED3BC /* CIImage+Convenience.m */; };
+		144F23F11C5F38E2004ED3BC /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23ED1C5F38E2004ED3BC /* NSIndexSet+Convenience.m */; };
+		144F23F21C5F38E2004ED3BC /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23EF1C5F38E2004ED3BC /* UICollectionView+Convenience.m */; };
+		144F23F61C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23F41C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m */; };
+		144F23F71C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144F23F51C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib */; };
 		14565D0C1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14565D0B1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf */; };
 		14565E0B1BA94AB1009F7B2D /* MD_NSTimer_VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E0A1BA94AB1009F7B2D /* MD_NSTimer_VC1.m */; };
 		14565E491BA94CD1009F7B2D /* playing10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14565E0D1BA94CD1009F7B2D /* playing10@2x.png */; };
@@ -363,6 +372,21 @@
 		14381BF21BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_sound_icon@2x.png"; sourceTree = "<group>"; };
 		144448641B9D90FA009B145F /* MD_UIBezierPath_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIBezierPath_CustomView.h; sourceTree = "<group>"; };
 		144448651B9D90FA009B145F /* MD_UIBezierPath_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIBezierPath_CustomView.m; sourceTree = "<group>"; };
+		144F23E01C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotoLibrary_GridVC.h; sourceTree = "<group>"; };
+		144F23E11C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotoLibrary_GridVC.m; sourceTree = "<group>"; };
+		144F23E21C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotoLibrary_GridVC.xib; sourceTree = "<group>"; };
+		144F23E51C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotoLibrary_CollectionViewCell.h; sourceTree = "<group>"; };
+		144F23E61C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotoLibrary_CollectionViewCell.m; sourceTree = "<group>"; };
+		144F23E71C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotoLibrary_CollectionViewCell.xib; sourceTree = "<group>"; };
+		144F23EA1C5F38E2004ED3BC /* CIImage+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIImage+Convenience.h"; sourceTree = "<group>"; };
+		144F23EB1C5F38E2004ED3BC /* CIImage+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIImage+Convenience.m"; sourceTree = "<group>"; };
+		144F23EC1C5F38E2004ED3BC /* NSIndexSet+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Convenience.h"; sourceTree = "<group>"; };
+		144F23ED1C5F38E2004ED3BC /* NSIndexSet+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+Convenience.m"; sourceTree = "<group>"; };
+		144F23EE1C5F38E2004ED3BC /* UICollectionView+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Convenience.h"; sourceTree = "<group>"; };
+		144F23EF1C5F38E2004ED3BC /* UICollectionView+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Convenience.m"; sourceTree = "<group>"; };
+		144F23F31C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotoLibrary_PreviewVC.h; sourceTree = "<group>"; };
+		144F23F41C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotoLibrary_PreviewVC.m; sourceTree = "<group>"; };
+		144F23F51C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotoLibrary_PreviewVC.xib; sourceTree = "<group>"; };
 		14565D0B1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "笔记 - 动画 - 赵哲.rtf"; sourceTree = "<group>"; };
 		14565E091BA94AB1009F7B2D /* MD_NSTimer_VC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSTimer_VC1.h; sourceTree = "<group>"; };
 		14565E0A1BA94AB1009F7B2D /* MD_NSTimer_VC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSTimer_VC1.m; sourceTree = "<group>"; };
@@ -1379,6 +1403,12 @@
 		146D82AC1AA7036700F0C7FD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				144F23EA1C5F38E2004ED3BC /* CIImage+Convenience.h */,
+				144F23EB1C5F38E2004ED3BC /* CIImage+Convenience.m */,
+				144F23EC1C5F38E2004ED3BC /* NSIndexSet+Convenience.h */,
+				144F23ED1C5F38E2004ED3BC /* NSIndexSet+Convenience.m */,
+				144F23EE1C5F38E2004ED3BC /* UICollectionView+Convenience.h */,
+				144F23EF1C5F38E2004ED3BC /* UICollectionView+Convenience.m */,
 				14DF14A41C4F71C3005C10AA /* UIImage+Resize.h */,
 				14DF14A51C4F71C3005C10AA /* UIImage+Resize.m */,
 				147FDF3D1B9012690006A2C4 /* UIImage+UIImageScale.h */,
@@ -1969,6 +1999,15 @@
 				14FCC7401C5B6B3000490C99 /* MD_PhotoLibrary_VC.h */,
 				14FCC7411C5B6B3000490C99 /* MD_PhotoLibrary_VC.m */,
 				14FCC7421C5B6B3000490C99 /* MD_PhotoLibrary_VC.xib */,
+				144F23E01C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.h */,
+				144F23E11C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.m */,
+				144F23E21C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.xib */,
+				144F23E51C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.h */,
+				144F23E61C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.m */,
+				144F23E71C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.xib */,
+				144F23F31C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.h */,
+				144F23F41C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m */,
+				144F23F51C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib */,
 			);
 			path = photoLibrary;
 			sourceTree = "<group>";
@@ -2095,6 +2134,7 @@
 				146D82F31AA709F600F0C7FD /* France.png in Resources */,
 				14DF14CB1C4F83E7005C10AA /* Icon-Small@2x.png in Resources */,
 				14565E4B1BA94CD1009F7B2D /* playing12@2x.png in Resources */,
+				144F23F71C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib in Resources */,
 				146D82E11AA709F600F0C7FD /* Algeria.png in Resources */,
 				1463B27B1AA1B689006AE8D2 /* MDMainViewController.xib in Resources */,
 				14565D0C1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf in Resources */,
@@ -2102,6 +2142,7 @@
 				14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */,
 				1421A9721BD60C7200C561A7 /* IMG_0309.jpg in Resources */,
 				146D82E51AA709F600F0C7FD /* Australia.png in Resources */,
+				144F23E91C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.xib in Resources */,
 				146D831B1AA709F600F0C7FD /* Switzerland.png in Resources */,
 				14565E681BA94CD1009F7B2D /* playing39@2x.png in Resources */,
 				146D830D1AA709F600F0C7FD /* Portugal.png in Resources */,
@@ -2200,6 +2241,7 @@
 				14565E801BA94CD1009F7B2D /* playing60@2x.png in Resources */,
 				1463B26E1AA1B593006AE8D2 /* FirstViewController.xib in Resources */,
 				14565E7D1BA94CD1009F7B2D /* playing58@2x.png in Resources */,
+				144F23E41C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.xib in Resources */,
 				14565E561BA94CD1009F7B2D /* playing22@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2227,12 +2269,14 @@
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,
 				14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */,
 				14F073AC1B95C26C0029A653 /* MD_UIIV_CustomView.m in Sources */,
+				144F23F21C5F38E2004ED3BC /* UICollectionView+Convenience.m in Sources */,
 				147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */,
 				146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
 				1463B2761AA1B593006AE8D2 /* ThirdViewController.m in Sources */,
 				1463B2701AA1B593006AE8D2 /* MDMainViewController.m in Sources */,
 				14923C591C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m in Sources */,
 				14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */,
+				144F23F11C5F38E2004ED3BC /* NSIndexSet+Convenience.m in Sources */,
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
@@ -2268,6 +2312,7 @@
 				14E604E21C5B228E000E0DED /* MDKVO_View.m in Sources */,
 				14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */,
 				148CD7531AAED37700FAED9D /* TRTelphoneInfo.m in Sources */,
+				144F23F01C5F38E2004ED3BC /* CIImage+Convenience.m in Sources */,
 				148CD71A1AAEC21600FAED9D /* TRCat2.m in Sources */,
 				14E604DF1C5B1107000E0DED /* MDBag.m in Sources */,
 				14565E8A1BA95590009F7B2D /* MD_NSTimer_VC2.m in Sources */,
@@ -2296,6 +2341,7 @@
 				14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */,
 				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
+				144F23E31C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.m in Sources */,
 				14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */,
 				14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */,
 				14DB41071AEA752D00DA1682 /* MDTool.m in Sources */,
@@ -2310,9 +2356,11 @@
 				14565E921BA96012009F7B2D /* MD_NSTimer_VC3.m in Sources */,
 				1463B2841AA1BD87006AE8D2 /* MDPickerViewViewController.m in Sources */,
 				1463B2141AA162C2006AE8D2 /* MDUIButtonViewController.m in Sources */,
+				144F23E81C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.m in Sources */,
 				148CD7551AAED37700FAED9D /* TRUserInfo.m in Sources */,
 				145D870F1BA8405E00447D35 /* MD_Touch_CustomView2.m in Sources */,
 				141B432F1AA3FDD3008F2711 /* MDPageControlViewController.m in Sources */,
+				144F23F61C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m in Sources */,
 				1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */,
 				14D6700C1C475BCE00F911A4 /* MDModal2ViewController.m in Sources */,
 				14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */,
