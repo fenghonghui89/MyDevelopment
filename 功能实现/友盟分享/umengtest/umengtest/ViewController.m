@@ -55,9 +55,11 @@
  */
 - (IBAction)shareBtnTap:(id)sender
 {
-    [[UMShareManager share] share:self
-                        shareText:@"友盟社会化分享让您快速实现分享等社会化功能，www.umeng.com/social"
-                       shareImage:[UIImage imageNamed:@"UMS_douban_icon.png"]];
+//    [[UMShareManager share] share:self
+//                        shareText:@"友盟社会化分享让您快速实现分享等社会化功能，www.umeng.com/social"
+//                       shareImage:[UIImage imageNamed:@"UMS_douban_icon.png"]];
+  
+  [[UMShareManager share] share:self title:@"zheshi title" shareText:@"zheshi text" shareImage:nil url:nil];
 }
 
 /**

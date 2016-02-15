@@ -26,4 +26,9 @@ typedef NS_ENUM(NSInteger,LoginType){
   shareImage:(UIImage *)shareImage;
 -(void)logout:(LoginType)loginType;
 
+-(void)share:(UIViewController *)viewController
+       title:(NSString *)title
+   shareText:(NSString *)shareText
+  shareImage:(UIImage *)shareImage
+         url:(NSString *)urlstring;
 @end

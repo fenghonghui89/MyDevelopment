@@ -6,10 +6,20 @@
 //  Copyright © 2015年 MD. All rights reserved.
 //
 
+#define UMENG_APPKEY @"53ec86c7fd98c5cf630065c6"
+#define UMENG_URL @"http://tpages.cn"
+#define UMENG_WECHAT_APPID @"wxcf8607478eb60cc1"
+#define UMENG_WECHAT_APPSECRET @"bd516fef4dad6bcfd927224033e8b01e"
+#define UMENG_WEIBO_APPKEY @"1234731486"
+#define UMENG_QQ_APPID @"1105010114"
+#define UMENG_QQ_APPKEY @"2s9wL1cScGtIu2dd"
+#define UMENG_SHARE_BASEURL @"http://90days.tpages.cn/comments.html#"
+
 #import "UMShareManager.h"
 #import "UMSocial.h"
 #import "UMSocialQQHandler.h"
 #import "UMSocialWechatHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 #import "UMSocialControllerService.h"
 @interface UMShareManager()
 <
@@ -32,16 +42,19 @@ UMSocialUIDelegate
 -(void)startUMShare
 {
     //设置友盟社会化组件appkey
-    [UMSocialData setAppKey:@"56245c1f67e58efb0e00381f"];
+    [UMSocialData setAppKey:UMENG_APPKEY];
     
     //打开调试log的开关
     [UMSocialData openLog:YES];
     
     //设置微信AppId，设置分享url，默认使用友盟的网址
-    [UMSocialWechatHandler setWXAppId:@"wx1f62cb4c780d3b35" appSecret:@"2571591bfa4bffe8d8fbb31f65fe9278" url:@"http://www.umeng.com/social"];
+    [UMSocialWechatHandler setWXAppId:UMENG_WECHAT_APPID appSecret:UMENG_WECHAT_APPSECRET url:UMENG_URL];
+  
+    //新浪微博
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:UMENG_WEIBO_APPKEY RedirectURL:UMENG_URL];
     
     //QQ登录只支持SSO登录方式，必须具备手机QQ客户端，Qzone默认调用SSO登录
-    [UMSocialQQHandler setQQWithAppId:@"1104841257" appKey:@"rpzl87aDJpwXgBLT" url:@"http://www.umeng.com/social"];
+    [UMSocialQQHandler setQQWithAppId:UMENG_QQ_APPID appKey:UMENG_QQ_APPKEY url:UMENG_URL];
 }
 
 -(BOOL)handleOpenURL:(NSURL *)url
@@ -177,14 +190,14 @@ UMSocialUIDelegate
    shareText:(NSString *)shareText
   shareImage:(UIImage *)shareImage
 {
-    //sheetview形式
-    [UMSocialSnsService presentSnsIconSheetView:viewController
-                                         appKey:@"56245c1f67e58efb0e00381f"
-                                      shareText:shareText
-                                     shareImage:shareImage
-                                shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
-                                       delegate:self];
-    
+//    //sheetview形式
+//    [UMSocialSnsService presentSnsIconSheetView:viewController
+//                                         appKey:UMENG_APPKEY
+//                                      shareText:shareText
+//                                     shareImage:shareImage
+//                                shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
+//                                       delegate:self];
+//    
     //tableview形式
 //    [UMSocialSnsService presentSnsController:self
 //                                      appKey:@"56245c1f67e58efb0e00381f"
@@ -193,6 +206,41 @@ UMSocialUIDelegate
 //                             shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
 //                                    delegate:self];
 
+}
+
+
+-(void)share:(UIViewController *)viewController
+       title:(NSString *)title
+   shareText:(NSString *)shareText
+  shareImage:(UIImage *)shareImage
+         url:(NSString *)urlstring
+{
+  [UMSocialData defaultData].extConfig.wechatSessionData.url = urlstring;
+  [UMSocialData defaultData].extConfig.wechatTimelineData.url = urlstring;
+  [UMSocialData defaultData].extConfig.qqData.url = urlstring;
+  [UMSocialData defaultData].extConfig.qzoneData.url = urlstring;
+  
+  [UMSocialData defaultData].extConfig.qqData.title = title;
+  [UMSocialData defaultData].extConfig.qzoneData.title = title;
+  [UMSocialData defaultData].extConfig.wechatSessionData.title = title;
+  [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;
+  
+  [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:@"http://www.baidu.com/img/bdlogo.gif"];
+  
+  //如果没有装客户端则隐藏
+  [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToTencent,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
+  
+  //qq
+  [UMSocialQQHandler setQQWithAppId:UMENG_QQ_APPID appKey:UMENG_QQ_APPKEY url:urlstring];
+  
+  //sheetview形式
+  [UMSocialSnsService presentSnsIconSheetView:viewController
+                                       appKey:UMENG_APPKEY
+                                    shareText:shareText
+                                   shareImage:nil
+                              shareToSnsNames:@[UMShareToSina,UMShareToTencent,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]
+                                     delegate:self];
+  
 }
 
 -(void)logout:(LoginType)loginType
