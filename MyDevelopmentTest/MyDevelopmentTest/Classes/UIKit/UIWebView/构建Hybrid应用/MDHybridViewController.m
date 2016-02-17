@@ -35,14 +35,16 @@
     /*
      html中的界面跳转被触发时，会加载新界面，就会调用该方法
      */
-    
+  
+    NSString *requestStr = [request.URL absoluteString];
     NSString *scheme = request.URL.scheme;
     NSString *host = request.URL.host;
     NSString *fragment = [request.URL.fragment URLDecodedString];//用NSString分类里的方法解码
     NSData *data = [fragment dataUsingEncoding:NSUTF8StringEncoding];
-    
+  
+    NSLog(@"~~~ 1:%@ 2:%@",requestStr,fragment);
     if ([scheme isEqualToString:@"gap"]) {
-        if ([host isEqualToString:@"XXXClass.XXXmethod"]) {
+        if ([host isEqualToString:@"TPagesApp.Share"]) {
             NSError *error = nil;
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             NSLog(@"title: %@ , message: %@",[dic objectForKey:@"title"], [dic objectForKey:@"message"] );
