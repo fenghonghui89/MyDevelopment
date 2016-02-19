@@ -1,0 +1,10 @@
+{
+    "cordova-plugin-echoPlugin": {
+        "source": {
+            "type": "local",
+            "path": "/Users/hanyfeng/Desktop/EchoPlugin"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
