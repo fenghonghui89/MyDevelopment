@@ -24,14 +24,15 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 
 #pragma mark - < vc lifecycle > -
 - (void)dealloc {
-  [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
+  [self removeObserver];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [self customInitData];
+  [self customInitUnit];
   [self customInitUI];
+  [self addObserver];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -41,20 +42,19 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 
 #pragma mark - < method > -
 #pragma mark customInit
--(void)customInitData{
+-(void)customInitUnit{
   self.imageManager = [[PHCachingImageManager alloc] init];
   [self resetCachedAssets];
-  
-  [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
 }
+
 -(void)customInitUI{
-  // Determine the size of the thumbnails to request from the PHCachingImageManager
+  //定义cell尺寸
   CGFloat cellunit = (MIN(screenH, screenW) - 3) / 4;
   CGFloat scale = [UIScreen mainScreen].scale;
   CGSize cellSize = CGSizeMake(cellunit, cellunit);
   AssetGridThumbnailSize = CGSizeMake(cellSize.width * scale, cellSize.height * scale);
   
-  // Add button to the navigation bar if the asset collection supports adding content.
+  //如果显示的是某个相册的内容且支持编辑 添加按钮
   if (!self.assetCollection || [self.assetCollection canPerformEditOperation:PHCollectionEditOperationAddContent]) {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(handleAddButtonItem:)];
   } else {
@@ -62,6 +62,15 @@ static NSString * const collectionViewCellIdentifier = @"cell";
   }
 
   [self.collectionview registerNib:[UINib nibWithNibName:@"MD_PhotoLibrary_CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:collectionViewCellIdentifier];
+}
+
+#pragma mark noti & observer
+-(void)addObserver{
+  [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+}
+
+-(void)removeObserver{
+  [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
 }
 
 #pragma mark Asset Caching

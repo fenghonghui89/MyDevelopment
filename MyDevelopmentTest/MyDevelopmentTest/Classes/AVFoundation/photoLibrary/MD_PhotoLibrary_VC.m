@@ -21,12 +21,13 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
 @implementation MD_PhotoLibrary_VC
 #pragma mark - < vc lifecycle > -
 - (void)dealloc {
-  [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
+  [self removeObserver];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [self addObserver];
   [self customInitData];
   [self customInitUI];
   [self.tableview reloadData];
@@ -34,22 +35,23 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
 
 
 #pragma mark - < method > -
+#pragma mark custom init
 -(void)customInitData{
-  //全部
+  //全部 - PHAsset
   PHFetchOptions *allPhotosOptions = [[PHFetchOptions alloc] init];
   allPhotosOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
   PHFetchResult *allPhotos = [PHAsset fetchAssetsWithOptions:allPhotosOptions];
   
-  //智能
+  //智能 (PHAssetCollection *)PHCollection - PHAsset
   PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
   
-  //用户
+  //用户 (PHAssetCollection *)PHCollection - PHAsset
   PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
   
   self.sectionFetchResults = @[allPhotos, smartAlbums, topLevelUserCollections];
   self.sectionLocalizedTitles = @[NSLocalizedString(@"All", @""), NSLocalizedString(@"Smart Albums", @""), NSLocalizedString(@"Custom Albums", @"")];
   
-  [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+  
 }
 
 -(void)customInitUI{
@@ -57,6 +59,14 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(handleAddButtonItem)];
 }
 
+#pragma mark observer
+-(void)addObserver{
+  [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+}
+
+-(void)removeObserver{
+  [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
+}
 #pragma mark - < action > -
 -(void)handleAddButtonItem{
   UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"New Album", @"") message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -143,6 +153,7 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+  
   MD_PhotoLibrary_GridVC *assetGridViewController = [[MD_PhotoLibrary_GridVC alloc] initWithNibName:@"MD_PhotoLibrary_GridVC" bundle:nil];
   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
   
@@ -161,8 +172,8 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
     PHAssetCollection *assetCollection = (PHAssetCollection *)collection;
     PHFetchResult *assetsFetchResult = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
     
-    assetGridViewController.assetsFetchResults = assetsFetchResult;
     assetGridViewController.assetCollection = assetCollection;
+    assetGridViewController.assetsFetchResults = assetsFetchResult;
   }
   
   [self.navigationController pushViewController:assetGridViewController animated:YES];
@@ -174,12 +185,14 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
   /*
    Change notifications may be made on a background queue. Re-dispatch to the
    main queue before acting on the change as we'll be updating the UI.
+   只要另一个应用或者用户在照片库中做的修改影响了你在变化前获取的任何资源或资源集合的话就会触发，更新数据和视图
    */
   dispatch_async(dispatch_get_main_queue(), ^{
     // Loop through the section fetch results, replacing any fetch results that have been updated.
     NSMutableArray *updatedSectionFetchResults = [self.sectionFetchResults mutableCopy];
     __block BOOL reloadRequired = NO;
     
+    //提取每一个原始数据和更新数据做比较 如果有改变则替换
     [self.sectionFetchResults enumerateObjectsUsingBlock:^(PHFetchResult *collectionsFetchResult, NSUInteger index, BOOL *stop) {
       PHFetchResultChangeDetails *changeDetails = [changeInstance changeDetailsForFetchResult:collectionsFetchResult];
       
@@ -193,7 +206,6 @@ static NSString * const CollectionCellReuseIdentifier = @"CollectionCell";
       self.sectionFetchResults = updatedSectionFetchResults;
       [self.tableview reloadData];
     }
-    
   });
 }
 @end

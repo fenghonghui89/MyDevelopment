@@ -13,6 +13,7 @@
 @end
 @implementation MD_PhotoLibrary_CollectionViewCell
 
+//重用的时候触发 清除原来的数据
 - (void)prepareForReuse {
   [super prepareForReuse];
   self.imageView.image = nil;
