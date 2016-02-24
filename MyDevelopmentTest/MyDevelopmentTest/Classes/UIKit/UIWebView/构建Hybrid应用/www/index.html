@@ -13,6 +13,8 @@
                 var myJSONObject = new Object();
                 myJSONObject.title = 'HelloWorld';
                 myJSONObject.message = msg;
+                myJSONObject.imgUrl = 'http://www.baidu.com';
+                myJSONObject.shareUrl = 'http://www.yahoo.com';
                 var JSONString = JSON.stringify(myJSONObject);
                 var uri = 'gap://TPagesApp.Share#' + JSONString;
                 window.location = uri;
