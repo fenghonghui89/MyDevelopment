@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-sharePlugin" version="1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SharePlugin</name>
+    <AUTHOR>HanyFeng</AUTHOR>
+    <DESCRIPTION>HanySharePlugin</DESCRIPTION>
+    <js-module name="DGCSharePlugin" src="www/DGCSharePlugin.js">
+        <clobbers target="DGCSharePlugin" />
+    </js-module>
+    <js-module name="DGCLoginPlugin" src="www/DGCLoginPlugin.js">
+      <clobbers target="DGCLoginPlugin" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="SharePlugin">
+                <param name="ios-package" value="SharePlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/SharePlugin.m" />
+    </platform>
+</plugin>

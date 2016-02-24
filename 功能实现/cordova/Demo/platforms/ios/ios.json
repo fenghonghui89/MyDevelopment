@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"SharePlugin\"><param name=\"ios-package\" value=\"SharePlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationWhenInUseUsageDescription": []
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.Demo"
+        },
+        "cordova-plugin-sharePlugin": {
+            "PACKAGE_NAME": "com.example.Demohany"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-sharePlugin/www/DGCSharePlugin.js",
+            "id": "cordova-plugin-sharePlugin.DGCSharePlugin",
+            "pluginId": "cordova-plugin-sharePlugin",
+            "clobbers": [
+                "DGCSharePlugin"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-sharePlugin/www/DGCLoginPlugin.js",
+            "id": "cordova-plugin-sharePlugin.DGCLoginPlugin",
+            "pluginId": "cordova-plugin-sharePlugin",
+            "clobbers": [
+                "DGCLoginPlugin"
+            ]
+        }
+    ]
+}
