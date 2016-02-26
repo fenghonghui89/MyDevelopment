@@ -290,6 +290,10 @@
 		14E604DC1C5B10C1000E0DED /* MDStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604DB1C5B10C1000E0DED /* MDStudent.m */; };
 		14E604DF1C5B1107000E0DED /* MDBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604DE1C5B1107000E0DED /* MDBag.m */; };
 		14E604E21C5B228E000E0DED /* MDKVO_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604E11C5B228E000E0DED /* MDKVO_View.m */; };
+		14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.m */; };
+		14EACA211C80021C00F3FE2C /* MD_FreeTest_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */; };
+		14EACA271C8038DF00F3FE2C /* MD_CollectionView_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA251C8038DF00F3FE2C /* MD_CollectionView_VC.m */; };
+		14EACA281C8038DF00F3FE2C /* MD_CollectionView_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA261C8038DF00F3FE2C /* MD_CollectionView_VC.xib */; };
 		14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */; };
 		14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */; };
 		14F073911B95B9E80029A653 /* MDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073901B95B9E80029A653 /* MDCustomView.m */; };
@@ -720,6 +724,19 @@
 		14E604DE1C5B1107000E0DED /* MDBag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBag.m; sourceTree = "<group>"; };
 		14E604E01C5B228E000E0DED /* MDKVO_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKVO_View.h; sourceTree = "<group>"; };
 		14E604E11C5B228E000E0DED /* MDKVO_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKVO_View.m; sourceTree = "<group>"; };
+		14EACA1D1C80021C00F3FE2C /* MD_FreeTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FreeTest_VC.h; sourceTree = "<group>"; };
+		14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FreeTest_VC.m; sourceTree = "<group>"; };
+		14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FreeTest_VC.xib; sourceTree = "<group>"; };
+		14EACA221C8008E300F3FE2C /* NSObjCRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObjCRuntime.h; sourceTree = "<group>"; };
+		14EACA241C8038DF00F3FE2C /* MD_CollectionView_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CollectionView_VC.h; sourceTree = "<group>"; };
+		14EACA251C8038DF00F3FE2C /* MD_CollectionView_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CollectionView_VC.m; sourceTree = "<group>"; };
+		14EACA261C8038DF00F3FE2C /* MD_CollectionView_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_CollectionView_VC.xib; sourceTree = "<group>"; };
+		14EACA291C803A9400F3FE2C /* UICollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionView.h; sourceTree = "<group>"; };
+		14EACA2A1C803A9400F3FE2C /* UICollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewCell.h; sourceTree = "<group>"; };
+		14EACA2B1C803A9400F3FE2C /* UICollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewController.h; sourceTree = "<group>"; };
+		14EACA2C1C803A9400F3FE2C /* UICollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		14EACA2D1C803A9400F3FE2C /* UICollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLayout.h; sourceTree = "<group>"; };
+		14EACA2E1C803A9400F3FE2C /* UICollectionViewTransitionLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewTransitionLayout.h; sourceTree = "<group>"; };
 		14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_CustomView.h; sourceTree = "<group>"; };
 		14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGContext_CustomView.m; sourceTree = "<group>"; };
 		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
@@ -933,6 +950,7 @@
 		1426A1881C44DE0A00FB191D /* FoundationOther */ = {
 			isa = PBXGroup;
 			children = (
+				14EACA221C8008E300F3FE2C /* NSObjCRuntime.h */,
 				1426A18C1C44DE3300FB191D /* NSByteOrder.h */,
 				1426A18D1C44DE3300FB191D /* NSCalendar.h */,
 				1426A18E1C44DE3300FB191D /* NSCharacterSet.h */,
@@ -1103,6 +1121,7 @@
 		1463B2011AA162C2006AE8D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				14EACA1C1C8001F200F3FE2C /* FreeTest */,
 				14F977741C44B2C000A53FA9 /* CoreFoundation */,
 				1427B4841C3E125D00D4E541 /* AVFoundation */,
 				14F073931B95BC4B0029A653 /* CoreGraphics */,
@@ -1162,6 +1181,7 @@
 		1463B2071AA162C2006AE8D2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				14EACA231C8038C100F3FE2C /* UICollectionView */,
 				14F9776A1C44AE7A00A53FA9 /* UITableView */,
 				14565D0D1BA94787009F7B2D /* Animation */,
 				14877C771BA7F15E00785B0C /* 手势:触控 */,
@@ -1799,13 +1819,13 @@
 			children = (
 				14DB40F31AEA752D00DA1682 /* MDAppDelegate.h */,
 				14DB40F41AEA752D00DA1682 /* MDAppDelegate.m */,
-				14DB40F51AEA752D00DA1682 /* MDBaseViewController.h */,
-				14DB40F61AEA752D00DA1682 /* MDBaseViewController.m */,
+				14DB40FA1AEA752D00DA1682 /* MDClassesViewController.h */,
+				14DB40FB1AEA752D00DA1682 /* MDClassesViewController.m */,
 				14DB40F71AEA752D00DA1682 /* MDClassesTableViewCell.h */,
 				14DB40F81AEA752D00DA1682 /* MDClassesTableViewCell.m */,
 				14DB40F91AEA752D00DA1682 /* MDClassesTableViewCell.xib */,
-				14DB40FA1AEA752D00DA1682 /* MDClassesViewController.h */,
-				14DB40FB1AEA752D00DA1682 /* MDClassesViewController.m */,
+				14DB40F51AEA752D00DA1682 /* MDBaseViewController.h */,
+				14DB40F61AEA752D00DA1682 /* MDBaseViewController.m */,
 				14DF14D41C4F87CC005C10AA /* MDNavigationController.h */,
 				14DF14D51C4F87CC005C10AA /* MDNavigationController.m */,
 				14DB40FC1AEA752D00DA1682 /* MDTool.h */,
@@ -1898,6 +1918,32 @@
 				14E604DE1C5B1107000E0DED /* MDBag.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14EACA1C1C8001F200F3FE2C /* FreeTest */ = {
+			isa = PBXGroup;
+			children = (
+				14EACA1D1C80021C00F3FE2C /* MD_FreeTest_VC.h */,
+				14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.m */,
+				14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */,
+			);
+			path = FreeTest;
+			sourceTree = "<group>";
+		};
+		14EACA231C8038C100F3FE2C /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				14EACA241C8038DF00F3FE2C /* MD_CollectionView_VC.h */,
+				14EACA251C8038DF00F3FE2C /* MD_CollectionView_VC.m */,
+				14EACA261C8038DF00F3FE2C /* MD_CollectionView_VC.xib */,
+				14EACA291C803A9400F3FE2C /* UICollectionView.h */,
+				14EACA2A1C803A9400F3FE2C /* UICollectionViewCell.h */,
+				14EACA2B1C803A9400F3FE2C /* UICollectionViewController.h */,
+				14EACA2C1C803A9400F3FE2C /* UICollectionViewFlowLayout.h */,
+				14EACA2D1C803A9400F3FE2C /* UICollectionViewLayout.h */,
+				14EACA2E1C803A9400F3FE2C /* UICollectionViewTransitionLayout.h */,
+			);
+			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		14F0738B1B95B9010029A653 /* UIColor */ = {
@@ -2154,6 +2200,7 @@
 				14565E631BA94CD1009F7B2D /* playing34@2x.png in Resources */,
 				14565E4D1BA94CD1009F7B2D /* playing14@2x.png in Resources */,
 				14D6700D1C475BCE00F911A4 /* MDModal2ViewController.xib in Resources */,
+				14EACA211C80021C00F3FE2C /* MD_FreeTest_VC.xib in Resources */,
 				146D82F51AA709F600F0C7FD /* Germany.png in Resources */,
 				14565E641BA94CD1009F7B2D /* playing35@2x.png in Resources */,
 				1463B2861AA1BD87006AE8D2 /* MDPickerViewViewController.xib in Resources */,
@@ -2172,6 +2219,7 @@
 				14565E731BA94CD1009F7B2D /* playing49@2x.png in Resources */,
 				146D83131AA709F600F0C7FD /* Slovenia.png in Resources */,
 				14565E541BA94CD1009F7B2D /* playing20@2x.png in Resources */,
+				14EACA281C8038DF00F3FE2C /* MD_CollectionView_VC.xib in Resources */,
 				1463B2A01AA1CAE4006AE8D2 /* heng.jpg in Resources */,
 				141B43371AA401BC008F2711 /* 罗丹-思想者.png in Resources */,
 				14565E5B1BA94CD1009F7B2D /* playing27@2x.png in Resources */,
@@ -2293,6 +2341,7 @@
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
+				14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.m in Sources */,
 				149A1E631B26E5CB00986FA6 /* main.m in Sources */,
 				145D870C1BA83BE000447D35 /* MD_Touch_CustomView1.m in Sources */,
 				141886DF1C50974F00914CD7 /* MD_FileHandle_VC.m in Sources */,
@@ -2320,6 +2369,7 @@
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
 				148CD75E1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,
+				14EACA271C8038DF00F3FE2C /* MD_CollectionView_VC.m in Sources */,
 				14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,

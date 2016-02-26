@@ -100,32 +100,32 @@ CG_INLINE CGRect CGRectMake(CGFloat x, CGFloat y, CGFloat width,
   CGFloat height);
 
 /* Return the leftmost x-value of `rect'. */
-
+//原点x
 CG_EXTERN CGFloat CGRectGetMinX(CGRect rect)
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Return the midpoint x-value of `rect'. */
-
+//中心点x
 CG_EXTERN CGFloat CGRectGetMidX(CGRect rect)
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Return the rightmost x-value of `rect'. */
-
+//原点x+宽度 = 终点x
 CG_EXTERN CGFloat CGRectGetMaxX(CGRect rect)
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Return the bottommost y-value of `rect'. */
-
+//原点y
 CG_EXTERN CGFloat CGRectGetMinY(CGRect rect)
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Return the midpoint y-value of `rect'. */
-
+//中心点y
 CG_EXTERN CGFloat CGRectGetMidY(CGRect rect)
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Return the topmost y-value of `rect'. */
-
+//原点y+高度 = 终点y
 CG_EXTERN CGFloat CGRectGetMaxY(CGRect rect)
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
@@ -179,7 +179,7 @@ CG_EXTERN bool CGRectIsInfinite(CGRect rect)
 /* Inset `rect' by `(dx, dy)' -- i.e., offset its origin by `(dx, dy)', and
    decrease its size by `(2*dx, 2*dy)'. */
 
-CG_EXTERN CGRect CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)
+CG_EXTERN CGRect CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)//以rect为中心，dx为距离左右两边的距离，dy为距离上下两边的距离，进行缩放
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Expand `rect' to the smallest rect containing it with integral origin and
@@ -200,7 +200,7 @@ CG_EXTERN CGRect CGRectIntersection(CGRect r1, CGRect r2)
 
 /* Offset `rect' by `(dx, dy)'. */
 
-CG_EXTERN CGRect CGRectOffset(CGRect rect, CGFloat dx, CGFloat dy)
+CG_EXTERN CGRect CGRectOffset(CGRect rect, CGFloat dx, CGFloat dy)//相对于rect的原点，偏移dx,dy
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Make two new rectangles, `slice' and `remainder', by dividing `rect' with

@@ -61,6 +61,7 @@ static NSString * const collectionViewCellIdentifier = @"cell";
     self.navigationItem.rightBarButtonItem = nil;
   }
 
+  //注册cell
   [self.collectionview registerNib:[UINib nibWithNibName:@"MD_PhotoLibrary_CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:collectionViewCellIdentifier];
 }
 
@@ -84,10 +85,9 @@ static NSString * const collectionViewCellIdentifier = @"cell";
   BOOL isViewVisible = [self isViewLoaded] && [[self view] window] != nil;
   if (!isViewVisible) { return; }
   
-  // The preheat window is twice the height of the visible rect.
-  CGRect preheatRect = self.collectionview.bounds;
-  preheatRect = CGRectInset(preheatRect, 0.0f, -0.5f * CGRectGetHeight(preheatRect));
-  //origin(0,-(64+667*0.5)) size(375,667+667*0.5*2)
+  //大小为 向上下各延伸原来大小的一半
+  CGRect preheatRect = self.collectionview.bounds;//(0,0,320,568-64=502)
+  preheatRect = CGRectInset(preheatRect, 0.0f, -0.5f * CGRectGetHeight(preheatRect));//(0,-252,320,1008)   原点y:-252   终点y:-252+1008=756
   
   /*
    Check if the collection view is showing an area that is significantly
@@ -130,34 +130,34 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 
 - (void)computeDifferenceBetweenRect:(CGRect)oldRect andRect:(CGRect)newRect removedHandler:(void (^)(CGRect removedRect))removedHandler addedHandler:(void (^)(CGRect addedRect))addedHandler {
   if (CGRectIntersectsRect(newRect, oldRect)) {
-    //maxY 一般为高度 minY 一般为坐标原点y
-    CGFloat oldMaxY = CGRectGetMaxY(oldRect);
-    CGFloat oldMinY = CGRectGetMinY(oldRect);
-    CGFloat newMaxY = CGRectGetMaxY(newRect);
-    CGFloat newMinY = CGRectGetMinY(newRect);
+    //minY 一般为坐标原点y;maxY 一般为高度
+    CGFloat oldMinY = CGRectGetMinY(oldRect);//0
+    CGFloat oldMaxY = CGRectGetMaxY(oldRect);//0
+    CGFloat newMinY = CGRectGetMinY(newRect);//-252
+    CGFloat newMaxY = CGRectGetMaxY(newRect);//756
     
-    if (newMaxY > oldMaxY) {
-      CGRect rectToAdd = CGRectMake(newRect.origin.x, oldMaxY, newRect.size.width, (newMaxY - oldMaxY));
+    if (newMaxY > oldMaxY) {//768 > 0
+      CGRect rectToAdd = CGRectMake(newRect.origin.x, oldMaxY, newRect.size.width, (newMaxY - oldMaxY));//(0,0,320,756)
       addedHandler(rectToAdd);
     }
     
-    if (oldMinY > newMinY) {
-      CGRect rectToAdd = CGRectMake(newRect.origin.x, newMinY, newRect.size.width, (oldMinY - newMinY));
+    if (oldMinY > newMinY) {//0 > -252
+      CGRect rectToAdd = CGRectMake(newRect.origin.x, newMinY, newRect.size.width, (oldMinY - newMinY));//(0,-252,320,252)
       addedHandler(rectToAdd);
     }
     
     if (newMaxY < oldMaxY) {
-      CGRect rectToRemove = CGRectMake(newRect.origin.x, newMaxY, newRect.size.width, (oldMaxY - newMaxY));
+      CGRect rectToRemove = CGRectMake(newRect.origin.x, newMaxY, newRect.size.width, (oldMaxY - newMaxY));//(0,756,320,-756)
       removedHandler(rectToRemove);
     }
     
     if (oldMinY < newMinY) {
-      CGRect rectToRemove = CGRectMake(newRect.origin.x, oldMinY, newRect.size.width, (newMinY - oldMinY));
+      CGRect rectToRemove = CGRectMake(newRect.origin.x, oldMinY, newRect.size.width, (newMinY - oldMinY));//(0,0,320,-252)
       removedHandler(rectToRemove);
     }
   } else {
-    addedHandler(newRect);
-    removedHandler(oldRect);
+    addedHandler(newRect);//(0,-252,320,756)
+    removedHandler(oldRect);//(0,0,0,0)
   }
 }
 
@@ -208,6 +208,7 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+  
   MD_PhotoLibrary_CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionViewCellIdentifier forIndexPath:indexPath];
   PHAsset *asset = self.assetsFetchResults[indexPath.item];
   

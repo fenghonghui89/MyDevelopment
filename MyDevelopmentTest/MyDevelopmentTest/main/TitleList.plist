@@ -4,6 +4,14 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>FreeTest</string>
+		<key>className</key>
+		<string>MD_FreeTest_VC</string>
+		<key>sub</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>AVFoundation</string>
 		<key>className</key>
 		<string></string>
@@ -91,6 +99,14 @@
 		<string></string>
 		<key>sub</key>
 		<array>
+			<dict>
+				<key>desc</key>
+				<string>UICollectionView</string>
+				<key>className</key>
+				<string>MD_CollectionView_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
 			<dict>
 				<key>desc</key>
 				<string>Animation</string>
