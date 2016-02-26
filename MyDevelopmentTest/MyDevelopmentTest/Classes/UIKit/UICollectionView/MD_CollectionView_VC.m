@@ -8,6 +8,7 @@
 
 #import "MD_CollectionView_VC.h"
 #import "MD_PhotoLibrary_CollectionViewCell.h"
+#import "MD_CollectionView_ReuseView.h"
 @interface MD_CollectionView_VC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @end
@@ -27,18 +28,22 @@
 -(void)customInitUI{
   
   UICollectionViewFlowLayout *cvl = [[UICollectionViewFlowLayout alloc] init];
-//  cvl.minimumInteritemSpacing = 1;
-//  cvl.minimumLineSpacing = 1;
+  cvl.minimumInteritemSpacing = 1;
+  cvl.minimumLineSpacing = 1;
 //  cvl.headerReferenceSize = CGSizeMake(10, 10);
 //  cvl.footerReferenceSize = CGSizeMake(10, 10);
-  cvl.sectionFootersPinToVisibleBounds = YES;
-  cvl.sectionHeadersPinToVisibleBounds = YES;
+//  cvl.sectionFootersPinToVisibleBounds = YES;
+//  cvl.sectionHeadersPinToVisibleBounds = YES;
 //  cvl.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
 //  cvl.scrollDirection = UICollectionViewScrollDirectionVertical;
   
   UICollectionView *cv = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:cvl];
   [cv setBackgroundColor:[UIColor whiteColor]];
   [cv registerNib:[UINib nibWithNibName:@"MD_PhotoLibrary_CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+//  [cv registerClass:[MD_CollectionView_ReuseView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
+  [cv registerNib:[UINib nibWithNibName:@"MD_CollectionView_ReuseView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader"];
+  [cv registerNib:[UINib nibWithNibName:@"MD_CollectionView_ReuseView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SectionFooter"];
+//  [cv registerClass:[MD_CollectionView_ReuseView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SectionFooter"];
   cv.delegate = self;
   cv.dataSource = self;
   [self.view addSubview:cv];
@@ -54,6 +59,23 @@
   return 31;
 }
 
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+  
+  UICollectionReusableView *supplementaryView;
+  if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+    supplementaryView = [collectionView dequeueReusableCellWithReuseIdentifier:@"SectionHeader" forIndexPath:indexPath];
+////    [supplementaryView setFrameX:0 y:0 w:screenW h:50];
+//    [supplementaryView setBackgroundColor:[UIColor redColor]];
+  }
+  if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+    supplementaryView = [collectionView dequeueReusableCellWithReuseIdentifier:@"SectionFooter" forIndexPath:indexPath];
+//    [supplementaryView setFrameX:0 y:0 w:screenW h:50];
+//    [supplementaryView setBackgroundColor:[UIColor greenColor]];
+  }
+  
+  return supplementaryView;
+}
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
   
   MD_PhotoLibrary_CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
@@ -66,7 +88,7 @@
   CGSize size = CGSizeMake((screenW-3)/4, (screenW-3)/4);
   return size;
 }
-//
+
 //- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
 //  return 1;
 //}

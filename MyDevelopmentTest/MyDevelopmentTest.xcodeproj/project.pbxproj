@@ -294,6 +294,8 @@
 		14EACA211C80021C00F3FE2C /* MD_FreeTest_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */; };
 		14EACA271C8038DF00F3FE2C /* MD_CollectionView_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA251C8038DF00F3FE2C /* MD_CollectionView_VC.m */; };
 		14EACA281C8038DF00F3FE2C /* MD_CollectionView_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA261C8038DF00F3FE2C /* MD_CollectionView_VC.xib */; };
+		14EACA311C80577A00F3FE2C /* MD_CollectionView_ReuseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA301C80577A00F3FE2C /* MD_CollectionView_ReuseView.m */; };
+		14EACA331C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA321C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib */; };
 		14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */; };
 		14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */; };
 		14F073911B95B9E80029A653 /* MDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073901B95B9E80029A653 /* MDCustomView.m */; };
@@ -737,6 +739,9 @@
 		14EACA2C1C803A9400F3FE2C /* UICollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		14EACA2D1C803A9400F3FE2C /* UICollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLayout.h; sourceTree = "<group>"; };
 		14EACA2E1C803A9400F3FE2C /* UICollectionViewTransitionLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionViewTransitionLayout.h; sourceTree = "<group>"; };
+		14EACA2F1C80577A00F3FE2C /* MD_CollectionView_ReuseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CollectionView_ReuseView.h; sourceTree = "<group>"; };
+		14EACA301C80577A00F3FE2C /* MD_CollectionView_ReuseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CollectionView_ReuseView.m; sourceTree = "<group>"; };
+		14EACA321C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_CollectionView_ReuseView.xib; sourceTree = "<group>"; };
 		14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_CustomView.h; sourceTree = "<group>"; };
 		14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGContext_CustomView.m; sourceTree = "<group>"; };
 		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
@@ -1937,6 +1942,9 @@
 				14EACA251C8038DF00F3FE2C /* MD_CollectionView_VC.m */,
 				14EACA261C8038DF00F3FE2C /* MD_CollectionView_VC.xib */,
 				14EACA291C803A9400F3FE2C /* UICollectionView.h */,
+				14EACA2F1C80577A00F3FE2C /* MD_CollectionView_ReuseView.h */,
+				14EACA301C80577A00F3FE2C /* MD_CollectionView_ReuseView.m */,
+				14EACA321C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib */,
 				14EACA2A1C803A9400F3FE2C /* UICollectionViewCell.h */,
 				14EACA2B1C803A9400F3FE2C /* UICollectionViewController.h */,
 				14EACA2C1C803A9400F3FE2C /* UICollectionViewFlowLayout.h */,
@@ -2117,6 +2125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14EACA331C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib in Resources */,
 				14DF14C71C4F83E7005C10AA /* Icon-60@3x.png in Resources */,
 				146D82E31AA709F600F0C7FD /* Argentina.png in Resources */,
 				141B43351AA401BC008F2711 /* 保罗克利-肖像.png in Resources */,
@@ -2306,6 +2315,7 @@
 				148CD7231AAEC54700FAED9D /* MDNSNumberViewController.m in Sources */,
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */,
+				14EACA311C80577A00F3FE2C /* MD_CollectionView_ReuseView.m in Sources */,
 				14DF14A61C4F71C3005C10AA /* UIImage+Resize.m in Sources */,
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
