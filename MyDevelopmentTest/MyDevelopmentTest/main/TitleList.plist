@@ -4,6 +4,65 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>Network</string>
+		<key>className</key>
+		<string></string>
+		<key>sub</key>
+		<array>
+			<dict>
+				<key>desc</key>
+				<string>UIWebView</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>useragent</string>
+						<key>className</key>
+						<string>MDWebviewUserAgentViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>构建Hybrid应用</string>
+						<key>className</key>
+						<string>MDHybridViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>三种请求方式、常用方法及协议</string>
+						<key>className</key>
+						<string>MDWVViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>NSURLCache</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>离线缓存</string>
+						<key>className</key>
+						<string>MD_UIWebViewCache_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>FreeTest</string>
 		<key>className</key>
 		<string>MD_FreeTest_VC</string>
@@ -226,47 +285,6 @@
 						<string>常用</string>
 						<key>className</key>
 						<string>MDSearchBarViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>desc</key>
-				<string>UIWebView&amp;NSURLCache</string>
-				<key>className</key>
-				<string></string>
-				<key>sub</key>
-				<array>
-					<dict>
-						<key>desc</key>
-						<string>离线缓存</string>
-						<key>className</key>
-						<string>MD_UIWebViewCache_VC</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-					<dict>
-						<key>desc</key>
-						<string>useragent</string>
-						<key>className</key>
-						<string>MDWebviewUserAgentViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-					<dict>
-						<key>desc</key>
-						<string>构建Hybrid应用</string>
-						<key>className</key>
-						<string>MDHybridViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-					<dict>
-						<key>desc</key>
-						<string>三种请求方式、常用方法及协议</string>
-						<key>className</key>
-						<string>MDWVViewController</string>
 						<key>sub</key>
 						<array/>
 					</dict>

@@ -35,6 +35,16 @@
 		1421A9721BD60C7200C561A7 /* IMG_0309.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1421A9711BD60C7200C561A7 /* IMG_0309.jpg */; };
 		1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A9791BD62C2100C561A7 /* ZTCameraView.m */; };
 		1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */; };
+		1428AB771C84502C003CC10F /* MD_UIWebViewCache_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428AB621C84502C003CC10F /* MD_UIWebViewCache_VC.m */; };
+		1428AB781C84502C003CC10F /* MD_UIWebViewCache_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1428AB631C84502C003CC10F /* MD_UIWebViewCache_VC.xib */; };
+		1428AB791C84502C003CC10F /* URLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428AB651C84502C003CC10F /* URLCache.m */; };
+		1428AB7A1C84502C003CC10F /* MDWebviewUserAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428AB6A1C84502C003CC10F /* MDWebviewUserAgentViewController.m */; };
+		1428AB7B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1428AB6B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib */; };
+		1428AB7C1C84502C003CC10F /* index1.html in Resources */ = {isa = PBXBuildFile; fileRef = 1428AB6D1C84502C003CC10F /* index1.html */; };
+		1428AB7D1C84502C003CC10F /* MDWVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428AB6F1C84502C003CC10F /* MDWVViewController.m */; };
+		1428AB7E1C84502C003CC10F /* MDWVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1428AB701C84502C003CC10F /* MDWVViewController.xib */; };
+		1428AB7F1C84502C003CC10F /* MDHybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428AB731C84502C003CC10F /* MDHybridViewController.m */; };
+		1428AB801C84502C003CC10F /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1428AB751C84502C003CC10F /* index.html */; };
 		14381BEB1BA1B75900C06EB7 /* delete_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BEA1BA1B75900C06EB7 /* delete_btn@2x.png */; };
 		14381BEF1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14381BEE1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m */; };
 		14381BF31BA1BDCC00C06EB7 /* playing_volumn_slide_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14381BF01BA1BDCC00C06EB7 /* playing_volumn_slide_bg@2x.png */; };
@@ -361,6 +371,24 @@
 		1426A18C1C44DE3300FB191D /* NSByteOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSByteOrder.h; sourceTree = "<group>"; };
 		1426A18D1C44DE3300FB191D /* NSCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCalendar.h; sourceTree = "<group>"; };
 		1426A18E1C44DE3300FB191D /* NSCharacterSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet.h; sourceTree = "<group>"; };
+		1428AB611C84502C003CC10F /* MD_UIWebViewCache_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIWebViewCache_VC.h; sourceTree = "<group>"; };
+		1428AB621C84502C003CC10F /* MD_UIWebViewCache_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIWebViewCache_VC.m; sourceTree = "<group>"; };
+		1428AB631C84502C003CC10F /* MD_UIWebViewCache_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_UIWebViewCache_VC.xib; sourceTree = "<group>"; };
+		1428AB641C84502C003CC10F /* URLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLCache.h; sourceTree = "<group>"; };
+		1428AB651C84502C003CC10F /* URLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLCache.m; sourceTree = "<group>"; };
+		1428AB661C84502C003CC10F /* NSURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLCache.h; sourceTree = "<group>"; };
+		1428AB691C84502C003CC10F /* MDWebviewUserAgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWebviewUserAgentViewController.h; sourceTree = "<group>"; };
+		1428AB6A1C84502C003CC10F /* MDWebviewUserAgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWebviewUserAgentViewController.m; sourceTree = "<group>"; };
+		1428AB6B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDWebviewUserAgentViewController.xib; sourceTree = "<group>"; };
+		1428AB6D1C84502C003CC10F /* index1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index1.html; sourceTree = "<group>"; };
+		1428AB6E1C84502C003CC10F /* MDWVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWVViewController.h; sourceTree = "<group>"; };
+		1428AB6F1C84502C003CC10F /* MDWVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWVViewController.m; sourceTree = "<group>"; };
+		1428AB701C84502C003CC10F /* MDWVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDWVViewController.xib; sourceTree = "<group>"; };
+		1428AB721C84502C003CC10F /* MDHybridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHybridViewController.h; sourceTree = "<group>"; };
+		1428AB731C84502C003CC10F /* MDHybridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHybridViewController.m; sourceTree = "<group>"; };
+		1428AB751C84502C003CC10F /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		1428AB761C84502C003CC10F /* UIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebView.h; sourceTree = "<group>"; };
+		1428AB811C84558C003CC10F /* NSURLRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLRequest.h; sourceTree = "<group>"; };
 		143499F51C464B4800DCD80E /* CGGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGGeometry.h; sourceTree = "<group>"; };
 		143499F61C464BEB00DCD80E /* CGImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGImage.h; sourceTree = "<group>"; };
 		14381BEA1BA1B75900C06EB7 /* delete_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_btn@2x.png"; sourceTree = "<group>"; };
@@ -963,6 +991,87 @@
 			path = AVFoundation;
 			sourceTree = "<group>";
 		};
+		1428AB5E1C84502C003CC10F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB811C84558C003CC10F /* NSURLRequest.h */,
+				1428AB661C84502C003CC10F /* NSURLCache.h */,
+				1428AB761C84502C003CC10F /* UIWebView.h */,
+				1428AB5F1C84502C003CC10F /* NSURLCache */,
+				1428AB671C84502C003CC10F /* UIWebView */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1428AB5F1C84502C003CC10F /* NSURLCache */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB601C84502C003CC10F /* 离线缓存 */,
+			);
+			path = NSURLCache;
+			sourceTree = "<group>";
+		};
+		1428AB601C84502C003CC10F /* 离线缓存 */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB611C84502C003CC10F /* MD_UIWebViewCache_VC.h */,
+				1428AB621C84502C003CC10F /* MD_UIWebViewCache_VC.m */,
+				1428AB631C84502C003CC10F /* MD_UIWebViewCache_VC.xib */,
+				1428AB641C84502C003CC10F /* URLCache.h */,
+				1428AB651C84502C003CC10F /* URLCache.m */,
+			);
+			path = "离线缓存";
+			sourceTree = "<group>";
+		};
+		1428AB671C84502C003CC10F /* UIWebView */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB681C84502C003CC10F /* UserAgent */,
+				1428AB6C1C84502C003CC10F /* 三种请求方式、常用方法及协议 */,
+				1428AB711C84502C003CC10F /* 构建Hybrid应用 */,
+			);
+			path = UIWebView;
+			sourceTree = "<group>";
+		};
+		1428AB681C84502C003CC10F /* UserAgent */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB691C84502C003CC10F /* MDWebviewUserAgentViewController.h */,
+				1428AB6A1C84502C003CC10F /* MDWebviewUserAgentViewController.m */,
+				1428AB6B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib */,
+			);
+			path = UserAgent;
+			sourceTree = "<group>";
+		};
+		1428AB6C1C84502C003CC10F /* 三种请求方式、常用方法及协议 */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB6D1C84502C003CC10F /* index1.html */,
+				1428AB6E1C84502C003CC10F /* MDWVViewController.h */,
+				1428AB6F1C84502C003CC10F /* MDWVViewController.m */,
+				1428AB701C84502C003CC10F /* MDWVViewController.xib */,
+			);
+			path = "三种请求方式、常用方法及协议";
+			sourceTree = "<group>";
+		};
+		1428AB711C84502C003CC10F /* 构建Hybrid应用 */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB721C84502C003CC10F /* MDHybridViewController.h */,
+				1428AB731C84502C003CC10F /* MDHybridViewController.m */,
+				1428AB741C84502C003CC10F /* www */,
+			);
+			path = "构建Hybrid应用";
+			sourceTree = "<group>";
+		};
+		1428AB741C84502C003CC10F /* www */ = {
+			isa = PBXGroup;
+			children = (
+				1428AB751C84502C003CC10F /* index.html */,
+			);
+			path = www;
+			sourceTree = "<group>";
+		};
 		143499F41C464A1300DCD80E /* CGGeometry */ = {
 			isa = PBXGroup;
 			children = (
@@ -1114,6 +1223,7 @@
 				14F073931B95BC4B0029A653 /* CoreGraphics */,
 				1463B2021AA162C2006AE8D2 /* Foundation */,
 				1463B2071AA162C2006AE8D2 /* UIKit */,
+				1428AB5E1C84502C003CC10F /* Network */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2079,6 +2189,7 @@
 				14565E811BA94CD1009F7B2D /* playing6@2x.png in Resources */,
 				145D87241BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,
+				1428AB7C1C84502C003CC10F /* index1.html in Resources */,
 				14565E521BA94CD1009F7B2D /* playing19@2x.png in Resources */,
 				14565E531BA94CD1009F7B2D /* playing1@2x.png in Resources */,
 				14565E7C1BA94CD1009F7B2D /* playing57@2x.png in Resources */,
@@ -2156,7 +2267,9 @@
 				14565E731BA94CD1009F7B2D /* playing49@2x.png in Resources */,
 				146D83131AA709F600F0C7FD /* Slovenia.png in Resources */,
 				14565E541BA94CD1009F7B2D /* playing20@2x.png in Resources */,
+				1428AB7E1C84502C003CC10F /* MDWVViewController.xib in Resources */,
 				14EACA281C8038DF00F3FE2C /* MD_CollectionView_VC.xib in Resources */,
+				1428AB7B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib in Resources */,
 				1463B2A01AA1CAE4006AE8D2 /* heng.jpg in Resources */,
 				141B43371AA401BC008F2711 /* 罗丹-思想者.png in Resources */,
 				14565E5B1BA94CD1009F7B2D /* playing27@2x.png in Resources */,
@@ -2186,12 +2299,14 @@
 				14565E7E1BA94CD1009F7B2D /* playing59@2x.png in Resources */,
 				14565E4F1BA94CD1009F7B2D /* playing16@2x.png in Resources */,
 				14DB41091AEA752D00DA1682 /* 记录.rtf in Resources */,
+				1428AB801C84502C003CC10F /* index.html in Resources */,
 				14565E7F1BA94CD1009F7B2D /* playing5@2x.png in Resources */,
 				14565E511BA94CD1009F7B2D /* playing18@2x.png in Resources */,
 				14D6700F1C475D8100F911A4 /* MDModalViewController.xib in Resources */,
 				14565E6E1BA94CD1009F7B2D /* playing44@2x.png in Resources */,
 				14565E501BA94CD1009F7B2D /* playing17@2x.png in Resources */,
 				14565E721BA94CD1009F7B2D /* playing48@2x.png in Resources */,
+				1428AB781C84502C003CC10F /* MD_UIWebViewCache_VC.xib in Resources */,
 				1463B2B61AA1CD5D006AE8D2 /* shu.jpg in Resources */,
 				146D82F91AA709F600F0C7FD /* Greece.png in Resources */,
 				14565E8F1BA95FF9009F7B2D /* BurstAircraftAircraftBig.png in Resources */,
@@ -2275,12 +2390,15 @@
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
+				1428AB791C84502C003CC10F /* URLCache.m in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
 				14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.m in Sources */,
 				149A1E631B26E5CB00986FA6 /* main.m in Sources */,
 				145D870C1BA83BE000447D35 /* MD_Touch_CustomView1.m in Sources */,
 				141886DF1C50974F00914CD7 /* MD_FileHandle_VC.m in Sources */,
+				1428AB7D1C84502C003CC10F /* MDWVViewController.m in Sources */,
 				148CD7491AAECFDD00FAED9D /* TRStudent6.m in Sources */,
+				1428AB771C84502C003CC10F /* MD_UIWebViewCache_VC.m in Sources */,
 				144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */,
 				14DF14B31C4F76E5005C10AA /* MD_AVQRCode_VC.m in Sources */,
 				14E604D71C5B0538000E0DED /* MDKVO_VC.m in Sources */,
@@ -2288,10 +2406,12 @@
 				14DF14B01C4F7684005C10AA /* MDAVCameraPreviewView.m in Sources */,
 				141B433D1AA40202008F2711 /* MDPageViewController.m in Sources */,
 				148CD72C1AAEC62700FAED9D /* MDNSValueViewController.m in Sources */,
+				1428AB7F1C84502C003CC10F /* MDHybridViewController.m in Sources */,
 				14DF14AE1C4F7684005C10AA /* MD_AVCamera_VC.m in Sources */,
 				146D82761AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */,
 				148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */,
 				148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */,
+				1428AB7A1C84502C003CC10F /* MDWebviewUserAgentViewController.m in Sources */,
 				14E604DC1C5B10C1000E0DED /* MDStudent.m in Sources */,
 				14E604E21C5B228E000E0DED /* MDKVO_View.m in Sources */,
 				14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */,
