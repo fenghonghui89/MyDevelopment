@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MD_CollectionView_ReuseView : UIView
+@interface MD_CollectionView_ReuseView : UICollectionReusableView
 
 @end
