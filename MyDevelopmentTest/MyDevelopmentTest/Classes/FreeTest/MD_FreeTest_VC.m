@@ -25,7 +25,10 @@
 
 #pragma mark - < method > -
 -(void)customInitUI{
-
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+  NSString *str1 = [paths objectAtIndex:0];
+  NSString *path = [str1 stringByAppendingString:@"responsesInfo.plist"];
+  NSLog(@"pat");
 }
 
 #pragma mark - < callback > -

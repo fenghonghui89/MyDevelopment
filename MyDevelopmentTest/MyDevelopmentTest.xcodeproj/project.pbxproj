@@ -164,11 +164,6 @@
 		146D82821AA6DDBE00F0C7FD /* MDTBVC2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82801AA6DDBE00F0C7FD /* MDTBVC2ViewController.m */; };
 		146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82871AA6E69D00F0C7FD /* MDTBVC3ViewController.m */; };
 		146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D828F1AA6F3EE00F0C7FD /* MDAVASViewController.m */; };
-		146D82971AA6FA2C00F0C7FD /* MDWVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82951AA6FA2C00F0C7FD /* MDWVViewController.m */; };
-		146D82991AA6FA2C00F0C7FD /* MDWVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146D82961AA6FA2C00F0C7FD /* MDWVViewController.xib */; };
-		146D829C1AA6FC6600F0C7FD /* index1.html in Resources */ = {isa = PBXBuildFile; fileRef = 146D829B1AA6FC6600F0C7FD /* index1.html */; };
-		146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82A01AA6FFF300F0C7FD /* MDHybridViewController.m */; };
-		146D82A51AA7016200F0C7FD /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 146D82A41AA7016200F0C7FD /* index.html */; };
 		146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */; };
 		146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82B31AA7078F00F0C7FD /* MDPredicateViewController.m */; };
 		146D82B71AA7080000F0C7FD /* Bridge.plist in Resources */ = {isa = PBXBuildFile; fileRef = 146D82B61AA7080000F0C7FD /* Bridge.plist */; };
@@ -244,8 +239,6 @@
 		148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7671AAED7B500FAED9D /* TRStudent7.m */; };
 		148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */; };
 		148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7731AAEDACD00FAED9D /* TRStudent8.m */; };
-		14923C591C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */; };
-		14923C5A1C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */; };
 		149A1E601B26E5CB00986FA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5A1B26E5CB00986FA6 /* LaunchScreen.xib */; };
 		149A1E621B26E5CB00986FA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5D1B26E5CB00986FA6 /* Info.plist */; };
 		149A1E631B26E5CB00986FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A1E5E1B26E5CB00986FA6 /* main.m */; };
@@ -538,13 +531,6 @@
 		146D82871AA6E69D00F0C7FD /* MDTBVC3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTBVC3ViewController.m; sourceTree = "<group>"; };
 		146D828E1AA6F3EE00F0C7FD /* MDAVASViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAVASViewController.h; sourceTree = "<group>"; };
 		146D828F1AA6F3EE00F0C7FD /* MDAVASViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAVASViewController.m; sourceTree = "<group>"; };
-		146D82941AA6FA2C00F0C7FD /* MDWVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWVViewController.h; sourceTree = "<group>"; };
-		146D82951AA6FA2C00F0C7FD /* MDWVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWVViewController.m; sourceTree = "<group>"; };
-		146D82961AA6FA2C00F0C7FD /* MDWVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDWVViewController.xib; sourceTree = "<group>"; };
-		146D829B1AA6FC6600F0C7FD /* index1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index1.html; sourceTree = "<group>"; };
-		146D829F1AA6FFF300F0C7FD /* MDHybridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDHybridViewController.h; sourceTree = "<group>"; };
-		146D82A01AA6FFF300F0C7FD /* MDHybridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDHybridViewController.m; sourceTree = "<group>"; };
-		146D82A41AA7016200F0C7FD /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		146D82AD1AA7036700F0C7FD /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		146D82B21AA7078F00F0C7FD /* MDPredicateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPredicateViewController.h; sourceTree = "<group>"; };
@@ -660,10 +646,6 @@
 		148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDicNormalViewController.m; sourceTree = "<group>"; };
 		148CD7721AAEDACD00FAED9D /* TRStudent8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent8.h; sourceTree = "<group>"; };
 		148CD7731AAEDACD00FAED9D /* TRStudent8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent8.m; sourceTree = "<group>"; };
-		14923C561C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWebviewUserAgentViewController.h; sourceTree = "<group>"; };
-		14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWebviewUserAgentViewController.m; sourceTree = "<group>"; };
-		14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDWebviewUserAgentViewController.xib; sourceTree = "<group>"; };
-		14923C5F1C2B98CD009CA3A6 /* MDTestWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestWebView.m; sourceTree = "<group>"; };
 		149A1E5B1B26E5CB00986FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		149A1E5D1B26E5CB00986FA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149A1E5E1B26E5CB00986FA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1197,7 +1179,6 @@
 				14E331B41B2716EF00B356C7 /* UIImagePickerController */,
 				14720F611B156E3C00773E5C /* UIView */,
 				146D82BB1AA709F600F0C7FD /* UISearchBar */,
-				146D82921AA6F84600F0C7FD /* UIWebView */,
 				146D828D1AA6F3D100F0C7FD /* UIAlertView,UIActionSheet */,
 				146D82721AA6DC3B00F0C7FD /* UITabBarController */,
 				141B435A1AA4606C008F2711 /* UINavigationController */,
@@ -1383,46 +1364,6 @@
 				146D828F1AA6F3EE00F0C7FD /* MDAVASViewController.m */,
 			);
 			path = "UIAlertView,UIActionSheet";
-			sourceTree = "<group>";
-		};
-		146D82921AA6F84600F0C7FD /* UIWebView */ = {
-			isa = PBXGroup;
-			children = (
-				14923C5F1C2B98CD009CA3A6 /* MDTestWebView.m */,
-				14923C551C2B8E46009CA3A6 /* UserAgent */,
-				146D829E1AA6FF2300F0C7FD /* 构建Hybrid应用 */,
-				146D82931AA6F84600F0C7FD /* 三种请求方式、常用方法及协议 */,
-			);
-			path = UIWebView;
-			sourceTree = "<group>";
-		};
-		146D82931AA6F84600F0C7FD /* 三种请求方式、常用方法及协议 */ = {
-			isa = PBXGroup;
-			children = (
-				146D829B1AA6FC6600F0C7FD /* index1.html */,
-				146D82941AA6FA2C00F0C7FD /* MDWVViewController.h */,
-				146D82951AA6FA2C00F0C7FD /* MDWVViewController.m */,
-				146D82961AA6FA2C00F0C7FD /* MDWVViewController.xib */,
-			);
-			path = "三种请求方式、常用方法及协议";
-			sourceTree = "<group>";
-		};
-		146D829E1AA6FF2300F0C7FD /* 构建Hybrid应用 */ = {
-			isa = PBXGroup;
-			children = (
-				146D82A31AA7016200F0C7FD /* www */,
-				146D829F1AA6FFF300F0C7FD /* MDHybridViewController.h */,
-				146D82A01AA6FFF300F0C7FD /* MDHybridViewController.m */,
-			);
-			path = "构建Hybrid应用";
-			sourceTree = "<group>";
-		};
-		146D82A31AA7016200F0C7FD /* www */ = {
-			isa = PBXGroup;
-			children = (
-				146D82A41AA7016200F0C7FD /* index.html */,
-			);
-			path = www;
 			sourceTree = "<group>";
 		};
 		146D82AC1AA7036700F0C7FD /* Categories */ = {
@@ -1787,16 +1728,6 @@
 			path = NSSet;
 			sourceTree = "<group>";
 		};
-		14923C551C2B8E46009CA3A6 /* UserAgent */ = {
-			isa = PBXGroup;
-			children = (
-				14923C561C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.h */,
-				14923C571C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m */,
-				14923C581C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib */,
-			);
-			path = UserAgent;
-			sourceTree = "<group>";
-		};
 		149A1E591B26E5CB00986FA6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2145,7 +2076,6 @@
 				1463B27F1AA1BD4D006AE8D2 /* provinces_cities.plist in Resources */,
 				14381BEB1BA1B75900C06EB7 /* delete_btn@2x.png in Resources */,
 				146D82EF1AA709F600F0C7FD /* Denmark.png in Resources */,
-				146D829C1AA6FC6600F0C7FD /* index1.html in Resources */,
 				14565E811BA94CD1009F7B2D /* playing6@2x.png in Resources */,
 				145D87241BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,
@@ -2164,7 +2094,6 @@
 				141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */,
 				14565E701BA94CD1009F7B2D /* playing46@2x.png in Resources */,
 				1412B6781BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf in Resources */,
-				14923C5A1C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.xib in Resources */,
 				14877C811BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf in Resources */,
 				146D82FD1AA709F600F0C7FD /* Honduras.png in Resources */,
 				14565E4E1BA94CD1009F7B2D /* playing15@2x.png in Resources */,
@@ -2175,7 +2104,6 @@
 				146D83011AA709F600F0C7FD /* Japan.png in Resources */,
 				1463B2A41AA1CAE4006AE8D2 /* small.jpg in Resources */,
 				14DF14CC1C4F83E7005C10AA /* Icon-Small@3x.png in Resources */,
-				146D82A51AA7016200F0C7FD /* index.html in Resources */,
 				14381BF31BA1BDCC00C06EB7 /* playing_volumn_slide_bg@2x.png in Resources */,
 				14565E7B1BA94CD1009F7B2D /* playing56@2x.png in Resources */,
 				14DF14C61C4F83E7005C10AA /* Icon-60@2x.png in Resources */,
@@ -2293,7 +2221,6 @@
 				141B432B1AA3FC12008F2711 /* Zebras.jpg in Resources */,
 				146D82FB1AA709F600F0C7FD /* Holland.png in Resources */,
 				146D82FF1AA709F600F0C7FD /* Italy.png in Resources */,
-				146D82991AA6FA2C00F0C7FD /* MDWVViewController.xib in Resources */,
 				14565E491BA94CD1009F7B2D /* playing10@2x.png in Resources */,
 				14565E801BA94CD1009F7B2D /* playing60@2x.png in Resources */,
 				1463B26E1AA1B593006AE8D2 /* FirstViewController.xib in Resources */,
@@ -2332,7 +2259,6 @@
 				146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */,
 				1463B2761AA1B593006AE8D2 /* ThirdViewController.m in Sources */,
 				1463B2701AA1B593006AE8D2 /* MDMainViewController.m in Sources */,
-				14923C591C2B8E92009CA3A6 /* MDWebviewUserAgentViewController.m in Sources */,
 				14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */,
 				144F23F11C5F38E2004ED3BC /* NSIndexSet+Convenience.m in Sources */,
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
@@ -2346,7 +2272,6 @@
 				141886DC1C5096D600914CD7 /* MDTestNSFileManager.m in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				148829931C55C5A00034ACFC /* TRStudent5.m in Sources */,
-				146D82A11AA6FFF300F0C7FD /* MDHybridViewController.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
@@ -2375,7 +2300,6 @@
 				148CD71A1AAEC21600FAED9D /* TRCat2.m in Sources */,
 				14E604DF1C5B1107000E0DED /* MDBag.m in Sources */,
 				14565E8A1BA95590009F7B2D /* MD_NSTimer_VC2.m in Sources */,
-				146D82971AA6FA2C00F0C7FD /* MDWVViewController.m in Sources */,
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
 				148CD75E1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,

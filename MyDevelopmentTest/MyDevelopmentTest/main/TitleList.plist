@@ -233,11 +233,19 @@
 			</dict>
 			<dict>
 				<key>desc</key>
-				<string>UIWebView</string>
+				<string>UIWebView&amp;NSURLCache</string>
 				<key>className</key>
 				<string></string>
 				<key>sub</key>
 				<array>
+					<dict>
+						<key>desc</key>
+						<string>离线缓存</string>
+						<key>className</key>
+						<string>MD_UIWebViewCache_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
 					<dict>
 						<key>desc</key>
 						<string>useragent</string>
