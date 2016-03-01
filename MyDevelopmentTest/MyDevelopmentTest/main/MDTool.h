@@ -128,14 +128,7 @@ void STLogResponderChain(UIResponder *responder);
  */
 - (NSString*) machineName;
 
-/**
- *  md5字符串
- *
- *  @param str 字符串
- *
- *  @return MD5字符串
- */
-+(NSString *)md5:(NSString *)str;
+
 
 /**
  *  输出设备相关信息

@@ -48,7 +48,6 @@
   
   //从请求中获取缓存输出,判断是否有缓存
   NSCachedURLResponse *response =[self.urlCache cachedResponseForRequest:self.request];
-
   if (response != nil){
     NSLog(@"如果有缓存输出，从缓存中获取数据");
     [self.request setCachePolicy:NSURLRequestReturnCacheDataDontLoad];
@@ -59,7 +58,7 @@
   self.connection = newConnection;
 }
 #pragma mark - < callback > -
-
+#pragma mark NSURLConnectionDataDelegate
 -(NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response{
   NSLog(@"即将发送请求");
   return request;

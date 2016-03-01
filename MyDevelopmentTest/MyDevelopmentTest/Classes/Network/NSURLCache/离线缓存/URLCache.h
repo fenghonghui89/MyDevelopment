@@ -9,13 +9,10 @@
 #import <Foundation/Foundation.h>
 
 
-@interface URLCache : NSURLCache {
-  NSMutableDictionary *cachedResponses;
-  NSMutableDictionary *responsesInfo;
-}
+@interface URLCache : NSURLCache
 
-@property (nonatomic, retain) NSMutableDictionary *cachedResponses;
-@property (nonatomic, retain) NSMutableDictionary *responsesInfo;
+@property (nonatomic, retain) NSMutableDictionary *cachedResponses;//用于保存NSCachedURLResponse
+@property (nonatomic, retain) NSMutableDictionary *responsesInfo;//用于保存响应信息的responsesInfo（包括MIME类型和文件名）
 
 - (void)saveInfo;
 
