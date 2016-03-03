@@ -39,25 +39,19 @@
 
 #pragma mark customInit
 -(void)customInitUI{
-  // Prepare the options to pass when fetching the live photo.
+
   PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
   options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
   options.networkAccessAllowed = YES;
-  options.progressHandler = ^(double progress, NSError *error, BOOL *stop, NSDictionary *info) {
-
-  };
   
   [[PHImageManager defaultManager] requestImageForAsset:self.asset targetSize:[self targetSize] contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage *result, NSDictionary *info) {
     
-    // Check if the request was successful.
     if (!result) {
       return;
+    }else{
+      self.imageView.image = result;
     }
-    
-    // Show the UIImageView and use it to display the requested image.
-    self.imageView.image = result;
   }];
-
 }
 
 -(CGSize)targetSize{
