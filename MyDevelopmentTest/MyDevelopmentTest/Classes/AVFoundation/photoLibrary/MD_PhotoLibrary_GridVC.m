@@ -10,14 +10,14 @@
 #import "MD_PhotoLibrary_CollectionViewCell.h"
 #import "NSIndexSet+Convenience.h"
 #import "UICollectionView+Convenience.h"
-
-static CGSize AssetGridThumbnailSize;
+#import "MD_PhotoLibrary_PreviewVC.h"
+static CGSize AssetGridThumbnailSize;//预览图尺寸 即cell尺寸*缩放率
 static NSString * const collectionViewCellIdentifier = @"cell";
 
 @interface MD_PhotoLibrary_GridVC ()<UICollectionViewDataSource,UICollectionViewDelegate,PHPhotoLibraryChangeObserver>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionview;
 @property (nonatomic, strong) PHCachingImageManager *imageManager;
-@property CGRect previousPreheatRect;
+@property CGRect previousPreheatRect;//上一次的预加载区域
 @end
 
 @implementation MD_PhotoLibrary_GridVC
@@ -48,13 +48,13 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 }
 
 -(void)customInitUI{
-  //定义cell尺寸
+  //定义 cell尺寸和预览图尺寸
   CGFloat cellunit = (MIN(screenH, screenW) - 3) / 4;
   CGFloat scale = [UIScreen mainScreen].scale;
   CGSize cellSize = CGSizeMake(cellunit, cellunit);
   AssetGridThumbnailSize = CGSizeMake(cellSize.width * scale, cellSize.height * scale);
   
-  //如果显示的是某个相册的内容且支持编辑 添加按钮
+  //如果显示的是某个相册的内容（assetCollection属性有值）且支持编辑 添加按钮
   if (!self.assetCollection || [self.assetCollection canPerformEditOperation:PHCollectionEditOperationAddContent]) {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(handleAddButtonItem:)];
   } else {
@@ -81,22 +81,23 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 }
 
 - (void)updateCachedAssets {
-  //判断视图是否已经显示
+  //判断vc的视图是否已经显示，没显示则退出
   BOOL isViewVisible = [self isViewLoaded] && [[self view] window] != nil;
   if (!isViewVisible) { return; }
   
-  //大小为 向上下各延伸原来大小的一半
-  CGRect preheatRect = self.collectionview.bounds;//(0,0,320,568-64=502)
+  //预加载区域大小为 向上下各延伸屏幕大小的一半
+  CGRect preheatRect = self.collectionview.bounds;//(0,0,320,568-64=504) 注意滚动的时候bound.size会变（基于scrollview特性）
   preheatRect = CGRectInset(preheatRect, 0.0f, -0.5f * CGRectGetHeight(preheatRect));//(0,-252,320,1008)   原点y:-252   终点y:-252+1008=756
   
   /*
    Check if the collection view is showing an area that is significantly
    different to the last preheated area.
+   依据“当前预加载区域”与“上次预加载区域”的“中心点偏移量”是否大于cv高度的三分之一
+   判断cv是否在显示一个区域，这个区域是明显不同于上一次的预加载区域
    */
-  CGFloat delta = ABS(CGRectGetMidY(preheatRect) - CGRectGetMidY(self.previousPreheatRect));
+  CGFloat delta = ABS(CGRectGetMidY(preheatRect) - CGRectGetMidY(self.previousPreheatRect));//绝对值(中心点y252-0)
   if (delta > CGRectGetHeight(self.collectionview.bounds) / 3.0f) {
-    
-    // Compute the assets to start caching and to stop caching.
+    // Compute the assets to start caching and to stop caching.计算开始缓存和结束缓存的集合
     NSMutableArray *addedIndexPaths = [NSMutableArray array];
     NSMutableArray *removedIndexPaths = [NSMutableArray array];
     
@@ -113,7 +114,7 @@ static NSString * const collectionViewCellIdentifier = @"cell";
     NSArray *assetsToStartCaching = [self assetsAtIndexPaths:addedIndexPaths];
     NSArray *assetsToStopCaching = [self assetsAtIndexPaths:removedIndexPaths];
     
-    // Update the assets the PHCachingImageManager is caching.
+    // Update the assets the PHCachingImageManager is caching.更新缓存
     [self.imageManager startCachingImagesForAssets:assetsToStartCaching
                                         targetSize:AssetGridThumbnailSize
                                        contentMode:PHImageContentModeAspectFill
@@ -129,35 +130,37 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 }
 
 - (void)computeDifferenceBetweenRect:(CGRect)oldRect andRect:(CGRect)newRect removedHandler:(void (^)(CGRect removedRect))removedHandler addedHandler:(void (^)(CGRect addedRect))addedHandler {
-  if (CGRectIntersectsRect(newRect, oldRect)) {
+  if (CGRectIntersectsRect(newRect, oldRect)) {//如果两个矩形有交叉
     //minY 一般为坐标原点y;maxY 一般为高度
-    CGFloat oldMinY = CGRectGetMinY(oldRect);//0
-    CGFloat oldMaxY = CGRectGetMaxY(oldRect);//0
-    CGFloat newMinY = CGRectGetMinY(newRect);//-252
-    CGFloat newMaxY = CGRectGetMaxY(newRect);//756
+    CGFloat oldMinY = CGRectGetMinY(oldRect);
+    CGFloat oldMaxY = CGRectGetMaxY(oldRect);
+    CGFloat newMinY = CGRectGetMinY(newRect);
+    CGFloat newMaxY = CGRectGetMaxY(newRect);
+    NSLog(@"~~~~%f %f %f %f",oldMinY,oldMaxY,newMinY,newMaxY);
     
-    if (newMaxY > oldMaxY) {//768 > 0
-      CGRect rectToAdd = CGRectMake(newRect.origin.x, oldMaxY, newRect.size.width, (newMaxY - oldMaxY));//(0,0,320,756)
-      addedHandler(rectToAdd);
-    }
-    
-    if (oldMinY > newMinY) {//0 > -252
-      CGRect rectToAdd = CGRectMake(newRect.origin.x, newMinY, newRect.size.width, (oldMinY - newMinY));//(0,-252,320,252)
-      addedHandler(rectToAdd);
-    }
-    
-    if (newMaxY < oldMaxY) {
-      CGRect rectToRemove = CGRectMake(newRect.origin.x, newMaxY, newRect.size.width, (oldMaxY - newMaxY));//(0,756,320,-756)
+    if (newMinY > oldMinY) {//下滚
+      CGRect rectToRemove = CGRectMake(newRect.origin.x, oldMinY, newRect.size.width, (newMinY - oldMinY));//退出屏幕的区域
       removedHandler(rectToRemove);
     }
     
-    if (oldMinY < newMinY) {
-      CGRect rectToRemove = CGRectMake(newRect.origin.x, oldMinY, newRect.size.width, (newMinY - oldMinY));//(0,0,320,-252)
+    if (newMinY < oldMinY) {//初始 回滚
+      CGRect rectToAdd = CGRectMake(newRect.origin.x, newMinY, newRect.size.width, (oldMinY - newMinY));//进入屏幕的区域
+      addedHandler(rectToAdd);
+    }
+    
+    if (newMaxY > oldMaxY) {//初始 下滚
+      CGRect rectToAdd = CGRectMake(newRect.origin.x, oldMaxY, newRect.size.width, (newMaxY - oldMaxY));//进入屏幕的区域
+      addedHandler(rectToAdd);
+    }
+    
+    if (newMaxY < oldMaxY) {//回滚
+      CGRect rectToRemove = CGRectMake(newRect.origin.x, newMaxY, newRect.size.width, (oldMaxY - newMaxY));//退出屏幕的区域
       removedHandler(rectToRemove);
     }
-  } else {
-    addedHandler(newRect);//(0,-252,320,756)
-    removedHandler(oldRect);//(0,0,0,0)
+    
+  } else {//如果两个矩形没有有交叉
+    addedHandler(newRect);
+    removedHandler(oldRect);
   }
 }
 
@@ -255,7 +258,13 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+  PHAsset *asset = self.assetsFetchResults[indexPath.row];
+  PHAssetCollection *assetCollection = self.assetCollection;
   
+  MD_PhotoLibrary_PreviewVC *vc = [[MD_PhotoLibrary_PreviewVC alloc] initWithNibName:@"MD_PhotoLibrary_PreviewVC" bundle:nil];
+  vc.asset = asset;
+  vc.assetCollection = assetCollection;
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark PHPhotoLibraryChangeObserver
@@ -308,4 +317,10 @@ static NSString * const collectionViewCellIdentifier = @"cell";
   });
 }
 
+#pragma mark UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  // Update cached assets for the new visible area.
+  [self updateCachedAssets];
+}
 @end

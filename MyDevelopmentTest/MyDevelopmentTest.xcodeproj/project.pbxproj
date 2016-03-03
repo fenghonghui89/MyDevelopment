@@ -757,6 +757,12 @@
 		14EACA321C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_CollectionView_ReuseView.xib; sourceTree = "<group>"; };
 		14EB3BFA1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CGContext_CustomView.h; sourceTree = "<group>"; };
 		14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CGContext_CustomView.m; sourceTree = "<group>"; };
+		14EC6AE81C87DB1700A2CBB8 /* PHAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAsset.h; sourceTree = "<group>"; };
+		14EC6AE91C87DB1700A2CBB8 /* PHImageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHImageManager.h; sourceTree = "<group>"; };
+		14EC6AEA1C87DB1700A2CBB8 /* PHLivePhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHLivePhotoView.h; sourceTree = "<group>"; };
+		14EC6AEB1C87DB1700A2CBB8 /* PHObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHObject.h; sourceTree = "<group>"; };
+		14EC6AEC1C87DB1700A2CBB8 /* PhotosTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosTypes.h; sourceTree = "<group>"; };
+		14EC6AED1C87DFED00A2CBB8 /* PHChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHChange.h; sourceTree = "<group>"; };
 		14EF68BC1B271F1A00ADA1BE /* MDDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
 		14F0738C1B95B9200029A653 /* MD_UIColor_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIColor_ViewController.h; sourceTree = "<group>"; };
 		14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIColor_ViewController.m; sourceTree = "<group>"; };
@@ -2108,6 +2114,12 @@
 				144F23F31C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.h */,
 				144F23F41C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m */,
 				144F23F51C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib */,
+				14EC6AED1C87DFED00A2CBB8 /* PHChange.h */,
+				14EC6AE81C87DB1700A2CBB8 /* PHAsset.h */,
+				14EC6AE91C87DB1700A2CBB8 /* PHImageManager.h */,
+				14EC6AEA1C87DB1700A2CBB8 /* PHLivePhotoView.h */,
+				14EC6AEB1C87DB1700A2CBB8 /* PHObject.h */,
+				14EC6AEC1C87DB1700A2CBB8 /* PhotosTypes.h */,
 			);
 			path = photoLibrary;
 			sourceTree = "<group>";

@@ -46,7 +46,7 @@
     
     //滚动条与scrollview之间的距离
     scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(10,10,10,10);
-    
+  
     [self.view addSubview:scrollView];
 }
 
@@ -64,7 +64,8 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"inset:%f,offset:%f",scrollView.contentInset.top,scrollView.contentOffset.y);
+  NSLog(@"inset:%f,offset:%f",scrollView.contentInset.top,scrollView.contentOffset.y);
+//  NSLog(@"scrollview bound:%@",NSStringFromCGRect(scrollView.bounds));
 }
 
 @end

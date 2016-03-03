@@ -8,30 +8,65 @@
 
 #import "MD_PhotoLibrary_PreviewVC.h"
 
-@interface MD_PhotoLibrary_PreviewVC ()
+@interface MD_PhotoLibrary_PreviewVC ()<PHPhotoLibraryChangeObserver>
+
 
 @end
 
 @implementation MD_PhotoLibrary_PreviewVC
 
+#pragma mark - < vc lifecycle > -
+
+-(void)dealloc{
+//  [self removeObserver];
+}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+  [super viewDidLoad];
+//  [self addObserver];
+  [self customInitUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - < method > -
+#pragma mark noti & observer
+-(void)addObserver{
+  [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)removeObserver{
+  [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
 }
-*/
+
+#pragma mark customInit
+-(void)customInitUI{
+  // Prepare the options to pass when fetching the live photo.
+  PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+  options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+  options.networkAccessAllowed = YES;
+  options.progressHandler = ^(double progress, NSError *error, BOOL *stop, NSDictionary *info) {
+
+  };
+  
+  [[PHImageManager defaultManager] requestImageForAsset:self.asset targetSize:[self targetSize] contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage *result, NSDictionary *info) {
+    
+    // Check if the request was successful.
+    if (!result) {
+      return;
+    }
+    
+    // Show the UIImageView and use it to display the requested image.
+    self.imageView.image = result;
+  }];
+
+}
+
+-(CGSize)targetSize{
+  CGFloat scale = [UIScreen mainScreen].scale;
+  CGSize targetSize = CGSizeMake(CGRectGetWidth(self.imageView.bounds) * scale, CGRectGetHeight(self.imageView.bounds) * scale);
+  return targetSize;
+}
+
+#pragma mark - < action > -
+#pragma mark - < callback > -
 
 @end
