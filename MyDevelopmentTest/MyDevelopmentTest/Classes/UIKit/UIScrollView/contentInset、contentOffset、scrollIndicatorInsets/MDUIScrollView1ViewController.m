@@ -41,7 +41,7 @@
     //content与scrollview之间的距离（初始状态时不一定全部方向都有效果，拖动到边缘并停止后就会有效果）
     scrollView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
-    //content的坐标原点的偏移量（初始状态下才有效果，可以用来判断scrollview滚动的位置）
+    //scroll原点相对于content原点的偏移量（初始状态下才有效果，可以用来判断scrollview滚动的位置）
     //    [scrollView setContentOffset:CGPointMake(50, 50) animated:YES];
     
     //滚动条与scrollview之间的距离
@@ -64,7 +64,8 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-  NSLog(@"inset:%f,offset:%f",scrollView.contentInset.top,scrollView.contentOffset.y);
+//  NSLog(@"inset:%f,offset:%f",scrollView.contentInset.top,scrollView.contentOffset.y);
+  NSLog(@"%f %f",scrollView.contentOffset.x,scrollView.contentOffset.y);
 //  NSLog(@"scrollview bound:%@",NSStringFromCGRect(scrollView.bounds));
 }
 
