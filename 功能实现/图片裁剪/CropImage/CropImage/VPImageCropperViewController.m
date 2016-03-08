@@ -53,6 +53,10 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+  [super viewDidAppear:animated];
   [self initView];
   [self initControlBtn];
 }
@@ -65,15 +69,16 @@
 #pragma mark init
 - (void)initView {
   //img
-  self.showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+  self.showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+  [self.showImgView setBackgroundColor:[UIColor redColor]];
   [self.showImgView setMultipleTouchEnabled:YES];
   [self.showImgView setUserInteractionEnabled:YES];
-  [self.showImgView setImage:self.originalImage];
+//  [self.showImgView setImage:self.originalImage];
   [self.showImgView setUserInteractionEnabled:YES];
   [self.showImgView setMultipleTouchEnabled:YES];
   
   // scale to fit the screen
-  CGFloat oriWidth = self.cropFrame.size.width;//裁剪宽度 = 屏幕宽度
+  CGFloat oriWidth = self.cropFrame.size.width;//裁剪宽度
   CGFloat oriHeight = self.originalImage.size.height * (oriWidth / self.originalImage.size.width);//原图高度*（裁剪宽度/原图宽度），即原图高度 *比例
   CGFloat oriX = self.cropFrame.origin.x + (self.cropFrame.size.width - oriWidth) / 2;//裁剪框原点x
   CGFloat oriY = self.cropFrame.origin.y + (self.cropFrame.size.height - oriHeight) / 2;//裁剪框原点y+（裁剪高度 - 原图*比例）/2

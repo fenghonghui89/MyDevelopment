@@ -60,7 +60,7 @@
   UIImage *img = [UIImage imageNamed:@"5682x.png"];
   NSLog(@"img:%@ screen:%@",NSStringFromCGSize(img.size),NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
 
-  VPImageCropperViewController *vc = [[VPImageCropperViewController alloc] initWithImage:img cropFrame:CGRectMake(0, 100, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.width) limitScaleRatio:3];
+  VPImageCropperViewController *vc = [[VPImageCropperViewController alloc] initWithImage:img cropFrame:CGRectMake(50, 100, [[UIScreen mainScreen] bounds].size.width-100, [[UIScreen mainScreen] bounds].size.width-100) limitScaleRatio:3];
   vc.delegate = self;
   [self presentViewController:vc animated:YES completion:nil];
 }
