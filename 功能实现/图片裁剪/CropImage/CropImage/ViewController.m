@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "ViewController1.h"
+#import "UIImage+Resize.h"
 #import "VPImageCropperViewController.h"
 @interface ViewController ()<VPImageCropperDelegate>
 
@@ -57,10 +59,22 @@
 //    [data writeToFile:[NSString stringWithFormat:@"%@/Documents/test.png", NSHomeDirectory()] atomically:YES];
   
   
-  UIImage *img = [UIImage imageNamed:@"5682x.png"];
-  NSLog(@"img:%@ screen:%@",NSStringFromCGSize(img.size),NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
+  UIImage *img = [UIImage imageNamed:@"systemphoto.jpg"];
+  NSLog(@"img:%@ screen:%@ imageOrientation:%d",NSStringFromCGSize(img.size),NSStringFromCGSize([[UIScreen mainScreen] bounds].size),img.imageOrientation);
+  
+  if (img.imageOrientation == UIImageOrientationUp || img.imageOrientation == UIImageOrientationDown) {
+    
+  }else{
+    //最终尺寸
+    CGFloat r = img.size.width/1080.f;
+    CGFloat w = img.size.width/r;
+    CGFloat h = img.size.height/r;
+    CGSize size = CGSizeMake(w, h);
+    img = [img resizedImageWithContentMode:UIViewContentModeScaleAspectFill bounds:size interpolationQuality:kCGInterpolationHigh];
+  }
+  
 
-  VPImageCropperViewController *vc = [[VPImageCropperViewController alloc] initWithImage:img cropFrame:CGRectMake(50, 100, [[UIScreen mainScreen] bounds].size.width-100, [[UIScreen mainScreen] bounds].size.width-100) limitScaleRatio:3];
+  VPImageCropperViewController *vc = [[VPImageCropperViewController alloc] initWithImage:img cropFrame:CGRectMake(50, 100, [[UIScreen mainScreen] bounds].size.width-100, [[UIScreen mainScreen] bounds].size.width-100) limitScaleRatio:2];
   vc.delegate = self;
   [self presentViewController:vc animated:YES completion:nil];
 }
@@ -76,9 +90,16 @@
 }
 
 -(void)imageCropper:(VPImageCropperViewController *)cropperViewController didFinished:(UIImage *)editedImage{
-  NSData *data = UIImageJPEGRepresentation(editedImage, 1);
-  [data writeToFile:[NSString stringWithFormat:@"%@/Documents/test.png",NSHomeDirectory()] atomically:YES];
+//  NSData *data = UIImageJPEGRepresentation(editedImage, 1);
+//  [data writeToFile:[NSString stringWithFormat:@"%@/Documents/test.png",NSHomeDirectory()] atomically:YES];
+  
+  ViewController1 *vc1 = [[ViewController1 alloc] initWithNibName:@"ViewController1" bundle:nil];
+  vc1.photo = [editedImage copy];
+  
   [cropperViewController dismissViewControllerAnimated:YES completion:nil];
+  [self presentViewController:vc1 animated:YES completion:nil];
+  
+ 
   NSLog(@"%@",[NSString stringWithFormat:@"%@/Documents/test.png", NSHomeDirectory()]);
 }
 @end

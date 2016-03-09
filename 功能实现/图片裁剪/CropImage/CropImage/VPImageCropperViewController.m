@@ -18,11 +18,11 @@
 
 @property (nonatomic, retain) UIImageView *showImgView;
 @property (nonatomic, retain) UIView *overlayView;
-@property (nonatomic, retain) UIView *ratioView;
+@property (nonatomic, retain) UIView *ratioView;//裁剪框
 
 @property (nonatomic, assign) CGRect oldFrame;
 @property (nonatomic, assign) CGRect largeFrame;
-@property (nonatomic, assign) CGFloat limitRatio;
+@property (nonatomic, assign) CGFloat limitRatio;//放大倍数
 
 @property (nonatomic, assign) CGRect latestFrame;
 
@@ -68,28 +68,25 @@
 }
 #pragma mark init
 - (void)initView {
-  //img
+  //预览图
   self.showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-  [self.showImgView setBackgroundColor:[UIColor redColor]];
+  [self.showImgView setBackgroundColor:[UIColor greenColor]];
   [self.showImgView setMultipleTouchEnabled:YES];
   [self.showImgView setUserInteractionEnabled:YES];
-//  [self.showImgView setImage:self.originalImage];
+  [self.showImgView setImage:self.originalImage];
   [self.showImgView setUserInteractionEnabled:YES];
   [self.showImgView setMultipleTouchEnabled:YES];
+  [self.view addSubview:self.showImgView];
   
-  // scale to fit the screen
-  CGFloat oriWidth = self.cropFrame.size.width;//裁剪宽度
-  CGFloat oriHeight = self.originalImage.size.height * (oriWidth / self.originalImage.size.width);//原图高度*（裁剪宽度/原图宽度），即原图高度 *比例
-  CGFloat oriX = self.cropFrame.origin.x + (self.cropFrame.size.width - oriWidth) / 2;//裁剪框原点x
-  CGFloat oriY = self.cropFrame.origin.y + (self.cropFrame.size.height - oriHeight) / 2;//裁剪框原点y+（裁剪高度 - 原图*比例）/2
+  //设置预览图尺寸 最大放大尺寸
+  CGFloat oriWidth = self.cropFrame.size.width;//预览图宽度
+  CGFloat oriHeight = self.originalImage.size.height * (oriWidth / self.originalImage.size.width);//原图高度*（裁剪框宽度/原图宽度）= 原图高度 *比例 = 预览图高度
+  CGFloat oriX = self.cropFrame.origin.x + (self.cropFrame.size.width - oriWidth) / 2;//裁剪框原点x = 预览图原点x
+  CGFloat oriY = self.cropFrame.origin.y - ABS(self.cropFrame.size.height - oriHeight) / 2;//裁剪框原点y+（裁剪框高度 - 预览图高度）/2 = 预览图原点y
   self.oldFrame = CGRectMake(oriX, oriY, oriWidth, oriHeight);
   self.latestFrame = self.oldFrame;
   self.showImgView.frame = self.oldFrame;
-  
   self.largeFrame = CGRectMake(0, 0, self.limitRatio * self.oldFrame.size.width, self.limitRatio * self.oldFrame.size.height);
-  
-  [self addGestureRecognizers];
-  [self.view addSubview:self.showImgView];
   
   //背景
   self.overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -99,7 +96,7 @@
   self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
   [self.view addSubview:self.overlayView];
   
-  //截取框
+  //裁剪框
   self.ratioView = [[UIView alloc] initWithFrame:self.cropFrame];
   self.ratioView.layer.borderColor = [UIColor yellowColor].CGColor;
   self.ratioView.layer.borderWidth = 1.0f;
@@ -107,6 +104,9 @@
   [self.view addSubview:self.ratioView];
   
   [self overlayClipping];
+  
+  //添加手势
+  [self addGestureRecognizers];
 }
 
 - (void)initControlBtn {
