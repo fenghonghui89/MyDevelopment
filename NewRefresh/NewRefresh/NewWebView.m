@@ -5,24 +5,84 @@
 //  Created by 冯鸿辉 on 16/3/10.
 //  Copyright © 2016年 DGC. All rights reserved.
 //
-
+#import <objc/runtime.h>
 #import "NewWebView.h"
+
+@interface NSObject (UIWebViewTappingDelegate)
+- (void)webView:(UIWebView*)sender zoomingEndedWithTouches:(NSSet*)touches event:(UIEvent*)event;
+- (void)webView:(UIWebView*)sender tappedWithTouch:(UITouch*)touch event:(UIEvent*)event;
+@end
+
+@interface NewWebView (Private)
+- (void)fireZoomingEndedWithTouches:(NSSet*)touches event:(UIEvent*)event;
+- (void)fireTappedWithTouch:(UITouch*)touch event:(UIEvent*)event;
+@end
+
+@implementation UIView (__TapHook)
+
+- (void)__touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
+{
+  [self __touchesEnded:touches withEvent:event];
+  
+  id webView = [[self superview] superview];
+  if (touches.count > 1) {
+    if ([webView respondsToSelector:@selector(fireZoomingEndedWithTouches:event:)]) {
+      [webView fireZoomingEndedWithTouches:touches event:event];
+    }
+  }
+  else {
+    if ([webView respondsToSelector:@selector(fireTappedWithTouch:event:)]) {
+      [webView fireTappedWithTouch:[touches anyObject] event:event];
+    }
+  }
+}
+
+@end
+
+static BOOL hookInstalled = NO;
+
+static void installHook()
+{
+  if (hookInstalled) return;
+  
+  hookInstalled = YES;
+  
+  Class klass = objc_getClass("UIWebDocumentView");
+  Method targetMethod = class_getInstanceMethod(klass, @selector(touchesEnded:withEvent:));
+  Method newMethod = class_getInstanceMethod(klass, @selector(__touchesEnded:withEvent:));
+  method_exchangeImplementations(targetMethod, newMethod);
+}
 
 @implementation NewWebView
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-  [super touchesBegan:touches withEvent:event];
-  NSLog(@"~touchesBegan");
+- (id)initWithCoder:(NSCoder*)coder
+{
+  if (self = [super initWithCoder:coder]) {
+    installHook();
+  }
+  return self;
 }
 
--(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-  [super touchesMoved:touches withEvent:event];
-  NSLog(@"~touchesMoved");
+- (id)initWithFrame:(CGRect)frame
+{
+  if (self = [super initWithFrame:frame]) {
+    installHook();
+  }
+  return self;
 }
 
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-  [super touchesEnded:touches withEvent:event];
-  NSLog(@"~touchesEnded");
+- (void)fireZoomingEndedWithTouches:(NSSet*)touches event:(UIEvent*)event
+{
+  if ([self.delegate respondsToSelector:@selector(webView:zoomingEndedWithTouches:event:)]) {
+    [(NSObject*)self.delegate webView:self zoomingEndedWithTouches:touches event:event];
+  }
+}
+
+- (void)fireTappedWithTouch:(UITouch*)touch event:(UIEvent*)event
+{
+  if ([self.delegate respondsToSelector:@selector(webView:tappedWithTouch:event:)]) {
+    [(NSObject*)self.delegate webView:self tappedWithTouch:touch event:event];
+  }
 }
 
 @end
