@@ -14,4 +14,5 @@
 -(void)readyUpload;
 -(void)customInitUI;
 -(void)finish:(void(^)(void))block;
+@property(nonatomic,strong)UIWebView *webview;
 @end

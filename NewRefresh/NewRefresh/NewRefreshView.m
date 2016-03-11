@@ -35,6 +35,10 @@ static void * NewRefreshViewUIRecover = &NewRefreshViewUIRecover;
   self.titleLabel.text = @"刷新完成";
 }
 
-
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+  if ([keyPath isEqualToString:@"webview.scrollView.contentOffset"]) {
+//    NSLog(@"=======%@",NSStringFromCGPoint(self.webview.scrollView.contentOffset));
+  }
+}
 
 @end

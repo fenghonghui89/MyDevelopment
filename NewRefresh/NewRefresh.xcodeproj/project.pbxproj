@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1401A8B41C9261D80062A5AC /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401A8B31C9261D80062A5AC /* ViewController1.m */; };
 		148896201C911C1900F70E22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488961F1C911C1900F70E22 /* main.m */; };
 		148896231C911C1900F70E22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 148896221C911C1900F70E22 /* AppDelegate.m */; };
 		148896261C911C1900F70E22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148896251C911C1900F70E22 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1401A8B21C9261D80062A5AC /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		1401A8B31C9261D80062A5AC /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
 		1488961B1C911C1900F70E22 /* NewRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1488961F1C911C1900F70E22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		148896211C911C1900F70E22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				148896221C911C1900F70E22 /* AppDelegate.m */,
 				148896241C911C1900F70E22 /* ViewController.h */,
 				148896251C911C1900F70E22 /* ViewController.m */,
+				1401A8B21C9261D80062A5AC /* ViewController1.h */,
+				1401A8B31C9261D80062A5AC /* ViewController1.m */,
 				148896371C911C5500F70E22 /* NewRefreshView.h */,
 				148896381C911C5500F70E22 /* NewRefreshView.m */,
 				1488963A1C91854F00F70E22 /* NewWebView.h */,
@@ -166,6 +171,7 @@
 			files = (
 				148896261C911C1900F70E22 /* ViewController.m in Sources */,
 				148896231C911C1900F70E22 /* AppDelegate.m in Sources */,
+				1401A8B41C9261D80062A5AC /* ViewController1.m in Sources */,
 				148896201C911C1900F70E22 /* main.m in Sources */,
 				148896391C911C5500F70E22 /* NewRefreshView.m in Sources */,
 				1488963C1C91854F00F70E22 /* NewWebView.m in Sources */,

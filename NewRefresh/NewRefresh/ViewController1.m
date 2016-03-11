@@ -8,12 +8,15 @@
 
 #define ScreenW [[UIScreen mainScreen] bounds].size.width
 #define ScreenH [[UIScreen mainScreen] bounds].size.height
-#import "ViewController.h"
+
+static void * myContext = &myContext;
+
+#import "ViewController1.h"
 #import "NewRefreshView.h"
 #import "NewWebView.h"
-@interface ViewController ()<UIWebViewDelegate,UIScrollViewDelegate,UIGestureRecognizerDelegate>
+@interface ViewController1 ()<UIWebViewDelegate,UIScrollViewDelegate,UIGestureRecognizerDelegate>
 @property(nonatomic,strong)NewRefreshView *rview;
-@property(nonatomic,strong)UIWebView *webview;
+@property(nonatomic,strong)NewWebView *webview;
 @property(nonatomic,assign)CGFloat lastRefreshViewY;
 @property(nonatomic,assign)CGFloat currentRefreshViewY;
 @property(nonatomic,assign)BOOL canEdit;
@@ -23,14 +26,19 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController1
 
 #pragma mark - < vc lifecycle> -
+
+-(void)dealloc{
+  [self removeObserver:self.rview forKeyPath:@"webview.scrollView.contentOffset"];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+  
   [self customInitData];
-//  [self customInitUI];
+  [self customInitUI];
   
 }
 
@@ -44,11 +52,11 @@
 }
 
 -(void)customInitUI{
-  UIWebView *webview = [[UIWebView alloc] initWithFrame:CGRectMake(0, 50, ScreenW, ScreenH-50)];
+  NewWebView *webview = [[NewWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH)];
   [webview setDelegate:self];
   [webview.scrollView setDelegate:self];
   [webview.scrollView setBounces:NO];
-  [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+  [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://dev.123go.net.cn"]]];
   [self.view addSubview:webview];
   self.webview = webview;
   
@@ -57,9 +65,12 @@
   [webview addGestureRecognizer:panGR];
   
   NewRefreshView *rview = [[[NSBundle mainBundle] loadNibNamed:@"NewRefreshView" owner:self options:nil] lastObject];
-  [rview setFrame:CGRectMake(0, 0, ScreenW, 50)];
+  [rview setFrame:CGRectMake(0, 0, ScreenW, 44)];
   [self.view addSubview:rview];
+  rview.webview = webview;
   self.rview = rview;
+  
+  [self addObserver:rview forKeyPath:@"webview.scrollView.contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:myContext];
 }
 
 #pragma mark GestureRecognizer
@@ -67,21 +78,22 @@
   
   if (self.canEdit == YES && self.isBeganScrollToTop == YES) {
     CGFloat delta = [panGR translationInView:self.view].y;
+    CGFloat deltax = [panGR translationInView:self.view].x;
     
     CGFloat currentRefreshViewY = self.lastRefreshViewY+delta;
     if (currentRefreshViewY<=0) {
-      NSLog(@"~没有移动或往上移,delta:%f",delta);
+      NSLog(@"~没有移动或往上移,delta:%f",deltax);
       [self.rview customInitUI];
       self.lastRefreshViewY = 0;
       self.currentRefreshViewY = 0;
     }else if (currentRefreshViewY>0 && currentRefreshViewY<150) {
-      NSLog(@"~往下移动中,delta:%f",delta);
-      [self.rview setFrame:CGRectMake(0, self.lastRefreshViewY+delta, ScreenW, 50)];
+      NSLog(@"~往下移动中,delta:%f",deltax);
+      [self.rview setFrame:CGRectMake(0, self.lastRefreshViewY+delta, ScreenW, 44)];
       [self.rview customInitUI];
       self.lastRefreshViewY = currentRefreshViewY;
       self.currentRefreshViewY = currentRefreshViewY;
     }else{
-      NSLog(@"~到达临界点,delta:%f",delta);
+      NSLog(@"~到达临界点,delta:%f",deltax);
       [self.rview readyUpload];
       self.lastRefreshViewY = 150;
       self.currentRefreshViewY = 150;
@@ -97,10 +109,9 @@
 -(void)move:(CGPoint)location previous:(CGPoint)previousLocation{
   
   if (self.canEdit == YES && self.isBeganScrollToTop == YES) {
-
     CGFloat delta = location.y - previousLocation.y;
     CGFloat currentRefreshViewY = self.lastRefreshViewY+delta;
-
+    
     if (currentRefreshViewY<=0) {
       NSLog(@"没有移动或往上移,%d",self.isBeganScrollToTop);
       [self.rview customInitUI];
@@ -108,7 +119,7 @@
       self.currentRefreshViewY = 0;
     }else if (currentRefreshViewY>0 && currentRefreshViewY<150) {
       NSLog(@"往下移动中,%d",self.isBeganScrollToTop);
-      [self.rview setFrame:CGRectMake(0, self.lastRefreshViewY+delta, ScreenW, 50)];
+      [self.rview setFrame:CGRectMake(0, self.lastRefreshViewY+delta, ScreenW, 44)];
       [self.rview customInitUI];
       self.lastRefreshViewY = currentRefreshViewY;
       self.currentRefreshViewY = currentRefreshViewY;
@@ -142,7 +153,7 @@
       return;
     }
   }
-
+  
 }
 
 -(void)endRefreshView1{
@@ -150,7 +161,7 @@
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     dispatch_async(dispatch_get_main_queue(), ^{
       [UIView animateWithDuration:1 animations:^{
-        [self.rview setFrame:CGRectMake(0, 0, ScreenW, 50)];
+        [self.rview setFrame:CGRectMake(0, 0, ScreenW, 44)];
         self.lastRefreshViewY = 0;
         self.currentRefreshViewY = 0;
       } completion:^(BOOL finished) {
@@ -164,31 +175,30 @@
 -(void)endRefreshView2{
   self.canEdit = NO;
   [self.rview uploading:^{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-      [NSThread sleepForTimeInterval:3.0];
-      dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:1 animations:^{
-          [self.rview finish:nil];
-          [self.rview setFrame:CGRectMake(0, 0, ScreenW, 50)];
-          self.lastRefreshViewY = 0;
-          self.currentRefreshViewY = 0;
-        } completion:^(BOOL finished) {
-          self.canEdit = YES;
-          [self.rview customInitUI];
-        }];
-        
-      });
-    });
+    [self.webview reload];
   }];
 }
 
 #pragma mark - < callback > -
 #pragma mark webview
 -(void)webViewDidStartLoad:(UIWebView *)webView{
-
+  
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [UIView animateWithDuration:1 animations:^{
+        [self.rview finish:nil];
+        [self.rview setFrame:CGRectMake(0, 0, ScreenW, 44)];
+        self.lastRefreshViewY = 0;
+        self.currentRefreshViewY = 0;
+      } completion:^(BOOL finished) {
+        self.canEdit = YES;
+        [self.rview customInitUI];
+      }];
+    });
+  });
 
 }
 
@@ -197,6 +207,19 @@
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [UIView animateWithDuration:1 animations:^{
+        [self.rview finish:nil];
+        [self.rview setFrame:CGRectMake(0, 0, ScreenW, 44)];
+        self.lastRefreshViewY = 0;
+        self.currentRefreshViewY = 0;
+      } completion:^(BOOL finished) {
+        self.canEdit = YES;
+        [self.rview customInitUI];
+      }];
+    });
+  });
 
 }
 
@@ -204,7 +227,7 @@
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
   NSLog(@"scrollViewWillBeginDragging %@",NSStringFromCGPoint(scrollView.contentOffset));
-  if (scrollView.contentOffset.y == 0) {
+  if (scrollView.contentOffset.y == -64) {
     self.isBeganScrollToTop = YES;
   }else{
     self.isBeganScrollToTop = NO;
@@ -231,7 +254,7 @@
       return;
     }
   }
-
+  
 }
 
 
