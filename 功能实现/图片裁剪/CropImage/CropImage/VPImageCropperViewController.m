@@ -7,23 +7,21 @@
 //
 
 #import "VPImageCropperViewController.h"
-
+#import "UIImage+Resize.h"
+#import "DGCDefine.h"
+#import "DGCTool.h"
 #define SCALE_FRAME_Y 100.0f
 #define BOUNDCE_DURATION 0.3f
 
 @interface VPImageCropperViewController ()
 
-@property (nonatomic, retain) UIImage *originalImage;
-@property (nonatomic, retain) UIImage *editedImage;
 
+@property (nonatomic, retain) UIImage *editedImage;
 @property (nonatomic, retain) UIImageView *showImgView;
 @property (nonatomic, retain) UIView *overlayView;
 @property (nonatomic, retain) UIView *ratioView;//裁剪框
-
 @property (nonatomic, assign) CGRect oldFrame;
 @property (nonatomic, assign) CGRect largeFrame;
-@property (nonatomic, assign) CGFloat limitRatio;//放大倍数
-
 @property (nonatomic, assign) CGRect latestFrame;
 
 @end
@@ -50,15 +48,14 @@
   return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
   [super viewDidLoad];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
-  [self initView];
-  [self initControlBtn];
+  
+  [self customInitUI];
 }
 
 #pragma mark - < method > -
@@ -66,46 +63,83 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
   return NO;
 }
-#pragma mark init
+
+#pragma mark customInit
+-(void)customInitUI{
+  
+  [self.view setBackgroundColor:[UIColor purpleColor]];
+  
+  if (self.asset) {
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+    options.networkAccessAllowed = YES;
+    [[PHImageManager defaultManager] requestImageDataForAsset:self.asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+      UIImage *img = [UIImage imageWithData:imageData];
+      
+      DRLog(@"imageOrientation %ld",(long)img.imageOrientation);//3正right 0右up 2反left 1左down
+      if (img.imageOrientation == UIImageOrientationUp || img.imageOrientation == UIImageOrientationDown) {//0正常 1裁切后180
+        self.originalImage = img;
+      }else{
+        //最终尺寸
+        CGFloat r = img.size.width/1080.f;
+        CGFloat w = img.size.width/r;
+        CGFloat h = img.size.height/r;
+        CGSize size = CGSizeMake(w, h);
+        //        DRLog(@"img %@ scale %@",NSStringFromCGSize(img.size),NSStringFromCGSize(size));
+        
+        UIImage *scaledImage = [img resizedImageWithContentMode:UIViewContentModeScaleAspectFill bounds:size interpolationQuality:kCGInterpolationHigh];
+        self.originalImage = scaledImage;
+      }
+      
+      [self initView];
+      [self initControlBtn];
+    }];
+  }else{
+    [self initView];
+    [self initControlBtn];
+  }
+  
+}
 - (void)initView {
-  //预览图
-  self.showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+  //裁切的时候显示的img
+  self.showImgView = [[UIImageView alloc] init];
   [self.showImgView setBackgroundColor:[UIColor greenColor]];
   [self.showImgView setMultipleTouchEnabled:YES];
   [self.showImgView setUserInteractionEnabled:YES];
-  [self.showImgView setImage:self.originalImage];
   [self.showImgView setUserInteractionEnabled:YES];
   [self.showImgView setMultipleTouchEnabled:YES];
+  [self.showImgView setImage:self.originalImage];
   [self.view addSubview:self.showImgView];
   
-  //设置预览图尺寸 最大放大尺寸
-  CGFloat oriWidth = self.cropFrame.size.width;//预览图宽度
-  CGFloat oriHeight = self.originalImage.size.height * (oriWidth / self.originalImage.size.width);//原图高度*（裁剪框宽度/原图宽度）= 原图高度 *比例 = 预览图高度
-  CGFloat oriX = self.cropFrame.origin.x + (self.cropFrame.size.width - oriWidth) / 2;//裁剪框原点x = 预览图原点x
-  CGFloat oriY = self.cropFrame.origin.y - ABS(self.cropFrame.size.height - oriHeight) / 2;//裁剪框原点y+（裁剪框高度 - 预览图高度）/2 = 预览图原点y
+  //计算初始显示frame
+  CGFloat oriWidth = self.cropFrame.size.width;//显示宽度 = 屏幕宽度
+  CGFloat oriHeight = self.originalImage.size.height * (oriWidth / self.originalImage.size.width);//显示高度，即原图高度*（显示宽度/原图宽度），即原图高度 *比例
+  CGFloat oriX = self.cropFrame.origin.x + (self.cropFrame.size.width - oriWidth) / 2;//裁剪框原点x
+  CGFloat oriY = self.cropFrame.origin.y + (self.cropFrame.size.height - oriHeight) / 2;//裁剪框原点y+（裁剪框高度 - 显示高度）/2
   self.oldFrame = CGRectMake(oriX, oriY, oriWidth, oriHeight);
-  self.latestFrame = self.oldFrame;
   self.showImgView.frame = self.oldFrame;
+  
+  self.latestFrame = self.oldFrame;
   self.largeFrame = CGRectMake(0, 0, self.limitRatio * self.oldFrame.size.width, self.limitRatio * self.oldFrame.size.height);
   
   //背景
   self.overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
   self.overlayView.alpha = 0.5;
-  self.overlayView.backgroundColor = [UIColor blackColor];
+  self.overlayView.backgroundColor = [UIColor orangeColor];
   self.overlayView.userInteractionEnabled = NO;
   self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
   [self.view addSubview:self.overlayView];
   
-  //裁剪框
+  //截取框
   self.ratioView = [[UIView alloc] initWithFrame:self.cropFrame];
-  self.ratioView.layer.borderColor = [UIColor yellowColor].CGColor;
+  self.ratioView.layer.borderColor = [UIColor redColor].CGColor;
   self.ratioView.layer.borderWidth = 1.0f;
   self.ratioView.autoresizingMask = UIViewAutoresizingNone;
   [self.view addSubview:self.ratioView];
-  
+
+  //使截取框透明
   [self overlayClipping];
   
-  //添加手势
   [self addGestureRecognizers];
 }
 
@@ -136,17 +170,19 @@
   [self.view addSubview:confirmBtn];
 }
 
+
+
 - (void)overlayClipping
 {
   CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
   CGMutablePathRef path = CGPathCreateMutable();
   // Left side of the ratio view
-  CGPathAddRect(path, nil, CGRectMake(0, 0,
+  CGPathAddRect(path, nil, CGRectMake(0,
+                                      0,
                                       self.ratioView.frame.origin.x,
                                       self.overlayView.frame.size.height));
   // Right side of the ratio view
-  CGPathAddRect(path, nil, CGRectMake(
-                                      self.ratioView.frame.origin.x + self.ratioView.frame.size.width,
+  CGPathAddRect(path, nil, CGRectMake(self.ratioView.frame.origin.x + self.ratioView.frame.size.width,
                                       0,
                                       self.overlayView.frame.size.width - self.ratioView.frame.origin.x - self.ratioView.frame.size.width,
                                       self.overlayView.frame.size.height));
@@ -158,7 +194,7 @@
   CGPathAddRect(path, nil, CGRectMake(0,
                                       self.ratioView.frame.origin.y + self.ratioView.frame.size.height,
                                       self.overlayView.frame.size.width,
-                                      self.overlayView.frame.size.height - self.ratioView.frame.origin.y + self.ratioView.frame.size.height));
+                                      self.overlayView.frame.size.height - self.ratioView.frame.origin.y - self.ratioView.frame.size.height));
   maskLayer.path = path;
   self.overlayView.layer.mask = maskLayer;
   CGPathRelease(path);
@@ -295,6 +331,7 @@
   CGContextDrawImage(context, myImageRect, subImageRef);
   UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
   UIGraphicsEndImageContext();
+  CGImageRelease(subImageRef);
   return smallImage;
 }
 

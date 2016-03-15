@@ -28,6 +28,9 @@
 		143108591C8EB8640065B3AE /* 5683x.png in Resources */ = {isa = PBXBuildFile; fileRef = 143108581C8EB8640065B3AE /* 5683x.png */; };
 		1431085C1C8EC5B00065B3AE /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431085A1C8EC5B00065B3AE /* VPImageCropperViewController.m */; };
 		1431085E1C8EC65B0065B3AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1431085D1C8EC65B0065B3AE /* QuartzCore.framework */; };
+		147FDF2F1C97EEEC004EBBCB /* DGCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF2E1C97EEEC004EBBCB /* DGCTool.m */; };
+		147FDF311C97F275004EBBCB /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147FDF301C97F275004EBBCB /* Photos.framework */; };
+		147FDF331C97F27A004EBBCB /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147FDF321C97F27A004EBBCB /* PhotosUI.framework */; };
 		14FEB0F11C8D621200D17D1C /* IMG_1818.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14FEB0F01C8D621200D17D1C /* IMG_1818.jpg */; };
 		14FEB0F61C8D6B1400D17D1C /* 5682x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FEB0F51C8D6B1400D17D1C /* 5682x.png */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,11 @@
 		1431085A1C8EC5B00065B3AE /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		1431085B1C8EC5B00065B3AE /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		1431085D1C8EC65B0065B3AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		147FDF2C1C97EEEC004EBBCB /* DGCDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCDefine.h; sourceTree = "<group>"; };
+		147FDF2D1C97EEEC004EBBCB /* DGCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCTool.h; sourceTree = "<group>"; };
+		147FDF2E1C97EEEC004EBBCB /* DGCTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCTool.m; sourceTree = "<group>"; };
+		147FDF301C97F275004EBBCB /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		147FDF321C97F27A004EBBCB /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		14FEB0F01C8D621200D17D1C /* IMG_1818.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1818.jpg; sourceTree = "<group>"; };
 		14FEB0F51C8D6B1400D17D1C /* 5682x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5682x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147FDF331C97F27A004EBBCB /* PhotosUI.framework in Frameworks */,
+				147FDF311C97F275004EBBCB /* Photos.framework in Frameworks */,
 				1431085E1C8EC65B0065B3AE /* QuartzCore.framework in Frameworks */,
 				045673A21637F60400F86F4B /* UIKit.framework in Frameworks */,
 				045673A41637F60400F86F4B /* Foundation.framework in Frameworks */,
@@ -103,6 +113,8 @@
 		045673A01637F60400F86F4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				147FDF321C97F27A004EBBCB /* PhotosUI.framework */,
+				147FDF301C97F275004EBBCB /* Photos.framework */,
 				1431085D1C8EC65B0065B3AE /* QuartzCore.framework */,
 				045673A11637F60400F86F4B /* UIKit.framework */,
 				045673A31637F60400F86F4B /* Foundation.framework */,
@@ -114,6 +126,9 @@
 		045673A71637F60400F86F4B /* CropImage */ = {
 			isa = PBXGroup;
 			children = (
+				147FDF2C1C97EEEC004EBBCB /* DGCDefine.h */,
+				147FDF2D1C97EEEC004EBBCB /* DGCTool.h */,
+				147FDF2E1C97EEEC004EBBCB /* DGCTool.m */,
 				142E86FB1C8FD94C0060A76C /* systemphoto.jpg */,
 				143108561C8EAF250065B3AE /* DSC02039.JPG */,
 				14FEB0F51C8D6B1400D17D1C /* 5682x.png */,
@@ -234,6 +249,7 @@
 				045673AE1637F60400F86F4B /* main.m in Sources */,
 				142E86FA1C8FD83A0060A76C /* UIImage+Resize.m in Sources */,
 				142E86F61C8FCA570060A76C /* ViewController1.m in Sources */,
+				147FDF2F1C97EEEC004EBBCB /* DGCTool.m in Sources */,
 				045673B21637F60500F86F4B /* AppDelegate.m in Sources */,
 				1431085C1C8EC5B00065B3AE /* VPImageCropperViewController.m in Sources */,
 				045673C01637F61C00F86F4B /* UIImage+KIAdditions.m in Sources */,
@@ -314,7 +330,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CropImage/CropImage-Prefix.pch";
 				INFOPLIST_FILE = "CropImage/CropImage-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitalker.cropimagehany1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -330,7 +346,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CropImage/CropImage-Prefix.pch";
 				INFOPLIST_FILE = "CropImage/CropImage-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitalker.cropimagehany1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

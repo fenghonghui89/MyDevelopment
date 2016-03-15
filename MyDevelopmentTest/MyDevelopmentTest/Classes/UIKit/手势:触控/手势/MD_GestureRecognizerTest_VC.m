@@ -16,54 +16,53 @@
 #pragma mark - < vc lifecycle > -
 -(void)viewDidLoad
 {
-    [super viewDidLoad];
-    [self customInitUI];
+  [super viewDidLoad];
+  [self customInitUI];
+  [self addGestureRecognizer];
 }
 
+#pragma mark - < method > -
+#pragma mark customInit
 -(void)customInitUI
 {
-    /*
-     创建图片
-     */
-    self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Sky.jpg"]];
-    
-    //开启userInteractionEnabled并把imageView移动到图片中间
-    self.imageView.userInteractionEnabled = YES;
-    self.imageView.center = self.view.center;
-    
-    //计数最小缩放比例（注意取值-bounds、image）
-    float horizontalScale = self.view.bounds.size.width / self.imageView.image.size.width;
-    float verticalScale = self.view.bounds.size.height / self.imageView.image.size.height;
-    self.minimumZoomScale = MIN(horizontalScale, verticalScale);
-    
-    //通过transform缩放图片到屏幕刚好显示所有内容且宽高比不变
-    self.imageView.transform = CGAffineTransformMakeScale(self.minimumZoomScale,self.minimumZoomScale);
-    
-    [self.view addSubview:self.imageView];
-    
-    /*
-     添加手势
-     */
-    //旋转
-    UIRotationGestureRecognizer* rotationGR = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotation:)];
-    [self.view addGestureRecognizer:rotationGR];
-    rotationGR.delegate = self;
-    
-    //缩放
-    UIPinchGestureRecognizer* pinchGR = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
-    [self.view addGestureRecognizer:pinchGR];
-    pinchGR.delegate = self;
-    
-    //拖动
-    UIPanGestureRecognizer* panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    [self.imageView addGestureRecognizer:panGR];
-    panGR.delegate = self;
-    
-    //双击恢复原状
-    UITapGestureRecognizer* tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-    tapGR.numberOfTapsRequired = 2;
-    [self.imageView addGestureRecognizer:tapGR];
+  self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Sky.jpg"]];
+  self.imageView.userInteractionEnabled = YES;
+  self.imageView.center = self.view.center;
+  
+  //计数最小缩放比例（注意取值-bounds、image）
+  float horizontalScale = self.view.bounds.size.width / self.imageView.image.size.width;
+  float verticalScale = self.view.bounds.size.height / self.imageView.image.size.height;
+  self.minimumZoomScale = MIN(horizontalScale, verticalScale);
+  
+  //通过transform缩放图片到屏幕刚好显示所有内容且宽高比不变
+  self.imageView.transform = CGAffineTransformMakeScale(self.minimumZoomScale,self.minimumZoomScale);
+  
+  [self.view addSubview:self.imageView];
 }
+
+#pragma mark 手势
+-(void)addGestureRecognizer{
+  //旋转
+  UIRotationGestureRecognizer* rotationGR = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotation:)];
+  [self.view addGestureRecognizer:rotationGR];
+  rotationGR.delegate = self;
+  
+  //缩放
+  UIPinchGestureRecognizer* pinchGR = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
+  [self.view addGestureRecognizer:pinchGR];
+  pinchGR.delegate = self;
+  
+  //拖动
+  UIPanGestureRecognizer* panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+  [self.imageView addGestureRecognizer:panGR];
+  panGR.delegate = self;
+  
+  //双击恢复原状
+  UITapGestureRecognizer* tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+  tapGR.numberOfTapsRequired = 2;
+  [self.imageView addGestureRecognizer:tapGR];
+}
+
 #pragma mark - < action > -
 //旋转
 -(void)rotation:(UIRotationGestureRecognizer*)rotationGR

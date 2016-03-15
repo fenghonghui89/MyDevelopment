@@ -7,22 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Photos/Photos.h>
+
 
 @class VPImageCropperViewController;
-
 @protocol VPImageCropperDelegate <NSObject>
-
 - (void)imageCropper:(VPImageCropperViewController *)cropperViewController didFinished:(UIImage *)editedImage;
 - (void)imageCropperDidCancel:(VPImageCropperViewController *)cropperViewController;
-
 @end
 
-@interface VPImageCropperViewController : UIViewController
 
+
+
+@interface VPImageCropperViewController : UIViewController
+@property (nonatomic,strong)PHAsset *asset;
 @property (nonatomic, assign) NSInteger tag;
 @property (nonatomic, assign) id<VPImageCropperDelegate> delegate;
-@property (nonatomic, assign) CGRect cropFrame; //裁剪框
-
+@property (nonatomic, assign) CGRect cropFrame;//裁剪框的frame
+@property (nonatomic, retain) UIImage *originalImage;
+@property (nonatomic, assign) CGFloat limitRatio;//放大倍数
 - (id)initWithImage:(UIImage *)originalImage cropFrame:(CGRect)cropFrame limitScaleRatio:(NSInteger)limitRatio;
 
 @end

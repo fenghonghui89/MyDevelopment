@@ -104,7 +104,7 @@
 
 -(void)pan:(UIPanGestureRecognizer*)panGR
 {
-    NSLog(@"pan state:%d",panGR.state);//1-began识别成功 2-changed变化中 3-ended撤销
+    NSLog(@"pan state:%ld",(long)panGR.state);//1-began识别成功 2-changed变化中 3-ended撤销
     
     //根据状态改变大小
     if (panGR.state == UIGestureRecognizerStateBegan) {

@@ -13,7 +13,6 @@
 @property (strong, nonatomic) NSURLConnection *connection;
 @property (strong, nonatomic) NSURLCache *urlCache;
 @property (strong, nonatomic) NSMutableURLRequest *request;
-
 @end
 
 @implementation MD_UIWebViewCache_VC
@@ -45,7 +44,6 @@
 
 #pragma mark - < action > -
 - (IBAction)btnTap:(id)sender {
-  
   //从请求中获取缓存输出,判断是否有缓存
   NSCachedURLResponse *response =[self.urlCache cachedResponseForRequest:self.request];
   if (response != nil){
