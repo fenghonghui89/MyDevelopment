@@ -17,11 +17,11 @@
 
 
 @property (nonatomic, retain) UIImage *editedImage;
-@property (nonatomic, retain) UIImageView *showImgView;
-@property (nonatomic, retain) UIView *overlayView;
+@property (nonatomic, retain) UIImageView *showImgView;//裁切的时候显示的img
+@property (nonatomic, retain) UIView *overlayView;//裁切的时候显示的img 上方的透视背景
 @property (nonatomic, retain) UIView *ratioView;//裁剪框
-@property (nonatomic, assign) CGRect oldFrame;
-@property (nonatomic, assign) CGRect largeFrame;
+@property (nonatomic, assign) CGRect oldFrame;//裁切的时候显示的img 初始的frame
+@property (nonatomic, assign) CGRect largeFrame;//最大允许放大尺寸，即初始frame*比例
 @property (nonatomic, assign) CGRect latestFrame;
 
 @end
@@ -66,9 +66,6 @@
 
 #pragma mark customInit
 -(void)customInitUI{
-  
-  [self.view setBackgroundColor:[UIColor purpleColor]];
-  
   if (self.asset) {
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
     options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
@@ -93,14 +90,19 @@
       
       [self initView];
       [self initControlBtn];
+      [self addGestureRecognizers];
     }];
   }else{
     [self initView];
     [self initControlBtn];
+    [self addGestureRecognizers];
   }
   
 }
 - (void)initView {
+  
+  [self.view setBackgroundColor:[UIColor purpleColor]];
+  
   //裁切的时候显示的img
   self.showImgView = [[UIImageView alloc] init];
   [self.showImgView setBackgroundColor:[UIColor greenColor]];
@@ -111,7 +113,7 @@
   [self.showImgView setImage:self.originalImage];
   [self.view addSubview:self.showImgView];
   
-  //计算初始显示frame
+  //计算初始显示frame 最大允许放大尺寸
   CGFloat oriWidth = self.cropFrame.size.width;//显示宽度 = 屏幕宽度
   CGFloat oriHeight = self.originalImage.size.height * (oriWidth / self.originalImage.size.width);//显示高度，即原图高度*（显示宽度/原图宽度），即原图高度 *比例
   CGFloat oriX = self.cropFrame.origin.x + (self.cropFrame.size.width - oriWidth) / 2;//裁剪框原点x
@@ -122,7 +124,7 @@
   self.latestFrame = self.oldFrame;
   self.largeFrame = CGRectMake(0, 0, self.limitRatio * self.oldFrame.size.width, self.limitRatio * self.oldFrame.size.height);
   
-  //背景
+  //透视背景
   self.overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
   self.overlayView.alpha = 0.5;
   self.overlayView.backgroundColor = [UIColor orangeColor];
@@ -132,15 +134,13 @@
   
   //截取框
   self.ratioView = [[UIView alloc] initWithFrame:self.cropFrame];
-  self.ratioView.layer.borderColor = [UIColor redColor].CGColor;
+  self.ratioView.layer.borderColor = [UIColor greenColor].CGColor;
   self.ratioView.layer.borderWidth = 1.0f;
   self.ratioView.autoresizingMask = UIViewAutoresizingNone;
   [self.view addSubview:self.ratioView];
 
   //使截取框透明
   [self overlayClipping];
-  
-  [self addGestureRecognizers];
 }
 
 - (void)initControlBtn {
@@ -238,9 +238,11 @@
   UIView *view = self.showImgView;
   if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
     // calculate accelerator
-    CGFloat absCenterX = self.cropFrame.origin.x + self.cropFrame.size.width / 2;
-    CGFloat absCenterY = self.cropFrame.origin.y + self.cropFrame.size.height / 2;
-    CGFloat scaleRatio = self.showImgView.frame.size.width / self.cropFrame.size.width;
+//    CGFloat absCenterX = self.cropFrame.origin.x + self.cropFrame.size.width / 2;
+//    CGFloat absCenterY = self.cropFrame.origin.y + self.cropFrame.size.height / 2;
+    CGFloat absCenterX = self.ratioView.center.x;
+    CGFloat absCenterY = self.ratioView.center.y;
+    CGFloat scaleRatio = self.showImgView.frame.size.width / self.ratioView.frame.size.width;
     CGFloat acceleratorX = 1 - ABS(absCenterX - view.center.x) / (scaleRatio * absCenterX);
     CGFloat acceleratorY = 1 - ABS(absCenterY - view.center.y) / (scaleRatio * absCenterY);
     CGPoint translation = [panGestureRecognizer translationInView:view.superview];
@@ -259,14 +261,18 @@
 }
 
 - (CGRect)handleScaleOverflow:(CGRect)newFrame {
+  
   // bounce to original frame
   CGPoint oriCenter = CGPointMake(newFrame.origin.x + newFrame.size.width/2, newFrame.origin.y + newFrame.size.height/2);
+  
+  //限制缩放尺寸不大于最大限制尺寸 不小于预览图原始尺寸
   if (newFrame.size.width < self.oldFrame.size.width) {
     newFrame = self.oldFrame;
   }
   if (newFrame.size.width > self.largeFrame.size.width) {
     newFrame = self.largeFrame;
   }
+  
   newFrame.origin.x = oriCenter.x - newFrame.size.width/2;
   newFrame.origin.y = oriCenter.y - newFrame.size.height/2;
   return newFrame;
@@ -274,17 +280,21 @@
 
 - (CGRect)handleBorderOverflow:(CGRect)newFrame {
   // horizontally
-  if (newFrame.origin.x > self.cropFrame.origin.x) newFrame.origin.x = self.cropFrame.origin.x;
-  if (CGRectGetMaxX(newFrame) < self.cropFrame.size.width) newFrame.origin.x = self.cropFrame.size.width - newFrame.size.width;
+  if (newFrame.origin.x > self.cropFrame.origin.x)
+    newFrame.origin.x = self.cropFrame.origin.x;
+  if (CGRectGetMaxX(newFrame) < self.cropFrame.size.width)
+    newFrame.origin.x = self.cropFrame.size.width - newFrame.size.width;
+  
   // vertically
-  if (newFrame.origin.y > self.cropFrame.origin.y) newFrame.origin.y = self.cropFrame.origin.y;
-  if (CGRectGetMaxY(newFrame) < self.cropFrame.origin.y + self.cropFrame.size.height) {
+  if (newFrame.origin.y > self.cropFrame.origin.y)
+    newFrame.origin.y = self.cropFrame.origin.y;
+  if (CGRectGetMaxY(newFrame) < self.cropFrame.origin.y + self.cropFrame.size.height)
     newFrame.origin.y = self.cropFrame.origin.y + self.cropFrame.size.height - newFrame.size.height;
-  }
-  // adapt horizontally rectangle
-  if (self.showImgView.frame.size.width > self.showImgView.frame.size.height && newFrame.size.height <= self.cropFrame.size.height) {
+  
+  // adapt horizontally rectangle 如果图片是横的
+  if (self.showImgView.frame.size.width > self.showImgView.frame.size.height && newFrame.size.height <= self.cropFrame.size.height)
     newFrame.origin.y = self.cropFrame.origin.y + (self.cropFrame.size.height - newFrame.size.height) / 2;
-  }
+  
   return newFrame;
 }
 
@@ -303,7 +313,7 @@
 
 -(UIImage *)getSubImage{
   CGRect squareFrame = self.cropFrame;
-  CGFloat scaleRatio = self.latestFrame.size.width / self.originalImage.size.width;
+  CGFloat scaleRatio = self.latestFrame.size.width / self.originalImage.size.width;//缩放后的图片宽度与原图宽度的比例
   CGFloat x = (squareFrame.origin.x - self.latestFrame.origin.x) / scaleRatio;
   CGFloat y = (squareFrame.origin.y - self.latestFrame.origin.y) / scaleRatio;
   CGFloat w = squareFrame.size.width / scaleRatio;
@@ -319,6 +329,12 @@
     CGFloat newW = newH * (self.cropFrame.size.width / self.cropFrame.size.height);
     x = x + (w - newW) / 2; y = 0;
     w = newH; h = newH;
+    if (self.latestFrame.size.width == self.cropFrame.size.width) {
+      x = 0;
+      y = 0;
+      w = self.originalImage.size.width;
+      h = self.originalImage.size.height;
+    }
   }
   CGRect myImageRect = CGRectMake(x, y, w, h);
   CGImageRef imageRef = self.originalImage.CGImage;

@@ -108,12 +108,12 @@
     
     //根据状态改变大小
     if (panGR.state == UIGestureRecognizerStateBegan) {
-        _label.transform = CGAffineTransformMakeScale(1.5, 1.5);
-        
+//        _label.transform = CGAffineTransformMakeScale(1.5, 1.5);
+      
         //或者下面
-//        CGAffineTransform transform = _label.transform;
-//        transform = CGAffineTransformScale(transform, 2, 2);
-//        _label.transform = transform;
+        CGAffineTransform transform = _label.transform;
+        transform = CGAffineTransformScale(transform, 2, 2);
+        _label.transform = transform;
     }else if(panGR.state == UIGestureRecognizerStateEnded){
         _label.transform = CGAffineTransformIdentity;//恢复
     }
