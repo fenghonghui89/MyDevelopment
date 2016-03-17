@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger,PlantReferenceIndex) {
 {
   [super viewDidLoad];
  
-  [self createUI];
+  [self test2];
 }
 
 #pragma mark - < test > -

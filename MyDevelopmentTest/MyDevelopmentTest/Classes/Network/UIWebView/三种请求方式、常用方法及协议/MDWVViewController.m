@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
   
   //开启状态栏动画
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:TRUE];
@@ -27,92 +27,94 @@
 #pragma mark - action
 - (IBAction)tap1:(id)sender
 {
-    //1.读取html文件
-    //取得html文件的路径，把html文件的内容读取到NSString对象中
-    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index1" ofType:@"html"];
-    NSError *error = nil;
-    NSString *htmlString = [[NSString alloc] initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:&error];
-    
-    //2.把html文件的基本路径，即所在的资源目录，转成url
-    NSString *bundlePath = [[NSBundle mainBundle] resourcePath];
-    NSURL *bundleUrl = [NSURL fileURLWithPath:bundlePath];
-    
-    //3.读取内容，显示到webview
-    if (error == nil) {
-        [self.webView loadHTMLString:htmlString baseURL:bundleUrl];
-    }
+  //1.读取html文件
+  //取得html文件的路径，把html文件的内容读取到NSString对象中
+  NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index1" ofType:@"html"];
+  NSError *error = nil;
+  NSString *htmlString = [[NSString alloc] initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:&error];
+  
+  //2.把html文件的基本路径，即所在的资源目录，转成url
+  NSString *bundlePath = [[NSBundle mainBundle] resourcePath];
+  NSURL *bundleUrl = [NSURL fileURLWithPath:bundlePath];
+  
+  //3.读取内容，显示到webview
+  if (error == nil) {
+    [self.webView loadHTMLString:htmlString baseURL:bundleUrl];
+  }
 }
 
 - (IBAction)tap2:(id)sender
 {
-    //1.读取html文件
-    //取得html文件的路径，把html文件的内容读取到NSData对象中
-    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index1" ofType:@"html"];
-    NSData *htmlData = [[NSData alloc] initWithContentsOfFile:htmlPath];
-    
-    //2.把html文件的基本路径，即所在的资源目录，转成url
-    NSString *bundlePath = [[NSBundle mainBundle] resourcePath];
-    NSURL *bundleUrl = [NSURL fileURLWithPath:bundlePath];
-    
-    //3.读取内容，显示到webview
-    NSError *error = nil;
-    if (error == nil) {
-        [self.webView loadData:htmlData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL: bundleUrl];
-    }
+  //1.读取html文件
+  //取得html文件的路径，把html文件的内容读取到NSData对象中
+  NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index1" ofType:@"html"];
+  NSData *htmlData = [[NSData alloc] initWithContentsOfFile:htmlPath];
+  
+  //2.把html文件的基本路径，即所在的资源目录，转成url
+  NSString *bundlePath = [[NSBundle mainBundle] resourcePath];
+  NSURL *bundleUrl = [NSURL fileURLWithPath:bundlePath];
+  
+  //3.读取内容，显示到webview
+  NSError *error = nil;
+  if (error == nil) {
+    [self.webView loadData:htmlData MIMEType:@"text/html" textEncodingName:@"UTF-8" baseURL: bundleUrl];
+  }
 }
 
 - (IBAction)tap3:(id)sender
 {
-    self.webView.delegate = self;
-    
-    NSString *path = @"http://mall.tpages.cn";//不能忽略协议名http://
-    NSURL *url = [NSURL URLWithString:path];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:urlRequest];
+  self.webView.delegate = self;
+  
+  NSString *path = @"http://mall.tpages.cn";//不能忽略协议名http://
+  NSURL *url = [NSURL URLWithString:path];
+  NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+  [self.webView loadRequest:urlRequest];
 }
 
 - (IBAction)lastPage:(id)sender
 {
-    [self.webView goBack];
+  [self.webView goBack];
 }
 
 - (IBAction)nextPage:(id)sender
 {
-    [self.webView goForward];
+  [self.webView goForward];
 }
 
 - (IBAction)refresh:(id)sender
 {
-    [self.webView reload];
+  [self.webView reload];
 }
 
 - (IBAction)stop:(id)sender
 {
-    [self.webView stopLoading];
+  [self.webView stopLoading];
 }
 
 #pragma mark - callback
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    NSLog(@"1");
-    return YES;
+  NSLog(@"1");
+  return YES;
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"2");
+  NSLog(@"2");
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"3");
-    
-    //调用js语句；获得页面中html代码的js语句
-    NSLog(@"%@",[self.webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"]);
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  NSLog(@"3");
+  
+  //调用js语句；获得页面中html代码的js语句
+  NSLog(@"%@",[self.webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"]);
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    NSLog(@"4");
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  NSLog(@"4");
 }
 @end
