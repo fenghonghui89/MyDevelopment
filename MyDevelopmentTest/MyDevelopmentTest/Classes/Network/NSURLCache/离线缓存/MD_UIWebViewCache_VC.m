@@ -32,7 +32,7 @@
   [urlCache setMemoryCapacity:1*1024*1024];
   self.urlCache = urlCache;
   
-  NSURL *url = [NSURL URLWithString:@"http://mall.tpages.cn"];
+  NSURL *url = [NSURL URLWithString:@"http://tpages.cn"];
   NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0f];
   self.request = request;
   
