@@ -7,7 +7,8 @@
 //
 
 #import "MDBaseViewController.h"
-
+static void * studentContext = &studentContext;
+static void * contentContext = &contentContext;
 @interface MDKVO_VC : MDBaseViewController
 
 @end
