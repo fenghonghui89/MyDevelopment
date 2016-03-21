@@ -8,8 +8,9 @@
 
 #import "MDBaseViewController.h"
 @import Photos;
+@import PhotosUI;
 @interface MD_PhotoLibrary_PreviewVC : MDBaseViewController
 @property(nonatomic,strong)PHAsset *asset;
 @property(nonatomic,strong)PHAssetCollection *assetCollection;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end

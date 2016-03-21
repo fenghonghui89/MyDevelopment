@@ -7,7 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MD_PhotoLibrary_PreviewVC">
             <connections>
-                <outlet property="imageView" destination="w87-Xl-dzu" id="zIW-4W-ewb"/>
+                <outlet property="imageView" destination="kiW-GP-PTR" id="9XA-zN-n56"/>
+                <outlet property="livePhotoView" destination="XY0-Zf-rRj" id="aJt-HE-KWh"/>
+                <outlet property="progressView" destination="9oq-U9-qCI" id="Dg1-T4-Dm8"/>
+                <outlet property="showBgView" destination="OxW-Yj-bBS" id="4ac-b9-2sf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,30 +19,44 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w87-Xl-dzu">
-                    <rect key="frame" x="10" y="10" width="580" height="580"/>
-                    <color key="backgroundColor" red="1" green="0.56871769910000003" blue="0.52114213310000002" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9oq-U9-qCI">
+                    <rect key="frame" x="10" y="10" width="580" height="2"/>
+                </progressView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-Yj-bBS">
+                    <rect key="frame" x="10" y="22" width="580" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kiW-GP-PTR">
+                            <rect key="frame" x="0.0" y="0.0" width="580" height="568"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XY0-Zf-rRj" customClass="PHLivePhotoView">
+                            <rect key="frame" x="0.0" y="0.0" width="580" height="568"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XY0-Zf-rRj" firstAttribute="leading" secondItem="OxW-Yj-bBS" secondAttribute="leading" id="R6b-Jt-Vha"/>
+                        <constraint firstAttribute="trailing" secondItem="XY0-Zf-rRj" secondAttribute="trailing" id="Wez-Qk-2V5"/>
+                        <constraint firstAttribute="bottom" secondItem="kiW-GP-PTR" secondAttribute="bottom" id="Yld-tX-RBp"/>
+                        <constraint firstItem="kiW-GP-PTR" firstAttribute="leading" secondItem="OxW-Yj-bBS" secondAttribute="leading" id="afG-FD-K02"/>
+                        <constraint firstItem="kiW-GP-PTR" firstAttribute="top" secondItem="OxW-Yj-bBS" secondAttribute="top" id="apt-Qn-LaW"/>
+                        <constraint firstAttribute="bottom" secondItem="XY0-Zf-rRj" secondAttribute="bottom" id="fMw-TP-cdA"/>
+                        <constraint firstItem="XY0-Zf-rRj" firstAttribute="top" secondItem="OxW-Yj-bBS" secondAttribute="top" id="h1I-XT-SFc"/>
+                        <constraint firstAttribute="trailing" secondItem="kiW-GP-PTR" secondAttribute="trailing" id="rV5-Qj-cDq"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.45226977629999998" green="1" blue="0.40349993639999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="w87-Xl-dzu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1LL-MR-BLb"/>
-                <constraint firstAttribute="trailing" secondItem="w87-Xl-dzu" secondAttribute="trailing" constant="10" id="FOQ-t4-943"/>
-                <constraint firstItem="w87-Xl-dzu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="L4g-E1-2Ia"/>
-                <constraint firstItem="w87-Xl-dzu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NUW-Cj-lnv"/>
-                <constraint firstItem="w87-Xl-dzu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="SFN-3b-eFa"/>
-                <constraint firstAttribute="bottom" secondItem="w87-Xl-dzu" secondAttribute="bottom" constant="10" id="abp-Ae-uXq"/>
-                <constraint firstAttribute="trailing" secondItem="w87-Xl-dzu" secondAttribute="trailing" id="f7h-Up-bl6"/>
-                <constraint firstAttribute="bottom" secondItem="w87-Xl-dzu" secondAttribute="bottom" id="oDN-7c-l53"/>
+                <constraint firstItem="9oq-U9-qCI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="1WJ-jh-bYk"/>
+                <constraint firstAttribute="trailing" secondItem="9oq-U9-qCI" secondAttribute="trailing" constant="10" id="5Sg-dU-4Vs"/>
+                <constraint firstItem="OxW-Yj-bBS" firstAttribute="top" secondItem="9oq-U9-qCI" secondAttribute="bottom" constant="10" id="Cy3-IB-hqf"/>
+                <constraint firstAttribute="trailing" secondItem="OxW-Yj-bBS" secondAttribute="trailing" constant="10" id="Gdo-0t-w07"/>
+                <constraint firstAttribute="bottom" secondItem="OxW-Yj-bBS" secondAttribute="bottom" constant="10" id="UEh-NL-wBd"/>
+                <constraint firstItem="9oq-U9-qCI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="kjj-tu-KCF"/>
+                <constraint firstItem="OxW-Yj-bBS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="vFa-GP-gRP"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="1LL-MR-BLb"/>
-                    <exclude reference="L4g-E1-2Ia"/>
-                    <exclude reference="f7h-Up-bl6"/>
-                    <exclude reference="oDN-7c-l53"/>
-                </mask>
-            </variation>
+            <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="371" y="291"/>
         </view>
     </objects>
