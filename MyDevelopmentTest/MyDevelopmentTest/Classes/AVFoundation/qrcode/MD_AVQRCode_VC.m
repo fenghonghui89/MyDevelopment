@@ -121,6 +121,15 @@
     make.top.equalTo(self.maskView.mas_bottom).with.offset(20);
     make.centerX.mas_equalTo(self.maskView.mas_centerX);
   }];
+  
+  //lineView
+  UIView *lineTop = [[UIView alloc] initWithFrame:CGRectMake(0, 0, viewW, 10)];
+  [lineTop setBackgroundColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.3]];
+  [self.bgView addSubview:lineTop];
+  
+  UIView *lineBottom = [[UIView alloc] initWithFrame:CGRectMake(0, viewH-10, viewW, 10)];
+  [lineBottom setBackgroundColor:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.3]];
+  [self.bgView addSubview:lineBottom];
 }
 
 
