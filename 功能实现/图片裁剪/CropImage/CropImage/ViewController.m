@@ -67,11 +67,11 @@
 //  vc.delegate = self;
 //  [self presentViewController:vc animated:YES completion:nil];
   
-//  UIImage *img = [UIImage imageNamed:@"systemphoto.jpg"];
+//  UIImage *img = [UIImage imageNamed:@"IMG_1818.jpg"];
   UIImage *img = [UIImage imageNamed:@"DSC02039.jpg"];
   VPImageCropperViewController *vc = [[VPImageCropperViewController alloc] init];
   vc.originalImage = img;
-  vc.cropFrame = CGRectMake(0, 100, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.width);
+  vc.cropFrame = CGRectMake(0, 100, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.width);//裁切框宽度等于屏幕宽度时最准确
   vc.limitRatio = 3;
   vc.delegate = self;
   [self presentViewController:vc animated:YES completion:nil];

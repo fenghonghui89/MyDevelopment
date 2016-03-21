@@ -318,24 +318,32 @@
   CGFloat y = (squareFrame.origin.y - self.latestFrame.origin.y) / scaleRatio;
   CGFloat w = squareFrame.size.width / scaleRatio;
   CGFloat h = squareFrame.size.width / scaleRatio;
+  
+  
   if (self.latestFrame.size.width < self.cropFrame.size.width) {
     CGFloat newW = self.originalImage.size.width;
     CGFloat newH = newW * (self.cropFrame.size.height / self.cropFrame.size.width);
-    x = 0; y = y + (h - newH) / 2;
-    w = newH; h = newH;
+    x = 0;
+    y = y + (h - newH) / 2;
+    w = newH;
+    h = newH;
   }
+  
+  //如果缩放后高度小于裁切框高度，即横屏图
   if (self.latestFrame.size.height < self.cropFrame.size.height) {
     CGFloat newH = self.originalImage.size.height;
     CGFloat newW = newH * (self.cropFrame.size.width / self.cropFrame.size.height);
     x = x + (w - newW) / 2; y = 0;
     w = newH; h = newH;
-    if (self.latestFrame.size.width == self.cropFrame.size.width) {
+    if (self.latestFrame.size.width == self.cropFrame.size.width) {//如果缩放后宽度等于裁切框宽度，则截取全图
       x = 0;
       y = 0;
       w = self.originalImage.size.width;
       h = self.originalImage.size.height;
     }
   }
+  
+  //裁图
   CGRect myImageRect = CGRectMake(x, y, w, h);
   CGImageRef imageRef = self.originalImage.CGImage;
   CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, myImageRect);
