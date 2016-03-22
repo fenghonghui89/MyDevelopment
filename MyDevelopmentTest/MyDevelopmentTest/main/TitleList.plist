@@ -11,6 +11,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>HTTP</string>
+				<key>className</key>
+				<string>MD_HTTP_Base_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>UIWebView</string>
 				<key>className</key>
 				<string></string>

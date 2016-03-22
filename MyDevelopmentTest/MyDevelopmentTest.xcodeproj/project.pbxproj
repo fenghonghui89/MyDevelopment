@@ -288,6 +288,7 @@
 		14DF14D21C4F83E7005C10AA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF14C41C4F83E7005C10AA /* Default.png */; };
 		14DF14D31C4F83E7005C10AA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF14C51C4F83E7005C10AA /* Default@2x.png */; };
 		14DF14D61C4F87CC005C10AA /* MDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DF14D51C4F87CC005C10AA /* MDNavigationController.m */; };
+		14E27C2D1CA1500C00F428CC /* MD_HTTP_Base_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E27C2C1CA1500C00F428CC /* MD_HTTP_Base_VC.m */; };
 		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
 		14E604D71C5B0538000E0DED /* MDKVO_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604D51C5B0538000E0DED /* MDKVO_VC.m */; };
 		14E604D81C5B0538000E0DED /* MDKVO_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E604D61C5B0538000E0DED /* MDKVO_VC.xib */; };
@@ -737,6 +738,8 @@
 		14DF14C51C4F83E7005C10AA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		14DF14D41C4F87CC005C10AA /* MDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNavigationController.h; sourceTree = "<group>"; };
 		14DF14D51C4F87CC005C10AA /* MDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNavigationController.m; sourceTree = "<group>"; };
+		14E27C2B1CA1500C00F428CC /* MD_HTTP_Base_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_HTTP_Base_VC.h; sourceTree = "<group>"; };
+		14E27C2C1CA1500C00F428CC /* MD_HTTP_Base_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_HTTP_Base_VC.m; sourceTree = "<group>"; };
 		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
 		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
 		14E604D31C5B041E000E0DED /* NSKeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSKeyValueObserving.h; sourceTree = "<group>"; };
@@ -1041,6 +1044,7 @@
 				1428AB811C84558C003CC10F /* NSURLRequest.h */,
 				1428AB661C84502C003CC10F /* NSURLCache.h */,
 				1428AB761C84502C003CC10F /* UIWebView.h */,
+				14E27C2A1CA14FB000F428CC /* HTTP */,
 				1428AB5F1C84502C003CC10F /* NSURLCache */,
 				1428AB671C84502C003CC10F /* UIWebView */,
 			);
@@ -1980,6 +1984,15 @@
 			path = LaunchImage;
 			sourceTree = "<group>";
 		};
+		14E27C2A1CA14FB000F428CC /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				14E27C2B1CA1500C00F428CC /* MD_HTTP_Base_VC.h */,
+				14E27C2C1CA1500C00F428CC /* MD_HTTP_Base_VC.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 		14E331B41B2716EF00B356C7 /* UIImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2579,6 +2592,7 @@
 				145D871D1BA84DBE00447D35 /* MD_UIViewController_VC.m in Sources */,
 				141B43681AA4734B008F2711 /* MDModalViewController.m in Sources */,
 				14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */,
+				14E27C2D1CA1500C00F428CC /* MD_HTTP_Base_VC.m in Sources */,
 				14DF14D61C4F87CC005C10AA /* MDNavigationController.m in Sources */,
 				148CD73B1AAECA3200FAED9D /* TRStudent4.m in Sources */,
 				148CD7641AAED72A00FAED9D /* MDNSSetNormalViewController.m in Sources */,
