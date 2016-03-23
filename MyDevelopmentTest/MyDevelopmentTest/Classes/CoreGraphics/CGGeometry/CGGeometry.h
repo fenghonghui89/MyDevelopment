@@ -179,7 +179,7 @@ CG_EXTERN bool CGRectIsInfinite(CGRect rect)
 /* Inset `rect' by `(dx, dy)' -- i.e., offset its origin by `(dx, dy)', and
    decrease its size by `(2*dx, 2*dy)'. */
 
-CG_EXTERN CGRect CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)//以rect为中心，dx为距离左右两边的距离，dy为距离上下两边的距离，进行缩放
+CG_EXTERN CGRect CGRectInset(CGRect rect, CGFloat dx, CGFloat dy)//以rect为中心，dx为距离左右两边的距离，dy为距离上下两边的距离，进行缩放 正表示缩小，－表示放大
     CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 /* Expand `rect' to the smallest rect containing it with integral origin and

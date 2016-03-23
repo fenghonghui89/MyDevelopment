@@ -690,6 +690,7 @@
 		149CFE961CA24DDE00E6525C /* MD_HTTP_URLDecode_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_HTTP_URLDecode_VC.h; sourceTree = "<group>"; };
 		149CFE971CA24DDE00E6525C /* MD_HTTP_URLDecode_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_HTTP_URLDecode_VC.m; sourceTree = "<group>"; };
 		149CFE991CA258B700E6525C /* MD_HTTP_URLDecode_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_HTTP_URLDecode_VC.xib; sourceTree = "<group>"; };
+		149CFE9C1CA27F1C00E6525C /* UIGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIGeometry.h; sourceTree = "<group>"; };
 		14D670071C475B1100F911A4 /* MDModal1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDModal1ViewController.xib; sourceTree = "<group>"; };
 		14D670091C475BCE00F911A4 /* MDModal2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDModal2ViewController.h; sourceTree = "<group>"; };
 		14D6700A1C475BCE00F911A4 /* MDModal2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModal2ViewController.m; sourceTree = "<group>"; };
@@ -1312,6 +1313,7 @@
 		1463B2071AA162C2006AE8D2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				149CFE9B1CA27EC000E6525C /* UIGeometry */,
 				14EACA231C8038C100F3FE2C /* UICollectionView */,
 				14F9776A1C44AE7A00A53FA9 /* UITableView */,
 				14565D0D1BA94787009F7B2D /* Animation */,
@@ -1904,6 +1906,14 @@
 				149CFE991CA258B700E6525C /* MD_HTTP_URLDecode_VC.xib */,
 			);
 			path = "urlencode、urldecode";
+			sourceTree = "<group>";
+		};
+		149CFE9B1CA27EC000E6525C /* UIGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				149CFE9C1CA27F1C00E6525C /* UIGeometry.h */,
+			);
+			path = UIGeometry;
 			sourceTree = "<group>";
 		};
 		14C1E6AB1B53CD4800C7E5DF /* image */ = {

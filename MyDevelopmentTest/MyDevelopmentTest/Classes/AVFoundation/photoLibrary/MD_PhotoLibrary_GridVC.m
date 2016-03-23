@@ -131,7 +131,7 @@ static NSString * const collectionViewCellIdentifier = @"cell";
 
 - (void)computeDifferenceBetweenRect:(CGRect)oldRect andRect:(CGRect)newRect removedHandler:(void (^)(CGRect removedRect))removedHandler addedHandler:(void (^)(CGRect addedRect))addedHandler {
   if (CGRectIntersectsRect(newRect, oldRect)) {//如果两个矩形有交叉
-    //minY 一般为坐标原点y;maxY 一般为高度
+    //minY 一般为坐标原点y;maxY 一般为高度尽头点y
     CGFloat oldMinY = CGRectGetMinY(oldRect);
     CGFloat oldMaxY = CGRectGetMaxY(oldRect);
     CGFloat newMinY = CGRectGetMinY(newRect);

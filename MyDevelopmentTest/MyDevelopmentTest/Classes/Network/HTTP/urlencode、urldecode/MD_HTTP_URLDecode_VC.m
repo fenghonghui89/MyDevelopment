@@ -9,9 +9,10 @@
 #import "MD_HTTP_URLDecode_VC.h"
 #import "NSString+URLEncoding.h"
 
-@interface MD_HTTP_URLDecode_VC ()<UITableViewDataSource,UITableViewDelegate>
+@interface MD_HTTP_URLDecode_VC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSMutableArray *imagePaths;
+@property (nonatomic,assign)CGRect previousPerRect;
 @end
 
 @implementation MD_HTTP_URLDecode_VC
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  [self customInitData];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -29,7 +31,88 @@
 }
 
 #pragma mark - < method > -
+-(void)customInitData{
+  self.previousPerRect = CGRectZero;
+}
+-(void)updataUI{
+
+  BOOL isVisible = [self isViewLoaded];
+  if (!isVisible) {
+    return;
+  }
+  
+  CGRect preRect = self.tableView.bounds;
+  preRect = CGRectInset(preRect, 0, -0.5*CGRectGetHeight(preRect));
+  
+  CGFloat delta = ABS(CGRectGetMidY(self.previousPerRect)-CGRectGetMidY(preRect));{
+    if (delta > CGRectGetHeight(self.tableView.bounds)*0.3) {
+      NSMutableArray *removeIndexPaths = [NSMutableArray array];
+      NSMutableArray *addIndexPaths = [NSMutableArray array];
+      
+      [self compareNewRect:preRect oldRect:self.previousPerRect removeHandle:^(CGRect removeRect) {
+        NSArray *indexPaths = [self.tableView indexPathsForRowsInRect:removeRect];
+        NSString *str = @"remove:\n";
+        for (NSIndexPath *ip in indexPaths) {
+          str = [str stringByAppendingString:[NSString stringWithFormat:@"%ld \n",(long)ip.row]];
+        }
+        NSLog(@"%@",str);
+        [removeIndexPaths addObjectsFromArray:indexPaths];
+      } addHandle:^(CGRect addRect) {
+        NSArray *indexPaths = [self.tableView indexPathsForRowsInRect:addRect];
+        NSString *str = @"add:\n";
+        for (NSIndexPath *ip in indexPaths) {
+          str = [str stringByAppendingString:[NSString stringWithFormat:@"%ld \n",(long)ip.row]];
+        }
+        NSLog(@"%@",str);
+        [addIndexPaths addObjectsFromArray:indexPaths];
+        
+      }];
+      
+      self.previousPerRect = preRect;
+    }
+  }
+  
+}
+
+-(void)compareNewRect:(CGRect)newRect oldRect:(CGRect)oldRect removeHandle:(void(^)(CGRect removeRect))removeHandle addHandle:(void(^)(CGRect addRect))addHandle{
+  
+  if(CGRectIntersectsRect(newRect, oldRect))
+  {
+    CGFloat newMaxY = CGRectGetMaxY(newRect);
+    CGFloat newMinY = CGRectGetMinY(newRect);
+    CGFloat oldMaxY = CGRectGetMaxY(oldRect);
+    CGFloat oldMinY = CGRectGetMinY(oldRect);
+    
+    if (newMinY > oldMinY) {//下滚
+      CGRect rectToRemove = CGRectMake(oldRect.origin.x, oldMinY, oldRect.size.width, ABS(newMinY-oldMinY));
+      removeHandle(rectToRemove);
+    }
+    
+    if (newMinY < oldMinY) {//初始 回滚
+      CGRect rectToRemove = CGRectMake(newRect.origin.x, newMaxY, newRect.size.width, ABS(oldMaxY - newMaxY));
+      removeHandle(rectToRemove);
+    }
+    
+    if (newMaxY > oldMaxY) {//初始 下滚
+      CGRect rectToAdd = CGRectMake(newRect.origin.x, oldMaxY, oldRect.size.width, ABS(newMaxY-oldMaxY));
+      addHandle(rectToAdd);
+    }
+    
+    if (newMaxY < oldMaxY) {//回滚
+      CGRect rectToAdd = CGRectMake(newRect.origin.x, newMinY, newRect.size.width, ABS(oldMinY-newMinY));
+      addHandle(rectToAdd);
+    }
+  }
+  else
+  {
+    addHandle(newRect);
+    removeHandle(oldRect);
+  }
+}
+
+#pragma mark - < action > -
 -(void)urlencode_urldecode{
+  
   NSString *path = @"http://webservice.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather?theCityCode=江门&theUserID=";
   
   //encode
@@ -67,7 +150,7 @@
   
   NSStringEncoding gbkEncode = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
   char* c_test = "北京";
-  int nLen = strlen(c_test);//长度
+  long nLen = strlen(c_test);//长度
   NSString* str = [[NSString alloc]initWithBytes:c_test length:nLen encoding:gbkEncode];
   NSLog(@"str = %@",str);
 }
@@ -122,11 +205,15 @@
     dispatch_async(dispatch_get_main_queue(), ^{
       cell.imageView.image = image;
       [cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
-      [cell layoutIfNeeded];//手动调用cell的布局方法刷新一下，否则显示会有问题
+      [cell layoutIfNeeded];
     });
   });
   
   return cell;
 }
 
+#pragma mark UIScrollView
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+  [self updataUI];
+}
 @end
