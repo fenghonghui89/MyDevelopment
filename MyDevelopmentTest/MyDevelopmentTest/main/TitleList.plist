@@ -13,9 +13,26 @@
 				<key>desc</key>
 				<string>HTTP</string>
 				<key>className</key>
-				<string>MD_HTTP_Base_VC</string>
+				<string></string>
 				<key>sub</key>
-				<array/>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>urlencode &amp; urldecode</string>
+						<key>className</key>
+						<string>MD_HTTP_URLDecode_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>get、post、同步、异步</string>
+						<key>className</key>
+						<string>MD_HTTP_Base_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>desc</key>
