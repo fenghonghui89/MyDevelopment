@@ -10,8 +10,6 @@
 		1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403E3271B8C68ED009C8CAC /* myUILabel.m */; };
 		1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */; };
 		1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */; };
-		1412B6771BA1991000FA5F2E /* UIBezierPath曲线各点含义.png in Resources */ = {isa = PBXBuildFile; fileRef = 1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */; };
-		1412B6781BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1412B6761BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf */; };
 		141886DA1C5096D600914CD7 /* MD_FileManager_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141886D71C5096D600914CD7 /* MD_FileManager_VC.m */; };
 		141886DB1C5096D600914CD7 /* MD_FileManager_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141886D81C5096D600914CD7 /* MD_FileManager_VC.xib */; };
 		141886DC1C5096D600914CD7 /* MDTestNSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 141886D91C5096D600914CD7 /* MDTestNSFileManager.m */; };
@@ -61,7 +59,6 @@
 		144F23F21C5F38E2004ED3BC /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23EF1C5F38E2004ED3BC /* UICollectionView+Convenience.m */; };
 		144F23F61C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23F41C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m */; };
 		144F23F71C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144F23F51C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib */; };
-		14565D0C1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14565D0B1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf */; };
 		14565E0B1BA94AB1009F7B2D /* MD_NSTimer_VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E0A1BA94AB1009F7B2D /* MD_NSTimer_VC1.m */; };
 		14565E491BA94CD1009F7B2D /* playing10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14565E0D1BA94CD1009F7B2D /* playing10@2x.png */; };
 		14565E4A1BA94CD1009F7B2D /* playing11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14565E0E1BA94CD1009F7B2D /* playing11@2x.png */; };
@@ -136,9 +133,7 @@
 		145D870F1BA8405E00447D35 /* MD_Touch_CustomView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D870E1BA8405E00447D35 /* MD_Touch_CustomView2.m */; };
 		145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87111BA8417800447D35 /* MD_Touch_Point.m */; };
 		145D871D1BA84DBE00447D35 /* MD_UIViewController_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D871C1BA84DBE00447D35 /* MD_UIViewController_VC.m */; };
-		145D871F1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png in Resources */ = {isa = PBXBuildFile; fileRef = 145D871E1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png */; };
 		145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87211BA8533500447D35 /* MD_Touch_Line.m */; };
-		145D87241BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 145D87231BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf */; };
 		1463A9C71B6612160087F38F /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463A9C61B6612160087F38F /* UIView+MDCategory.m */; };
 		1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */; };
 		1463B2121AA162C2006AE8D2 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2091AA162C2006AE8D2 /* button.png */; };
@@ -219,7 +214,6 @@
 		1482B5C81BA1A86400E83090 /* tabbar_item_store@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1482B5C71BA1A86400E83090 /* tabbar_item_store@2x.png */; };
 		14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */; };
 		14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */; };
-		14877C811BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14877C801BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf */; };
 		148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */; };
 		148829931C55C5A00034ACFC /* TRStudent5.m in Sources */ = {isa = PBXBuildFile; fileRef = 148829911C55C5A00034ACFC /* TRStudent5.m */; };
 		148CD69B1AAE972700FAED9D /* abc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 148CD69A1AAE972700FAED9D /* abc.txt */; };
@@ -336,8 +330,6 @@
 		1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIBezierPath_CustomView1.m; sourceTree = "<group>"; };
 		1412B6711BA17BF400FA5F2E /* MD_String_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_String_CustomView.h; sourceTree = "<group>"; };
 		1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_String_CustomView.m; sourceTree = "<group>"; };
-		1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIBezierPath曲线各点含义.png"; sourceTree = "<group>"; };
-		1412B6761BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "笔记 - 绘图 - 赵哲.rtf"; sourceTree = "<group>"; };
 		141886D61C5096D600914CD7 /* MD_FileManager_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FileManager_VC.h; sourceTree = "<group>"; };
 		141886D71C5096D600914CD7 /* MD_FileManager_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FileManager_VC.m; sourceTree = "<group>"; };
 		141886D81C5096D600914CD7 /* MD_FileManager_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FileManager_VC.xib; sourceTree = "<group>"; };
@@ -430,7 +422,6 @@
 		144F23F31C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_PhotoLibrary_PreviewVC.h; sourceTree = "<group>"; };
 		144F23F41C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_PhotoLibrary_PreviewVC.m; sourceTree = "<group>"; };
 		144F23F51C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_PhotoLibrary_PreviewVC.xib; sourceTree = "<group>"; };
-		14565D0B1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "笔记 - 动画 - 赵哲.rtf"; sourceTree = "<group>"; };
 		14565E091BA94AB1009F7B2D /* MD_NSTimer_VC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSTimer_VC1.h; sourceTree = "<group>"; };
 		14565E0A1BA94AB1009F7B2D /* MD_NSTimer_VC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSTimer_VC1.m; sourceTree = "<group>"; };
 		14565E0D1BA94CD1009F7B2D /* playing10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing10@2x.png"; sourceTree = "<group>"; };
@@ -516,10 +507,8 @@
 		145D87111BA8417800447D35 /* MD_Touch_Point.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_Point.m; sourceTree = "<group>"; };
 		145D871B1BA84DBE00447D35 /* MD_UIViewController_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIViewController_VC.h; sourceTree = "<group>"; };
 		145D871C1BA84DBE00447D35 /* MD_UIViewController_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIViewController_VC.m; sourceTree = "<group>"; };
-		145D871E1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png"; sourceTree = "<group>"; };
 		145D87201BA8533500447D35 /* MD_Touch_Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_Line.h; sourceTree = "<group>"; };
 		145D87211BA8533500447D35 /* MD_Touch_Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_Line.m; sourceTree = "<group>"; };
-		145D87231BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "笔记 - 触控 - 赵哲.rtf"; sourceTree = "<group>"; };
 		1463A9C51B6612160087F38F /* UIView+MDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDCategory.h"; sourceTree = "<group>"; };
 		1463A9C61B6612160087F38F /* UIView+MDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDCategory.m"; sourceTree = "<group>"; };
 		1463B2051AA162C2006AE8D2 /* MDCountStringRectangleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCountStringRectangleViewController.h; sourceTree = "<group>"; };
@@ -628,7 +617,6 @@
 		14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GestureRecognizer_VC.m; sourceTree = "<group>"; };
 		14877C7B1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GestureRecognizerTest_VC.h; sourceTree = "<group>"; };
 		14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GestureRecognizerTest_VC.m; sourceTree = "<group>"; };
-		14877C801BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "笔记 - 手势 - 赵哲.rtf"; sourceTree = "<group>"; };
 		1488298E1C55C5A00034ACFC /* MDNSEnumeratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSEnumeratorViewController.h; sourceTree = "<group>"; };
 		1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSEnumeratorViewController.m; sourceTree = "<group>"; };
 		148829901C55C5A00034ACFC /* TRStudent5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent5.h; sourceTree = "<group>"; };
@@ -871,19 +859,6 @@
 				1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */,
 			);
 			path = UICustom;
-			sourceTree = "<group>";
-		};
-		1412B6741BA1991000FA5F2E /* 笔记与资料 */ = {
-			isa = PBXGroup;
-			children = (
-				14565D0B1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf */,
-				145D87231BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf */,
-				145D871E1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png */,
-				14877C801BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf */,
-				1412B6751BA1991000FA5F2E /* UIBezierPath曲线各点含义.png */,
-				1412B6761BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf */,
-			);
-			path = "笔记与资料";
 			sourceTree = "<group>";
 		};
 		141886D41C5096D600914CD7 /* NSFileHandle */ = {
@@ -1658,7 +1633,6 @@
 			isa = PBXGroup;
 			children = (
 				14E604D91C5B101D000E0DED /* Model */,
-				1412B6741BA1991000FA5F2E /* 笔记与资料 */,
 				14DB40F01AEA752D00DA1682 /* main */,
 				1403E3251B8C68EC009C8CAC /* UICustom */,
 				146D82AC1AA7036700F0C7FD /* Categories */,
@@ -2323,7 +2297,6 @@
 				14381BEB1BA1B75900C06EB7 /* delete_btn@2x.png in Resources */,
 				146D82EF1AA709F600F0C7FD /* Denmark.png in Resources */,
 				14565E811BA94CD1009F7B2D /* playing6@2x.png in Resources */,
-				145D87241BA85DAD00447D35 /* 笔记 - 触控 - 赵哲.rtf in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,
 				1428AB7C1C84502C003CC10F /* index1.html in Resources */,
 				14565E521BA94CD1009F7B2D /* playing19@2x.png in Resources */,
@@ -2340,14 +2313,11 @@
 				146D83051AA709F600F0C7FD /* NewZealand.png in Resources */,
 				141B43251AA3FC12008F2711 /* Shapes.jpg in Resources */,
 				14565E701BA94CD1009F7B2D /* playing46@2x.png in Resources */,
-				1412B6781BA1991000FA5F2E /* 笔记 - 绘图 - 赵哲.rtf in Resources */,
-				14877C811BA81C6900785B0C /* 笔记 - 手势 - 赵哲.rtf in Resources */,
 				146D82FD1AA709F600F0C7FD /* Honduras.png in Resources */,
 				14565E4E1BA94CD1009F7B2D /* playing15@2x.png in Resources */,
 				147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */,
 				14DF14C81C4F83E7005C10AA /* Icon-Small-40@2x.png in Resources */,
 				14565E5E1BA94CD1009F7B2D /* playing2@2x.png in Resources */,
-				1412B6771BA1991000FA5F2E /* UIBezierPath曲线各点含义.png in Resources */,
 				146D83011AA709F600F0C7FD /* Japan.png in Resources */,
 				1463B2A41AA1CAE4006AE8D2 /* small.jpg in Resources */,
 				14DF14CC1C4F83E7005C10AA /* Icon-Small@3x.png in Resources */,
@@ -2367,7 +2337,6 @@
 				144F23F71C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib in Resources */,
 				146D82E11AA709F600F0C7FD /* Algeria.png in Resources */,
 				1463B27B1AA1B689006AE8D2 /* MDMainViewController.xib in Resources */,
-				14565D0C1BA9465B009F7B2D /* 笔记 - 动画 - 赵哲.rtf in Resources */,
 				14565E621BA94CD1009F7B2D /* playing33@2x.png in Resources */,
 				14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */,
 				1421A9721BD60C7200C561A7 /* IMG_0309.jpg in Resources */,
@@ -2465,7 +2434,6 @@
 				14565E581BA94CD1009F7B2D /* playing24@2x.png in Resources */,
 				14381BF51BA1BDCC00C06EB7 /* playing_volumn_slide_sound_icon@2x.png in Resources */,
 				1482B5C81BA1A86400E83090 /* tabbar_item_store@2x.png in Resources */,
-				145D871F1BA84F2100447D35 /* 如果是自定义的有绘制的UIView，view的contentMode需要设置为 Redraw.png in Resources */,
 				1463B2781AA1B593006AE8D2 /* ThirdViewController.xib in Resources */,
 				146D831D1AA709F600F0C7FD /* Uruguay.png in Resources */,
 				146D82E91AA709F600F0C7FD /* Cameroon.png in Resources */,
