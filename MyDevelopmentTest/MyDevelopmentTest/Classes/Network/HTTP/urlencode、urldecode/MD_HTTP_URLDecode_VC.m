@@ -9,10 +9,9 @@
 #import "MD_HTTP_URLDecode_VC.h"
 #import "NSString+URLEncoding.h"
 
-@interface MD_HTTP_URLDecode_VC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface MD_HTTP_URLDecode_VC ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSMutableArray *imagePaths;
-@property (nonatomic,assign)CGRect previousPerRect;
 @end
 
 @implementation MD_HTTP_URLDecode_VC
@@ -20,95 +19,18 @@
 #pragma mark - < vc lifecycle > -
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  [self customInitData];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
   
   [self getWebImg];
+
 }
 
 #pragma mark - < method > -
--(void)customInitData{
-  self.previousPerRect = CGRectZero;
-}
--(void)updataUI{
 
-  BOOL isVisible = [self isViewLoaded];
-  if (!isVisible) {
-    return;
-  }
-  
-  CGRect preRect = self.tableView.bounds;
-  preRect = CGRectInset(preRect, 0, -0.5*CGRectGetHeight(preRect));
-  
-  CGFloat delta = ABS(CGRectGetMidY(self.previousPerRect)-CGRectGetMidY(preRect));{
-    if (delta > CGRectGetHeight(self.tableView.bounds)*0.3) {
-      NSMutableArray *removeIndexPaths = [NSMutableArray array];
-      NSMutableArray *addIndexPaths = [NSMutableArray array];
-      
-      [self compareNewRect:preRect oldRect:self.previousPerRect removeHandle:^(CGRect removeRect) {
-        NSArray *indexPaths = [self.tableView indexPathsForRowsInRect:removeRect];
-        NSString *str = @"remove:\n";
-        for (NSIndexPath *ip in indexPaths) {
-          str = [str stringByAppendingString:[NSString stringWithFormat:@"%ld \n",(long)ip.row]];
-        }
-        NSLog(@"%@",str);
-        [removeIndexPaths addObjectsFromArray:indexPaths];
-      } addHandle:^(CGRect addRect) {
-        NSArray *indexPaths = [self.tableView indexPathsForRowsInRect:addRect];
-        NSString *str = @"add:\n";
-        for (NSIndexPath *ip in indexPaths) {
-          str = [str stringByAppendingString:[NSString stringWithFormat:@"%ld \n",(long)ip.row]];
-        }
-        NSLog(@"%@",str);
-        [addIndexPaths addObjectsFromArray:indexPaths];
-        
-      }];
-      
-      self.previousPerRect = preRect;
-    }
-  }
-  
-}
-
--(void)compareNewRect:(CGRect)newRect oldRect:(CGRect)oldRect removeHandle:(void(^)(CGRect removeRect))removeHandle addHandle:(void(^)(CGRect addRect))addHandle{
-  
-  if(CGRectIntersectsRect(newRect, oldRect))
-  {
-    CGFloat newMaxY = CGRectGetMaxY(newRect);
-    CGFloat newMinY = CGRectGetMinY(newRect);
-    CGFloat oldMaxY = CGRectGetMaxY(oldRect);
-    CGFloat oldMinY = CGRectGetMinY(oldRect);
-    
-    if (newMinY > oldMinY) {//下滚
-      CGRect rectToRemove = CGRectMake(oldRect.origin.x, oldMinY, oldRect.size.width, ABS(newMinY-oldMinY));
-      removeHandle(rectToRemove);
-    }
-    
-    if (newMinY < oldMinY) {//初始 回滚
-      CGRect rectToRemove = CGRectMake(newRect.origin.x, newMaxY, newRect.size.width, ABS(oldMaxY - newMaxY));
-      removeHandle(rectToRemove);
-    }
-    
-    if (newMaxY > oldMaxY) {//初始 下滚
-      CGRect rectToAdd = CGRectMake(newRect.origin.x, oldMaxY, oldRect.size.width, ABS(newMaxY-oldMaxY));
-      addHandle(rectToAdd);
-    }
-    
-    if (newMaxY < oldMaxY) {//回滚
-      CGRect rectToAdd = CGRectMake(newRect.origin.x, newMinY, newRect.size.width, ABS(oldMinY-newMinY));
-      addHandle(rectToAdd);
-    }
-  }
-  else
-  {
-    addHandle(newRect);
-    removeHandle(oldRect);
-  }
-}
 
 #pragma mark - < action > -
 -(void)urlencode_urldecode{
@@ -169,7 +91,7 @@
   self.imagePaths = [NSMutableArray array];
   NSArray *arr = [htmlString componentsSeparatedByString:@"\""];//按"分割源代码（转义字符\"）
   for (NSString *str in arr) {
-    if ([str hasSuffix:@"jpg"]) {
+    if ([str hasSuffix:@"jpg"] || [str hasSuffix:@"png"]) {
       [self.imagePaths addObject:str];
     }
   }
@@ -212,8 +134,4 @@
   return cell;
 }
 
-#pragma mark UIScrollView
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-  [self updataUI];
-}
 @end

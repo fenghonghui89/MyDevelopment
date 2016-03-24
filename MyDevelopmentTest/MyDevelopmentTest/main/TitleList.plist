@@ -185,6 +185,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>UITableView</string>
+				<key>className</key>
+				<string>MD_TableView_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>UICollectionView</string>
 				<key>className</key>
 				<string>MD_CollectionView_VC</string>

@@ -20,7 +20,7 @@
   
   dispatch_queue_t myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_PRIORITY_DEFAULT);
   dispatch_async(myQueue, ^{
-    [self findFileInDirecotryPath:@"/Users/hanyfeng/Desktop/Library" fileName:@"UIGeometry"];
+    [self findFileInDirecotryPath:@"/Users/hanyfeng/Desktop/Library" fileName:@"NSURLProtocol"];
   });
 }
 
