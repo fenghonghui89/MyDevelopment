@@ -766,6 +766,7 @@
 		14EA84FB1CA3E8A500A70A46 /* MD_TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_TableViewCell.h; sourceTree = "<group>"; };
 		14EA84FC1CA3E8A500A70A46 /* MD_TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_TableViewCell.m; sourceTree = "<group>"; };
 		14EA84FD1CA3E8A500A70A46 /* MD_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_TableViewCell.xib; sourceTree = "<group>"; };
+		14EA85001CA3FB2800A70A46 /* UITableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITableViewCell.h; sourceTree = "<group>"; };
 		14EACA1D1C80021C00F3FE2C /* MD_FreeTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FreeTest_VC.h; sourceTree = "<group>"; };
 		14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FreeTest_VC.m; sourceTree = "<group>"; };
 		14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FreeTest_VC.xib; sourceTree = "<group>"; };
@@ -2170,6 +2171,7 @@
 			isa = PBXGroup;
 			children = (
 				14F9776C1C44AE8E00A53FA9 /* UITableView.h */,
+				14EA85001CA3FB2800A70A46 /* UITableViewCell.h */,
 				14EA84F01CA396E900A70A46 /* MD_TableView_VC.h */,
 				14EA84F11CA396E900A70A46 /* MD_TableView_VC.m */,
 				14EA84F21CA396E900A70A46 /* MD_TableView_VC.xib */,

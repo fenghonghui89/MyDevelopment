@@ -17,6 +17,7 @@ static NSString * const cellId = @"cell";
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *data;
 @property(nonatomic,assign)CGRect previousPerRect;
+@property(nonatomic,assign)BOOL bb;
 @end
 
 @implementation MD_TableView_VC
@@ -76,9 +77,9 @@ static NSString * const cellId = @"cell";
   
   self.data = [MDImageItem handleData:data];
   
-  for (NSString *path in imagePaths) {
-    NSLog(@"p:%@",path);
-  }
+//  for (NSString *path in imagePaths) {
+//    NSLog(@"p:%@",path);
+//  }
 }
 
 -(void)customInitUI{
@@ -187,19 +188,38 @@ static NSString * const cellId = @"cell";
 }
 
 -(void)startDownloadImage:(MDImageItem *)imageItem indexPath:(NSIndexPath *)indexPath{
-  ImageDownloader *downloader = [[ImageDownloader alloc] init];
-  [downloader startDownloadImage:imageItem.imageUrl complationHandle:^(UIImage *image) {
-    NSLog(@"加载图像");
-    MD_TableViewCell *cell = (MD_TableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    imageItem.image = image;
-    cell.imageView_.image = image;
-    [cell layoutIfNeeded];
+
+  [[ImageDownloader shareImageDownloader] startDownloadImage:imageItem.imageUrl complationHandle:^(UIImage *image) {
+    
+    NSArray *visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
+    BOOL isSet = NO;
+    for (NSIndexPath *visibleIndexPath in visibleIndexPaths) {
+      if (visibleIndexPath.row == indexPath.row) {
+        NSLog(@"加载图像");
+        
+        imageItem.image = image;
+        
+        MD_TableViewCell *cell = (MD_TableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        cell.imageView_.image = image;
+        [cell layoutIfNeeded];
+        
+        isSet = YES;
+        
+        return;
+      }
+    }
+    
+    if (isSet == NO) {
+      imageItem.image = image;
+      NSLog(@"cell不在可视区域，缓存但不改变ui");
+    }
+    
   }];
 }
 
 #pragma mark - < action > -
 -(void)rightBarButtonItemTap{
-
+  self.bb = YES;
 }
 #pragma mark - < callback > -
 #pragma mark UITableView
@@ -218,13 +238,17 @@ static NSString * const cellId = @"cell";
   
   MDImageItem *imageItem = [self.data objectAtIndex:indexPath.row];
   cell.nameLabel.text = imageItem.imageName;
+  cell.imageView_.image = [UIImage imageNamed:@"Algeria.png"];
   
   if (imageItem.image == nil) {
-    if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
-//      NSLog(@"首次加载第一页 无缓存");
+//    if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+////      NSLog(@"首次加载第一页 无缓存");
+//      [self startDownloadImage:imageItem indexPath:indexPath];
+//    }else{
+////      NSLog(@"无缓存，还没停止或者手指还没离开屏幕，不操作");
+//    }
+    if (self.bb == NO) {
       [self startDownloadImage:imageItem indexPath:indexPath];
-    }else{
-//      NSLog(@"无缓存，还没停止!");
     }
   }else{
 //    NSLog(@"有缓存");
@@ -236,18 +260,22 @@ static NSString * const cellId = @"cell";
 
 #pragma mark UIScrollView
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//  NSLog(@"~scrollViewDidScroll");
   [self updataUI];
+//  [self loadImagesForOnscreenRows];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
   if (!decelerate) {
     NSLog(@"~scrollViewDidEndDragging静止情况下手指离开屏幕");
-    [self loadImagesForOnscreenRows];
+//    [self loadImagesForOnscreenRows];
   }
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-  NSLog(@"~scrollViewDidEndDecelerating");
-  [self loadImagesForOnscreenRows];
+  NSLog(@"~scrollViewDidEndDecelerating手指离开后减速到0");
+//  [self loadImagesForOnscreenRows];
 }
+
+
 @end

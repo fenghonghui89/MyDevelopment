@@ -15,8 +15,7 @@
   if (self) {
     self.imageName = [dic objectForKey:@"imageName"];
     self.imageUrl = [dic objectForKey:@"imageUrl"];
-    ImageDownloader *imageDownloader = [[ImageDownloader alloc] init];
-    self.image = [imageDownloader loadLocalImage:self.imageUrl];
+    self.image = [[ImageDownloader shareImageDownloader] loadLocalImage:self.imageUrl];
   }
   return self;
 }
