@@ -26,7 +26,7 @@
 
 #pragma mark - < method > -
 -(void)findImg{
-  NSFileManager* fm = [NSFileManager defaultManager];//得到文件管理器
+  NSFileManager* fm = [NSFileManager defaultManager];
   NSString* dircetoryPath = @"/Users/apple/Desktop/img副本";
   NSArray* fileNames = [fm contentsOfDirectoryAtPath:dircetoryPath error:nil];//获取文件夹下面所有文件的名称，并用数组存储
   

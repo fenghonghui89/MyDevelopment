@@ -7,11 +7,16 @@
 //
 
 #import "MD_TableView_VC.h"
+#import "MDImageItem.h"
+#import "ImageDownloader.h"
+#import "MD_TableViewCell.h"
+
+static NSString * const cellId = @"cell";
 
 @interface MD_TableView_VC ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property(nonatomic,strong)UITableView *tableView;
-@property(nonatomic,strong)NSMutableArray *imagePaths;
-@property (nonatomic,assign)CGRect previousPerRect;
+@property(nonatomic,strong)NSMutableArray *data;
+@property(nonatomic,assign)CGRect previousPerRect;
 @end
 
 @implementation MD_TableView_VC
@@ -44,12 +49,35 @@
     NSLog(@"解析成功");
   }
   
-  self.imagePaths = [NSMutableArray array];
+  NSMutableArray *imagePaths = [NSMutableArray array];
   NSArray *arr = [htmlStr componentsSeparatedByString:@"\""];
   for (NSString *path in arr) {
     if ([path hasSuffix:@"jpg"] || [path hasSuffix:@"png"]) {
-      [self.imagePaths addObject:path];
+      [imagePaths addObject:path];
     }
+  }
+  
+  NSMutableArray *images = [NSMutableArray array];
+  for (NSString *path in imagePaths) {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:path forKey:@"imageUrl"];
+    
+    NSArray *arr = [path componentsSeparatedByString:@"/"];
+    NSString *imageName = [arr lastObject];
+    [dic setObject:imageName forKey:@"imageName"];
+    
+    [images addObject:dic];
+  }
+  
+  NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+  [dic setObject:images forKey:@"images"];
+  [dic setObject:@"2016-1-1" forKey:@"date"];
+  NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+  
+  self.data = [MDImageItem handleData:data];
+  
+  for (NSString *path in imagePaths) {
+    NSLog(@"p:%@",path);
   }
 }
 
@@ -57,10 +85,14 @@
   UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, viewW, viewH) style:UITableViewStyleGrouped];
   tableView.delegate = self;
   tableView.dataSource = self;
-  [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
   [tableView setBackgroundColor:[UIColor orangeColor]];
   [self.view addSubview:tableView];
   self.tableView = tableView;
+  
+  [tableView registerNib:[UINib nibWithNibName:@"MD_TableViewCell" bundle:nil] forCellReuseIdentifier:cellId];
+  
+  UIBarButtonItem *rightButtomItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(rightBarButtonItemTap)];
+  self.navigationItem.rightBarButtonItem = rightButtomItem;
 }
 
 #pragma mark tableview lazy load
@@ -85,7 +117,7 @@
         for (NSIndexPath *ip in indexPaths) {
           str = [str stringByAppendingString:[NSString stringWithFormat:@"%ld \n",(long)ip.row]];
         }
-        NSLog(@"%@",str);
+//        NSLog(@"%@",str);
         [removeIndexPaths addObjectsFromArray:indexPaths];
       } addHandle:^(CGRect addRect) {
         NSArray *indexPaths = [self.tableView indexPathsForRowsInRect:addRect];
@@ -93,7 +125,7 @@
         for (NSIndexPath *ip in indexPaths) {
           str = [str stringByAppendingString:[NSString stringWithFormat:@"%ld \n",(long)ip.row]];
         }
-        NSLog(@"%@",str);
+//        NSLog(@"%@",str);
         [addIndexPaths addObjectsFromArray:indexPaths];
         
       }];
@@ -139,8 +171,36 @@
     removeHandle(oldRect);
   }
 }
-#pragma mark - < action > -
 
+#pragma mark cell image download
+//判断可视的cell对应的数据源是否有image
+-(void)loadImagesForOnscreenRows{
+  
+  NSArray *visibleCells = [self.tableView indexPathsForVisibleRows];
+  
+  for (NSIndexPath *indexPath in visibleCells) {
+    MDImageItem *imageItem = [self.data objectAtIndex:indexPath.row];
+    if (imageItem.image == nil) {
+      [self startDownloadImage:imageItem indexPath:indexPath];
+    }
+  }
+}
+
+-(void)startDownloadImage:(MDImageItem *)imageItem indexPath:(NSIndexPath *)indexPath{
+  ImageDownloader *downloader = [[ImageDownloader alloc] init];
+  [downloader startDownloadImage:imageItem.imageUrl complationHandle:^(UIImage *image) {
+    NSLog(@"加载图像");
+    MD_TableViewCell *cell = (MD_TableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    imageItem.image = image;
+    cell.imageView_.image = image;
+    [cell layoutIfNeeded];
+  }];
+}
+
+#pragma mark - < action > -
+-(void)rightBarButtonItemTap{
+
+}
 #pragma mark - < callback > -
 #pragma mark UITableView
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -148,16 +208,29 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-  return 30;
+  return self.data.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-  static NSString *identifier = @"cell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-  if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+  
+  MD_TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+
+  
+  MDImageItem *imageItem = [self.data objectAtIndex:indexPath.row];
+  cell.nameLabel.text = imageItem.imageName;
+  
+  if (imageItem.image == nil) {
+    if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+//      NSLog(@"首次加载第一页 无缓存");
+      [self startDownloadImage:imageItem indexPath:indexPath];
+    }else{
+//      NSLog(@"无缓存，还没停止!");
+    }
+  }else{
+//    NSLog(@"有缓存");
+    cell.imageView_.image = imageItem.image;
   }
-  cell.textLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section,(long)indexPath.row];
+
   return cell;
 }
 
@@ -166,4 +239,15 @@
   [self updataUI];
 }
 
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+  if (!decelerate) {
+    NSLog(@"~scrollViewDidEndDragging静止情况下手指离开屏幕");
+    [self loadImagesForOnscreenRows];
+  }
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+  NSLog(@"~scrollViewDidEndDecelerating");
+  [self loadImagesForOnscreenRows];
+}
 @end
