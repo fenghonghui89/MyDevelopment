@@ -8,6 +8,9 @@
 
 #import "MD_HTTP_URLDecode_VC.h"
 #import "NSString+URLEncoding.h"
+#import "MD_TableViewCell.h"
+
+static NSString * const cellId = @"cellId";
 
 @interface MD_HTTP_URLDecode_VC ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,11 +29,15 @@
   [super viewDidAppear:animated];
   
   [self getWebImg];
+  [self customInitUI];
 
 }
 
 #pragma mark - < method > -
-
+-(void)customInitUI{
+  [self.tableView registerNib:[UINib nibWithNibName:@"MD_TableViewCell" bundle:nil] forCellReuseIdentifier:cellId];
+  [self.tableView reloadData];
+}
 
 #pragma mark - < action > -
 -(void)urlencode_urldecode{
@@ -96,7 +103,6 @@
     }
   }
   
-  [self.tableView reloadData];
 }
 
 #pragma mark - < callback > -
@@ -112,12 +118,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   
-  static NSString *CellIdentifier = @"Cell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if(!cell){
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
-  
+  MD_TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+
   NSString *imagePath = self.imagePaths[indexPath.row];
   
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -125,9 +127,7 @@
     UIImage *image = [UIImage imageWithData:data];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-      cell.imageView.image = image;
-      [cell.imageView setContentMode:UIViewContentModeScaleAspectFit];
-      [cell layoutIfNeeded];
+      cell.imageView_.image = image;
     });
   });
   

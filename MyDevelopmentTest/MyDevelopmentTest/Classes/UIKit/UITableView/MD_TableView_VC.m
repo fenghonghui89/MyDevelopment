@@ -191,35 +191,37 @@ static NSString * const cellId = @"cell";
 
   [[ImageDownloader shareImageDownloader] startDownloadImage:imageItem.imageUrl complationHandle:^(UIImage *image) {
     
-    NSArray *visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
-    BOOL isSet = NO;
-    for (NSIndexPath *visibleIndexPath in visibleIndexPaths) {
-      if (visibleIndexPath.row == indexPath.row) {
-        NSLog(@"加载图像");
-        
-        imageItem.image = image;
-        
-        MD_TableViewCell *cell = (MD_TableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.imageView_.image = image;
-        [cell layoutIfNeeded];
-        
-        isSet = YES;
-        
-        return;
-      }
-    }
-    
-    if (isSet == NO) {
-      imageItem.image = image;
-      NSLog(@"cell不在可视区域，缓存但不改变ui");
-    }
-    
+//    NSArray *visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
+//    BOOL isSet = NO;
+//    for (NSIndexPath *visibleIndexPath in visibleIndexPaths) {
+//      if (visibleIndexPath.row == indexPath.row) {
+//        NSLog(@"放入缓存，加载图像");
+//        
+//        imageItem.image = image;
+//        
+//        MD_TableViewCell *cell = (MD_TableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+//        cell.imageView_.image = image;
+//        [cell layoutIfNeeded];
+//        
+//        isSet = YES;
+//        
+//        return;
+//      }
+//    }
+//    
+//    if (isSet == NO) {
+//      imageItem.image = image;
+//      NSLog(@"cell不在可视区域，缓存但不改变ui");
+//    }
+    imageItem.image = image;
+    MD_TableViewCell *cell = (MD_TableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    cell.imageView_.image = image;
   }];
 }
 
 #pragma mark - < action > -
 -(void)rightBarButtonItemTap{
-  self.bb = YES;
+  self.bb = !self.bb;
 }
 #pragma mark - < callback > -
 #pragma mark UITableView
@@ -247,11 +249,11 @@ static NSString * const cellId = @"cell";
 //    }else{
 ////      NSLog(@"无缓存，还没停止或者手指还没离开屏幕，不操作");
 //    }
-    if (self.bb == NO) {
-      [self startDownloadImage:imageItem indexPath:indexPath];
-    }
+
+    [self startDownloadImage:imageItem indexPath:indexPath];
+    
   }else{
-//    NSLog(@"有缓存");
+    NSLog(@"有缓存");
     cell.imageView_.image = imageItem.image;
   }
 
@@ -262,7 +264,6 @@ static NSString * const cellId = @"cell";
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //  NSLog(@"~scrollViewDidScroll");
   [self updataUI];
-//  [self loadImagesForOnscreenRows];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
