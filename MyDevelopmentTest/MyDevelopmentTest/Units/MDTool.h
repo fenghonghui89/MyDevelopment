@@ -135,4 +135,11 @@ void STLogResponderChain(UIResponder *responder);
  *
  */
 -(void)showDeviceInfo;
+
+/**
+ *  ip address
+ *
+ *  @return ip
+ */
+-(NSString *)IPAddress;
 @end

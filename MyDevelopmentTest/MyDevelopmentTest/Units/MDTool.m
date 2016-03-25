@@ -7,23 +7,26 @@
 //
 
 #import "MDTool.h"
+#import "NSString+Category.h"
+#import "IPAddress.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <sys/utsname.h>
 @interface MDTool ()
-
+@property(nonatomic,copy)NSString *IPAdress;
 @end
 
 @implementation MDTool
 
 +(MDTool *)sharedInstance
 {
-    static MDTool *sharedInstance = nil;
-    static dispatch_once_t once;
-    dispatch_once(&once,^{
-        sharedInstance = [[self alloc] init];
-    });
-    
-    return sharedInstance;
+  static MDTool *sharedInstance = nil;
+  static dispatch_once_t once;
+  dispatch_once(&once,^{
+    sharedInstance = [[self alloc] init];
+    sharedInstance.IPAdress = @"";
+  });
+  
+  return sharedInstance;
 }
 
 
@@ -35,7 +38,7 @@
  */
 +(CGFloat)screenWidth
 {
-    return [[UIScreen mainScreen] bounds].size.width;
+  return [[UIScreen mainScreen] bounds].size.width;
 }
 
 /**
@@ -45,7 +48,7 @@
  */
 +(CGFloat)screenHeight
 {
-    return [[UIScreen mainScreen] bounds].size.height;
+  return [[UIScreen mainScreen] bounds].size.height;
 }
 
 /**
@@ -55,7 +58,7 @@
  */
 +(CGFloat)navigationBarHeight
 {
-    return 44;
+  return 44;
 }
 
 /**
@@ -65,7 +68,7 @@
  */
 +(CGFloat)stateBarHeight
 {
-    return 20;
+  return 20;
 }
 
 /**
@@ -75,7 +78,7 @@
  */
 +(CGFloat)viewControllerViewWidth
 {
-    return [self screenWidth];
+  return [self screenWidth];
 }
 
 /**
@@ -85,11 +88,11 @@
  */
 +(CGFloat)viewControllerViewHeight
 {
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
-        return [self screenHeight] - 20;//减去状态栏高度
-    }else{
-        return [self screenHeight];
-    }
+  if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0) {
+    return [self screenHeight] - 20;//减去状态栏高度
+  }else{
+    return [self screenHeight];
+  }
 }
 
 /**
@@ -104,7 +107,7 @@
  */
 +(CGRect)setRectX:(CGFloat)x y:(CGFloat)y w:(CGFloat)w h:(CGFloat)h
 {
-    return  CGRectMake(x, y, w, h);;
+  return  CGRectMake(x, y, w, h);;
 }
 
 #pragma mark - color
@@ -118,7 +121,7 @@
  */
 + (UIColor *)TColor:(NSString *)hexColor
 {
-    return [self TColor:hexColor colorAlpha:1];
+  return [self TColor:hexColor colorAlpha:1];
 }
 
 /**
@@ -131,47 +134,47 @@
  */
 + (UIColor *)TColor:(NSString *)hexColor colorAlpha:(CGFloat)alpha
 {
-    NSAssert(hexColor, @"获取到颜色UICOLOR -->hexColor not be nil");
-    
-    NSString *cString = [[hexColor stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-    
-    // String should be 6 or 8 characters
-    if ([cString length] < 6) {
-        return [UIColor clearColor];
-    }
-    
-    // strip 0X if it appears
-    if ([cString hasPrefix:@"0X"]){
-        cString = [cString substringFromIndex:2];
-    }else if ([cString hasPrefix:@"#"]){
-        cString = [cString substringFromIndex:1];
-    }else if ([cString length] != 6){
-        return [UIColor clearColor];
-    }
-    
-    // Separate into r, g, b substrings
-    NSRange range;
-    range.location = 0;
-    range.length = 2;
-    
-    //r
-    NSString *rString = [cString substringWithRange:range];
-    
-    //g
-    range.location = 2;
-    NSString *gString = [cString substringWithRange:range];
-    
-    //b
-    range.location = 4;
-    NSString *bString = [cString substringWithRange:range];
-    
-    // Scan values
-    unsigned int r, g, b;
-    [[NSScanner scannerWithString:rString] scanHexInt:&r];
-    [[NSScanner scannerWithString:gString] scanHexInt:&g];
-    [[NSScanner scannerWithString:bString] scanHexInt:&b];
-    
-    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
+  NSAssert(hexColor, @"获取到颜色UICOLOR -->hexColor not be nil");
+  
+  NSString *cString = [[hexColor stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+  
+  // String should be 6 or 8 characters
+  if ([cString length] < 6) {
+    return [UIColor clearColor];
+  }
+  
+  // strip 0X if it appears
+  if ([cString hasPrefix:@"0X"]){
+    cString = [cString substringFromIndex:2];
+  }else if ([cString hasPrefix:@"#"]){
+    cString = [cString substringFromIndex:1];
+  }else if ([cString length] != 6){
+    return [UIColor clearColor];
+  }
+  
+  // Separate into r, g, b substrings
+  NSRange range;
+  range.location = 0;
+  range.length = 2;
+  
+  //r
+  NSString *rString = [cString substringWithRange:range];
+  
+  //g
+  range.location = 2;
+  NSString *gString = [cString substringWithRange:range];
+  
+  //b
+  range.location = 4;
+  NSString *bString = [cString substringWithRange:range];
+  
+  // Scan values
+  unsigned int r, g, b;
+  [[NSScanner scannerWithString:rString] scanHexInt:&r];
+  [[NSScanner scannerWithString:gString] scanHexInt:&g];
+  [[NSScanner scannerWithString:bString] scanHexInt:&b];
+  
+  return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
 }
 
 
@@ -294,5 +297,22 @@ void STLogResponderChain(UIResponder *responder) {
   
   NSString *timeString = [df stringFromDate:date];
   return timeString;
+}
+
+/**
+ *  ip address
+ *
+ *  @return ip
+ */
+-(NSString *)IPAddress{
+  InitAddresses();
+  GetIPAddresses();
+  GetHWAddresses();
+  
+  if([self.IPAdress isBlankString]){
+    self.IPAdress = [NSString stringWithFormat:@"%s",ip_names[1]];
+  }
+  
+  return self.IPAdress;
 }
 @end

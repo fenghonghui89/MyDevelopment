@@ -11,6 +11,31 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>socket</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>client</string>
+						<key>className</key>
+						<string>MD_Socket_Client_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>server</string>
+						<key>className</key>
+						<string>MD_Socket_Server_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>HTTP</string>
 				<key>className</key>
 				<string></string>
