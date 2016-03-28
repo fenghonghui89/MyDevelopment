@@ -36,4 +36,11 @@
  */
 -(BOOL)isMobileNumber;
 
+/**
+ *  ip正则判断
+ *
+ *  @return bool
+ */
+-(BOOL)validIpAddress;
+
 @end

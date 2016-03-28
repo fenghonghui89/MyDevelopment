@@ -96,11 +96,23 @@
  *
  *  @return bool
  */
--(BOOL) validateEmail
+-(BOOL)validateEmail
 {
   NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
   NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
   return [emailTest evaluateWithObject:self];
 }
 
+
+/**
+ *  ip正则判断
+ *
+ *  @return bool
+ */
+-(BOOL)validIpAddress{
+
+  NSString *ipRegex = @"(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])";
+  NSPredicate *ipTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",ipRegex];
+  return [ipTest evaluateWithObject:self];
+}
 @end

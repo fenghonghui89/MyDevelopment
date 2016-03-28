@@ -26,6 +26,7 @@
 
 #pragma mark - < method > -
 -(void)httpGet_Synchronous{
+  
   NSURL *url = [NSURL URLWithString:@"http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getRegionCountry?"];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   NSHTTPURLResponse *response = nil;
@@ -103,7 +104,7 @@
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-  NSLog(@"~didReceiveData：%d",data.length);
+  NSLog(@"~didReceiveData：%lu",(unsigned long)data.length);
   [self.allData appendData:data];
 }
 

@@ -85,6 +85,7 @@ static NSString * const cellId = @"cellId";
 }
 
 -(void)getWebImg{
+  
   NSURL *url = [NSURL URLWithString:@"http://www.sina.com.cn"];
   NSError *error = nil;
   NSString *htmlString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];

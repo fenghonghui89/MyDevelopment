@@ -91,7 +91,7 @@ typedef NS_ENUM(NSInteger,messageType) {
   
   NSString *content = self.contentTextView.text;
   NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
-  [self.clientSocket writeData:data withTimeout:-1 tag:1001];
+  [self.clientSocket writeData:data withTimeout:-1 tag:100];
   
   [self refreshMessageTF:content type:messageTypeClient];
 }

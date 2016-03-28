@@ -10,6 +10,8 @@
 		1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403E3271B8C68ED009C8CAC /* myUILabel.m */; };
 		1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */; };
 		1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */; };
+		1417B11B1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */; };
+		1417B11C1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */; };
 		141886DA1C5096D600914CD7 /* MD_FileManager_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141886D71C5096D600914CD7 /* MD_FileManager_VC.m */; };
 		141886DB1C5096D600914CD7 /* MD_FileManager_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141886D81C5096D600914CD7 /* MD_FileManager_VC.xib */; };
 		141886DC1C5096D600914CD7 /* MDTestNSFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 141886D91C5096D600914CD7 /* MDTestNSFileManager.m */; };
@@ -343,6 +345,9 @@
 		1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIBezierPath_CustomView1.m; sourceTree = "<group>"; };
 		1412B6711BA17BF400FA5F2E /* MD_String_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_String_CustomView.h; sourceTree = "<group>"; };
 		1412B6721BA17BF400FA5F2E /* MD_String_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_String_CustomView.m; sourceTree = "<group>"; };
+		1417B1181CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Scocket_ClientServer_VC.h; sourceTree = "<group>"; };
+		1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Scocket_ClientServer_VC.m; sourceTree = "<group>"; };
+		1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Scocket_ClientServer_VC.xib; sourceTree = "<group>"; };
 		141886D61C5096D600914CD7 /* MD_FileManager_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FileManager_VC.h; sourceTree = "<group>"; };
 		141886D71C5096D600914CD7 /* MD_FileManager_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FileManager_VC.m; sourceTree = "<group>"; };
 		141886D81C5096D600914CD7 /* MD_FileManager_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FileManager_VC.xib; sourceTree = "<group>"; };
@@ -897,6 +902,16 @@
 				1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */,
 			);
 			path = UICustom;
+			sourceTree = "<group>";
+		};
+		1417B1171CA8CDB2002C6A69 /* client&server */ = {
+			isa = PBXGroup;
+			children = (
+				1417B1181CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.h */,
+				1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */,
+				1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */,
+			);
+			path = "client&server";
 			sourceTree = "<group>";
 		};
 		141886D41C5096D600914CD7 /* NSFileHandle */ = {
@@ -1970,6 +1985,7 @@
 		14CB770B1CA4E9A400878C4E /* socket */ = {
 			isa = PBXGroup;
 			children = (
+				1417B1171CA8CDB2002C6A69 /* client&server */,
 				14CB77101CA4F16F00878C4E /* client */,
 				14CB77111CA4F16F00878C4E /* server */,
 			);
@@ -2427,6 +2443,7 @@
 				14565E701BA94CD1009F7B2D /* playing46@2x.png in Resources */,
 				146D82FD1AA709F600F0C7FD /* Honduras.png in Resources */,
 				14565E4E1BA94CD1009F7B2D /* playing15@2x.png in Resources */,
+				1417B11C1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib in Resources */,
 				147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */,
 				14DF14C81C4F83E7005C10AA /* Icon-Small-40@2x.png in Resources */,
 				14565E5E1BA94CD1009F7B2D /* playing2@2x.png in Resources */,
@@ -2660,6 +2677,7 @@
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
 				148CD75E1AAED70E00FAED9D /* TRPoint.m in Sources */,
 				148CD74D1AAED05E00FAED9D /* MDNArrayAdvancedViewController.m in Sources */,
+				1417B11B1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m in Sources */,
 				14EACA271C8038DF00F3FE2C /* MD_CollectionView_VC.m in Sources */,
 				14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
