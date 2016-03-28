@@ -18,6 +18,14 @@
 				<array>
 					<dict>
 						<key>desc</key>
+						<string>send file</string>
+						<key>className</key>
+						<string>MD_Scocket_SendFile_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
 						<string>client&amp;server</string>
 						<key>className</key>
 						<string>MD_Scocket_ClientServer_VC</string>

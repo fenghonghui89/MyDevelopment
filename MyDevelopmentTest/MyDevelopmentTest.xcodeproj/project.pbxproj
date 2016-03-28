@@ -137,6 +137,8 @@
 		145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87111BA8417800447D35 /* MD_Touch_Point.m */; };
 		145D871D1BA84DBE00447D35 /* MD_UIViewController_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D871C1BA84DBE00447D35 /* MD_UIViewController_VC.m */; };
 		145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87211BA8533500447D35 /* MD_Touch_Line.m */; };
+		1461C0D71CA92301006ED51C /* MD_Socket_SendFile_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1461C0D51CA92301006ED51C /* MD_Socket_SendFile_VC.m */; };
+		1461C0D81CA92301006ED51C /* MD_Socket_SendFile_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1461C0D61CA92301006ED51C /* MD_Socket_SendFile_VC.xib */; };
 		1463A9C71B6612160087F38F /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463A9C61B6612160087F38F /* UIView+MDCategory.m */; };
 		1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463B2061AA162C2006AE8D2 /* MDCountStringRectangleViewController.m */; };
 		1463B2121AA162C2006AE8D2 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1463B2091AA162C2006AE8D2 /* button.png */; };
@@ -529,6 +531,9 @@
 		145D871C1BA84DBE00447D35 /* MD_UIViewController_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIViewController_VC.m; sourceTree = "<group>"; };
 		145D87201BA8533500447D35 /* MD_Touch_Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_Line.h; sourceTree = "<group>"; };
 		145D87211BA8533500447D35 /* MD_Touch_Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_Line.m; sourceTree = "<group>"; };
+		1461C0D41CA92301006ED51C /* MD_Socket_SendFile_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_SendFile_VC.h; sourceTree = "<group>"; };
+		1461C0D51CA92301006ED51C /* MD_Socket_SendFile_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Socket_SendFile_VC.m; sourceTree = "<group>"; };
+		1461C0D61CA92301006ED51C /* MD_Socket_SendFile_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Socket_SendFile_VC.xib; sourceTree = "<group>"; };
 		1463A9C51B6612160087F38F /* UIView+MDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDCategory.h"; sourceTree = "<group>"; };
 		1463A9C61B6612160087F38F /* UIView+MDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDCategory.m"; sourceTree = "<group>"; };
 		1463B2051AA162C2006AE8D2 /* MDCountStringRectangleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCountStringRectangleViewController.h; sourceTree = "<group>"; };
@@ -1303,6 +1308,23 @@
 			path = "常用";
 			sourceTree = "<group>";
 		};
+		1461C0D31CA922B1006ED51C /* sendFile */ = {
+			isa = PBXGroup;
+			children = (
+				1461C0D41CA92301006ED51C /* MD_Socket_SendFile_VC.h */,
+				1461C0D51CA92301006ED51C /* MD_Socket_SendFile_VC.m */,
+				1461C0D61CA92301006ED51C /* MD_Socket_SendFile_VC.xib */,
+			);
+			path = sendFile;
+			sourceTree = "<group>";
+		};
+		1461C0D91CA9289E006ED51C /* udp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = udp;
+			sourceTree = "<group>";
+		};
 		1463B2011AA162C2006AE8D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1985,6 +2007,8 @@
 		14CB770B1CA4E9A400878C4E /* socket */ = {
 			isa = PBXGroup;
 			children = (
+				1461C0D91CA9289E006ED51C /* udp */,
+				1461C0D31CA922B1006ED51C /* sendFile */,
 				1417B1171CA8CDB2002C6A69 /* client&server */,
 				14CB77101CA4F16F00878C4E /* client */,
 				14CB77111CA4F16F00878C4E /* server */,
@@ -2483,6 +2507,7 @@
 				14565E631BA94CD1009F7B2D /* playing34@2x.png in Resources */,
 				14565E4D1BA94CD1009F7B2D /* playing14@2x.png in Resources */,
 				14D6700D1C475BCE00F911A4 /* MDModal2ViewController.xib in Resources */,
+				1461C0D81CA92301006ED51C /* MD_Socket_SendFile_VC.xib in Resources */,
 				14EACA211C80021C00F3FE2C /* MD_FreeTest_VC.xib in Resources */,
 				146D82F51AA709F600F0C7FD /* Germany.png in Resources */,
 				14EA84F41CA396E900A70A46 /* MD_TableView_VC.xib in Resources */,
@@ -2634,6 +2659,7 @@
 				14CB77241CA5254800878C4E /* IPAddress.c in Sources */,
 				148CD7161AAEC21600FAED9D /* TRStudent1.m in Sources */,
 				148829931C55C5A00034ACFC /* TRStudent5.m in Sources */,
+				1461C0D71CA92301006ED51C /* MD_Socket_SendFile_VC.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
