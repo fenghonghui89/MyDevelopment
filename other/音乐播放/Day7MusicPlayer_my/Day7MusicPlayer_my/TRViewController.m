@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSURL* fileURL = [NSURL fileURLWithPath:@"/Users/apple/Desktop/music/趁早.mp3"];
+	NSURL* fileURL = [NSURL fileURLWithPath:@"/Users/hanyfeng/Desktop/素材/曹格 - 丑角.mp3"];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:Nil];
     [self.player prepareToPlay];//把歌曲加载到内存当中
     

@@ -51,12 +51,12 @@
   self.serverSocket = [[AsyncSocket alloc] initWithDelegate:self];
   [self.serverSocket acceptOnPort:8000 error:nil];
   
-  if ([[[MDTool sharedInstance] machineName] isEqualToString:@"iPhone7,2"]) {
-    self.ip = @"192.168.5.108";
-  }else{
-    self.ip = @"192.168.5.123";
-  }
-//  self.ip = @"127.0.0.1";
+//  if ([[[MDTool sharedInstance] machineName] isEqualToString:@"iPhone7,2"]) {
+//    self.ip = @"192.168.5.108";
+//  }else{
+//    self.ip = @"192.168.5.123";
+//  }
+  self.ip = @"127.0.0.1";
   
   self.userNameTextField.returnKeyType = UIReturnKeyDone;
   self.userNameTextField.text = [NSString stringWithFormat:@"%d号",arc4random()%20];
@@ -119,26 +119,30 @@
 - (IBAction)sendFileBtnTap:(id)sender {
   
   //网络图片
-  NSString *filePath = @"http://n.sinaimg.cn/edu/20160329/lamE-fxqswxx0303687.jpg";
-  
-  NSURL *url = [NSURL URLWithString:filePath];
-  NSURLRequest *request = [NSURLRequest requestWithURL:url];
-  NSHTTPURLResponse *response = nil;
-  NSError *error = nil;
-  NSData *fileData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-  if (error) {
-    NSLog(@"error:%@",[error localizedDescription]);
-  }else{
-    NSLog(@"response:%@",[response allHeaderFields]);
-  }
-  
+//  NSString *filePath = @"http://n.sinaimg.cn/edu/20160329/lamE-fxqswxx0303687.jpg";
+//  
+//  NSURL *url = [NSURL URLWithString:filePath];
+//  NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//  NSHTTPURLResponse *response = nil;
+//  NSError *error = nil;
+//  NSData *fileData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//  if (error) {
+//    NSLog(@"error:%@",[error localizedDescription]);
+//  }else{
+//    NSLog(@"response:%@",[response allHeaderFields]);
+//  }
+//  
+//  NSInteger fileLength = fileData.length;
+
   //本地图片 模拟器用
-//  NSString *filePath = @"/Users/hanyfeng/Desktop/btn_good_on@2x.png";
-//  NSData *fileData = [NSData dataWithContentsOfFile:filePath];
+  NSString *filePath = @"/Users/hanyfeng/Desktop/素材/btn_good_on@2x.png";
+  NSData *fileData = [NSData dataWithContentsOfFile:filePath];
+  
+  NSFileHandle *fh = [NSFileHandle fileHandleForReadingAtPath:filePath];
+  long long fileLength = [fh seekToEndOfFile];
   
   //组装数据
   NSString *fileName = [filePath lastPathComponent];
-  NSInteger fileLength = fileData.length;
   NSString *headerStr = [NSString stringWithFormat:@"file&&%@&&%ld",fileName,(long)fileLength];
   NSData *headerData = [headerStr dataUsingEncoding:NSUTF8StringEncoding];
   

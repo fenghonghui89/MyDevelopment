@@ -20,8 +20,10 @@
 @implementation MD_FileHandle_VC
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  
+  [super viewDidLoad];
+  
+  [self test];
 }
 
 #pragma mark - 从文件中读取数据 模拟边下载边播放
@@ -37,7 +39,7 @@
 -(void)downloadMusicData:(NSTimer*)timer
 {
   //用来读取文件数据的对象
-  NSFileHandle *fileReader = [NSFileHandle fileHandleForReadingAtPath:@"/Users/apple/Desktop/music/时间煮雨.mp3"];
+  NSFileHandle *fileReader = [NSFileHandle fileHandleForReadingAtPath:@"/Users/hanyfeng/Desktop/素材/曹格 - 丑角.mp3"];
   
   //设置游标到某个字节的位置
   [fileReader seekToFileOffset:_musicData.length];
@@ -47,6 +49,7 @@
   [_musicData appendData:data];
   
   //获取总的文件长度（把游标设置到文件的最后，同时得到文件的总长度/注意返回值类型为long long）
+  //仅仅把游标移动到文件最后并且得到了文件的总长度 并没有把文件加载到内存中
   long long fileLength = [fileReader seekToEndOfFile];
   
   //进度条的进度
@@ -68,8 +71,8 @@
 
 #pragma mark - 每点击一次复制指定大小的数据
 -(void)test1{
-
-  NSString *filePath = @"/Users/apple/Desktop/photo/美女/5-120621131622-50.jpg";
+  
+  NSString *filePath = @"/Users/hanyfeng/Desktop/素材/btn_good_on@2x.png";
   self.fileReader = [NSFileHandle fileHandleForReadingAtPath:filePath];
   
   NSString *newFilePath = @"/Users/apple/Desktop/b.jpg";//复制文件的目标路径
