@@ -223,6 +223,9 @@
 		148829931C55C5A00034ACFC /* TRStudent5.m in Sources */ = {isa = PBXBuildFile; fileRef = 148829911C55C5A00034ACFC /* TRStudent5.m */; };
 		1489C8771CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C8751CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m */; };
 		1489C8781CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1489C8761CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib */; };
+		1489C87C1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C87A1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.m */; };
+		1489C87D1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1489C87B1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib */; };
+		1489C8801CAA5EEA000CBC14 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C87F1CAA5EEA000CBC14 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		148CD69B1AAE972700FAED9D /* abc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 148CD69A1AAE972700FAED9D /* abc.txt */; };
 		148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */; };
 		148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD6A21AAE99C400FAED9D /* TRStudent.m */; };
@@ -652,6 +655,11 @@
 		1489C8741CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_SendFile_TVC.h; sourceTree = "<group>"; };
 		1489C8751CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Socket_SendFile_TVC.m; sourceTree = "<group>"; };
 		1489C8761CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Socket_SendFile_TVC.xib; sourceTree = "<group>"; };
+		1489C8791CAA5DB8000CBC14 /* MD_Socket_UDP_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_UDP_VC.h; sourceTree = "<group>"; };
+		1489C87A1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Socket_UDP_VC.m; sourceTree = "<group>"; };
+		1489C87B1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Socket_UDP_VC.xib; sourceTree = "<group>"; };
+		1489C87E1CAA5EEA000CBC14 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		1489C87F1CAA5EEA000CBC14 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		148CD69A1AAE972700FAED9D /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 		148CD69D1AAE977700FAED9D /* MDStringNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStringNormalViewController.h; sourceTree = "<group>"; };
 		148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStringNormalViewController.m; sourceTree = "<group>"; };
@@ -1329,6 +1337,9 @@
 		1461C0D91CA9289E006ED51C /* udp */ = {
 			isa = PBXGroup;
 			children = (
+				1489C8791CAA5DB8000CBC14 /* MD_Socket_UDP_VC.h */,
+				1489C87A1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.m */,
+				1489C87B1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib */,
 			);
 			path = udp;
 			sourceTree = "<group>";
@@ -2027,6 +2038,8 @@
 		14CB770C1CA4EFFA00878C4E /* AsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
+				1489C87E1CAA5EEA000CBC14 /* AsyncUdpSocket.h */,
+				1489C87F1CAA5EEA000CBC14 /* AsyncUdpSocket.m */,
 				14CB770D1CA4EFFA00878C4E /* AsyncSocket.h */,
 				14CB770E1CA4EFFA00878C4E /* AsyncSocket.m */,
 			);
@@ -2488,6 +2501,7 @@
 				14DF14C61C4F83E7005C10AA /* Icon-60@2x.png in Resources */,
 				14DF14D31C4F83E7005C10AA /* Default@2x.png in Resources */,
 				14EA84FF1CA3E8A500A70A46 /* MD_TableViewCell.xib in Resources */,
+				1489C87D1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib in Resources */,
 				14565E711BA94CD1009F7B2D /* playing47@2x.png in Resources */,
 				14565E571BA94CD1009F7B2D /* playing23@2x.png in Resources */,
 				149A1E991B26EC2300986FA6 /* Main.storyboard in Resources */,
@@ -2630,6 +2644,7 @@
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */,
 				14EACA311C80577A00F3FE2C /* MD_CollectionView_ReuseView.m in Sources */,
+				1489C87C1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.m in Sources */,
 				14DF14A61C4F71C3005C10AA /* UIImage+Resize.m in Sources */,
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
@@ -2673,6 +2688,7 @@
 				1489C8771CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
+				1489C8801CAA5EEA000CBC14 /* AsyncUdpSocket.m in Sources */,
 				1428AB791C84502C003CC10F /* URLCache.m in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
 				14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.m in Sources */,

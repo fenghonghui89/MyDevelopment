@@ -18,6 +18,14 @@
 				<array>
 					<dict>
 						<key>desc</key>
+						<string>udp</string>
+						<key>className</key>
+						<string>MD_Socket_UDP_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
 						<string>send file</string>
 						<key>className</key>
 						<string>MD_Socket_SendFile_VC</string>
