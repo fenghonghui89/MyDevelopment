@@ -20,7 +20,7 @@
 						<key>desc</key>
 						<string>send file</string>
 						<key>className</key>
-						<string>MD_Scocket_SendFile_VC</string>
+						<string>MD_Socket_SendFile_VC</string>
 						<key>sub</key>
 						<array/>
 					</dict>

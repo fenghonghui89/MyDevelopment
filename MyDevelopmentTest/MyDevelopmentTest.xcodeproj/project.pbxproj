@@ -221,6 +221,8 @@
 		14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */; };
 		148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */; };
 		148829931C55C5A00034ACFC /* TRStudent5.m in Sources */ = {isa = PBXBuildFile; fileRef = 148829911C55C5A00034ACFC /* TRStudent5.m */; };
+		1489C8771CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C8751CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m */; };
+		1489C8781CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1489C8761CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib */; };
 		148CD69B1AAE972700FAED9D /* abc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 148CD69A1AAE972700FAED9D /* abc.txt */; };
 		148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */; };
 		148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD6A21AAE99C400FAED9D /* TRStudent.m */; };
@@ -647,6 +649,9 @@
 		148829901C55C5A00034ACFC /* TRStudent5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent5.h; sourceTree = "<group>"; };
 		148829911C55C5A00034ACFC /* TRStudent5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent5.m; sourceTree = "<group>"; };
 		148829941C55C6280034ACFC /* NSEnumerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSEnumerator.h; sourceTree = "<group>"; };
+		1489C8741CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_SendFile_TVC.h; sourceTree = "<group>"; };
+		1489C8751CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Socket_SendFile_TVC.m; sourceTree = "<group>"; };
+		1489C8761CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Socket_SendFile_TVC.xib; sourceTree = "<group>"; };
 		148CD69A1AAE972700FAED9D /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 		148CD69D1AAE977700FAED9D /* MDStringNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStringNormalViewController.h; sourceTree = "<group>"; };
 		148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStringNormalViewController.m; sourceTree = "<group>"; };
@@ -1314,6 +1319,9 @@
 				1461C0D41CA92301006ED51C /* MD_Socket_SendFile_VC.h */,
 				1461C0D51CA92301006ED51C /* MD_Socket_SendFile_VC.m */,
 				1461C0D61CA92301006ED51C /* MD_Socket_SendFile_VC.xib */,
+				1489C8741CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.h */,
+				1489C8751CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m */,
+				1489C8761CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib */,
 			);
 			path = sendFile;
 			sourceTree = "<group>";
@@ -2448,6 +2456,7 @@
 				1463B27F1AA1BD4D006AE8D2 /* provinces_cities.plist in Resources */,
 				14381BEB1BA1B75900C06EB7 /* delete_btn@2x.png in Resources */,
 				146D82EF1AA709F600F0C7FD /* Denmark.png in Resources */,
+				1489C8781CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.xib in Resources */,
 				14565E811BA94CD1009F7B2D /* playing6@2x.png in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,
 				1428AB7C1C84502C003CC10F /* index1.html in Resources */,
@@ -2661,6 +2670,7 @@
 				148829931C55C5A00034ACFC /* TRStudent5.m in Sources */,
 				1461C0D71CA92301006ED51C /* MD_Socket_SendFile_VC.m in Sources */,
 				1463B2161AA162C2006AE8D2 /* MDUILabelViewController.m in Sources */,
+				1489C8771CAA2E88000CBC14 /* MD_Socket_SendFile_TVC.m in Sources */,
 				148CD70E1AAEC21600FAED9D /* TRCat.m in Sources */,
 				146D82901AA6F3EE00F0C7FD /* MDAVASViewController.m in Sources */,
 				1428AB791C84502C003CC10F /* URLCache.m in Sources */,

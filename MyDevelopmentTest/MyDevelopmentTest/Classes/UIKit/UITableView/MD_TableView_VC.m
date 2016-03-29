@@ -77,9 +77,9 @@ static NSString * const cellId = @"cell";
   
   self.data = [MDImageItem handleData:data];
   
-//  for (NSString *path in imagePaths) {
-//    NSLog(@"p:%@",path);
-//  }
+  for (NSString *path in imagePaths) {
+    NSLog(@"p:%@",path);
+  }
 }
 
 -(void)customInitUI{
