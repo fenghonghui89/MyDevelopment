@@ -38,8 +38,10 @@
 
 -(void)downloadMusicData:(NSTimer*)timer
 {
+  NSString *path = [[NSBundle mainBundle] pathForResource:@"testmusic" ofType:@"mp3"];
+  
   //用来读取文件数据的对象
-  NSFileHandle *fileReader = [NSFileHandle fileHandleForReadingAtPath:@"/Users/hanyfeng/Desktop/素材/曹格 - 丑角.mp3"];
+  NSFileHandle *fileReader = [NSFileHandle fileHandleForReadingAtPath:path];
   
   //设置游标到某个字节的位置
   [fileReader seekToFileOffset:_musicData.length];
@@ -55,11 +57,18 @@
   //进度条的进度
   _myPV.progress = _musicData.length*1.0/fileLength;
   
-  //如果下载的数据达到100kb则开始播放
+  //如果下载的数据达到100kb则开始播放（未知为何没声音）
   if (_musicData.length>1024*100 && !self.player) {
-    self.player = [[AVAudioPlayer alloc]initWithData:_musicData error:nil];
-    [self.player play];
-    NSLog(@"数据够了 开始播放！！！");
+    NSError *error = nil;
+    AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithData:_musicData error:&error];
+    if (error) {
+      NSLog(@"error:%@",[error description]);
+    }else{
+      player.volume = 0.8;
+      [player play];
+      self.player = player;
+      NSLog(@"数据够了 开始播放！！！");
+    }
   }
   
   //当文件下载完成的时候 timer停止
@@ -92,6 +101,7 @@
   
   //    //这种写data的方式会把原来的文件覆盖
   //    [subData writeToFile:@"/Users/apple/Desktop/a.mp4" atomically:YES];
+  
 }
 
 @end

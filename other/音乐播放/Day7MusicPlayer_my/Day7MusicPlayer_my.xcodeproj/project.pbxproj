@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1489C8931CAA8D21000CBC14 /* 曹格 - 丑角.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1489C8921CAA8D21000CBC14 /* 曹格 - 丑角.mp3 */; };
 		1871BE1D1859658E00C79207 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871BE1C1859658E00C79207 /* Foundation.framework */; };
 		1871BE1F1859658E00C79207 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871BE1E1859658E00C79207 /* CoreGraphics.framework */; };
 		1871BE211859658E00C79207 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1871BE201859658E00C79207 /* UIKit.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1489C8921CAA8D21000CBC14 /* 曹格 - 丑角.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "曹格 - 丑角.mp3"; sourceTree = "<group>"; };
 		1871BE191859658E00C79207 /* Day7MusicPlayer_my.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day7MusicPlayer_my.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1871BE1C1859658E00C79207 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1871BE1E1859658E00C79207 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,6 +118,7 @@
 		1871BE221859658E00C79207 /* Day7MusicPlayer_my */ = {
 			isa = PBXGroup;
 			children = (
+				1489C8921CAA8D21000CBC14 /* 曹格 - 丑角.mp3 */,
 				1871BE2B1859658E00C79207 /* TRAppDelegate.h */,
 				1871BE2C1859658E00C79207 /* TRAppDelegate.m */,
 				1871BE2E1859658E00C79207 /* Main.storyboard */,
@@ -204,6 +207,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Hany;
 				TargetAttributes = {
+					1871BE181859658E00C79207 = {
+						DevelopmentTeam = 3G78AKCD6L;
+					};
 					1871BE391859658E00C79207 = {
 						TestTargetID = 1871BE181859658E00C79207;
 					};
@@ -235,6 +241,7 @@
 			files = (
 				1871BE351859658E00C79207 /* Images.xcassets in Resources */,
 				1871BE271859658E00C79207 /* InfoPlist.strings in Resources */,
+				1489C8931CAA8D21000CBC14 /* 曹格 - 丑角.mp3 in Resources */,
 				1871BE301859658E00C79207 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,10 +390,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Day7MusicPlayer_my/Day7MusicPlayer_my-Prefix.pch";
 				INFOPLIST_FILE = "Day7MusicPlayer_my/Day7MusicPlayer_my-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,10 +406,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Day7MusicPlayer_my/Day7MusicPlayer_my-Prefix.pch";
 				INFOPLIST_FILE = "Day7MusicPlayer_my/Day7MusicPlayer_my-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

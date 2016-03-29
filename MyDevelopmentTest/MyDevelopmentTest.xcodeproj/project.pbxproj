@@ -226,6 +226,11 @@
 		1489C87C1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C87A1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.m */; };
 		1489C87D1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1489C87B1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib */; };
 		1489C8801CAA5EEA000CBC14 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C87F1CAA5EEA000CBC14 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1489C8861CAA873E000CBC14 /* MD_NSXML_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C8841CAA873E000CBC14 /* MD_NSXML_VC.m */; };
+		1489C8871CAA873E000CBC14 /* MD_NSXML_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1489C8851CAA873E000CBC14 /* MD_NSXML_VC.xib */; };
+		1489C8891CAA8775000CBC14 /* books.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1489C8881CAA8775000CBC14 /* books.xml */; };
+		1489C88C1CAA87B3000CBC14 /* TRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1489C88B1CAA87B3000CBC14 /* TRBook.m */; };
+		1489C8911CAA8AD4000CBC14 /* testmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1489C8901CAA8AD4000CBC14 /* testmusic.mp3 */; };
 		148CD69B1AAE972700FAED9D /* abc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 148CD69A1AAE972700FAED9D /* abc.txt */; };
 		148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */; };
 		148CD6A31AAE99C400FAED9D /* TRStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD6A21AAE99C400FAED9D /* TRStudent.m */; };
@@ -660,6 +665,13 @@
 		1489C87B1CAA5DB8000CBC14 /* MD_Socket_UDP_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Socket_UDP_VC.xib; sourceTree = "<group>"; };
 		1489C87E1CAA5EEA000CBC14 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
 		1489C87F1CAA5EEA000CBC14 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		1489C8831CAA873E000CBC14 /* MD_NSXML_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSXML_VC.h; sourceTree = "<group>"; };
+		1489C8841CAA873E000CBC14 /* MD_NSXML_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSXML_VC.m; sourceTree = "<group>"; };
+		1489C8851CAA873E000CBC14 /* MD_NSXML_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSXML_VC.xib; sourceTree = "<group>"; };
+		1489C8881CAA8775000CBC14 /* books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = books.xml; sourceTree = "<group>"; };
+		1489C88A1CAA87B3000CBC14 /* TRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBook.h; sourceTree = "<group>"; };
+		1489C88B1CAA87B3000CBC14 /* TRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRBook.m; sourceTree = "<group>"; };
+		1489C8901CAA8AD4000CBC14 /* testmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = testmusic.mp3; sourceTree = "<group>"; };
 		148CD69A1AAE972700FAED9D /* abc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = abc.txt; sourceTree = "<group>"; };
 		148CD69D1AAE977700FAED9D /* MDStringNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStringNormalViewController.h; sourceTree = "<group>"; };
 		148CD69E1AAE977700FAED9D /* MDStringNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStringNormalViewController.m; sourceTree = "<group>"; };
@@ -1102,6 +1114,7 @@
 				1428AB811C84558C003CC10F /* NSURLRequest.h */,
 				1428AB661C84502C003CC10F /* NSURLCache.h */,
 				1428AB761C84502C003CC10F /* UIWebView.h */,
+				1489C8811CAA86D7000CBC14 /* xml */,
 				14CB770B1CA4E9A400878C4E /* socket */,
 				14E27C2A1CA14FB000F428CC /* HTTP */,
 				1428AB5F1C84502C003CC10F /* NSURLCache */,
@@ -1731,6 +1744,7 @@
 		147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */ = {
 			isa = PBXGroup;
 			children = (
+				1489C88D1CAA8AA3000CBC14 /* LocalResource */,
 				14CB771C1CA5241E00878C4E /* Units */,
 				14E604D91C5B101D000E0DED /* Model */,
 				14DB40F01AEA752D00DA1682 /* main */,
@@ -1816,6 +1830,33 @@
 				148829911C55C5A00034ACFC /* TRStudent5.m */,
 			);
 			path = NSEnumerator;
+			sourceTree = "<group>";
+		};
+		1489C8811CAA86D7000CBC14 /* xml */ = {
+			isa = PBXGroup;
+			children = (
+				1489C8821CAA86F3000CBC14 /* NSXML */,
+			);
+			path = xml;
+			sourceTree = "<group>";
+		};
+		1489C8821CAA86F3000CBC14 /* NSXML */ = {
+			isa = PBXGroup;
+			children = (
+				1489C8831CAA873E000CBC14 /* MD_NSXML_VC.h */,
+				1489C8841CAA873E000CBC14 /* MD_NSXML_VC.m */,
+				1489C8851CAA873E000CBC14 /* MD_NSXML_VC.xib */,
+				1489C8881CAA8775000CBC14 /* books.xml */,
+			);
+			path = NSXML;
+			sourceTree = "<group>";
+		};
+		1489C88D1CAA8AA3000CBC14 /* LocalResource */ = {
+			isa = PBXGroup;
+			children = (
+				1489C8901CAA8AD4000CBC14 /* testmusic.mp3 */,
+			);
+			path = LocalResource;
 			sourceTree = "<group>";
 		};
 		148CD6991AAE972700FAED9D /* 常用（创建、对比、转换、截取等） */ = {
@@ -2182,6 +2223,8 @@
 		14E604D91C5B101D000E0DED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1489C88A1CAA87B3000CBC14 /* TRBook.h */,
+				1489C88B1CAA87B3000CBC14 /* TRBook.m */,
 				14E604DA1C5B10C1000E0DED /* MDStudent.h */,
 				14E604DB1C5B10C1000E0DED /* MDStudent.m */,
 				14E604DD1C5B1107000E0DED /* MDBag.h */,
@@ -2473,6 +2516,7 @@
 				14565E811BA94CD1009F7B2D /* playing6@2x.png in Resources */,
 				146D83031AA709F600F0C7FD /* Mexico.png in Resources */,
 				1428AB7C1C84502C003CC10F /* index1.html in Resources */,
+				1489C8891CAA8775000CBC14 /* books.xml in Resources */,
 				14565E521BA94CD1009F7B2D /* playing19@2x.png in Resources */,
 				14565E531BA94CD1009F7B2D /* playing1@2x.png in Resources */,
 				14565E7C1BA94CD1009F7B2D /* playing57@2x.png in Resources */,
@@ -2530,6 +2574,7 @@
 				14565E631BA94CD1009F7B2D /* playing34@2x.png in Resources */,
 				14565E4D1BA94CD1009F7B2D /* playing14@2x.png in Resources */,
 				14D6700D1C475BCE00F911A4 /* MDModal2ViewController.xib in Resources */,
+				1489C8871CAA873E000CBC14 /* MD_NSXML_VC.xib in Resources */,
 				1461C0D81CA92301006ED51C /* MD_Socket_SendFile_VC.xib in Resources */,
 				14EACA211C80021C00F3FE2C /* MD_FreeTest_VC.xib in Resources */,
 				146D82F51AA709F600F0C7FD /* Germany.png in Resources */,
@@ -2606,6 +2651,7 @@
 				14565E831BA94CD1009F7B2D /* playing8@2x.png in Resources */,
 				14565E551BA94CD1009F7B2D /* playing21@2x.png in Resources */,
 				14DF14D21C4F83E7005C10AA /* Default.png in Resources */,
+				1489C8911CAA8AD4000CBC14 /* testmusic.mp3 in Resources */,
 				1463B2AF1AA1CC08006AE8D2 /* big.jpg in Resources */,
 				146D83191AA709F600F0C7FD /* Spain.png in Resources */,
 				14565E5C1BA94CD1009F7B2D /* playing28@2x.png in Resources */,
@@ -2671,6 +2717,7 @@
 				144F23F11C5F38E2004ED3BC /* NSIndexSet+Convenience.m in Sources */,
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
+				1489C8861CAA873E000CBC14 /* MD_NSXML_VC.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
 				14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
@@ -2778,6 +2825,7 @@
 				144F23F61C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m in Sources */,
 				1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */,
 				14D6700C1C475BCE00F911A4 /* MDModal2ViewController.m in Sources */,
+				1489C88C1CAA87B3000CBC14 /* TRBook.m in Sources */,
 				14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */,
 				148CD7601AAED70E00FAED9D /* TRXYZ.m in Sources */,
 				148CD7121AAEC21600FAED9D /* TRStudent3.m in Sources */,
