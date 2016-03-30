@@ -57,19 +57,20 @@
   }
   
   self.baseURL = url;
-  
-  self.requestSerializer = [AFHTTPRequestSerializer serializer];
-  self.responseSerializer = [AFJSONResponseSerializer serializer];
-  //    self.responseSerializer = [AFHTTPRequestSerializer serializer];
-  self.securityPolicy = [AFSecurityPolicy defaultPolicy];
-  
-  self.reachabilityManager = [AFNetworkReachabilityManager sharedManager];
-  
-  self.operationQueue = [[NSOperationQueue alloc] init];
-  
-  self.shouldUseCredentialStorage = YES;
-  
-  return self;
+
+    self.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.responseSerializer = [AFJSONResponseSerializer serializer];//原来
+//    self.responseSerializer = [AFHTTPResponseSerializer serializer];//修改后
+
+    self.securityPolicy = [AFSecurityPolicy defaultPolicy];
+
+    self.reachabilityManager = [AFNetworkReachabilityManager sharedManager];
+
+    self.operationQueue = [[NSOperationQueue alloc] init];
+
+    self.shouldUseCredentialStorage = YES;
+
+    return self;
 }
 
 #pragma mark -

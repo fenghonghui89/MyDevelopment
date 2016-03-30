@@ -96,20 +96,20 @@ FOUNDATION_EXPORT NSString *NSURLFileScheme;
 
 /* Any URL is composed of these two basic pieces.  The full URL would be the concatenation of [myURL scheme], ':', [myURL resourceSpecifier]
  */
-@property (readonly, copy) NSString *scheme;//返回“http”
+@property (readonly, copy) NSString *scheme;//   返回“http”
 @property (readonly, copy) NSString *resourceSpecifier;
 
 /* If the URL conforms to rfc 1808 (the most common form of URL), the following accessors will return the various components; otherwise they return nil.  The litmus test for conformance is as recommended in RFC 1808 - whether the first two characters of resourceSpecifier is @"//".  In all cases, they return the component's value after resolving the receiver against its base URL.
  */
-@property (nullable, readonly, copy) NSString *host;
-@property (nullable, readonly, copy) NSNumber *port;
+@property (nullable, readonly, copy) NSString *host;// http://dev.123go.net.cn/a/4003.html  dev.123go.net.cn
+@property (nullable, readonly, copy) NSNumber *port;//
 @property (nullable, readonly, copy) NSString *user;
 @property (nullable, readonly, copy) NSString *password;
 @property (nullable, readonly, copy) NSString *path;
 @property (nullable, readonly, copy) NSString *fragment;
 @property (nullable, readonly, copy) NSString *parameterString;
 @property (nullable, readonly, copy) NSString *query;
-@property (nullable, readonly, copy) NSString *relativePath; // The same as path if baseURL is nil
+@property (nullable, readonly, copy) NSString *relativePath; // The same as path if baseURL is nil  http://dev.123go.net.cn/a/4003.html   /a/4003.html
 
 /* Determines if a given URL string's path represents a directory (i.e. the path component in the URL string ends with a '/' character). This does not check the resource the URL refers to.
  */

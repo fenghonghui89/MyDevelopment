@@ -224,6 +224,7 @@
 		1487408A1CABC210007CC45C /* DGCPostServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740891CABC210007CC45C /* DGCPostServices.m */; };
 		1487408D1CABC2E6007CC45C /* DGCPlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487408C1CABC2E6007CC45C /* DGCPlaceInfo.m */; };
 		148740911CABC335007CC45C /* NSDate+Tpages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487408E1CABC335007CC45C /* NSDate+Tpages.m */; };
+		148740951CABD84B007CC45C /* NSURL.h in Sources */ = {isa = PBXBuildFile; fileRef = 148740931CABD84B007CC45C /* NSURL.h */; };
 		14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */; };
 		14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */; };
 		148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */; };
@@ -435,8 +436,6 @@
 		1421A9791BD62C2100C561A7 /* ZTCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTCameraView.m; sourceTree = "<group>"; };
 		1421A97B1BD62C6800C561A7 /* MDCustomUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomUIViewController.h; sourceTree = "<group>"; };
 		1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomUIViewController.m; sourceTree = "<group>"; };
-		1426A1701C44D60200FB191D /* MDTestNSURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSURL.m; sourceTree = "<group>"; };
-		1426A1731C44D6CB00FB191D /* MDTestNSURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSURLResponse.m; sourceTree = "<group>"; };
 		1426A1771C44D7A300FB191D /* MDTestNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSThread.m; sourceTree = "<group>"; };
 		1426A17F1C44D93700FB191D /* MDTestNSKeyedArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSKeyedArchiver.m; sourceTree = "<group>"; };
 		1426A1831C44DA6300FB191D /* MDTestNSRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTestNSRunLoop.m; sourceTree = "<group>"; };
@@ -700,6 +699,8 @@
 		1487408C1CABC2E6007CC45C /* DGCPlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCPlaceInfo.m; sourceTree = "<group>"; };
 		1487408E1CABC335007CC45C /* NSDate+Tpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Tpages.m"; sourceTree = "<group>"; };
 		1487408F1CABC335007CC45C /* NSDate+Tpages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Tpages.h"; sourceTree = "<group>"; };
+		148740931CABD84B007CC45C /* NSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURL.h; sourceTree = "<group>"; };
+		148740971CABDCE6007CC45C /* NSJSONSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSJSONSerialization.h; sourceTree = "<group>"; };
 		14877C791BA7F15E00785B0C /* MD_GestureRecognizer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GestureRecognizer_VC.h; sourceTree = "<group>"; };
 		14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GestureRecognizer_VC.m; sourceTree = "<group>"; };
 		14877C7B1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GestureRecognizerTest_VC.h; sourceTree = "<group>"; };
@@ -1150,15 +1151,6 @@
 			path = "跳转";
 			sourceTree = "<group>";
 		};
-		1426A16E1C44D5F200FB191D /* NSURL */ = {
-			isa = PBXGroup;
-			children = (
-				1426A1701C44D60200FB191D /* MDTestNSURL.m */,
-				1426A1731C44D6CB00FB191D /* MDTestNSURLResponse.m */,
-			);
-			path = NSURL;
-			sourceTree = "<group>";
-		};
 		1426A1751C44D79000FB191D /* NSThread */ = {
 			isa = PBXGroup;
 			children = (
@@ -1224,6 +1216,8 @@
 		1428AB5E1C84502C003CC10F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				148740971CABDCE6007CC45C /* NSJSONSerialization.h */,
+				148740931CABD84B007CC45C /* NSURL.h */,
 				14EA84EE1CA3851600A70A46 /* NSURLProtocol.h */,
 				149CFE921CA24CCA00E6525C /* NSURLConnection.h */,
 				149CFE931CA24CCA00E6525C /* NSURLResponse.h */,
@@ -1501,7 +1495,6 @@
 				1426A17D1C44D91100FB191D /* NSKeyedArchiver&NSKeyedUnarchiver */,
 				1426A1791C44D82A00FB191D /* NSFileManager&NSFileHandle */,
 				1426A1751C44D79000FB191D /* NSThread */,
-				1426A16E1C44D5F200FB191D /* NSURL */,
 				14565E071BA94A75009F7B2D /* NSTimer */,
 				148CD7581AAED6B900FAED9D /* NSDictionary */,
 				148CD7591AAED6B900FAED9D /* NSSet */,
@@ -3110,6 +3103,7 @@
 				148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */,
 				1428AB7A1C84502C003CC10F /* MDWebviewUserAgentViewController.m in Sources */,
 				14E604DC1C5B10C1000E0DED /* MDStudent.m in Sources */,
+				148740951CABD84B007CC45C /* NSURL.h in Sources */,
 				14E604E21C5B228E000E0DED /* MDKVO_View.m in Sources */,
 				14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */,
 				148CD7531AAED37700FAED9D /* TRTelphoneInfo.m in Sources */,
