@@ -118,6 +118,29 @@
                                  delegate:self];
 }
 
+-(void)af_uploadImg{
+  
+  UIImage *img = [UIImage imageNamed:@"000.jpg"];
+  NSData *imgData = UIImageJPEGRepresentation(img, 0.3);
+  
+  NSString *urlStr = [NSString stringWithFormat:@"https://120.26.213.94/posts/%@/images",@"175"];
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+  [request setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
+  [request setHTTPMethod:@"POST"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setHTTPBody:imgData];
+  
+  AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+  operation.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+  operation.securityPolicy.allowInvalidCertificates = YES;
+  [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSLog(@"Success: %@", responseObject);
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"failuer :%@",error);
+  }];
+  [[NSOperationQueue mainQueue] addOperations:@[operation] waitUntilFinished:NO];
+}
+
 #pragma mark - < action > -
 
 #pragma mark - < callback > -
