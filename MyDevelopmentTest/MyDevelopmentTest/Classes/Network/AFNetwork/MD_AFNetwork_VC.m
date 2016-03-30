@@ -9,9 +9,10 @@
 #import "MD_AFNetwork_VC.h"
 #import "AFNetworking.h"
 #import "DGCUserManager.h"
+#import "DGCPostManager.h"
 #import "MDTool.h"
 #import "MDDefine.h"
-@interface MD_AFNetwork_VC()<DGCUserManagerDelegate>
+@interface MD_AFNetwork_VC()<DGCUserManagerDelegate,DGCPostManagerDelegate>
 
 @end
 
@@ -27,7 +28,7 @@
 
   [super viewDidAppear:animated];
   
-  [self af_manager];
+  [self af_get1];
 }
 #pragma mark - < method > -
 -(void)af_get{
@@ -67,6 +68,12 @@
          NSLog(@"error..");
        }];
 
+}
+
+-(void)af_get1{
+  
+  NSDictionary *delegateInfo = [NSDictionary dictionaryWithObject:FIRST_GET_INFO forKey:DELEGATE_INFO_KEY];
+  [[DGCPostManager share] getPostsBySince:0 before:0 per_page:0 site:0 location:0 place:0 type:0 user:0 userinfo:delegateInfo delegate:self];
 }
 
 -(void)af_post{
@@ -151,6 +158,20 @@
   }else{
     NSLog(@"登录失败:%ld %@",(long)code,msg);
     
+  }
+}
+
+-(void)DGCPosts:(DGCPostManager *)userServices isSuccess:(BOOL)isSuccess data:(DGCListInfo *)data errorCode:(DGCRequestErrorCode)code msg:(NSString *)msg userInfo:(NSDictionary *)userInfo{
+  
+  NSString *identifier = [userInfo objectForKey:DELEGATE_INFO_KEY];
+  if (isSuccess) {
+    
+    if ([identifier isEqualToString:FIRST_GET_INFO]) {
+      NSArray *arr = data.items;
+      DLog(@"成功 %@",arr);
+    }
+  }else{
+    DLog(@"失败 %@",msg);
   }
 }
 @end

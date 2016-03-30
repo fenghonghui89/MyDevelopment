@@ -29,6 +29,18 @@
 #define tarBarH 49
 #define phoneStateH 40 //状态栏20+占用navi20
 
+#pragma mark - 快捷属性
+#define  PROPERTY_NON_ATOMIC_WEAK       @property (nonatomic,weak)
+#define  PROPERTY_NON_ATOMIC_ASSIGN     @property (nonatomic,assign)
+#define  PROPERTY_NON_ATOMIC_COPY       @property (nonatomic,copy  )
+#define  PROPERTY_NON_ATOMIC_STRONG     @property (nonatomic,strong)
+#define  PROPERTY_NON_ATOMIC_READONLY   @property (nonatomic,readonly)
+
+#define  PROPERTY_ATOMIC_ASSIGN         @property (atomic,assign  )
+#define  PROPERTY_ATOMIC_COPY           @property (atomic,copy  )
+#define  PROPERTY_ATOMIC_STRONG         @property (atomic,strong)
+#define  PROPERTY_ATOMIC_READONLY       @property (atomic,readonly)
+
 #pragma mark - log
 #ifdef DEBUG
 #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
@@ -66,5 +78,9 @@ typedef NS_ENUM(NSInteger,DGCRequestErrorCode) {
 
 typedef NS_ENUM(NSInteger,DGCRequestCode) {
   DGCRequestCodeLogin = 1001,
+  DGCRequestCodePost = 1002,
 };
+
+#pragma mark - url / key / id
+#define DGCBaseURL @"https://app.tpages.cn"
 #endif

@@ -217,6 +217,13 @@
 		147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 147FDF3B1B900E670006A2C4 /* bg94w100h@2x.png */; };
 		147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */; };
 		1482B5C81BA1A86400E83090 /* tabbar_item_store@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1482B5C71BA1A86400E83090 /* tabbar_item_store@2x.png */; };
+		1487407E1CABBC1B007CC45C /* DGCDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487407D1CABBC1B007CC45C /* DGCDataParser.m */; };
+		148740831CABBEF8007CC45C /* DGCPostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740801CABBEF8007CC45C /* DGCPostInfo.m */; };
+		148740841CABBEF8007CC45C /* DGCListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740821CABBEF8007CC45C /* DGCListInfo.m */; };
+		148740871CABC070007CC45C /* DGCPostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740861CABC070007CC45C /* DGCPostManager.m */; };
+		1487408A1CABC210007CC45C /* DGCPostServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740891CABC210007CC45C /* DGCPostServices.m */; };
+		1487408D1CABC2E6007CC45C /* DGCPlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487408C1CABC2E6007CC45C /* DGCPlaceInfo.m */; };
+		148740911CABC335007CC45C /* NSDate+Tpages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487408E1CABC335007CC45C /* NSDate+Tpages.m */; };
 		14877C7E1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */; };
 		14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14877C7C1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m */; };
 		148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1488298F1C55C5A00034ACFC /* MDNSEnumeratorViewController.m */; };
@@ -679,6 +686,20 @@
 		147FDF3D1B9012690006A2C4 /* UIImage+UIImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageScale.h"; sourceTree = "<group>"; };
 		147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageScale.m"; sourceTree = "<group>"; };
 		1482B5C71BA1A86400E83090 /* tabbar_item_store@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_item_store@2x.png"; sourceTree = "<group>"; };
+		1487407C1CABBC1B007CC45C /* DGCDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCDataParser.h; sourceTree = "<group>"; };
+		1487407D1CABBC1B007CC45C /* DGCDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCDataParser.m; sourceTree = "<group>"; };
+		1487407F1CABBEF8007CC45C /* DGCPostInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCPostInfo.h; sourceTree = "<group>"; };
+		148740801CABBEF8007CC45C /* DGCPostInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCPostInfo.m; sourceTree = "<group>"; };
+		148740811CABBEF8007CC45C /* DGCListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCListInfo.h; sourceTree = "<group>"; };
+		148740821CABBEF8007CC45C /* DGCListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCListInfo.m; sourceTree = "<group>"; };
+		148740851CABC070007CC45C /* DGCPostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCPostManager.h; sourceTree = "<group>"; };
+		148740861CABC070007CC45C /* DGCPostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCPostManager.m; sourceTree = "<group>"; };
+		148740881CABC210007CC45C /* DGCPostServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCPostServices.h; sourceTree = "<group>"; };
+		148740891CABC210007CC45C /* DGCPostServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCPostServices.m; sourceTree = "<group>"; };
+		1487408B1CABC2E6007CC45C /* DGCPlaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCPlaceInfo.h; sourceTree = "<group>"; };
+		1487408C1CABC2E6007CC45C /* DGCPlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCPlaceInfo.m; sourceTree = "<group>"; };
+		1487408E1CABC335007CC45C /* NSDate+Tpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Tpages.m"; sourceTree = "<group>"; };
+		1487408F1CABC335007CC45C /* NSDate+Tpages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Tpages.h"; sourceTree = "<group>"; };
 		14877C791BA7F15E00785B0C /* MD_GestureRecognizer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GestureRecognizer_VC.h; sourceTree = "<group>"; };
 		14877C7A1BA7F15E00785B0C /* MD_GestureRecognizer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GestureRecognizer_VC.m; sourceTree = "<group>"; };
 		14877C7B1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GestureRecognizerTest_VC.h; sourceTree = "<group>"; };
@@ -810,7 +831,6 @@
 		14A727A51CABB02100DC7BC0 /* DGCServerCallBackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCServerCallBackDelegate.h; sourceTree = "<group>"; };
 		14A727A71CABB07000DC7BC0 /* AFNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkManager.h; sourceTree = "<group>"; };
 		14A727A81CABB07000DC7BC0 /* AFNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkManager.m; sourceTree = "<group>"; };
-		14A727A91CABB07000DC7BC0 /* DGCServiceBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCServiceBlock.h; sourceTree = "<group>"; };
 		14A727AB1CABB09F00DC7BC0 /* DGCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCBaseModel.h; sourceTree = "<group>"; };
 		14A727AC1CABB09F00DC7BC0 /* DGCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCBaseModel.m; sourceTree = "<group>"; };
 		14A727AD1CABB09F00DC7BC0 /* DGCUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCUserInfo.h; sourceTree = "<group>"; };
@@ -1722,6 +1742,8 @@
 		146D82AC1AA7036700F0C7FD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1487408E1CABC335007CC45C /* NSDate+Tpages.m */,
+				1487408F1CABC335007CC45C /* NSDate+Tpages.h */,
 				144F23EA1C5F38E2004ED3BC /* CIImage+Convenience.h */,
 				144F23EB1C5F38E2004ED3BC /* CIImage+Convenience.m */,
 				144F23EC1C5F38E2004ED3BC /* NSIndexSet+Convenience.h */,
@@ -2294,6 +2316,8 @@
 				14A727B21CABB28500DC7BC0 /* DGCDelegateInfo.m */,
 				14A727B31CABB28500DC7BC0 /* DGCUserManager.h */,
 				14A727B41CABB28500DC7BC0 /* DGCUserManager.m */,
+				148740851CABC070007CC45C /* DGCPostManager.h */,
+				148740861CABC070007CC45C /* DGCPostManager.m */,
 			);
 			path = BusinessManager;
 			sourceTree = "<group>";
@@ -2305,7 +2329,6 @@
 				14A727A01CABAEAA00DC7BC0 /* ReachabilityManager.m */,
 				14A727A71CABB07000DC7BC0 /* AFNetworkManager.h */,
 				14A727A81CABB07000DC7BC0 /* AFNetworkManager.m */,
-				14A727A91CABB07000DC7BC0 /* DGCServiceBlock.h */,
 				14A727A21CABB00000DC7BC0 /* ServicesModels */,
 			);
 			path = NetworkManager;
@@ -2316,6 +2339,8 @@
 			children = (
 				14A727A31CABB02100DC7BC0 /* DGCLoginServices.h */,
 				14A727A41CABB02100DC7BC0 /* DGCLoginServices.m */,
+				148740881CABC210007CC45C /* DGCPostServices.h */,
+				148740891CABC210007CC45C /* DGCPostServices.m */,
 				14A727A51CABB02100DC7BC0 /* DGCServerCallBackDelegate.h */,
 			);
 			path = ServicesModels;
@@ -2401,6 +2426,8 @@
 		14CB771C1CA5241E00878C4E /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				1487407C1CABBC1B007CC45C /* DGCDataParser.h */,
+				1487407D1CABBC1B007CC45C /* DGCDataParser.m */,
 				14CB771D1CA5243800878C4E /* MDDefine.h */,
 				14CB771E1CA5243900878C4E /* MDTool.h */,
 				14CB771F1CA5243900878C4E /* MDTool.m */,
@@ -2514,6 +2541,12 @@
 		14E604D91C5B101D000E0DED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1487408B1CABC2E6007CC45C /* DGCPlaceInfo.h */,
+				1487408C1CABC2E6007CC45C /* DGCPlaceInfo.m */,
+				1487407F1CABBEF8007CC45C /* DGCPostInfo.h */,
+				148740801CABBEF8007CC45C /* DGCPostInfo.m */,
+				148740811CABBEF8007CC45C /* DGCListInfo.h */,
+				148740821CABBEF8007CC45C /* DGCListInfo.m */,
 				14A727AB1CABB09F00DC7BC0 /* DGCBaseModel.h */,
 				14A727AC1CABB09F00DC7BC0 /* DGCBaseModel.m */,
 				14A727AD1CABB09F00DC7BC0 /* DGCUserInfo.h */,
@@ -2986,6 +3019,7 @@
 				145D87091BA8375800447D35 /* MD_Touch_CustomView.m in Sources */,
 				14A727CC1CABB67A00DC7BC0 /* UIAlertView+AFNetworking.m in Sources */,
 				141B436C1AA47394008F2711 /* MDModal1ViewController.m in Sources */,
+				1487408D1CABC2E6007CC45C /* DGCPlaceInfo.m in Sources */,
 				148CD7231AAEC54700FAED9D /* MDNSNumberViewController.m in Sources */,
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				1412B6731BA17BF400FA5F2E /* MD_String_CustomView.m in Sources */,
@@ -3002,6 +3036,7 @@
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				14FFBE441C9AA995006BEB2B /* MASConstraintMaker.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
+				148740831CABBEF8007CC45C /* DGCPostInfo.m in Sources */,
 				14A727AF1CABB09F00DC7BC0 /* DGCBaseModel.m in Sources */,
 				14FFBE451C9AA995006BEB2B /* MASLayoutConstraint.m in Sources */,
 				148CD71C1AAEC21600FAED9D /* TRStudent2.m in Sources */,
@@ -3069,6 +3104,7 @@
 				14DF14AE1C4F7684005C10AA /* MD_AVCamera_VC.m in Sources */,
 				146D82761AA6DCB600F0C7FD /* MDTabBarVCNormalViewController.m in Sources */,
 				14CB770F1CA4EFFA00878C4E /* AsyncSocket.m in Sources */,
+				1487407E1CABBC1B007CC45C /* DGCDataParser.m in Sources */,
 				14A727D01CABB67A00DC7BC0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */,
 				148CD69F1AAE977700FAED9D /* MDStringNormalViewController.m in Sources */,
@@ -3080,6 +3116,8 @@
 				144F23F01C5F38E2004ED3BC /* CIImage+Convenience.m in Sources */,
 				148CD71A1AAEC21600FAED9D /* TRCat2.m in Sources */,
 				14CB77151CA4F18F00878C4E /* MD_Socket_Client_VC.m in Sources */,
+				1487408A1CABC210007CC45C /* DGCPostServices.m in Sources */,
+				148740841CABBEF8007CC45C /* DGCListInfo.m in Sources */,
 				14E604DF1C5B1107000E0DED /* MDBag.m in Sources */,
 				14565E8A1BA95590009F7B2D /* MD_NSTimer_VC2.m in Sources */,
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
@@ -3097,6 +3135,7 @@
 				146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */,
 				14F073991B95BC660029A653 /* MD_UIBezierPath_ViewController.m in Sources */,
 				14381BEF1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m in Sources */,
+				148740911CABC335007CC45C /* NSDate+Tpages.m in Sources */,
 				14EA84F71CA3A75600A70A46 /* MDImageItem.m in Sources */,
 				14F073A21B95BCC50029A653 /* MD_CGimage_ViewController.m in Sources */,
 				1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */,
@@ -3116,6 +3155,7 @@
 				14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */,
 				14FFBE461C9AA995006BEB2B /* MASViewAttribute.m in Sources */,
 				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
+				148740871CABC070007CC45C /* DGCPostManager.m in Sources */,
 				14A727741CAB8BB300DC7BC0 /* Reachability.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
 				14A727961CABAC6D00DC7BC0 /* AFURLRequestSerialization.m in Sources */,

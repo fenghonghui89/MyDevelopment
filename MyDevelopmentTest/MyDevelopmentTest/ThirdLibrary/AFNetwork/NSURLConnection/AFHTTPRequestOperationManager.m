@@ -46,31 +46,30 @@
 }
 
 - (instancetype)initWithBaseURL:(NSURL *)url {
-    self = [super init];
-    if (!self) {
-        return nil;
-    }
-
-    // Ensure terminal slash for baseURL path, so that NSURL +URLWithString:relativeToURL: works as expected
-    if ([[url path] length] > 0 && ![[url absoluteString] hasSuffix:@"/"]) {
-        url = [url URLByAppendingPathComponent:@""];
-    }
-
-    self.baseURL = url;
-
-    self.requestSerializer = [AFHTTPRequestSerializer serializer];
-    //self.responseSerializer = [AFJSONResponseSerializer serializer];//原来
-    self.responseSerializer = [AFHTTPResponseSerializer serializer];//修改后
-
-    self.securityPolicy = [AFSecurityPolicy defaultPolicy];
-
-    self.reachabilityManager = [AFNetworkReachabilityManager sharedManager];
-
-    self.operationQueue = [[NSOperationQueue alloc] init];
-
-    self.shouldUseCredentialStorage = YES;
-
-    return self;
+  self = [super init];
+  if (!self) {
+    return nil;
+  }
+  
+  // Ensure terminal slash for baseURL path, so that NSURL +URLWithString:relativeToURL: works as expected
+  if ([[url path] length] > 0 && ![[url absoluteString] hasSuffix:@"/"]) {
+    url = [url URLByAppendingPathComponent:@""];
+  }
+  
+  self.baseURL = url;
+  
+  self.requestSerializer = [AFHTTPRequestSerializer serializer];
+  self.responseSerializer = [AFJSONResponseSerializer serializer];
+  //    self.responseSerializer = [AFHTTPRequestSerializer serializer];
+  self.securityPolicy = [AFSecurityPolicy defaultPolicy];
+  
+  self.reachabilityManager = [AFNetworkReachabilityManager sharedManager];
+  
+  self.operationQueue = [[NSOperationQueue alloc] init];
+  
+  self.shouldUseCredentialStorage = YES;
+  
+  return self;
 }
 
 #pragma mark -
