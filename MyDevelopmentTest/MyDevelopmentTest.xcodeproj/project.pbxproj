@@ -269,6 +269,9 @@
 		14A727611CAB75A700DC7BC0 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A727601CAB75A700DC7BC0 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A727631CAB760100DC7BC0 /* libxml2.tbd */; };
 		14A727671CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A727661CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m */; };
+		14A7276B1CAB89F800DC7BC0 /* MD_Reachability_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A7276A1CAB89F800DC7BC0 /* MD_Reachability_VC.m */; };
+		14A727701CAB8B4E00DC7BC0 /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A7276F1CAB8B4E00DC7BC0 /* ReachabilityManager.m */; };
+		14A727741CAB8BB300DC7BC0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A727731CAB8BB300DC7BC0 /* Reachability.m */; };
 		14CB770F1CA4EFFA00878C4E /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB770E1CA4EFFA00878C4E /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14CB77151CA4F18F00878C4E /* MD_Socket_Client_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB77131CA4F18F00878C4E /* MD_Socket_Client_VC.m */; };
 		14CB77161CA4F18F00878C4E /* MD_Socket_Client_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CB77141CA4F18F00878C4E /* MD_Socket_Client_VC.xib */; };
@@ -749,6 +752,12 @@
 		14A727631CAB760100DC7BC0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		14A727651CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_XML_GDataXMLNode_VC.h; sourceTree = "<group>"; };
 		14A727661CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_XML_GDataXMLNode_VC.m; sourceTree = "<group>"; };
+		14A727691CAB89F800DC7BC0 /* MD_Reachability_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Reachability_VC.h; sourceTree = "<group>"; };
+		14A7276A1CAB89F800DC7BC0 /* MD_Reachability_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Reachability_VC.m; sourceTree = "<group>"; };
+		14A7276E1CAB8B4E00DC7BC0 /* ReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityManager.h; sourceTree = "<group>"; };
+		14A7276F1CAB8B4E00DC7BC0 /* ReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityManager.m; sourceTree = "<group>"; };
+		14A727721CAB8BB300DC7BC0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		14A727731CAB8BB300DC7BC0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		14CB770D1CA4EFFA00878C4E /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		14CB770E1CA4EFFA00878C4E /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		14CB77121CA4F18F00878C4E /* MD_Socket_Client_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_Client_VC.h; sourceTree = "<group>"; };
@@ -1123,6 +1132,7 @@
 				1428AB811C84558C003CC10F /* NSURLRequest.h */,
 				1428AB661C84502C003CC10F /* NSURLCache.h */,
 				1428AB761C84502C003CC10F /* UIWebView.h */,
+				14A727681CAB89E200DC7BC0 /* Reachability */,
 				1489C8811CAA86D7000CBC14 /* xml */,
 				14CB770B1CA4E9A400878C4E /* socket */,
 				14E27C2A1CA14FB000F428CC /* HTTP */,
@@ -1736,8 +1746,7 @@
 		147DB1751A8C7FA600F38EA4 = {
 			isa = PBXGroup;
 			children = (
-				14A727631CAB760100DC7BC0 /* libxml2.tbd */,
-				14FBF9651C27B4F700CC0A55 /* Photos.framework */,
+				14A7276C1CAB8ACF00DC7BC0 /* SystemLibraries */,
 				147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */,
 				147DB17F1A8C7FA600F38EA4 /* Products */,
 			);
@@ -1754,6 +1763,7 @@
 		147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */ = {
 			isa = PBXGroup;
 			children = (
+				14A7276D1CAB8B4500DC7BC0 /* Managers */,
 				1489C88D1CAA8AA3000CBC14 /* LocalResource */,
 				14CB771C1CA5241E00878C4E /* Units */,
 				14E604D91C5B101D000E0DED /* Model */,
@@ -2082,6 +2092,42 @@
 				14A727661CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m */,
 			);
 			path = GDataXMLNode;
+			sourceTree = "<group>";
+		};
+		14A727681CAB89E200DC7BC0 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				14A727691CAB89F800DC7BC0 /* MD_Reachability_VC.h */,
+				14A7276A1CAB89F800DC7BC0 /* MD_Reachability_VC.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		14A7276C1CAB8ACF00DC7BC0 /* SystemLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				14A727631CAB760100DC7BC0 /* libxml2.tbd */,
+				14FBF9651C27B4F700CC0A55 /* Photos.framework */,
+			);
+			name = SystemLibraries;
+			sourceTree = "<group>";
+		};
+		14A7276D1CAB8B4500DC7BC0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				14A7276E1CAB8B4E00DC7BC0 /* ReachabilityManager.h */,
+				14A7276F1CAB8B4E00DC7BC0 /* ReachabilityManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		14A727711CAB8BB300DC7BC0 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				14A727721CAB8BB300DC7BC0 /* Reachability.h */,
+				14A727731CAB8BB300DC7BC0 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		14C1E6AB1B53CD4800C7E5DF /* image */ = {
@@ -2423,6 +2469,7 @@
 		14FFBE271C9AA995006BEB2B /* ThirdLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				14A727711CAB8BB300DC7BC0 /* Reachability */,
 				14A7275E1CAB75A700DC7BC0 /* GDataXMLNode */,
 				14CB770C1CA4EFFA00878C4E /* AsyncSocket */,
 				14FFBE281C9AA995006BEB2B /* Masonry */,
@@ -2728,6 +2775,7 @@
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
 				14D670121C475F8400F911A4 /* UINavigationItem+MDCustom.m in Sources */,
 				1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */,
+				14A7276B1CAB89F800DC7BC0 /* MD_Reachability_VC.m in Sources */,
 				146D82881AA6E69D00F0C7FD /* MDTBVC3ViewController.m in Sources */,
 				14FFBE441C9AA995006BEB2B /* MASConstraintMaker.m in Sources */,
 				1463B2BA1AA1CDC4006AE8D2 /* MDUIScrollView3ViewController.m in Sources */,
@@ -2814,6 +2862,7 @@
 				148CD7141AAEC21600FAED9D /* MDObject1ViewController.m in Sources */,
 				14A727671CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m in Sources */,
 				141B43451AA4038C008F2711 /* MDPage2ViewController.m in Sources */,
+				14A727701CAB8B4E00DC7BC0 /* ReachabilityManager.m in Sources */,
 				146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */,
 				14F073991B95BC660029A653 /* MD_UIBezierPath_ViewController.m in Sources */,
 				14381BEF1BA1BCE200C06EB7 /* MD_UISlider_ViewController.m in Sources */,
@@ -2833,6 +2882,7 @@
 				14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */,
 				14FFBE461C9AA995006BEB2B /* MASViewAttribute.m in Sources */,
 				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
+				14A727741CAB8BB300DC7BC0 /* Reachability.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
 				144F23E31C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.m in Sources */,
 				14EA84FA1CA3AAAB00A70A46 /* ImageDownloader.m in Sources */,
