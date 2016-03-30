@@ -266,6 +266,9 @@
 		149CFE911CA2496500E6525C /* MD_HTTP_Base_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149CFE901CA2496500E6525C /* MD_HTTP_Base_VC.m */; };
 		149CFE981CA24DDE00E6525C /* MD_HTTP_URLDecode_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149CFE971CA24DDE00E6525C /* MD_HTTP_URLDecode_VC.m */; };
 		149CFE9A1CA258B700E6525C /* MD_HTTP_URLDecode_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149CFE991CA258B700E6525C /* MD_HTTP_URLDecode_VC.xib */; };
+		14A727611CAB75A700DC7BC0 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A727601CAB75A700DC7BC0 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A727631CAB760100DC7BC0 /* libxml2.tbd */; };
+		14A727671CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A727661CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m */; };
 		14CB770F1CA4EFFA00878C4E /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB770E1CA4EFFA00878C4E /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14CB77151CA4F18F00878C4E /* MD_Socket_Client_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB77131CA4F18F00878C4E /* MD_Socket_Client_VC.m */; };
 		14CB77161CA4F18F00878C4E /* MD_Socket_Client_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CB77141CA4F18F00878C4E /* MD_Socket_Client_VC.xib */; };
@@ -741,6 +744,11 @@
 		149CFE971CA24DDE00E6525C /* MD_HTTP_URLDecode_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_HTTP_URLDecode_VC.m; sourceTree = "<group>"; };
 		149CFE991CA258B700E6525C /* MD_HTTP_URLDecode_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_HTTP_URLDecode_VC.xib; sourceTree = "<group>"; };
 		149CFE9C1CA27F1C00E6525C /* UIGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIGeometry.h; sourceTree = "<group>"; };
+		14A7275F1CAB75A700DC7BC0 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		14A727601CAB75A700DC7BC0 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		14A727631CAB760100DC7BC0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		14A727651CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_XML_GDataXMLNode_VC.h; sourceTree = "<group>"; };
+		14A727661CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_XML_GDataXMLNode_VC.m; sourceTree = "<group>"; };
 		14CB770D1CA4EFFA00878C4E /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		14CB770E1CA4EFFA00878C4E /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		14CB77121CA4F18F00878C4E /* MD_Socket_Client_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_Client_VC.h; sourceTree = "<group>"; };
@@ -910,6 +918,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */,
 				14FBF9661C27B4F700CC0A55 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1727,6 +1736,7 @@
 		147DB1751A8C7FA600F38EA4 = {
 			isa = PBXGroup;
 			children = (
+				14A727631CAB760100DC7BC0 /* libxml2.tbd */,
 				14FBF9651C27B4F700CC0A55 /* Photos.framework */,
 				147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */,
 				147DB17F1A8C7FA600F38EA4 /* Products */,
@@ -1835,6 +1845,7 @@
 		1489C8811CAA86D7000CBC14 /* xml */ = {
 			isa = PBXGroup;
 			children = (
+				14A727621CAB75E600DC7BC0 /* GDataXMLNode */,
 				1489C8821CAA86F3000CBC14 /* NSXML */,
 			);
 			path = xml;
@@ -1843,10 +1854,10 @@
 		1489C8821CAA86F3000CBC14 /* NSXML */ = {
 			isa = PBXGroup;
 			children = (
+				1489C8881CAA8775000CBC14 /* books.xml */,
 				1489C8831CAA873E000CBC14 /* MD_NSXML_VC.h */,
 				1489C8841CAA873E000CBC14 /* MD_NSXML_VC.m */,
 				1489C8851CAA873E000CBC14 /* MD_NSXML_VC.xib */,
-				1489C8881CAA8775000CBC14 /* books.xml */,
 			);
 			path = NSXML;
 			sourceTree = "<group>";
@@ -2053,6 +2064,24 @@
 				149CFE9C1CA27F1C00E6525C /* UIGeometry.h */,
 			);
 			path = UIGeometry;
+			sourceTree = "<group>";
+		};
+		14A7275E1CAB75A700DC7BC0 /* GDataXMLNode */ = {
+			isa = PBXGroup;
+			children = (
+				14A7275F1CAB75A700DC7BC0 /* GDataXMLNode.h */,
+				14A727601CAB75A700DC7BC0 /* GDataXMLNode.m */,
+			);
+			path = GDataXMLNode;
+			sourceTree = "<group>";
+		};
+		14A727621CAB75E600DC7BC0 /* GDataXMLNode */ = {
+			isa = PBXGroup;
+			children = (
+				14A727651CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.h */,
+				14A727661CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m */,
+			);
+			path = GDataXMLNode;
 			sourceTree = "<group>";
 		};
 		14C1E6AB1B53CD4800C7E5DF /* image */ = {
@@ -2394,6 +2423,7 @@
 		14FFBE271C9AA995006BEB2B /* ThirdLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				14A7275E1CAB75A700DC7BC0 /* GDataXMLNode */,
 				14CB770C1CA4EFFA00878C4E /* AsyncSocket */,
 				14FFBE281C9AA995006BEB2B /* Masonry */,
 			);
@@ -2782,6 +2812,7 @@
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
 				148CD7141AAEC21600FAED9D /* MDObject1ViewController.m in Sources */,
+				14A727671CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m in Sources */,
 				141B43451AA4038C008F2711 /* MDPage2ViewController.m in Sources */,
 				146D827B1AA6DDA400F0C7FD /* MDTBVC1ViewController.m in Sources */,
 				14F073991B95BC660029A653 /* MD_UIBezierPath_ViewController.m in Sources */,
@@ -2790,6 +2821,7 @@
 				14F073A21B95BCC50029A653 /* MD_CGimage_ViewController.m in Sources */,
 				1463B2101AA162C2006AE8D2 /* MDCountStringRectangleViewController.m in Sources */,
 				14CB771A1CA4F1B800878C4E /* MD_Socket_Server_VC.m in Sources */,
+				14A727611CAB75A700DC7BC0 /* GDataXMLNode.m in Sources */,
 				1463B26C1AA1B593006AE8D2 /* FirstViewController.m in Sources */,
 				145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */,
 				147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */,
@@ -2962,9 +2994,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "MyDevelopmentTest/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2977,9 +3011,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "MyDevelopmentTest/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

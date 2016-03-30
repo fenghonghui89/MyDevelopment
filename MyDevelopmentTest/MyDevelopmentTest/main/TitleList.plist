@@ -11,6 +11,31 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>XML</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>GDataXMLNode</string>
+						<key>className</key>
+						<string>MD_XML_GDataXMLNode_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>NSXML</string>
+						<key>className</key>
+						<string>MD_NSXML_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>socket</string>
 				<key>className</key>
 				<string></string>

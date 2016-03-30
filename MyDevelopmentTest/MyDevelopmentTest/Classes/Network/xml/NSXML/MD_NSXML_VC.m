@@ -20,23 +20,39 @@
 #pragma mark - < vc lifecycle > -
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+
+  [super viewDidAppear:animated];
+  
+  [self customInit];
+}
 #pragma mark - < method > -
 -(void)customInit{
   
-  NSString *path = [[NSBundle mainBundle] pathForResource:@"book" ofType:@"xml"];
+  self.books = [NSMutableArray array];
+  
+  NSString *path = [[NSBundle mainBundle] pathForResource:@"books" ofType:@"xml"];
   NSData *data = [NSData dataWithContentsOfFile:path];
   
   NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
   parser.delegate = self;
   [parser parse];
+  
+  for (TRBook *book in self.books) {
+    NSLog(@"名称：%@ 作者：%@ 页数：%@ 价格：%@",book.name,book.author,book.page,book.price);
+  }
 }
-#pragma mark - < action > -
+
 #pragma mark - < callback > -
+
+//attributeDict 标签属性 elementName标签名称
 -(void)parser:(NSXMLParser *)parser didStartElement:(nonnull NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(nonnull NSDictionary<NSString *,NSString *> *)attributeDict{
   
   if ([elementName isEqualToString:@"book"]) {
+    NSLog(@"attributeDict :%@",attributeDict);
     self.currentBook = [[TRBook alloc]init];
     [self.books addObject:self.currentBook];
   }
