@@ -59,5 +59,12 @@
 #pragma mark - 对象
 #define DGC_KEY_WINDOW [[UIApplication sharedApplication] keyWindow]
 
+#pragma mark - code
+typedef NS_ENUM(NSInteger,DGCRequestErrorCode) {
+  DGCRequestErrorCodeSuccess = 102,
+};
 
+typedef NS_ENUM(NSInteger,DGCRequestCode) {
+  DGCRequestCodeLogin = 1001,
+};
 #endif

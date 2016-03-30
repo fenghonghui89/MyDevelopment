@@ -142,4 +142,15 @@ void STLogResponderChain(UIResponder *responder);
  *  @return ip
  */
 -(NSString *)IPAddress;
+
+/**
+ *  md5加密
+ *
+ *  @param str 原字符串
+ *
+ *  @return md5加密字符串
+ */
++(NSString *)md5:(NSString *)str;
+
++ (BOOL)cureentThreadIsMain;
 @end
