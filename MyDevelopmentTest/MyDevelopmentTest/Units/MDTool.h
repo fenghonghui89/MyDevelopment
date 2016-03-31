@@ -89,8 +89,14 @@
  */
 + (UIColor *)TColor:(NSString *)hexColor colorAlpha:(CGFloat)alpha;
 
-#pragma mark - other 
+#pragma mark - other
+/**
+ *  展示响应链
+ *
+ *  @param responder 响应链
+ */
 void STLogResponderChain(UIResponder *responder);
+
 /**
  *  把plist文件转换成数组返回
  *
@@ -153,4 +159,11 @@ void STLogResponderChain(UIResponder *responder);
 +(NSString *)md5:(NSString *)str;
 
 + (BOOL)cureentThreadIsMain;
+
+/**
+ *  设备uuid（会变）
+ *
+ *  @return uuid
+ */
+-(void)uuid;
 @end

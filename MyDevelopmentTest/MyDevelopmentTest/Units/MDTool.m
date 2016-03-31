@@ -334,4 +334,21 @@ void STLogResponderChain(UIResponder *responder) {
 {
   return [[NSThread currentThread] isMainThread];
 }
+
+/**
+ *  设备uuid
+ *
+ *  @return uuid
+ */
+-(void)uuid{
+  
+  CFUUIDRef puuid = CFUUIDCreate( nil );
+  CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
+  NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+  CFRelease(puuid);
+  CFRelease(uuidString);
+  
+  NSLog(@"uuid:%@",result);
+
+}
 @end
