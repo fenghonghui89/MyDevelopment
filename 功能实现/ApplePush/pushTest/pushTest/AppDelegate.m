@@ -24,17 +24,16 @@
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-  NSString *decToken = [NSString stringWithFormat:@"%@", deviceToken];
-  NSLog(@"decToken get:%@",decToken);
+  NSLog(@"decToken get:%@",[deviceToken description]);
   
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
   NSString *dt = [ud objectForKey:@"deviceToken"];
 
-  if ([dt isEqualToString:decToken]) {
+  if ([dt isEqualToString:[deviceToken description]]) {
     NSLog(@"一样");
   }else{
     NSLog(@"不一样");
-    [ud setObject:decToken forKey:@"deviceToken"];
+    [ud setObject:[deviceToken description] forKey:@"deviceToken"];
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"不一样" message:nil delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
     [av show];
   }
