@@ -30,7 +30,7 @@
     NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:num1,@"one",num2,@"two",num3,@"three", nil];
     
     NSLog(@"dic:%@",dic);
-    NSLog(@"dic count:%ld",[dic count]);
+    NSLog(@"dic count:%ld",(unsigned long)[dic count]);
     NSLog(@"value:%@",[dic objectForKey:@"one"]);
     NSLog(@"keys:%@",[dic allKeys]);
     NSLog(@"values:%@",[dic allValues]);

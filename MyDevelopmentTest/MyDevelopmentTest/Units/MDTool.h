@@ -160,10 +160,5 @@ void STLogResponderChain(UIResponder *responder);
 
 + (BOOL)cureentThreadIsMain;
 
-/**
- *  设备uuid（会变）
- *
- *  @return uuid
- */
--(void)uuid;
+
 @end

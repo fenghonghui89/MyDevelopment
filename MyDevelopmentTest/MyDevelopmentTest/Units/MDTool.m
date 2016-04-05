@@ -273,13 +273,21 @@ void STLogResponderChain(UIResponder *responder) {
  */
 -(void)showDeviceInfo
 {
+  CFUUIDRef puuid = CFUUIDCreate( nil );
+  CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
+  NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+  CFRelease(puuid);
+  CFRelease(uuidString);
+  
   UIDevice *device_=[[UIDevice alloc] init];
   NSLog(@"设备所有者的名称－－%@",device_.name);
   NSLog(@"设备的类别－－－－－%@",device_.model);
   NSLog(@"设备的的本地化版本－%@",device_.localizedModel);
   NSLog(@"设备运行的系统－－－%@",device_.systemName);
   NSLog(@"当前系统的版本－－－%@",device_.systemVersion);
-  NSLog(@"设备识别码－－－－－%@",device_.identifierForVendor.UUIDString);
+  NSLog(@"NSUUID－－－－－%@",[[NSUUID UUID] UUIDString]);
+  NSLog(@"CFUUID－－－－－%@",result);
+  NSLog(@"IDFV－－－－－%@",device_.identifierForVendor.UUIDString);
 }
 
 /**
@@ -335,20 +343,4 @@ void STLogResponderChain(UIResponder *responder) {
   return [[NSThread currentThread] isMainThread];
 }
 
-/**
- *  设备uuid
- *
- *  @return uuid
- */
--(void)uuid{
-  
-  CFUUIDRef puuid = CFUUIDCreate( nil );
-  CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
-  NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
-  CFRelease(puuid);
-  CFRelease(uuidString);
-  
-  NSLog(@"uuid:%@",result);
-
-}
 @end
