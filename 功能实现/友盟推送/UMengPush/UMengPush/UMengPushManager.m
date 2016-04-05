@@ -26,7 +26,7 @@
 -(void)startPush:(NSDictionary *)launchOptions{
   
   //set AppKey and AppSecret
-  [UMessage startWithAppkey:@"56fdff6b67e58e97b6000ec2" launchOptions:launchOptions];
+  [UMessage startWithAppkey:@"56fdff6b67e58e97b600sdf" launchOptions:launchOptions];
   
   //log
   [UMessage setLogEnabled:YES];
@@ -84,17 +84,18 @@
   //UserNotificationSettings(Types+Categories(Actions))
   UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:types categories:set];
   
-  [[UIApplication sharedApplication] registerUserNotificationSettings:userSettings];
-  [[UIApplication sharedApplication] registerForRemoteNotifications];
   //注册
-//  [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
+//  [[UIApplication sharedApplication] registerUserNotificationSettings:userSettings];
+//  [[UIApplication sharedApplication] registerForRemoteNotifications];
+  [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];//或者直接这个
 }
 
 -(void)registerPushForIOS8Before{
   
-  [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
-//  UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-//  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
+  //注册
+  UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
+  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
+//  [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];//或者直接这个
 }
 
 #pragma mark - 注册 device token

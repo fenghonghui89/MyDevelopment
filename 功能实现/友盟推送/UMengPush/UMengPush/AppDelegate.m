@@ -46,6 +46,11 @@
 }
 
 #pragma mark remote noti
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+  
+  NSLog(@"~didRegisterUserNotificationSettings");
+}
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
   NSString *dt = [[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""];
@@ -85,6 +90,6 @@
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
   
-  NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", [error localizedDescription]);
+  NSLog(@"~application:didFailToRegisterForRemoteNotificationsWithError: %@", [error localizedDescription]);
 }
 @end
