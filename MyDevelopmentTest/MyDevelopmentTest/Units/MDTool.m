@@ -279,6 +279,10 @@ void STLogResponderChain(UIResponder *responder) {
   CFRelease(puuid);
   CFRelease(uuidString);
   
+  //或者
+//  CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
+//  NSString *strUUID = (NSString *)CFBridgingRelease(CFUUIDCreateString (kCFAllocatorDefault,uuidRef));
+  
   UIDevice *device_=[[UIDevice alloc] init];
   NSLog(@"设备所有者的名称－－%@",device_.name);
   NSLog(@"设备的类别－－－－－%@",device_.model);
