@@ -44,5 +44,7 @@
   
   [InfoManager addInfo:@"11111111" service:KEY_PASSWORD];
   [self.lab setText:[InfoManager findInfo:KEY_PASSWORD]];
+  
+//  [InfoManager addInfo:@"1111111" userName:@"Jim" service:KEY_PASSWORD];
 }
 @end

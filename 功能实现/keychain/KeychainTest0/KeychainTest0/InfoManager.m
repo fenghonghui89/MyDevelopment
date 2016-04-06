@@ -21,6 +21,11 @@
   [KeyChainStore add:service data:data];
 }
 
++(void)addInfo:(NSString *)password userName:(NSString *)userName service:(NSString *)service{
+  
+  [KeyChainStore add:service password:password userName:userName];
+}
+
 +(void)updateInfo:(NSString *)data service:(NSString *)service{
   
   [KeyChainStore updateKeyData:service data:data];

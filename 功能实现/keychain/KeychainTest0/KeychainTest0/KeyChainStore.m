@@ -24,6 +24,31 @@
 }
 
 
+//+ (NSMutableDictionary *)getKeychainQuery:(NSString *)service {
+//  
+//  //区别(标识)一个item要用kSecAttrAccount和kSecAttrService
+//  return [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//          (id)kSecClassGenericPassword,(id)kSecClass,//定义属于哪种类型的keychain
+//          service, (id)kSecAttrService,//服务名称
+//          //          service, (id)kSecAttrGeneric,//用来存储标识符
+//          (id)kSecAttrAccessibleAfterFirstUnlock,(id)kSecAttrAccessible,//应用何时允许访问keychain数据
+//          nil];
+//  
+//}
+
++ (NSMutableDictionary *)getKeychainQuery:(NSString *)service userName:(NSString *)username{
+  
+  //区别(标识)一个item要用kSecAttrAccount和kSecAttrService
+  return [NSMutableDictionary dictionaryWithObjectsAndKeys:
+          (id)kSecClassGenericPassword,(id)kSecClass,//定义属于哪种类型的keychain
+          service, (id)kSecAttrService,//服务名称
+          username, (id)kSecAttrAccount,//账号名称
+          //          service, (id)kSecAttrGeneric,//用来存储标识符
+          (id)kSecAttrAccessibleAfterFirstUnlock,(id)kSecAttrAccessible,//应用何时允许访问keychain数据
+          nil];
+  
+}
+
 #pragma mark - 增删改查
 + (void)add:(NSString *)service data:(id)data {
   
@@ -52,17 +77,37 @@
   if (keyData)
     CFRelease(keyData);
   
-//  //Delete old item before add new item 删除旧条目
-//  SecItemDelete((CFDictionaryRef)keychainQuery);
-//  
-//  //Add new object to search dictionary(Attention:the data format) 设置要保存的条目
-//  [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:data] forKey:(id)kSecValueData];
-//  
-//  //Add item to keychain with the search dictionary 添加新条目
-//  SecItemAdd((CFDictionaryRef)keychainQuery, NULL);
-  
 }
 
+
++ (void)add:(NSString *)service password:(NSString *)password userName:(NSString *)userName {
+  
+  
+  NSMutableDictionary *keychainQuery = [self getKeychainQuery:service userName:userName ];
+  //增加条目不能添加以下两个
+  //  [keychainQuery setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];//指定必须返回CFDataRef格式
+  //  [keychainQuery setObject:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];//指定只返回一条
+  
+  CFDataRef keyData = NULL;
+  if (SecItemCopyMatching((CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData) == noErr) {
+    NSLog(@"存在 不再添加");
+  }else{
+    NSLog(@"不存在 添加");
+    
+    [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:password] forKey:(id)kSecValueData];
+    
+    OSStatus status = SecItemAdd((CFDictionaryRef)keychainQuery, NULL);
+    if (status == noErr) {
+      NSLog(@"添加成功");
+    }else{
+      NSLog(@"添加错误:%d",(int)status);
+    }
+  }
+  
+  if (keyData)
+    CFRelease(keyData);
+  
+}
 
 + (id)find:(NSString *)service {
   

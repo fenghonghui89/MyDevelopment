@@ -14,4 +14,5 @@
 +(void)addInfo:(NSString *)data service:(NSString *)service;
 +(void)updateInfo:(NSString *)data service:(NSString *)service;
 +(void)deleteInfo:(NSString *)service;
++(void)addInfo:(NSString *)password userName:(NSString *)userName service:(NSString *)service;
 @end

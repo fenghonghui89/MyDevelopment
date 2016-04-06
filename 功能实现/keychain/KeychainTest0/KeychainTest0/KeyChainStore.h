@@ -12,7 +12,7 @@
 
 //增
 + (void)add:(NSString *)service data:(id)data;
-
++ (void)add:(NSString *)service password:(NSString *)password userName:(NSString *)userName;
 //查
 + (id)find:(NSString *)service;
 
@@ -21,4 +21,6 @@
 
 //改
 +(void)updateKeyData:(NSString *)service data:(id)data;
+
+
 @end
