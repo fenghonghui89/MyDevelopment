@@ -21,11 +21,11 @@ class ViewController3: UIViewController {
 //    var y1:Int = 112233*x1;
 //    print(y1);
 //    
-//    //TODO:强制输出溢出值
+//    //TODO:用&强制输出溢出值
 //    let x3:Int = 112233;
-//    var y3:Int = 112233&*x3;
+//    var y3:Int = 112233 &* x3;
 //    print(y3);
-//  
+//
 //    
 //    //TODO:swift可以浮点数求余 浮点数自增自减1
 //    print(8.5%2.5);

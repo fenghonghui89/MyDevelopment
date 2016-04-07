@@ -20,7 +20,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
-  [self customInitUI];
+  [self tttest];
 }
 
 #pragma mark - < method > -
@@ -30,7 +30,19 @@
 }
 
 -(void)tttest{
-  
+  int i = 0;
+  switch (i) {
+    case 0:
+    case 1:
+    case 2:
+    {
+      NSLog(@"i");
+    }
+      break;
+      
+    default:
+      break;
+  }
 }
 #pragma mark - < callback > -
 

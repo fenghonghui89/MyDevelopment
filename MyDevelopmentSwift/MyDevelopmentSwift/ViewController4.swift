@@ -23,17 +23,17 @@ class ViewController4: UIViewController {
 //    print(arr1,arr2);
 //
 //    
-//    //指定数组类型
-////    var arr3:[String] = [1,2];//会自动根据元素类型 判断数组类型
+//    //指定数组类型初始化
 //    var arr31:Array<String> = ["1","2"];
 //    var arr3:[String] = ["1","2"];//简化
-//    
+//    var arr3:[String] = [1,2];//会自动根据元素类型 判断数组类型
+//
 //    var arr4:[Int];
 ////    print(arr4);//未初始化数组不能被引用，过不了编译
 //    
 //    
 //    
-//    //TODO:NSArray NSMutableArray类型数组
+//    //TODO:NSObject NSArray NSMutableArray类型数组
 //    //元素类型为NSObject
 //    var arr5 = [1,2,"a"];
 //    arr5[0] = 3;
@@ -52,65 +52,66 @@ class ViewController4: UIViewController {
 //
 //    
 //    //TODO:空数组
-//    var nullarr1 = [Int]();
-//    var nullarr2:[String] = [];
-//    var nullarr3:Array<Float> = [];
+//    var nullarr1:Array<Float> = [];
+//    var nullarr2 = [Int]();
+//    var nullarr3:[String] = [];
 //    
 //    
-//    //TODO:固定长度数组
+//    
+//    //TODO:固定长度数组及初始化
 //    var fourInts = [Int](count: 4, repeatedValue: 1);
 //    var fourStrs = [String](count: 2, repeatedValue: "1");
 //    print(fourInts,fourStrs);
-//    
+//
 //    
 //    //TODO:数组相加 相当于前后连接 数组类型必须相同
 //    var arrs1 = ["我",1];
 //    var arrs2 = ["你",2];
 //    print(arrs1+arrs2);
-//    
-//    
-//    //TODO:数组区间赋值
-//    var pros = [1,1,1];
-//    pros[0...2] = [2,2,2];//222
-//    pros[0...1] = [3,3,3];//3332 赋值元素个数超过区间 则在区间最后一个元素后追加多出来的赋值元素
-//    pros[0..<4] = [4,4,4,4];//4444
-//    pros[1...3] = [5,5,5,5];//45555 赋值元素个数超过区间 则在区间最后一个元素后追加多出来的赋值元素；min不是从0开始的，索引小于min的将不变
+    
+    
+    //TODO:数组区间赋值
+    var pros = [1,1,1];
+    pros[0...2] = [2,2,2];//222
+    pros[0...1] = [3,3,3];//3332 赋值元素个数超过指定区间 则在指定区间最后一个元素后追加多出来的赋值元素；指定区间之外的原始数据不会改变，会接在新数据之后
+    pros[0..<4] = [4,4,4,4];//4444
+    pros[1...3] = [5,5,5,5];//45555 赋值元素个数超过指定区间 则在指定区间最后一个元素后追加多出来的赋值元素；min不是从0开始的，索引小于min的将不变
 //    pros[1...4] = [6,6,6,6];//46666 min不是从0开始的，索引小于min的将不变
 //    pros[0...4] = [6,6,6];//666 赋值元素个数小于区间 则删除区间"内"的多余原始元素 区间外不变
 //    pros[0...1] = [7];//76 赋值元素个数小于区间 则删除区间"内"的多余原始元 区间外不变
-//    print(pros);
-//    
-//    
-//    //TODO:添加删除数组
-//    var citys = ["beijing","shanghai"];
-//    citys.append("guangzhou");
-//    citys.insert("hangzhou", atIndex: 2);
-//    citys.removeFirst();
-//    citys.removeLast();
-//    citys.removeAtIndex(1);
-//    citys.removeAll(keepCapacity: true);
-//    if citys.isEmpty{
-//      print("is Empty");
-//    }
-//    citys += ["shuzhou"];
-//    citys += ["xizang","qingdao"];
-//    print(citys);
-//    
-//    
-//    //TODO:枚举数组中的元素
-//    let provices = ["liaoning","guangdong","fujian"];
-//    for i in 0..<provices.count{
-//      print("\(i) : \(provices[i])");
-//    }
-//    
-//    for j in provices{
-//      print(j);
-//    }
-//    
-//    for (index,value) in EnumerateSequence(provices){
-//    print("\(index): \(value)")
-//    }
-//    
+    print(pros);
+    
+    
+    //TODO:添加删除数组
+    var citys = ["beijing","shanghai"];
+    citys.append("guangzhou");
+    citys.insert("hangzhou", atIndex: 2);
+    citys.removeFirst();
+    citys.removeLast();
+    citys.removeAtIndex(1);
+    citys.removeAll(keepCapacity: true);
+    if citys.isEmpty{
+      print("is Empty");
+    }
+    citys += ["shuzhou"];
+    citys += ["xizang","qingdao"];
+    print(citys);
+    
+    
+    //TODO:枚举数组中的元素
+    let provices = ["liaoning","guangdong","fujian"];
+    for i in 0..<provices.count{
+      print("\(i) : \(provices[i])");
+    }
+    
+    for j in provices{
+      print(j);
+    }
+    
+    for (index,value) in EnumerateSequence(provices){
+    print("\(index): \(value)")
+    }
+//
 //    //TODO:--- 字典 ---
 //    //TODO:创建字典 空字典 清空字典（不能在初始化时使用[:]）
 //    var dic1:Dictionary<String,String> = ["name":"Hany","city":"jiangmen"];
@@ -202,11 +203,13 @@ class ViewController4: UIViewController {
 //    }
     
     
-    //TODO:将keys和values转换为数组
-    var dic = ["name":"Hany","age":12];
-    var keys = Array(dic.keys);
-    var values = Array(dic.values);
-    print("\(keys) \n \(values)");
+//    //TODO:将keys和values转换为数组
+//    var dic = ["name":"Hany","age":12];
+//    var keys = Array(dic.keys);
+//    var values = Array(dic.values);
+//    print("\(keys) \n \(values)");
+    
+    
     
     
     
