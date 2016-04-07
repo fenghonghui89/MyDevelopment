@@ -26,7 +26,7 @@
 -(void)startPush:(NSDictionary *)launchOptions{
   
   //set AppKey and AppSecret
-  [UMessage startWithAppkey:@"56fdff6b67e58e97b600sdf" launchOptions:launchOptions];
+  [UMessage startWithAppkey:@"57034224e0f55a36e300126c" launchOptions:launchOptions];
   
   //log
   [UMessage setLogEnabled:YES];

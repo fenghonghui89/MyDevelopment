@@ -292,9 +292,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMengPush/UMessage_Sdk",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanytest.UMengPush0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiliPush.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a596522d-a58c-4945-a9a6-ed591760d431";
+				PROVISIONING_PROFILE = "55b4e6c0-e151-4648-b290-c1a175563ffd";
 			};
 			name = Debug;
 		};
@@ -311,9 +311,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMengPush/UMessage_Sdk",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hanytest.UMengPush0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BiliPush.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a596522d-a58c-4945-a9a6-ed591760d431";
+				PROVISIONING_PROFILE = "55b4e6c0-e151-4648-b290-c1a175563ffd";
 			};
 			name = Release;
 		};
