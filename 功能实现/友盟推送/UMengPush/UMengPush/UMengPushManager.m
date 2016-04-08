@@ -42,8 +42,18 @@
   [UMessage setAutoAlert:YES];//当应用在前台时收到推送会弹出alert
   [UMessage setChannel:@"App Store"];
   
-  
   //注册推送
+  [self restartPush];
+  
+  //如果app处于未运行时收到推送，点击通知打开app之后会有userInfo
+  NSDictionary* userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+  if (userInfo != nil) {
+    [self didReceiveRemoteNotification:userInfo];
+  }
+}
+
+-(void)restartPush{
+
   if([[[UIDevice currentDevice] systemVersion] integerValue]>=8.0)
   {
     [self registerPushForIOS8OrLater];
@@ -101,12 +111,31 @@
 #pragma mark - 注册 device token
 - (void)registerDeviceToken:(NSData *)deviceToken{
   
+  //修改token
+  NSString *dt = [[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""];
+  dt = [dt stringByReplacingOccurrencesOfString:@">" withString:@""];
+  dt = [dt stringByReplacingOccurrencesOfString:@" " withString:@""];
+  NSLog(@"~device token:%@",dt);
+  
+  //判断 保存 token
+  NSString *dtOld = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"];
+  if ([dt isEqualToString:dtOld]) {
+    NSLog(@"一样");
+  }else{
+    NSLog(@"不一样，提交新token到服务端");
+    [[NSUserDefaults standardUserDefaults] setObject:dt forKey:@"deviceToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+  }
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"initUI" object:nil userInfo:nil];
+  
   [UMessage registerDeviceToken:deviceToken];
 }
 
 #pragma mark - 接收到推送
 - (void)didReceiveRemoteNotification:(NSDictionary *)userInfo{
   
+  NSLog(@"！！！！useInfo:%@ %@ %@",userInfo,[userInfo objectForKey:@"k2"],[userInfo objectForKey:@"k22"]);
   [UMessage didReceiveRemoteNotification:userInfo];
 }
 

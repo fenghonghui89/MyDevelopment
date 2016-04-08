@@ -13,6 +13,7 @@
 
 +(UMengPushManager *)sharedManager;
 -(void)startPush:(NSDictionary *)launchOptions;
+-(void)restartPush;
 -(void)stopPush;
 - (void)registerDeviceToken:(NSData *)deviceToken;
 - (void)didReceiveRemoteNotification:(NSDictionary *)userInfo;

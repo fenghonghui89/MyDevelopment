@@ -53,37 +53,11 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
-  NSString *dt = [[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""];
-  dt = [dt stringByReplacingOccurrencesOfString:@">" withString:@""];
-  dt = [dt stringByReplacingOccurrencesOfString:@" " withString:@""];
-  NSLog(@"~device token:%@",dt);
-  
-  NSString *dtOld = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"];
-  if ([dt isEqualToString:dtOld]) {
-    NSLog(@"一样");
-  }else{
-    NSLog(@"不一样");
-    [[NSUserDefaults standardUserDefaults] setObject:dt forKey:@"deviceToken"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-  }
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"initUI" object:nil];
-  
   [[UMengPushManager sharedManager] registerDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
   
-  NSLog(@"~useInfo:%@ %@",[userInfo objectForKey:@"k2"],[userInfo objectForKey:@"k22"]);
-  
-//  NSInteger w = [[UIScreen mainScreen] bounds].size.width;
-//  NSInteger h = [[UIScreen mainScreen] bounds].size.height;
-//  CGFloat x = arc4random()%(w-100);
-//  CGFloat y = arc4random()%(h-50);
-//  UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 100, 50)];
-//  [lab setBackgroundColor:[UIColor blueColor]];
-//  [lab setTextColor:[UIColor whiteColor]];
-//  [lab setText:[NSString stringWithFormat:@"%@ - %@",[userInfo objectForKey:@"k2"],[userInfo objectForKey:@"k22"]]];
-//  [self.window.rootViewController.view addSubview:lab];
   
   [[UMengPushManager sharedManager] didReceiveRemoteNotification:userInfo];
 }

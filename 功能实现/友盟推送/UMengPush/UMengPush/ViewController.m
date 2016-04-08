@@ -60,7 +60,9 @@
       [self addtage];
       break;
     case 3://start push
-      
+    {
+      [[UMengPushManager sharedManager] restartPush];
+    }
       break;
     case 4://stop push
       [[UMengPushManager sharedManager] stopPush];
