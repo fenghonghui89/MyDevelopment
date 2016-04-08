@@ -8,7 +8,7 @@
 
 #import "MD_UIWebViewCache_VC.h"
 
-@interface MD_UIWebViewCache_VC ()<NSURLConnectionDataDelegate>
+@interface MD_UIWebViewCache_VC ()<NSURLConnectionDataDelegate,UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) NSURLConnection *connection;
 @property (strong, nonatomic) NSURLCache *urlCache;
@@ -29,17 +29,17 @@
 -(void)customInitUI{
   
   NSURLCache *urlCache = [NSURLCache sharedURLCache];
-  [urlCache setMemoryCapacity:1*1024*1024];
   self.urlCache = urlCache;
   
-  NSURL *url = [NSURL URLWithString:@"http://tpages.cn"];
+  NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
   NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0f];
   self.request = request;
   
-  [self.webView loadRequest:request];
+//  [self.webView loadRequest:request];
+  [self btnTap:nil];
   
-  NSURLConnection *newConnection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:YES];
-  self.connection = newConnection;
+//  NSURLConnection *newConnection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:YES];
+//  self.connection = newConnection;
 }
 
 #pragma mark - < action > -
@@ -47,13 +47,15 @@
   //从请求中获取缓存输出,判断是否有缓存
   NSCachedURLResponse *response =[self.urlCache cachedResponseForRequest:self.request];
   if (response != nil){
-    NSLog(@"如果有缓存输出，从缓存中获取数据");
-    [self.request setCachePolicy:NSURLRequestReturnCacheDataDontLoad];
+    NSLog(@"有缓存");
+    [self.request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+  }else{
+    NSLog(@"没有缓存");
   }
   [self.webView loadRequest:self.request];
   
-  NSURLConnection *newConnection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:YES];
-  self.connection = newConnection;
+//  NSURLConnection *newConnection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:YES];
+//  self.connection = newConnection;
 }
 #pragma mark - < callback > -
 #pragma mark NSURLConnectionDataDelegate
@@ -81,5 +83,16 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
   NSLog(@"请求失败");
+}
+
+#pragma mark UIWebViewDelegate
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+  NSLog(@"~webViewDidFinishLoad");
+//  [self.request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+  NSLog(@"~didFailLoadWithError");
+//  [self.request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
 }
 @end

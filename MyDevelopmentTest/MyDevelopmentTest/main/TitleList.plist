@@ -4,6 +4,32 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>多线程</string>
+		<key>className</key>
+		<string></string>
+		<key>sub</key>
+		<array>
+			<dict>
+				<key>desc</key>
+				<string>NSThread</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>线程同步</string>
+						<key>className</key>
+						<string>MD_NSThread_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>Network</string>
 		<key>className</key>
 		<string></string>
