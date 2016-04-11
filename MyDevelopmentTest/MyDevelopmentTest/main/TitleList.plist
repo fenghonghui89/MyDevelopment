@@ -11,6 +11,23 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>NSOperation</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>常用</string>
+						<key>className</key>
+						<string>MD_NSOperation_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>NSThread</string>
 				<key>className</key>
 				<string></string>
@@ -18,7 +35,15 @@
 				<array>
 					<dict>
 						<key>desc</key>
-						<string>线程同步</string>
+						<string>打地鼠练习</string>
+						<key>className</key>
+						<string>MD_NSThread_Game_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>常用</string>
 						<key>className</key>
 						<string>MD_NSThread_VC</string>
 						<key>sub</key>

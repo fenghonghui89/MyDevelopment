@@ -130,7 +130,6 @@
 		14565E941BA97F43009F7B2D /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14565E931BA97F43009F7B2D /* icon.jpg */; };
 		14565E971BA98C5B009F7B2D /* MD_UICustom_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */; };
 		14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E991BA98F03009F7B2D /* MDCircularSlider.m */; };
-		1457BA8F1CB7B77600C48DE0 /* MD_NSThread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1457BA8E1CB7B77600C48DE0 /* MD_NSThread_VC.m */; };
 		145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87051BA836FA00447D35 /* MD_Touch_VC.m */; };
 		145D87091BA8375800447D35 /* MD_Touch_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D87081BA8375800447D35 /* MD_Touch_CustomView.m */; };
 		145D870C1BA83BE000447D35 /* MD_Touch_CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D870B1BA83BE000447D35 /* MD_Touch_CustomView1.m */; };
@@ -268,6 +267,11 @@
 		148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7671AAED7B500FAED9D /* TRStudent7.m */; };
 		148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */; };
 		148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7731AAEDACD00FAED9D /* TRStudent8.m */; };
+		149734FE1CBB4A45006BF1A3 /* MD_NSThread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149734FC1CBB4A45006BF1A3 /* MD_NSThread_VC.m */; };
+		149735011CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149735001CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m */; };
+		149735041CBB4A7A006BF1A3 /* MDMouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 149735031CBB4A7A006BF1A3 /* MDMouse.m */; };
+		149735081CBB63EA006BF1A3 /* MD_NSOperation_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149735071CBB63EA006BF1A3 /* MD_NSOperation_VC.m */; };
+		1497350B1CBB64D4006BF1A3 /* MyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497350A1CBB64D4006BF1A3 /* MyOperation.m */; };
 		149A1E601B26E5CB00986FA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5A1B26E5CB00986FA6 /* LaunchScreen.xib */; };
 		149A1E621B26E5CB00986FA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5D1B26E5CB00986FA6 /* Info.plist */; };
 		149A1E631B26E5CB00986FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A1E5E1B26E5CB00986FA6 /* main.m */; };
@@ -565,8 +569,6 @@
 		14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UICustom_VC.m; sourceTree = "<group>"; };
 		14565E981BA98F03009F7B2D /* MDCircularSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCircularSlider.h; sourceTree = "<group>"; };
 		14565E991BA98F03009F7B2D /* MDCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCircularSlider.m; sourceTree = "<group>"; };
-		1457BA8D1CB7B77600C48DE0 /* MD_NSThread_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSThread_VC.h; sourceTree = "<group>"; };
-		1457BA8E1CB7B77600C48DE0 /* MD_NSThread_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSThread_VC.m; sourceTree = "<group>"; };
 		145D87041BA836FA00447D35 /* MD_Touch_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_VC.h; sourceTree = "<group>"; };
 		145D87051BA836FA00447D35 /* MD_Touch_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_VC.m; sourceTree = "<group>"; };
 		145D87071BA8375800447D35 /* MD_Touch_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_CustomView.h; sourceTree = "<group>"; };
@@ -784,6 +786,16 @@
 		148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDicNormalViewController.m; sourceTree = "<group>"; };
 		148CD7721AAEDACD00FAED9D /* TRStudent8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent8.h; sourceTree = "<group>"; };
 		148CD7731AAEDACD00FAED9D /* TRStudent8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent8.m; sourceTree = "<group>"; };
+		149734FB1CBB4A45006BF1A3 /* MD_NSThread_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSThread_VC.h; sourceTree = "<group>"; };
+		149734FC1CBB4A45006BF1A3 /* MD_NSThread_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSThread_VC.m; sourceTree = "<group>"; };
+		149734FF1CBB4A68006BF1A3 /* MD_NSThread_Game_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSThread_Game_VC.h; sourceTree = "<group>"; };
+		149735001CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSThread_Game_VC.m; sourceTree = "<group>"; };
+		149735021CBB4A7A006BF1A3 /* MDMouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMouse.h; sourceTree = "<group>"; };
+		149735031CBB4A7A006BF1A3 /* MDMouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMouse.m; sourceTree = "<group>"; };
+		149735061CBB63EA006BF1A3 /* MD_NSOperation_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSOperation_VC.h; sourceTree = "<group>"; };
+		149735071CBB63EA006BF1A3 /* MD_NSOperation_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSOperation_VC.m; sourceTree = "<group>"; };
+		149735091CBB64D4006BF1A3 /* MyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOperation.h; sourceTree = "<group>"; };
+		1497350A1CBB64D4006BF1A3 /* MyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOperation.m; sourceTree = "<group>"; };
 		149A1E5B1B26E5CB00986FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		149A1E5D1B26E5CB00986FA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		149A1E5E1B26E5CB00986FA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1444,6 +1456,7 @@
 		1457BA8B1CB7B76200C48DE0 /* 多线程 */ = {
 			isa = PBXGroup;
 			children = (
+				149735051CBB6381006BF1A3 /* NSOperation */,
 				1457BA8C1CB7B76200C48DE0 /* NSThread */,
 			);
 			path = "多线程";
@@ -1452,8 +1465,8 @@
 		1457BA8C1CB7B76200C48DE0 /* NSThread */ = {
 			isa = PBXGroup;
 			children = (
-				1457BA8D1CB7B77600C48DE0 /* MD_NSThread_VC.h */,
-				1457BA8E1CB7B77600C48DE0 /* MD_NSThread_VC.m */,
+				149734FA1CBB4A45006BF1A3 /* 常用方法 */,
+				149734FD1CBB4A45006BF1A3 /* 打地鼠练习 */,
 			);
 			path = NSThread;
 			sourceTree = "<group>";
@@ -2150,6 +2163,37 @@
 				148CD7671AAED7B500FAED9D /* TRStudent7.m */,
 			);
 			path = NSSet;
+			sourceTree = "<group>";
+		};
+		149734FA1CBB4A45006BF1A3 /* 常用方法 */ = {
+			isa = PBXGroup;
+			children = (
+				149734FB1CBB4A45006BF1A3 /* MD_NSThread_VC.h */,
+				149734FC1CBB4A45006BF1A3 /* MD_NSThread_VC.m */,
+			);
+			path = "常用方法";
+			sourceTree = "<group>";
+		};
+		149734FD1CBB4A45006BF1A3 /* 打地鼠练习 */ = {
+			isa = PBXGroup;
+			children = (
+				149734FF1CBB4A68006BF1A3 /* MD_NSThread_Game_VC.h */,
+				149735001CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m */,
+				149735021CBB4A7A006BF1A3 /* MDMouse.h */,
+				149735031CBB4A7A006BF1A3 /* MDMouse.m */,
+			);
+			path = "打地鼠练习";
+			sourceTree = "<group>";
+		};
+		149735051CBB6381006BF1A3 /* NSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				149735061CBB63EA006BF1A3 /* MD_NSOperation_VC.h */,
+				149735071CBB63EA006BF1A3 /* MD_NSOperation_VC.m */,
+				149735091CBB64D4006BF1A3 /* MyOperation.h */,
+				1497350A1CBB64D4006BF1A3 /* MyOperation.m */,
+			);
+			path = NSOperation;
 			sourceTree = "<group>";
 		};
 		149A1E591B26E5CB00986FA6 /* Supporting Files */ = {
@@ -3043,6 +3087,7 @@
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				14FFBE421C9AA995006BEB2B /* MASCompositeConstraint.m in Sources */,
+				149735041CBB4A7A006BF1A3 /* MDMouse.m in Sources */,
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
 				14D670121C475F8400F911A4 /* UINavigationItem+MDCustom.m in Sources */,
 				1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */,
@@ -3141,7 +3186,7 @@
 				1417B11B1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m in Sources */,
 				14EACA271C8038DF00F3FE2C /* MD_CollectionView_VC.m in Sources */,
 				14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */,
-				1457BA8F1CB7B77600C48DE0 /* MD_NSThread_VC.m in Sources */,
+				149734FE1CBB4A45006BF1A3 /* MD_NSThread_VC.m in Sources */,
 				14A727CF1CABB67A00DC7BC0 /* UIProgressView+AFNetworking.m in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
@@ -3168,8 +3213,10 @@
 				14565E0B1BA94AB1009F7B2D /* MD_NSTimer_VC1.m in Sources */,
 				145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
+				149735011CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m in Sources */,
 				14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */,
 				14FFBE461C9AA995006BEB2B /* MASViewAttribute.m in Sources */,
+				1497350B1CBB64D4006BF1A3 /* MyOperation.m in Sources */,
 				1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */,
 				148740871CABC070007CC45C /* DGCPostManager.m in Sources */,
 				14A727741CAB8BB300DC7BC0 /* Reachability.m in Sources */,
@@ -3207,6 +3254,7 @@
 				148CD7601AAED70E00FAED9D /* TRXYZ.m in Sources */,
 				14A727A11CABAEAA00DC7BC0 /* ReachabilityManager.m in Sources */,
 				14A727CB1CABB67A00DC7BC0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				149735081CBB63EA006BF1A3 /* MD_NSOperation_VC.m in Sources */,
 				14A727921CABAC6D00DC7BC0 /* AFHTTPSessionManager.m in Sources */,
 				148CD7121AAEC21600FAED9D /* TRStudent3.m in Sources */,
 				1463B2911AA1C0AF006AE8D2 /* MDUIImageViewViewController.m in Sources */,
