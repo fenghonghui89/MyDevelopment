@@ -14,7 +14,7 @@
 @implementation MyOperation
 
 -(void)main{
-
+  
   NSLog(@"这里是子线程3代码 开始");
   [NSThread sleepForTimeInterval:2];
   NSLog(@"这里是子线程3代码 结束");

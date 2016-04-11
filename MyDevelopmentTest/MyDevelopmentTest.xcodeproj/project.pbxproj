@@ -1456,6 +1456,7 @@
 		1457BA8B1CB7B76200C48DE0 /* 多线程 */ = {
 			isa = PBXGroup;
 			children = (
+				1497350C1CBB8A1A006BF1A3 /* GCD */,
 				149735051CBB6381006BF1A3 /* NSOperation */,
 				1457BA8C1CB7B76200C48DE0 /* NSThread */,
 			);
@@ -2194,6 +2195,13 @@
 				1497350A1CBB64D4006BF1A3 /* MyOperation.m */,
 			);
 			path = NSOperation;
+			sourceTree = "<group>";
+		};
+		1497350C1CBB8A1A006BF1A3 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GCD;
 			sourceTree = "<group>";
 		};
 		149A1E591B26E5CB00986FA6 /* Supporting Files */ = {

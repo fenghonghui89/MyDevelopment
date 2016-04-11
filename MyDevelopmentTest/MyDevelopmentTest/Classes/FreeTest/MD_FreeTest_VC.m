@@ -9,7 +9,13 @@
 #import "MD_FreeTest_VC.h"
 
 @interface MD_FreeTest_VC ()
-
+{
+  int tickets;
+  int count;
+  NSThread* ticketsThreadone;
+  NSThread* ticketsThreadtwo;
+  NSCondition* ticketsCondition;
+}
 @end
 
 @implementation MD_FreeTest_VC
@@ -24,24 +30,40 @@
 }
 
 #pragma mark - < method > -
+
 -(void)customInitUI{
+  
   NSString *str = NSStringFromSelector(@selector(tttest));
   NSLog(@"%@",str);
 }
 
 -(void)tttest{
-  int i = 0;
-  switch (i) {
-    case 0:
-    case 1:
-    case 2:
-    {
-      NSLog(@"i");
-    }
-      break;
-      
-    default:
-      break;
+  
+  tickets = 100;
+  count = 0;
+  
+  // 锁对象
+  ticketsCondition = [[NSCondition alloc] init];
+  
+  ticketsThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+  [ticketsThreadone setName:@"Thread-1"];
+  [ticketsThreadone start];
+  
+  ticketsThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+  [ticketsThreadtwo setName:@"Thread-2"];
+  [ticketsThreadtwo start];
+
+  
+}
+
+- (void)run{
+  
+  while (YES) {
+    [ticketsCondition lock];
+    [NSThread sleepForTimeInterval:1];
+    NSLog(@"%@ %d",[NSThread currentThread].name,tickets);
+    tickets--;
+    [ticketsCondition unlock];
   }
 }
 #pragma mark - < callback > -

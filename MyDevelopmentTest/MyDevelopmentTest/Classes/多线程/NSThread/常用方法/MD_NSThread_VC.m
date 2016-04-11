@@ -10,13 +10,16 @@
 @interface MD_NSThread_VC()
 @property(nonatomic,strong)UIButton *btn;
 @property(nonatomic,strong)NSLock *lock;
-@property(nonatomic,assign)int ticket;
+@property(nonatomic,assign)NSInteger ticket;
+@property(nonatomic,strong)NSThread *thread1;
+@property(nonatomic,strong)NSThread *thread2;
 @end
 
 
 @implementation MD_NSThread_VC
 
 #pragma mark - < vc lifecycle > -
+
 -(void)viewDidLoad{
   
   [super viewDidLoad];
@@ -26,7 +29,15 @@
   
   [super viewDidAppear:animated];
   
+  [self test2];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+
+  [self.thread1 cancel];
+  [self.thread2 cancel];
   
+  [super viewDidDisappear:animated];
 }
 
 #pragma mark - < method > -
@@ -61,23 +72,6 @@
   [self.view addSubview:view];
 }
 
-#pragma mark 模拟阻塞
--(void)test1{
-  
-  NSLog(@"aaaaa");
-  
-  //[NSThread sleepForTimeInterval:3];
-  UIView* view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-  [view setBackgroundColor:[UIColor redColor]];
-  //[NSThread sleepForTimeInterval:3];
-  [self.view addSubview:view];//操作界面的代码
-  [NSThread sleepForTimeInterval:3];
-  
-  NSLog(@"bbbbb");
-  //界面渲染会在当前线程所有代码执行完才统一执行，所以无论模拟阻塞放哪里，view都在最后才显示
-  
-}
-
 #pragma mark 线程同步
 -(void)test2{
   
@@ -88,30 +82,42 @@
   NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(sale) object:nil];
   thread1.name = @"1号窗口";
   [thread1 start];
+  self.thread1 = thread1;
   
   NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(sale) object:nil];
   thread2.name = @"2号窗口";
   [thread2 start];
+  self.thread2 = thread2;
   
 }
 
--(void)sale
-{
-  while (YES) {//不断循环
+-(void)sale{
+  
+  while (YES) {
     
-    //线程加锁方法1
-    @synchronized(self.btn){
-      NSLog(@"%@窗口开始卖%d号票",[NSThread currentThread].name,self.ticket);
-      [NSThread sleepForTimeInterval:1];
-      self.ticket--;
+    if ([[NSThread currentThread] isCancelled]) {
+      NSLog(@"return:%@",[NSThread currentThread].name);
+//      [NSThread exit];
+      return;//return可以退出线程
     }
     
-    //线程加锁方法2
+    //线程加锁方法1
+//    @synchronized(self.btn){
+//      NSLog(@"%@窗口开始卖%d号票",[NSThread currentThread].name,self.ticket);
+//      [NSThread sleepForTimeInterval:1];
+//      self.ticket--;
+//    }
+    
+    //线程加锁方法2 或者用NSCondition对象
     [self.lock lock];
-    NSLog(@"%@窗口开始卖%d号票",[NSThread currentThread].name,self.ticket);
-    [NSThread sleepForTimeInterval:1];
+    NSLog(@"%@窗口开始卖%ld号票",[NSThread currentThread].name,(long)self.ticket);
+//    [NSThread sleepForTimeInterval:1];
+    sleep(1);
     self.ticket--;
     [self.lock unlock];
+
+    
   }
 }
+
 @end

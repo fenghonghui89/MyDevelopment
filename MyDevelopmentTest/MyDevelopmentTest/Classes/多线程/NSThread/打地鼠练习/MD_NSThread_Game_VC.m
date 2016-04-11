@@ -9,51 +9,61 @@
 #import "MD_NSThread_Game_VC.h"
 #import "MDMouse.h"
 @interface MD_NSThread_Game_VC ()
-
+@property(nonatomic,strong)NSThread *thread;
 @end
 @implementation MD_NSThread_Game_VC
 
 #pragma mark - < vc lifecycle > -
 -(void)viewDidLoad{
-
+  
   [super viewDidLoad];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-
+  
   [super viewDidAppear:animated];
   
   [self customInitUI];
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+  
+  //注意此时的currentThread不是self.thread
+//  NSThread *thread = [NSThread currentThread];
+//  
+//  if ([thread isEqual:self.thread]) {
+//    [[NSThread currentThread] cancel];
+//  }
+  
+  [self.thread cancel];
+  
+  [super viewDidDisappear:animated];
+}
+
 #pragma mark - < method > -
 -(void)customInitUI{
-
-  [NSThread detachNewThreadSelector:@selector(createMouse) toTarget:self withObject:nil];
+  
+  NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(createMouse) object:nil];
+  thread.name = @"createMouse";
+  [thread start];
+  self.thread = thread;
 }
 
 -(void)createMouse{
-
-//  [NSThread sleepForTimeInterval:1];
-//  
-//  CGFloat w = 20;
-//  CGFloat h = 20;
-//  CGFloat x = arc4random()%((NSInteger)(viewW-20));
-//  CGFloat y  = arc4random()%((NSInteger)(viewH-20));
-//  MDMouse *mouse = [[MDMouse alloc] initWithFrame:CGRectMake(x, y, w, h)];
-//
-//  [self performSelectorOnMainThread:@selector(addToView:) withObject:mouse waitUntilDone:NO];
-//  
-//  [self createMouse];
-  
   
   while (YES) {
-    [NSThread sleepForTimeInterval:1];
+
+    //此时的currentThread是self.thread
+    if ([self.thread isCancelled]) {
+      [NSThread exit];//或者return
+    }
     
-    CGFloat w = 20;
-    CGFloat h = 20;
-    CGFloat x = arc4random()%((NSInteger)(viewW-20));
-    CGFloat y  = arc4random()%((NSInteger)(viewH-20));
+    [NSThread sleepForTimeInterval:0.5];
+    
+    CGFloat w = 30;
+    CGFloat h = 30;
+    CGFloat x = arc4random()%((NSInteger)(viewW-30));
+    CGFloat y  = arc4random()%((NSInteger)(viewH-30));
     MDMouse *mouse = [[MDMouse alloc] initWithFrame:CGRectMake(x, y, w, h)];
     
     [self performSelectorOnMainThread:@selector(addToView:) withObject:mouse waitUntilDone:NO];
@@ -61,7 +71,7 @@
 }
 
 -(void)addToView:(MDMouse *)mouse{
-
+  
   [self.view addSubview:mouse];
 }
 @end
