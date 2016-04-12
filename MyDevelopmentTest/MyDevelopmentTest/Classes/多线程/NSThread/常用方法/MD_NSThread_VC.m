@@ -10,6 +10,7 @@
 @interface MD_NSThread_VC()
 @property(nonatomic,strong)UIButton *btn;
 @property(nonatomic,strong)NSLock *lock;
+@property(nonatomic,strong)NSCondition *condition;
 @property(nonatomic,assign)NSInteger ticket;
 @property(nonatomic,strong)NSThread *thread1;
 @property(nonatomic,strong)NSThread *thread2;
@@ -29,7 +30,7 @@
   
   [super viewDidAppear:animated];
   
-  [self test2];
+  [self test_saleTickets];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -41,8 +42,8 @@
 }
 
 #pragma mark - < method > -
-#pragma mark 创建子线程
--(void)test{
+#pragma mark - 创建子线程
+-(void)test_createThread{
   
 //  [NSThread detachNewThreadSelector:@selector(createView:) toTarget:self withObject:@"创建view"];
   
@@ -72,52 +73,103 @@
   [self.view addSubview:view];
 }
 
-#pragma mark 线程同步
--(void)test2{
+#pragma mark - 卖票问题(线程同步 加锁)
+-(void)test_saleTickets{
   
   self.btn = [[UIButton alloc] init];
   self.lock = [[NSLock alloc] init];
+  self.condition = [[NSCondition alloc] init];
   self.ticket = 100;
   
-  NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(sale) object:nil];
+  NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(saleMain) object:nil];
   thread1.name = @"1号窗口";
   [thread1 start];
   self.thread1 = thread1;
   
-  NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(sale) object:nil];
+  NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(saleMain) object:nil];
   thread2.name = @"2号窗口";
   [thread2 start];
   self.thread2 = thread2;
   
+  NSThread *thread3 = [[NSThread alloc] initWithTarget:self selector:@selector(switchOnOff) object:nil];
+  thread3.name = @"开关";
+  [thread3 start];
 }
 
--(void)sale{
+-(void)saleMain{
+
+  [self sale3];
+}
+
+-(void)switchOnOff{
+  
+  while (YES) {
+    [self.condition lock];
+    [NSThread sleepForTimeInterval:1];
+    [self.condition signal];
+    [self.condition unlock];
+  }
+  
+}
+
+//线程加锁方法1 - NSLock（也可以用NSCondition代替）
+-(void)sale1{
+
+  while (YES) {
+    
+    if ([[NSThread currentThread] isCancelled]) {
+      NSLog(@"return:%@",[NSThread currentThread].name);
+      //[NSThread exit];
+      return;//return可以退出线程
+    }
+    
+    [self.lock lock];
+    NSLog(@"%@窗口开始卖%ld号票",[NSThread currentThread].name,(long)self.ticket);
+    sleep(1);
+    self.ticket--;
+    [self.lock unlock];
+    
+  }
+}
+
+//线程加锁方法2 - 简便方法 不用加锁
+-(void)sale2{
+
+  while (YES) {
+    
+    if ([[NSThread currentThread] isCancelled]) {
+      NSLog(@"return:%@",[NSThread currentThread].name);
+      return;
+    }
+  
+    @synchronized(self.btn){
+      NSLog(@"%@窗口开始卖%ld号票",[NSThread currentThread].name,(long)self.ticket);
+      [NSThread sleepForTimeInterval:1];
+      self.ticket--;
+    }
+
+  }
+}
+
+//线程加锁方法3 - NSCondition
+-(void)sale3{
+
+  [self.condition wait];
   
   while (YES) {
     
     if ([[NSThread currentThread] isCancelled]) {
       NSLog(@"return:%@",[NSThread currentThread].name);
-//      [NSThread exit];
-      return;//return可以退出线程
+      return;
     }
-    
-    //线程加锁方法1
-//    @synchronized(self.btn){
-//      NSLog(@"%@窗口开始卖%d号票",[NSThread currentThread].name,self.ticket);
-//      [NSThread sleepForTimeInterval:1];
-//      self.ticket--;
-//    }
-    
-    //线程加锁方法2 或者用NSCondition对象
+
     [self.lock lock];
     NSLog(@"%@窗口开始卖%ld号票",[NSThread currentThread].name,(long)self.ticket);
-//    [NSThread sleepForTimeInterval:1];
     sleep(1);
     self.ticket--;
     [self.lock unlock];
-
-    
   }
+
 }
 
 @end

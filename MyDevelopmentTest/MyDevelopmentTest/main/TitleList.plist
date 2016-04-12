@@ -11,6 +11,23 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>GCD</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>常用</string>
+						<key>className</key>
+						<string>MD_GCD_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>NSOperation</string>
 				<key>className</key>
 				<string></string>
