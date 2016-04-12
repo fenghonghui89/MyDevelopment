@@ -213,8 +213,9 @@
 		146D831F1AA709F600F0C7FD /* USA.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D82DE1AA709F600F0C7FD /* USA.png */; };
 		146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D83221AA70A3500F0C7FD /* MDSearchBarViewController.m */; };
 		146DE5961CBC9AE600F366C9 /* MD_NSOperation_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146DE5951CBC9AE600F366C9 /* MD_NSOperation_VC.xib */; };
-		146DE59D1CBCE7FE00F366C9 /* MD_GCD_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 146DE59B1CBCE7FE00F366C9 /* MD_GCD_VC.m */; };
-		146DE59E1CBCE7FE00F366C9 /* MD_GCD_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146DE59C1CBCE7FE00F366C9 /* MD_GCD_VC.xib */; };
+		146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 146DE5A31CBD040900F366C9 /* MD_GCD_VC.m */; };
+		146DE5A61CBD040900F366C9 /* MD_GCD_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146DE5A41CBD040900F366C9 /* MD_GCD_VC.xib */; };
+		146DE5AA1CBD048D00F366C9 /* MD_GCD_group_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 146DE5A91CBD048D00F366C9 /* MD_GCD_group_VC.m */; };
 		14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */; };
 		147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF391B8FFD380006A2C4 /* MDNSAttributedStringViewController.m */; };
 		147FDF3C1B900E670006A2C4 /* bg94w100h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 147FDF3B1B900E670006A2C4 /* bg94w100h@2x.png */; };
@@ -688,9 +689,12 @@
 		146DE5971CBCE12B00F366C9 /* NSLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLock.h; sourceTree = "<group>"; };
 		146DE5981CBCE12B00F366C9 /* NSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperation.h; sourceTree = "<group>"; };
 		146DE5991CBCE12B00F366C9 /* NSThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThread.h; sourceTree = "<group>"; };
-		146DE59A1CBCE7FE00F366C9 /* MD_GCD_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GCD_VC.h; sourceTree = "<group>"; };
-		146DE59B1CBCE7FE00F366C9 /* MD_GCD_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GCD_VC.m; sourceTree = "<group>"; };
-		146DE59C1CBCE7FE00F366C9 /* MD_GCD_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_GCD_VC.xib; sourceTree = "<group>"; };
+		146DE5A01CBCF12100F366C9 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		146DE5A21CBD040900F366C9 /* MD_GCD_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GCD_VC.h; sourceTree = "<group>"; };
+		146DE5A31CBD040900F366C9 /* MD_GCD_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GCD_VC.m; sourceTree = "<group>"; };
+		146DE5A41CBD040900F366C9 /* MD_GCD_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_GCD_VC.xib; sourceTree = "<group>"; };
+		146DE5A81CBD048D00F366C9 /* MD_GCD_group_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GCD_group_VC.h; sourceTree = "<group>"; };
+		146DE5A91CBD048D00F366C9 /* MD_GCD_group_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GCD_group_VC.m; sourceTree = "<group>"; };
 		14720F621B15708100773E5C /* MD_OC_UIView_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_UIView_ViewController.h; sourceTree = "<group>"; };
 		14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_UIView_ViewController.m; sourceTree = "<group>"; };
 		147DB17E1A8C7FA600F38EA4 /* MyDevelopmentTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1466,6 +1470,7 @@
 		1457BA8B1CB7B76200C48DE0 /* 多线程 */ = {
 			isa = PBXGroup;
 			children = (
+				146DE5A01CBCF12100F366C9 /* queue.h */,
 				146DE5971CBCE12B00F366C9 /* NSLock.h */,
 				146DE5981CBCE12B00F366C9 /* NSOperation.h */,
 				146DE5991CBCE12B00F366C9 /* NSThread.h */,
@@ -1875,6 +1880,25 @@
 			path = "球队图片";
 			sourceTree = "<group>";
 		};
+		146DE5A11CBD040900F366C9 /* 常用 */ = {
+			isa = PBXGroup;
+			children = (
+				146DE5A21CBD040900F366C9 /* MD_GCD_VC.h */,
+				146DE5A31CBD040900F366C9 /* MD_GCD_VC.m */,
+				146DE5A41CBD040900F366C9 /* MD_GCD_VC.xib */,
+			);
+			path = "常用";
+			sourceTree = "<group>";
+		};
+		146DE5A71CBD042A00F366C9 /* dispatch_group */ = {
+			isa = PBXGroup;
+			children = (
+				146DE5A81CBD048D00F366C9 /* MD_GCD_group_VC.h */,
+				146DE5A91CBD048D00F366C9 /* MD_GCD_group_VC.m */,
+			);
+			path = dispatch_group;
+			sourceTree = "<group>";
+		};
 		14720F611B156E3C00773E5C /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2214,9 +2238,8 @@
 		1497350C1CBB8A1A006BF1A3 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
-				146DE59A1CBCE7FE00F366C9 /* MD_GCD_VC.h */,
-				146DE59B1CBCE7FE00F366C9 /* MD_GCD_VC.m */,
-				146DE59C1CBCE7FE00F366C9 /* MD_GCD_VC.xib */,
+				146DE5A71CBD042A00F366C9 /* dispatch_group */,
+				146DE5A11CBD040900F366C9 /* 常用 */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -3002,7 +3025,7 @@
 				14E604D81C5B0538000E0DED /* MDKVO_VC.xib in Resources */,
 				146D82F11AA709F600F0C7FD /* England.png in Resources */,
 				14565E5F1BA94CD1009F7B2D /* playing30@2x.png in Resources */,
-				146DE59E1CBCE7FE00F366C9 /* MD_GCD_VC.xib in Resources */,
+				146DE5A61CBD040900F366C9 /* MD_GCD_VC.xib in Resources */,
 				146D830F1AA709F600F0C7FD /* Serbia.png in Resources */,
 				14565E6B1BA94CD1009F7B2D /* playing41@2x.png in Resources */,
 				1463B2A61AA1CAE4006AE8D2 /* 000.jpg in Resources */,
@@ -3114,7 +3137,7 @@
 				1463B2721AA1B593006AE8D2 /* SecondViewController.m in Sources */,
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				14FFBE421C9AA995006BEB2B /* MASCompositeConstraint.m in Sources */,
-				146DE59D1CBCE7FE00F366C9 /* MD_GCD_VC.m in Sources */,
+				146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */,
 				149735041CBB4A7A006BF1A3 /* MDMouse.m in Sources */,
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
 				14D670121C475F8400F911A4 /* UINavigationItem+MDCustom.m in Sources */,
@@ -3202,6 +3225,7 @@
 				14877C7F1BA7F15E00785B0C /* MD_GestureRecognizerTest_VC.m in Sources */,
 				148CD7531AAED37700FAED9D /* TRTelphoneInfo.m in Sources */,
 				144F23F01C5F38E2004ED3BC /* CIImage+Convenience.m in Sources */,
+				146DE5AA1CBD048D00F366C9 /* MD_GCD_group_VC.m in Sources */,
 				148CD71A1AAEC21600FAED9D /* TRCat2.m in Sources */,
 				14CB77151CA4F18F00878C4E /* MD_Socket_Client_VC.m in Sources */,
 				1487408A1CABC210007CC45C /* DGCPostServices.m in Sources */,

@@ -42,7 +42,7 @@
 }
 
 #pragma mark - < method > -
-#pragma mark - 创建子线程
+#pragma mark - 创建子线程 返回主线程
 -(void)test_createThread{
   
 //  [NSThread detachNewThreadSelector:@selector(createView:) toTarget:self withObject:@"创建view"];
@@ -98,7 +98,7 @@
 
 -(void)saleMain{
 
-  [self sale3];
+  [self sale1];
 }
 
 -(void)switchOnOff{
@@ -117,10 +117,12 @@
 
   while (YES) {
     
+    NSLog(@"%@窗口开门了~",[NSThread currentThread].name);
+    
     if ([[NSThread currentThread] isCancelled]) {
       NSLog(@"return:%@",[NSThread currentThread].name);
       //[NSThread exit];
-      return;//return可以退出线程
+      return;//return也可以退出线程
     }
     
     [self.lock lock];

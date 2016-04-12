@@ -18,6 +18,14 @@
 				<array>
 					<dict>
 						<key>desc</key>
+						<string>dispatch_group</string>
+						<key>className</key>
+						<string>MD_GCD_group_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
 						<string>常用</string>
 						<key>className</key>
 						<string>MD_GCD_VC</string>

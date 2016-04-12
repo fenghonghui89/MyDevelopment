@@ -277,7 +277,7 @@
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue(), block);
 }
 
-#pragma mark test:下载图片 卖票
+#pragma mark test:下载图片 返回主线程显示
 -(void)test_downLoad{
   
   __block UIImage *img = nil;
@@ -298,6 +298,7 @@
   
 }
 
+#pragma mark test:卖票
 -(void)test__saleTickets{
 
   self.tickets = 100;
