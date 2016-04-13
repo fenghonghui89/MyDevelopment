@@ -7,6 +7,8 @@
 //
 
 #import "MD_NSThread_VC.h"
+#import "MDCustomThread.h"
+
 @interface MD_NSThread_VC()
 @property(nonatomic,strong)UIButton *btn;
 @property(nonatomic,strong)NSLock *lock;
@@ -24,12 +26,15 @@
 -(void)viewDidLoad{
   
   [super viewDidLoad];
+  
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
   
   [super viewDidAppear:animated];
   
+  [self test_NSThreadBase];
   [self test_saleTickets];
 }
 
@@ -42,14 +47,49 @@
 }
 
 #pragma mark - < method > -
+#pragma mark - 方法和属性
+-(void)test_NSThreadBase{
+
+  if ([NSThread isMainThread]) {
+    NSLog(@"isMainThread");
+  }
+  
+  if ([NSThread isMultiThreaded]) {
+    NSLog(@"isMultiThreaded");
+  }
+  
+  NSArray *arrAddresses = [NSThread callStackReturnAddresses];
+  NSArray *arrSymbols = [NSThread callStackSymbols];
+  NSLog(@"arrAddresses:%@",arrAddresses);
+  NSLog(@"arrSymbols:%@",arrSymbols);
+  
+  NSInteger stackSize = [[NSThread currentThread] stackSize];
+  NSLog(@"stackSize:%d",stackSize);
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiAction:) name:NSThreadWillExitNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiAction:) name:NSDidBecomeSingleThreadedNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiAction:) name:NSWillBecomeMultiThreadedNotification object:nil];
+  
+}
+
+-(void)notiAction:(NSNotification *)noti{
+  
+  NSLog(@"~~~%@",noti.name);
+}
 #pragma mark - 创建子线程 返回主线程
 -(void)test_createThread{
-  
+
+  //创建子线程并开始
 //  [NSThread detachNewThreadSelector:@selector(createView:) toTarget:self withObject:@"创建view"];
   
-  NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(createView:) object:@"创建view"];
-  thread.name = @"1号线程";
-  [thread start];
+  //创建子线程 手动开始
+//  NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(createView:) object:@"创建view"];
+//  thread.name = @"1号线程";
+//  [thread start];
+  
+  //自定义NSThread子类
+  MDCustomThread *customThread = [[MDCustomThread alloc] init];
+  [customThread start];
 }
 
 -(void)createView:(NSString *)object{
@@ -88,6 +128,8 @@
   
   NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(saleMain) object:nil];
   thread2.name = @"2号窗口";
+  //  thread2.threadPriority = 1;//优先级0~1
+  thread2.qualityOfService = NSQualityOfServiceUserInitiated;//后续替代前者
   [thread2 start];
   self.thread2 = thread2;
   
@@ -132,6 +174,7 @@
     [self.lock unlock];
     
   }
+  
 }
 
 //线程加锁方法2 - 简便方法 不用加锁
@@ -172,6 +215,28 @@
     [self.lock unlock];
   }
 
+}
+
+#pragma mark - NSObject扩展方法
+-(void)test_NSObjectExpand{
+
+  [self performSelectorInBackground:@selector(backgroundAction) withObject:[NSNumber numberWithBool:YES]];//退出页面后无法暂停？
+}
+
+-(void)backgroundAction{
+
+  for (int i = 0; i<100; i++) {
+    NSLog(@"i:%d",i);
+    [NSThread sleepForTimeInterval:0.5];
+  }
+  
+}
+
+#pragma mark - < action > -
+- (IBAction)btn1Tap:(id)sender {
+  
+  [self.thread1 cancel];
+  [self.thread2 cancel];
 }
 
 @end

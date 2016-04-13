@@ -354,6 +354,10 @@
 		14DF14D21C4F83E7005C10AA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF14C41C4F83E7005C10AA /* Default.png */; };
 		14DF14D31C4F83E7005C10AA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF14C51C4F83E7005C10AA /* Default@2x.png */; };
 		14DF14D61C4F87CC005C10AA /* MDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DF14D51C4F87CC005C10AA /* MDNavigationController.m */; };
+		14E1A0CA1CBE267D00468C47 /* MD_NSThread_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E1A0C91CBE267D00468C47 /* MD_NSThread_VC.xib */; };
+		14E1A0CE1CBE38E200468C47 /* MDCustomThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A0CD1CBE38E200468C47 /* MDCustomThread.m */; };
+		14E1A0D31CBE4C0600468C47 /* MD_NSInvocation_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A0D11CBE4C0600468C47 /* MD_NSInvocation_VC.m */; };
+		14E1A0D41CBE4C0600468C47 /* MD_NSInvocation_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E1A0D21CBE4C0600468C47 /* MD_NSInvocation_VC.xib */; };
 		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
 		14E604D71C5B0538000E0DED /* MDKVO_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E604D51C5B0538000E0DED /* MDKVO_VC.m */; };
 		14E604D81C5B0538000E0DED /* MDKVO_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E604D61C5B0538000E0DED /* MDKVO_VC.xib */; };
@@ -944,6 +948,15 @@
 		14DF14C51C4F83E7005C10AA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		14DF14D41C4F87CC005C10AA /* MDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNavigationController.h; sourceTree = "<group>"; };
 		14DF14D51C4F87CC005C10AA /* MDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNavigationController.m; sourceTree = "<group>"; };
+		14E1A0C71CBDF61500468C47 /* time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
+		14E1A0C81CBDF61B00468C47 /* group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = group.h; sourceTree = "<group>"; };
+		14E1A0C91CBE267D00468C47 /* MD_NSThread_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSThread_VC.xib; sourceTree = "<group>"; };
+		14E1A0CB1CBE2FAE00468C47 /* NSObjCRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObjCRuntime.h; sourceTree = "<group>"; };
+		14E1A0CC1CBE38E200468C47 /* MDCustomThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomThread.h; sourceTree = "<group>"; };
+		14E1A0CD1CBE38E200468C47 /* MDCustomThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomThread.m; sourceTree = "<group>"; };
+		14E1A0D01CBE4C0600468C47 /* MD_NSInvocation_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSInvocation_VC.h; sourceTree = "<group>"; };
+		14E1A0D11CBE4C0600468C47 /* MD_NSInvocation_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSInvocation_VC.m; sourceTree = "<group>"; };
+		14E1A0D21CBE4C0600468C47 /* MD_NSInvocation_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSInvocation_VC.xib; sourceTree = "<group>"; };
 		14E331B51B27173500B356C7 /* MD_UIIPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIPC_ViewController.h; sourceTree = "<group>"; };
 		14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIPC_ViewController.m; sourceTree = "<group>"; };
 		14E604D31C5B041E000E0DED /* NSKeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSKeyValueObserving.h; sourceTree = "<group>"; };
@@ -1470,6 +1483,9 @@
 		1457BA8B1CB7B76200C48DE0 /* 多线程 */ = {
 			isa = PBXGroup;
 			children = (
+				14E1A0CB1CBE2FAE00468C47 /* NSObjCRuntime.h */,
+				14E1A0C81CBDF61B00468C47 /* group.h */,
+				14E1A0C71CBDF61500468C47 /* time.h */,
 				146DE5A01CBCF12100F366C9 /* queue.h */,
 				146DE5971CBCE12B00F366C9 /* NSLock.h */,
 				146DE5981CBCE12B00F366C9 /* NSOperation.h */,
@@ -1541,6 +1557,7 @@
 			isa = PBXGroup;
 			children = (
 				1426A1881C44DE0A00FB191D /* FoundationOther */,
+				14E1A0CF1CBE4B8400468C47 /* NSInvocation */,
 				14E604D21C5B041E000E0DED /* NSKeyValueObserving */,
 				1488298D1C55C5A00034ACFC /* NSEnumerator */,
 				1426A1891C44DE0A00FB191D /* NSBundle */,
@@ -2208,6 +2225,9 @@
 			children = (
 				149734FB1CBB4A45006BF1A3 /* MD_NSThread_VC.h */,
 				149734FC1CBB4A45006BF1A3 /* MD_NSThread_VC.m */,
+				14E1A0C91CBE267D00468C47 /* MD_NSThread_VC.xib */,
+				14E1A0CC1CBE38E200468C47 /* MDCustomThread.h */,
+				14E1A0CD1CBE38E200468C47 /* MDCustomThread.m */,
 			);
 			path = "常用方法";
 			sourceTree = "<group>";
@@ -2611,6 +2631,16 @@
 				14DF14C51C4F83E7005C10AA /* Default@2x.png */,
 			);
 			path = LaunchImage;
+			sourceTree = "<group>";
+		};
+		14E1A0CF1CBE4B8400468C47 /* NSInvocation */ = {
+			isa = PBXGroup;
+			children = (
+				14E1A0D01CBE4C0600468C47 /* MD_NSInvocation_VC.h */,
+				14E1A0D11CBE4C0600468C47 /* MD_NSInvocation_VC.m */,
+				14E1A0D21CBE4C0600468C47 /* MD_NSInvocation_VC.xib */,
+			);
+			path = NSInvocation;
 			sourceTree = "<group>";
 		};
 		14E27C2A1CA14FB000F428CC /* HTTP */ = {
@@ -3040,6 +3070,7 @@
 				1428AB7E1C84502C003CC10F /* MDWVViewController.xib in Resources */,
 				14EACA281C8038DF00F3FE2C /* MD_CollectionView_VC.xib in Resources */,
 				1428AB7B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib in Resources */,
+				14E1A0CA1CBE267D00468C47 /* MD_NSThread_VC.xib in Resources */,
 				1463B2A01AA1CAE4006AE8D2 /* heng.jpg in Resources */,
 				141B43371AA401BC008F2711 /* 罗丹-思想者.png in Resources */,
 				14565E5B1BA94CD1009F7B2D /* playing27@2x.png in Resources */,
@@ -3090,6 +3121,7 @@
 				14FCC7441C5B6B3000490C99 /* MD_PhotoLibrary_VC.xib in Resources */,
 				14565E831BA94CD1009F7B2D /* playing8@2x.png in Resources */,
 				14565E551BA94CD1009F7B2D /* playing21@2x.png in Resources */,
+				14E1A0D41CBE4C0600468C47 /* MD_NSInvocation_VC.xib in Resources */,
 				14DF14D21C4F83E7005C10AA /* Default.png in Resources */,
 				1489C8911CAA8AD4000CBC14 /* testmusic.mp3 in Resources */,
 				1463B2AF1AA1CC08006AE8D2 /* big.jpg in Resources */,
@@ -3170,6 +3202,7 @@
 				1489C8861CAA873E000CBC14 /* MD_NSXML_VC.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
 				14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */,
+				14E1A0CE1CBE38E200468C47 /* MDCustomThread.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
 				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
 				148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */,
@@ -3300,6 +3333,7 @@
 				141B432F1AA3FDD3008F2711 /* MDPageControlViewController.m in Sources */,
 				144F23F61C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m in Sources */,
 				1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */,
+				14E1A0D31CBE4C0600468C47 /* MD_NSInvocation_VC.m in Sources */,
 				14D6700C1C475BCE00F911A4 /* MDModal2ViewController.m in Sources */,
 				1489C88C1CAA87B3000CBC14 /* TRBook.m in Sources */,
 				14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */,

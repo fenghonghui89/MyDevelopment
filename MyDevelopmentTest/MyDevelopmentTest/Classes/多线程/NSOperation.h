@@ -52,7 +52,7 @@ typedef NS_ENUM(NSInteger, NSOperationQueuePriority) {
 	NSOperationQueuePriorityVeryHigh = 8
 };
 
-@property NSOperationQueuePriority queuePriority;
+@property NSOperationQueuePriority queuePriority;//在队列中的优先级
 
 @property (nullable, copy) void (^completionBlock)(void) NS_AVAILABLE(10_6, 4_0);
 
@@ -129,14 +129,14 @@ NS_CLASS_AVAILABLE(10_5, 2_0)
 
 @property NSQualityOfService qualityOfService NS_AVAILABLE(10_10, 8_0);
 
-@property (nullable, assign /* actually retain */) dispatch_queue_t underlyingQueue NS_AVAILABLE(10_10, 8_0);
+@property (nullable, assign /* actually retain */) dispatch_queue_t underlyingQueue NS_AVAILABLE(10_10, 8_0);//未知
 
 - (void)cancelAllOperations;
 
 - (void)waitUntilAllOperationsAreFinished;
 
 + (nullable NSOperationQueue *)currentQueue NS_AVAILABLE(10_6, 4_0);
-+ (NSOperationQueue *)mainQueue NS_AVAILABLE(10_6, 4_0);
++ (NSOperationQueue *)mainQueue NS_AVAILABLE(10_6, 4_0);//主线程
 
 @end
 

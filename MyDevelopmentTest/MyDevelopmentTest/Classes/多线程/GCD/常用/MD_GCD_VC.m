@@ -10,7 +10,7 @@
 
 @interface MD_GCD_VC ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
+@property (nonatomic,strong)dispatch_queue_t queue;
 @end
 
 @implementation MD_GCD_VC
@@ -24,7 +24,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self test_delay];
+  [self test_saleTickets];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -65,19 +65,20 @@
 
 }
 
-#pragma mark 卖票问题(要用并行)
+#pragma mark 卖票问题(要用并行队列)
 -(void)test_saleTickets{
 
   __block NSInteger ticket = 100;
   __block NSLock *lock = [NSLock new];
   
   dispatch_queue_t myQueue = dispatch_queue_create("com.myQueue.test", DISPATCH_QUEUE_CONCURRENT);
+  self.queue = myQueue;
   
   dispatch_async(myQueue, ^{
     while (YES) {
       [lock lock];
       [NSThread sleepForTimeInterval:0.5];
-      NSLog(@"1号子线程结束 %d",ticket);
+      NSLog(@"1号子线程结束 %ld",(long)ticket);
       ticket--;
       [lock unlock];
     }
@@ -87,7 +88,7 @@
     while (YES) {
       [lock lock];
       [NSThread sleepForTimeInterval:0.5];
-      NSLog(@"2号子线程结束 %d",ticket);
+      NSLog(@"2号子线程结束 %ld",(long)ticket);
       ticket--;
       [lock unlock];
     }
@@ -97,14 +98,12 @@
     while (YES) {
       [lock lock];
       [NSThread sleepForTimeInterval:0.5];
-      NSLog(@"3号子线程结束 %d",ticket);
+      NSLog(@"3号子线程结束 %ld",(long)ticket);
       ticket--;
       [lock unlock];
     }
   });
   
-  //MRC下要release线程队列
-//  dispatch_release(myQueue);
 }
 
 #pragma mark dispatch_apply
@@ -141,4 +140,10 @@
     NSLog(@"执行了子线程代码");
   });
 }
+
+#pragma mark - < action > -
+- (IBAction)btn1Tap:(id)sender {
+  
+}
+
 @end

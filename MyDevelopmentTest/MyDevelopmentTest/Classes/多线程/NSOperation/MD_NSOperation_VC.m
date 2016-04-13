@@ -26,7 +26,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self test__saleTickets];
+  [self test_NSOperationQueue];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -37,7 +37,7 @@
 
 #pragma mark - < method > -
 
-#pragma mark 创建NSOperationObject
+#pragma mark - 创建NSOperationObject
 -(void)test_NSOperationObject{
 
   //自定义NSOperation
@@ -52,17 +52,20 @@
 //    NSLog(@"this is opBlock");
 //  }];
 //  
-//  for (int i = 0; i < 5; i++) {
+//  for (int i = 0; i<5; i++) {
 //    [opBlock addExecutionBlock:^{
 //      NSLog(@"addExecutionBlock %d",i);
 //    }];
 //  }
+//  
 //  
 //  [opBlock setCompletionBlock:^{
 //    NSLog(@"opBlock finish");
 //  }];
 //  
 //  [opBlock start];
+//  
+//  NSLog(@"executionBlocks:%@",opBlock.executionBlocks);
   
   //NSInvocationOperation
   NSInvocationOperation *iop = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(NSInvocationOperationAction) object:nil];
@@ -76,7 +79,7 @@
   NSLog(@"NSInvocationOperationAction");
 }
 
-#pragma mark NSOperationQueue
+#pragma mark - NSOperationQueue
 -(void)test_NSOperationQueue{
 
   NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
@@ -93,7 +96,6 @@
   
   
   MyOperation *op3 = [[MyOperation alloc] init];
-  
 
   NSOperationQueue *queue = [[NSOperationQueue alloc] init];
   queue.name = @"queue one";
@@ -105,10 +107,10 @@
     NSLog(@"这里是子线程4代码 结束");
   }];
   
-  NSLog(@"这里是主线程");
+  NSLog(@"这里是主线程 %d",queue.operationCount);
 }
 
-#pragma mark 依赖关系 优先级
+#pragma mark - 依赖关系 优先级
 -(void)test_Dependency{
   
   /*
@@ -121,26 +123,32 @@
    */
   
   NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
-    NSLog(@"1号线程");
+    NSLog(@"1号线程开始");
   }];
+  op1.name = @"1号线程";
   [op1 setQueuePriority:NSOperationQueuePriorityHigh];
+  [op1 setQualityOfService:NSQualityOfServiceDefault];
 
   NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
-    NSLog(@"2号线程");
+    NSLog(@"2号线程开始");
   }];
+  op2.name = @"2号线程";
   
   NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
-    NSLog(@"3号线程");
+    NSLog(@"3号线程开始");
   }];
+  op3.name = @"3号线程";
   
   NSBlockOperation *op4 = [NSBlockOperation blockOperationWithBlock:^{
-    NSLog(@"2-4号线程");
+    NSLog(@"2-4号线程开始");
   }];
+  op4.name = @"2-4号线程";
   [op4 setQueuePriority:NSOperationQueuePriorityHigh];
   
   NSBlockOperation *op5 = [NSBlockOperation blockOperationWithBlock:^{
-    NSLog(@"2-5号线程");
+    NSLog(@"2-5号线程开始");
   }];
+  op5.name = @"2-5号线程";
   
   [op1 addDependency:op2];
   [op1 addDependency:op3];
@@ -153,9 +161,13 @@
   NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];
   [queue1 addOperations:@[op4,op5] waitUntilFinished:NO];
 
+  //输出某线程的依赖
+  for (NSOperation *op in op1.dependencies) {
+    NSLog(@"op1 dep:%@",op.name);
+  }
 }
 
-#pragma mark cancle
+#pragma mark - cancle
 -(void)test_cancle{
   
   __block NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
@@ -194,7 +206,7 @@
   self.queue = queue;
 }
 
-#pragma mark wati
+#pragma mark - wati
 -(void)test_wait{
 
   NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
@@ -225,7 +237,7 @@
   
 }
 
-#pragma mark 挂起
+#pragma mark - 挂起
 -(void)test_queueSuspended{
   
   NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
@@ -264,7 +276,7 @@
   [queue addOperation:op3];
   self.queue = queue;
   
-  //200ms后挂起，此时op3会被挂起
+  //200ms后挂起，此时op3会被挂起，因为此时op3还没被加入到队列中（允许最大同时并行2个线程）
   [self execute:^{
     [queue setSuspended:YES];
   } afterDelay:NSEC_PER_MSEC * 200];
@@ -277,7 +289,7 @@
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue(), block);
 }
 
-#pragma mark test:下载图片 返回主线程显示
+#pragma mark - test:下载图片 返回主线程显示
 -(void)test_downLoad{
   
   __block UIImage *img = nil;
@@ -298,8 +310,8 @@
   
 }
 
-#pragma mark test:卖票
--(void)test__saleTickets{
+#pragma mark - test:卖票
+-(void)test_saleTickets{
 
   self.tickets = 100;
   NSLock *lock = [NSLock new];//实测

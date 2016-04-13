@@ -664,6 +664,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>NSInvocation</string>
+				<key>className</key>
+				<string>MD_NSInvocation_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>KVO</string>
 				<key>className</key>
 				<string>MDKVO_VC</string>

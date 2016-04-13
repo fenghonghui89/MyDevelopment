@@ -33,10 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property double threadPriority NS_AVAILABLE(10_6, 4_0); // To be deprecated; use qualityOfService below
 
-@property NSQualityOfService qualityOfService NS_AVAILABLE(10_10, 8_0); // read-only after the thread is started
+@property NSQualityOfService qualityOfService NS_AVAILABLE(10_10, 8_0); // read-only after the thread is started //qos服务质量
 
-+ (NSArray<NSNumber *> *)callStackReturnAddresses NS_AVAILABLE(10_5, 2_0);
-+ (NSArray<NSString *> *)callStackSymbols NS_AVAILABLE(10_6, 4_0);
++ (NSArray<NSNumber *> *)callStackReturnAddresses NS_AVAILABLE(10_5, 2_0);//调用栈地址
++ (NSArray<NSString *> *)callStackSymbols NS_AVAILABLE(10_6, 4_0);//调用栈 类似崩溃时的堆栈报告
 
 @property (nullable, copy) NSString *name NS_AVAILABLE(10_5, 2_0);
 
@@ -57,13 +57,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)start NS_AVAILABLE(10_5, 2_0);
 
-- (void)main NS_AVAILABLE(10_5, 2_0);	// thread body method
+- (void)main NS_AVAILABLE(10_5, 2_0);	// thread body method 自定义NSThread子类时重写
 
 @end
 
-FOUNDATION_EXPORT NSString * const NSWillBecomeMultiThreadedNotification;
-FOUNDATION_EXPORT NSString * const NSDidBecomeSingleThreadedNotification;
-FOUNDATION_EXPORT NSString * const NSThreadWillExitNotification;
+FOUNDATION_EXPORT NSString * const NSWillBecomeMultiThreadedNotification;//未知
+FOUNDATION_EXPORT NSString * const NSDidBecomeSingleThreadedNotification;//未知
+FOUNDATION_EXPORT NSString * const NSThreadWillExitNotification;//线程将要终止（完成或cancle）
 
 @interface NSObject (NSThreadPerformAdditions)
 
