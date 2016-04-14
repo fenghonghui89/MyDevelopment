@@ -57,7 +57,7 @@ int sum(int num,int num2){
     //block
     ^void(void){NSLog(@"this is block");};
     ^int(int a){return a*a;};
-    
+  
     //block的用法
     int get = ^int(int a){return a*a;}(5);
     NSLog(@"get:%d", get);
@@ -116,8 +116,7 @@ int(^Sum2)(int,int) = ^int(int a,int b){
     fundation(blockP);
 }
 
-//参数写法：block指针
-void fundation (int (^block1)(int,int))
+void fundation (int (^block1)(int,int))//参数写法：block指针
 {
     if (block1) {
         int get = block1(1,2);
@@ -132,9 +131,8 @@ void fundation (int (^block1)(int,int))
     [self method:blockP];
 }
 
-//参数写法：block指针，指针名提取出来做形参
-//block也可以做返回值
--(void)method:(int(^)(int,int))block
+
+-(void)method:(int(^)(int,int))block//参数写法：block指针，指针名提取出来做形参 block也可以做返回值
 {
     if (block) {
         int get = block(3,4);
@@ -180,6 +178,7 @@ void fundation (int (^block1)(int,int))
       NSLog(@"block delegate 传入yes");
     }
   }];
+  
 }
 
 #pragma mark - block做block参数

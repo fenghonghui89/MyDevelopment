@@ -8,10 +8,15 @@
 
 #import "MDBaseViewController.h"
 
+
+
 typedef void (^MDBlockNormalViewControllerBlock)(BOOL b);
 
 typedef void (^retryblock)(BOOL b);
-typedef void (^MDBlockNormalViewControllerRetryBlock)(BOOL a,retryblock reb);
+typedef void (^MDBlockNormalViewControllerRetryBlock)(BOOL a,retryblock reb);//把retryblock放到外面定义
+
+
+
 
 
 @class MDBlockNormalViewController;
@@ -21,6 +26,10 @@ typedef void (^MDBlockNormalViewControllerRetryBlock)(BOOL a,retryblock reb);
 -(void)blockDelegate:(MDBlockNormalViewController *)vc block:(MDBlockNormalViewControllerBlock)block;
 
 @end
+
+
+
+
 
 @interface MDBlockNormalViewController : MDBaseViewController
 @property(nonatomic,copy)MDBlockNormalViewControllerBlock block;//block做属性

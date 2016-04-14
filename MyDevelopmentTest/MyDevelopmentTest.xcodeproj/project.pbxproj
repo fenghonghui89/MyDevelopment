@@ -271,9 +271,6 @@
 		148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7671AAED7B500FAED9D /* TRStudent7.m */; };
 		148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */; };
 		148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */ = {isa = PBXBuildFile; fileRef = 148CD7731AAEDACD00FAED9D /* TRStudent8.m */; };
-		149734FE1CBB4A45006BF1A3 /* MD_NSThread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149734FC1CBB4A45006BF1A3 /* MD_NSThread_VC.m */; };
-		149735011CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149735001CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m */; };
-		149735041CBB4A7A006BF1A3 /* MDMouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 149735031CBB4A7A006BF1A3 /* MDMouse.m */; };
 		149735081CBB63EA006BF1A3 /* MD_NSOperation_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 149735071CBB63EA006BF1A3 /* MD_NSOperation_VC.m */; };
 		1497350B1CBB64D4006BF1A3 /* MyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497350A1CBB64D4006BF1A3 /* MyOperation.m */; };
 		149A1E601B26E5CB00986FA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149A1E5A1B26E5CB00986FA6 /* LaunchScreen.xib */; };
@@ -354,8 +351,6 @@
 		14DF14D21C4F83E7005C10AA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF14C41C4F83E7005C10AA /* Default.png */; };
 		14DF14D31C4F83E7005C10AA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14DF14C51C4F83E7005C10AA /* Default@2x.png */; };
 		14DF14D61C4F87CC005C10AA /* MDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DF14D51C4F87CC005C10AA /* MDNavigationController.m */; };
-		14E1A0CA1CBE267D00468C47 /* MD_NSThread_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E1A0C91CBE267D00468C47 /* MD_NSThread_VC.xib */; };
-		14E1A0CE1CBE38E200468C47 /* MDCustomThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A0CD1CBE38E200468C47 /* MDCustomThread.m */; };
 		14E1A0D31CBE4C0600468C47 /* MD_NSInvocation_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A0D11CBE4C0600468C47 /* MD_NSInvocation_VC.m */; };
 		14E1A0D41CBE4C0600468C47 /* MD_NSInvocation_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14E1A0D21CBE4C0600468C47 /* MD_NSInvocation_VC.xib */; };
 		14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E331B61B27173500B356C7 /* MD_UIIPC_ViewController.m */; };
@@ -377,6 +372,11 @@
 		14EACA311C80577A00F3FE2C /* MD_CollectionView_ReuseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA301C80577A00F3FE2C /* MD_CollectionView_ReuseView.m */; };
 		14EACA331C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA321C805C5F00F3FE2C /* MD_CollectionView_ReuseView.xib */; };
 		14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EB3BFB1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m */; };
+		14F043ED1CBF797500D07048 /* MD_NSThread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F043E41CBF797500D07048 /* MD_NSThread_VC.m */; };
+		14F043EE1CBF797500D07048 /* MD_NSThread_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F043E51CBF797500D07048 /* MD_NSThread_VC.xib */; };
+		14F043EF1CBF797500D07048 /* MDCustomThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F043E71CBF797500D07048 /* MDCustomThread.m */; };
+		14F043F01CBF797500D07048 /* MD_NSThread_Game_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F043EA1CBF797500D07048 /* MD_NSThread_Game_VC.m */; };
+		14F043F11CBF797500D07048 /* MDMouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F043EC1CBF797500D07048 /* MDMouse.m */; };
 		14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */; };
 		14F073911B95B9E80029A653 /* MDCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073901B95B9E80029A653 /* MDCustomView.m */; };
 		14F073991B95BC660029A653 /* MD_UIBezierPath_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F073981B95BC660029A653 /* MD_UIBezierPath_ViewController.m */; };
@@ -804,12 +804,6 @@
 		148CD76F1AAEDA2200FAED9D /* MDDicNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDicNormalViewController.m; sourceTree = "<group>"; };
 		148CD7721AAEDACD00FAED9D /* TRStudent8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRStudent8.h; sourceTree = "<group>"; };
 		148CD7731AAEDACD00FAED9D /* TRStudent8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRStudent8.m; sourceTree = "<group>"; };
-		149734FB1CBB4A45006BF1A3 /* MD_NSThread_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSThread_VC.h; sourceTree = "<group>"; };
-		149734FC1CBB4A45006BF1A3 /* MD_NSThread_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSThread_VC.m; sourceTree = "<group>"; };
-		149734FF1CBB4A68006BF1A3 /* MD_NSThread_Game_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSThread_Game_VC.h; sourceTree = "<group>"; };
-		149735001CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSThread_Game_VC.m; sourceTree = "<group>"; };
-		149735021CBB4A7A006BF1A3 /* MDMouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMouse.h; sourceTree = "<group>"; };
-		149735031CBB4A7A006BF1A3 /* MDMouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMouse.m; sourceTree = "<group>"; };
 		149735061CBB63EA006BF1A3 /* MD_NSOperation_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSOperation_VC.h; sourceTree = "<group>"; };
 		149735071CBB63EA006BF1A3 /* MD_NSOperation_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSOperation_VC.m; sourceTree = "<group>"; };
 		149735091CBB64D4006BF1A3 /* MyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOperation.h; sourceTree = "<group>"; };
@@ -950,10 +944,7 @@
 		14DF14D51C4F87CC005C10AA /* MDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNavigationController.m; sourceTree = "<group>"; };
 		14E1A0C71CBDF61500468C47 /* time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
 		14E1A0C81CBDF61B00468C47 /* group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = group.h; sourceTree = "<group>"; };
-		14E1A0C91CBE267D00468C47 /* MD_NSThread_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSThread_VC.xib; sourceTree = "<group>"; };
 		14E1A0CB1CBE2FAE00468C47 /* NSObjCRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObjCRuntime.h; sourceTree = "<group>"; };
-		14E1A0CC1CBE38E200468C47 /* MDCustomThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomThread.h; sourceTree = "<group>"; };
-		14E1A0CD1CBE38E200468C47 /* MDCustomThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomThread.m; sourceTree = "<group>"; };
 		14E1A0D01CBE4C0600468C47 /* MD_NSInvocation_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSInvocation_VC.h; sourceTree = "<group>"; };
 		14E1A0D11CBE4C0600468C47 /* MD_NSInvocation_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSInvocation_VC.m; sourceTree = "<group>"; };
 		14E1A0D21CBE4C0600468C47 /* MD_NSInvocation_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSInvocation_VC.xib; sourceTree = "<group>"; };
@@ -1005,6 +996,15 @@
 		14EC6AEB1C87DB1700A2CBB8 /* PHObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHObject.h; sourceTree = "<group>"; };
 		14EC6AEC1C87DB1700A2CBB8 /* PhotosTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosTypes.h; sourceTree = "<group>"; };
 		14EC6AED1C87DFED00A2CBB8 /* PHChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHChange.h; sourceTree = "<group>"; };
+		14F043E31CBF797500D07048 /* MD_NSThread_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSThread_VC.h; sourceTree = "<group>"; };
+		14F043E41CBF797500D07048 /* MD_NSThread_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSThread_VC.m; sourceTree = "<group>"; };
+		14F043E51CBF797500D07048 /* MD_NSThread_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSThread_VC.xib; sourceTree = "<group>"; };
+		14F043E61CBF797500D07048 /* MDCustomThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomThread.h; sourceTree = "<group>"; };
+		14F043E71CBF797500D07048 /* MDCustomThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomThread.m; sourceTree = "<group>"; };
+		14F043E91CBF797500D07048 /* MD_NSThread_Game_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSThread_Game_VC.h; sourceTree = "<group>"; };
+		14F043EA1CBF797500D07048 /* MD_NSThread_Game_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSThread_Game_VC.m; sourceTree = "<group>"; };
+		14F043EB1CBF797500D07048 /* MDMouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDMouse.h; sourceTree = "<group>"; };
+		14F043EC1CBF797500D07048 /* MDMouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDMouse.m; sourceTree = "<group>"; };
 		14F0738C1B95B9200029A653 /* MD_UIColor_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIColor_ViewController.h; sourceTree = "<group>"; };
 		14F0738D1B95B9200029A653 /* MD_UIColor_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIColor_ViewController.m; sourceTree = "<group>"; };
 		14F0738F1B95B9E80029A653 /* MDCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomView.h; sourceTree = "<group>"; };
@@ -1490,20 +1490,11 @@
 				146DE5971CBCE12B00F366C9 /* NSLock.h */,
 				146DE5981CBCE12B00F366C9 /* NSOperation.h */,
 				146DE5991CBCE12B00F366C9 /* NSThread.h */,
+				14F043E11CBF797500D07048 /* NSThread:NSLock */,
 				1497350C1CBB8A1A006BF1A3 /* GCD */,
 				149735051CBB6381006BF1A3 /* NSOperation */,
-				1457BA8C1CB7B76200C48DE0 /* NSThread */,
 			);
 			path = "多线程";
-			sourceTree = "<group>";
-		};
-		1457BA8C1CB7B76200C48DE0 /* NSThread */ = {
-			isa = PBXGroup;
-			children = (
-				149734FA1CBB4A45006BF1A3 /* 常用方法 */,
-				149734FD1CBB4A45006BF1A3 /* 打地鼠练习 */,
-			);
-			path = NSThread;
 			sourceTree = "<group>";
 		};
 		145D871A1BA84DAB00447D35 /* 常用 */ = {
@@ -2220,29 +2211,6 @@
 			path = NSSet;
 			sourceTree = "<group>";
 		};
-		149734FA1CBB4A45006BF1A3 /* 常用方法 */ = {
-			isa = PBXGroup;
-			children = (
-				149734FB1CBB4A45006BF1A3 /* MD_NSThread_VC.h */,
-				149734FC1CBB4A45006BF1A3 /* MD_NSThread_VC.m */,
-				14E1A0C91CBE267D00468C47 /* MD_NSThread_VC.xib */,
-				14E1A0CC1CBE38E200468C47 /* MDCustomThread.h */,
-				14E1A0CD1CBE38E200468C47 /* MDCustomThread.m */,
-			);
-			path = "常用方法";
-			sourceTree = "<group>";
-		};
-		149734FD1CBB4A45006BF1A3 /* 打地鼠练习 */ = {
-			isa = PBXGroup;
-			children = (
-				149734FF1CBB4A68006BF1A3 /* MD_NSThread_Game_VC.h */,
-				149735001CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m */,
-				149735021CBB4A7A006BF1A3 /* MDMouse.h */,
-				149735031CBB4A7A006BF1A3 /* MDMouse.m */,
-			);
-			path = "打地鼠练习";
-			sourceTree = "<group>";
-		};
 		149735051CBB6381006BF1A3 /* NSOperation */ = {
 			isa = PBXGroup;
 			children = (
@@ -2728,6 +2696,38 @@
 			path = UICollectionView;
 			sourceTree = "<group>";
 		};
+		14F043E11CBF797500D07048 /* NSThread:NSLock */ = {
+			isa = PBXGroup;
+			children = (
+				14F043E21CBF797500D07048 /* 常用方法 */,
+				14F043E81CBF797500D07048 /* 打地鼠练习 */,
+			);
+			path = "NSThread:NSLock";
+			sourceTree = "<group>";
+		};
+		14F043E21CBF797500D07048 /* 常用方法 */ = {
+			isa = PBXGroup;
+			children = (
+				14F043E31CBF797500D07048 /* MD_NSThread_VC.h */,
+				14F043E41CBF797500D07048 /* MD_NSThread_VC.m */,
+				14F043E51CBF797500D07048 /* MD_NSThread_VC.xib */,
+				14F043E61CBF797500D07048 /* MDCustomThread.h */,
+				14F043E71CBF797500D07048 /* MDCustomThread.m */,
+			);
+			path = "常用方法";
+			sourceTree = "<group>";
+		};
+		14F043E81CBF797500D07048 /* 打地鼠练习 */ = {
+			isa = PBXGroup;
+			children = (
+				14F043E91CBF797500D07048 /* MD_NSThread_Game_VC.h */,
+				14F043EA1CBF797500D07048 /* MD_NSThread_Game_VC.m */,
+				14F043EB1CBF797500D07048 /* MDMouse.h */,
+				14F043EC1CBF797500D07048 /* MDMouse.m */,
+			);
+			path = "打地鼠练习";
+			sourceTree = "<group>";
+		};
 		14F0738B1B95B9010029A653 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -3049,6 +3049,7 @@
 				14EA84F41CA396E900A70A46 /* MD_TableView_VC.xib in Resources */,
 				14565E641BA94CD1009F7B2D /* playing35@2x.png in Resources */,
 				1463B2861AA1BD87006AE8D2 /* MDPickerViewViewController.xib in Resources */,
+				14F043EE1CBF797500D07048 /* MD_NSThread_VC.xib in Resources */,
 				14565E6A1BA94CD1009F7B2D /* playing40@2x.png in Resources */,
 				146D83171AA709F600F0C7FD /* SouthKorea.png in Resources */,
 				14565E841BA94CD1009F7B2D /* playing9@2x.png in Resources */,
@@ -3070,7 +3071,6 @@
 				1428AB7E1C84502C003CC10F /* MDWVViewController.xib in Resources */,
 				14EACA281C8038DF00F3FE2C /* MD_CollectionView_VC.xib in Resources */,
 				1428AB7B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib in Resources */,
-				14E1A0CA1CBE267D00468C47 /* MD_NSThread_VC.xib in Resources */,
 				1463B2A01AA1CAE4006AE8D2 /* heng.jpg in Resources */,
 				141B43371AA401BC008F2711 /* 罗丹-思想者.png in Resources */,
 				14565E5B1BA94CD1009F7B2D /* playing27@2x.png in Resources */,
@@ -3170,7 +3170,6 @@
 				148CD7181AAEC21600FAED9D /* MDObject2ViewController.m in Sources */,
 				14FFBE421C9AA995006BEB2B /* MASCompositeConstraint.m in Sources */,
 				146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */,
-				149735041CBB4A7A006BF1A3 /* MDMouse.m in Sources */,
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
 				14D670121C475F8400F911A4 /* UINavigationItem+MDCustom.m in Sources */,
 				1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */,
@@ -3202,7 +3201,6 @@
 				1489C8861CAA873E000CBC14 /* MD_NSXML_VC.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
 				14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */,
-				14E1A0CE1CBE38E200468C47 /* MDCustomThread.m in Sources */,
 				148CD71E1AAEC21600FAED9D /* TRSuperman.m in Sources */,
 				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
 				148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */,
@@ -3240,6 +3238,7 @@
 				14E604D71C5B0538000E0DED /* MDKVO_VC.m in Sources */,
 				14FFBE481C9AA995006BEB2B /* NSArray+MASAdditions.m in Sources */,
 				148CD7371AAEC98800FAED9D /* MDNSArrayNormalViewController.m in Sources */,
+				14F043ED1CBF797500D07048 /* MD_NSThread_VC.m in Sources */,
 				14DF14B01C4F7684005C10AA /* MDAVCameraPreviewView.m in Sources */,
 				141B433D1AA40202008F2711 /* MDPageViewController.m in Sources */,
 				148CD72C1AAEC62700FAED9D /* MDNSValueViewController.m in Sources */,
@@ -3271,7 +3270,6 @@
 				1417B11B1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m in Sources */,
 				14EACA271C8038DF00F3FE2C /* MD_CollectionView_VC.m in Sources */,
 				14F0739C1B95BC960029A653 /* MD_CGAffineTransform_ViewController.m in Sources */,
-				149734FE1CBB4A45006BF1A3 /* MD_NSThread_VC.m in Sources */,
 				14A727CF1CABB67A00DC7BC0 /* UIProgressView+AFNetworking.m in Sources */,
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
@@ -3291,6 +3289,7 @@
 				1463B26C1AA1B593006AE8D2 /* FirstViewController.m in Sources */,
 				145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */,
 				14A727B01CABB09F00DC7BC0 /* DGCUserInfo.m in Sources */,
+				14F043F11CBF797500D07048 /* MDMouse.m in Sources */,
 				147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */,
 				141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */,
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
@@ -3298,7 +3297,6 @@
 				14565E0B1BA94AB1009F7B2D /* MD_NSTimer_VC1.m in Sources */,
 				145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */,
 				148CD7101AAEC21600FAED9D /* TRPerson.m in Sources */,
-				149735011CBB4A68006BF1A3 /* MD_NSThread_Game_VC.m in Sources */,
 				14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */,
 				14FFBE461C9AA995006BEB2B /* MASViewAttribute.m in Sources */,
 				1497350B1CBB64D4006BF1A3 /* MyOperation.m in Sources */,
@@ -3306,6 +3304,7 @@
 				148740871CABC070007CC45C /* DGCPostManager.m in Sources */,
 				14A727741CAB8BB300DC7BC0 /* Reachability.m in Sources */,
 				146D83231AA70A3500F0C7FD /* MDSearchBarViewController.m in Sources */,
+				14F043F01CBF797500D07048 /* MD_NSThread_Game_VC.m in Sources */,
 				14A727961CABAC6D00DC7BC0 /* AFURLRequestSerialization.m in Sources */,
 				144F23E31C5F0295004ED3BC /* MD_PhotoLibrary_GridVC.m in Sources */,
 				14EA84FA1CA3AAAB00A70A46 /* ImageDownloader.m in Sources */,
@@ -3321,6 +3320,7 @@
 				14A727971CABAC6D00DC7BC0 /* AFURLResponseSerialization.m in Sources */,
 				141B43631AA4708C008F2711 /* MDNavi1ViewController.m in Sources */,
 				14F073911B95B9E80029A653 /* MDCustomView.m in Sources */,
+				14F043EF1CBF797500D07048 /* MDCustomThread.m in Sources */,
 				14A7279B1CABAD2B00DC7BC0 /* MD_AFNetwork_VC.m in Sources */,
 				14A727901CABAC6D00DC7BC0 /* AFHTTPRequestOperationManager.m in Sources */,
 				148CD7681AAED7B500FAED9D /* TRStudent7.m in Sources */,
