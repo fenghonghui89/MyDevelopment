@@ -25,22 +25,22 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-
+  
   [super viewDidAppear:animated];
   
   //任务同步执行，效率大大降低
-//    [self sync];
-//    [self finish];
+//  [self sync];
+//  [self finish];
   
   //任务异步执行，无法确定顺序
-//    [self async];
-//    [self finish];
+//  [self async];
+//  [self finish];
   
   //先异步执行一系列任务（1），完成后再执行特殊任务（2），保证效率，但会阻塞线程
-//    [self group];
+//  [self group];
   
   //先异步执行一系列任务（1），完成后再执行特殊任务（2），保证效率，也不会阻塞线程
-//  [self group2];
+  [self group2];
 }
 
 #pragma mark - < method > -
@@ -68,7 +68,7 @@
       NSLog(@"下载图片:%d",i);
     });
   }
-
+  
 }
 
 -(void)finish{
@@ -87,7 +87,7 @@
       NSLog(@"下载图片:%d",i);//异步
     });
   }
-
+  
   //会阻塞线程，所以在主线程下不能调用
   NSInteger result = dispatch_group_wait(myGroup, DISPATCH_TIME_FOREVER);
   NSLog(@"result:%@",result == 0?@"success":@"error");

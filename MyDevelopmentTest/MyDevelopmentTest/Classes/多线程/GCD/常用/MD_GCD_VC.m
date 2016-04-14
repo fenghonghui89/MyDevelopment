@@ -10,6 +10,7 @@
 
 @interface MD_GCD_VC ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
 @property (nonatomic,strong)dispatch_queue_t queue;
 @end
 
@@ -24,7 +25,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self test_saleTickets];
+  [self test_serialBlock];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -48,12 +49,22 @@
   
 }
 
-#pragma mark 自定义队列（DISPATCH_QUEUE_SERIAL串行 DISPATCH_QUEUE_CONCURRENT并行）
--(void)test_customQueue{
+#pragma mark 不同队列下的异步执行
+-(void)test_concurrentBlock{
 
-  dispatch_queue_t myQueue = dispatch_queue_create("com.myQueue.test", DISPATCH_QUEUE_SERIAL);
+  /*
+   不管是同步队列还是异步队列，dispatch_async都会马上返回，都不会阻塞线程
+   同步队列会执行完一个再执行下一个
+   异步队列下都是同时执行
+   */
   
-  dispatch_async(myQueue, ^{
+  dispatch_queue_t serialQueue = dispatch_queue_create("com.myqueue.serialQueue", DISPATCH_QUEUE_SERIAL);
+  dispatch_queue_t concurrentQueue = dispatch_queue_create("com.myqueue.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+  
+  dispatch_async(concurrentQueue, ^{
+    
+    sleep(3);
+    
     NSURL *url = [NSURL URLWithString:@"http://www.sinaimg.cn/home/2016/0412/U6939P30DT20160412105616.jpg"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [UIImage imageWithData:data];
@@ -63,13 +74,94 @@
     });
   });
 
+  dispatch_async(concurrentQueue, ^{
+    
+    sleep(3);
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.sinaimg.cn/home/2016/0412/U6939P30DT20160412105616.jpg"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [UIImage imageWithData:data];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      self.imageView1.image = img;
+    });
+  });
+}
+
+#pragma mark 不同队列下的同步执行
+-(void)test_serialBlock{
+  
+  /*
+   不管是同步队列还是异步队列，执行完才返回，都阻塞线程，如果在主线程调用就会阻塞程序
+   */
+  dispatch_queue_t serialQueue = dispatch_queue_create("com.myqueue.serialQueue", DISPATCH_QUEUE_SERIAL);
+  dispatch_queue_t concurrentQueue = dispatch_queue_create("com.myqueue.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+  
+  dispatch_sync(concurrentQueue, ^{
+    sleep(3);
+    NSLog(@"1111111");
+  });
+  
+  dispatch_sync(concurrentQueue, ^{
+    sleep(3);
+    NSLog(@"22222222");
+  });
+}
+
+#pragma mark 死锁
+-(void)test_deadLock{
+  
+  dispatch_queue_t serialQueue = dispatch_queue_create("com.myqueue.serialQueue", DISPATCH_QUEUE_SERIAL);
+  dispatch_queue_t concurrentQueue = dispatch_queue_create("com.myqueue.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+  
+  
+  //不会死锁
+//  dispatch_async(serialQueue, ^{
+//    NSLog(@"4");
+//    dispatch_sync(concurrentQueue, ^{
+//      sleep(3);
+//      NSLog(@"5");
+//    });
+//    NSLog(@"6");
+//  });//4 3sec 5 6
+  
+  //不会死锁
+//  dispatch_async(concurrentQueue, ^{
+//    NSLog(@"4");
+//    dispatch_sync(serialQueue, ^{
+//      sleep(3);
+//      NSLog(@"5");
+//    });
+//    NSLog(@"6");
+//  });//4 3sec 5 6
+  
+  //不会死锁
+//  dispatch_async(concurrentQueue, ^{
+//    NSLog(@"4");
+//    dispatch_sync(concurrentQueue, ^{
+//      sleep(3);
+//      NSLog(@"5");
+//    });
+//    NSLog(@"6");
+//  });//4 3sec 5 6
+  
+  //死锁
+  dispatch_async(serialQueue, ^{
+    NSLog(@"4");
+    dispatch_sync(serialQueue, ^{
+      sleep(3);
+      NSLog(@"5");
+    });
+    NSLog(@"6");
+  });//4
+  
 }
 
 #pragma mark 卖票问题(要用并行队列，暂未解决停止问题)
 -(void)test_saleTickets{
 
-  __block NSInteger ticket = 100;
-  __block NSLock *lock = [NSLock new];
+  static NSInteger ticket = 100;
+  __block NSLock *lock = [[NSLock alloc] init];
   
   dispatch_queue_t myQueue = dispatch_queue_create("com.myQueue.test", DISPATCH_QUEUE_CONCURRENT);
   self.queue = myQueue;
@@ -140,6 +232,10 @@
     NSLog(@"执行了子线程代码");
   });
 }
+
+
+
+
 
 #pragma mark - < action > -
 - (IBAction)btn1Tap:(id)sender {

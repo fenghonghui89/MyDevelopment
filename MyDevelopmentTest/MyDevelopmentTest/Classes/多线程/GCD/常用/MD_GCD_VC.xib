@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MD_GCD_VC">
             <connections>
                 <outlet property="imageView" destination="nSD-ck-Vzd" id="aSS-TB-3Vp"/>
+                <outlet property="imageView1" destination="keh-Ty-jbs" id="AhQ-CL-glO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +28,10 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSD-ck-Vzd">
-                    <rect key="frame" x="23" y="161" width="139" height="128"/>
+                    <rect key="frame" x="23" y="129" width="139" height="128"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keh-Ty-jbs">
+                    <rect key="frame" x="23" y="278" width="139" height="128"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
