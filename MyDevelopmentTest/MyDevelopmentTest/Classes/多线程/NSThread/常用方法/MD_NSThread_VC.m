@@ -9,9 +9,12 @@
 #import "MD_NSThread_VC.h"
 #import "MDCustomThread.h"
 
+
 @interface MD_NSThread_VC()
 @property(nonatomic,strong)UIButton *btn;
 @property(nonatomic,strong)NSLock *lock;
+@property(nonatomic,strong)NSConditionLock *conditionLock;
+@property(nonatomic,strong)NSRecursiveLock *recursiveLock;
 @property(nonatomic,strong)NSCondition *condition;
 @property(nonatomic,assign)NSInteger ticket;
 @property(nonatomic,strong)NSThread *thread1;
@@ -34,8 +37,8 @@
   
   [super viewDidAppear:animated];
   
-  [self test_NSThreadBase];
-  [self test_saleTickets];
+  [self test_NSRecursiveLock];
+  
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -74,7 +77,7 @@
 
 -(void)notiAction:(NSNotification *)noti{
   
-  NSLog(@"~~~%@",noti.name);
+  NSLog(@"~~~%@ %@",noti.name,[NSThread currentThread].name);
 }
 #pragma mark - 创建子线程 返回主线程
 -(void)test_createThread{
@@ -114,47 +117,27 @@
 }
 
 #pragma mark - 卖票问题(线程同步 加锁)
--(void)test_saleTickets{
+#pragma mark 线程加锁方法1 NSLock（也可以用其子类代替）
+-(void)test_saleTickets1{
   
-  self.btn = [[UIButton alloc] init];
+#pragma 锁 资源
   self.lock = [[NSLock alloc] init];
-  self.condition = [[NSCondition alloc] init];
   self.ticket = 100;
   
-  NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(saleMain) object:nil];
+#pragma 线程
+  NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(sale1) object:nil];
   thread1.name = @"1号窗口";
   [thread1 start];
   self.thread1 = thread1;
   
-  NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(saleMain) object:nil];
+  NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(sale1) object:nil];
   thread2.name = @"2号窗口";
   //  thread2.threadPriority = 1;//优先级0~1
-  thread2.qualityOfService = NSQualityOfServiceUserInitiated;//后续替代前者
+  thread2.qualityOfService = NSQualityOfServiceUserInitiated;//不久之后会替代前者
   [thread2 start];
   self.thread2 = thread2;
-  
-  NSThread *thread3 = [[NSThread alloc] initWithTarget:self selector:@selector(switchOnOff) object:nil];
-  thread3.name = @"开关";
-  [thread3 start];
 }
 
--(void)saleMain{
-
-  [self sale1];
-}
-
--(void)switchOnOff{
-  
-  while (YES) {
-    [self.condition lock];
-    [NSThread sleepForTimeInterval:1];
-    [self.condition signal];
-    [self.condition unlock];
-  }
-  
-}
-
-//线程加锁方法1 - NSLock（也可以用NSCondition代替）
 -(void)sale1{
 
   while (YES) {
@@ -167,17 +150,43 @@
       return;//return也可以退出线程
     }
     
-    [self.lock lock];
-    NSLog(@"%@窗口开始卖%ld号票",[NSThread currentThread].name,(long)self.ticket);
-    sleep(1);
-    self.ticket--;
-    [self.lock unlock];
     
+    if ([self.lock tryLock] == YES) {
+      NSLog(@"%@窗口开始卖%ld号票",[NSThread currentThread].name,(long)self.ticket);
+      self.ticket--;
+      sleep(1);
+      [self.lock unlock];
+    }else{
+      NSLog(@"锁不了 %@",[NSThread currentThread].name);
+    }
+    
+    
+    
+    NSLog(@"%@窗口卖完，重新准备",[NSThread currentThread].name);
   }
   
 }
 
-//线程加锁方法2 - 简便方法 不用加锁
+#pragma mark 线程加锁方法2 @synchronized
+-(void)test_saleTickets2{
+  
+#pragma 锁 资源
+  self.btn = [[UIButton alloc] init];
+  self.ticket = 100;
+  
+#pragma 线程
+  NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(sale2) object:nil];
+  thread1.name = @"1号窗口";
+  [thread1 start];
+  self.thread1 = thread1;
+  
+  NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(sale2) object:nil];
+  thread2.name = @"2号窗口";
+  thread2.qualityOfService = NSQualityOfServiceUserInitiated;
+  [thread2 start];
+  self.thread2 = thread2;
+}
+
 -(void)sale2{
 
   while (YES) {
@@ -187,7 +196,7 @@
       return;
     }
   
-    @synchronized(self.btn){
+    @synchronized(self.btn){//必须是一个不会销毁的对象，不能是[NSObject new]之类
       NSLog(@"%@窗口开始卖%ld号票",[NSThread currentThread].name,(long)self.ticket);
       [NSThread sleepForTimeInterval:1];
       self.ticket--;
@@ -196,10 +205,46 @@
   }
 }
 
-//线程加锁方法3 - NSCondition
+#pragma mark 线程加锁方法3 NSCondition 信号控制
+-(void)test_saleTickets3{
+  
+#pragma 锁 资源
+  self.condition = [[NSCondition alloc] init];
+  self.lock = [[NSLock alloc] init];
+  self.ticket = 100;
+  
+#pragma 线程
+  NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(sale3) object:nil];
+  thread1.name = @"1号窗口";
+  [thread1 start];
+  self.thread1 = thread1;
+  
+  NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(sale3) object:nil];
+  thread2.name = @"2号窗口";
+  //  thread2.threadPriority = 1;//优先级0~1
+  thread2.qualityOfService = NSQualityOfServiceUserInitiated;//不久之后会替代前者
+  [thread2 start];
+  self.thread2 = thread2;
+  
+  NSThread *thread3 = [[NSThread alloc] initWithTarget:self selector:@selector(switchOnOff) object:nil];
+  thread3.name = @"开关";
+  [thread3 start];
+}
+
+-(void)switchOnOff{
+  
+  while (YES) {
+    [self.condition lock];
+    [NSThread sleepForTimeInterval:1];
+    [self.condition signal];//发送信号
+    [self.condition unlock];
+  }
+  
+}
+
 -(void)sale3{
 
-  [self.condition wait];
+  [self.condition wait];//等待信号
   
   while (YES) {
     
@@ -217,6 +262,78 @@
 
 }
 
+#pragma mark 线程加锁方法4 NSConditionLock 条件锁
+-(void)test_saleTickets4{
+  
+#pragma 锁 资源
+  self.conditionLock = [[NSConditionLock alloc] initWithCondition:1];
+  self.ticket = 100;
+  
+#pragma 线程
+  NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(sale4_1) object:nil];
+  thread1.name = @"1号窗口";
+  [thread1 start];
+  self.thread1 = thread1;
+  
+  NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(sale4_2) object:nil];
+  thread2.name = @"2号窗口";
+  thread2.qualityOfService = NSQualityOfServiceUserInitiated;
+  [thread2 start];
+  self.thread2 = thread2;
+}
+
+-(void)sale4_1{
+  
+  while (YES) {
+    
+    if ([self.conditionLock tryLockWhenCondition:1]) {
+      NSLog(@"1号窗口开始卖%ld号票",(long)self.ticket);
+      sleep(1);
+      self.ticket--;
+      [self.conditionLock unlockWithCondition:2];
+    }
+    
+    //或者
+//    [self.conditionLock lockWhenCondition:1];
+//    NSLog(@"1号窗口开始卖%ld号票",(long)self.ticket);
+//    sleep(1);
+//    self.ticket--;
+//    [self.conditionLock unlockWithCondition:2];
+  }
+}
+
+-(void)sale4_2{
+  
+  while (YES) {
+    
+    [self.conditionLock lockWhenCondition:2];
+    NSLog(@"2号窗口开始卖%ld号票",(long)self.ticket);
+    sleep(1);
+    self.ticket--;
+    [self.conditionLock unlockWithCondition:1];
+  }
+}
+
+#pragma mark NSRecursiveLock 递归锁
+-(void)test_NSRecursiveLock{
+
+//  NSLock *lock = [NSLock new];//会死锁
+  NSRecursiveLock *lock = [NSRecursiveLock new];
+  
+  static void(^myBlock)(int);
+  myBlock = ^(int value){
+    [lock lock];
+    if (value > 0) {
+      NSLog(@"value :%d",value);
+      sleep(1);
+      myBlock(value-1);
+    }
+    [lock unlock];
+    NSLog(@"解锁");
+  };
+  
+  myBlock(5);
+}
 #pragma mark - NSObject扩展方法
 -(void)test_NSObjectExpand{
 

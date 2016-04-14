@@ -65,7 +65,7 @@
 
 }
 
-#pragma mark 卖票问题(要用并行队列)
+#pragma mark 卖票问题(要用并行队列，暂未解决停止问题)
 -(void)test_saleTickets{
 
   __block NSInteger ticket = 100;
