@@ -90,7 +90,7 @@ typedef uint64_t dispatch_time_t;
 __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_4_0)
 DISPATCH_EXPORT DISPATCH_WARN_RESULT DISPATCH_NOTHROW
 dispatch_time_t
-dispatch_time(dispatch_time_t when, int64_t delta);
+dispatch_time(dispatch_time_t when, int64_t delta);//第一个参数一般是DISPATCH_TIME_NOW，表示从现在开始；延时的具体时间
 
 /*!
  * @function dispatch_walltime

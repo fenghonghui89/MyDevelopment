@@ -11,7 +11,7 @@
 @interface MD_GCD_VC ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView1;
-@property (nonatomic,strong)dispatch_queue_t queue;
+@property (nonatomic,assign)BOOL needStop;
 @end
 
 @implementation MD_GCD_VC
@@ -25,11 +25,12 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self test_serialBlock];
+  [self test_dispatch_semaphore_t];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
 
+  self.needStop = YES;
   [super viewDidDisappear:animated];
 }
 #pragma mark - < method > -
@@ -145,7 +146,7 @@
 //    NSLog(@"6");
 //  });//4 3sec 5 6
   
-  //死锁
+  //死锁 (5等待6 6等待5)
   dispatch_async(serialQueue, ^{
     NSLog(@"4");
     dispatch_sync(serialQueue, ^{
@@ -164,10 +165,14 @@
   __block NSLock *lock = [[NSLock alloc] init];
   
   dispatch_queue_t myQueue = dispatch_queue_create("com.myQueue.test", DISPATCH_QUEUE_CONCURRENT);
-  self.queue = myQueue;
   
   dispatch_async(myQueue, ^{
     while (YES) {
+      
+      if (self.needStop) {
+        return ;
+      }
+      
       [lock lock];
       [NSThread sleepForTimeInterval:0.5];
       NSLog(@"1号子线程结束 %ld",(long)ticket);
@@ -178,6 +183,11 @@
   
   dispatch_async(myQueue, ^{
     while (YES) {
+      
+      if (self.needStop) {
+        return ;
+      }
+      
       [lock lock];
       [NSThread sleepForTimeInterval:0.5];
       NSLog(@"2号子线程结束 %ld",(long)ticket);
@@ -188,6 +198,11 @@
   
   dispatch_async(myQueue, ^{
     while (YES) {
+      
+      if (self.needStop) {
+        return ;
+      }
+      
       [lock lock];
       [NSThread sleepForTimeInterval:0.5];
       NSLog(@"3号子线程结束 %ld",(long)ticket);
@@ -203,12 +218,13 @@
  如果循环里面执行的代码相互独立，可以用dispatch_apply结合并行线程队列，提高效能
  size_t：一种用来记录大小的“整形”数据类型，sizeof(xxx)返回的就是size_t 这里相当于循环次数
  dispatch_apply和普通for循环一样，执行完才会返回，所以会阻塞进程
+ 正确使用方法：为了不阻塞主线程，一般把dispatch_apply放在异步队列中调用，然后执行完成后通知主线程
  */
 -(void)test_apply{
 
   __block int sum = 0;
   __block int p = 3;
-  int count = 5;
+  int count = 5;//执行次数
   
   dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
   dispatch_apply(count, myQueue, ^(size_t i){
@@ -220,7 +236,7 @@
 
 }
 
-#pragma mark dispatch_after dispatch_time_t
+#pragma mark dispatch_after / dispatch_time_t
 /*
  不是一定时间后执行相应的任务，而是一定时间后，将执行的操作加入到队列中（队列里面再分配执行的时间）
  */
@@ -234,12 +250,125 @@
 }
 
 
+#pragma mark dispatch_barrier_async
+/*
+ 必须为dispatch_queue_t创建的串行队列才有效，其他队列相当于dispatch_async
+ */
+-(void)test_barrier{
 
+  dispatch_queue_t queue = dispatch_queue_create("com.queue.test", DISPATCH_QUEUE_CONCURRENT);
+  
+  dispatch_async(queue, ^{
+    sleep(2);
+    NSLog(@"1");
+  });
+  
+  dispatch_async(queue, ^{
+    sleep(2);
+    NSLog(@"2");
+  });
+  
+  dispatch_barrier_async(queue, ^{
+    sleep(2);
+    NSLog(@"dispatch_barrier_async");
+  });
+  
+  dispatch_async(queue, ^{
+    sleep(2);
+    NSLog(@"3");
+  });
+  
+  dispatch_async(queue, ^{
+    sleep(2);
+    NSLog(@"4");
+  });
+  
+  dispatch_async(queue, ^{
+    sleep(2);
+    NSLog(@"5");
+  });
+}
 
+#pragma mark dispatch_async_f
+-(void)test_async_f{
 
+  dispatch_queue_t queue = dispatch_queue_create("com.queue.test", DISPATCH_QUEUE_CONCURRENT);
+  
+  dispatch_async_f(queue, @"111", msg1);
+  dispatch_async_f(queue, @"222", msg2);
+  dispatch_async_f(queue, @"333", msg3);
+}
+
+void msg1(){
+  sleep(2);
+  NSLog(@"msg1");
+}
+
+void msg2(){
+  sleep(2);
+  NSLog(@"msg2");
+}
+
+void msg3(){
+  sleep(2);
+  NSLog(@"msg3");
+}
+
+#pragma mark dispatch_suspend / dispatch_resume
+-(void)test_dispatch_suspend{
+
+  dispatch_queue_t queue = dispatch_queue_create("com.queue.test", DISPATCH_QUEUE_CONCURRENT);
+  dispatch_async(queue, ^{
+    for (int i = 0; i<10; i++) {
+      if (i == 5) {
+        dispatch_suspend(queue);
+        sleep(3);
+        NSLog(@"特殊处理");
+        dispatch_resume(queue);
+      }
+      NSLog(@"i:%d",i);
+    }
+  });
+}
+
+#pragma mark dispatch_semaphore_t
+/*
+ 信号量>0 就不会阻塞
+ */
+-(void)test_dispatch_semaphore_t{
+
+  dispatch_queue_t queue = dispatch_queue_create("com.queue.abc", DISPATCH_QUEUE_CONCURRENT);
+  dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+  
+  dispatch_async(queue, ^{
+    NSLog(@"下载中");
+    sleep(3);
+    dispatch_semaphore_signal(sema);
+  });
+  
+  dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);//用DISPATCH_TIME_NOW会起不到等待效果
+  dispatch_async(queue, ^{
+    NSLog(@"下载完成");
+  });
+  
+
+  //每2秒输出异步10个数字
+//  dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);//为了让一次输出10个，初始信号量为10；
+//  dispatch_queue_t queue = dispatch_queue_create("com.queue.abc", DISPATCH_QUEUE_CONCURRENT);
+//  
+//  for (int i = 0; i <100; i++){
+//    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//每进来1次，信号量-1;进来10次后就一直hold住，直到信号量大于0；
+//    dispatch_async(queue, ^{
+//      NSLog(@"%i",i);
+//      sleep(2);
+//      dispatch_semaphore_signal(semaphore);
+//    });
+//  }
+  
+}
 #pragma mark - < action > -
 - (IBAction)btn1Tap:(id)sender {
-  
+  self.needStop = YES;
 }
 
 @end

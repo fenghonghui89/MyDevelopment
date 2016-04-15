@@ -132,7 +132,7 @@ DISPATCH_EXPORT DISPATCH_NONNULL1 DISPATCH_NONNULL3 DISPATCH_NOTHROW
 void
 dispatch_async_f(dispatch_queue_t queue,
 	void *context,
-	dispatch_function_t work);
+	dispatch_function_t work);//参数：队列 app内全局标识 函数 注意：函数不能带参数
 
 /*!
  * @function dispatch_sync
@@ -718,7 +718,7 @@ DISPATCH_EXPORT DISPATCH_NONNULL2 DISPATCH_NONNULL3 DISPATCH_NOTHROW
 void
 dispatch_after(dispatch_time_t when,
 	dispatch_queue_t queue,
-	dispatch_block_t block);
+	dispatch_block_t block);//不是一定时间后执行相应的任务，而是一定时间后，将执行的操作加入到队列中（队列里面再分配执行的时间）
 #endif
 
 /*!

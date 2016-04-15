@@ -37,10 +37,10 @@
 //  [self finish];
   
   //先异步执行一系列任务（1），完成后再执行特殊任务（2），保证效率，但会阻塞线程
-//  [self group];
+  [self group];
   
   //先异步执行一系列任务（1），完成后再执行特殊任务（2），保证效率，也不会阻塞线程
-  [self group2];
+//  [self group2];
 }
 
 #pragma mark - < method > -
@@ -88,9 +88,13 @@
     });
   }
   
-  //会阻塞线程，所以在主线程下不能调用
-  NSInteger result = dispatch_group_wait(myGroup, DISPATCH_TIME_FOREVER);
-  NSLog(@"result:%@",result == 0?@"success":@"error");
+  //会阻塞当前线程，所以在主线程下不能调用
+//  NSInteger result = dispatch_group_wait(myGroup, DISPATCH_TIME_FOREVER);
+//  NSLog(@"result:%@",result == 0?@"success":@"error");
+  
+  dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC*5);
+  NSInteger result1 = dispatch_group_wait(myGroup, delayTime);
+  NSLog(@"result1:%@",result1 == 0?@"success":@"error");
   
   [self finish];
 }

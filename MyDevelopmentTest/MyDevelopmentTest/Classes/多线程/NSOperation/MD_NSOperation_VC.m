@@ -120,6 +120,10 @@
    优先级不能替代依赖关系,优先级只是对已经准备好的 operations确定执行顺序。先满足依赖关系,然后再根据优先级从所有准备好的操作中选择优先级最高的那个执行。
    
    如果应用有多个operation queue,每个queue的优先级等级是互相独立的。
+   
+   不能添加相互依赖，会死锁，比如 A依赖B，B依赖A。
+   
+   可以在不同的队列之间依赖，反正就是这个依赖是添加到任务身上的，和队列没关系。
    */
   
   NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
