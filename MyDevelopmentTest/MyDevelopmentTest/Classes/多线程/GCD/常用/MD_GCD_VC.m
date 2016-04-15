@@ -25,7 +25,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self test_dispatch_semaphore_t];
+  [self test_barrier];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -35,7 +35,7 @@
 }
 #pragma mark - < method > -
 
-#pragma mark 开启子线程下载图片 返回主线程显示
+#pragma mark - 开启子线程下载图片 返回主线程显示
 -(void)test_downloalImg{
 
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -50,11 +50,11 @@
   
 }
 
-#pragma mark 不同队列下的异步执行
+#pragma mark - 不同队列下的异步执行
 -(void)test_concurrentBlock{
 
   /*
-   不管是同步队列还是异步队列，dispatch_async都会马上返回，都不会阻塞线程
+   不管是同步队列还是异步队列，dispatch_async提交block后都会马上返回，都不会阻塞线程
    同步队列会执行完一个再执行下一个
    异步队列下都是同时执行
    */
@@ -89,11 +89,11 @@
   });
 }
 
-#pragma mark 不同队列下的同步执行
+#pragma mark - 不同队列下的同步执行
 -(void)test_serialBlock{
   
   /*
-   不管是同步队列还是异步队列，执行完才返回，都阻塞线程，如果在主线程调用就会阻塞程序
+   不管是同步队列还是异步队列，dispatch_sync提交block后都要等block执行完才返回，都阻塞线程，如果在主线程调用就会阻塞程序
    */
   dispatch_queue_t serialQueue = dispatch_queue_create("com.myqueue.serialQueue", DISPATCH_QUEUE_SERIAL);
   dispatch_queue_t concurrentQueue = dispatch_queue_create("com.myqueue.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
@@ -109,7 +109,7 @@
   });
 }
 
-#pragma mark 死锁
+#pragma mark - 死锁
 -(void)test_deadLock{
   
   dispatch_queue_t serialQueue = dispatch_queue_create("com.myqueue.serialQueue", DISPATCH_QUEUE_SERIAL);
@@ -158,7 +158,7 @@
   
 }
 
-#pragma mark 卖票问题(要用并行队列，暂未解决停止问题)
+#pragma mark - 卖票问题
 -(void)test_saleTickets{
 
   static NSInteger ticket = 100;
@@ -213,10 +213,10 @@
   
 }
 
-#pragma mark dispatch_apply
+#pragma mark - dispatch_apply
 /*
  如果循环里面执行的代码相互独立，可以用dispatch_apply结合并行线程队列，提高效能
- size_t：一种用来记录大小的“整形”数据类型，sizeof(xxx)返回的就是size_t 这里相当于循环次数
+ size_t：一种用来记录大小的“整形”数据类型，sizeof(xxx)返回的就是size_t 这里相当于当前循环次数
  dispatch_apply和普通for循环一样，执行完才会返回，所以会阻塞进程
  正确使用方法：为了不阻塞主线程，一般把dispatch_apply放在异步队列中调用，然后执行完成后通知主线程
  */
@@ -236,7 +236,7 @@
 
 }
 
-#pragma mark dispatch_after / dispatch_time_t
+#pragma mark - dispatch_after / dispatch_time_t
 /*
  不是一定时间后执行相应的任务，而是一定时间后，将执行的操作加入到队列中（队列里面再分配执行的时间）
  */
@@ -250,46 +250,36 @@
 }
 
 
-#pragma mark dispatch_barrier_async
+#pragma mark - dispatch_barrier_async
 /*
- 必须为dispatch_queue_t创建的串行队列才有效，其他队列相当于dispatch_async
+ 必须为dispatch_queue_t创建的并行队列才有效，其他队列相当于dispatch_async
  */
 -(void)test_barrier{
 
   dispatch_queue_t queue = dispatch_queue_create("com.queue.test", DISPATCH_QUEUE_CONCURRENT);
   
   dispatch_async(queue, ^{
-    sleep(2);
     NSLog(@"1");
   });
   
   dispatch_async(queue, ^{
-    sleep(2);
     NSLog(@"2");
   });
   
   dispatch_barrier_async(queue, ^{
-    sleep(2);
     NSLog(@"dispatch_barrier_async");
   });
   
   dispatch_async(queue, ^{
-    sleep(2);
     NSLog(@"3");
   });
   
   dispatch_async(queue, ^{
-    sleep(2);
     NSLog(@"4");
-  });
-  
-  dispatch_async(queue, ^{
-    sleep(2);
-    NSLog(@"5");
   });
 }
 
-#pragma mark dispatch_async_f
+#pragma mark - dispatch_async_f
 -(void)test_async_f{
 
   dispatch_queue_t queue = dispatch_queue_create("com.queue.test", DISPATCH_QUEUE_CONCURRENT);
@@ -314,7 +304,7 @@ void msg3(){
   NSLog(@"msg3");
 }
 
-#pragma mark dispatch_suspend / dispatch_resume
+#pragma mark - dispatch_suspend / dispatch_resume
 -(void)test_dispatch_suspend{
 
   dispatch_queue_t queue = dispatch_queue_create("com.queue.test", DISPATCH_QUEUE_CONCURRENT);
@@ -331,9 +321,10 @@ void msg3(){
   });
 }
 
-#pragma mark dispatch_semaphore_t
+#pragma mark - dispatch_semaphore_t
 /*
  信号量>0 就不会阻塞
+ dispatch_semaphore_wait注意time的选择
  */
 -(void)test_dispatch_semaphore_t{
 

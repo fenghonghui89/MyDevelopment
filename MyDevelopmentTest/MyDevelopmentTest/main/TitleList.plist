@@ -87,6 +87,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>NSURLSession</string>
+				<key>className</key>
+				<string>MD_NSURLSession_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>AFNetwork</string>
 				<key>className</key>
 				<string>MD_AFNetwork_VC</string>

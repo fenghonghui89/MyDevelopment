@@ -320,7 +320,7 @@
 //  NSLock *lock = [NSLock new];//会死锁
   NSRecursiveLock *lock = [NSRecursiveLock new];
   
-  static void(^myBlock)(int);
+  static void(^myBlock)(int);//static修饰的变量 可以在block里面修改 哪怕这个变量是个block指针
   myBlock = ^(int value){
     [lock lock];
     if (value > 0) {
@@ -333,6 +333,8 @@
   };
   
   myBlock(5);
+  
+  //结果：5 4 3 2 1 解锁 解锁 解锁 解锁 解锁
 }
 #pragma mark - NSObject扩展方法
 -(void)test_NSObjectExpand{

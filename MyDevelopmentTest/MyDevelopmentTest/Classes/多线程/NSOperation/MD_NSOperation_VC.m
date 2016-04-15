@@ -210,7 +210,7 @@
   self.queue = queue;
 }
 
-#pragma mark - wati
+#pragma mark - waitUntilFinished
 -(void)test_wait{
 
   NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{

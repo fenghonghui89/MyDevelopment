@@ -535,7 +535,7 @@ NS_CLASS_AVAILABLE(10_9, 7_0)
 
 /* The following methods work on the path portion of a URL in the same manner that the NSPathUtilities methods on NSString do.
  */
-+ (nullable NSURL *)fileURLWithPathComponents:(NSArray<NSString *> *)components NS_AVAILABLE(10_6, 4_0);
++ (nullable NSURL *)fileURLWithPathComponents:(NSArray<NSString *> *)components NS_AVAILABLE(10_6, 4_0);//根据路径创建本地文件url
 @property (nullable, readonly, copy) NSArray<NSString *> *pathComponents NS_AVAILABLE(10_6, 4_0);
 @property (nullable, readonly, copy) NSString *lastPathComponent NS_AVAILABLE(10_6, 4_0);
 @property (nullable, readonly, copy) NSString *pathExtension NS_AVAILABLE(10_6, 4_0);
