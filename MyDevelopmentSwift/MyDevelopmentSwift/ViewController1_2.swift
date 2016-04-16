@@ -16,50 +16,50 @@ class ViewController1_2: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
 
     
-    //TODO:--- 基本 ---
-//    //TODO:常量及变量 定义 初始化 赋值 动态推导
-////    var v;//不指定类型就要初始化，否则非法
-//    var v:Int;//指定类型就可以不初始化
-//    var v1 = 20; v1 = 30;
-//    var v2:Int; v2 = 20;
-//    var v3:Int = 20; v3 = 30;
-//    
-////    let l;//非法，同上
-//    let l:Int;
-//    let l1 = 20; //l1 = 20;//常量不能改变值
-//    let l2:Int; l2 = 20;
-//    let l3:Int = 20;//l3 = 30;//常量不能改变值
-//
-//
-//    
-//    //TODO:数值可读性 中文变量/常量名
-//    let productid = 2_000_000;
-//    let 你好 = "你们";
-//    
-//    print("ID:\(productid) \n Name:\(你好)");
-//
-//    
-//    
-//    
-//
-//    
-//    
-//
-//    
-//    //TODO:类型范围
-//    let min = INT64_MAX;
-//    let max = Int64.max
-//    print("wo shi \(min) \n \(max)");
-//
-//    
-//    
-//    
-//    
-//    //TODO:类型转换
-//    let dv2:Double = Double(123);
-//    let ii = Int(12.3);
-//    let i:float_t = 1;
-//    print("\(dv2)  \(ii) \(i)");
+    //MARK:- <<< 基本 >>> -
+    //MARK:常量及变量 定义 初始化 赋值 动态推导
+//    var v;//不指定类型就要初始化，否则非法
+    var v:Int;//指定类型就可以不初始化
+    var v1 = 20; v1 = 30;
+    var v2:Int; v2 = 20;
+    var v3:Int = 20; v3 = 30;
+    
+//    let l;//非法，同上
+    let l:Int;
+    let l1 = 20; //l1 = 20;//常量不能改变值
+    let l2:Int; l2 = 20;
+    let l3:Int = 20;//l3 = 30;//常量不能改变值
+
+
+    
+    //MARK:数值可读性 中文变量/常量名
+    let productid = 2_000_000;
+    let 你好 = "你们";
+    
+    print("ID:\(productid) \n Name:\(你好)");
+
+    
+    
+    
+
+    
+    
+
+    
+    //MARK:类型范围
+    let min = INT64_MAX;
+    let max = Int64.max
+    print("wo shi \(min) \n \(max)");
+
+    
+    
+    
+    
+    //MARK:类型转换
+    let dv2:Double = Double(123);
+    let ii = Int(12.3);
+    let i:float_t = 1;
+    print("\(dv2)  \(ii) \(i)");
 
     
     

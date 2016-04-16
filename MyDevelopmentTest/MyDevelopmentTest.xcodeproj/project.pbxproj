@@ -1267,11 +1267,12 @@
 			path = "NSKeyedArchiver&NSKeyedUnarchiver";
 			sourceTree = "<group>";
 		};
-		1426A1811C44DA5000FB191D /* NSRunLoop */ = {
+		1426A1811C44DA5000FB191D /* / */ = {
 			isa = PBXGroup;
 			children = (
 				1426A1831C44DA6300FB191D /* MDTestNSRunLoop.m */,
 			);
+			name = /;
 			path = NSRunLoop;
 			sourceTree = "<group>";
 		};
@@ -1603,7 +1604,7 @@
 				14E604D21C5B041E000E0DED /* NSKeyValueObserving */,
 				1488298D1C55C5A00034ACFC /* NSEnumerator */,
 				1426A1891C44DE0A00FB191D /* NSBundle */,
-				1426A1811C44DA5000FB191D /* NSRunLoop */,
+				1426A1811C44DA5000FB191D /* / */,
 				1426A17D1C44D91100FB191D /* NSKeyedArchiver&NSKeyedUnarchiver */,
 				1426A1791C44D82A00FB191D /* NSFileManager&NSFileHandle */,
 				1426A1751C44D79000FB191D /* NSThread */,
