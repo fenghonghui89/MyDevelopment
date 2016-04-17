@@ -16,14 +16,43 @@
 @implementation MDAppDelegate
 
 #pragma mark - < method > -
+#pragma mark 注册远程推送
 -(void)registerForRemoteNotification:(UIApplication *)application{
+  
   UIUserNotificationSettings *setting =[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];
   [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
   [application registerForRemoteNotifications];
 }
 
-#pragma mark - < callback > -
-#pragma mark UIApplicationDelegate
+#pragma mark 注册本地推送
+-(void)localNotification{
+
+  UILocalNotification* noti = [[UILocalNotification alloc] init];
+  
+  //设置发射时间为5s之后
+  NSDate* date = [NSDate new];
+  noti.fireDate = [date dateByAddingTimeInterval:5];
+  
+  //设置弹出内容
+  noti.alertBody = @"好久没来玩啦~";
+  
+  noti.alertAction = @"alertAction";
+  
+  //设置应用图标右上角显示的数字
+  noti.applicationIconBadgeNumber = 3;
+  
+  //传参（在AppDelegate）
+  noti.userInfo = @{@"name":@"zhangsan"};
+  
+  //把通知添加进日程
+  [[UIApplication sharedApplication]scheduleLocalNotification:noti];
+  
+  //设置每隔1分钟弹出通知
+  [noti setRepeatInterval:NSCalendarUnitMinute];
+}
+
+#pragma mark - < UIApplicationDelegate >
+#pragma mark - app lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
   
   MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
@@ -65,6 +94,7 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - remote noti
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
   NSString *decToken = [NSString stringWithFormat:@"%@", deviceToken];
@@ -81,5 +111,18 @@
   }
 
   [ud synchronize];
+}
+
+#pragma mark - local noti
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+  //点击通知返回应用时会调用该方法
+  //接收传递的参数
+  NSString* name = [notification.userInfo objectForKey:@"name"];
+  NSLog(@"name = %@",name);
+  
+  //删除通知：全部或者指定某一个，不删除的话就算应用删除了也会一直弹出来
+  [[UIApplication sharedApplication] cancelAllLocalNotifications];
+  //[[UIApplication sharedApplication] cancelLocalNotification:notification];
+  
 }
 @end

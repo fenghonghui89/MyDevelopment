@@ -30,14 +30,12 @@
 		143EA6261B0F3ABA007B2D02 /* Student1.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA6211B0F3ABA007B2D02 /* Student1.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		143EA6291B0F3ADF007B2D02 /* MDAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA6281B0F3ADF007B2D02 /* MDAnimal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		143EA62C1B0F3AEC007B2D02 /* MDCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA62B1B0F3AEC007B2D02 /* MDCat.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		149232A51B130C5E0013BBA3 /* 属性关键字.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 149232A41B130C5E0013BBA3 /* 属性关键字.rtf */; };
 		149232BF1B131A2F0013BBA3 /* MD_Category_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B41B131A2F0013BBA3 /* MD_Category_ViewController.m */; };
 		149232C01B131A2F0013BBA3 /* TRMyclass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B61B131A2F0013BBA3 /* TRMyclass1.m */; };
 		149232C11B131A2F0013BBA3 /* TRMyclass1+TRCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232B91B131A2F0013BBA3 /* TRMyclass1+TRCategory.m */; };
 		149232C21B131A2F0013BBA3 /* NSString+TRJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232BC1B131A2F0013BBA3 /* NSString+TRJson.m */; };
 		149232C61B131E750013BBA3 /* MD_OC_Protocol_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232C51B131E750013BBA3 /* MD_OC_Protocol_ViewController.m */; };
 		149232D01B131FC80013BBA3 /* TRMyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 149232CC1B131FC80013BBA3 /* TRMyClass.m */; };
-		149232D21B1324560013BBA3 /* 分类、扩展、协议、引用.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 149232D11B1324560013BBA3 /* 分类、扩展、协议、引用.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +77,6 @@
 		143EA6281B0F3ADF007B2D02 /* MDAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAnimal.m; sourceTree = "<group>"; };
 		143EA62A1B0F3AEC007B2D02 /* MDCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCat.h; sourceTree = "<group>"; };
 		143EA62B1B0F3AEC007B2D02 /* MDCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCat.m; sourceTree = "<group>"; };
-		149232A41B130C5E0013BBA3 /* 属性关键字.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "属性关键字.rtf"; sourceTree = "<group>"; };
 		149232B31B131A2F0013BBA3 /* MD_Category_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Category_ViewController.h; sourceTree = "<group>"; };
 		149232B41B131A2F0013BBA3 /* MD_Category_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Category_ViewController.m; sourceTree = "<group>"; };
 		149232B51B131A2F0013BBA3 /* TRMyclass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRMyclass1.h; sourceTree = "<group>"; };
@@ -96,7 +93,6 @@
 		149232CD1B131FC80013BBA3 /* TRProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRProtocol.h; sourceTree = "<group>"; };
 		149232CE1B131FC80013BBA3 /* TRProtocol2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRProtocol2.h; sourceTree = "<group>"; };
 		149232CF1B131FC80013BBA3 /* TRProtocol3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRProtocol3.h; sourceTree = "<group>"; };
-		149232D11B1324560013BBA3 /* 分类、扩展、协议、引用.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "分类、扩展、协议、引用.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +112,8 @@
 				1417A2231C3CB8AB00968137 /* MDBlockValueViewController.h */,
 				1417A2241C3CB8AB00968137 /* MDBlockValueViewController.m */,
 			);
-			path = "存储变量、调用";
+			name = "存储变量、调用";
+			path = "基础用法/存储变量、调用";
 			sourceTree = "<group>";
 		};
 		143EA5901B0F2C74007B2D02 = {
@@ -173,7 +170,6 @@
 				149232B21B131A2F0013BBA3 /* 分类、扩展 */,
 				143EA6021B0F3023007B2D02 /* 属性、初始化 */,
 				143EA5F41B0F2EE6007B2D02 /* block */,
-				149232A31B130C5E0013BBA3 /* 笔记与资料 */,
 			);
 			path = OC;
 			sourceTree = "<group>";
@@ -193,6 +189,7 @@
 		143EA5F41B0F2EE6007B2D02 /* block */ = {
 			isa = PBXGroup;
 			children = (
+				1417A2221C3CB8AB00968137 /* 存储变量、调用 */,
 				143EA5F51B0F2EE6007B2D02 /* 基础用法 */,
 			);
 			path = block;
@@ -203,7 +200,6 @@
 			children = (
 				143EA5F61B0F2EE6007B2D02 /* MDBlockNormalViewController.h */,
 				143EA5F71B0F2EE6007B2D02 /* MDBlockNormalViewController.m */,
-				1417A2221C3CB8AB00968137 /* 存储变量、调用 */,
 			);
 			path = "基础用法";
 			sourceTree = "<group>";
@@ -252,15 +248,6 @@
 				143EA6211B0F3ABA007B2D02 /* Student1.m */,
 			);
 			path = "属性及其演变";
-			sourceTree = "<group>";
-		};
-		149232A31B130C5E0013BBA3 /* 笔记与资料 */ = {
-			isa = PBXGroup;
-			children = (
-				149232D11B1324560013BBA3 /* 分类、扩展、协议、引用.rtf */,
-				149232A41B130C5E0013BBA3 /* 属性关键字.rtf */,
-			);
-			path = "笔记与资料";
 			sourceTree = "<group>";
 		};
 		149232AD1B130C8A0013BBA3 /* 多态 */ = {
@@ -382,14 +369,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				143EA5E61B0F2CF9007B2D02 /* Info.plist in Resources */,
-				149232D21B1324560013BBA3 /* 分类、扩展、协议、引用.rtf in Resources */,
 				143EA5E31B0F2CF9007B2D02 /* LaunchScreen.xib in Resources */,
 				143EA5DA1B0F2CF9007B2D02 /* back_icon.png in Resources */,
 				143EA5E51B0F2CF9007B2D02 /* Images.xcassets in Resources */,
 				143EA5E21B0F2CF9007B2D02 /* 记录.rtf in Resources */,
 				143EA5E41B0F2CF9007B2D02 /* Main.storyboard in Resources */,
 				143EA5E11B0F2CF9007B2D02 /* TitleList.plist in Resources */,
-				149232A51B130C5E0013BBA3 /* 属性关键字.rtf in Resources */,
 				143EA5DE1B0F2CF9007B2D02 /* MDClassesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

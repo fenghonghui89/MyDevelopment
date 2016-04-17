@@ -14,13 +14,16 @@
 
 @implementation MDNSDateViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
+  
     [super viewDidLoad];
-    
-    [self dateZoneNow];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+
+  [super viewDidAppear:animated];
+  [self dateZoneNow];
+}
 #pragma mark - 时间创建
 -(void)dateNormal
 {
