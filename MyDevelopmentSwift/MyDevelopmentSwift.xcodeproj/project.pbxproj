@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		145CE7BA1CB663B70098B96F /* ViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CE7B91CB663B70098B96F /* ViewController6.swift */; };
 		1484847F1CA1BA6A00FA0DFF /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController5.swift */; };
 		149DDA1E1CC2021C00C7A8B1 /* ViewController_func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1D1CC2021C00C7A8B1 /* ViewController_func.swift */; };
 		149DDA201CC21B5E00C7A8B1 /* ViewController_block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1F1CC21B5E00C7A8B1 /* ViewController_block.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		145CE7B91CB663B70098B96F /* ViewController6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController6.swift; sourceTree = "<group>"; };
 		1484847E1CA1BA6A00FA0DFF /* ViewController5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController5.swift; sourceTree = "<group>"; };
 		149DDA1D1CC2021C00C7A8B1 /* ViewController_func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_func.swift; sourceTree = "<group>"; };
 		149DDA1F1CC21B5E00C7A8B1 /* ViewController_block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_block.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				14AC48D41C7608D900FD1C56 /* ViewController3.swift */,
 				14AC48D61C7618CD00FD1C56 /* ViewController4.swift */,
 				1484847E1CA1BA6A00FA0DFF /* ViewController5.swift */,
-				145CE7B91CB663B70098B96F /* ViewController6.swift */,
 				149DDA1D1CC2021C00C7A8B1 /* ViewController_func.swift */,
 				149DDA1F1CC21B5E00C7A8B1 /* ViewController_block.swift */,
 				14FC0CC41C9844FD008622B7 /* bookmark */,
@@ -178,7 +175,6 @@
 				14AF34B71C7362AC007DC722 /* AppDelegate.swift in Sources */,
 				14AC48D51C7608D900FD1C56 /* ViewController3.swift in Sources */,
 				149DDA1E1CC2021C00C7A8B1 /* ViewController_func.swift in Sources */,
-				145CE7BA1CB663B70098B96F /* ViewController6.swift in Sources */,
 				14AC48D71C7618CD00FD1C56 /* ViewController4.swift in Sources */,
 				149DDA201CC21B5E00C7A8B1 /* ViewController_block.swift in Sources */,
 				1484847F1CA1BA6A00FA0DFF /* ViewController5.swift in Sources */,
