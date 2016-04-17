@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403E3271B8C68ED009C8CAC /* myUILabel.m */; };
+		14089CC61CC380A300603D92 /* MD_MediaPlayer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14089CC41CC380A300603D92 /* MD_MediaPlayer_VC.m */; };
+		14089CC71CC380A300603D92 /* MD_MediaPlayer_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14089CC51CC380A300603D92 /* MD_MediaPlayer_VC.xib */; };
 		140925821CC0CC7C00B17B2E /* books.xml in Resources */ = {isa = PBXBuildFile; fileRef = 140925811CC0CC7C00B17B2E /* books.xml */; };
 		140925871CC0D82200B17B2E /* MD_NSURLSession_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 140925851CC0D82200B17B2E /* MD_NSURLSession_VC.m */; };
 		140925881CC0D82200B17B2E /* MD_NSURLSession_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140925861CC0D82200B17B2E /* MD_NSURLSession_VC.xib */; };
@@ -404,6 +406,9 @@
 /* Begin PBXFileReference section */
 		1403E3261B8C68ED009C8CAC /* myUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myUILabel.h; sourceTree = "<group>"; };
 		1403E3271B8C68ED009C8CAC /* myUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myUILabel.m; sourceTree = "<group>"; };
+		14089CC31CC380A300603D92 /* MD_MediaPlayer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_MediaPlayer_VC.h; sourceTree = "<group>"; };
+		14089CC41CC380A300603D92 /* MD_MediaPlayer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_MediaPlayer_VC.m; sourceTree = "<group>"; };
+		14089CC51CC380A300603D92 /* MD_MediaPlayer_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_MediaPlayer_VC.xib; sourceTree = "<group>"; };
 		140925811CC0CC7C00B17B2E /* books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = books.xml; sourceTree = "<group>"; };
 		140925841CC0D82200B17B2E /* MD_NSURLSession_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSURLSession_VC.h; sourceTree = "<group>"; };
 		140925851CC0D82200B17B2E /* MD_NSURLSession_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSURLSession_VC.m; sourceTree = "<group>"; };
@@ -1087,6 +1092,16 @@
 			path = UICustom;
 			sourceTree = "<group>";
 		};
+		14089CC21CC3805C00603D92 /* MediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				14089CC31CC380A300603D92 /* MD_MediaPlayer_VC.h */,
+				14089CC41CC380A300603D92 /* MD_MediaPlayer_VC.m */,
+				14089CC51CC380A300603D92 /* MD_MediaPlayer_VC.xib */,
+			);
+			path = MediaPlayer;
+			sourceTree = "<group>";
+		};
 		140925831CC0D78100B17B2E /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -1562,6 +1577,7 @@
 			isa = PBXGroup;
 			children = (
 				14EACA1C1C8001F200F3FE2C /* FreeTest */,
+				14089CC21CC3805C00603D92 /* MediaPlayer */,
 				146DD3E61CC377C300C2B4E0 /* QuartzCore */,
 				146DD3DF1CC3753100C2B4E0 /* CoreMotion */,
 				14F977741C44B2C000A53FA9 /* CoreFoundation */,
@@ -3069,6 +3085,7 @@
 				14565E8C1BA957E8009F7B2D /* Lion.jpg in Resources */,
 				14DF14CD1C4F83E7005C10AA /* Icon.png in Resources */,
 				14DF14CA1C4F83E7005C10AA /* Icon-Small.png in Resources */,
+				14089CC71CC380A300603D92 /* MD_MediaPlayer_VC.xib in Resources */,
 				14D670081C475B1100F911A4 /* MDModal1ViewController.xib in Resources */,
 				14DF14AF1C4F7684005C10AA /* MD_AVCamera_VC.xib in Resources */,
 				146D82B71AA7080000F0C7FD /* Bridge.plist in Resources */,
@@ -3238,6 +3255,7 @@
 				14FFBE4A1C9AA995006BEB2B /* View+MASAdditions.m in Sources */,
 				1428AB7D1C84502C003CC10F /* MDWVViewController.m in Sources */,
 				148CD7491AAECFDD00FAED9D /* TRStudent6.m in Sources */,
+				14089CC61CC380A300603D92 /* MD_MediaPlayer_VC.m in Sources */,
 				1428AB771C84502C003CC10F /* MD_UIWebViewCache_VC.m in Sources */,
 				144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */,
 				14FFBE491C9AA995006BEB2B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,

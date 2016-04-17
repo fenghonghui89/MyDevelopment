@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Day9MoviePlayer.xcscheme</key>
+		<key>Day7MusicPlayer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>186FCD3118594B770084EBC5</key>
+		<key>18CA17AA1856EF5500A26F5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>186FCD5218594B770084EBC5</key>
+		<key>18CA17CB1856EF5500A26F5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

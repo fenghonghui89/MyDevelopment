@@ -4,6 +4,14 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>MediaPlayer</string>
+		<key>className</key>
+		<string>MD_MediaPlayer_VC</string>
+		<key>sub</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>QuartzCore</string>
 		<key>className</key>
 		<string></string>

@@ -15,17 +15,17 @@
 @implementation MDNavigationController
 
 - (void)viewDidLoad {
+  
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
--(BOOL)shouldAutorotate
-{
+-(BOOL)shouldAutorotate{
+  
   return YES;
 }
 
--(UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+  
   return [self.topViewController supportedInterfaceOrientations];
 }
 @end

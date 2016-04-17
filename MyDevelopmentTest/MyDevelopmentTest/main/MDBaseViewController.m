@@ -15,28 +15,28 @@
 
 @implementation MDBaseViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
+  
   [super viewDidLoad];
   
   self.edgesForExtendedLayout = UIRectEdgeNone;//设置vc不渗透
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
+-(void)viewDidAppear:(BOOL)animated{
+  
   [super viewDidAppear:animated];
   DLog(@"当前screen%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
   DLog(@"当前navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
   DLog(@"当前view%@",NSStringFromCGRect(self.view.frame));
 }
 
--(BOOL)shouldAutorotate
-{
+-(BOOL)shouldAutorotate{
+  
   return YES;
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+  
   return UIInterfaceOrientationMaskPortrait;
 }
 @end

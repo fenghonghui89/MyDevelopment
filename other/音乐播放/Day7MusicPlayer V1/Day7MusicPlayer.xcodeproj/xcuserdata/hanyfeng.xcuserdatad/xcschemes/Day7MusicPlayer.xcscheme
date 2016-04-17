@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,75 +14,80 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "186FCD3118594B770084EBC5"
-               BuildableName = "Day9MoviePlayer.app"
-               BlueprintName = "Day9MoviePlayer"
-               ReferencedContainer = "container:Day9MoviePlayer.xcodeproj">
+               BlueprintIdentifier = "18CA17AA1856EF5500A26F5E"
+               BuildableName = "Day7MusicPlayer.app"
+               BlueprintName = "Day7MusicPlayer"
+               ReferencedContainer = "container:Day7MusicPlayer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "186FCD5218594B770084EBC5"
-               BuildableName = "Day9MoviePlayerTests.xctest"
-               BlueprintName = "Day9MoviePlayerTests"
-               ReferencedContainer = "container:Day9MoviePlayer.xcodeproj">
+               BlueprintIdentifier = "18CA17CB1856EF5500A26F5E"
+               BuildableName = "Day7MusicPlayerTests.xctest"
+               BlueprintName = "Day7MusicPlayerTests"
+               ReferencedContainer = "container:Day7MusicPlayer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "186FCD3118594B770084EBC5"
-            BuildableName = "Day9MoviePlayer.app"
-            BlueprintName = "Day9MoviePlayer"
-            ReferencedContainer = "container:Day9MoviePlayer.xcodeproj">
+            BlueprintIdentifier = "18CA17AA1856EF5500A26F5E"
+            BuildableName = "Day7MusicPlayer.app"
+            BlueprintName = "Day7MusicPlayer"
+            ReferencedContainer = "container:Day7MusicPlayer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "186FCD3118594B770084EBC5"
-            BuildableName = "Day9MoviePlayer.app"
-            BlueprintName = "Day9MoviePlayer"
-            ReferencedContainer = "container:Day9MoviePlayer.xcodeproj">
+            BlueprintIdentifier = "18CA17AA1856EF5500A26F5E"
+            BuildableName = "Day7MusicPlayer.app"
+            BlueprintName = "Day7MusicPlayer"
+            ReferencedContainer = "container:Day7MusicPlayer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "186FCD3118594B770084EBC5"
-            BuildableName = "Day9MoviePlayer.app"
-            BlueprintName = "Day9MoviePlayer"
-            ReferencedContainer = "container:Day9MoviePlayer.xcodeproj">
+            BlueprintIdentifier = "18CA17AA1856EF5500A26F5E"
+            BuildableName = "Day7MusicPlayer.app"
+            BlueprintName = "Day7MusicPlayer"
+            ReferencedContainer = "container:Day7MusicPlayer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
