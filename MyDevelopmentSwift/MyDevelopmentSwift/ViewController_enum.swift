@@ -14,14 +14,15 @@ class ViewController_enum: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func3();
+    func1();
   }
   
   
   //MARK:- <<< method >>>
-  //MARK:定义枚举 赋值
+  //MARK:定义枚举 赋值 枚举是值类型
   func func1() {
     
+    //定义
     enum CompassPoint{
       case East
       case South
@@ -34,6 +35,7 @@ class ViewController_enum: UIViewController {
       case East,South,West,North
     }
     
+    //赋值
     var dest = CompassPoint.East;
     dest = .North;
     
@@ -43,6 +45,11 @@ class ViewController_enum: UIViewController {
     default:
       print("\(dest) this is no east");
     }
+    
+    //枚举是值类型
+    var bdest = dest;
+    bdest = .South;
+    print(dest,bdest);
   }
   
   //MARK:关联值

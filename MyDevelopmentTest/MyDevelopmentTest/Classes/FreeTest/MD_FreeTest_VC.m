@@ -22,11 +22,16 @@
 #pragma mark - < vc lifecycle > -
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  int i = 10;
+  int j = i;
+  j = 20;
+  NSLog(@"%d %d",i,j);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
-  [self tttest];
+  
 }
 
 #pragma mark - < method > -

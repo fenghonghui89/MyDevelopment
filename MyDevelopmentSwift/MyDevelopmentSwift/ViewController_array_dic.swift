@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController4: UIViewController {
+class ViewController_array_dic: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,7 +16,7 @@ class ViewController4: UIViewController {
 
 
 
-    
+    func1_9();
     
     
     
@@ -134,6 +134,27 @@ class ViewController4: UIViewController {
     }
   }
   
+  //MARK:swift的array是结构体形式实现的，是值类型
+  func func1_9()  {
+    
+//    var arr = ["one","two","three"];
+//    var arr1 = arr;
+//    arr[0] = "1";
+//    print(arr,arr1);
+    
+    var a = [1, 2, 3]
+    var b = a
+    var c = a
+    
+    a[0] = 42
+    print(a[0])
+    // 42
+    print(b[0])
+    // 42
+    print(c[0])
+    // 42
+  }
+  
   
   //MARK: - <<< 字典>>> -
   //MARK:创建字典 空字典 清空字典
@@ -248,4 +269,17 @@ class ViewController4: UIViewController {
     print("\(keys) \n \(values)");
   }
   
+  //MARK:swift的dictionary是结构体形式实现的，是值类型
+  func func2_6() {
+    
+//    let dic = [1:"one",2:"two"];
+//    var dic1 = dic;
+//    dic1[1] = "11";
+//    print(dic,dic1);
+    
+    let dic = ["1":"one","2":2];
+    var dic1 = dic;
+    dic1["1"] = "11";
+    print(dic,dic1);
+  }
 }
