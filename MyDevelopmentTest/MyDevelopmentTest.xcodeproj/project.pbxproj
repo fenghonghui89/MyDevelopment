@@ -490,6 +490,7 @@
 		1428AB751C84502C003CC10F /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		1428AB761C84502C003CC10F /* UIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebView.h; sourceTree = "<group>"; };
 		1428AB811C84558C003CC10F /* NSURLRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLRequest.h; sourceTree = "<group>"; };
+		142C689D1CC488A000ED1F92 /* NSHTTPCookieStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSHTTPCookieStorage.h; sourceTree = "<group>"; };
 		142EA3491C853CCB003E5526 /* NSString+Encrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encrypto.h"; sourceTree = "<group>"; };
 		142EA34A1C853CCB003E5526 /* NSString+Encrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encrypto.m"; sourceTree = "<group>"; };
 		143499F51C464B4800DCD80E /* CGGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGGeometry.h; sourceTree = "<group>"; };
@@ -1301,6 +1302,7 @@
 		1428AB5E1C84502C003CC10F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				142C689D1CC488A000ED1F92 /* NSHTTPCookieStorage.h */,
 				148740971CABDCE6007CC45C /* NSJSONSerialization.h */,
 				148740931CABD84B007CC45C /* NSURL.h */,
 				14EA84EE1CA3851600A70A46 /* NSURLProtocol.h */,
