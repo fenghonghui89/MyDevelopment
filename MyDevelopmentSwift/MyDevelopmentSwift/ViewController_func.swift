@@ -51,7 +51,7 @@ class ViewController_func: UIViewController {
   
   
   
-  //TODO:扩展参数
+  //MARK:扩展参数
   func func3(name s1:String,age s2:String)->(name:String,age:String){
     let result = (s1,s2);
     return result;
@@ -158,7 +158,7 @@ class ViewController_func: UIViewController {
   }
   
   func func10(b:Bool) -> ((Int)->Int) {
-    return b ?funcBase10_1:funcBase10_2;
+    return b ? funcBase10_1 : funcBase10_2;
   }
   
   func funcResult10(){
