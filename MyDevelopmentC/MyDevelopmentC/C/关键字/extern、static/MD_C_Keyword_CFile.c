@@ -23,8 +23,9 @@ void cKeywordTest()
 //extern关键字
 /*
  如果想在同一个项目中共享全局变量，
- 1.外部文件的.h公开.c的变量，用extern修饰；使用文件include头文件
- 2.或者在使用文件中，要使用extern关键字声明全局变量才可使用，并且可以得到全局变量的值
+ 1.变量所在文件的.h公开.c的变量，用extern修饰；使用变量的文件中，include头文件
+ 或者
+ 2.在使用变量的文件中，要使用extern关键字声明全局变量才可使用，并且可以得到全局变量的值
  */
 #include "MD_C_Keyword1_CFile.h"//对应上面1
 extern char *name_Keyword;//对应上面2
@@ -33,7 +34,7 @@ extern int i;//对应上面2
 
 //static关键字
 /*
- 被修饰的关键字只能该文件使用
+ 被修饰的变量只能该文件使用
  */
 static double money_Keyword = 100.1;
 

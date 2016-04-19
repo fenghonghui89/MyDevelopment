@@ -6,6 +6,7 @@
 //  Copyright © 2016年 MD. All rights reserved.
 //
 
+
 import UIKit
 
 
@@ -14,20 +15,39 @@ class ViewController_enum: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func1();
+    func1_4();
   }
   
   
   //MARK:- <<< method >>>
-  //MARK:定义枚举 赋值 枚举是值类型
-  func func1() {
+  //MARK:- 枚举
+  //MARK:base 枚举是值类型
+  func func1_1() {
     
     //定义
     enum CompassPoint{
+      
       case East
       case South
       case West
       case North
+      
+      //存储型 类型属性
+      static var None2:Int = 2
+      
+      //计算型 类型属性
+      static var None: Int {
+        return 111
+      }
+      
+      //方法
+      func objMethod(){
+        print("enum objMethod~");
+      }
+      
+      static func classMethod(){
+        print("enum classMethod~");
+      }
       
     }
     
@@ -38,7 +58,11 @@ class ViewController_enum: UIViewController {
     //赋值
     var dest = CompassPoint.East;
     dest = .North;
+    print("enum 类型属性：\(CompassPoint.None2)");
+    dest.objMethod();
+    CompassPoint.classMethod();
     
+    //判断
     switch dest {
     case .East:
       print("\(dest) this is east");
@@ -53,7 +77,7 @@ class ViewController_enum: UIViewController {
   }
   
   //MARK:关联值
-  func func2() {
+  func func1_2() {
     
     enum Barcode{
       case UPCA(Int,Int,Int);
@@ -73,16 +97,16 @@ class ViewController_enum: UIViewController {
   }
   
   //MARK:定义每个成员的类型和原始值 原始值与成员的相互关联
-  func func3(){
+  func func1_3(){
     
-    //原始值
-    enum Person:String{
+    //enum的类型 默认值
+    enum Human:String{
       case name = "default name";
       case age = "default age";
       case sex = "default sex";
     }
     
-    let Tom = Person.sex.rawValue;
+    let Tom = Human.sex.rawValue;
     print(Tom);
     
     //如果是整形，没有定义原始值的成员默认自增长
@@ -115,6 +139,46 @@ class ViewController_enum: UIViewController {
     
   }
   
+  //MARK:enum 变异方法
+  func func1_4() {
+    enum TriStateSwitch {
+      case Off, Low, High ;
+      mutating func next() {
+        switch self {
+        case Off:
+          self = Low
+        case Low:
+          self = High
+        case High:
+          self = Off
+        }
+      }
+    }
+    var ovenLight = TriStateSwitch.Low
+    ovenLight.next()
+    ovenLight.next()
+    print(ovenLight);
+  }
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
 }
+
+
+

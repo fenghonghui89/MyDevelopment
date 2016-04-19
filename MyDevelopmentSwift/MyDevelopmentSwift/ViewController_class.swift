@@ -1,72 +1,97 @@
 //
-//  ViewController_class.swift
+//  ViewController_property.swift
 //  MyDevelopmentSwift
 //
-//  Created by 冯鸿辉 on 16/4/18.
+//  Created by 冯鸿辉 on 16/4/19.
 //  Copyright © 2016年 MD. All rights reserved.
 //
 
-import Foundation
 import UIKit
-class ViewController_class:UIViewController{
+
+class ViewController_class: UIViewController {
+  
   
   override func viewDidLoad() {
     super.viewDidLoad();
+  
+  
+    func_subClass();
+    
+  }
+
+  
+  //MARK:- <<< method >>> -
+  //MARK:base
+  func func_objBase(){
+    let Tom = Person();
+    
+    //存储属性
+    Tom.name = "Tom";
+    Tom.age = 12;
+    Tom.parents = Parents(father: "Jim", mather: "Mary");
+    
+    //计算属性
+    Tom.weight = 10;
+    print("tom health \(Tom.health)");
+    
+    Tom.health = 20;
+    print("tom weight \(Tom.weight)");
+    
+    //类属性
+    let race = Person.race;
+    print("person's race \(race)");
+    print("category:\(Person.category)");
+    
+    //延迟加载属性在使用时才会计算初始值
+    print("\(Tom.gene)");
+    
+    //属性监视器
+    Tom.account = "123123";
+    print("account:\(Tom.account)");
     
     
-    func3();
     
+    Tom.study();
     
-    
+    func_objCompare();
+
   }
   
-  //MARK: - <<< method >>>
-  //MARK:创建实例
-  func func1() {
-    
-    let astruct = Astruct(width: 10,height:10);
-    let obj = Aclass();
-    obj.name = "ACE";
-    obj.astruct = astruct;
-    print(obj.name,obj.astruct.width);
-  }
   
-  //MARK:结构体是值类型
-  func func2() {
-    
-    let bstruct = Astruct(width: 20, height: 20);
-    var cinema = bstruct;
-    cinema.width = 11;
-    print(bstruct,cinema);
-  }
   
   //MARK:类是引用类型 恒等运算符(===,!==)
-  func func3(){
+  func func_objCompare(){
     
-    let obj1 = Aclass();
-    obj1.rate = 20;
+    let p = Person();
+    p.name = "Tom";
     
-    let obj2 = obj1;
-    obj2.rate = 30;
+    let p1 = p;
+    p1.name = "Ann";
     
-    print(obj1.rate,obj2.rate);
+    print(p.name,p1.name);
     
-    if obj1 === obj2 {
+    if p === p1 {
       print("引用同一个实例");
+    }else{
+      print("不是同一个实例");
     }
   }
-}
-
-//MARK:- 结构体 类
-struct Astruct {
-  var width = 0;
-  var height = 0;
-}
-
-
-class Aclass {
   
-  var astruct = Astruct();
-  var name:String = "";
-  var rate = 0.0;
+  //MARK:继承
+  func func_subClass() {
+    
+    let Hany = AsiaPerson();
+    print(Hany.name,Hany.age);
+    
+    print(Hany[3]);
+  }
+  
+  
+  
+  
+  
 }
+
+
+
+
