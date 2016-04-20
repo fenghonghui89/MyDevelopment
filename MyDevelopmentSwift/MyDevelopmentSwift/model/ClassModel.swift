@@ -8,7 +8,8 @@
 
 /*
  类
- 没有变异方法
+ 没有struct enum那样的变异方法
+ final关键字表示该属性/方法/类不能被重写
  */
 
 
@@ -28,7 +29,7 @@ class Person{
    枚举、结构体的存储属性可以没有默认值
    类的存储属性要有默认值
    */
-  var name:String = "";
+  final var name:String = "";
   var age:Int = 0;
   var parents = Parents();
   

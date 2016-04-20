@@ -79,7 +79,7 @@ class ViewController_class: UIViewController {
   //MARK:继承
   func func_subClass() {
 
-    let child = ChildClass(par1: "par1", par2: "par2");
+    let child = ChildClass(isChild: true);
     print("\(child.storeProperty),\(child.storeProperty1)");
   }
   

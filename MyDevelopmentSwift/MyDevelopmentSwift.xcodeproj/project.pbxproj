@@ -13,6 +13,7 @@
 		140EA0FF1CC628640077DCF8 /* ClassModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EA0FE1CC628640077DCF8 /* ClassModel1.swift */; };
 		140EA1011CC62F700077DCF8 /* ViewController_dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EA1001CC62F700077DCF8 /* ViewController_dictionary.swift */; };
 		142C689F1CC4BF0600ED1F92 /* ViewController_enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C689E1CC4BF0600ED1F92 /* ViewController_enum.swift */; };
+		14364B841CC7865100366F01 /* ViewController_arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14364B831CC7865100366F01 /* ViewController_arc.swift */; };
 		1484847F1CA1BA6A00FA0DFF /* ViewController_logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController_logic.swift */; };
 		149DDA1E1CC2021C00C7A8B1 /* ViewController_func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1D1CC2021C00C7A8B1 /* ViewController_func.swift */; };
 		149DDA201CC21B5E00C7A8B1 /* ViewController_block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1F1CC21B5E00C7A8B1 /* ViewController_block.swift */; };
@@ -33,6 +34,7 @@
 		140EA0FE1CC628640077DCF8 /* ClassModel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel1.swift; sourceTree = "<group>"; };
 		140EA1001CC62F700077DCF8 /* ViewController_dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_dictionary.swift; sourceTree = "<group>"; };
 		142C689E1CC4BF0600ED1F92 /* ViewController_enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_enum.swift; sourceTree = "<group>"; };
+		14364B831CC7865100366F01 /* ViewController_arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_arc.swift; sourceTree = "<group>"; };
 		1484847E1CA1BA6A00FA0DFF /* ViewController_logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_logic.swift; sourceTree = "<group>"; };
 		149DDA1D1CC2021C00C7A8B1 /* ViewController_func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_func.swift; sourceTree = "<group>"; };
 		149DDA1F1CC21B5E00C7A8B1 /* ViewController_block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_block.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				142C689E1CC4BF0600ED1F92 /* ViewController_enum.swift */,
 				140EA0FC1CC61B0B0077DCF8 /* ViewController_struct.swift */,
 				140EA0F71CC5CE2C0077DCF8 /* ViewController_class.swift */,
+				14364B831CC7865100366F01 /* ViewController_arc.swift */,
 				140EA0F91CC5D7D50077DCF8 /* model */,
 				14FC0CC41C9844FD008622B7 /* bookmark */,
 				14AF34BA1C7362AC007DC722 /* Main.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF34B91C7362AC007DC722 /* ViewController_base.swift in Sources */,
+				14364B841CC7865100366F01 /* ViewController_arc.swift in Sources */,
 				14AF34B71C7362AC007DC722 /* AppDelegate.swift in Sources */,
 				14AC48D51C7608D900FD1C56 /* ViewController_symbol.swift in Sources */,
 				140EA1011CC62F700077DCF8 /* ViewController_dictionary.swift in Sources */,

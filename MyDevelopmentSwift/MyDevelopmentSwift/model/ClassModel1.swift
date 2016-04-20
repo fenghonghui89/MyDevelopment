@@ -13,8 +13,14 @@ class SuperClass{
   
   //--- 实例属性 ---
   //存储型
-  var storeProperty:String = "storeProperty";
+  final var storeProperty:String = "storeProperty";
   var storeProperty1:String = "storeProperty";
+  
+  //通过闭包设置的存储型属性
+  var storeProperty2:String = {
+    return "storeProperty2";
+  }()
+  
   
   //计算型
   var computeProperty:String = "computeProperty";
@@ -93,18 +99,49 @@ class SuperClass{
   }
 
   //--- 方法 ---
-  init(){
-    self.storeProperty = "111";
-    self.storeProperty1 = "222";
-  }
-  
+  //指定构造
   init(par1:String, par2:String){
     self.storeProperty = par1;
     self.storeProperty1 = par2;
+    print("SuperClass init");
   }
   
+  //便利构造
+  convenience init(){
+    self.init(par1:"par1",par2:"par2")
+  }
+  
+  //反构造 相当于dealloc 不能复写 不用加()
+  deinit{
+    print("SuperClass deinit");
+  }
 }
+
 
 class ChildClass: SuperClass {
   
+  //--- 属性 ---
+  override var storeProperty1:String{
+    willSet{
+    
+    }
+  }
+  
+  var isChild:Bool = false;
+  
+  //--- 方法 ---
+  init(isChild:Bool,storeProperty:String,storeProperty1:String){
+    self.isChild = isChild;
+    super.init(par1: storeProperty, par2: storeProperty1);
+  }
+  
+  convenience init(isChild:Bool){
+    print("ChildClass init");
+    self.init(isChild:isChild,storeProperty:"par1",storeProperty1:"par2");
+  }
+  
+  deinit{
+    print("ChildClass deinit");
+  }
 }
+
