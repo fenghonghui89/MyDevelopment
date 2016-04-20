@@ -8,10 +8,10 @@
 
 /*
  类
- 计算型类属性用class关键字，set
- 存储型类属性用static关键字
  没有变异方法
  */
+
+
 import Foundation
 
 struct Parents {
@@ -24,6 +24,10 @@ class Person{
   
   //MARK:- property
   //MARK:存储属性
+  /*
+   枚举、结构体的存储属性可以没有默认值
+   类的存储属性要有默认值
+   */
   var name:String = "";
   var age:Int = 0;
   var parents = Parents();
@@ -40,29 +44,16 @@ class Person{
     get{
       return weight*0.5;
     }
-    
-    //1.1 newValue是隐藏属性
-//    set{
-//    weight = newValue;
-//    }
-    
-    //1.2也可以自己赋值
     set(newHealth){
       weight = 0.5*newHealth;
     }
-    
-    //1.3这样写会死循环
-//    set{
-//      self.health = newValue;
-//    }
-
   }
   
   //MARK:类属性
   /*
-   跟实例的存储属性不同，必须给存储型类型属性指定默认值，因为类型本身无法在初始化过程中使用构造器给类型属性赋值
-   class只支持计算型类型属性 不支持存储型类型属性
-   存储型类属性用static
+   必须指定值，因为无法在构造过程中设置
+   计算型类属性用class关键字 不能写set否则死循环
+   存储型类属性用static关键字 static修饰的不能复写？
    */
   class var race:String {
     
@@ -70,10 +61,6 @@ class Person{
       return "human";
     }
   
-    //不能写set 会死循环
-//    set(newValue){
-//      self.race = newValue;
-//    }
   }
   static var category:String = "Animal";
   
@@ -81,6 +68,7 @@ class Person{
   /*
    如果属性的值依赖外部传入，或者依赖复杂大量的运算，可以只在使用的时候再计算他
    必须是var声明
+   不能复写？
    */
   lazy var gene:[Int] = [0,1,2,3,4];
   
@@ -91,7 +79,7 @@ class Person{
    哪怕新值和旧值一样 也会触发
    如果在didSet监视器里为属性赋值，这个值会替换监视器之前设置的值
    */
-  var account:String = "默认account"{
+  var account:String = ""{
     willSet{
       print("account willSet:\(newValue)");
     }
@@ -103,6 +91,9 @@ class Person{
   };
   
   //MARK:附属脚本
+  /*
+   附属脚本调用方法：对象名[参数]
+   */
   subscript (index:Int)->Int{
     get{
       return gene[index];
@@ -134,4 +125,10 @@ class Person{
     self.age = 12;
   }
 
+  
+  
+  
+  
+  
+  
 }

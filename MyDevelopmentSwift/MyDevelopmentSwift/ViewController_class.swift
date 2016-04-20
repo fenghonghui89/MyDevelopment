@@ -53,7 +53,6 @@ class ViewController_class: UIViewController {
     
     Tom.study();
     
-    func_objCompare();
 
   }
   
@@ -79,11 +78,9 @@ class ViewController_class: UIViewController {
   
   //MARK:继承
   func func_subClass() {
-    
-    let Hany = AsiaPerson();
-    print(Hany.name,Hany.age);
-    
-    print(Hany[3]);
+
+    let child = ChildClass(par1: "par1", par2: "par2");
+    print("\(child.storeProperty),\(child.storeProperty1)");
   }
   
   

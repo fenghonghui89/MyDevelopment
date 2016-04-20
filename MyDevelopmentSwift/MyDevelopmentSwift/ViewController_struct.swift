@@ -37,7 +37,7 @@ class ViewController_struct: UIViewController {
                 Point(x: -1, y: -1)]
       }
       
-      //类型方法
+      //类方法
       static func add(p1 p1: Point, p2: Point) -> Point {
         return Point(x: p1.x + p2.x, y: p1.y + p2.y)
       }
@@ -45,6 +45,7 @@ class ViewController_struct: UIViewController {
       func objMethod() {
         print("static objMethod~");
       }
+      
     }
     
     //结构体是值类型
