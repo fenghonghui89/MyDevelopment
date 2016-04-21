@@ -6,6 +6,15 @@
 //  Copyright © 2016年 MD. All rights reserved.
 //
 
+/*
+ 关键字
+ final - 不允许复写
+ weak 弱引用 必须是var 必须是可选类型
+ unowned 无主引用 不能用可选类型
+ lazy 延时加载 如果类型是block 可以用self
+ class 类属性 不能用等号/闭包赋默认值 要用get方法设置默认值；也可以修饰类方法
+ static 类属性 可以用等号/闭包赋默认值；也可以修饰类方法
+ */
 import Foundation
 
 
@@ -21,6 +30,9 @@ class SuperClass{
     return "storeProperty2";
   }()
   
+  var storeProperty3:()->String = {
+    return "storeProperty2";
+  }
   
   //计算型
   var computeProperty:String = "computeProperty";
@@ -49,16 +61,35 @@ class SuperClass{
   
   //延时加载型
   lazy var lazyProperty:String = "lazyProperty";
+  lazy var lazyBlock:()->String = {
+    return self.storeProperty;
+  }
   
-  //--- 类属性 ---
+  lazy var lazyBlock1:String = {
+    return self.storeProperty;
+  }()
+  
+  //--- 类属性 类方法---
   //class修饰
-  class var classProperty:String {
+  class var classProperty:String{
     return "classProperty";
-  };
+  }
+  
   
   //static修饰
-  static var classProperty1:String = "classProperty1"
+  static var classProperty1:String = {
+    return "classProperty1"
+  }()
  
+  static var cp2:()->String = {
+    return "cp2";
+  }
+  
+  //类方法
+  static func classMethod() {
+    print("classMethod");
+  }
+  
   //--- 附属脚本 ---
   //附属脚本1
   var subscriptProperty:[Int] = Array.init(count: 10, repeatedValue: 2);

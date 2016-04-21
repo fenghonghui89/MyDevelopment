@@ -10,19 +10,32 @@ import UIKit
 
 class ViewController_arc: UIViewController {
   
-  var obj:ChildClass?;
+
   
   
   override func viewDidLoad() {
     super.viewDidLoad();
   
-    func1_2();
+//    let obj = arc_unowned_result();
+    
+    let obj = SuperClass();
+    let  s = obj.lazyBlock
+    
   }
   
   
-  //MARK:arc base
-  func func1_1(){
-    
+
+  
+
+}
+
+//MARK:- <<< class >>>
+//MARK:- arc base
+class arc_base_result{
+
+  var obj:ChildClass?;
+  
+  init(){
     var obj:ChildClass?;
     var obj1:ChildClass?;
     var obj2:ChildClass?;
@@ -32,10 +45,16 @@ class ViewController_arc: UIViewController {
     obj2 = obj1;
     self.obj = obj;
   }
+}
+
+//MARK:- weak 解决引用环
+/*
+ 两个对象互相引用 都可以为Nil
+ */
+class arc_weak_result{
   
-  //MARK:weak
-  func func1_2(){
-    
+  
+  init(){
     var customer:Customer?;
     var hotel:Hotel?;
     
@@ -49,7 +68,6 @@ class ViewController_arc: UIViewController {
     hotel = nil;
   }
 }
-
 
 class Customer {
   
@@ -79,6 +97,22 @@ class Hotel {
   }
 }
 
+//MARK:- unowned 解决引用环
+/*
+ 两个对象互相引用 一个可以为nil 一个不为nil
+ */
+class arc_unowned_result{
+  
+  init(){
+    var bankCustomer:BankCustomer?;
+    
+    bankCustomer = BankCustomer(name: "Hany");
+    bankCustomer?.creditCard = CreditCard(number: 1, bankCustomer: bankCustomer!);
+    bankCustomer = nil;
+    
+  }
+}
+
 class BankCustomer {
   
   var name:String = ""
@@ -95,14 +129,19 @@ class BankCustomer {
 }
 
 class CreditCard {
+  
   var number:Int = 0;
   unowned var bankCustomer:BankCustomer;
   
-  init(number:Int){
+  init(number:Int,bankCustomer:BankCustomer){
     self.number = number;
+    self.bankCustomer = bankCustomer
   }
   
   deinit{
     print("CreditCard deinit");
   }
 }
+
+
+//MARK:- 隐式

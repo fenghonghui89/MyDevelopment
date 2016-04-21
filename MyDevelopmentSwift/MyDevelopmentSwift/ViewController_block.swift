@@ -11,16 +11,14 @@ import UIKit
 
 class ViewController_block: UIViewController {
   
-  //MARK: - <<< vc lifecycle >>> -
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func3_result();
     
+    func4_1();
   }
   
   
-  //MARK: - <<< method >>>
   //MARK:- < 推导例子 - 数组排序 >
   func func1() {
     
@@ -46,6 +44,8 @@ class ViewController_block: UIViewController {
       print(i);
     }
   }
+  
+  
   
   //MARK:- < trailing闭包 类似于oc的block >
   func func2() {
@@ -103,7 +103,7 @@ class ViewController_block: UIViewController {
     
     
   }
-
+  
   //MARK:普通闭包 不捕获值
   func func3_1(forIncrement n:Int) -> Int {
     
@@ -142,8 +142,28 @@ class ViewController_block: UIViewController {
   }
   
   
-  
-  
-  
+  //MARK:- <用闭包定义变量>
+  func func4_1() {
+    
+    let name:String = {
+      return "name";
+    }()
+    
+    let name1:()->String = {
+      return "name1"
+    }
+    
+    print("\(name) \(name1)");
+    
+    
+    let obj = SuperClass();
+    let str = SuperClass.cp2;
+    let str1 = obj.lazyBlock;
+    print(str,str1);
+  }
+
 }
+
+
+
 
