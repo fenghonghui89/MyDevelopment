@@ -16,7 +16,7 @@ class ViewController_arc: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
   
-
+    let obj = arc_unowned2_result();
   }
   
   
@@ -27,6 +27,10 @@ class ViewController_arc: UIViewController {
 
 //MARK:- <<< class >>>
 //MARK:- arc base
+/*
+ 默认将一个实例赋值给一个不带weak的属性/变量/常量，这个属性/变量/常量就会持有这个实例，引用计数+1
+ var+可选类型的对象才能置nil，但对象的属性另计，对象的属性根据属性关键字处理
+ */
 class arc_base_result{
 
   var obj:ChildClass?;
@@ -43,14 +47,20 @@ class arc_base_result{
   }
 }
 
-//MARK:- weak 解决引用环
-/*
- 两个对象互相引用 都可以为Nil
- */
+//MARK:- weak 解决引用环 / weak unowned修饰变量的差异
+
 class arc_weak_result{
   
   
   init(){
+    
+    f2();
+    
+    
+  }
+  
+  //weak解决引用环
+  func f1(){
     var customer:Customer?;
     var hotel:Hotel?;
     
@@ -60,8 +70,25 @@ class arc_weak_result{
     customer!.hotel = hotel;
     hotel!.customer = customer;
     
-    customer = nil;
     hotel = nil;
+    customer = nil;
+  }
+  
+  //weak unowned修饰变量的差异
+  func f2(){
+    
+    //weak
+    weak var customer:Customer?;
+    customer = Customer(name: "Hany");
+    print(customer!.name);//会崩，因为customer初始为nil，且weak不持有实例
+    print("!！");
+    
+    //unowned
+//    unowned var customer1:Customer;
+//    customer1 = Customer(name: "Hany");
+//    print(customer1.name);//会崩，因为customer初始虽然有值，但unowned不持有实例
+//    print("!！");
+
   }
 }
 
@@ -82,7 +109,7 @@ class Customer {
 class Hotel {
   
   var number:Int = 0;
-  weak var customer:Customer?;//weak修饰的属性必须为可选类型
+  weak var customer:Customer?;
   
   init(number:Int){
     self.number = number;
@@ -94,20 +121,30 @@ class Hotel {
 }
 
 //MARK:- unowned 解决引用环
-/*
- 两个对象互相引用 一个可以为nil 一个不为nil
- */
 class arc_unowned_result{
   
   init(){
-    var bankCustomer:BankCustomer?;
     
-    bankCustomer = BankCustomer(name: "Hany");
-    bankCustomer?.creditCard = CreditCard(number: 1, bankCustomer: bankCustomer!);
+    //creditCard持有CreditCard实例，引用计数+1
+//    var bankCustomer:BankCustomer?
+//    var creditCard:CreditCard?
+//    
+//    bankCustomer = BankCustomer(name: "Hany")
+//    creditCard = CreditCard(number: 12, bankCustomer: bankCustomer!)
+//    bankCustomer!.creditCard = creditCard;
+    
+    //CreditCard实例只有被bankCustomer持有
+    var bankCustomer:BankCustomer?
+    bankCustomer = BankCustomer(name: "Hany")
+    bankCustomer!.creditCard = CreditCard(number: 12, bankCustomer: bankCustomer!);
+    
+    print("~~")
     bankCustomer = nil;
+    print("!!!")
     
   }
 }
+
 
 class BankCustomer {
   
@@ -131,8 +168,9 @@ class CreditCard {
   
   init(number:Int,bankCustomer:BankCustomer){
     self.number = number;
-    self.bankCustomer = bankCustomer
+    self.bankCustomer = bankCustomer;//unowned修饰的属性必须要有默认值
   }
+
   
   deinit{
     print("CreditCard deinit");
@@ -140,4 +178,49 @@ class CreditCard {
 }
 
 
-//MARK:- 隐式
+//MARK:- 无主引用以及隐式展开的可选属性
+/*
+ 两个对象互相引用 都不可以为nil
+ */
+class arc_unowned2_result{
+
+  init(){
+    
+    var country:Country! = Country(name: "China", capitalName: "Biejing")
+    
+   print("~~")
+    country = nil;
+    print("!!!")
+  }
+}
+
+
+class Country {
+  
+  let name: String
+  var capitalCity: City!
+  
+  init(name: String, capitalName: String) {
+    self.name = name
+    self.capitalCity = City(name: capitalName, country: self)
+  }
+  
+  deinit{
+    print("country deinit");
+  }
+}
+
+class City {
+  
+  let name: String
+  unowned let country: Country
+  
+  init(name: String, country: Country) {
+    self.name = name
+    self.country = country
+  }
+  
+  deinit{
+    print("city deinit");
+  }
+}

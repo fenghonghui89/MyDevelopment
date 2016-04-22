@@ -13,9 +13,18 @@
  
  final 不允许复写
  
- weak 弱引用 必须是var 必须是可选类型
+ weak 弱引用 必须是var 必须是可选类型（？or!）
+      修饰变量时默认值为nil 例如: weak var person:Person?/!
+      设置为weak的属性，则对象不持有该属性所指向的对象
+      如果在方法里面 用weak修饰一个对象类型 就算给他赋值也是为nil 不持有对象
+      只能用在对象
  
- unowned 无主引用 不能用可选类型
+ unowned 无主引用 默认始终有值 所以不能用可选类型
+          修饰变量时默认有值 例如: unowned var person:Person
+          设置为unowned的属性，则对象不持有该属性所指向的对象
+          无主属性必须要有默认值，不管是直接赋值还是通过指定构造方法赋值
+          如果在方法里面 用unowned修饰一个对象类型 默认有值 不持有对象 调用对象会崩但跟weak报错不一样
+          只能用在对象
  
  lazy 延时加载 可以用self 因为一定是实例化后才会调用的
       如果类型是block 必须是var不能是let
@@ -176,7 +185,7 @@ class SuperClass{
   init(par1:String, par2:String){
     self.storeProperty = par1;
     self.storeProperty1 = par2;
-    print("SuperClass init");
+    print("SuperClass init:\(self.storeProperty) \(self.storeProperty1)");
   }
   
   //便利构造
