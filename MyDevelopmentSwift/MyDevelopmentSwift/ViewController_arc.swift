@@ -16,11 +16,7 @@ class ViewController_arc: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
   
-//    let obj = arc_unowned_result();
-    
-    let obj = SuperClass();
-    let  s = obj.lazyBlock
-    
+
   }
   
   

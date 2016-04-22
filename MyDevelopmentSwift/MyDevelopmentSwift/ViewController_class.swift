@@ -21,53 +21,18 @@ class ViewController_class: UIViewController {
 
   
   //MARK:- <<< method >>> -
-  //MARK:base
-  func func_objBase(){
-    let Tom = Person();
-    
-    //存储属性
-    Tom.name = "Tom";
-    Tom.age = 12;
-    Tom.parents = Parents(father: "Jim", mather: "Mary");
-    
-    //计算属性
-    Tom.weight = 10;
-    print("tom health \(Tom.health)");
-    
-    Tom.health = 20;
-    print("tom weight \(Tom.weight)");
-    
-    //类属性
-    let race = Person.race;
-    print("person's race \(race)");
-    print("category:\(Person.category)");
-    
-    //延迟加载属性在使用时才会计算初始值
-    print("\(Tom.gene)");
-    
-    //属性监视器
-    Tom.account = "123123";
-    print("account:\(Tom.account)");
-    
-    
-    
-    Tom.study();
-    
 
-  }
-  
-  
   
   //MARK:类是引用类型 恒等运算符(===,!==)
   func func_objCompare(){
     
-    let p = Person();
-    p.name = "Tom";
+    let p = SuperClass();
+    p.storeProperty = "Tom";
     
     let p1 = p;
-    p1.name = "Ann";
+    p1.storeProperty = "Ann";
     
-    print(p.name,p1.name);
+    print(p.storeProperty,p1.storeProperty);
     
     if p === p1 {
       print("引用同一个实例");
@@ -79,8 +44,12 @@ class ViewController_class: UIViewController {
   //MARK:继承
   func func_subClass() {
 
-    let child = ChildClass(isChild: true);
-    print("\(child.storeProperty),\(child.storeProperty1)");
+//    let child = ChildClass(isChild: true);
+//    print("\(child.storeProperty),\(child.storeProperty1)");
+    
+    print("\(SuperClass.classProperty)  \(SuperClass.classProperty1)")
+    SuperClass.classMethod();
+    SuperClass.classMethod1();
   }
   
   

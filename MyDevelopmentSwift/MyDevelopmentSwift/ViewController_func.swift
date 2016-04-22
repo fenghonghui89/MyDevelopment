@@ -118,7 +118,7 @@ class ViewController_func: UIViewController {
     print(result);
   }
   
-  //MARK:函数类型 类似于函数指针
+  //MARK:函数类型 类似于函数指针 其实就是闭包
   func func8(name name:String,age:Int) -> (reName:String,reAge:String) {
     let result = (name,String(age));
     return result;
@@ -159,6 +159,7 @@ class ViewController_func: UIViewController {
   
   func func10(b:Bool) -> ((Int)->Int) {
     return b ? funcBase10_1 : funcBase10_2;
+
   }
   
   func funcResult10(){

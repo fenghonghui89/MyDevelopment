@@ -15,7 +15,7 @@ class ViewController_block: UIViewController {
     super.viewDidLoad();
     
     
-    func4_1();
+    funcResult5();
   }
   
   
@@ -141,8 +141,8 @@ class ViewController_block: UIViewController {
     return func3_3_base;
   }
   
-  
-  //MARK:- <用闭包定义变量>
+  //MARK:- <用闭包定义变量的两种方式 做函数参数 做返回值>
+  //MARK:- 用闭包定义变量的两种方式
   func func4_1() {
     
     let name:String = {
@@ -153,15 +153,78 @@ class ViewController_block: UIViewController {
       return "name1"
     }
     
-    print("\(name) \(name1)");
+    print("~~~\(name) \(name1())");
     
     
-    let obj = SuperClass();
-    let str = SuperClass.cp2;
-    let str1 = obj.lazyBlock;
-    print(str,str1);
   }
 
+  //MARK:- 闭包做返回值
+  func funcResult5() {
+    
+    let result:String = func5_1()();
+    print(result);
+    
+    let result1 = func5_2()("1",1)
+    print(result1);
+    
+  }
+  
+  //返回值 简单
+  func func5_1() -> (()->String) {
+    
+    var bb:()->String = {
+      return "name1111~"
+    }
+    
+    //或者这样
+    bb = {
+      ()->String in
+      return "name1111~"
+    }
+
+    
+    return bb;
+  }
+  
+  //返回值 稍复杂
+  func func5_2base(name name:String,age:Int) -> (reName:String,reAge:String) {
+    return(name,String(age));
+  }
+  
+  func func5_2() -> ((String,Int)->(String,String)) {
+    
+    var bb:(String,Int)->(String,String)
+    
+    bb = {
+      (str:String,num:Int)->(String,String)in
+      return(str,String(num));
+    }
+    
+    //或者这样
+    bb = func5_2base
+    
+    
+    return bb;
+  }
+  
+  //MARK:- 闭包做参数
+  func func5_4Result() {
+    
+    let bb:(Int)->Int = {
+      ( num:Int)->Int in
+      return num*num;
+    }
+    
+    let result = func5_4(bb);
+    print(result);
+    
+  }
+  
+  func func5_4(block:(Int)->Int) -> Int{
+    let result = block(2);
+    return result;
+  }
+  
 }
 
 
