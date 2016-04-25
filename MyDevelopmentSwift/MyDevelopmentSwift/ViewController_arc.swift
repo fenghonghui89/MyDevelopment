@@ -16,7 +16,7 @@ class ViewController_arc: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
   
-    let obj = arc_unowned2_result();
+    let obj = arc_block_result();
   }
   
   
@@ -228,6 +228,15 @@ class City {
 
 
 //MARK:解决闭包产生的强引用环
+class arc_block_result{
+  
+  init(){
+    var html:HTMLElement? = HTMLElement(name: "p", text: "hello");
+    print(html!.asHTML());
+    html = nil;
+  }
+}
+
 class HTMLElement{
   
   let name:String
