@@ -125,7 +125,7 @@ class arc_unowned_result{
   
   init(){
     
-    //creditCard持有CreditCard实例，引用计数+1
+    //CreditCard实例被creditCard对象和bankCustomer对象的属性持有，引用计数+2
 //    var bankCustomer:BankCustomer?
 //    var creditCard:CreditCard?
 //    
@@ -133,7 +133,7 @@ class arc_unowned_result{
 //    creditCard = CreditCard(number: 12, bankCustomer: bankCustomer!)
 //    bankCustomer!.creditCard = creditCard;
     
-    //CreditCard实例只有被bankCustomer持有
+    //CreditCard实例只被bankCustomer的属性持有，引用计数+1
     var bankCustomer:BankCustomer?
     bankCustomer = BankCustomer(name: "Hany")
     bankCustomer!.creditCard = CreditCard(number: 12, bankCustomer: bankCustomer!);
@@ -178,7 +178,7 @@ class CreditCard {
 }
 
 
-//MARK:- 无主引用以及隐式展开的可选属性
+//MARK:- unowned以及隐式解析可选属性
 /*
  两个对象互相引用 都不可以为nil
  */
@@ -186,9 +186,10 @@ class arc_unowned2_result{
 
   init(){
     
-    var country:Country! = Country(name: "China", capitalName: "Biejing")
+    var country:Country?
+    country = Country(name: "China", capitalName: "Biejing")
     
-   print("~~")
+    print("~~")
     country = nil;
     print("!!!")
   }
@@ -198,7 +199,7 @@ class arc_unowned2_result{
 class Country {
   
   let name: String
-  var capitalCity: City!
+  var capitalCity: City!//隐式解析可选属性 这里必须是var否则编译不过
   
   init(name: String, capitalName: String) {
     self.name = name
@@ -213,7 +214,7 @@ class Country {
 class City {
   
   let name: String
-  unowned let country: Country
+  unowned let country: Country//无主引用
   
   init(name: String, country: Country) {
     self.name = name
@@ -224,3 +225,33 @@ class City {
     print("city deinit");
   }
 }
+
+
+//MARK:解决闭包产生的强引用环
+class HTMLElement{
+  
+  let name:String
+  let text:String?
+  
+  lazy var asHTML:()->String = {
+    
+    if let text = self.text {
+      return "<\(self.name)>\(text)</\(self.name)>"
+    } else {
+      return "<\(self.name)/>"
+    }
+  }
+  
+  init(name:String,text:String?){
+    self.name = name;
+    self.text = text;
+    
+  }
+  
+  deinit{
+    print("HTMLElement deinit");
+  }
+
+}
+
+

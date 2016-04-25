@@ -211,7 +211,7 @@ class ViewController_block: UIViewController {
   func func5_4Result() {
     
     let bb:(Int)->Int = {
-      ( num:Int)->Int in
+      (num:Int)->Int in
       return num*num;
     }
     
