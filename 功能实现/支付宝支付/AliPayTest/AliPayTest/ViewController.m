@@ -138,14 +138,19 @@
 - (IBAction)webbtnTap:(id)sender
 {
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  
   manager.responseSerializer = [AFJSONResponseSerializer serializer];
   manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+  
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
   manager.requestSerializer.timeoutInterval = 20;
   [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+  
   manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
   manager.securityPolicy.allowInvalidCertificates = true;
-  manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+
+  
   [manager GET:@"http://dev.tpages.net.cn/alipayapp/index.php?action=pay"
     parameters:nil
        success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
