@@ -20,7 +20,9 @@ for-in循环里面的变量不用var声明
 
 
 
-
+Swift为不确定类型提供了两种特殊类型别名：
+AnyObject可以代表任何class类型的实例
+Any可以表示任何类型，除了方法类型（function types）
 
 
 
