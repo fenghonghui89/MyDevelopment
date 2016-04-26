@@ -20,7 +20,6 @@ class ViewController_enum: UIViewController {
   
   
   //MARK:- <<< method >>>
-  //MARK:- 枚举
   //MARK:base 枚举是值类型
   func func1_1() {
     
