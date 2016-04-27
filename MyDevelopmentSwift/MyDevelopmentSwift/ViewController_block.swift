@@ -15,7 +15,7 @@ class ViewController_block: UIViewController {
     super.viewDidLoad();
     
     
-    funcResult5();
+    func2();
   }
   
   
@@ -50,6 +50,7 @@ class ViewController_block: UIViewController {
   //MARK:- < trailing闭包 类似于oc的block >
   func func2() {
     
+    //例子：转换数字为对应英文 map后面接trailing闭包
     let digitNames = [
       0: "Zero", 1: "One", 2: "Two", 3: "Three", 4: "Four",
       5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
@@ -71,8 +72,18 @@ class ViewController_block: UIViewController {
     };
     
     print(strings);
+    
+    
+    //trailing闭包
+    func2_1({print("~~")});//原来
+    func2_1{print("@@@")};//trailing闭包
   }
   
+  func func2_1(block:()->()){
+    for _ in 0...2 {
+      block();
+    }
+  }
   
   //MARK:- < 嵌套函数是最简单的闭包 捕获引用 闭包和函数是引用类型 >
   func func3_result() {
@@ -215,16 +226,24 @@ class ViewController_block: UIViewController {
       return num*num;
     }
     
-    let result = func5_4(bb);
+    let result = func5_4_1(bb);
     print(result);
     
+    
+    func5_4_2({print("hello~")});
+    func5_4_2{print("~~~~")}
   }
   
-  func func5_4(block:(Int)->Int) -> Int{
+  func func5_4_1(block:(Int)->Int) -> Int{
     let result = block(2);
     return result;
   }
   
+  func func5_4_2(block:()->()){
+    for _ in 0...2 {
+      block()
+    }
+  }
 }
 
 

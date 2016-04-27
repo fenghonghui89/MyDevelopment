@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController_typeChange:UIViewController {
+class ViewController_typeChange_typeNesting:UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad();
