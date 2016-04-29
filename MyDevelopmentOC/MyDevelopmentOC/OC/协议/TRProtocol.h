@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol TRProtocol <NSObject>
+
 -(void)method1;
 @required
 -(void)method2;

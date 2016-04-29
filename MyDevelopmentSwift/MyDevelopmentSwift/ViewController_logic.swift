@@ -180,6 +180,7 @@ class ViewController_logic: UIViewController {
   func func4_4() {
     
     let p = (3,3);
+    
     switch p {
     case let(x,y) where x == y:
       print("x = y");
@@ -211,12 +212,15 @@ class ViewController_logic: UIViewController {
   //MARK:嵌套循环下用标签
   func func4_6() {
     
-    let finalSquare = 25
+    let finalSquare = 25//胜利条件
+    
+    //棋盘格子对应的数值 默认是0 特殊格子有加有减
     var board = [Int](count: finalSquare + 1, repeatedValue: 0)
     board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
     board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
-    var square = 0;
-    var diceRoll = 0;
+    
+    var square = 0;//当前走到的哪个格子
+    var diceRoll = 0;//骰子掷出的数子
     
     
     gameLoop:
@@ -228,19 +232,20 @@ class ViewController_logic: UIViewController {
         }
         
         switch square + diceRoll {
-        case finalSquare:
+        case finalSquare://如果当前步数=胜利条件，则跳出循环
           print("break");
           break gameLoop;
-        case let newSquare where newSquare > finalSquare:
+        case let newSquare where newSquare > finalSquare://如果当前步数>胜利条件，则不走，继续下一轮
           print("continue");
           continue gameLoop;
         default:
-          square += diceRoll
-          square += board[square]
+          square += diceRoll//加上骰子的数字
+          square += board[square]//加上格子的数值
           print(square);
         }
         
     }
+    
     print("Game over!")
 
   }

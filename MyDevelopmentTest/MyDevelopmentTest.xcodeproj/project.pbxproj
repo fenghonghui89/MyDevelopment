@@ -885,6 +885,7 @@
 		14A8AFDF1CC36B54008A50EB /* TRPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRPoint.m; sourceTree = "<group>"; };
 		14A8AFE01CC36B54008A50EB /* TRXYZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRXYZ.h; sourceTree = "<group>"; };
 		14A8AFE11CC36B54008A50EB /* TRXYZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRXYZ.m; sourceTree = "<group>"; };
+		14C224361CD3661800C4359E /* PHAssetResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAssetResource.h; sourceTree = "<group>"; };
 		14CB770D1CA4EFFA00878C4E /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		14CB770E1CA4EFFA00878C4E /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		14CB77121CA4F18F00878C4E /* MD_Socket_Client_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_Client_VC.h; sourceTree = "<group>"; };
@@ -2850,6 +2851,7 @@
 				144F23F31C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.h */,
 				144F23F41C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m */,
 				144F23F51C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.xib */,
+				14C224361CD3661800C4359E /* PHAssetResource.h */,
 				14EC6AED1C87DFED00A2CBB8 /* PHChange.h */,
 				14EC6AE81C87DB1700A2CBB8 /* PHAsset.h */,
 				14EC6AE91C87DB1700A2CBB8 /* PHImageManager.h */,

@@ -14,7 +14,7 @@ class ViewController_expand: UIViewController {
     
     super.viewDidLoad();
     
-    func5();
+    func6();
   }
   
   //MARK:- <<< method >>>
@@ -71,11 +71,32 @@ class ViewController_expand: UIViewController {
     print(i[2]);//输出从右往左数第n-1个数字
     
   }
+  
+  //MARK:嵌套类型
+  func func6(){
+    
+    let str:String = "Hello"
+    
+    for char in str.characters {
+      switch char.kind {
+      case .Vowel:
+        print("Vowel")
+      case .Other:
+        print("Ohter")
+      case .Consonant:
+        print("Consonant")
+      }
+    }
+  }
+  
+  
+  
+  
 }
 
 
 //MARK:- <<< class >>>
-//MARK:扩展Double
+//MARK:- 扩展Double
 extension Double{
 
   var km: Double { return self * 1_000.0 }
@@ -85,7 +106,7 @@ extension Double{
   var ft: Double { return self / 3.28084 }
 }
 
-//MARK:扩展构造器
+//MARK:- 扩展构造器 init
 
 struct Size {
   var width = 0.0, height = 0.0
@@ -109,7 +130,7 @@ extension Rect {
   }
 }
 
-//MARK:扩展方法
+//MARK:- 扩展方法
 extension Int{
 
   func repetitions(task:()->()){
@@ -119,7 +140,7 @@ extension Int{
   }
 }
 
-//MARK:修改实例 - mutating
+//MARK:- 修改实例 - mutating self
 extension Int{
 
   mutating func square1(){
@@ -130,7 +151,7 @@ extension Int{
 
 
 
-//MARK:扩展下标 - subscript
+//MARK:- 扩展下标 - subscript
 extension Int {
   
   subscript(digitIndex: Int) -> Int {
@@ -145,6 +166,24 @@ extension Int {
       decimalBase *= 10
     }
     return (self / decimalBase) % 10
+  }
+}
+
+//MARK:- 嵌套类型
+extension Character {
+  enum Kind {
+    case Vowel, Consonant, Other
+  }
+  var kind: Kind {
+    switch String(self).lowercaseString {
+    case "a", "e", "i", "o", "u":
+      return .Vowel
+    case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
+         "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+      return .Consonant
+    default:
+      return .Other
+    }
   }
 }
 

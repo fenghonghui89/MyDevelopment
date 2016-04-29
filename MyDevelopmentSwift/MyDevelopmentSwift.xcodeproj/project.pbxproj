@@ -26,6 +26,15 @@
 		14AF34BC1C7362AC007DC722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AF34BA1C7362AC007DC722 /* Main.storyboard */; };
 		14AF34BE1C7362AC007DC722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AF34BD1C7362AC007DC722 /* Assets.xcassets */; };
 		14AF34C11C7362AC007DC722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AF34BF1C7362AC007DC722 /* LaunchScreen.storyboard */; };
+		14C224251CD34DEA00C4359E /* ViewController_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224241CD34DEA00C4359E /* ViewController_protocol.swift */; };
+		14C224271CD34E1E00C4359E /* SnakesAndLadders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224261CD34E1E00C4359E /* SnakesAndLadders.swift */; };
+		14C224291CD34E3400C4359E /* DiceGameTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224281CD34E3400C4359E /* DiceGameTracker.swift */; };
+		14C2242B1CD350F800C4359E /* LinearCongruentialGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C2242A1CD350F800C4359E /* LinearCongruentialGenerator.swift */; };
+		14C2242D1CD3511700C4359E /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C2242C1CD3511700C4359E /* Dice.swift */; };
+		14C2242F1CD351B200C4359E /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C2242E1CD351B200C4359E /* protocol.swift */; };
+		14C224311CD3520300C4359E /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224301CD3520300C4359E /* Starship.swift */; };
+		14C224331CD3578C00C4359E /* Hamster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224321CD3578C00C4359E /* Hamster.swift */; };
+		14C224351CD35F1A00C4359E /* Person1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224341CD35F1A00C4359E /* Person1.swift */; };
 		14FC0CC51C9844FD008622B7 /* bookmark in Resources */ = {isa = PBXBuildFile; fileRef = 14FC0CC41C9844FD008622B7 /* bookmark */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +60,15 @@
 		14AF34BD1C7362AC007DC722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14AF34C01C7362AC007DC722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14AF34C21C7362AC007DC722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C224241CD34DEA00C4359E /* ViewController_protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_protocol.swift; sourceTree = "<group>"; };
+		14C224261CD34E1E00C4359E /* SnakesAndLadders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakesAndLadders.swift; sourceTree = "<group>"; };
+		14C224281CD34E3400C4359E /* DiceGameTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceGameTracker.swift; sourceTree = "<group>"; };
+		14C2242A1CD350F800C4359E /* LinearCongruentialGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearCongruentialGenerator.swift; sourceTree = "<group>"; };
+		14C2242C1CD3511700C4359E /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		14C2242E1CD351B200C4359E /* protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
+		14C224301CD3520300C4359E /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
+		14C224321CD3578C00C4359E /* Hamster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hamster.swift; sourceTree = "<group>"; };
+		14C224341CD35F1A00C4359E /* Person1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person1.swift; sourceTree = "<group>"; };
 		14FC0CC41C9844FD008622B7 /* bookmark */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bookmark; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +125,7 @@
 				140EB6A61CCF554B00E84F79 /* ViewController_link.swift */,
 				140EB6A81CCF622F00E84F79 /* ViewController_typeChange_typeNesting.swift */,
 				140EB6AA1CCF760800E84F79 /* ViewController_expand.swift */,
+				14C224221CD34D9900C4359E /* protocal */,
 				140EA0F91CC5D7D50077DCF8 /* model */,
 				14FC0CC41C9844FD008622B7 /* bookmark */,
 				14AF34BA1C7362AC007DC722 /* Main.storyboard */,
@@ -115,6 +134,30 @@
 				14AF34C21C7362AC007DC722 /* Info.plist */,
 			);
 			path = MyDevelopmentSwift;
+			sourceTree = "<group>";
+		};
+		14C224221CD34D9900C4359E /* protocal */ = {
+			isa = PBXGroup;
+			children = (
+				14C224241CD34DEA00C4359E /* ViewController_protocol.swift */,
+				14C224231CD34DCA00C4359E /* delegate */,
+			);
+			path = protocal;
+			sourceTree = "<group>";
+		};
+		14C224231CD34DCA00C4359E /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				14C2242E1CD351B200C4359E /* protocol.swift */,
+				14C2242C1CD3511700C4359E /* Dice.swift */,
+				14C2242A1CD350F800C4359E /* LinearCongruentialGenerator.swift */,
+				14C224261CD34E1E00C4359E /* SnakesAndLadders.swift */,
+				14C224281CD34E3400C4359E /* DiceGameTracker.swift */,
+				14C224301CD3520300C4359E /* Starship.swift */,
+				14C224321CD3578C00C4359E /* Hamster.swift */,
+				14C224341CD35F1A00C4359E /* Person1.swift */,
+			);
+			path = delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,17 +250,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF34B91C7362AC007DC722 /* ViewController_base.swift in Sources */,
+				14C224291CD34E3400C4359E /* DiceGameTracker.swift in Sources */,
 				14364B841CC7865100366F01 /* ViewController_arc.swift in Sources */,
 				14AF34B71C7362AC007DC722 /* AppDelegate.swift in Sources */,
+				14C224331CD3578C00C4359E /* Hamster.swift in Sources */,
 				14AC48D51C7608D900FD1C56 /* ViewController_symbol.swift in Sources */,
 				140EB6AB1CCF760800E84F79 /* ViewController_expand.swift in Sources */,
 				140EA1011CC62F700077DCF8 /* ViewController_dictionary.swift in Sources */,
+				14C224351CD35F1A00C4359E /* Person1.swift in Sources */,
 				149DDA1E1CC2021C00C7A8B1 /* ViewController_func.swift in Sources */,
 				140EA0FF1CC628640077DCF8 /* ClassModel.swift in Sources */,
+				14C2242F1CD351B200C4359E /* protocol.swift in Sources */,
+				14C224271CD34E1E00C4359E /* SnakesAndLadders.swift in Sources */,
 				14AC48D71C7618CD00FD1C56 /* ViewController_array.swift in Sources */,
+				14C2242B1CD350F800C4359E /* LinearCongruentialGenerator.swift in Sources */,
 				140EA0F81CC5CE2C0077DCF8 /* ViewController_class.swift in Sources */,
 				149DDA201CC21B5E00C7A8B1 /* ViewController_block.swift in Sources */,
+				14C224251CD34DEA00C4359E /* ViewController_protocol.swift in Sources */,
 				140EB6A71CCF554B00E84F79 /* ViewController_link.swift in Sources */,
+				14C224311CD3520300C4359E /* Starship.swift in Sources */,
+				14C2242D1CD3511700C4359E /* Dice.swift in Sources */,
 				1484847F1CA1BA6A00FA0DFF /* ViewController_logic.swift in Sources */,
 				140EB6A91CCF622F00E84F79 /* ViewController_typeChange_typeNesting.swift in Sources */,
 				142C689F1CC4BF0600ED1F92 /* ViewController_enum.swift in Sources */,
