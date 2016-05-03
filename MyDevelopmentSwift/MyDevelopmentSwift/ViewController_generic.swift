@@ -14,11 +14,11 @@ class ViewController_generic: UIViewController {
     
     super.viewDidLoad();
     
-    funcResult5();
+    funcGenericExpend();
   }
   
   //MARK:- <<< method >>>
-  //MARK:泛型函数
+  //MARK:泛型函数 func<Element>(a.b)
   func funcResult1(){
     
     var i = "a";
@@ -52,7 +52,21 @@ class ViewController_generic: UIViewController {
     
   }
   
-  //MARK:类型约束
+  //MARK:扩展泛型类型
+  func funcGenericExpend() {
+    
+    var st = Stack<String>()
+    st.append("1")
+    st.pop()
+    
+    if let topItem = st.topItem{
+      print("the top item is \(topItem)")
+    }else{
+      print("the top item is nil")
+    }
+  }
+  
+  //MARK:类型约束 func<Element:Protocol>(a,b)
   func funcResult3(){
     
     let arr = ["one","two","three"]
@@ -74,7 +88,7 @@ class ViewController_generic: UIViewController {
     return nil;
   }
   
-  //MARK:关联类型
+  //MARK:关联类型 associatedtype
   func funcResult4(){
     
     var st = Stack<String>()
@@ -109,9 +123,7 @@ class ViewController_generic: UIViewController {
       print("Not all items match.")
     }
 
-  
   }
-  
   
   
   func allItemsMatch<
@@ -177,7 +189,7 @@ struct Stack<T>: Container {
     return items.removeLast()
   }
   
-  //关联类型
+  //关联类型 associatedtype
   mutating func append(item: T) {
     self.push(item)
   }
@@ -187,7 +199,19 @@ struct Stack<T>: Container {
   subscript(i: Int) -> T {
     return items[i]
   }
+  
 }
+
+
+
+extension Stack {
+  var topItem: T? {
+    return items.isEmpty ? nil : items[items.count - 1]
+  }
+}
+
+
+
 
 
 protocol Container {
