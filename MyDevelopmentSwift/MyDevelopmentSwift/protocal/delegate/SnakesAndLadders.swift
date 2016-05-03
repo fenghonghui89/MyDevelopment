@@ -52,9 +52,10 @@ class SnakesAndLadders: DiceGame {//遵守DiceGame协议
   }
 }
 
-//协议继承 采用扩展声明协议
+//协议继承
 extension SnakesAndLadders:PrettyTextRepresentable{
   
+  //PrettyTextRepresentable delegate method
   func asText() -> String {
     return "A game of Snakes and Ladders with \(finalSquare) squares"
   }

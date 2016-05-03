@@ -138,7 +138,7 @@ class ViewController_enum: UIViewController {
     
   }
   
-  //MARK:enum 变异方法
+  //MARK:mutating 变异方法
   func func1_4() {
     enum TriStateSwitch {
       case Off, Low, High ;

@@ -13,7 +13,7 @@ class DiceGameTracker: DiceGameDelegate {
   var numberOfTurns = 0
   
   
-  //DiceGameDelegate
+  //DiceGameDelegate method
   func gameDidStart(game: DiceGame) {
     numberOfTurns = 0
     if game is SnakesAndLadders {

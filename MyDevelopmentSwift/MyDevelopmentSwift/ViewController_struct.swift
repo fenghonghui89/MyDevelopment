@@ -70,7 +70,7 @@ class ViewController_struct: UIViewController {
     print(point);
   }
   
-  //MARK:struct 变异方法
+  //MARK:mutating 变异方法
   /*
    用途：在方法内部改变属性
    */

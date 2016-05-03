@@ -10,8 +10,8 @@ import Foundation
 
 protocol Named {
   
-  var name:String{get}
-  
+ var name:String{get}
+
 }
 
 protocol Aged {

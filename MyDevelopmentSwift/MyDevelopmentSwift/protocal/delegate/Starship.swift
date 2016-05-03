@@ -10,14 +10,14 @@ import Foundation
 
 protocol FullyNamed{
   
-  //属性要求
+  //协议属性
   var fullName:String{get}
   var getset:String{get set}
   
-  //方法要求
+  //协议方法
   func funcRequire() -> Double
   
-  //mutating方法要求
+  //mutating方法 修改实例的属性
   mutating func toggle();
 }
 
@@ -30,7 +30,7 @@ class Starship: FullyNamed {
     self.prefix = prefix
   }
   
-  //属性要求
+  //协议属性
   var fullName: String {
     
     let str1 = prefix == nil ? "":(prefix!+" ")
@@ -52,12 +52,12 @@ class Starship: FullyNamed {
   }
   
   
-  //方法要求
+  //协议方法
   func funcRequire() -> Double {
     return 0.11;
   }
   
-  //mutating方法要求
+  //mutating方法 修改实例的属性
   enum OnOffSwitch {
     case on,off
   }

@@ -77,7 +77,7 @@ willSet有newValue，didset有oldValu
 
 subscript
 附属脚本 调用方法为 objName[parama]，例如 person[10]
-必须要有get，set可选
+必须要有get;set可选
 
 
 deinit
@@ -120,4 +120,5 @@ protocal
 
 
 ???
-@objc optional
+@objc
+optional只能用在@objc修饰协议

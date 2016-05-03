@@ -18,7 +18,7 @@ class ViewController_func: UIViewController {
   
     
     
-    funcResult11();
+    funcResult7();
     
     
 

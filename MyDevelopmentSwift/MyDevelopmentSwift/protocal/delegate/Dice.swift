@@ -11,19 +11,21 @@ import Foundation
 class Dice {
   
   let sides:Int;
-  let generator:RandomNumberGenerator;//协议类型
+  let generator:protocol<RandomNumberGenerator>;//协议类型
+//  let generator:RandomNumberGenerator;//或者这样
   
   init(sides:Int,generator:RandomNumberGenerator){
     self.sides = sides;
     self.generator = generator;
   }
   
-  func roll() ->Int {//RandomNumberGenerator协议要求
+  //RandomNumberGenerator协议方法
+  func roll() ->Int {
     return Int(generator.random() * Double(sides)) + 1
   }
 }
 
-
+//给类扩展协议
 extension Dice:TextRepresentable {
   
   func asText() -> String{

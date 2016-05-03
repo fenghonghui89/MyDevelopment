@@ -14,11 +14,11 @@ class ViewController_protocol:UIViewController{
     
     super.viewDidLoad();
     
-    func8();
+    func9();
   }
   
   //MARK:- <<< method >>>
-  //MARK:属性要求 方法要求 mutating方法要求
+  //MARK:协议属性 协议方法 mutating方法修改实例的属性
   func func1(){
     
     let ncc1771 = Starship(name: "Enterprise", prefix: "USS")
@@ -36,7 +36,6 @@ class ViewController_protocol:UIViewController{
     
     let generator = LinearCongruentialGenerator()
     print("Here's a random number: \(generator.random())")// prints "Here's a random number: 0.37464991998171"
-    print("And another one: \(generator.random())")// prints "And another one: 0.729023776863283"
     
     let d6 = Dice(sides: 6, generator: generator);
     print("\(d6.asText())")//扩展的协议方法
@@ -66,12 +65,11 @@ class ViewController_protocol:UIViewController{
 
   }
   
-  //MARK:采用扩展声明协议
+  //MARK:使用空扩展使一个符合要求的类采用协议
   func func4(){
     
-    let simonTheHamster = Hamster(name: "Simon")
-    
-    let somethingTextRepresentable:TextRepresentable = simonTheHamster
+    let simon = Hamster(name: "Simon")
+    let somethingTextRepresentable:TextRepresentable = simon
     print(somethingTextRepresentable.asText())// prints "A hamster named Simon"
 
   }
@@ -84,11 +82,15 @@ class ViewController_protocol:UIViewController{
     let dice = Dice(sides: 6, generator: LinearCongruentialGenerator())
     let hamster = Hamster(name: "Simon")
     
-    let things:[TextRepresentable] = [game,dice,hamster];
+    let things:[TextRepresentable] = [game,dice,hamster];//协议集合类型
     
     for thing in things {
       print(thing.asText());
     }
+    
+    // A game of Snakes and Ladders with 25 squares
+    // A 12-sided dice
+    // A hamster named Simon
   }
   
   //MARK:协议继承
@@ -98,15 +100,16 @@ class ViewController_protocol:UIViewController{
     print(game.asPrettyText());
   }
   
-  //MARK:协议组合
+  //MARK:协议组合 类似于oc的id<delegate1,delegate2...>
   func func7(){
     
     let p1 = Person1(name: "Hany", age: "27")
-    let p2 = Person2(name: "HHH", age: "28")
+    let p2 = Person1(name: "HHH", age: "28")
+    
     p1.wishHappyBirthday(p2)
   }
   
-  //MARK:检查是否遵守协议
+  //MARK:is as 检查是否遵守协议
   func func8(){
     
     let p1 = Person1(name: "Hany", age: "27")
@@ -123,6 +126,18 @@ class ViewController_protocol:UIViewController{
       }
     }
     
+  }
+  
+  
+  
+  //MARK:@objc optional
+  func func9(){
+    
+    let student:OCProtocol = Studnet(name: "Hany")
+    
+    let occlass = OCClass(student: student);
+    print("name:\(occlass.student.name!)")
+  
   }
 }
 
