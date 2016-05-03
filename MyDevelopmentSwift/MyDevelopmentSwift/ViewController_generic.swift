@@ -14,7 +14,7 @@ class ViewController_generic: UIViewController {
     
     super.viewDidLoad();
     
-    funcResult4();
+    funcResult5();
   }
   
   //MARK:- <<< method >>>
@@ -88,35 +88,110 @@ class ViewController_generic: UIViewController {
       print(st[index])
     }
   }
+  
+  //MARK:类型约束+where语句
+  func funcResult5(){
+    
+    var stackOfStrings = Stack<String>()
+    stackOfStrings.push("1")
+    stackOfStrings.push("2")
+    stackOfStrings.push("3")
+    
+    var stackOfStrings1 = Stack<String>()
+    stackOfStrings1.push("1")
+    stackOfStrings1.push("2")
+    stackOfStrings1.push("3")
+    stackOfStrings1.push("4")
+
+    if allItemsMatch(stackOfStrings, stackOfStrings1) {
+      print("All items match.")
+    } else {
+      print("Not all items match.")
+    }
+
+  
+  }
+  
+  
+  
+  func allItemsMatch<
+    C1: Container, C2: Container
+    where C1.ItemType == C2.ItemType, C1.ItemType: Equatable>
+    (someContainer: C1, _ anotherContainer: C2) -> Bool {
+    
+    // check that both containers contain the same number of items
+    if someContainer.count != anotherContainer.count {
+      return false
+    }
+    
+    // check each pair of items to see if they are equivalent
+    for i in 0..<someContainer.count {
+      if someContainer[i] != anotherContainer[i] {
+        return false
+      }
+    }
+    
+    // all items match, so return true
+    return true
+    
+  }
+  
 }
 
 //MARK:- <<< class / protocol >>>
 
-struct Stack<Element>: Container {
+//非泛型类型struct
+struct IntStack: Container {
   
-  //泛型类型
-  var items = [Element]()
-  mutating func push(item: Element) {
+  //非泛型类型
+  var items = [Int]()
+  mutating func push(item: Int) {
     items.append(item)
   }
-  mutating func pop() -> Element {
+  mutating func pop() -> Int {
     return items.removeLast()
   }
   
   //关联类型
-  mutating func append(item: Element) {
+  typealias ItemType = Int
+  mutating func append(item: Int) {
     self.push(item)
   }
   var count: Int {
     return items.count
   }
-  subscript(i: Int) -> Element {
+  subscript(i: Int) -> Int {
+    return items[i]
+  }
+}
+
+//泛型类型struct
+struct Stack<T>: Container {
+  
+  //泛型类型
+  var items = [T]()
+  mutating func push(item: T) {
+    items.append(item)
+  }
+  mutating func pop() -> T {
+    return items.removeLast()
+  }
+  
+  //关联类型
+  mutating func append(item: T) {
+    self.push(item)
+  }
+  var count: Int {
+    return items.count
+  }
+  subscript(i: Int) -> T {
     return items[i]
   }
 }
 
 
 protocol Container {
+  
   associatedtype ItemType
   mutating func append(item: ItemType)
   var count: Int { get }
