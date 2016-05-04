@@ -56,11 +56,11 @@ class ViewController_array: UIViewController {
     print(arr5);
     
     //NSObjcet NSArray NSMutableArray类型数组
-    var arr6:NSArray = ["1",2];
+    let arr6:NSArray = ["1",2];
     //    arr6[1] = 3;//不可变
     print(arr6)
     
-    var arr7:NSMutableArray = ["1",2];
+    let arr7:NSMutableArray = ["1",2];
     arr7[1] = "3";//可变
     print(arr7[0]);
     //    NSLog("arr %@",arr7[0]);
@@ -70,7 +70,7 @@ class ViewController_array: UIViewController {
   //MARK:空数组 判断空数组
   func func1_3() {
     
-    var nullarr1:Array<Float> = [];
+    let nullarr1:Array<Float> = [];
     var nullarr2 = [Int]();
     var nullarr3:[String] = [];
     
@@ -138,7 +138,7 @@ class ViewController_array: UIViewController {
       print(j);
     }
     
-    for (index,value) in EnumerateSequence(provices){
+    for (index,value) in provices.enumerate(){
       print("\(index): \(value)")
     }
   }
