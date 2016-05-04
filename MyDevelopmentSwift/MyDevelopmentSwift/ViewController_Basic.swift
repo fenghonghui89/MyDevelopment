@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ViewController_base: UIViewController {
+class ViewController_Basic: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,10 +36,14 @@ class ViewController_base: UIViewController {
   
   //MARK:数值可读性 中文变量/常量名
   func func1_2() {
-    let productid = 2_000_000;
-    let 你好 = "你们";
     
+    let productid = 1_000_000.000_000_1;
+    let 你好 = "你们";
     print("ID:\(productid) \n Name:\(你好)");
+    
+    let e1 = 1.21875e2
+    let e2 = 1.21875e-2
+    print(e1,e2)
   }
   
   //MARK:类型范围
@@ -57,88 +61,19 @@ class ViewController_base: UIViewController {
     print("\(dv2)  \(ii) \(i)");
   }
   
-  //MARK:断言
+  
+  //MARK:类型别名 typealias
   func func1_5(){
-    let value = -3;
-    assert(value >= 0)
-    assert(value >= 0,"value要大于0");
-  }
-  
-  //MARK: - <<< string >>> -
-  //MARK:定义 空字符串 打印输出
-  func func2_1() {
-    //T定义
-    var s = "avc";
-    var s1:String = "avc";
-    var s2:String = String("avc");
     
-    //空字符串
-    var s3 = "";
-    var s4 = String();
+    typealias AudioSample = UInt16
+    let maxAmplitudeFound = AudioSample.min
+    print(maxAmplitudeFound)
     
-    //打印输出
-    let t1:Int = 1;
-    let t2:Float = 1.1;
-    let t3:Character = "c";
-    let t4:Bool = true;
-    let t5:String = "abc"
-    let t6:String = "def"
-    print(String("\(t1)  \(t2) \(t3) \(t4) \(t5)"));
-    print("\(t1)  \(t2) \(t3) \(t4) \(t5)");
-    print(t1,t2,t3,t4,t5);
-    print(t5+" "+t6);
 
   }
-  
-  //MARK:枚举字符串中的所有字符 unicode
-  func func2_2() {
-    
-    let sa1 = "xjx你是我的最爱";
-    for a in sa1.characters
-    {
-      print(a);
-    }
-    
-    for b in sa1.unicodeScalars
-    {
-      print(b.value);
-    }
 
-  }
   
-  //MARK:字符串和字符的连接
-  func func2_3() {
-    let st1 = "abc";
-    let st2 = "def";
-    let c1:Character = "g";
-    let c2:Character = "h";
-    var st = st1+st2;
-    //    st = c1+c2;//字符不能和字符连接？
-    //    st = st1+c1;//字符串不能和字符连接？
-    st = "bbb";
-    st = String(st1+st2);
-  }
-  
-  //MARK:字符串之间的比较
-  func func2_4() {
-    var str1 = "abcd";
-    var str2 = "abcd";
     
-    if str1<=str2{
-      print("<=");
-    }
-
-  }
-  
-  //MARK:字符串大小写转换
-  func func2_5() {
-    var str1:String = "abcd";
-    var str2:String = "ABCD";
-    
-    print(str1.uppercaseString);
-    print(str2.lowercaseString);
-  }
-  
   //MARK: - <<< 元组 >>> -
   //MARK:通过下标取元组的元素值
   func func3_1() {
@@ -241,5 +176,15 @@ class ViewController_base: UIViewController {
     print(assumedString) // 不需要感叹号
 
   }
+  
+  //MARK:- <<< 断言 >>> -
+  func func5_1(){
+    
+    let value = -3;
+    assert(value >= 0)
+    assert(value >= 0,"value要大于0");
+  }
+  
+
 }
 
