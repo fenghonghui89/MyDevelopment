@@ -33,6 +33,7 @@ class ViewController_generic: UIViewController {
     let temporaryA = a
     a = b
     b = temporaryA
+
   }
   
   //MARK:泛型类型

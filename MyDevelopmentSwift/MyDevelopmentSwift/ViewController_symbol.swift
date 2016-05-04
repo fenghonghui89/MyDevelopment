@@ -27,23 +27,6 @@ class ViewController_symbol: UIViewController {
     
   }
   
-  //MARK: - <<< method >>> -
-  //MARK:跟oc不同不允许溢出/用&强制输出溢出值
-  func func1() {
-    
-//    let x:Int = 112233*112233;
-//    print(x);
-//    
-//    let x1:Int = 112233;
-//    var y1:Int = 112233*x1;
-//    print(y1);
-
-    //用&强制输出溢出值
-    let x3:Int = 112233;
-    var y3:Int = 112233 &* x3;
-    print(y3);
-
-  }
   
   //MARK:可以浮点数求余 浮点数自增自减1
   func func2() {
