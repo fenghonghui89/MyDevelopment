@@ -74,6 +74,7 @@
   TRStudent* student = [TRStudent new];
   student.name = @"zhangsan";
   student.age = 12;
+  
   TRStudent* student2 = [TRStudent new];
   student2.name = @"lisi";
   student2.age = 30;

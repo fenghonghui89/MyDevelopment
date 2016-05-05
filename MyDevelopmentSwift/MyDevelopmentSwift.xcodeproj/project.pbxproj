@@ -15,6 +15,7 @@
 		140EB6AB1CCF760800E84F79 /* ViewController_expand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6AA1CCF760800E84F79 /* ViewController_expand.swift */; };
 		142C689F1CC4BF0600ED1F92 /* ViewController_enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C689E1CC4BF0600ED1F92 /* ViewController_enum.swift */; };
 		14364B841CC7865100366F01 /* ViewController_arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14364B831CC7865100366F01 /* ViewController_arc.swift */; };
+		146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B18501CDADC8800F0D092 /* ViewController_Set.swift */; };
 		1484847F1CA1BA6A00FA0DFF /* ViewController_logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController_logic.swift */; };
 		149DDA1E1CC2021C00C7A8B1 /* ViewController_func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1D1CC2021C00C7A8B1 /* ViewController_func.swift */; };
 		149DDA201CC21B5E00C7A8B1 /* ViewController_block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1F1CC21B5E00C7A8B1 /* ViewController_block.swift */; };
@@ -51,6 +52,7 @@
 		140EB6AA1CCF760800E84F79 /* ViewController_expand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_expand.swift; sourceTree = "<group>"; };
 		142C689E1CC4BF0600ED1F92 /* ViewController_enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_enum.swift; sourceTree = "<group>"; };
 		14364B831CC7865100366F01 /* ViewController_arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_arc.swift; sourceTree = "<group>"; };
+		146B18501CDADC8800F0D092 /* ViewController_Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Set.swift; sourceTree = "<group>"; };
 		1484847E1CA1BA6A00FA0DFF /* ViewController_logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_logic.swift; sourceTree = "<group>"; };
 		149DDA1D1CC2021C00C7A8B1 /* ViewController_func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_func.swift; sourceTree = "<group>"; };
 		149DDA1F1CC21B5E00C7A8B1 /* ViewController_block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_block.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				14DE33291CDA04AD002A75C4 /* ViewController_array.swift */,
 				14DE332A1CDA04AD002A75C4 /* ViewController_dictionary.swift */,
+				146B18501CDADC8800F0D092 /* ViewController_Set.swift */,
 			);
 			path = "collection types";
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				14AC48D51C7608D900FD1C56 /* ViewController_BaseOperator.swift in Sources */,
 				149E4BF71CD851E0000CFC0E /* OCClassAndProtocol.swift in Sources */,
 				140EB6AB1CCF760800E84F79 /* ViewController_expand.swift in Sources */,
+				146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */,
 				14C224351CD35F1A00C4359E /* Person1.swift in Sources */,
 				14DE332C1CDA04AD002A75C4 /* ViewController_dictionary.swift in Sources */,
 				149DDA1E1CC2021C00C7A8B1 /* ViewController_func.swift in Sources */,

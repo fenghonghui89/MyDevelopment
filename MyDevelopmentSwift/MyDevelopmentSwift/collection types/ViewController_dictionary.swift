@@ -9,8 +9,11 @@
 import UIKit
 
 class ViewController_dictionary: UIViewController {
+  
   override func viewDidLoad() {
     super.viewDidLoad();
+    
+    func2_2()
   }
   
   
@@ -53,16 +56,23 @@ class ViewController_dictionary: UIViewController {
     //增
     var product = ["name":"iphone","company":"apple"];
     product["time"] = "2014-1-1";
+    print(product)
     
     var person = [Int:String]();
     person[10] = "Peter";
     person[20] = "Ann";
+    print(person)
+    
     
     //返回修改之前的值，并修改
-    if let oldValue = person.updateValue("John", forKey: 10)
+    if let oldValue = person.updateValue("Peter2", forKey: 10)
     {
       print("old value: \(oldValue)");
     }
+    print(person);
+    
+    //根据key修改
+    person[20] = "Ann2"
     print(person);
     
     //删除
@@ -78,6 +88,7 @@ class ViewController_dictionary: UIViewController {
     //查
     var persons = [10:"Bill",20:"Mike"];
     print("\(persons[10])  \(persons[30])");
+    print("count:\(persons.count)")
   }
   
   //MARK:将value转换为指定的类型值
