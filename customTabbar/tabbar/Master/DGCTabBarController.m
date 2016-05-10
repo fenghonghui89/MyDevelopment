@@ -10,6 +10,7 @@
 #import "DGCDefine.h"
 #import "DGCTool.h"
 #import "DGCNavigationViewController.h"
+#import "UIView+MDCategory.h"
 @interface DGCTabBarController ()
 
 @property(nonatomic,strong)NSArray *viewControllers;
@@ -87,6 +88,22 @@
   tabBarItem.tag = index;
   
   [self tabBar:self.tabBar didSelectItem:tabBarItem];
+}
+
+-(void)hideTabBarWithAnimation:(BOOL)animation{
+  NSLog(@"!!!!");
+  [UIView animateWithDuration:0.2 animations:^{
+    NSLog(@"hide!");
+    [self.tabBar setOrigin_:CGPointMake(0, viewH)];
+  }];
+}
+
+-(void)showTabBarWithAnimation:(BOOL)animation{
+  
+  [UIView animateWithDuration:2 animations:^{
+    NSLog(@"show");
+    [self.tabBar setOrigin_:CGPointMake(0, viewH-tabBarH)];
+  }];
 }
 
 #pragma mark - < callback > -

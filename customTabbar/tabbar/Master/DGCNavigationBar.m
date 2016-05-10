@@ -33,13 +33,13 @@
     //init bgimage
     if (self.navBarBgImageView == nil) {
       
-      UIImage *navBarBgImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"navibg.png" ofType:nil]];
+      UIImage *navBarBgImage = [UIImage imageNamed:@"navibg.png"];
       UIImageView *navBarBgImageView = [[UIImageView alloc] initWithFrame:self.bounds];
       navBarBgImageView.backgroundColor = [UIColor clearColor];
       navBarBgImageView.image = navBarBgImage;
       [self addSubview:navBarBgImageView];
       self.navBarBgImageView = navBarBgImageView;
-      self.navBarBgImageView.hidden = YES;
+      self.navBarBgImageView.hidden = NO;
     }
   }
   return self;

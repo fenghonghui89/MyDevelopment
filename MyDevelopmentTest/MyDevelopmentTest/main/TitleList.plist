@@ -4,6 +4,74 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>UI框架</string>
+		<key>className</key>
+		<string></string>
+		<key>sub</key>
+		<array>
+			<dict>
+				<key>desc</key>
+				<string>UIViewController</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>ChildVC</string>
+						<key>className</key>
+						<string>MDMainViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>UINavigationController</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>跳转</string>
+						<key>className</key>
+						<string>MDModalViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>常用属性、UIBarButtonItem等</string>
+						<key>className</key>
+						<string>MDNavi1ViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>UITabBarController</string>
+				<key>className</key>
+				<string></string>
+				<key>sub</key>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>常用</string>
+						<key>className</key>
+						<string>MDTabBarVCNormalViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>MediaPlayer</string>
 		<key>className</key>
 		<string>MD_MediaPlayer_VC</string>
@@ -549,48 +617,6 @@
 			</dict>
 			<dict>
 				<key>desc</key>
-				<string>UITabBarController</string>
-				<key>className</key>
-				<string></string>
-				<key>sub</key>
-				<array>
-					<dict>
-						<key>desc</key>
-						<string>常用</string>
-						<key>className</key>
-						<string>MDTabBarVCNormalViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>desc</key>
-				<string>UINavigationController</string>
-				<key>className</key>
-				<string></string>
-				<key>sub</key>
-				<array>
-					<dict>
-						<key>desc</key>
-						<string>跳转</string>
-						<key>className</key>
-						<string>MDModalViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-					<dict>
-						<key>desc</key>
-						<string>常用属性、UIBarButtonItem等</string>
-						<key>className</key>
-						<string>MDNavi1ViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>desc</key>
 				<string>UIPageViewController</string>
 				<key>className</key>
 				<string>MDPageViewController</string>
@@ -661,23 +687,6 @@
 				<string>MDPickerViewViewController</string>
 				<key>sub</key>
 				<array/>
-			</dict>
-			<dict>
-				<key>desc</key>
-				<string>UIViewController</string>
-				<key>className</key>
-				<string></string>
-				<key>sub</key>
-				<array>
-					<dict>
-						<key>desc</key>
-						<string>ChildVC</string>
-						<key>className</key>
-						<string>MDMainViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-				</array>
 			</dict>
 			<dict>
 				<key>desc</key>

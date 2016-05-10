@@ -6,12 +6,14 @@
 //  Copyright © 2016年 GoTravel. All rights reserved.
 //
 
-#import "DGCBaseViewController.h"
+
 #import "DGCTabBar.h"
 #import "DGCTabBarItem.h"
 
-@interface DGCTabBarController : DGCBaseViewController<DGCTabBarDelegate>
+@interface DGCTabBarController : UIViewController<DGCTabBarDelegate>
 @property(nonatomic,assign) NSUInteger selectedIndex;
 - (id)initWithViewControllers:(NSArray *)viewControllers;
 - (void)selectedTab:(NSInteger)index;
+-(void)hideTabBarWithAnimation:(BOOL)animation;
+-(void)showTabBarWithAnimation:(BOOL)animation;
 @end

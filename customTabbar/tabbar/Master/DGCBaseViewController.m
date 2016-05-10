@@ -21,7 +21,10 @@
 - (void)viewDidLoad {
   
   [super viewDidLoad];
-  [self customInitUI];
+  [self customInitSelfView];
+  [self customInitBgImageView];
+  [self customInitNavigationBar];
+  [self customInitMainView];
 }
 
 -(void)viewWillAppearCustom{
@@ -41,14 +44,6 @@
 }
 
 #pragma mark - < method > -
--(void)customInitUI{
-  
-  [self customInitSelfView];
-  [self customInitBgImageView];
-  [self customInitNavigationBar];
-  [self customInitMainView];
-}
-
 -(void)customInitSelfView{
   
   self.view.backgroundColor = [UIColor purpleColor];
@@ -73,7 +68,7 @@
 
 -(void)customInitMainView{
 
-  UIView *addView = [[UIView alloc] initWithFrame:CGRectMake(0, naviH, screenW, viewH-naviH-tabBarH)];
+  UIView *addView = [[UIView alloc] initWithFrame:CGRectMake(0, naviH+stateH, screenW, viewH-naviH-stateH-tabBarH)];
   [self.view insertSubview:addView aboveSubview:self.bgImageView];
   addView.backgroundColor = [UIColor orangeColor];
   self.addView = addView;

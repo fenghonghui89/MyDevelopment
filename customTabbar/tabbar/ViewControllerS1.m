@@ -22,12 +22,8 @@
   [self customInitUI];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-  [super viewWillAppear:animated];
-}
-
--(void)viewDidAppear:(BOOL)animated{
-  [super viewDidAppear:animated];
+-(void)viewWillAppearCustom{
+  [self.tabBarController_t hideTabBarWithAnimation:YES];
 }
 
 #pragma mark - < method > -

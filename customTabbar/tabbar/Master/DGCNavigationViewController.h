@@ -8,7 +8,7 @@
 
 #import "DGCBaseViewController.h"
 #import "DGCTabBarItem.h"
-@interface DGCNavigationViewController : DGCBaseViewController
+@interface DGCNavigationViewController : UIViewController
 
 @property(nonatomic,strong)DGCTabBarItem *tabBarItem;
 @property(nonatomic,assign)NSInteger selectedIndex;

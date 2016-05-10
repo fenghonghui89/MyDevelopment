@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.addView.backgroundColor = [UIColor yellowColor];
-//  [self customInitUI];
+  [self customInitUI];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -34,7 +34,7 @@
 #pragma mark - < method > -
 -(void)customInitUI{
   
-//  [self setBackgroundImage:[UIImage imageNamed:@"home_bg.png"]];
+  [self setBackgroundImage:[UIImage imageNamed:@"home_bg.png"]];
   
   DGCNavigationBarInstance *navigationBar = [[DGCNavigationBarInstance alloc] initWithType:DGCNavigationBarInstanceTypeBack];
   navigationBar.delegate = self;
@@ -54,6 +54,7 @@
 -(void)btn1Tap{
 
   ViewControllerS1 *vc = [ViewControllerS1 new];
+  vc.tabBarController_t = self.tabBarController_t;
   [self.navigationController_t pushViewController:vc animated:YES];
 }
 
@@ -65,4 +66,8 @@
 -(void)navigationBarInstance:(DGCNavigationBarInstance *)instance rightNavigationBarButtonTap:(id)sender{
 
 }
+
+
+
+
 @end

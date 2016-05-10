@@ -19,8 +19,8 @@
   
   [super viewDidLoad];
   
-  self.navigationBar.hidden = YES;
-  self.addView.hidden = YES;
+//  self.navigationBar.hidden = YES;
+//  self.addView.hidden = YES;
   self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
   self.selectedIndex = 0;
   [self.view addSubview:self.selectedViewController.view];
@@ -64,7 +64,7 @@
   };
   
   //执行
-  viewController.mainViewController = self.mainViewController;
+//  viewController.mainViewController = self.mainViewController;
   viewController.navigationController_t = self;
   viewController.view.frame = CGRectMake(self.subViewFrame.size.width, self.subViewFrame.origin.y, self.subViewFrame.size.width, self.subViewFrame.size.height);
   [self.view addSubview:viewController.view];
