@@ -23,6 +23,7 @@
     vc1.navigationItem.title = @"1";
     UINavigationController *navi1 = [[UINavigationController alloc] initWithRootViewController:vc1];
     navi1.tabBarItem.title = @"1";
+  
     
     MDTBVC2ViewController *vc2 = [[MDTBVC2ViewController alloc] init];
     vc2.navigationItem.title = @"2";
