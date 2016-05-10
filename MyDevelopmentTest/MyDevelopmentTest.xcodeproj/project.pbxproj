@@ -1042,6 +1042,8 @@
 		14FF803F1CE1B96200C7855C /* UITabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITabBarController.h; sourceTree = "<group>"; };
 		14FF80401CE1B96200C7855C /* UITabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITabBarItem.h; sourceTree = "<group>"; };
 		14FF80411CE1B98800C7855C /* UIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewController.h; sourceTree = "<group>"; };
+		14FF80421CE1BBFC00C7855C /* UIBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBarButtonItem.h; sourceTree = "<group>"; };
+		14FF80431CE1BBFC00C7855C /* UIBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBarItem.h; sourceTree = "<group>"; };
 		14FFBE291C9AA995006BEB2B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		14FFBE2A1C9AA995006BEB2B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		14FFBE2B1C9AA995006BEB2B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -2770,6 +2772,8 @@
 		14FF7FF71CE19DF600C7855C /* UI框架 */ = {
 			isa = PBXGroup;
 			children = (
+				14FF80421CE1BBFC00C7855C /* UIBarButtonItem.h */,
+				14FF80431CE1BBFC00C7855C /* UIBarItem.h */,
 				14FF80411CE1B98800C7855C /* UIViewController.h */,
 				14FF803C1CE1B96200C7855C /* UINavigationBar.h */,
 				14FF803D1CE1B96200C7855C /* UINavigationController.h */,
