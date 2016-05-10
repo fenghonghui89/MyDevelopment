@@ -55,18 +55,9 @@
 				<key>desc</key>
 				<string>UITabBarController</string>
 				<key>className</key>
-				<string></string>
+				<string>MDTabBarVCNormalViewController</string>
 				<key>sub</key>
-				<array>
-					<dict>
-						<key>desc</key>
-						<string>常用</string>
-						<key>className</key>
-						<string>MDTabBarVCNormalViewController</string>
-						<key>sub</key>
-						<array/>
-					</dict>
-				</array>
+				<array/>
 			</dict>
 		</array>
 	</dict>

@@ -21,6 +21,9 @@
  The rest will be accessible under an automatically generated More item.
  
  UITabBarController is rotatable if all of its view controllers are rotatable.
+ 
+ setViewControllers - 默认最多显示5个，超过5个就显示前4个+more
+ addChildViewController:navi1 - 超过5个不会显示more 只显示5个
  */
 
 NS_ASSUME_NONNULL_BEGIN
@@ -35,13 +38,13 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UITabBarController : UIViewController <UI
 // The "More" navigation controller will not be returned by -viewControllers, but it may be returned by -selectedViewController.
 - (void)setViewControllers:(NSArray<__kindof UIViewController *> * __nullable)viewControllers animated:(BOOL)animated;
 
-@property(nullable, nonatomic, assign) __kindof UIViewController *selectedViewController; // This may return the "More" navigation controller if it exists.
+@property(nullable, nonatomic, assign) __kindof UIViewController *selectedViewController; // This may return the "More" navigation controller if it exists.可能返回more
 @property(nonatomic) NSUInteger selectedIndex;
 
 @property(nonatomic, readonly) UINavigationController *moreNavigationController __TVOS_PROHIBITED; // Returns the "More" navigation controller, creating it if it does not already exist.
 @property(nullable, nonatomic, copy) NSArray<__kindof UIViewController *> *customizableViewControllers __TVOS_PROHIBITED; // If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified controllers. By default, all view controllers are customizable.
 
-@property(nonatomic,readonly) UITabBar *tabBar NS_AVAILABLE_IOS(3_0); // Provided for -[UIActionSheet showFromTabBar:]. Attempting to modify the contents of the tab bar directly will throw an exception.
+@property(nonatomic,readonly) UITabBar *tabBar NS_AVAILABLE_IOS(3_0); // Provided for -[UIActionSheet showFromTabBar:]. Attempting to modify the contents of the tab bar directly will throw an exception.默认只读，如果要自定义可创建一个子类继承UITabBar，然后用kvc修改[self setValue:tabBar forKey:@"tabBar"];
 
 @property(nullable, nonatomic,weak) id<UITabBarControllerDelegate> delegate;
 

@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, UITabBarItemPositioning) {
 NS_CLASS_AVAILABLE_IOS(2_0) @interface UITabBar : UIView
 
 @property(nullable,nonatomic,assign) id<UITabBarDelegate> delegate;     // weak reference. default is nil
-@property(nullable,nonatomic,copy) NSArray<UITabBarItem *> *items;        // get/set visible UITabBarItems. default is nil. changes not animated. shown in order
+@property(nullable,nonatomic,copy) NSArray<UITabBarItem *> *items;        // get/set visible UITabBarItems. default is nil. changes not animated. shown in order 不能通过[tabvc.tabbar setitems]修改 会崩
 @property(nullable,nonatomic,assign) UITabBarItem *selectedItem; // will show feedback based on mode. default is nil
 
 - (void)setItems:(nullable NSArray<UITabBarItem *> *)items animated:(BOOL)animated;   // will fade in or out or reorder and adjust spacing
@@ -39,6 +39,7 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UITabBar : UIView
  The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
  and behaves as described for the tintColor property added to UIView.
  To tint the bar's background, please use -barTintColor.
+ 设置背景色用barTintColor
  */
 @property(null_resettable, nonatomic,strong) UIColor *tintColor NS_AVAILABLE_IOS(5_0);
 @property(nullable, nonatomic,strong) UIColor *barTintColor NS_AVAILABLE_IOS(7_0) UI_APPEARANCE_SELECTOR;  // default is nil
