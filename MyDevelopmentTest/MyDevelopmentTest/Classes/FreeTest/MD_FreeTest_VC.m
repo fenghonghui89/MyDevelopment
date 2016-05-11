@@ -8,14 +8,8 @@
 
 #import "MD_FreeTest_VC.h"
 
-@interface MD_FreeTest_VC ()
-{
-  int tickets;
-  int count;
-  NSThread* ticketsThreadone;
-  NSThread* ticketsThreadtwo;
-  NSCondition* ticketsCondition;
-}
+@interface MD_FreeTest_VC ()<UIGestureRecognizerDelegate>
+@property(nonatomic,strong)UIWebView *webView;
 @end
 
 @implementation MD_FreeTest_VC
@@ -23,54 +17,37 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  int i = 10;
-  int j = i;
-  j = 20;
-  NSLog(@"%d %d",i,j);
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
   
+  self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, viewW, viewH)];
+  self.webView.userInteractionEnabled = YES;
+  [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+  [self.view addSubview:self.webView];
+  
+  UISwipeGestureRecognizer *swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+  swipeGR.direction = UISwipeGestureRecognizerDirectionRight;
+  swipeGR.delegate = self;
+  [self.webView addGestureRecognizer:swipeGR];
 }
 
 #pragma mark - < method > -
 
 -(void)customInitUI{
   
-  NSString *str = NSStringFromSelector(@selector(tttest));
-  NSLog(@"%@",str);
 }
 
--(void)tttest{
-  
-  tickets = 100;
-  count = 0;
-  
-  // 锁对象
-  ticketsCondition = [[NSCondition alloc] init];
-  
-  ticketsThreadone = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
-  [ticketsThreadone setName:@"Thread-1"];
-  [ticketsThreadone start];
-  
-  ticketsThreadtwo = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
-  [ticketsThreadtwo setName:@"Thread-2"];
-  [ticketsThreadtwo start];
+#pragma mark - < action > -
+-(void)swipe:(UISwipeGestureRecognizer *)g{
+  NSLog(@"~~~");
 
-  
-}
-
-- (void)run{
-  
-  while (YES) {
-    [ticketsCondition lock];
-    [NSThread sleepForTimeInterval:1];
-    NSLog(@"%@ %d",[NSThread currentThread].name,tickets);
-    tickets--;
-    [ticketsCondition unlock];
-  }
+  [self.webView goBack];
 }
 #pragma mark - < callback > -
-
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+  return YES;
+}
 @end

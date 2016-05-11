@@ -16,9 +16,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, UIBarButtonItemStyle) {
-    UIBarButtonItemStylePlain,
+    UIBarButtonItemStylePlain,//幼体
     UIBarButtonItemStyleBordered NS_ENUM_DEPRECATED_IOS(2_0, 8_0, "Use UIBarButtonItemStylePlain when minimum deployment target is iOS7 or later"),
-    UIBarButtonItemStyleDone,
+    UIBarButtonItemStyleDone,//粗体
 };
 
 typedef NS_ENUM(NSInteger, UIBarButtonSystemItem) {
@@ -61,8 +61,8 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UIBarButtonItem : UIBarItem <NSCoding>
 - (instancetype)initWithCustomView:(UIView *)customView;
 
 @property(nonatomic)         UIBarButtonItemStyle style;            // default is UIBarButtonItemStylePlain
-@property(nonatomic)         CGFloat              width;            // default is 0.0
-@property(nullable, nonatomic,copy)    NSSet<NSString *>   *possibleTitles;   // default is nil
+@property(nonatomic)         CGFloat              width;            // default is 0.0 item宽度
+@property(nullable, nonatomic,copy)    NSSet<NSString *>   *possibleTitles;   // default is nil //传入要显示的字符串集合，使系统计算每个item的合适宽度
 @property(nullable, nonatomic,strong)  __kindof UIView     *customView;       // default is nil
 @property(nullable, nonatomic)         SEL                  action;           // default is NULL
 @property(nullable, nonatomic,weak)    id                   target;           // default is nil
@@ -84,6 +84,7 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UIBarButtonItem : UIBarItem <NSCoding>
 - (nullable UIImage *)backgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
 
 /* This sets the background image for buttons with a specific style. When calling this on a UIBarButtonItem instance, the style argument must match the button's style; when calling on the UIAppearance proxy, any style may be passed.
+ 设置指定style的item的背景图
  */
 - (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;
 - (nullable UIImage *)backgroundImageForState:(UIControlState)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;

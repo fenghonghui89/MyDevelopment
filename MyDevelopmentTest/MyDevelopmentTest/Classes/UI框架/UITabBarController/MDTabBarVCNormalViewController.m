@@ -19,7 +19,7 @@
 {
   [super viewDidLoad];
   
-  [self test2];
+  [self test1];
 }
 
 -(void)test1{
@@ -44,10 +44,15 @@
   MDTBVC2ViewController *vc4 = [[MDTBVC2ViewController alloc] init];
   vc4.navigationItem.title = @"4";
   UINavigationController *navi4 = [[UINavigationController alloc] initWithRootViewController:vc4];
-  navi4.tabBarItem.title = @"4";
-  navi4.tabBarItem.titlePositionAdjustment = UIOffsetMake(5, 5);
-  navi4.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_home_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-  navi4.tabBarItem.image = [[UIImage imageNamed:@"tabbar_discover_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+  UITabBarItem *item4 = [[UITabBarItem alloc] init];
+  item4.title = @"4";
+  item4.image = [[UIImage imageNamed:@"tabbar_discover_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+  item4.selectedImage = [[UIImage imageNamed:@"tabbar_home_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//  navi4.tabBarItem.title = @"4";
+//  navi4.tabBarItem.titlePositionAdjustment = UIOffsetMake(5, 5);
+//  navi4.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_home_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//  navi4.tabBarItem.image = [[UIImage imageNamed:@"tabbar_discover_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+  navi4.tabBarItem = item4;
   
   MDTBVC2ViewController *vc5 = [[MDTBVC2ViewController alloc] init];
   vc5.navigationItem.title = @"5";

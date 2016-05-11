@@ -20,9 +20,9 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UIBarItem : NSObject <NSCoding, UIAppeara
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
-@property(nonatomic,getter=isEnabled) BOOL         enabled;      // default is YES
-@property(nullable, nonatomic,copy)             NSString    *title;        // default is nil
-@property(nullable, nonatomic,strong)           UIImage     *image;        // default is nil
+@property(nonatomic,getter=isEnabled) BOOL         enabled;      // default is YES 如果no则变暗
+@property(nullable, nonatomic,copy)             NSString    *title;        // default is nil 如果是navi的barItem，title和image互斥
+@property(nullable, nonatomic,strong)           UIImage     *image;        // default is nil 如果是navi的barItem，title和image互斥
 @property(nullable, nonatomic,strong)           UIImage     *landscapeImagePhone NS_AVAILABLE_IOS(5_0) __TVOS_PROHIBITED; // default is nil 
 @property(nonatomic)                  UIEdgeInsets imageInsets;  // default is UIEdgeInsetsZero
 @property(nonatomic)                  UIEdgeInsets landscapeImagePhoneInsets NS_AVAILABLE_IOS(5_0) __TVOS_PROHIBITED;  // default is UIEdgeInsetsZero. These insets apply only when the landscapeImagePhone property is set.
