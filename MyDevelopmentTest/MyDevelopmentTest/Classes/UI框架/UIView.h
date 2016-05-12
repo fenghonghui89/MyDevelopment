@@ -44,10 +44,10 @@ typedef NS_ENUM(NSInteger, UIViewContentMode) {
 
 typedef NS_ENUM(NSInteger, UIViewAnimationTransition) {
   UIViewAnimationTransitionNone,
-  UIViewAnimationTransitionFlipFromLeft, 向左转动
-  UIViewAnimationTransitionFlipFromRight, 向右转动
-  UIViewAnimationTransitionCurlUp, 向上翻动
-  UIViewAnimationTransitionCurlDown, 向下翻动
+  UIViewAnimationTransitionFlipFromLeft, //向左转动
+  UIViewAnimationTransitionFlipFromRight, //向右转动
+  UIViewAnimationTransitionCurlUp, //向上翻动
+  UIViewAnimationTransitionCurlDown, //向下翻动
 };
 
 //自动调整大小选项：不调整、宽、高、上下左右边界
@@ -436,7 +436,7 @@ typedef NS_ENUM(NSInteger, UILayoutConstraintAxis) {
  When you elect to position the view using auto layout by adding your own constraints,
  you must set this property to NO. IB will do this for you.
  */
-@property(nonatomic) BOOL translatesAutoresizingMaskIntoConstraints NS_AVAILABLE_IOS(6_0); // Default YES
+@property(nonatomic) BOOL translatesAutoresizingMaskIntoConstraints NS_AVAILABLE_IOS(6_0); // Default YES //是否AutoMask转换到AutoLayout，vfl时要no
 
 /* constraint-based layout engages lazily when someone tries to use it (e.g., adds a constraint to a view).  If you do all of your constraint set up in -updateConstraints, you might never even receive updateConstraints if no one makes a constraint.  To fix this chicken and egg problem, override this method to return YES if your view needs the window to use constraint-based layout.
  */

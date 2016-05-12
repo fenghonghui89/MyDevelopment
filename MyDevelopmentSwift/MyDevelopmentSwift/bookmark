@@ -16,7 +16,7 @@ for-in循环里面的变量不用var声明
 
 
 重点：闭包和函数类型是一样的，都是引用类型，默认闭包里面调用self会增加self引用计数，被属性引用会增加闭包引用计数
-
+如果值在闭包内没有改变，swift会copy值代替捕获，以最优化处理。swift会处理闭包中的内存，不再使用则会释放
 
 
 is 检查类型
@@ -39,14 +39,14 @@ final
 weak
 弱引用 必须是var+可选类型（？or!）
 修饰变量时默认值为nil 例如: weak var person:Person?/!
-设置为weak的属性，则对象不持有该属性所指向的对象
+设置为weak的属性，则当前类的对象不持有该属性所指向的对象
 如果在方法里面 用weak修饰一个对象类型 就算给他赋值也是为nil 不持有对象
 只能用在对象
 
 unowned
 无主引用 必须要有默认值 不管是直接赋值还是通过指定构造方法赋值 所以不能用可选类型
 修饰变量时默认有值 例如: unowned var person:Person
-设置为unowned的属性，则对象不持有该属性所指向的对象
+设置为unowned的属性，则当前类的对象不持有该属性所指向的对象
 如果在方法里面 用unowned修饰一个对象类型 默认有值 不持有对象 调用对象会崩但跟weak报错不一样
 只能用在对象
 
@@ -74,6 +74,7 @@ willSet/didSet
 哪怕新值和旧值一样 也会触发
 willSet有newValue，didset有oldValu
 如果在didSet监视器里为属性赋值，这个值会替换监视器之前设置的值
+可以用来修改static类属性的值
 
 subscript
 附属脚本 调用方法为 objName[parama]，例如 person[10]
@@ -89,7 +90,7 @@ convenience
 存储属性
 实例的 - 一般，如果不是var+可选类型，都要有默认值，都必须在定义属性的地方或者指定构造方法里面赋值
         特别的，在“ViewController_arc - unowned以及隐式解析可选属性”例子中，Country类的capitalCity属性不单要有默认值，还必须是var
-类的 -  所有类型要有默认值
+类的 -  所有类型要有默认值，可通过实例属性中的disset修改类属性的值
 
 计算属性
 本身不是一个值
@@ -122,3 +123,6 @@ protocal
 ???
 @objc
 optional只能用在@objc修饰协议
+
+
+一个指向实例的swift变量/常量 类似于c/c++/oc的指针，但又不是直接指向内存地址，也不需要*

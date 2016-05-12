@@ -11,6 +11,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>UIView</string>
+				<key>className</key>
+				<string>MD_OC_UIView_ViewController</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>UIViewController</string>
 				<key>className</key>
 				<string></string>
@@ -562,14 +570,6 @@
 				<string>UIColor</string>
 				<key>className</key>
 				<string>MD_UIColor_ViewController</string>
-				<key>sub</key>
-				<array/>
-			</dict>
-			<dict>
-				<key>desc</key>
-				<string>UIView</string>
-				<key>className</key>
-				<string>MD_OC_UIView_ViewController</string>
 				<key>sub</key>
 				<array/>
 			</dict>

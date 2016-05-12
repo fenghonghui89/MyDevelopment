@@ -15,11 +15,11 @@ class ViewController_enum: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func1_4();
+    func_RecursiveEnumerations();
   }
   
   
-  //MARK:- <<< method >>>
+  //MARK:- ****************************** method ******************************
   //MARK:base 枚举是值类型
   func func1_1() {
     
@@ -118,6 +118,7 @@ class ViewController_enum: UIViewController {
     
     //通过原始值获取对应成员 获取不成功返回nil
     let num1 = CustomNumTag.init(rawValue: 5);
+    let num2 = CustomNumTag(rawValue:5);
     switch num1 {
     case is CustomNumTag:
       print("yes");
@@ -157,10 +158,47 @@ class ViewController_enum: UIViewController {
     ovenLight.next()
     ovenLight.next()
     print(ovenLight);
+    
+
+
   }
   
+  //MARK:indirect 用于枚举的递归计算
+  func func_RecursiveEnumerations() {
     
-  
+    
+    enum ArithmeticExpression {
+      case Number(Int)
+      indirect case Addition(ArithmeticExpression, ArithmeticExpression)
+      indirect case Multiplication(ArithmeticExpression, ArithmeticExpression)
+    }
+    
+    
+    
+    let five = ArithmeticExpression.Number(5)
+    let four = ArithmeticExpression.Number(4)
+    let sum = ArithmeticExpression.Addition(five, four)
+    let product = ArithmeticExpression.Multiplication(sum, ArithmeticExpression.Number(2))
+    print(product);
+
+
+    func evaluate(expression: ArithmeticExpression) -> Int {
+      
+      switch expression {
+      case let .Number(value):
+        return value
+      case let .Addition(left, right):
+        return evaluate(left) + evaluate(right)
+      case let .Multiplication(left, right):
+        return evaluate(left) * evaluate(right)
+      }
+    }
+    
+    print(evaluate(product))
+    // Prints "18" 上面三个return都会触发
+    
+
+  }
   
   
   

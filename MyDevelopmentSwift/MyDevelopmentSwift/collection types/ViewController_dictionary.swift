@@ -13,7 +13,7 @@ class ViewController_dictionary: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func2_2()
+    func2_4()
   }
   
   
@@ -110,7 +110,7 @@ class ViewController_dictionary: UIViewController {
   //MARK:枚举字典中的key和value
   func func2_4() {
     //Dictionary类型字典
-    var dic = [13:"冯鸿辉","age":12];
+    let dic = [13:"冯鸿辉","age":12];
     for (key,value) in dic{
       print("\(key):\(value)");
     }
@@ -123,11 +123,20 @@ class ViewController_dictionary: UIViewController {
       print(value);
     }
     
+    
+    
     //NSDictionary类型字典
-    var dic1:NSDictionary = NSDictionary(dictionary: dic);
+    let dic1:NSDictionary = NSDictionary(dictionary: dic);
     for key in (dic1 as Dictionary).keys{
       print(key);
     }
+    
+    
+    //输出keys or values 数组
+    let dic2 = ["key1":"value1","key2":"value2"];
+    let keys = [String](dic2.keys);
+    let values = [String](dic2.values);
+    print(keys,values);
     
   }
   

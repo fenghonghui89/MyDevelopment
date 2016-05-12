@@ -93,9 +93,9 @@
 		146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 146DE5A31CBD040900F366C9 /* MD_GCD_VC.m */; };
 		146DE5A61CBD040900F366C9 /* MD_GCD_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146DE5A41CBD040900F366C9 /* MD_GCD_VC.xib */; };
 		146DE5AA1CBD048D00F366C9 /* MD_GCD_group_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 146DE5A91CBD048D00F366C9 /* MD_GCD_group_VC.m */; };
-		14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */; };
 		147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF391B8FFD380006A2C4 /* MDNSAttributedStringViewController.m */; };
 		147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */; };
+		1481BE291CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1481BE281CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m */; };
 		1487407E1CABBC1B007CC45C /* DGCDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487407D1CABBC1B007CC45C /* DGCDataParser.m */; };
 		148740831CABBEF8007CC45C /* DGCPostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740801CABBEF8007CC45C /* DGCPostInfo.m */; };
 		148740841CABBEF8007CC45C /* DGCListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740821CABBEF8007CC45C /* DGCListInfo.m */; };
@@ -591,13 +591,15 @@
 		146DE5A41CBD040900F366C9 /* MD_GCD_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_GCD_VC.xib; sourceTree = "<group>"; };
 		146DE5A81CBD048D00F366C9 /* MD_GCD_group_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_GCD_group_VC.h; sourceTree = "<group>"; };
 		146DE5A91CBD048D00F366C9 /* MD_GCD_group_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_GCD_group_VC.m; sourceTree = "<group>"; };
-		14720F621B15708100773E5C /* MD_OC_UIView_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_UIView_ViewController.h; sourceTree = "<group>"; };
-		14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_UIView_ViewController.m; sourceTree = "<group>"; };
 		147DB17E1A8C7FA600F38EA4 /* MyDevelopmentTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		147FDF381B8FFD380006A2C4 /* MDNSAttributedStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSAttributedStringViewController.h; sourceTree = "<group>"; };
 		147FDF391B8FFD380006A2C4 /* MDNSAttributedStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSAttributedStringViewController.m; sourceTree = "<group>"; };
 		147FDF3D1B9012690006A2C4 /* UIImage+UIImageScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageScale.h"; sourceTree = "<group>"; };
 		147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageScale.m"; sourceTree = "<group>"; };
+		1481BE271CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_OC_UIView_ViewController.h; sourceTree = "<group>"; };
+		1481BE281CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_UIView_ViewController.m; sourceTree = "<group>"; };
+		1481BE2A1CE41B9700A1ACE7 /* UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
+		1481BE2C1CE41D2900A1ACE7 /* NSLayoutConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLayoutConstraint.h; sourceTree = "<group>"; };
 		1487407C1CABBC1B007CC45C /* DGCDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCDataParser.h; sourceTree = "<group>"; };
 		1487407D1CABBC1B007CC45C /* DGCDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCDataParser.m; sourceTree = "<group>"; };
 		1487407F1CABBEF8007CC45C /* DGCPostInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCPostInfo.h; sourceTree = "<group>"; };
@@ -874,7 +876,6 @@
 		14F073AA1B95C26C0029A653 /* MD_UIIV_CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIIV_CustomView.h; sourceTree = "<group>"; };
 		14F073AB1B95C26C0029A653 /* MD_UIIV_CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIIV_CustomView.m; sourceTree = "<group>"; };
 		14F9776C1C44AE8E00A53FA9 /* UITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableView.h; sourceTree = "<group>"; };
-		14F9776F1C44B00000A53FA9 /* UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		14F977721C44B1BE00A53FA9 /* UIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIScrollView.m; sourceTree = "<group>"; };
 		14F977761C44B2D200A53FA9 /* CFBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBase.h; sourceTree = "<group>"; };
 		14FBF9651C27B4F700CC0A55 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -1556,7 +1557,6 @@
 				14F073921B95BC2C0029A653 /* UIBezierPath */,
 				14F0738B1B95B9010029A653 /* UIColor */,
 				14E331B41B2716EF00B356C7 /* UIImagePickerController */,
-				14720F611B156E3C00773E5C /* UIView */,
 				146D82BB1AA709F600F0C7FD /* UISearchBar */,
 				146D828D1AA6F3D100F0C7FD /* UIAlertView,UIActionSheet */,
 				141B43311AA401BC008F2711 /* UIPageViewController */,
@@ -1785,16 +1785,6 @@
 			path = dispatch_group;
 			sourceTree = "<group>";
 		};
-		14720F611B156E3C00773E5C /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				14720F621B15708100773E5C /* MD_OC_UIView_ViewController.h */,
-				14720F631B15708100773E5C /* MD_OC_UIView_ViewController.m */,
-				14F9776F1C44B00000A53FA9 /* UIView.h */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
 		147DB1751A8C7FA600F38EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -1844,6 +1834,22 @@
 			children = (
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		1481BE261CE41B9100A1ACE7 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				1481BE271CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.h */,
+				1481BE281CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		1481BE2B1CE41D1D00A1ACE7 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AutoLayout;
 			sourceTree = "<group>";
 		};
 		1482B5C91BA1AD7B00E83090 /* CGColorSpace */ = {
@@ -2670,6 +2676,8 @@
 		14FF7FF71CE19DF600C7855C /* UI框架 */ = {
 			isa = PBXGroup;
 			children = (
+				1481BE2C1CE41D2900A1ACE7 /* NSLayoutConstraint.h */,
+				1481BE2A1CE41B9700A1ACE7 /* UIView.h */,
 				14FF81521CE1C99800C7855C /* UIAppearance.h */,
 				14FF80411CE1B98800C7855C /* UIViewController.h */,
 				14FF80431CE1BBFC00C7855C /* UIBarItem.h */,
@@ -2679,6 +2687,8 @@
 				14FF803E1CE1B96200C7855C /* UITabBar.h */,
 				14FF803F1CE1B96200C7855C /* UITabBarController.h */,
 				14FF80401CE1B96200C7855C /* UITabBarItem.h */,
+				1481BE2B1CE41D1D00A1ACE7 /* AutoLayout */,
+				1481BE261CE41B9100A1ACE7 /* UIView */,
 				14FF7FF81CE19E5D00C7855C /* UIViewController */,
 				14FF800A1CE19E5D00C7855C /* UITabBarController */,
 				14FF80141CE19E5D00C7855C /* UINavigationController */,
@@ -3300,7 +3310,6 @@
 				148740831CABBEF8007CC45C /* DGCPostInfo.m in Sources */,
 				14A727AF1CABB09F00DC7BC0 /* DGCBaseModel.m in Sources */,
 				14FFBE451C9AA995006BEB2B /* MASLayoutConstraint.m in Sources */,
-				14720F641B15708100773E5C /* MD_OC_UIView_ViewController.m in Sources */,
 				14F073AC1B95C26C0029A653 /* MD_UIIV_CustomView.m in Sources */,
 				144F23F21C5F38E2004ED3BC /* UICollectionView+Convenience.m in Sources */,
 				147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */,
@@ -3369,6 +3378,7 @@
 				14DF14AE1C4F7684005C10AA /* MD_AVCamera_VC.m in Sources */,
 				14CB770F1CA4EFFA00878C4E /* AsyncSocket.m in Sources */,
 				1487407E1CABBC1B007CC45C /* DGCDataParser.m in Sources */,
+				1481BE291CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m in Sources */,
 				14FF802B1CE19E5D00C7855C /* ThirdViewController.m in Sources */,
 				14A727D01CABB67A00DC7BC0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */,

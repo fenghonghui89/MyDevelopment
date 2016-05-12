@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController_func: UIViewController {
+class ViewController_Functions: UIViewController {
   
   
   //MARK: - <<< vc lifecycle >>> -
@@ -18,7 +18,7 @@ class ViewController_func: UIViewController {
   
     
     
-    funcResult7();
+    funcResult9();
     
     
 
@@ -38,20 +38,28 @@ class ViewController_func: UIViewController {
   
   
   
-  //MARK:返回值是元组
-  func func2(s1:String,s2:String)->(name:String,age:String){
+  //MARK:返回多个值 返回值是元组
+  func func2(s1:String,s2:String)->(name:String,age:String)?{
+    if (s1 == "" || s2 == "") {
+      return nil;
+    }
     let result = (s1,s2);
     return result;
   }
   
   func funcResult2(){
-    let result = func2("Hany", s2: "Salar");
-    print(result.name,result.age);
+    if let result = func2("Hany", s2: "Salar"){
+      print(result.name,result.age);
+    }
   }
   
   
   
-  //MARK:扩展参数
+  //MARK:扩展参数与本地参数
+  /*
+   func(扩展参数名1 本地参数名1:参数类型,扩展参数名2 本地参数名2:参数类型,...)
+   func(扩展参数名1 本地参数名1:参数类型,扩展本地参数名2:参数类型,...)
+   */
   func func3(name s1:String,age s2:String)->(name:String,age:String){
     let result = (s1,s2);
     return result;
@@ -60,22 +68,10 @@ class ViewController_func: UIViewController {
   func funcResult3(){
     let result = func3(name: "Hany", age: "sb");
     print(result.name,result.age);
+    
   }
   
-  
-  
-  //MARK:扩展参数与内部参数
-  func func4(name name:String,age:String)->(reName:String,reAge:String){
-    let result = (name,age);
-    return result;
-  }
-  
-  func funcResult4(){
-    let result = func4(name: "Hany", age: "Salar");
-    print(result.reName,result.reAge);
-  }
-  
-  
+
   //MARK:函数默认值
   func func5(name name:String = "Mike",age:String)->(reName:String,reAge:String){
     let resutl = (name,age);
@@ -106,29 +102,31 @@ class ViewController_func: UIViewController {
   }
   
   //MARK:inout - 可在函数内改变参数值再输出
-  func func7(inout name name:String) -> String {
+  func func7(inout name name:String,inout age:String) -> String {
     name = "Mike";
-    let reName:String = String(name+" "+"ok");
+    age = "12"
+    let reName:String = String(name+" "+age+"ok");
     return reName;
   }
   
   func funcResult7(){
-    var value:String = "Hany";
-    let result = func7(name: &value);
+    var name:String = "Hany";
+    var age:String = "12"
+    let result = func7(name: &name,age: &age);
     print(result);
   }
   
   //MARK:函数类型 类似于函数指针 其实就是闭包
   func func8(name name:String,age:Int) -> (reName:String,reAge:String) {
+    
     let result = (name,String(age));
     return result;
   }
   
   func funcResult8(){
     
-    var funcPoint8:(String,Int)->(String,String);//定义函数类型
-    funcPoint8 = func8;//初始化
-    
+    let funcPoint8:(String,Int)->(String,String) = func8;//函数类型
+ 
     let result = funcPoint8("name",12);
     print(result);
   }
@@ -145,7 +143,12 @@ class ViewController_func: UIViewController {
   }
   
   func funcResult9(){
+    
     func9(funcBase9);
+    
+    func9 { (name, age) -> (String, String) in
+      return (name+"!",age+"!");
+    }
   }
   
   //MARK:函数类型作为函数返回值
