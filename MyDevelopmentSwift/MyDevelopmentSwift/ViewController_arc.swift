@@ -16,6 +16,7 @@ class ViewController_arc: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
   
+    var result = arc_weak_result();
     
   }
   
@@ -44,6 +45,13 @@ class arc_base_result{
     obj1 = obj;
     obj2 = obj1;
     self.obj = obj;
+    
+    /*
+     ChildClass init
+     SuperClass init:par1 par2
+     ChildClass deinit
+     SuperClass deinit
+     */
   }
 }
 
@@ -54,7 +62,7 @@ class arc_weak_result{
   
   init(){
     
-    f2();
+    f1();
     
     
   }
@@ -78,14 +86,12 @@ class arc_weak_result{
   func f2(){
     
     //weak
-    weak var customer:Customer?;
-    customer = Customer(name: "Hany");
+    weak var customer:Customer? = Customer(name: "Hany");
     print(customer!.name);//会崩，因为customer初始为nil，且weak不持有实例
     print("!！");
     
     //unowned
-//    unowned var customer1:Customer;
-//    customer1 = Customer(name: "Hany");
+//    unowned var customer1:Customer = Customer(name: "Hany");
 //    print(customer1.name);//会崩，因为customer初始虽然有值，但unowned不持有实例
 //    print("!！");
 
@@ -134,8 +140,7 @@ class arc_unowned_result{
 //    bankCustomer!.creditCard = creditCard;
     
     //CreditCard实例只被bankCustomer的属性持有，引用计数+1
-    var bankCustomer:BankCustomer?
-    bankCustomer = BankCustomer(name: "Hany")
+    var bankCustomer:BankCustomer? = BankCustomer(name: "Hany")
     bankCustomer!.creditCard = CreditCard(number: 12, bankCustomer: bankCustomer!);
     
     print("~~")
@@ -186,8 +191,7 @@ class arc_unowned2_result{
 
   init(){
     
-    var country:Country?
-    country = Country(name: "China", capitalName: "Biejing")
+    var country:Country? = Country(name: "China", capitalName: "Biejing")
     
     print("~~")
     country = nil;
@@ -227,7 +231,7 @@ class City {
 }
 
 
-//MARK:解决闭包产生的强引用环
+//MARK:- 解决闭包产生的强引用环
 /*
  当闭包和占有的实例总是互相引用时并且总是同时销毁时，将闭包内的占有定义为无主引用。
  相反的，当占有引用有时可能会是nil时，将闭包内的占有定义为弱引用。弱引用总是可选类型，并且当引用的实例被销毁后，弱引用的值会自动置为nil。利用这个特性，我们可以在闭包内检查他们是否存在。

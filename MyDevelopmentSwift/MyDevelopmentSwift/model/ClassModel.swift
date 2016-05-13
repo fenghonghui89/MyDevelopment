@@ -21,7 +21,11 @@ class SuperClass{
   final var storeProperty:String = "storeProperty";
   var storeProperty1:String = "storeProperty";
   var parents:Parents?
-
+  var ssss:String = {
+    return ""
+  
+  }()
+  
   
   
   //计算型
@@ -140,6 +144,21 @@ class SuperClass{
     print("SuperClass init:\(self.storeProperty) \(self.storeProperty1)");
   }
   
+  //可选指定构造
+  init?(p1:String,p2:String){
+    if (p1.isEmpty && p2.isEmpty) {
+      return nil;
+    }
+    self.storeProperty = p1;
+    self.storeProperty1 = p2;
+    print("SuperClass init?:\(self.storeProperty) \(self.storeProperty1)");
+  }
+  
+  //required init
+  required init(a:String,b:String,c:String){
+  
+  }
+  
   //便利构造
   convenience init(){
     self.init(par1:"par1",par2:"par2")
@@ -155,6 +174,7 @@ class SuperClass{
 class ChildClass: SuperClass {
   
   //--- 属性 ---
+  
   override var storeProperty1: String{
   
     willSet{
@@ -171,12 +191,12 @@ class ChildClass: SuperClass {
   var isChild:Bool = false;
   
   //--- 方法 ---
-  init(isChild:Bool,storeProperty:String,storeProperty1:String){
+  init?(isChild:Bool,storeProperty:String,storeProperty1:String){
     self.isChild = isChild;
     super.init(par1: storeProperty, par2: storeProperty1);
   }
   
-  convenience init(isChild:Bool){
+  convenience init?(isChild:Bool){
     print("ChildClass init");
     self.init(isChild:isChild,storeProperty:"par1",storeProperty1:"par2");
   }
@@ -186,7 +206,13 @@ class ChildClass: SuperClass {
   }
   
 
-
+  override init?(p1: String, p2: String) {
+    super.init(p1: p1, p2: p2);
+  }
+  
+  required init(a: String, b: String, c: String) {
+    super.init(a: a, b: b, c: c)
+  }
 
 }
 

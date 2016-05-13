@@ -21,23 +21,24 @@ class ViewController_link: UIViewController {
       print("this is \(numberOfRooms)");
     }else{
       print("this is nil");
-    }
+    }//this is nil
     
-    //使用自判断链接调用子脚本
+    //使用自判断链接调用方法
     if ((john.residence?.printNumberOfRooms()) != nil) {
       print("It was possible to print the number of rooms.")
     } else {
       print("It was not possible to print the number of rooms.")
-    }
+    }//It was not possible to print the number of rooms.
     
     //使用自判断链接调用子脚本
     let johnsHouse = Residence()
     johnsHouse.rooms.append(Room(name: "Living Room"))
     johnsHouse.rooms.append(Room(name: "Kitchen"))
+    
     john.residence = johnsHouse
     
     if let firstRoomName = john.residence?[0].name {
-      print("The first room name is \(firstRoomName).")
+      print("The first room name is \(firstRoomName).")//The first room name is Living Room.
     } else {
       print("Unable to retrieve the first room name.")
     }
@@ -46,17 +47,18 @@ class ViewController_link: UIViewController {
     let johnsAddress = Address()
     johnsAddress.buildingName = "The Larches"
     johnsAddress.street = "Laurel Street"
+    
     john.residence!.address = johnsAddress
     
     if let johnsStreet = john.residence?.address?.street {
-      print("John's street name is \(johnsStreet).")
+      print("John's street name is \(johnsStreet).")//John's street name is Laurel Street.
     } else {
       print("Unable to retrieve the address.")
     }
     
     //链接自判断返回值的方法
     if let upper = john.residence?.address?.buildingIdentifier()?.uppercaseString {
-      print("John's uppercase building identifier is \(upper).")
+      print("John's uppercase building identifier is \(upper).")//John's uppercase building identifier is THE LARCHES.
     }
   }
   
@@ -73,6 +75,7 @@ class Person {
   var residence:Residence?
   
 }
+
 
 class Residence {
   

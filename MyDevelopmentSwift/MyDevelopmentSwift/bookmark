@@ -81,6 +81,10 @@ subscript
 必须要有get;set可选
 
 
+init? or init!
+可选指定构造，可以调用指定构造，但反过来调用是不可以的
+子类可以复写
+
 deinit
 反构造 相当于dealloc 子类不能复写 不用加()
 
