@@ -14,11 +14,6 @@ protocol FullyNamed{
   var fullName:String{get}
   var getset:String{get set}
   
-  //协议方法
-  func funcRequire() -> Double
-  
-  //mutating方法 修改实例的属性
-  mutating func toggle();
 }
 
 class Starship: FullyNamed {
@@ -52,24 +47,4 @@ class Starship: FullyNamed {
   }
   
   
-  //协议方法
-  func funcRequire() -> Double {
-    return 0.11;
-  }
-  
-  //mutating方法 修改实例的属性
-  enum OnOffSwitch {
-    case on,off
-  }
-  
-  var state:OnOffSwitch = OnOffSwitch.off
-  
-  func toggle() {
-    switch self.state{
-    case .on:
-      self.state = .off;
-    case .off:
-      self.state = .on;
-    }
-  }
 }

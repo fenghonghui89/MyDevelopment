@@ -6,7 +6,7 @@
 //  Copyright © 2016年 MD. All rights reserved.
 //
 /*
- 如果一个类型已经符合协议的所有要求，但尚未指定其采用的协议，你就可以使用空扩展使它采用协议。
+ 如果一个类型已经符合协议的所有要求，但尚未指定其采用的协议，你就可以使用空扩展声明它采用协议。
  */
 
 import Foundation
@@ -19,11 +19,11 @@ class Hamster {
     self.name = name;
   }
   
-  func asText() -> String {
+  var textualDescription: String {
     return "A hamster named \(name)"
   }
   
 }
 
-//使用空扩展使它采用协议
+//使用空扩展声明一个符合要求的类采用协议
 extension Hamster:TextRepresentable{}

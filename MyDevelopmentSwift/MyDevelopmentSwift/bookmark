@@ -36,6 +36,10 @@ mutating
 final
 不允许复写
 
+required
+标识子类必须复写 子类复写时前面也要加required
+
+
 weak
 弱引用 必须是var+可选类型（？or!）
 修饰变量时默认值为nil 例如: weak var person:Person?/!
@@ -124,9 +128,8 @@ protocal
 只能用var
 
 
-???
-@objc
-optional只能用在@objc修饰协议
+@objc 暴露给oc
+optional 只能用在@objc修饰协议，调用optional的方法或属性，要用？
 
 
 一个指向实例的swift变量/常量 类似于c/c++/oc的指针，但又不是直接指向内存地址，也不需要*

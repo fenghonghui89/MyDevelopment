@@ -11,7 +11,13 @@
 
 import Foundation
 
-class LinearCongruentialGenerator: RandomNumberGenerator {//协议类型
+
+protocol RandomNumberGenerator{
+  func random() -> Double
+  
+}
+
+class LinearCongruentialGenerator: RandomNumberGenerator {
   
   var lastRandom = 42.0
   let m = 139968.0

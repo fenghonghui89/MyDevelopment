@@ -8,6 +8,12 @@
 
 import Foundation
 
+protocol TextRepresentable {
+  
+  var textualDescription: String { get }
+
+}
+
 class Dice {
   
   let sides:Int;
@@ -25,11 +31,12 @@ class Dice {
   }
 }
 
-//给类扩展协议
+//用扩展给类添加协议实现
 extension Dice:TextRepresentable {
   
-  func asText() -> String{
+  var textualDescription: String {
     return "A \(sides)-sided dice"
   }
+
 }
 
