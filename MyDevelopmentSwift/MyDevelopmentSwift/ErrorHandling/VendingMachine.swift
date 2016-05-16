@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//定义错误类型
 enum VendingMachineError: ErrorType {
   case InvalidSelection
   case InsufficientFunds(coinsNeeded: Int)

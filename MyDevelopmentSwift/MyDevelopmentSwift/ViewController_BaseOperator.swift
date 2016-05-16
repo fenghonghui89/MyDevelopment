@@ -13,7 +13,7 @@ class ViewController_BaseOperator: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
+    func_interrogation();
   }
   
   //MARK:数值运算
@@ -36,6 +36,19 @@ class ViewController_BaseOperator: UIViewController {
     var i:float_t = 1.1;
     i += 1;
     print("i = \(i)");
+  }
+  
+  //MARK:??运算符
+  func func_interrogation(){
+  
+    let dic = ["1":"v1","2":"v2","3":"v3","4":"v4"];
+    
+    let key = String(arc4random()%10);
+    
+    let value = dic[key] ?? "no value" //如果dic[key]有值则取dic[key]，否则取??后面的值
+    
+    print(value)
+    
   }
   
   //MARK:元组间比较 三目运算符

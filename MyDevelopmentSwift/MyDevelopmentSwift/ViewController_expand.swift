@@ -14,7 +14,7 @@ class ViewController_expand: UIViewController {
     
     super.viewDidLoad();
     
-    func6();
+    func5();
   }
   
   //MARK:- <<< method >>>
@@ -31,7 +31,7 @@ class ViewController_expand: UIViewController {
     print("A marathon is \(aMarathon) meters long")// 打印输出："A marathon is 42495.0 meters long"
   }
   
-  //MARK:扩展构造器
+  //MARK:给某个类扩展init
   func func2(){
     
     let defaultRect = Rect()
@@ -39,7 +39,7 @@ class ViewController_expand: UIViewController {
     let centerRect = Rect(center: Point(x: 4.0, y: 4.0),size: Size(width: 3.0, height: 3.0))// centerRect的原点是 (2.5, 2.5)，大小是 (3.0, 3.0)
   }
   
-  //MARK:扩展方法
+  //MARK:给某个类扩展方法
   func func3(){
     
     var i:Int = 4;
@@ -55,7 +55,7 @@ class ViewController_expand: UIViewController {
     i.repetitions{print("!!!!")};
   }
   
-  //MARK:修改实例
+  //MARK:给某个类扩展方法 - mutating关键字修改self
   func func4() {
     
     var value:Int = 3;
@@ -68,7 +68,7 @@ class ViewController_expand: UIViewController {
   func func5() {
     
     let i:Int = 1234567;
-    print(i[2]);//输出从右往左数第n-1个数字
+    print(i[0]);//输出从右往左数第n-1个数字
     
   }
   
@@ -106,7 +106,7 @@ extension Double{
   var ft: Double { return self / 3.28084 }
 }
 
-//MARK:- 扩展构造器 init
+//MARK:- 给某个类扩展init
 
 struct Size {
   var width = 0.0, height = 0.0
@@ -130,7 +130,7 @@ extension Rect {
   }
 }
 
-//MARK:- 扩展方法
+//MARK:- 给某个类扩展方法
 extension Int{
 
   func repetitions(task:()->()){
@@ -140,7 +140,7 @@ extension Int{
   }
 }
 
-//MARK:- 修改实例 - mutating self
+//MARK:- 给某个类扩展方法 - mutating关键字修改self
 extension Int{
 
   mutating func square1(){
@@ -157,12 +157,7 @@ extension Int {
   subscript(digitIndex: Int) -> Int {
     
     var decimalBase = 1
-    
-    if digitIndex == 0{
-      return self % 10
-    }
-    
-    for _ in 1...digitIndex {
+    for _ in 0..<digitIndex {
       decimalBase *= 10
     }
     return (self / decimalBase) % 10
@@ -171,9 +166,11 @@ extension Int {
 
 //MARK:- 嵌套类型
 extension Character {
+  
   enum Kind {
     case Vowel, Consonant, Other
   }
+  
   var kind: Kind {
     switch String(self).lowercaseString {
     case "a", "e", "i", "o", "u":

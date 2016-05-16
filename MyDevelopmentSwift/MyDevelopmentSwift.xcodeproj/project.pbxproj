@@ -11,10 +11,11 @@
 		140EA0FD1CC61B0B0077DCF8 /* ViewController_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EA0FC1CC61B0B0077DCF8 /* ViewController_struct.swift */; };
 		140EA0FF1CC628640077DCF8 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EA0FE1CC628640077DCF8 /* ClassModel.swift */; };
 		140EB6A71CCF554B00E84F79 /* ViewController_link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A61CCF554B00E84F79 /* ViewController_link.swift */; };
-		140EB6A91CCF622F00E84F79 /* ViewController_typeChange_typeNesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A81CCF622F00E84F79 /* ViewController_typeChange_typeNesting.swift */; };
+		140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */; };
 		140EB6AB1CCF760800E84F79 /* ViewController_expand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6AA1CCF760800E84F79 /* ViewController_expand.swift */; };
 		142C689F1CC4BF0600ED1F92 /* ViewController_enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C689E1CC4BF0600ED1F92 /* ViewController_enum.swift */; };
 		14364B841CC7865100366F01 /* ViewController_arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14364B831CC7865100366F01 /* ViewController_arc.swift */; };
+		143B82C31CE968CA0025E675 /* ViewController_TypeNesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */; };
 		146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B18501CDADC8800F0D092 /* ViewController_Set.swift */; };
 		1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */; };
 		148793A01CE5866200C67D75 /* ViewController_FreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */; };
@@ -51,10 +52,11 @@
 		140EA0FC1CC61B0B0077DCF8 /* ViewController_struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_struct.swift; sourceTree = "<group>"; };
 		140EA0FE1CC628640077DCF8 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
 		140EB6A61CCF554B00E84F79 /* ViewController_link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_link.swift; sourceTree = "<group>"; };
-		140EB6A81CCF622F00E84F79 /* ViewController_typeChange_typeNesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_typeChange_typeNesting.swift; sourceTree = "<group>"; };
+		140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TypeCasting.swift; sourceTree = "<group>"; };
 		140EB6AA1CCF760800E84F79 /* ViewController_expand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_expand.swift; sourceTree = "<group>"; };
 		142C689E1CC4BF0600ED1F92 /* ViewController_enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_enum.swift; sourceTree = "<group>"; };
 		14364B831CC7865100366F01 /* ViewController_arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_arc.swift; sourceTree = "<group>"; };
+		143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TypeNesting.swift; sourceTree = "<group>"; };
 		146B18501CDADC8800F0D092 /* ViewController_Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Set.swift; sourceTree = "<group>"; };
 		1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ControlFlow.swift; sourceTree = "<group>"; };
 		1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FreeTest.swift; sourceTree = "<group>"; };
@@ -149,7 +151,8 @@
 				14364B831CC7865100366F01 /* ViewController_arc.swift */,
 				140EB6A61CCF554B00E84F79 /* ViewController_link.swift */,
 				148793A31CE5B85600C67D75 /* ErrorHandling */,
-				140EB6A81CCF622F00E84F79 /* ViewController_typeChange_typeNesting.swift */,
+				140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */,
+				143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */,
 				140EB6AA1CCF760800E84F79 /* ViewController_expand.swift */,
 				149E4C181CD85D85000CFC0E /* ViewController_generic.swift */,
 				149E4C1A1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift */,
@@ -311,6 +314,7 @@
 				140EA0F81CC5CE2C0077DCF8 /* ViewController_class.swift in Sources */,
 				149DDA201CC21B5E00C7A8B1 /* ViewController_Closures.swift in Sources */,
 				14C224251CD34DEA00C4359E /* ViewController_protocol.swift in Sources */,
+				143B82C31CE968CA0025E675 /* ViewController_TypeNesting.swift in Sources */,
 				14DE33271CD9D6EC002A75C4 /* ViewController_StringAndCharacter.swift in Sources */,
 				140EB6A71CCF554B00E84F79 /* ViewController_link.swift in Sources */,
 				14C224311CD3520300C4359E /* Starship.swift in Sources */,
@@ -319,7 +323,7 @@
 				14DE332B1CDA04AD002A75C4 /* ViewController_array.swift in Sources */,
 				14C2242D1CD3511700C4359E /* Dice.swift in Sources */,
 				1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */,
-				140EB6A91CCF622F00E84F79 /* ViewController_typeChange_typeNesting.swift in Sources */,
+				140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */,
 				142C689F1CC4BF0600ED1F92 /* ViewController_enum.swift in Sources */,
 				140EA0FD1CC61B0B0077DCF8 /* ViewController_struct.swift in Sources */,
 			);

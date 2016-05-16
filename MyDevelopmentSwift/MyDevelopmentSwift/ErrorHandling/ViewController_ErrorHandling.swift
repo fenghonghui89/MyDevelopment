@@ -24,7 +24,7 @@ class ViewController_ErrorHandling: UIViewController {
   }
   
   
-  //MARK:- base
+  //MARK:- 例子 throws关键字接参数后面
   func func_Propagating_Errors_Using_Throwing_Functions(){
     
     let vendingMachine = VendingMachine()
@@ -60,7 +60,7 @@ class ViewController_ErrorHandling: UIViewController {
     
   }
   
-  //MARK:- try?返回nil 方便一次性处理所有异常（暂时出错依然进入do）/ try!忽略所有错误，很可能有运行时错误
+  //MARK:- try?返回nil 方便一次性处理所有异常（出错依然进入do？）/ try!忽略所有错误，很可能有运行时错误
   func func_Converting_Errors_to_Optional_Values(){
     
     let data:String?
@@ -143,6 +143,7 @@ class ViewController_ErrorHandling: UIViewController {
   }
   
   func doSomething()->String?{
+    
     defer{
       print("clean up");
     }

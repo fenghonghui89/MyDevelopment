@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewController_typeChange_typeNesting:UIViewController {
+class ViewController_TypeCasting:UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func4();
+   
   }
   
   //MARK:- <<< method >>>
-  //MARK:类型转换
+  //MARK:类型转换 is检查类型 as向下转型
   func func1() {
     
     let library = [
@@ -26,10 +26,10 @@ class ViewController_typeChange_typeNesting:UIViewController {
       Movie(name: "Citizen Kane", director: "Orson Welles"),
       Song(name: "The One And Only", artist: "Chesney Hawkes"),
       Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
-    ]
+    ]// the type of "library" is inferred to be [MediaItem]
     
     
-    //检查类型
+    //is检查类型
     var movieCount = 0
     var songCount = 0
     
@@ -43,7 +43,7 @@ class ViewController_typeChange_typeNesting:UIViewController {
     
     print("~~Media library contains \(movieCount) movies and \(songCount) songs")
     
-    //向下转型
+    //as向下转型
     for item in library {
       if let movie = item as? Movie {
         print("Movie: '\(movie.name)', dir. \(movie.director)")
@@ -58,7 +58,7 @@ class ViewController_typeChange_typeNesting:UIViewController {
   }
   
   
-  //MARK:AnyObject
+  //MARK:AnyObject 对象类型
   func func2() {
     
     let someObjects: [AnyObject] = [
@@ -78,7 +78,7 @@ class ViewController_typeChange_typeNesting:UIViewController {
     }
   }
   
-  //MARK:Any
+  //MARK:Any 包含非对象类型
   func func3(){
     
     var things = [Any]()
@@ -90,6 +90,7 @@ class ViewController_typeChange_typeNesting:UIViewController {
     things.append("hello")
     things.append((3.0, 5.0))
     things.append(Movie(name: "Ghostbusters", director: "Ivan Reitman"))
+    things.append({ (name: String) -> String in "Hello, \(name)" })
     
     //注意必须是非可选as
     for thing in things {
@@ -110,22 +111,23 @@ class ViewController_typeChange_typeNesting:UIViewController {
         print("an (x, y) point at \(x), \(y)")
       case let movie as Movie:
         print("a movie called '\(movie.name)', dir. \(movie.director)")
+      case let function as String -> String:
+        print(function("Hany"))
       default:
         print("something else")
       }
     }
-    
+    // zero as an Int
+    // zero as a Double
+    // an integer value of 42
+    // a positive double value of 3.14159
+    // a string value of "hello"
+    // an (x, y) point at 3.0, 5.0
+    // a movie called Ghostbusters, dir. Ivan Reitman
+    // Hello, Hany
   }
   
-  //MARK:类型嵌套
-  func func4() {
-    
-    let theAceOfSpades = BlackjackCard(rank: .Ace, suit: .Spades)
-    print("theAceOfSpades: \(theAceOfSpades.description)")// 打印出 "theAceOfSpades: suit is ♠, value is 1 or 11"
-    
-    let heartsSymbol = BlackjackCard.Suit.Hearts.rawValue// 红心的符号 为 "♡"
-    print(heartsSymbol);
-  }
+  
   
   
   
@@ -157,41 +159,3 @@ class Song: MediaItem {
   }
 }
 
-//MARK:类型嵌套
-struct BlackjackCard {
-  
-  // 嵌套定义枚举型Suit
-  enum Suit: Character {
-    case Spades = "♠", Hearts = "♡", Diamonds = "♢", Clubs = "♣"
-  }
-  
-  // 嵌套定义枚举型Rank
-  enum Rank: Int {
-    case Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten
-    case Jack, Queen, King, Ace
-    struct Values {
-      let first: Int,second: Int?
-    }
-    var values: Values {
-      switch self {
-      case .Ace:
-        return Values(first: 1, second: 11)
-      case .Jack, .Queen, .King:
-        return Values(first: 10, second: nil)
-      default:
-        return Values(first: self.rawValue, second: nil)
-      }
-    }
-  }
-  
-  // BlackjackCard 的属性和方法
-  let rank: Rank, suit: Suit
-  var description: String {
-    var output = "suit is \(suit.rawValue),"
-    output += " value is \(rank.values.first)"
-    if let second = rank.values.second {
-      output += " or \(second)"
-    }
-    return output
-  }
-}
