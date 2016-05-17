@@ -54,9 +54,9 @@
             [self transitionFromViewController:_currentViewController toViewController:firstViewController duration:4 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
             } completion:^(BOOL finished) {
                 if (finished) {
-                    _currentViewController=firstViewController;
+                    _currentViewController = firstViewController;
                 }else{
-                    _currentViewController=oldViewController;
+                    _currentViewController = oldViewController;
                 }
             }];
         }
@@ -68,9 +68,9 @@
                 
             } completion:^(BOOL finished) {
                 if (finished) {
-                    _currentViewController=secondViewController;
+                    _currentViewController = secondViewController;
                 }else{
-                    _currentViewController=oldViewController;
+                    _currentViewController = oldViewController;
                 }
             }];
         }
@@ -82,9 +82,9 @@
                 
             } completion:^(BOOL finished) { 
                 if (finished) { 
-                    _currentViewController=thirdViewController;
+                    _currentViewController = thirdViewController;
                 }else{ 
-                    _currentViewController=oldViewController;
+                    _currentViewController = oldViewController;
                 } 
             }]; 
         } 

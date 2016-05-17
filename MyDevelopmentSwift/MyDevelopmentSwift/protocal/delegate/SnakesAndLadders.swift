@@ -99,9 +99,10 @@ extension SnakesAndLadders:TextRepresentable {
   }
 }
 
-//MARK:- 协议继承协议
+//MARK:- 协议继承协议(不能写实现部分)
 protocol PrettyTextRepresentable: TextRepresentable {
   var prettyTextualDescription: String { get }
+  func pptest()
 }
 
 extension SnakesAndLadders:PrettyTextRepresentable{
@@ -119,6 +120,10 @@ extension SnakesAndLadders:PrettyTextRepresentable{
       }
     }
     return output
+  }
+  
+  func pptest() {
+    print("")
   }
 }
 

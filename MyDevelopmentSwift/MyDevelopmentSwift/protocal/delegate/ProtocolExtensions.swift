@@ -24,7 +24,7 @@ extension PrettyTextRepresentable  {
 
 
 
-//给扩展协议添加约束
+//协议约束扩展
 extension CollectionType where Generator.Element: TextRepresentable {
   var textualDescription: String {
     let itemsAsText = self.map { $0.textualDescription }

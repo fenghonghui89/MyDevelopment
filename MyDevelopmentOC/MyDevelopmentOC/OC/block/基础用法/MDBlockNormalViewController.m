@@ -39,7 +39,7 @@ int sum(int num,int num2){
 //    [self testBlock0];
 //    [self testBlock1];
 //    [self testBlock2];
-  [self testBlock3];
+  [self blockTest];
 }
 
 #pragma mark - block常用方法
@@ -189,5 +189,24 @@ void fundation (int (^block1)(int,int))//参数写法：block指针
       NSLog(@"block做block参数");
   };
   block(YES,reb);
+}
+
+-(void)blockTest{
+
+  [self blockTest0:^{
+    NSLog(@"~~~~~~~~");
+  }];
+}
+
+-(void)blockTest1:(void(^)(void))blocktest{
+
+  blocktest();
+}
+
+-(void)blockTest0:(void(^)(void))blocktest{
+  
+  [self blockTest1:^{
+    blocktest();
+  }];
 }
 @end

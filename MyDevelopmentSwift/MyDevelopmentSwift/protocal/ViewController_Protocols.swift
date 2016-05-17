@@ -122,7 +122,7 @@ class ViewController_Protocols:UIViewController{
     // A hamster named Simon
   }
   
-  //MARK:- 协议继承协议
+  //MARK:- 协议继承协议(不能写实现部分)
   func func_ProtocolInheritance() {
     
     let game = SnakesAndLadders();
