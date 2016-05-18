@@ -61,11 +61,28 @@
 			</dict>
 			<dict>
 				<key>desc</key>
-				<string>UITabBarController</string>
+				<string>TabBar</string>
 				<key>className</key>
-				<string>MDTabBarVCNormalViewController</string>
+				<string></string>
 				<key>sub</key>
-				<array/>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>RDVTabBarController</string>
+						<key>className</key>
+						<string>MD_RDV_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>UITabBarController</string>
+						<key>className</key>
+						<string>MDTabBarVCNormalViewController</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
@@ -466,6 +483,14 @@
 		<string></string>
 		<key>sub</key>
 		<array>
+			<dict>
+				<key>desc</key>
+				<string>UIControl</string>
+				<key>className</key>
+				<string>MD_UIControl_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
 			<dict>
 				<key>desc</key>
 				<string>UITableView</string>

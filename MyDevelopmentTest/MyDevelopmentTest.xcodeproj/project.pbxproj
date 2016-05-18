@@ -17,6 +17,14 @@
 		140925981CC0F60B00B17B2E /* MD_String_CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1409258F1CC0F60B00B17B2E /* MD_String_CustomView.m */; };
 		140925991CC0F60B00B17B2E /* MDStringNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140925911CC0F60B00B17B2E /* MDStringNormalViewController.m */; };
 		1409259B1CC0F60B00B17B2E /* MDCountStringRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140925961CC0F60B00B17B2E /* MDCountStringRectangleViewController.m */; };
+		14118D201CEC0EA400FAC476 /* MD_UIControl_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D1F1CEC0EA400FAC476 /* MD_UIControl_VC.m */; };
+		14118D241CEC165F00FAC476 /* MDSubclassUIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D231CEC165F00FAC476 /* MDSubclassUIControl.m */; };
+		14118D301CEC2E5500FAC476 /* MDTabBarVCNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D291CEC2E5500FAC476 /* MDTabBarVCNormalViewController.m */; };
+		14118D311CEC2E5500FAC476 /* MDTBVC1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D2B1CEC2E5500FAC476 /* MDTBVC1ViewController.m */; };
+		14118D321CEC2E5500FAC476 /* MDTBVC2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D2D1CEC2E5500FAC476 /* MDTBVC2ViewController.m */; };
+		14118D331CEC2E5500FAC476 /* MDTBVC3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D2F1CEC2E5500FAC476 /* MDTBVC3ViewController.m */; };
+		14118D361CEC446D00FAC476 /* MD_RDV_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D351CEC446D00FAC476 /* MD_RDV_VC.m */; };
+		14118D391CEC44F800FAC476 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14118D381CEC44F800FAC476 /* RDVTabBarItem.m */; };
 		1412B6701BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */; };
 		1417B11B1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */; };
 		1417B11C1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */; };
@@ -407,10 +415,6 @@
 		14FF817D1CE1D83D00C7855C /* navigationbar_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF817C1CE1D83D00C7855C /* navigationbar_more@2x.png */; };
 		14FF817F1CE1D84200C7855C /* navigationbar_pop_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF817E1CE1D84200C7855C /* navigationbar_pop_highlighted@2x.png */; };
 		14FF81811CE1D84800C7855C /* navigationbar_pop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF81801CE1D84800C7855C /* navigationbar_pop@2x.png */; };
-		14FF818A1CE1EA6800C7855C /* MDTabBarVCNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF81831CE1EA6800C7855C /* MDTabBarVCNormalViewController.m */; };
-		14FF818B1CE1EA6800C7855C /* MDTBVC1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF81851CE1EA6800C7855C /* MDTBVC1ViewController.m */; };
-		14FF818C1CE1EA6800C7855C /* MDTBVC2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF81871CE1EA6800C7855C /* MDTBVC2ViewController.m */; };
-		14FF818D1CE1EA6800C7855C /* MDTBVC3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF81891CE1EA6800C7855C /* MDTBVC3ViewController.m */; };
 		14FFBE421C9AA995006BEB2B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FFBE2A1C9AA995006BEB2B /* MASCompositeConstraint.m */; };
 		14FFBE431C9AA995006BEB2B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FFBE2D1C9AA995006BEB2B /* MASConstraint.m */; };
 		14FFBE441C9AA995006BEB2B /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FFBE2F1C9AA995006BEB2B /* MASConstraintMaker.m */; };
@@ -442,6 +446,23 @@
 		140925911CC0F60B00B17B2E /* MDStringNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStringNormalViewController.m; sourceTree = "<group>"; };
 		140925951CC0F60B00B17B2E /* MDCountStringRectangleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCountStringRectangleViewController.h; sourceTree = "<group>"; };
 		140925961CC0F60B00B17B2E /* MDCountStringRectangleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCountStringRectangleViewController.m; sourceTree = "<group>"; };
+		14118D1E1CEC0EA400FAC476 /* MD_UIControl_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIControl_VC.h; sourceTree = "<group>"; };
+		14118D1F1CEC0EA400FAC476 /* MD_UIControl_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIControl_VC.m; sourceTree = "<group>"; };
+		14118D211CEC103500FAC476 /* UIControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIControl.h; sourceTree = "<group>"; };
+		14118D221CEC165F00FAC476 /* MDSubclassUIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSubclassUIControl.h; sourceTree = "<group>"; };
+		14118D231CEC165F00FAC476 /* MDSubclassUIControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSubclassUIControl.m; sourceTree = "<group>"; };
+		14118D281CEC2E5500FAC476 /* MDTabBarVCNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTabBarVCNormalViewController.h; sourceTree = "<group>"; };
+		14118D291CEC2E5500FAC476 /* MDTabBarVCNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTabBarVCNormalViewController.m; sourceTree = "<group>"; };
+		14118D2A1CEC2E5500FAC476 /* MDTBVC1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTBVC1ViewController.h; sourceTree = "<group>"; };
+		14118D2B1CEC2E5500FAC476 /* MDTBVC1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTBVC1ViewController.m; sourceTree = "<group>"; };
+		14118D2C1CEC2E5500FAC476 /* MDTBVC2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTBVC2ViewController.h; sourceTree = "<group>"; };
+		14118D2D1CEC2E5500FAC476 /* MDTBVC2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTBVC2ViewController.m; sourceTree = "<group>"; };
+		14118D2E1CEC2E5500FAC476 /* MDTBVC3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTBVC3ViewController.h; sourceTree = "<group>"; };
+		14118D2F1CEC2E5500FAC476 /* MDTBVC3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTBVC3ViewController.m; sourceTree = "<group>"; };
+		14118D341CEC446D00FAC476 /* MD_RDV_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_RDV_VC.h; sourceTree = "<group>"; };
+		14118D351CEC446D00FAC476 /* MD_RDV_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_RDV_VC.m; sourceTree = "<group>"; };
+		14118D371CEC44F800FAC476 /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
+		14118D381CEC44F800FAC476 /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
 		1412B66E1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIBezierPath_CustomView1.h; sourceTree = "<group>"; };
 		1412B66F1BA15A6400FA5F2E /* MD_UIBezierPath_CustomView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIBezierPath_CustomView1.m; sourceTree = "<group>"; };
 		1417B1181CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Scocket_ClientServer_VC.h; sourceTree = "<group>"; };
@@ -1078,14 +1099,6 @@
 		14FF817C1CE1D83D00C7855C /* navigationbar_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_more@2x.png"; sourceTree = "<group>"; };
 		14FF817E1CE1D84200C7855C /* navigationbar_pop_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_pop_highlighted@2x.png"; sourceTree = "<group>"; };
 		14FF81801CE1D84800C7855C /* navigationbar_pop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_pop@2x.png"; sourceTree = "<group>"; };
-		14FF81821CE1EA6800C7855C /* MDTabBarVCNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTabBarVCNormalViewController.h; sourceTree = "<group>"; };
-		14FF81831CE1EA6800C7855C /* MDTabBarVCNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTabBarVCNormalViewController.m; sourceTree = "<group>"; };
-		14FF81841CE1EA6800C7855C /* MDTBVC1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTBVC1ViewController.h; sourceTree = "<group>"; };
-		14FF81851CE1EA6800C7855C /* MDTBVC1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTBVC1ViewController.m; sourceTree = "<group>"; };
-		14FF81861CE1EA6800C7855C /* MDTBVC2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTBVC2ViewController.h; sourceTree = "<group>"; };
-		14FF81871CE1EA6800C7855C /* MDTBVC2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTBVC2ViewController.m; sourceTree = "<group>"; };
-		14FF81881CE1EA6800C7855C /* MDTBVC3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTBVC3ViewController.h; sourceTree = "<group>"; };
-		14FF81891CE1EA6800C7855C /* MDTBVC3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTBVC3ViewController.m; sourceTree = "<group>"; };
 		14FFBE291C9AA995006BEB2B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		14FFBE2A1C9AA995006BEB2B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		14FFBE2B1C9AA995006BEB2B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -1193,6 +1206,53 @@
 				140925961CC0F60B00B17B2E /* MDCountStringRectangleViewController.m */,
 			);
 			path = "计算字符串所占空间";
+			sourceTree = "<group>";
+		};
+		14118D1D1CEC0E8400FAC476 /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				14118D211CEC103500FAC476 /* UIControl.h */,
+				14118D1E1CEC0EA400FAC476 /* MD_UIControl_VC.h */,
+				14118D1F1CEC0EA400FAC476 /* MD_UIControl_VC.m */,
+				14118D221CEC165F00FAC476 /* MDSubclassUIControl.h */,
+				14118D231CEC165F00FAC476 /* MDSubclassUIControl.m */,
+			);
+			path = UIControl;
+			sourceTree = "<group>";
+		};
+		14118D251CEC2E5500FAC476 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				14118D261CEC2E5500FAC476 /* RDVTabBarController */,
+				14118D271CEC2E5500FAC476 /* UITabBarController */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		14118D261CEC2E5500FAC476 /* RDVTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				14118D341CEC446D00FAC476 /* MD_RDV_VC.h */,
+				14118D351CEC446D00FAC476 /* MD_RDV_VC.m */,
+				14118D371CEC44F800FAC476 /* RDVTabBarItem.h */,
+				14118D381CEC44F800FAC476 /* RDVTabBarItem.m */,
+			);
+			path = RDVTabBarController;
+			sourceTree = "<group>";
+		};
+		14118D271CEC2E5500FAC476 /* UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				14118D281CEC2E5500FAC476 /* MDTabBarVCNormalViewController.h */,
+				14118D291CEC2E5500FAC476 /* MDTabBarVCNormalViewController.m */,
+				14118D2A1CEC2E5500FAC476 /* MDTBVC1ViewController.h */,
+				14118D2B1CEC2E5500FAC476 /* MDTBVC1ViewController.m */,
+				14118D2C1CEC2E5500FAC476 /* MDTBVC2ViewController.h */,
+				14118D2D1CEC2E5500FAC476 /* MDTBVC2ViewController.m */,
+				14118D2E1CEC2E5500FAC476 /* MDTBVC3ViewController.h */,
+				14118D2F1CEC2E5500FAC476 /* MDTBVC3ViewController.m */,
+			);
+			path = UITabBarController;
 			sourceTree = "<group>";
 		};
 		1417B1171CA8CDB2002C6A69 /* client&server */ = {
@@ -1547,6 +1607,7 @@
 		1463B2071AA162C2006AE8D2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				14118D1D1CEC0E8400FAC476 /* UIControl */,
 				149CFE9B1CA27EC000E6525C /* UIGeometry */,
 				14EACA231C8038C100F3FE2C /* UICollectionView */,
 				14F9776A1C44AE7A00A53FA9 /* UITableView */,
@@ -2687,10 +2748,10 @@
 				14FF803E1CE1B96200C7855C /* UITabBar.h */,
 				14FF803F1CE1B96200C7855C /* UITabBarController.h */,
 				14FF80401CE1B96200C7855C /* UITabBarItem.h */,
+				14118D251CEC2E5500FAC476 /* TabBar */,
 				1481BE2B1CE41D1D00A1ACE7 /* AutoLayout */,
 				1481BE261CE41B9100A1ACE7 /* UIView */,
 				14FF7FF81CE19E5D00C7855C /* UIViewController */,
-				14FF800A1CE19E5D00C7855C /* UITabBarController */,
 				14FF80141CE19E5D00C7855C /* UINavigationController */,
 			);
 			path = "UI框架";
@@ -2731,21 +2792,6 @@
 				14FF80091CE19E5D00C7855C /* MD_UIViewController_VC.m */,
 			);
 			path = "常用";
-			sourceTree = "<group>";
-		};
-		14FF800A1CE19E5D00C7855C /* UITabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				14FF81821CE1EA6800C7855C /* MDTabBarVCNormalViewController.h */,
-				14FF81831CE1EA6800C7855C /* MDTabBarVCNormalViewController.m */,
-				14FF81841CE1EA6800C7855C /* MDTBVC1ViewController.h */,
-				14FF81851CE1EA6800C7855C /* MDTBVC1ViewController.m */,
-				14FF81861CE1EA6800C7855C /* MDTBVC2ViewController.h */,
-				14FF81871CE1EA6800C7855C /* MDTBVC2ViewController.m */,
-				14FF81881CE1EA6800C7855C /* MDTBVC3ViewController.h */,
-				14FF81891CE1EA6800C7855C /* MDTBVC3ViewController.m */,
-			);
-			path = UITabBarController;
 			sourceTree = "<group>";
 		};
 		14FF80141CE19E5D00C7855C /* UINavigationController */ = {
@@ -3290,11 +3336,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14118D331CEC2E5500FAC476 /* MDTBVC3ViewController.m in Sources */,
+				14118D241CEC165F00FAC476 /* MDSubclassUIControl.m in Sources */,
 				141F65C91CA52A98009939C5 /* NSString+Category.m in Sources */,
 				145D87091BA8375800447D35 /* MD_Touch_CustomView.m in Sources */,
 				146DD3E41CC3758500C2B4E0 /* MD_CoreMotion_VC.m in Sources */,
+				14118D391CEC44F800FAC476 /* RDVTabBarItem.m in Sources */,
 				14A727CC1CABB67A00DC7BC0 /* UIAlertView+AFNetworking.m in Sources */,
-				14FF818A1CE1EA6800C7855C /* MDTabBarVCNormalViewController.m in Sources */,
 				1487408D1CABC2E6007CC45C /* DGCPlaceInfo.m in Sources */,
 				1463B2BE1AA1CE52006AE8D2 /* MDUIScrollView4ViewController.m in Sources */,
 				14EACA311C80577A00F3FE2C /* MD_CollectionView_ReuseView.m in Sources */,
@@ -3323,6 +3371,7 @@
 				14A727B61CABB28500DC7BC0 /* DGCUserManager.m in Sources */,
 				14E331B71B27173500B356C7 /* MD_UIIPC_ViewController.m in Sources */,
 				144F23F11C5F38E2004ED3BC /* NSIndexSet+Convenience.m in Sources */,
+				14118D361CEC446D00FAC476 /* MD_RDV_VC.m in Sources */,
 				1463B2AC1AA1CBD3006AE8D2 /* MDUIScrollView1ViewController.m in Sources */,
 				141B43411AA4037C008F2711 /* MDPage1ViewController.m in Sources */,
 				1489C8861CAA873E000CBC14 /* MD_NSXML_VC.m in Sources */,
@@ -3377,8 +3426,10 @@
 				1428AB7F1C84502C003CC10F /* MDHybridViewController.m in Sources */,
 				14DF14AE1C4F7684005C10AA /* MD_AVCamera_VC.m in Sources */,
 				14CB770F1CA4EFFA00878C4E /* AsyncSocket.m in Sources */,
+				14118D301CEC2E5500FAC476 /* MDTabBarVCNormalViewController.m in Sources */,
 				1487407E1CABBC1B007CC45C /* DGCDataParser.m in Sources */,
 				1481BE291CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m in Sources */,
+				14118D201CEC0EA400FAC476 /* MD_UIControl_VC.m in Sources */,
 				14FF802B1CE19E5D00C7855C /* ThirdViewController.m in Sources */,
 				14A727D01CABB67A00DC7BC0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				148CD7701AAEDA2200FAED9D /* MDDicNormalViewController.m in Sources */,
@@ -3394,6 +3445,7 @@
 				14CB77151CA4F18F00878C4E /* MD_Socket_Client_VC.m in Sources */,
 				1487408A1CABC210007CC45C /* DGCPostServices.m in Sources */,
 				148740841CABBEF8007CC45C /* DGCListInfo.m in Sources */,
+				14118D311CEC2E5500FAC476 /* MDTBVC1ViewController.m in Sources */,
 				14E604DF1C5B1107000E0DED /* MDBag.m in Sources */,
 				14565E8A1BA95590009F7B2D /* MD_NSTimer_VC2.m in Sources */,
 				1463B2B31AA1CD55006AE8D2 /* MDUIScrollView2ViewController.m in Sources */,
@@ -3417,7 +3469,6 @@
 				14CB771A1CA4F1B800878C4E /* MD_Socket_Server_VC.m in Sources */,
 				14A727A61CABB02100DC7BC0 /* DGCLoginServices.m in Sources */,
 				14A727611CAB75A700DC7BC0 /* GDataXMLNode.m in Sources */,
-				14FF818B1CE1EA6800C7855C /* MDTBVC1ViewController.m in Sources */,
 				145D87061BA836FA00447D35 /* MD_Touch_VC.m in Sources */,
 				14FF80341CE19E5D00C7855C /* MDNavi1ViewController.m in Sources */,
 				14A727B01CABB09F00DC7BC0 /* DGCUserInfo.m in Sources */,
@@ -3428,6 +3479,7 @@
 				14A7278F1CABAC6D00DC7BC0 /* AFHTTPRequestOperation.m in Sources */,
 				14565E0B1BA94AB1009F7B2D /* MD_NSTimer_VC1.m in Sources */,
 				145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */,
+				14118D321CEC2E5500FAC476 /* MDTBVC2ViewController.m in Sources */,
 				14FCC7431C5B6B3000490C99 /* MD_PhotoLibrary_VC.m in Sources */,
 				14FFBE461C9AA995006BEB2B /* MASViewAttribute.m in Sources */,
 				1497350B1CBB64D4006BF1A3 /* MyOperation.m in Sources */,
@@ -3443,10 +3495,8 @@
 				14EA84FA1CA3AAAB00A70A46 /* ImageDownloader.m in Sources */,
 				14EB3BFC1B9C4D5B0092B8A4 /* MD_CGContext_CustomView.m in Sources */,
 				14F073A91B95C0F80029A653 /* MD_UIGraphics_CustomView.m in Sources */,
-				14FF818D1CE1EA6800C7855C /* MDTBVC3ViewController.m in Sources */,
 				14A727931CABAC6D00DC7BC0 /* AFURLSessionManager.m in Sources */,
 				141886DA1C5096D600914CD7 /* MD_FileManager_VC.m in Sources */,
-				14FF818C1CE1EA6800C7855C /* MDTBVC2ViewController.m in Sources */,
 				14A8AFDD1CC36946008A50EB /* MD_NSObject_VC.m in Sources */,
 				1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */,
 				14F073A61B95BDD30029A653 /* MD_UIGraphics_ViewController.m in Sources */,

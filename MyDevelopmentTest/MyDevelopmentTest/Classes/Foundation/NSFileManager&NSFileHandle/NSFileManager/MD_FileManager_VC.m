@@ -14,13 +14,13 @@
 
 @implementation MD_FileManager_VC
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
+  
   [super viewDidLoad];
   
   dispatch_queue_t myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_PRIORITY_DEFAULT);
   dispatch_async(myQueue, ^{
-    [self findFileInDirecotryPath:@"/Users/hanyfeng/Desktop/Library" fileName:@"NSLayoutConstraint"];
+    [self findFileInDirecotryPath:@"/Users/hanyfeng/Desktop/Library" fileName:@"UIControl"];
   });
 }
 

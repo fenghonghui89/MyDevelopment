@@ -47,7 +47,8 @@ typedef NS_ENUM(NSInteger,PlantReferenceIndex) {
     make.size.mas_equalTo(CGSizeMake(400, 400));
   }];
 }
-//上下左右边距都为10
+
+//上左右边距都为0 高20
 -(void)test1
 {
   [self test];
@@ -56,8 +57,23 @@ typedef NS_ENUM(NSInteger,PlantReferenceIndex) {
   subview1.backgroundColor = [UIColor redColor];
   [self.bgview addSubview:subview1];
   [subview1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//    make.edges.equalTo(self.bgview).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
-    make.edges.equalTo(self.bgview);
+    make.top.equalTo(self.view).with.offset(0);
+    make.left.equalTo(self.view).with.offset(0);
+    make.right.equalTo(self.view).with.offset(0);
+    make.height.mas_equalTo(@20);
+  }];
+}
+
+-(void)test1_1
+{
+  [self test];
+  
+  UIView *subview1 = [UIView new];
+  subview1.backgroundColor = [UIColor redColor];
+  [self.bgview addSubview:subview1];
+  [subview1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    //    make.edges.equalTo(self.bgview).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    make.edges.equalTo(self.bgview);//
   }];
 }
 
