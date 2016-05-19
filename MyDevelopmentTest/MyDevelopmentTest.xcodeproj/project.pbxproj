@@ -425,6 +425,7 @@
 		14FFBE491C9AA995006BEB2B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FFBE3C1C9AA995006BEB2B /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		14FFBE4A1C9AA995006BEB2B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FFBE3E1C9AA995006BEB2B /* View+MASAdditions.m */; };
 		14FFBE4B1C9AA995006BEB2B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FFBE411C9AA995006BEB2B /* ViewController+MASAdditions.m */; };
+		14FFC0BA1CEDA18200AD74E2 /* MD_WebKit_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FFC0B91CEDA18200AD74E2 /* MD_WebKit_VC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1124,6 +1125,8 @@
 		14FFBE3F1C9AA995006BEB2B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		14FFBE401C9AA995006BEB2B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		14FFBE411C9AA995006BEB2B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		14FFC0B81CEDA18200AD74E2 /* MD_WebKit_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_WebKit_VC.h; sourceTree = "<group>"; };
+		14FFC0B91CEDA18200AD74E2 /* MD_WebKit_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_WebKit_VC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1378,6 +1381,7 @@
 				1428AB811C84558C003CC10F /* NSURLRequest.h */,
 				1428AB661C84502C003CC10F /* NSURLCache.h */,
 				1428AB761C84502C003CC10F /* UIWebView.h */,
+				14FFC0B71CEDA15700AD74E2 /* WebKit */,
 				140925831CC0D78100B17B2E /* NSURLSession */,
 				14A727751CABAB8100DC7BC0 /* AFNetwork */,
 				14A727681CAB89E200DC7BC0 /* Reachability */,
@@ -3038,6 +3042,15 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		14FFC0B71CEDA15700AD74E2 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				14FFC0B81CEDA18200AD74E2 /* MD_WebKit_VC.h */,
+				14FFC0B91CEDA18200AD74E2 /* MD_WebKit_VC.m */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3416,6 +3429,7 @@
 				144448661B9D90FA009B145F /* MD_UIBezierPath_CustomView.m in Sources */,
 				14FFBE491C9AA995006BEB2B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				14DF14B31C4F76E5005C10AA /* MD_AVQRCode_VC.m in Sources */,
+				14FFC0BA1CEDA18200AD74E2 /* MD_WebKit_VC.m in Sources */,
 				14E604D71C5B0538000E0DED /* MDKVO_VC.m in Sources */,
 				14FFBE481C9AA995006BEB2B /* NSArray+MASAdditions.m in Sources */,
 				148CD7371AAEC98800FAED9D /* MDNSArrayNormalViewController.m in Sources */,

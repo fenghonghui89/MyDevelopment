@@ -213,6 +213,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>WebKit</string>
+				<key>className</key>
+				<string>MD_WebKit_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>NSURLSession</string>
 				<key>className</key>
 				<string>MD_NSURLSession_VC</string>

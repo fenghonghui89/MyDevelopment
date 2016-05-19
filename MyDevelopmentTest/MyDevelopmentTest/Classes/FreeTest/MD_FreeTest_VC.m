@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  
+  [self customInitUI];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -37,6 +37,21 @@
 #pragma mark - < method > -
 
 -(void)customInitUI{
+  
+//  NSString *str = @"http://www.baidu.com";
+//  NSURL *URL = [NSURL URLWithString:str];
+//  NSURLRequest *urequest = [NSURLRequest requestWithURL:URL];
+//  NSString *uscheme = urequest.URL.scheme;
+//  NSString *uhost = urequest.URL.host;
+//  NSLog(@"！！~~%@ %@",uscheme,uhost);
+//  NSLog(@"haha");
+  
+  NSString *str = nil;
+  if ([str compare:@"http"] == NSOrderedSame) {
+    NSLog(@"yes");
+  }else{
+    NSLog(@"no");
+  }
   
 }
 
