@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
+  [self normal_NSSet];
 }
 
 #pragma mark - < method > -
@@ -54,12 +54,13 @@
   NSLog(@"point2 hash:%ld %@",(unsigned long)[point2 hash],point2);
   NSLog(@"xyz1 hash:%ld %@",(unsigned long)[xyz1 hash],xyz1);
   NSLog(@"xyz2 hash:%ld %@",(unsigned long)[xyz2 hash],xyz2);
-  
-  NSSet* set = [NSSet setWithObjects:point1,point2,xyz1,xyz2,nil];
+  NSArray *tarr = @[point1,point2,xyz1,xyz2];
+  NSSet* set = [NSSet setWithObjects:point1,point2,xyz1,xyz2, nil];
   NSLog(@"%@",set);
   
   //集合中是否含有某些对象
   BOOL b = [set containsObject:xyz1];
+  NSLog(@"b:%d",b);
   
   //返回集合中的任意对象
   NSObject *obj = [set anyObject];
