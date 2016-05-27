@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14032AB31CF83E3700C97616 /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 14032AAE1CF83E3700C97616 /* CustomURLCache.m */; };
+		14032AB51CF83E3700C97616 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 14032AB21CF83E3700C97616 /* Util.m */; };
 		1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403E3271B8C68ED009C8CAC /* myUILabel.m */; };
 		14089CC61CC380A300603D92 /* MD_MediaPlayer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14089CC41CC380A300603D92 /* MD_MediaPlayer_VC.m */; };
 		14089CC71CC380A300603D92 /* MD_MediaPlayer_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14089CC51CC380A300603D92 /* MD_MediaPlayer_VC.xib */; };
@@ -430,6 +432,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14032AAD1CF83E3700C97616 /* CustomURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLCache.h; sourceTree = "<group>"; };
+		14032AAE1CF83E3700C97616 /* CustomURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLCache.m; sourceTree = "<group>"; };
+		14032AB11CF83E3700C97616 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		14032AB21CF83E3700C97616 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		14032AB61CF8580A00C97616 /* WKWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebView.h; sourceTree = "<group>"; };
 		1403E3261B8C68ED009C8CAC /* myUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myUILabel.h; sourceTree = "<group>"; };
 		1403E3271B8C68ED009C8CAC /* myUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myUILabel.m; sourceTree = "<group>"; };
 		14089CC31CC380A300603D92 /* MD_MediaPlayer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_MediaPlayer_VC.h; sourceTree = "<group>"; };
@@ -1383,6 +1390,7 @@
 				1428AB811C84558C003CC10F /* NSURLRequest.h */,
 				1428AB661C84502C003CC10F /* NSURLCache.h */,
 				1428AB761C84502C003CC10F /* UIWebView.h */,
+				14032AB61CF8580A00C97616 /* WKWebView.h */,
 				14FFC0B71CEDA15700AD74E2 /* WebKit */,
 				140925831CC0D78100B17B2E /* NSURLSession */,
 				14A727751CABAB8100DC7BC0 /* AFNetwork */,
@@ -1410,6 +1418,10 @@
 				1428AB611C84502C003CC10F /* MD_UIWebViewCache_VC.h */,
 				1428AB621C84502C003CC10F /* MD_UIWebViewCache_VC.m */,
 				1428AB631C84502C003CC10F /* MD_UIWebViewCache_VC.xib */,
+				14032AAD1CF83E3700C97616 /* CustomURLCache.h */,
+				14032AAE1CF83E3700C97616 /* CustomURLCache.m */,
+				14032AB11CF83E3700C97616 /* Util.h */,
+				14032AB21CF83E3700C97616 /* Util.m */,
 				1428AB641C84502C003CC10F /* URLCache.h */,
 				1428AB651C84502C003CC10F /* URLCache.m */,
 			);
@@ -3406,6 +3418,7 @@
 				14A8AFC41CC36763008A50EB /* TRStudent.m in Sources */,
 				141886DC1C5096D600914CD7 /* NSFileManager.h in Sources */,
 				14CB77241CA5254800878C4E /* IPAddress.c in Sources */,
+				14032AB31CF83E3700C97616 /* CustomURLCache.m in Sources */,
 				14A727CE1CABB67A00DC7BC0 /* UIImageView+AFNetworking.m in Sources */,
 				148829931C55C5A00034ACFC /* TRStudent5.m in Sources */,
 				14A8AFD81CC367F9008A50EB /* TRPerson.m in Sources */,
@@ -3495,6 +3508,7 @@
 				141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */,
 				146D82B41AA7078F00F0C7FD /* MDPredicateViewController.m in Sources */,
 				14A7278F1CABAC6D00DC7BC0 /* AFHTTPRequestOperation.m in Sources */,
+				14032AB51CF83E3700C97616 /* Util.m in Sources */,
 				14565E0B1BA94AB1009F7B2D /* MD_NSTimer_VC1.m in Sources */,
 				145D87221BA8533500447D35 /* MD_Touch_Line.m in Sources */,
 				14118D321CEC2E5500FAC476 /* MDTBVC2ViewController.m in Sources */,

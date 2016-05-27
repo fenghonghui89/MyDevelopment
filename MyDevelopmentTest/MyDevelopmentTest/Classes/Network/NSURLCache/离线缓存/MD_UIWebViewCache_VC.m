@@ -7,7 +7,7 @@
 //
 
 #import "MD_UIWebViewCache_VC.h"
-
+#import "CustomURLCache.h"
 @interface MD_UIWebViewCache_VC ()<NSURLConnectionDataDelegate,UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) NSURLConnection *connection;
@@ -21,10 +21,24 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [self customInitUI];
+  [self customInitUI0];
 }
 
 #pragma mark - < method > -
+
+-(void)customInitUI0{
+
+  CustomURLCache *urlCache = [[CustomURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024
+                                                                     diskCapacity:200 * 1024 * 1024
+                                                                         diskPath:nil
+                                                                        cacheTime:0];
+  [CustomURLCache setSharedURLCache:urlCache];
+  
+  NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+  NSURLRequest *request = [NSURLRequest requestWithURL:url];
+  [self.webView loadRequest:request];
+  
+}
 
 -(void)customInitUI{
   

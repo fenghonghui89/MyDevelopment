@@ -101,6 +101,16 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 @synthesize reachabilityObject;
 
 #pragma mark - class constructor methods
++(BOOL)networkAvailable
+{
+  if ([[Reachability reachabilityForLocalWiFi] currentReachabilityStatus] != NotReachable) {
+    return YES;
+  }
+  if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] != NotReachable) {
+    return YES;
+  }
+  return NO;
+}
 
 // 用于检查网络请求是否可到达指定的主机名
 +(Reachability*)reachabilityWithHostname:(NSString*)hostname

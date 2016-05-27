@@ -47,8 +47,10 @@ static NSString * const cellId = @"cellId";
   //encode
   NSString *encodingString = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   NSString *encodingStringC = [encodingString URLEncodedString];//用CoreFoundation提供的C函数编码（更灵活）
+  NSString *encodingStringNew = [encodingString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
   NSLog(@"encode:%@",encodingString);
   NSLog(@"encodeC:%@",encodingStringC);
+  NSLog(@"encodeNew:%@",encodingStringNew);
   
   NSURL *url = [NSURL URLWithString:encodingString];
   NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
