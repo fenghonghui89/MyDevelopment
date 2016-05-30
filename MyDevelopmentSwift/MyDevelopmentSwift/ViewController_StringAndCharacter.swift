@@ -4,6 +4,8 @@
 //
 //  Created by 冯鸿辉 on 16/5/4.
 //  Copyright © 2016年 MD. All rights reserved.
+//已看
+
 /*
  swift的String是值类型
  不能添加字符或字符串到一个字符中，因为字符类型只能有一个字符

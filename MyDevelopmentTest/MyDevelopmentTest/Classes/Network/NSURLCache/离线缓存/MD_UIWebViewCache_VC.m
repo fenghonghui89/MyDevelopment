@@ -26,6 +26,7 @@
 
 #pragma mark - < method > -
 
+#pragma mark - 自定义NSURLCache
 -(void)customInitUI0{
 
   CustomURLCache *urlCache = [[CustomURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024
@@ -40,6 +41,7 @@
   
 }
 
+#pragma mark - 离线缓存
 -(void)customInitUI{
   
   NSURLCache *urlCache = [NSURLCache sharedURLCache];

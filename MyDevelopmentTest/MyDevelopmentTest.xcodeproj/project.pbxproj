@@ -220,7 +220,7 @@
 		14EA84FA1CA3AAAB00A70A46 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA84F91CA3AAAB00A70A46 /* ImageDownloader.m */; };
 		14EA84FE1CA3E8A500A70A46 /* MD_TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA84FC1CA3E8A500A70A46 /* MD_TableViewCell.m */; };
 		14EA84FF1CA3E8A500A70A46 /* MD_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EA84FD1CA3E8A500A70A46 /* MD_TableViewCell.xib */; };
-		14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.m */; };
+		14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.mm */; };
 		14EACA211C80021C00F3FE2C /* MD_FreeTest_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */; };
 		14EACA271C8038DF00F3FE2C /* MD_CollectionView_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EACA251C8038DF00F3FE2C /* MD_CollectionView_VC.m */; };
 		14EACA281C8038DF00F3FE2C /* MD_CollectionView_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EACA261C8038DF00F3FE2C /* MD_CollectionView_VC.xib */; };
@@ -856,7 +856,7 @@
 		14EA84FD1CA3E8A500A70A46 /* MD_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_TableViewCell.xib; sourceTree = "<group>"; };
 		14EA85001CA3FB2800A70A46 /* UITableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITableViewCell.h; sourceTree = "<group>"; };
 		14EACA1D1C80021C00F3FE2C /* MD_FreeTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FreeTest_VC.h; sourceTree = "<group>"; };
-		14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FreeTest_VC.m; sourceTree = "<group>"; };
+		14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MD_FreeTest_VC.mm; sourceTree = "<group>"; };
 		14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FreeTest_VC.xib; sourceTree = "<group>"; };
 		14EACA221C8008E300F3FE2C /* NSObjCRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObjCRuntime.h; sourceTree = "<group>"; };
 		14EACA241C8038DF00F3FE2C /* MD_CollectionView_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CollectionView_VC.h; sourceTree = "<group>"; };
@@ -2567,7 +2567,7 @@
 			isa = PBXGroup;
 			children = (
 				14EACA1D1C80021C00F3FE2C /* MD_FreeTest_VC.h */,
-				14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.m */,
+				14EACA1E1C80021C00F3FE2C /* MD_FreeTest_VC.mm */,
 				14EACA1F1C80021C00F3FE2C /* MD_FreeTest_VC.xib */,
 			);
 			path = FreeTest;
@@ -3431,7 +3431,7 @@
 				1489C8801CAA5EEA000CBC14 /* AsyncUdpSocket.m in Sources */,
 				1428AB791C84502C003CC10F /* URLCache.m in Sources */,
 				148CD7741AAEDACD00FAED9D /* TRStudent8.m in Sources */,
-				14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.m in Sources */,
+				14EACA201C80021C00F3FE2C /* MD_FreeTest_VC.mm in Sources */,
 				14FFBE4B1C9AA995006BEB2B /* ViewController+MASAdditions.m in Sources */,
 				149A1E631B26E5CB00986FA6 /* main.m in Sources */,
 				14A727AA1CABB07000DC7BC0 /* AFNetworkManager.m in Sources */,

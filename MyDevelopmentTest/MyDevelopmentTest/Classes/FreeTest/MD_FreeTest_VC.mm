@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [self customInitUI];
+//  [self customInitUI];
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
