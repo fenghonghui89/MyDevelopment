@@ -19,6 +19,9 @@
   
 //  [self customInitUI];
   
+  int a=1;
+  double x=0.5,y=0.2;
+  NSLog(@"%d",a=x==y);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
