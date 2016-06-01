@@ -4,24 +4,48 @@
 //
 //  Created by 冯鸿辉 on 16/4/18.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//已看
 
 
 import UIKit
 
 
-class ViewController_enum: UIViewController {
+class ViewController_Enumerations: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func_RecursiveEnumerations();
+    func_RawValues();
   }
   
   
   //MARK:- ****************************** method ******************************
-  //MARK:base 枚举是值类型
-  func func1_1() {
+  //MARK:枚举语法
+  func func_EnumerationSyntax(){
+  
+    enum CompassPoint {
+      case North
+      case South
+      case East
+      case West
+    }
+    
+    
+    
+    enum Planet {
+      case Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+    }
+    
+
+    
+    var directionToHead = CompassPoint.West
+    directionToHead = .East
+    
+
+  }
+  
+  //MARK:枚举是值类型 用switch匹配枚举值
+  func func_MatchingEnumerationValueswithASwitchStatement() {
     
     //定义
     enum CompassPoint{
@@ -50,10 +74,6 @@ class ViewController_enum: UIViewController {
       
     }
     
-    enum Point{
-      case East,South,West,North
-    }
-    
     //赋值
     var dest = CompassPoint.East;
     dest = .North;
@@ -76,7 +96,7 @@ class ViewController_enum: UIViewController {
   }
   
   //MARK:关联值
-  func func1_2() {
+  func func_AssociatedValues() {
     
     enum Barcode{
       case UPCA(Int,Int,Int);
@@ -84,7 +104,7 @@ class ViewController_enum: UIViewController {
     }
     
     var productBarcode = Barcode.UPCA(1, 2, 3);
-    productBarcode = .QRCode("abc");//只能保留一个
+    productBarcode = .QRCode("abc");//只能保留一个，所以会替换上面的
     
     switch productBarcode {
     case let .UPCA(numberSystem, identifier, check):
@@ -96,7 +116,7 @@ class ViewController_enum: UIViewController {
   }
   
   //MARK:定义每个成员的类型和原始值 原始值与成员的相互关联
-  func func1_3(){
+  func func_RawValues(){
     
     //enum的类型 默认值
     enum Human:String{
@@ -108,6 +128,14 @@ class ViewController_enum: UIViewController {
     let Tom = Human.sex.rawValue;
     print(Tom);
     
+    
+    //如果枚举类型是String，则默认值是元素本身
+    enum CompassPoint: String {
+      case North, South, East, West
+    }
+    
+    print("CompassPoint value:\(CompassPoint.North.rawValue)");
+    
     //如果是整形，没有定义原始值的成员默认自增长
     enum CustomNumTag:Int{
       case One = 1,Two,Three,Four;
@@ -117,51 +145,40 @@ class ViewController_enum: UIViewController {
     print(num);
     
     //通过原始值获取对应成员 获取不成功返回nil
-    let num1 = CustomNumTag.init(rawValue: 5);
-    let num2 = CustomNumTag(rawValue:5);
-    switch num1 {
-    case is CustomNumTag:
-      print("yes");
-    case nil:
-      print("nil");
-    default:
-      print("no");
+    let num1 = CustomNumTag.init(rawValue: 3);
+    switch num1! {//必须用可选值的强制解析
+    case .One:
+      print("1:\(CustomNumTag.One.rawValue)");
+    case .Two:
+      print("2:\(CustomNumTag.Two.rawValue)");
+    case .Three:
+      print("3:\(CustomNumTag.Three.rawValue)");
+    case .Four:
+      print("4:\(CustomNumTag.Four.rawValue)");
     }
     
-    //不能用switch？
-    if num1 == CustomNumTag.Four {
-      print("is 4");
-    }else if num1 == nil{
-      print("is nil");
+    //用可选值的绑定来做
+    if let num2 = CustomNumTag(rawValue:5){
+      switch num2 {
+      case .One:
+        print("~1:\(CustomNumTag.One.rawValue)");
+      case .Two:
+        print("~2:\(CustomNumTag.Two.rawValue)");
+      case .Three:
+        print("~3:\(CustomNumTag.Three.rawValue)");
+      case .Four:
+        print("~4:\(CustomNumTag.Four.rawValue)");
+      }
     }else{
-      print("is not 4");
+      print("is nill..");
     }
+    
+    
+    
     
   }
   
-  //MARK:mutating 变异方法
-  func func1_4() {
-    enum TriStateSwitch {
-      case Off, Low, High ;
-      mutating func next() {
-        switch self {
-        case Off:
-          self = Low
-        case Low:
-          self = High
-        case High:
-          self = Off
-        }
-      }
-    }
-    var ovenLight = TriStateSwitch.Low
-    ovenLight.next()
-    ovenLight.next()
-    print(ovenLight);
-    
-
-
-  }
+ 
   
   //MARK:indirect 用于枚举的递归计算
   func func_RecursiveEnumerations() {
@@ -201,7 +218,29 @@ class ViewController_enum: UIViewController {
   }
   
   
-  
+  //MARK:mutating 变异方法
+  func func1_4() {
+    enum TriStateSwitch {
+      case Off, Low, High ;
+      mutating func next() {
+        switch self {
+        case Off:
+          self = Low
+        case Low:
+          self = High
+        case High:
+          self = Off
+        }
+      }
+    }
+    var ovenLight = TriStateSwitch.Low
+    ovenLight.next()
+    ovenLight.next()
+    print(ovenLight);
+    
+    
+    
+  }
   
   
   

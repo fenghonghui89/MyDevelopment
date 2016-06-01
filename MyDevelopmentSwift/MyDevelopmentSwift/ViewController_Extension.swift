@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ViewController_expand: UIViewController {
+class ViewController_Extension: UIViewController {
   
   override func viewDidLoad() {
     
     super.viewDidLoad();
     
-    func5();
+    func_ComputedProperties();
   }
   
   //MARK:- <<< method >>>
-  //MARK:扩展Double
-  func func1() {
+  //MARK:扩展计算属性
+  func func_ComputedProperties() {
     
     let oneInch = 25.4.mm
     print("One inch is \(oneInch) meters")// 打印输出："One inch is 0.0254 meters"
@@ -31,32 +31,36 @@ class ViewController_expand: UIViewController {
     print("A marathon is \(aMarathon) meters long")// 打印输出："A marathon is 42495.0 meters long"
   }
   
-  //MARK:给某个类扩展init
-  func func2(){
+  //MARK:扩展init
+  func func_Initializers(){
     
     let defaultRect = Rect()
     let memberwiseRect = Rect(origin: Point(x: 1, y: 1),size:Size(width: 2, height: 2))
     let centerRect = Rect(center: Point(x: 4.0, y: 4.0),size: Size(width: 3.0, height: 3.0))// centerRect的原点是 (2.5, 2.5)，大小是 (3.0, 3.0)
   }
   
-  //MARK:给某个类扩展方法
-  func func3(){
+  //MARK:扩展方法
+  func func_Methods(){
     
-    var i:Int = 4;
+    let i:Int = 4;
     
+    //调用1
     let block = {
       print("~~!");
     }
-    
     i.repetitions(block);
+    
+    //调用2
     i.repetitions({
       print("hello")}
     );
+    
+    //调用3
     i.repetitions{print("!!!!")};
   }
   
-  //MARK:给某个类扩展方法 - mutating关键字修改self
-  func func4() {
+  //MARK:扩展方法 - mutating关键字修改self
+  func func_MutatingInstanceMethods() {
     
     var value:Int = 3;
     value.square1();
@@ -64,16 +68,29 @@ class ViewController_expand: UIViewController {
     
   }
   
-  //MARK:扩展下标
-  func func5() {
+  //MARK:扩展下标subscript
+  func func_Subscripts() {
     
     let i:Int = 1234567;
     print(i[0]);//输出从右往左数第n-1个数字
     
+    746381295[0]
+    // returns 5
+    746381295[1]
+    // returns 9
+    746381295[2]
+    // returns 2
+    746381295[8]
+    // returns 7
+  
+    
+    746381295[9]
+    // returns 0, as if you had requested:
+    0746381295[9]
   }
   
   //MARK:嵌套类型
-  func func6(){
+  func func_NestedTypes(){
     
     let str:String = "Hello"
     
@@ -87,6 +104,20 @@ class ViewController_expand: UIViewController {
         print("Consonant")
       }
     }
+    
+    
+    
+    let numbers = [3, 19, -27, 0, -6, 0, 7];
+    for number in numbers {
+      switch number.kind {
+      case .Negative:
+        print("- ", terminator: "")
+      case .Zero:
+        print("0 ", terminator: "")
+      case .Positive:
+        print("+ ", terminator: "")
+      }
+    }
   }
   
   
@@ -96,7 +127,7 @@ class ViewController_expand: UIViewController {
 
 
 //MARK:- <<< class >>>
-//MARK:- 扩展Double
+//MARK:- 扩展计算属性
 extension Double{
 
   var km: Double { return self * 1_000.0 }
@@ -106,7 +137,7 @@ extension Double{
   var ft: Double { return self / 3.28084 }
 }
 
-//MARK:- 给某个类扩展init
+//MARK:- 扩展init
 
 struct Size {
   var width = 0.0, height = 0.0
@@ -130,7 +161,7 @@ extension Rect {
   }
 }
 
-//MARK:- 给某个类扩展方法
+//MARK:- 扩展方法
 extension Int{
 
   func repetitions(task:()->()){
@@ -140,7 +171,7 @@ extension Int{
   }
 }
 
-//MARK:- 给某个类扩展方法 - mutating关键字修改self
+//MARK:- 扩展方法 - mutating关键字修改self
 extension Int{
 
   mutating func square1(){
@@ -151,7 +182,7 @@ extension Int{
 
 
 
-//MARK:- 扩展下标 - subscript
+//MARK:- 扩展下标subscript
 extension Int {
   
   subscript(digitIndex: Int) -> Int {
@@ -183,5 +214,25 @@ extension Character {
     }
   }
 }
+
+
+
+extension Int {
+  enum Kind {
+    case Negative, Zero, Positive
+  }
+  var kind: Kind {
+    switch self {
+    case 0:
+      return .Zero
+    case let x where x > 0:
+      return .Positive
+    default:
+      return .Negative
+    }
+  }
+}
+
+
 
 

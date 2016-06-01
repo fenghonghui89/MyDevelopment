@@ -122,7 +122,9 @@ var+可选类型的对象才能置nil，但对象的属性另计，对象的属�
 expand
 注意：扩展可以添加新的计算属性，但是不可以添加存储属性，也不可以向已有属性添加属性观测器(property observers)。
 
+extension
 
+typealias
 
 protocal
 只能用var
@@ -131,5 +133,7 @@ protocal
 @objc 暴露给oc
 optional 只能用在@objc修饰协议，调用optional的方法或属性，要用？
 
+indirect
+枚举递归用
 
 一个指向实例的swift变量/常量 类似于c/c++/oc的指针，但又不是直接指向内存地址，也不需要*

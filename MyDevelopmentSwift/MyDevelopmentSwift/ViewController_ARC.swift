@@ -4,11 +4,11 @@
 //
 //  Created by 冯鸿辉 on 16/4/20.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//已看
 
 import UIKit
 
-class ViewController_arc: UIViewController {
+class ViewController_ARC: UIViewController {
   
 
   

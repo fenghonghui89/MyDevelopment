@@ -4,7 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/4/26.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//已看
 
 import UIKit
 
@@ -17,8 +17,8 @@ class ViewController_TypeCasting:UIViewController {
   }
   
   //MARK:- <<< method >>>
-  //MARK:类型转换 is检查类型 as向下转型
-  func func1() {
+  //MARK:is检查类型
+  func func_CheckingType() {
     
     let library = [
       Movie(name: "Casablanca", director: "Michael Curtiz"),
@@ -42,6 +42,21 @@ class ViewController_TypeCasting:UIViewController {
     }
     
     print("~~Media library contains \(movieCount) movies and \(songCount) songs")
+    // Prints "Media library contains 2 movies and 3 songs"
+    
+  }
+  
+  
+  //MARK:as向下转型
+  func func_Downcasting() {
+    
+    let library = [
+      Movie(name: "Casablanca", director: "Michael Curtiz"),
+      Song(name: "Blue Suede Shoes", artist: "Elvis Presley"),
+      Movie(name: "Citizen Kane", director: "Orson Welles"),
+      Song(name: "The One And Only", artist: "Chesney Hawkes"),
+      Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
+    ]// the type of "library" is inferred to be [MediaItem]
     
     //as向下转型
     for item in library {
@@ -51,15 +66,17 @@ class ViewController_TypeCasting:UIViewController {
         print("Song: '\(song.name)', by \(song.artist)")
       }
     }
-
     
-    
-    
+    // Movie: Casablanca, dir. Michael Curtiz
+    // Song: Blue Suede Shoes, by Elvis Presley
+    // Movie: Citizen Kane, dir. Orson Welles
+    // Song: The One And Only, by Chesney Hawkes
+    // Song: Never Gonna Give You Up, by Rick Astley
   }
   
   
   //MARK:AnyObject 对象类型
-  func func2() {
+  func func_AnyObject() {
     
     let someObjects: [AnyObject] = [
       Movie(name: "2001: A Space Odyssey", director: "Stanley Kubrick"),
@@ -71,15 +88,23 @@ class ViewController_TypeCasting:UIViewController {
       let movie = object as! Movie
       print("Movie: '\(movie.name)', dir. \(movie.director)")
     }
+    // Movie: 2001: A Space Odyssey, dir. Stanley Kubrick
+    // Movie: Moon, dir. Duncan Jones
+    // Movie: Alien, dir. Ridley Scott
     
     //简洁
     for movie in someObjects as! [Movie] {
       print("Movie: '\(movie.name)', dir. \(movie.director)")
     }
+    // Movie: 2001: A Space Odyssey, dir. Stanley Kubrick
+    // Movie: Moon, dir. Duncan Jones
+    // Movie: Alien, dir. Ridley Scott
+    
+
   }
   
   //MARK:Any 包含非对象类型
-  func func3(){
+  func func_Any(){
     
     var things = [Any]()
     

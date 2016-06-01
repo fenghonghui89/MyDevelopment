@@ -4,32 +4,37 @@
 //
 //  Created by 冯鸿辉 on 16/5/3.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//已看
 
 import UIKit
 
-class ViewController_generic: UIViewController {
+class ViewController_Generics: UIViewController {
   
   override func viewDidLoad() {
     
     super.viewDidLoad();
     
-    funcGenericExpend();
+    func_WhereClauses();
   }
   
   //MARK:- <<< method >>>
   //MARK:泛型函数 func<Element>(a.b)
-  func funcResult1(){
+  func func_GenericFunctions(){
     
-    var i = "a";
-    var j = "b";
+    var someInt = 3
+    var anotherInt = 107
+    swapTwoValues(&someInt, &anotherInt)//调用泛型函数无需指定类型
+    // someInt is now 107, and anotherInt is now 3
     
-    swapTwoValues(&i, b: &j);//调用泛型函数无需指定类型
-    print("i:\(i),j:\(j)")
+    var someString = "hello"
+    var anotherString = "world"
+    swapTwoValues(&someString, &anotherString)
+    // someString is now "world", and anotherString is now "hello"
     
+
   }
   
-  func swapTwoValues<T>(inout a: T, inout b: T) {//inout修改参数值
+  func swapTwoValues<T>(inout a: T, inout _ b: T) {//inout修改参数值
     let temporaryA = a
     a = b
     b = temporaryA
@@ -37,7 +42,7 @@ class ViewController_generic: UIViewController {
   }
   
   //MARK:泛型类型
-  func funcResult2() {
+  func func_GenericTypes() {
     
     var st = Stack<String>()
     st.push("one")
@@ -54,7 +59,7 @@ class ViewController_generic: UIViewController {
   }
   
   //MARK:扩展泛型类型
-  func funcGenericExpend() {
+  func func_ExtendingAGenericType() {
     
     var st = Stack<String>()
     st.append("1")
@@ -68,12 +73,22 @@ class ViewController_generic: UIViewController {
   }
   
   //MARK:类型约束 func<Element:Protocol>(a,b)
-  func funcResult3(){
+  func func_TypeConstraints(){
     
     let arr = ["one","two","three"]
     
     let index = findIndex(arr, valueToFound: "two")
     print("the result index is \(index)")
+    
+    
+    
+    
+    let doubleIndex = findIndex([3.14159, 0.1, 0.25], valueToFound: 9.3)
+    // doubleIndex is an optional Int with no value, because 9.3 is not in the array
+    let stringIndex = findIndex(["Mike", "Malcolm", "Andrea"], valueToFound: "Andrea")
+    // stringIndex is an optional Int containing a value of 2
+    
+
   }
   
   /*
@@ -90,7 +105,7 @@ class ViewController_generic: UIViewController {
   }
   
   //MARK:关联类型 associatedtype
-  func funcResult4(){
+  func func_AssociatedTypes(){
     
     var st = Stack<String>()
     st.append("one")
@@ -105,7 +120,7 @@ class ViewController_generic: UIViewController {
   }
   
   //MARK:类型约束+where语句
-  func funcResult5(){
+  func func_WhereClauses(){
     
     var stackOfStrings = Stack<String>()
     stackOfStrings.push("1")

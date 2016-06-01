@@ -4,7 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/5/16.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//已看
 
 import UIKit
 
@@ -13,12 +13,12 @@ class ViewController_TypeNesting: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
     
-    func4();
+    func_ReferringToNestedTypes();
   }
   
   
   //MARK:类型嵌套
-  func func4() {
+  func func_ReferringToNestedTypes() {
     
     let theAceOfSpades = BlackjackCard(rank: .Ace, suit: .Spades)
     print("theAceOfSpades: \(theAceOfSpades.description)")// 打印出 "theAceOfSpades: suit is ♠, value is 1 or 11"
