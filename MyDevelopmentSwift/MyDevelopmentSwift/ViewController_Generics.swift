@@ -15,6 +15,7 @@ class ViewController_Generics: UIViewController {
     super.viewDidLoad();
     
     func_WhereClauses();
+
   }
   
   //MARK:- <<< method >>>
