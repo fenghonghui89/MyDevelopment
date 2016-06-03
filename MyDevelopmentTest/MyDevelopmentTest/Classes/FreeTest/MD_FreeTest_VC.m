@@ -10,6 +10,13 @@
 
 @interface MD_FreeTest_VC ()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UIWebView *webView;
+
+
+@property NSArray<NSDate *> *dates;
+@property NSSet<NSString *> *words;
+@property NSDictionary<NSURL *, NSData *> *cachedData;
+
+
 @end
 
 @implementation MD_FreeTest_VC
@@ -22,6 +29,9 @@
   int a=1;
   double x=0.5,y=0.2;
   NSLog(@"%d",a=x==y);
+  
+  NSString *str = @"aAc";
+ 
 }
 
 -(void)viewDidAppear:(BOOL)animated{

@@ -4,7 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/6/1.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//已看
 /*
  元组类型的访问级别 相当于当中所有类型的最受限的级别
  

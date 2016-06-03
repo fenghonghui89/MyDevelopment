@@ -9,7 +9,7 @@
 #import "MDBlockValueViewController.h"
 #import "MDBlockNormalViewController.h"
 @interface MDBlockValueViewController ()<MDBlockDelegate>
-
+@property(nonatomic,copy)void(^block)(BOOL b);
 @end
 
 @implementation MDBlockValueViewController
@@ -119,5 +119,26 @@
   [vc retryBlockMethod:^(BOOL a, retryblock reb) {
     reb(YES);
   }];
+}
+
+#pragma mark block循环引用问题
+-(void)test8{
+  
+  //block持有self
+  void(^block)(BOOL a) = ^(BOOL a){
+    [self isViewLoaded];
+  };
+  
+  //block持有self self持有block
+  self.block = ^(BOOL b){
+    [self isViewLoaded];
+  };
+  
+  //解决
+  __weak typeof(self) weakSelf = self;
+  self.block = ^(BOOL a){
+    __strong typeof(self) strongSelf = weakSelf;//可忽略
+    [strongSelf isViewLoaded];
+  };
 }
 @end
