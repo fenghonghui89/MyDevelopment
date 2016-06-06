@@ -107,6 +107,14 @@
 		147FDF3A1B8FFD380006A2C4 /* MDNSAttributedStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF391B8FFD380006A2C4 /* MDNSAttributedStringViewController.m */; };
 		147FDF3F1B9012690006A2C4 /* UIImage+UIImageScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 147FDF3E1B9012690006A2C4 /* UIImage+UIImageScale.m */; };
 		1481BE291CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1481BE281CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m */; };
+		148642EE1D050D29005C1381 /* MD_KeyedArchiver_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 148642EC1D050D29005C1381 /* MD_KeyedArchiver_VC.m */; };
+		148642F61D050E47005C1381 /* MD_UsefulPath_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 148642F51D050E47005C1381 /* MD_UsefulPath_VC.m */; };
+		148642F91D050FA2005C1381 /* MD_Plist_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 148642F81D050FA2005C1381 /* MD_Plist_VC.m */; };
+		148642FC1D051000005C1381 /* my.plist in Resources */ = {isa = PBXBuildFile; fileRef = 148642FA1D051000005C1381 /* my.plist */; };
+		148642FD1D051000005C1381 /* leves.plist in Resources */ = {isa = PBXBuildFile; fileRef = 148642FB1D051000005C1381 /* leves.plist */; };
+		148643011D05143F005C1381 /* MD_SettingBundle_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 148643001D05143F005C1381 /* MD_SettingBundle_VC.m */; };
+		148643031D05146B005C1381 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 148643021D05146B005C1381 /* Settings.bundle */; };
+		148643051D051497005C1381 /* MD_SettingBundle_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 148643041D051497005C1381 /* MD_SettingBundle_VC.xib */; };
 		1487407E1CABBC1B007CC45C /* DGCDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487407D1CABBC1B007CC45C /* DGCDataParser.m */; };
 		148740831CABBEF8007CC45C /* DGCPostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740801CABBEF8007CC45C /* DGCPostInfo.m */; };
 		148740841CABBEF8007CC45C /* DGCListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740821CABBEF8007CC45C /* DGCListInfo.m */; };
@@ -502,7 +510,6 @@
 		1421A97B1BD62C6800C561A7 /* MDCustomUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomUIViewController.h; sourceTree = "<group>"; };
 		1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomUIViewController.m; sourceTree = "<group>"; };
 		1426A1771C44D7A300FB191D /* NSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThread.h; sourceTree = "<group>"; };
-		1426A17F1C44D93700FB191D /* NSKeyedArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSKeyedArchiver.h; sourceTree = "<group>"; };
 		1426A1851C44DB1B00FB191D /* NSArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArray.h; sourceTree = "<group>"; };
 		1426A1861C44DC8000FB191D /* NSObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject.h; sourceTree = "<group>"; };
 		1426A18B1C44DE2000FB191D /* NSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSBundle.h; sourceTree = "<group>"; };
@@ -631,6 +638,19 @@
 		1481BE281CE41B9100A1ACE7 /* MD_OC_UIView_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_OC_UIView_ViewController.m; sourceTree = "<group>"; };
 		1481BE2A1CE41B9700A1ACE7 /* UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		1481BE2C1CE41D2900A1ACE7 /* NSLayoutConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLayoutConstraint.h; sourceTree = "<group>"; };
+		148642EB1D050D29005C1381 /* MD_KeyedArchiver_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_KeyedArchiver_VC.h; sourceTree = "<group>"; };
+		148642EC1D050D29005C1381 /* MD_KeyedArchiver_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_KeyedArchiver_VC.m; sourceTree = "<group>"; };
+		148642ED1D050D29005C1381 /* NSKeyedArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSKeyedArchiver.h; sourceTree = "<group>"; };
+		148642F41D050E47005C1381 /* MD_UsefulPath_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UsefulPath_VC.h; sourceTree = "<group>"; };
+		148642F51D050E47005C1381 /* MD_UsefulPath_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UsefulPath_VC.m; sourceTree = "<group>"; };
+		148642F71D050FA2005C1381 /* MD_Plist_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Plist_VC.h; sourceTree = "<group>"; };
+		148642F81D050FA2005C1381 /* MD_Plist_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Plist_VC.m; sourceTree = "<group>"; };
+		148642FA1D051000005C1381 /* my.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = my.plist; sourceTree = "<group>"; };
+		148642FB1D051000005C1381 /* leves.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = leves.plist; sourceTree = "<group>"; };
+		148642FF1D05143F005C1381 /* MD_SettingBundle_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_SettingBundle_VC.h; sourceTree = "<group>"; };
+		148643001D05143F005C1381 /* MD_SettingBundle_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_SettingBundle_VC.m; sourceTree = "<group>"; };
+		148643021D05146B005C1381 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		148643041D051497005C1381 /* MD_SettingBundle_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_SettingBundle_VC.xib; sourceTree = "<group>"; };
 		1487407C1CABBC1B007CC45C /* DGCDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCDataParser.h; sourceTree = "<group>"; };
 		1487407D1CABBC1B007CC45C /* DGCDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCDataParser.m; sourceTree = "<group>"; };
 		1487407F1CABBEF8007CC45C /* DGCPostInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCPostInfo.h; sourceTree = "<group>"; };
@@ -1339,14 +1359,6 @@
 			path = "NSFileManager&NSFileHandle";
 			sourceTree = "<group>";
 		};
-		1426A17D1C44D91100FB191D /* NSKeyedArchiver&NSKeyedUnarchiver */ = {
-			isa = PBXGroup;
-			children = (
-				1426A17F1C44D93700FB191D /* NSKeyedArchiver.h */,
-			);
-			path = "NSKeyedArchiver&NSKeyedUnarchiver";
-			sourceTree = "<group>";
-		};
 		1426A1881C44DE0A00FB191D /* FoundationOther */ = {
 			isa = PBXGroup;
 			children = (
@@ -1593,6 +1605,7 @@
 				1428AB5E1C84502C003CC10F /* Network */,
 				1457BA8B1CB7B76200C48DE0 /* 多线程 */,
 				14FF7FF71CE19DF600C7855C /* UI框架 */,
+				148642E91D050D08005C1381 /* 存储 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1606,7 +1619,6 @@
 				14E604D21C5B041E000E0DED /* NSKeyValueObserving */,
 				1488298D1C55C5A00034ACFC /* NSEnumerator */,
 				1426A1891C44DE0A00FB191D /* NSBundle */,
-				1426A17D1C44D91100FB191D /* NSKeyedArchiver&NSKeyedUnarchiver */,
 				1426A1791C44D82A00FB191D /* NSFileManager&NSFileHandle */,
 				1426A1751C44D79000FB191D /* NSThread */,
 				14565E071BA94A75009F7B2D /* NSTimer */,
@@ -1936,6 +1948,82 @@
 			children = (
 			);
 			path = CGColorSpace;
+			sourceTree = "<group>";
+		};
+		148642E91D050D08005C1381 /* 存储 */ = {
+			isa = PBXGroup;
+			children = (
+				148642FE1D051427005C1381 /* SettingBundle */,
+				148642EF1D050E10005C1381 /* 常用路径 */,
+				148642F01D050E10005C1381 /* coredata */,
+				148642F11D050E10005C1381 /* keychain */,
+				148642F21D050E10005C1381 /* plist */,
+				148642F31D050E10005C1381 /* userdefault */,
+				148642EA1D050D29005C1381 /* 归档反归档 */,
+			);
+			path = "存储";
+			sourceTree = "<group>";
+		};
+		148642EA1D050D29005C1381 /* 归档反归档 */ = {
+			isa = PBXGroup;
+			children = (
+				148642ED1D050D29005C1381 /* NSKeyedArchiver.h */,
+				148642EB1D050D29005C1381 /* MD_KeyedArchiver_VC.h */,
+				148642EC1D050D29005C1381 /* MD_KeyedArchiver_VC.m */,
+			);
+			path = "归档反归档";
+			sourceTree = "<group>";
+		};
+		148642EF1D050E10005C1381 /* 常用路径 */ = {
+			isa = PBXGroup;
+			children = (
+				148642F41D050E47005C1381 /* MD_UsefulPath_VC.h */,
+				148642F51D050E47005C1381 /* MD_UsefulPath_VC.m */,
+			);
+			path = "常用路径";
+			sourceTree = "<group>";
+		};
+		148642F01D050E10005C1381 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = coredata;
+			sourceTree = "<group>";
+		};
+		148642F11D050E10005C1381 /* keychain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = keychain;
+			sourceTree = "<group>";
+		};
+		148642F21D050E10005C1381 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				148642FA1D051000005C1381 /* my.plist */,
+				148642FB1D051000005C1381 /* leves.plist */,
+				148642F71D050FA2005C1381 /* MD_Plist_VC.h */,
+				148642F81D050FA2005C1381 /* MD_Plist_VC.m */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		148642F31D050E10005C1381 /* userdefault */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = userdefault;
+			sourceTree = "<group>";
+		};
+		148642FE1D051427005C1381 /* SettingBundle */ = {
+			isa = PBXGroup;
+			children = (
+				148643021D05146B005C1381 /* Settings.bundle */,
+				148642FF1D05143F005C1381 /* MD_SettingBundle_VC.h */,
+				148643001D05143F005C1381 /* MD_SettingBundle_VC.m */,
+				148643041D051497005C1381 /* MD_SettingBundle_VC.xib */,
+			);
+			path = SettingBundle;
 			sourceTree = "<group>";
 		};
 		14877C771BA7F15E00785B0C /* 手势:触控 */ = {
@@ -3186,6 +3274,7 @@
 				14FF80DA1CE1BF6F00C7855C /* Australia.png in Resources */,
 				14FF80FE1CE1BF6F00C7855C /* Icon-Small@3x.png in Resources */,
 				14FF803A1CE19E5D00C7855C /* MDModalViewController.xib in Resources */,
+				148642FD1D051000005C1381 /* leves.plist in Resources */,
 				14FF81421CE1BF6F00C7855C /* 000.jpg in Resources */,
 				14FF813B1CE1BF6F00C7855C /* playing59@2x.png in Resources */,
 				14FF81191CE1BF6F00C7855C /* playing28@2x.png in Resources */,
@@ -3285,9 +3374,11 @@
 				14FF80E51CE1BF6F00C7855C /* Holland.png in Resources */,
 				14FF81691CE1D7EA00C7855C /* tabbar_message_center@2x.png in Resources */,
 				14DF14AF1C4F7684005C10AA /* MD_AVCamera_VC.xib in Resources */,
+				148643031D05146B005C1381 /* Settings.bundle in Resources */,
 				146D82B71AA7080000F0C7FD /* Bridge.plist in Resources */,
 				14FF81031CE1BF6F00C7855C /* Default-568h@2x.png in Resources */,
 				14FF81261CE1BF6F00C7855C /* playing3@2x.png in Resources */,
+				148642FC1D051000005C1381 /* my.plist in Resources */,
 				14FF81711CE1D81E00C7855C /* navigationbar_arrow_up@2x.png in Resources */,
 				146DD3E51CC3758500C2B4E0 /* MD_CoreMotion_VC.xib in Resources */,
 				14FF81271CE1BF6F00C7855C /* playing40@2x.png in Resources */,
@@ -3326,6 +3417,7 @@
 				14FF812E1CE1BF6F00C7855C /* playing47@2x.png in Resources */,
 				14FF811C1CE1BF6F00C7855C /* playing30@2x.png in Resources */,
 				14FF80FA1CE1BF6F00C7855C /* Icon-Small-40@2x.png in Resources */,
+				148643051D051497005C1381 /* MD_SettingBundle_VC.xib in Resources */,
 				14FF80EC1CE1BF6F00C7855C /* NorthKorea.png in Resources */,
 				14FF81231CE1BF6F00C7855C /* playing37@2x.png in Resources */,
 				14FF80DB1CE1BF6F00C7855C /* Brazil.png in Resources */,
@@ -3379,6 +3471,8 @@
 				14DF14A61C4F71C3005C10AA /* UIImage+Resize.m in Sources */,
 				14FFBE421C9AA995006BEB2B /* MASCompositeConstraint.m in Sources */,
 				146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */,
+				148642F61D050E47005C1381 /* MD_UsefulPath_VC.m in Sources */,
+				148643011D05143F005C1381 /* MD_SettingBundle_VC.m in Sources */,
 				14F0738E1B95B9200029A653 /* MD_UIColor_ViewController.m in Sources */,
 				1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */,
 				14A7276B1CAB89F800DC7BC0 /* MD_Reachability_VC.m in Sources */,
@@ -3406,6 +3500,7 @@
 				1489C8861CAA873E000CBC14 /* MD_NSXML_VC.m in Sources */,
 				14DB41061AEA752D00DA1682 /* MDClassesViewController.m in Sources */,
 				14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */,
+				148642F91D050FA2005C1381 /* MD_Plist_VC.m in Sources */,
 				145D87121BA8417800447D35 /* MD_Touch_Point.m in Sources */,
 				14FF80271CE19E5D00C7855C /* MDMainViewController.m in Sources */,
 				148829921C55C5A00034ACFC /* MDNSEnumeratorViewController.m in Sources */,
@@ -3475,6 +3570,7 @@
 				14FF80351CE19E5D00C7855C /* MDModal1ViewController.m in Sources */,
 				14CB77151CA4F18F00878C4E /* MD_Socket_Client_VC.m in Sources */,
 				1487408A1CABC210007CC45C /* DGCPostServices.m in Sources */,
+				148642EE1D050D29005C1381 /* MD_KeyedArchiver_VC.m in Sources */,
 				148740841CABBEF8007CC45C /* DGCListInfo.m in Sources */,
 				14118D311CEC2E5500FAC476 /* MDTBVC1ViewController.m in Sources */,
 				14E604DF1C5B1107000E0DED /* MDBag.m in Sources */,

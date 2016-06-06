@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TRPerson : NSObject
-
+@interface TRPerson : NSObject<NSCoding>//1.遵循协议
+@property (nonatomic,copy)NSString *name;
+@property (nonatomic)int age;
 @end

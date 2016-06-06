@@ -4,6 +4,47 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>存储</string>
+		<key>className</key>
+		<string></string>
+		<key>sub</key>
+		<array>
+			<dict>
+				<key>desc</key>
+				<string>plist</string>
+				<key>className</key>
+				<string>MD_Plist_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>常用路径</string>
+				<key>className</key>
+				<string>MD_UsefulPath_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>SettingBundle</string>
+				<key>className</key>
+				<string>MD_SettingBundle_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>归档反归档</string>
+				<key>className</key>
+				<string>MD_KeyedArchiver_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>UI框架</string>
 		<key>className</key>
 		<string></string>
