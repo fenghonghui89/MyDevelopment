@@ -43,7 +43,6 @@
 		141B43491AA403A5008F2711 /* MDPage3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B43481AA403A5008F2711 /* MDPage3ViewController.m */; };
 		141F65C91CA52A98009939C5 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 141F65C81CA52A98009939C5 /* NSString+Category.m */; };
 		1421A97A1BD62C2100C561A7 /* ZTCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A9791BD62C2100C561A7 /* ZTCameraView.m */; };
-		1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */; };
 		1428AB771C84502C003CC10F /* MD_UIWebViewCache_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428AB621C84502C003CC10F /* MD_UIWebViewCache_VC.m */; };
 		1428AB781C84502C003CC10F /* MD_UIWebViewCache_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1428AB631C84502C003CC10F /* MD_UIWebViewCache_VC.xib */; };
 		1428AB791C84502C003CC10F /* URLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428AB651C84502C003CC10F /* URLCache.m */; };
@@ -115,6 +114,8 @@
 		148643011D05143F005C1381 /* MD_SettingBundle_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 148643001D05143F005C1381 /* MD_SettingBundle_VC.m */; };
 		148643031D05146B005C1381 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 148643021D05146B005C1381 /* Settings.bundle */; };
 		148643051D051497005C1381 /* MD_SettingBundle_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 148643041D051497005C1381 /* MD_SettingBundle_VC.xib */; };
+		148643111D053549005C1381 /* MDCustomXIBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 148643101D053549005C1381 /* MDCustomXIBView.m */; };
+		148643171D0556C7005C1381 /* MDCustomXIBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 148643161D0556C7005C1381 /* MDCustomXIBView.xib */; };
 		1487407E1CABBC1B007CC45C /* DGCDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1487407D1CABBC1B007CC45C /* DGCDataParser.m */; };
 		148740831CABBEF8007CC45C /* DGCPostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740801CABBEF8007CC45C /* DGCPostInfo.m */; };
 		148740841CABBEF8007CC45C /* DGCListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 148740821CABBEF8007CC45C /* DGCListInfo.m */; };
@@ -507,8 +508,6 @@
 		141F65C81CA52A98009939C5 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		1421A9781BD62C2100C561A7 /* ZTCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTCameraView.h; sourceTree = "<group>"; };
 		1421A9791BD62C2100C561A7 /* ZTCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTCameraView.m; sourceTree = "<group>"; };
-		1421A97B1BD62C6800C561A7 /* MDCustomUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomUIViewController.h; sourceTree = "<group>"; };
-		1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomUIViewController.m; sourceTree = "<group>"; };
 		1426A1771C44D7A300FB191D /* NSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSThread.h; sourceTree = "<group>"; };
 		1426A1851C44DB1B00FB191D /* NSArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArray.h; sourceTree = "<group>"; };
 		1426A1861C44DC8000FB191D /* NSObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject.h; sourceTree = "<group>"; };
@@ -651,6 +650,9 @@
 		148643001D05143F005C1381 /* MD_SettingBundle_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_SettingBundle_VC.m; sourceTree = "<group>"; };
 		148643021D05146B005C1381 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		148643041D051497005C1381 /* MD_SettingBundle_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_SettingBundle_VC.xib; sourceTree = "<group>"; };
+		1486430F1D053549005C1381 /* MDCustomXIBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCustomXIBView.h; sourceTree = "<group>"; };
+		148643101D053549005C1381 /* MDCustomXIBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCustomXIBView.m; sourceTree = "<group>"; };
+		148643161D0556C7005C1381 /* MDCustomXIBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDCustomXIBView.xib; sourceTree = "<group>"; };
 		1487407C1CABBC1B007CC45C /* DGCDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCDataParser.h; sourceTree = "<group>"; };
 		1487407D1CABBC1B007CC45C /* DGCDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCDataParser.m; sourceTree = "<group>"; };
 		1487407F1CABBEF8007CC45C /* DGCPostInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCPostInfo.h; sourceTree = "<group>"; };
@@ -1182,8 +1184,9 @@
 				14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */,
 				1421A9781BD62C2100C561A7 /* ZTCameraView.h */,
 				1421A9791BD62C2100C561A7 /* ZTCameraView.m */,
-				1421A97B1BD62C6800C561A7 /* MDCustomUIViewController.h */,
-				1421A97C1BD62C6800C561A7 /* MDCustomUIViewController.m */,
+				1486430F1D053549005C1381 /* MDCustomXIBView.h */,
+				148643101D053549005C1381 /* MDCustomXIBView.m */,
+				148643161D0556C7005C1381 /* MDCustomXIBView.xib */,
 			);
 			path = UICustom;
 			sourceTree = "<group>";
@@ -3294,6 +3297,7 @@
 				14FF816B1CE1D7EE00C7855C /* tabbar_profile_selected@2x.png in Resources */,
 				144F23E91C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.xib in Resources */,
 				14FF81571CE1D7B400C7855C /* main_badge@2x.png in Resources */,
+				148643171D0556C7005C1381 /* MDCustomXIBView.xib in Resources */,
 				14FF812D1CE1BF6F00C7855C /* playing46@2x.png in Resources */,
 				14FF81811CE1D84800C7855C /* navigationbar_pop@2x.png in Resources */,
 				14FF81171CE1BF6F00C7855C /* playing26@2x.png in Resources */,
@@ -3638,11 +3642,11 @@
 				1463B2841AA1BD87006AE8D2 /* MDPickerViewViewController.m in Sources */,
 				1463B2141AA162C2006AE8D2 /* MDUIButtonViewController.m in Sources */,
 				144F23E81C5F042D004ED3BC /* MD_PhotoLibrary_CollectionViewCell.m in Sources */,
+				148643111D053549005C1381 /* MDCustomXIBView.m in Sources */,
 				148CD7551AAED37700FAED9D /* TRUserInfo.m in Sources */,
 				145D870F1BA8405E00447D35 /* MD_Touch_CustomView2.m in Sources */,
 				141B432F1AA3FDD3008F2711 /* MDPageControlViewController.m in Sources */,
 				144F23F61C5F5F3C004ED3BC /* MD_PhotoLibrary_PreviewVC.m in Sources */,
-				1421A97D1BD62C6800C561A7 /* MDCustomUIViewController.m in Sources */,
 				14E1A0D31CBE4C0600468C47 /* MD_NSInvocation_VC.m in Sources */,
 				1489C88C1CAA87B3000CBC14 /* TRBook.m in Sources */,
 				14FF80251CE19E5D00C7855C /* FirstViewController.m in Sources */,

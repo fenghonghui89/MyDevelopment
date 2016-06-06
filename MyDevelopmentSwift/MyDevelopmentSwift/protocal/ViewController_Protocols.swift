@@ -51,7 +51,7 @@ class ViewController_Protocols:UIViewController{
     //详见InitializerRequirements.swift
   }
   
-  //MARK:- 协议类型
+  //MARK:- 协议类型 类似于oc的id<delegate1> 只能修饰变量
   func func_ProtocolsAsTypes(){
   
     let d6 = Dice(sides: 6, generator: LinearCongruentialGenerator());
@@ -137,7 +137,7 @@ class ViewController_Protocols:UIViewController{
     //详见ClassOnlyProtocols.swift
   }
   
-  //MARK:- 协议组合 类似于oc的id<delegate1,delegate2...>
+  //MARK:- 协议组合 类似于oc的id<delegate1,delegate2...> 只能修饰变量
   func func_ProtocolComposition() {
     
     let birthdayPerson = Person_ProtocolComposition(name: "Malcolm", age: 21)

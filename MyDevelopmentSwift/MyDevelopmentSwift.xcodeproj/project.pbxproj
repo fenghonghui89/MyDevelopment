@@ -23,6 +23,10 @@
 		143B82C91CE9813D0025E675 /* ClassOnlyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */; };
 		146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B18501CDADC8800F0D092 /* ViewController_Set.swift */; };
 		1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */; };
+		148643071D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148643061D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */; };
+		1486430C1D053103005C1381 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486430B1D053103005C1381 /* CustomView.swift */; };
+		1486430E1D053172005C1381 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1486430D1D053172005C1381 /* CustomView.xib */; };
+		148643191D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148643181D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift */; };
 		148793A01CE5866200C67D75 /* ViewController_FreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */; };
 		148793A51CE5B87D00C67D75 /* ViewController_ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148793A41CE5B87D00C67D75 /* ViewController_ErrorHandling.swift */; };
 		148793A71CE5B8CA00C67D75 /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148793A61CE5B8CA00C67D75 /* VendingMachine.swift */; };
@@ -72,6 +76,10 @@
 		143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOnlyProtocols.swift; sourceTree = "<group>"; };
 		146B18501CDADC8800F0D092 /* ViewController_Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Set.swift; sourceTree = "<group>"; };
 		1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ControlFlow.swift; sourceTree = "<group>"; };
+		148643061D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WritingSwiftClassesWithOCBehavior.swift; sourceTree = "<group>"; };
+		1486430B1D053103005C1381 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		1486430D1D053172005C1381 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		148643181D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WorkingWithCocoaDataTypes.swift; sourceTree = "<group>"; };
 		1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FreeTest.swift; sourceTree = "<group>"; };
 		148793A41CE5B87D00C67D75 /* ViewController_ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ErrorHandling.swift; sourceTree = "<group>"; };
 		148793A61CE5B8CA00C67D75 /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
@@ -127,10 +135,21 @@
 			isa = PBXGroup;
 			children = (
 				141201221D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift */,
+				148643061D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */,
+				148643181D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift */,
 				141201201D018D9E00AD535A /* OCViewController.h */,
 				141201211D018D9E00AD535A /* OCViewController.m */,
 			);
 			path = InteractingWithOCAPIs;
+			sourceTree = "<group>";
+		};
+		1486430A1D0530F2005C1381 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1486430B1D053103005C1381 /* CustomView.swift */,
+				1486430D1D053172005C1381 /* CustomView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		148793A31CE5B85600C67D75 /* ErrorHandling */ = {
@@ -185,6 +204,7 @@
 				149E4C1A1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift */,
 				1412011F1D018D5E00AD535A /* InteractingWithOCAPIs */,
 				140EA0F91CC5D7D50077DCF8 /* model */,
+				1486430A1D0530F2005C1381 /* View */,
 				14FC0CC41C9844FD008622B7 /* bookmark */,
 				14AF34BA1C7362AC007DC722 /* Main.storyboard */,
 				14AF34BD1C7362AC007DC722 /* Assets.xcassets */,
@@ -301,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF34C11C7362AC007DC722 /* LaunchScreen.storyboard in Resources */,
+				1486430E1D053172005C1381 /* CustomView.xib in Resources */,
 				14AF34BE1C7362AC007DC722 /* Assets.xcassets in Resources */,
 				14FC0CC51C9844FD008622B7 /* bookmark in Resources */,
 				14AF34BC1C7362AC007DC722 /* Main.storyboard in Resources */,
@@ -331,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF34B91C7362AC007DC722 /* ViewController_Basic.swift in Sources */,
+				148643191D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift in Sources */,
 				14364B841CC7865100366F01 /* ViewController_ARC.swift in Sources */,
 				14AF34B71C7362AC007DC722 /* AppDelegate.swift in Sources */,
 				14AC6F121CE9B77700DF697A /* ProtocolExtensions.swift in Sources */,
@@ -342,6 +364,7 @@
 				148793A01CE5866200C67D75 /* ViewController_FreeTest.swift in Sources */,
 				146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */,
 				14C224351CD35F1A00C4359E /* ProtocolComposition.swift in Sources */,
+				148643071D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift in Sources */,
 				14F347E41D003ABF005E5C29 /* ViewController_AccessControl1.swift in Sources */,
 				14DE332C1CDA04AD002A75C4 /* ViewController_dictionary.swift in Sources */,
 				143B82C91CE9813D0025E675 /* ClassOnlyProtocols.swift in Sources */,
@@ -366,6 +389,7 @@
 				148793A71CE5B8CA00C67D75 /* VendingMachine.swift in Sources */,
 				14DE332B1CDA04AD002A75C4 /* ViewController_array.swift in Sources */,
 				14C2242D1CD3511700C4359E /* Dice.swift in Sources */,
+				1486430C1D053103005C1381 /* CustomView.swift in Sources */,
 				1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */,
 				140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */,
 				142C689F1CC4BF0600ED1F92 /* ViewController_Enumerations.swift in Sources */,

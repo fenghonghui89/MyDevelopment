@@ -7,7 +7,7 @@
 //
 
 #import "MD_FreeTest_VC.h"
-
+#import "MDCustomXIBView.h"
 @interface MD_FreeTest_VC ()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UIWebView *webView;
 
@@ -31,21 +31,29 @@
   NSLog(@"%d",a=x==y);
   
   NSString *str = @"aAc";
- 
+
+  //在这里添加不显示，为何
+//  MDCustomXIBView *cv = [[[NSBundle mainBundle] loadNibNamed:@"MDCustomXIBView" owner:self options:nil] lastObject];
+//  cv.frame = CGRectMake(100, 100, 50, 50);
+//  [self.view addSubview:cv];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
   
-  self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, viewW, viewH)];
-  self.webView.userInteractionEnabled = YES;
-  [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
-  [self.view addSubview:self.webView];
+//  self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, viewW, viewH)];
+//  self.webView.userInteractionEnabled = YES;
+//  [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+//  [self.view addSubview:self.webView];
+//  
+//  UISwipeGestureRecognizer *swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+//  swipeGR.direction = UISwipeGestureRecognizerDirectionRight;
+//  swipeGR.delegate = self;
+//  [self.webView addGestureRecognizer:swipeGR];
   
-  UISwipeGestureRecognizer *swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
-  swipeGR.direction = UISwipeGestureRecognizerDirectionRight;
-  swipeGR.delegate = self;
-  [self.webView addGestureRecognizer:swipeGR];
+  MDCustomXIBView *cv = [[[NSBundle mainBundle] loadNibNamed:@"MDCustomXIBView" owner:self options:nil] lastObject];
+  cv.frame = CGRectMake(100, 100, 50, 50);
+  [self.view addSubview:cv];
 }
 
 #pragma mark - < method > -

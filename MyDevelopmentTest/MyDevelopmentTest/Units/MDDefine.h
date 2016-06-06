@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 hanyfeng. All rights reserved.
 //
 
+
 #ifndef MyDevelopmentTest_MDDefine_h
 #define MyDevelopmentTest_MDDefine_h
 
@@ -80,6 +81,7 @@ typedef NS_ENUM(NSInteger,DGCRequestCode) {
   DGCRequestCodeLogin = 1001,
   DGCRequestCodePost = 1002,
 };
+
 
 #pragma mark - url / key / id
 #define DGCBaseURL @"https://app.tpages.cn"

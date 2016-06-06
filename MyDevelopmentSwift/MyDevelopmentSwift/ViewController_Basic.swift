@@ -151,6 +151,12 @@ class ViewController_Basic: UIViewController {
     }else{
       print("无值 nil");
     }
+    
+    if let b = Int("123"),let bb = Int("3a") {
+      print("有值 \(b) \(bb)");
+    }else{
+      print("无值 nil");
+    }
   }
   
   //MARK:如果用？定义常量/变量，和其他值通过操作符进行运算时，要加！，否则编译不通过
