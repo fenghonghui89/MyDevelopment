@@ -35,6 +35,7 @@ struct Item {
   var count:Int
 }
 
+
 class VendingMachine {
   
   //存货清单
@@ -52,7 +53,7 @@ class VendingMachine {
     print("Dispensing \(snack)")
   }
   
-  //出售处理
+  //出售处理 注意throws throw
   func vend(itemNamed name: String) throws {
     
     guard let item = inventory[name] else {

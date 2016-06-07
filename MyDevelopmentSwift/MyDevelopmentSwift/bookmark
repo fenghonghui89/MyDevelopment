@@ -149,3 +149,4 @@ dynamic
 
 module是个代码发布单元(如Framework或者应用程序), 通过使用import关键字导入使用
 所有 Objective-C 的对象都是AnyObject类型的
+oc层触发的异常必须在oc层处理 不能抛给swift处理

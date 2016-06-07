@@ -13,6 +13,7 @@
 		140EB6A71CCF554B00E84F79 /* ViewController_OptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A61CCF554B00E84F79 /* ViewController_OptionalChaining.swift */; };
 		140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */; };
 		140EB6AB1CCF760800E84F79 /* ViewController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6AA1CCF760800E84F79 /* ViewController_Extension.swift */; };
+		14118B191D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14118B181D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift */; };
 		141201231D018D9E00AD535A /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141201211D018D9E00AD535A /* OCViewController.m */; };
 		141201241D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141201221D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift */; };
 		142C689F1CC4BF0600ED1F92 /* ViewController_Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C689E1CC4BF0600ED1F92 /* ViewController_Enumerations.swift */; };
@@ -64,6 +65,7 @@
 		140EB6A61CCF554B00E84F79 /* ViewController_OptionalChaining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_OptionalChaining.swift; sourceTree = "<group>"; };
 		140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TypeCasting.swift; sourceTree = "<group>"; };
 		140EB6AA1CCF760800E84F79 /* ViewController_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Extension.swift; sourceTree = "<group>"; };
+		14118B181D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AdoptingCocoaDesignPatterns.swift; sourceTree = "<group>"; };
 		1412011B1D018C7E00AD535A /* MyDevelopmentSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDevelopmentSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		141201201D018D9E00AD535A /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
 		141201211D018D9E00AD535A /* OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				141201221D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift */,
 				148643061D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */,
 				148643181D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift */,
+				14118B181D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift */,
 				141201201D018D9E00AD535A /* OCViewController.h */,
 				141201211D018D9E00AD535A /* OCViewController.m */,
 			);
@@ -390,6 +393,7 @@
 				14DE332B1CDA04AD002A75C4 /* ViewController_array.swift in Sources */,
 				14C2242D1CD3511700C4359E /* Dice.swift in Sources */,
 				1486430C1D053103005C1381 /* CustomView.swift in Sources */,
+				14118B191D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift in Sources */,
 				1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */,
 				140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */,
 				142C689F1CC4BF0600ED1F92 /* ViewController_Enumerations.swift in Sources */,

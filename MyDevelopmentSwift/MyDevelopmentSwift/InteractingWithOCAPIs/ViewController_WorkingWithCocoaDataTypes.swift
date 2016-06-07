@@ -6,6 +6,7 @@
 //  Copyright © 2016年 MD. All rights reserved.
 //
 
+import CoreFoundation
 import Foundation
 import UIKit
 
@@ -108,9 +109,31 @@ class ViewController_WorkingWithCocoaDataTypes: UIViewController {
   }
   
   //MARK:Core Foundation
+  /*
+   内存托管对象 采用了CF_RETURNS_RETAINED或CF_RETURNS_NOT_RETAINED注释声明 查看OCViewController.m
+   非内存托管对象，没有采用上述宏声明，在swift需要转换为内存托管对象，方法为获得对象后要滴啊用takeRetainedValue()或takeUnretainedValue()
+   Basically, if a function name contains the word "Create" or "Copy", use .takeRetainedValue(). If a function name contains the word "Get", use .takeUnretainedValue().
+   And, if it does not contains either, as far as I know, we can still use .takeUnretainedValue() in almost every cases.
+   */
   func func_CoreFoundation() {
     
+    var cfstr:CFString = "hello world"
+    var str:String = cfstr as String;
+    var cfstr1:CFString = str;
+    
+    
+    //takeRetainedValue()或takeUnretainedValue()
+    let host: CFHost = CFHostCreateWithName(kCFAllocatorDefault,"127.0.0.1").takeRetainedValue()
+    let hostNames: CFArray = CFHostGetNames(host, nil)!.takeUnretainedValue()
+    
   }
+  
+  
+  
+ 
+  
+
+
   
 }
 

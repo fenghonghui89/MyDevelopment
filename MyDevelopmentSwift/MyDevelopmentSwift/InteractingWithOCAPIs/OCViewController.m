@@ -21,5 +21,15 @@
 
 }
 
-
+//CF_RETURNS_RETAINED or CF_RETURNS_NOT_RETAINED
+-(CGPathRef)makeToPath CF_RETURNS_RETAINED
+{
+  UIBezierPath* triangle = [UIBezierPath bezierPath];
+  [triangle moveToPoint:CGPointZero];
+  [triangle addLineToPoint:CGPointMake(self.view.frame.size.width,0)];
+  [triangle addLineToPoint:CGPointMake(0, self.view.frame.size.height)];
+  [triangle closePath];
+  CGPathRef theCGPath = [triangle CGPath];
+  return CGPathCreateCopy(theCGPath);
+}
 @end
