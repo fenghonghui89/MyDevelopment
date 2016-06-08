@@ -13,9 +13,6 @@
 		140EB6A71CCF554B00E84F79 /* ViewController_OptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A61CCF554B00E84F79 /* ViewController_OptionalChaining.swift */; };
 		140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */; };
 		140EB6AB1CCF760800E84F79 /* ViewController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6AA1CCF760800E84F79 /* ViewController_Extension.swift */; };
-		14118B191D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14118B181D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift */; };
-		141201231D018D9E00AD535A /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141201211D018D9E00AD535A /* OCViewController.m */; };
-		141201241D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141201221D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift */; };
 		142C689F1CC4BF0600ED1F92 /* ViewController_Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C689E1CC4BF0600ED1F92 /* ViewController_Enumerations.swift */; };
 		14364B841CC7865100366F01 /* ViewController_ARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14364B831CC7865100366F01 /* ViewController_ARC.swift */; };
 		143B82C31CE968CA0025E675 /* ViewController_TypeNesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */; };
@@ -24,10 +21,8 @@
 		143B82C91CE9813D0025E675 /* ClassOnlyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */; };
 		146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B18501CDADC8800F0D092 /* ViewController_Set.swift */; };
 		1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */; };
-		148643071D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148643061D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */; };
 		1486430C1D053103005C1381 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486430B1D053103005C1381 /* CustomView.swift */; };
 		1486430E1D053172005C1381 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1486430D1D053172005C1381 /* CustomView.xib */; };
-		148643191D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148643181D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift */; };
 		148793A01CE5866200C67D75 /* ViewController_FreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */; };
 		148793A51CE5B87D00C67D75 /* ViewController_ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148793A41CE5B87D00C67D75 /* ViewController_ErrorHandling.swift */; };
 		148793A71CE5B8CA00C67D75 /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148793A61CE5B8CA00C67D75 /* VendingMachine.swift */; };
@@ -55,6 +50,11 @@
 		14DE332C1CDA04AD002A75C4 /* ViewController_dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE332A1CDA04AD002A75C4 /* ViewController_dictionary.swift */; };
 		14F347E21D003A9C005E5C29 /* ViewController_AccessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F347E11D003A9C005E5C29 /* ViewController_AccessControl.swift */; };
 		14F347E41D003ABF005E5C29 /* ViewController_AccessControl1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F347E31D003ABF005E5C29 /* ViewController_AccessControl1.swift */; };
+		14FA3B7B1D07B9FA00BD2902 /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B761D07B9FA00BD2902 /* OCViewController.m */; };
+		14FA3B7C1D07B9FA00BD2902 /* ViewController_AdoptingCocoaDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B771D07B9FA00BD2902 /* ViewController_AdoptingCocoaDesignPatterns.swift */; };
+		14FA3B7D1D07B9FA00BD2902 /* ViewController_InteractingWithOCAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B781D07B9FA00BD2902 /* ViewController_InteractingWithOCAPIs.swift */; };
+		14FA3B7E1D07B9FA00BD2902 /* ViewController_WorkingWithCocoaDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B791D07B9FA00BD2902 /* ViewController_WorkingWithCocoaDataTypes.swift */; };
+		14FA3B7F1D07B9FA00BD2902 /* ViewController_WritingSwiftClassesWithOCBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B7A1D07B9FA00BD2902 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */; };
 		14FC0CC51C9844FD008622B7 /* bookmark in Resources */ = {isa = PBXBuildFile; fileRef = 14FC0CC41C9844FD008622B7 /* bookmark */; };
 /* End PBXBuildFile section */
 
@@ -65,11 +65,7 @@
 		140EB6A61CCF554B00E84F79 /* ViewController_OptionalChaining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_OptionalChaining.swift; sourceTree = "<group>"; };
 		140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TypeCasting.swift; sourceTree = "<group>"; };
 		140EB6AA1CCF760800E84F79 /* ViewController_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Extension.swift; sourceTree = "<group>"; };
-		14118B181D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AdoptingCocoaDesignPatterns.swift; sourceTree = "<group>"; };
 		1412011B1D018C7E00AD535A /* MyDevelopmentSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDevelopmentSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		141201201D018D9E00AD535A /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
-		141201211D018D9E00AD535A /* OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
-		141201221D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_InteractingWithOCAPIs.swift; sourceTree = "<group>"; };
 		142C689E1CC4BF0600ED1F92 /* ViewController_Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Enumerations.swift; sourceTree = "<group>"; };
 		14364B831CC7865100366F01 /* ViewController_ARC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ARC.swift; sourceTree = "<group>"; };
 		143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TypeNesting.swift; sourceTree = "<group>"; };
@@ -78,10 +74,8 @@
 		143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOnlyProtocols.swift; sourceTree = "<group>"; };
 		146B18501CDADC8800F0D092 /* ViewController_Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Set.swift; sourceTree = "<group>"; };
 		1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ControlFlow.swift; sourceTree = "<group>"; };
-		148643061D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WritingSwiftClassesWithOCBehavior.swift; sourceTree = "<group>"; };
 		1486430B1D053103005C1381 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1486430D1D053172005C1381 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
-		148643181D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WorkingWithCocoaDataTypes.swift; sourceTree = "<group>"; };
 		1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FreeTest.swift; sourceTree = "<group>"; };
 		148793A41CE5B87D00C67D75 /* ViewController_ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ErrorHandling.swift; sourceTree = "<group>"; };
 		148793A61CE5B8CA00C67D75 /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
@@ -111,6 +105,12 @@
 		14DE332A1CDA04AD002A75C4 /* ViewController_dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_dictionary.swift; sourceTree = "<group>"; };
 		14F347E11D003A9C005E5C29 /* ViewController_AccessControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AccessControl.swift; sourceTree = "<group>"; };
 		14F347E31D003ABF005E5C29 /* ViewController_AccessControl1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AccessControl1.swift; sourceTree = "<group>"; };
+		14FA3B751D07B9FA00BD2902 /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
+		14FA3B761D07B9FA00BD2902 /* OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
+		14FA3B771D07B9FA00BD2902 /* ViewController_AdoptingCocoaDesignPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AdoptingCocoaDesignPatterns.swift; sourceTree = "<group>"; };
+		14FA3B781D07B9FA00BD2902 /* ViewController_InteractingWithOCAPIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_InteractingWithOCAPIs.swift; sourceTree = "<group>"; };
+		14FA3B791D07B9FA00BD2902 /* ViewController_WorkingWithCocoaDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WorkingWithCocoaDataTypes.swift; sourceTree = "<group>"; };
+		14FA3B7A1D07B9FA00BD2902 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WritingSwiftClassesWithOCBehavior.swift; sourceTree = "<group>"; };
 		14FC0CC41C9844FD008622B7 /* bookmark */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bookmark; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,19 +131,6 @@
 				140EA0FE1CC628640077DCF8 /* ClassModel.swift */,
 			);
 			path = model;
-			sourceTree = "<group>";
-		};
-		1412011F1D018D5E00AD535A /* InteractingWithOCAPIs */ = {
-			isa = PBXGroup;
-			children = (
-				141201221D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift */,
-				148643061D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */,
-				148643181D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift */,
-				14118B181D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift */,
-				141201201D018D9E00AD535A /* OCViewController.h */,
-				141201211D018D9E00AD535A /* OCViewController.m */,
-			);
-			path = InteractingWithOCAPIs;
 			sourceTree = "<group>";
 		};
 		1486430A1D0530F2005C1381 /* View */ = {
@@ -205,7 +192,7 @@
 				149E4C181CD85D85000CFC0E /* ViewController_Generics.swift */,
 				14F347E01D003A7B005E5C29 /* AccessControl */,
 				149E4C1A1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift */,
-				1412011F1D018D5E00AD535A /* InteractingWithOCAPIs */,
+				14FA3B741D07B9FA00BD2902 /* Using Swift with Cocoa and Objective-C */,
 				140EA0F91CC5D7D50077DCF8 /* model */,
 				1486430A1D0530F2005C1381 /* View */,
 				14FC0CC41C9844FD008622B7 /* bookmark */,
@@ -262,6 +249,19 @@
 				14F347E31D003ABF005E5C29 /* ViewController_AccessControl1.swift */,
 			);
 			path = AccessControl;
+			sourceTree = "<group>";
+		};
+		14FA3B741D07B9FA00BD2902 /* Using Swift with Cocoa and Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				14FA3B751D07B9FA00BD2902 /* OCViewController.h */,
+				14FA3B761D07B9FA00BD2902 /* OCViewController.m */,
+				14FA3B771D07B9FA00BD2902 /* ViewController_AdoptingCocoaDesignPatterns.swift */,
+				14FA3B781D07B9FA00BD2902 /* ViewController_InteractingWithOCAPIs.swift */,
+				14FA3B791D07B9FA00BD2902 /* ViewController_WorkingWithCocoaDataTypes.swift */,
+				14FA3B7A1D07B9FA00BD2902 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */,
+			);
+			path = "Using Swift with Cocoa and Objective-C";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,19 +355,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF34B91C7362AC007DC722 /* ViewController_Basic.swift in Sources */,
-				148643191D0561DE005C1381 /* ViewController_WorkingWithCocoaDataTypes.swift in Sources */,
+				14FA3B7E1D07B9FA00BD2902 /* ViewController_WorkingWithCocoaDataTypes.swift in Sources */,
 				14364B841CC7865100366F01 /* ViewController_ARC.swift in Sources */,
 				14AF34B71C7362AC007DC722 /* AppDelegate.swift in Sources */,
 				14AC6F121CE9B77700DF697A /* ProtocolExtensions.swift in Sources */,
 				149E4C1B1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift in Sources */,
 				14C224331CD3578C00C4359E /* Hamster.swift in Sources */,
+				14FA3B7B1D07B9FA00BD2902 /* OCViewController.m in Sources */,
 				14AC48D51C7608D900FD1C56 /* ViewController_BaseOperator.swift in Sources */,
 				149E4BF71CD851E0000CFC0E /* OptionalProtocolRequirements.swift in Sources */,
 				140EB6AB1CCF760800E84F79 /* ViewController_Extension.swift in Sources */,
 				148793A01CE5866200C67D75 /* ViewController_FreeTest.swift in Sources */,
+				14FA3B7F1D07B9FA00BD2902 /* ViewController_WritingSwiftClassesWithOCBehavior.swift in Sources */,
 				146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */,
 				14C224351CD35F1A00C4359E /* ProtocolComposition.swift in Sources */,
-				148643071D051A1D005C1381 /* ViewController_WritingSwiftClassesWithOCBehavior.swift in Sources */,
 				14F347E41D003ABF005E5C29 /* ViewController_AccessControl1.swift in Sources */,
 				14DE332C1CDA04AD002A75C4 /* ViewController_dictionary.swift in Sources */,
 				143B82C91CE9813D0025E675 /* ClassOnlyProtocols.swift in Sources */,
@@ -377,15 +378,15 @@
 				143B82C51CE974660025E675 /* OnOffSwitch.swift in Sources */,
 				14C2242B1CD350F800C4359E /* LinearCongruentialGenerator.swift in Sources */,
 				148793A51CE5B87D00C67D75 /* ViewController_ErrorHandling.swift in Sources */,
-				141201241D018D9E00AD535A /* ViewController_InteractingWithOCAPIs.swift in Sources */,
+				14FA3B7D1D07B9FA00BD2902 /* ViewController_InteractingWithOCAPIs.swift in Sources */,
 				140EA0F81CC5CE2C0077DCF8 /* ViewController_class.swift in Sources */,
 				149DDA201CC21B5E00C7A8B1 /* ViewController_Closures.swift in Sources */,
 				14C224251CD34DEA00C4359E /* ViewController_Protocols.swift in Sources */,
 				143B82C31CE968CA0025E675 /* ViewController_TypeNesting.swift in Sources */,
 				14DE33271CD9D6EC002A75C4 /* ViewController_StringAndCharacter.swift in Sources */,
+				14FA3B7C1D07B9FA00BD2902 /* ViewController_AdoptingCocoaDesignPatterns.swift in Sources */,
 				143B82C71CE975C30025E675 /* InitializerRequirements.swift in Sources */,
 				140EB6A71CCF554B00E84F79 /* ViewController_OptionalChaining.swift in Sources */,
-				141201231D018D9E00AD535A /* OCViewController.m in Sources */,
 				14F347E21D003A9C005E5C29 /* ViewController_AccessControl.swift in Sources */,
 				14C224311CD3520300C4359E /* Starship.swift in Sources */,
 				149E4C191CD85D85000CFC0E /* ViewController_Generics.swift in Sources */,
@@ -393,7 +394,6 @@
 				14DE332B1CDA04AD002A75C4 /* ViewController_array.swift in Sources */,
 				14C2242D1CD3511700C4359E /* Dice.swift in Sources */,
 				1486430C1D053103005C1381 /* CustomView.swift in Sources */,
-				14118B191D06AE890011A475 /* ViewController_AdoptingCocoaDesignPatterns.swift in Sources */,
 				1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */,
 				140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */,
 				142C689F1CC4BF0600ED1F92 /* ViewController_Enumerations.swift in Sources */,

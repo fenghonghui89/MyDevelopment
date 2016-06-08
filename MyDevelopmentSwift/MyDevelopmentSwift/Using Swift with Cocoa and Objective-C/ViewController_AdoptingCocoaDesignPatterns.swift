@@ -4,7 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/6/7.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//4
 
 import Foundation
 import UIKit
@@ -116,4 +116,52 @@ class ErrorClass {
     }
   }
   
+  
 }
+
+//MARK:- KVO
+
+//1.Add the dynamic modifier to any property you want to observe. For more information on dynamic, see Requiring Dynamic Dispatch.
+//https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID57
+class MyObjectToObserve: NSObject {
+  
+  dynamic var myDate = NSDate()
+  
+  func updateDate() {
+    myDate = NSDate()
+  }
+}
+
+
+//2.Create a global context variable.
+private var myContext = 0
+
+//3.Add an observer for the key-path, override the observeValueForKeyPath:ofObject:change:context: method, and remove the observer in deinit.
+class MyObserver: NSObject {
+  
+  var objectToObserve = MyObjectToObserve()
+  
+  override init() {
+    super.init()
+    objectToObserve.addObserver(self, forKeyPath: "myDate", options: .New, context: &myContext)
+  }
+  
+  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    
+    if context == &myContext {
+      
+      if let newValue = change?[NSKeyValueChangeNewKey] {
+        print("Date changed: \(newValue)")
+      }
+    } else {
+      super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+    }
+  }
+  
+  deinit {
+    objectToObserve.removeObserver(self, forKeyPath: "myDate", context: &myContext)
+  }
+}
+
+
+

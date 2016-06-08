@@ -4,6 +4,31 @@
 <array>
 	<dict>
 		<key>desc</key>
+		<string>设计模式</string>
+		<key>className</key>
+		<string></string>
+		<key>sub</key>
+		<array>
+			<dict>
+				<key>desc</key>
+				<string>KVC</string>
+				<key>className</key>
+				<string>MD_KVC_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
+				<string>KVO</string>
+				<key>className</key>
+				<string>MDKVO_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>desc</key>
 		<string>存储</string>
 		<key>className</key>
 		<string></string>
@@ -791,14 +816,6 @@
 				<string>NSInvocation</string>
 				<key>className</key>
 				<string>MD_NSInvocation_VC</string>
-				<key>sub</key>
-				<array/>
-			</dict>
-			<dict>
-				<key>desc</key>
-				<string>KVO</string>
-				<key>className</key>
-				<string>MDKVO_VC</string>
 				<key>sub</key>
 				<array/>
 			</dict>
