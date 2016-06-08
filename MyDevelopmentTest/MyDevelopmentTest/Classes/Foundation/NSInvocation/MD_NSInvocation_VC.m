@@ -4,7 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/4/13.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
-//
+//多参数 多返回值 sel
 
 #import "MD_NSInvocation_VC.h"
 
