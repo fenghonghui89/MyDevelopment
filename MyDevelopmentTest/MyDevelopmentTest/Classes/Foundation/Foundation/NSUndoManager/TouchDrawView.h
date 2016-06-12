@@ -12,4 +12,7 @@
 @property(nonatomic,strong)Line *currentLine;
 @property(nonatomic,strong)NSMutableArray *linesCompleted;
 @property(nonatomic,strong)UIColor *drawColor;
+
+-(void)redo;
+-(void)undo;
 @end

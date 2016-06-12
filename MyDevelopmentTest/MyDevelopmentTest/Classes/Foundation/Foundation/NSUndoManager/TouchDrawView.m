@@ -117,6 +117,13 @@
   }
 }
 
+-(void)redo{
+  if ([self.undoManager canRedo]) {
+    [self.undoManager redo];
+    [self setNeedsDisplay];
+  }
+}
+
 #pragma mark - add / remove line
 -(void)addLine:(Line *)line{
   [[self.undoManager prepareWithInvocationTarget:self] removeLine:line];

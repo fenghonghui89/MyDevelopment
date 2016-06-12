@@ -168,6 +168,9 @@
 		1465CD5C1D0D519800F79436 /* MD_Touch_Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD521D0D519800F79436 /* MD_Touch_Line.m */; };
 		1465CD5D1D0D519800F79436 /* MD_Touch_Point.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD541D0D519800F79436 /* MD_Touch_Point.m */; };
 		1465CD5E1D0D519800F79436 /* MD_Touch_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD561D0D519800F79436 /* MD_Touch_VC.m */; };
+		1465CD621D0D556700F79436 /* redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD5F1D0D556700F79436 /* redo.png */; };
+		1465CD631D0D556700F79436 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD601D0D556700F79436 /* eraser.png */; };
+		1465CD641D0D556700F79436 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD611D0D556700F79436 /* undo.png */; };
 		146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */; };
 		146DE5961CBC9AE600F366C9 /* MD_NSOperation_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146DE5951CBC9AE600F366C9 /* MD_NSOperation_VC.xib */; };
 		146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 146DE5A31CBD040900F366C9 /* MD_GCD_VC.m */; };
@@ -783,6 +786,9 @@
 		1465CD541D0D519800F79436 /* MD_Touch_Point.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_Point.m; sourceTree = "<group>"; };
 		1465CD551D0D519800F79436 /* MD_Touch_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Touch_VC.h; sourceTree = "<group>"; };
 		1465CD561D0D519800F79436 /* MD_Touch_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Touch_VC.m; sourceTree = "<group>"; };
+		1465CD5F1D0D556700F79436 /* redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redo.png; sourceTree = "<group>"; };
+		1465CD601D0D556700F79436 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
+		1465CD611D0D556700F79436 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
 		146D82AD1AA7036700F0C7FD /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		146DE5951CBC9AE600F366C9 /* MD_NSOperation_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSOperation_VC.xib; sourceTree = "<group>"; };
@@ -2535,6 +2541,9 @@
 		1489C88D1CAA8AA3000CBC14 /* LocalResource */ = {
 			isa = PBXGroup;
 			children = (
+				1465CD5F1D0D556700F79436 /* redo.png */,
+				1465CD601D0D556700F79436 /* eraser.png */,
+				1465CD611D0D556700F79436 /* undo.png */,
 				14FF81531CE1D77700C7855C /* tabbar_navi */,
 				14FF80441CE1BF6F00C7855C /* 保罗克利-肖像.png */,
 				14FF80451CE1BF6F00C7855C /* 达芬奇-蒙娜丽莎.png */,
@@ -3443,6 +3452,7 @@
 				14FF81381CE1BF6F00C7855C /* playing56@2x.png in Resources */,
 				14FF813F1CE1BF6F00C7855C /* playing7@2x.png in Resources */,
 				14FF80E11CE1BF6F00C7855C /* France.png in Resources */,
+				1465CD621D0D556700F79436 /* redo.png in Resources */,
 				149CFE9A1CA258B700E6525C /* MD_HTTP_URLDecode_VC.xib in Resources */,
 				14FF81041CE1BF6F00C7855C /* Default.png in Resources */,
 				1465CD3C1D0D4DCF00F79436 /* MD_PhotoLibrary_PreviewVC.xib in Resources */,
@@ -3455,6 +3465,7 @@
 				1428AB7E1C84502C003CC10F /* MDWVViewController.xib in Resources */,
 				14FF81341CE1BF6F00C7855C /* playing52@2x.png in Resources */,
 				14FF80D31CE1BF6F00C7855C /* delete_btn@2x.png in Resources */,
+				1465CD631D0D556700F79436 /* eraser.png in Resources */,
 				14FF814B1CE1BF6F00C7855C /* Shapes.jpg in Resources */,
 				1428AB7B1C84502C003CC10F /* MDWebviewUserAgentViewController.xib in Resources */,
 				14FF81111CE1BF6F00C7855C /* playing20@2x.png in Resources */,
@@ -3503,6 +3514,7 @@
 				14FF811C1CE1BF6F00C7855C /* playing30@2x.png in Resources */,
 				14FF80FA1CE1BF6F00C7855C /* Icon-Small-40@2x.png in Resources */,
 				148643051D051497005C1381 /* MD_SettingBundle_VC.xib in Resources */,
+				1465CD641D0D556700F79436 /* undo.png in Resources */,
 				14FF80EC1CE1BF6F00C7855C /* NorthKorea.png in Resources */,
 				1465CD321D0D4DCF00F79436 /* TouchDrawViewController.xib in Resources */,
 				14FF81231CE1BF6F00C7855C /* playing37@2x.png in Resources */,

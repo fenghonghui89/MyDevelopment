@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -10,9 +11,6 @@
             <connections>
                 <outlet property="drawArea" destination="cqM-hi-ENZ" id="IQF-5P-k1M"/>
                 <outlet property="selector1" destination="wJw-pH-SKa" id="OqN-cc-VTa"/>
-                <outlet property="selector2" destination="6QZ-1B-dgb" id="tnt-nQ-UgH"/>
-                <outlet property="selector3" destination="aUM-9a-wgq" id="u4H-pB-JXm"/>
-                <outlet property="selector4" destination="yjX-cK-isM" id="zr2-Oc-DFl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,24 +26,32 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRJ-Fe-MzA">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
                     <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-pH-SKa" customClass="ColorPiker">
-                            <rect key="frame" x="14" y="8" width="47" height="49"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-pH-SKa" customClass="ColorPiker">
+                            <rect key="frame" x="10" y="10" width="47" height="47"/>
                             <color key="backgroundColor" red="1" green="0.56871769910000003" blue="0.52114213310000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="wJw-pH-SKa" secondAttribute="height" multiplier="1:1" id="cH5-Nq-sXG"/>
+                            </constraints>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6QZ-1B-dgb" customClass="ColorPiker">
-                            <rect key="frame" x="77" y="8" width="47" height="49"/>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghu-Z3-fSE" customClass="ColorPiker">
+                            <rect key="frame" x="82" y="10" width="47" height="47"/>
+                            <color key="backgroundColor" red="0.45226977629999998" green="1" blue="0.40349993639999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-GB-47k" customClass="ColorPiker">
+                            <rect key="frame" x="148" y="10" width="47" height="47"/>
                             <color key="backgroundColor" red="0.44376772669999998" green="0.4203983905" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-9a-wgq" customClass="ColorPiker">
-                            <rect key="frame" x="146" y="8" width="47" height="49"/>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-V4-cRN" customClass="ColorPiker">
+                            <rect key="frame" x="216" y="10" width="47" height="47"/>
                             <color key="backgroundColor" red="0.97623391130000003" green="1" blue="0.37962458269999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjX-cK-isM" customClass="ColorPiker">
-                            <rect key="frame" x="213" y="8" width="47" height="49"/>
-                            <color key="backgroundColor" red="0.45226977629999998" green="1" blue="0.40349993639999998" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wJw-pH-SKa" firstAttribute="height" secondItem="cRJ-Fe-MzA" secondAttribute="height" multiplier="0.33" id="QqH-ZW-3zg"/>
+                        <constraint firstItem="wJw-pH-SKa" firstAttribute="leading" secondItem="cRJ-Fe-MzA" secondAttribute="leading" constant="10" id="exN-m4-fSz"/>
+                        <constraint firstItem="wJw-pH-SKa" firstAttribute="top" secondItem="cRJ-Fe-MzA" secondAttribute="top" constant="10" id="vmA-IN-hRG"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
