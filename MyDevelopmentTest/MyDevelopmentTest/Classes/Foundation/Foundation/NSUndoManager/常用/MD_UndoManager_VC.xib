@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MD_UndoManager_VC">
             <connections>
-                <outlet property="label" destination="o1B-KR-0je" id="MWM-KB-kA7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xDm-xq-kHy"/>
             </connections>
         </placeholder>

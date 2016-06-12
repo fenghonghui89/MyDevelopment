@@ -72,8 +72,8 @@
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-  [self setNeedsDisplay];
   [self.undoManager endUndoGrouping];
+  [self setNeedsDisplay];
 }
 
 -(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -84,11 +84,11 @@
 #pragma mark - draw
 -(void)drawRect:(CGRect)rect{
   
-  NSLog(@"%d",self.linesCompleted.count);
+  NSLog(@"%lu",(unsigned long)self.linesCompleted.count);
+  
   CGContextRef context = UIGraphicsGetCurrentContext();
   CGContextSetLineWidth(context, 1);
   CGContextSetLineCap(context, kCGLineCapRound);
-  [self.drawColor set];
   
   for (Line *line in self.linesCompleted) {
     [[line color] set];
@@ -113,26 +113,29 @@
 -(void)undo{
   if ([self.undoManager canUndo]) {
     [self.undoManager undo];
-    [self setNeedsDisplay];
   }
 }
 
 -(void)redo{
   if ([self.undoManager canRedo]) {
     [self.undoManager redo];
-    [self setNeedsDisplay];
   }
 }
 
 #pragma mark - add / remove line
 -(void)addLine:(Line *)line{
+  
   [[self.undoManager prepareWithInvocationTarget:self] removeLine:line];
   [self.linesCompleted addObject:line];
+  [self setNeedsDisplay];
 }
 
 -(void)removeLine:(Line *)line{
+  
   if ([self.linesCompleted containsObject:line]) {
+    [[self.undoManager prepareWithInvocationTarget:self] addLine:line];
     [self.linesCompleted removeObject:line];
+    [self setNeedsDisplay];
   }
 }
 

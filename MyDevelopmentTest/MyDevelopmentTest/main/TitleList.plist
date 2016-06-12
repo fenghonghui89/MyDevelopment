@@ -28,9 +28,26 @@
 						<key>desc</key>
 						<string>NSUndoManager</string>
 						<key>className</key>
-						<string>TouchDrawViewController</string>
+						<string></string>
 						<key>sub</key>
-						<array/>
+						<array>
+							<dict>
+								<key>desc</key>
+								<string>常用</string>
+								<key>className</key>
+								<string>MD_UndoManager_VC</string>
+								<key>sub</key>
+								<array/>
+							</dict>
+							<dict>
+								<key>desc</key>
+								<string>画多根线且可以撤销</string>
+								<key>className</key>
+								<string>TouchDrawViewController</string>
+								<key>sub</key>
+								<array/>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>desc</key>

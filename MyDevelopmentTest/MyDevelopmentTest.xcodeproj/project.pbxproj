@@ -136,13 +136,6 @@
 		1465CD291D0D4DCF00F79436 /* MD_NSTimer_VC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC811D0D4DCF00F79436 /* MD_NSTimer_VC2.m */; };
 		1465CD2A1D0D4DCF00F79436 /* MD_NSTimer_VC3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC841D0D4DCF00F79436 /* MD_NSTimer_VC3.m */; };
 		1465CD2B1D0D4DCF00F79436 /* MD_NSTimer_VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC871D0D4DCF00F79436 /* MD_NSTimer_VC1.m */; };
-		1465CD2C1D0D4DCF00F79436 /* ColorPiker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC8A1D0D4DCF00F79436 /* ColorPiker.m */; };
-		1465CD2D1D0D4DCF00F79436 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC8C1D0D4DCF00F79436 /* Line.m */; };
-		1465CD2E1D0D4DCF00F79436 /* MD_UndoManager_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC8E1D0D4DCF00F79436 /* MD_UndoManager_VC.m */; };
-		1465CD2F1D0D4DCF00F79436 /* MD_UndoManager_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465CC8F1D0D4DCF00F79436 /* MD_UndoManager_VC.xib */; };
-		1465CD301D0D4DCF00F79436 /* TouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC921D0D4DCF00F79436 /* TouchDrawView.m */; };
-		1465CD311D0D4DCF00F79436 /* TouchDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC941D0D4DCF00F79436 /* TouchDrawViewController.m */; };
-		1465CD321D0D4DCF00F79436 /* TouchDrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465CC951D0D4DCF00F79436 /* TouchDrawViewController.xib */; };
 		1465CD331D0D4DCF00F79436 /* MDNSValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC981D0D4DCF00F79436 /* MDNSValueViewController.m */; };
 		1465CD341D0D4DCF00F79436 /* MD_AVCamera_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CC9D1D0D4DCF00F79436 /* MD_AVCamera_VC.m */; };
 		1465CD351D0D4DCF00F79436 /* MD_AVCamera_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465CC9E1D0D4DCF00F79436 /* MD_AVCamera_VC.xib */; };
@@ -171,6 +164,13 @@
 		1465CD621D0D556700F79436 /* redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD5F1D0D556700F79436 /* redo.png */; };
 		1465CD631D0D556700F79436 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD601D0D556700F79436 /* eraser.png */; };
 		1465CD641D0D556700F79436 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD611D0D556700F79436 /* undo.png */; };
+		1465CD741D0D6C1F00F79436 /* MD_UndoManager_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD671D0D6C1F00F79436 /* MD_UndoManager_VC.m */; };
+		1465CD751D0D6C1F00F79436 /* MD_UndoManager_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD681D0D6C1F00F79436 /* MD_UndoManager_VC.xib */; };
+		1465CD761D0D6C1F00F79436 /* ColorPiker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD6B1D0D6C1F00F79436 /* ColorPiker.m */; };
+		1465CD771D0D6C1F00F79436 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD6D1D0D6C1F00F79436 /* Line.m */; };
+		1465CD781D0D6C1F00F79436 /* TouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD701D0D6C1F00F79436 /* TouchDrawView.m */; };
+		1465CD791D0D6C1F00F79436 /* TouchDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465CD721D0D6C1F00F79436 /* TouchDrawViewController.m */; };
+		1465CD7A1D0D6C1F00F79436 /* TouchDrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1465CD731D0D6C1F00F79436 /* TouchDrawViewController.xib */; };
 		146D82AF1AA7036700F0C7FD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */; };
 		146DE5961CBC9AE600F366C9 /* MD_NSOperation_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146DE5951CBC9AE600F366C9 /* MD_NSOperation_VC.xib */; };
 		146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 146DE5A31CBD040900F366C9 /* MD_GCD_VC.m */; };
@@ -723,19 +723,6 @@
 		1465CC841D0D4DCF00F79436 /* MD_NSTimer_VC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSTimer_VC3.m; sourceTree = "<group>"; };
 		1465CC861D0D4DCF00F79436 /* MD_NSTimer_VC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSTimer_VC1.h; sourceTree = "<group>"; };
 		1465CC871D0D4DCF00F79436 /* MD_NSTimer_VC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSTimer_VC1.m; sourceTree = "<group>"; };
-		1465CC891D0D4DCF00F79436 /* ColorPiker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPiker.h; sourceTree = "<group>"; };
-		1465CC8A1D0D4DCF00F79436 /* ColorPiker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPiker.m; sourceTree = "<group>"; };
-		1465CC8B1D0D4DCF00F79436 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		1465CC8C1D0D4DCF00F79436 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
-		1465CC8D1D0D4DCF00F79436 /* MD_UndoManager_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UndoManager_VC.h; sourceTree = "<group>"; };
-		1465CC8E1D0D4DCF00F79436 /* MD_UndoManager_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UndoManager_VC.m; sourceTree = "<group>"; };
-		1465CC8F1D0D4DCF00F79436 /* MD_UndoManager_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_UndoManager_VC.xib; sourceTree = "<group>"; };
-		1465CC901D0D4DCF00F79436 /* NSUndoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUndoManager.h; sourceTree = "<group>"; };
-		1465CC911D0D4DCF00F79436 /* TouchDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDrawView.h; sourceTree = "<group>"; };
-		1465CC921D0D4DCF00F79436 /* TouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchDrawView.m; sourceTree = "<group>"; };
-		1465CC931D0D4DCF00F79436 /* TouchDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDrawViewController.h; sourceTree = "<group>"; };
-		1465CC941D0D4DCF00F79436 /* TouchDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchDrawViewController.m; sourceTree = "<group>"; };
-		1465CC951D0D4DCF00F79436 /* TouchDrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchDrawViewController.xib; sourceTree = "<group>"; };
 		1465CC971D0D4DCF00F79436 /* MDNSValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSValueViewController.h; sourceTree = "<group>"; };
 		1465CC981D0D4DCF00F79436 /* MDNSValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSValueViewController.m; sourceTree = "<group>"; };
 		1465CC9C1D0D4DCF00F79436 /* MD_AVCamera_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_AVCamera_VC.h; sourceTree = "<group>"; };
@@ -789,6 +776,19 @@
 		1465CD5F1D0D556700F79436 /* redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redo.png; sourceTree = "<group>"; };
 		1465CD601D0D556700F79436 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
 		1465CD611D0D556700F79436 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
+		1465CD661D0D6C1F00F79436 /* MD_UndoManager_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UndoManager_VC.h; sourceTree = "<group>"; };
+		1465CD671D0D6C1F00F79436 /* MD_UndoManager_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UndoManager_VC.m; sourceTree = "<group>"; };
+		1465CD681D0D6C1F00F79436 /* MD_UndoManager_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_UndoManager_VC.xib; sourceTree = "<group>"; };
+		1465CD6A1D0D6C1F00F79436 /* ColorPiker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPiker.h; sourceTree = "<group>"; };
+		1465CD6B1D0D6C1F00F79436 /* ColorPiker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPiker.m; sourceTree = "<group>"; };
+		1465CD6C1D0D6C1F00F79436 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		1465CD6D1D0D6C1F00F79436 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		1465CD6F1D0D6C1F00F79436 /* TouchDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDrawView.h; sourceTree = "<group>"; };
+		1465CD701D0D6C1F00F79436 /* TouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchDrawView.m; sourceTree = "<group>"; };
+		1465CD711D0D6C1F00F79436 /* TouchDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDrawViewController.h; sourceTree = "<group>"; };
+		1465CD721D0D6C1F00F79436 /* TouchDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchDrawViewController.m; sourceTree = "<group>"; };
+		1465CD731D0D6C1F00F79436 /* TouchDrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchDrawViewController.xib; sourceTree = "<group>"; };
+		1465CD7B1D0D6E1600F79436 /* NSUndoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSUndoManager.h; sourceTree = "<group>"; };
 		146D82AD1AA7036700F0C7FD /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		146D82AE1AA7036700F0C7FD /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		146DE5951CBC9AE600F366C9 /* MD_NSOperation_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSOperation_VC.xib; sourceTree = "<group>"; };
@@ -2194,19 +2194,9 @@
 		1465CC881D0D4DCF00F79436 /* NSUndoManager */ = {
 			isa = PBXGroup;
 			children = (
-				1465CC891D0D4DCF00F79436 /* ColorPiker.h */,
-				1465CC8A1D0D4DCF00F79436 /* ColorPiker.m */,
-				1465CC8B1D0D4DCF00F79436 /* Line.h */,
-				1465CC8C1D0D4DCF00F79436 /* Line.m */,
-				1465CC8D1D0D4DCF00F79436 /* MD_UndoManager_VC.h */,
-				1465CC8E1D0D4DCF00F79436 /* MD_UndoManager_VC.m */,
-				1465CC8F1D0D4DCF00F79436 /* MD_UndoManager_VC.xib */,
-				1465CC901D0D4DCF00F79436 /* NSUndoManager.h */,
-				1465CC911D0D4DCF00F79436 /* TouchDrawView.h */,
-				1465CC921D0D4DCF00F79436 /* TouchDrawView.m */,
-				1465CC931D0D4DCF00F79436 /* TouchDrawViewController.h */,
-				1465CC941D0D4DCF00F79436 /* TouchDrawViewController.m */,
-				1465CC951D0D4DCF00F79436 /* TouchDrawViewController.xib */,
+				1465CD7B1D0D6E1600F79436 /* NSUndoManager.h */,
+				1465CD651D0D6C1F00F79436 /* 常用 */,
+				1465CD691D0D6C1F00F79436 /* 画多根线且可以撤销 */,
 			);
 			path = NSUndoManager;
 			sourceTree = "<group>";
@@ -2354,6 +2344,32 @@
 			path = "触控";
 			sourceTree = "<group>";
 		};
+		1465CD651D0D6C1F00F79436 /* 常用 */ = {
+			isa = PBXGroup;
+			children = (
+				1465CD661D0D6C1F00F79436 /* MD_UndoManager_VC.h */,
+				1465CD671D0D6C1F00F79436 /* MD_UndoManager_VC.m */,
+				1465CD681D0D6C1F00F79436 /* MD_UndoManager_VC.xib */,
+			);
+			path = "常用";
+			sourceTree = "<group>";
+		};
+		1465CD691D0D6C1F00F79436 /* 画多根线且可以撤销 */ = {
+			isa = PBXGroup;
+			children = (
+				1465CD6A1D0D6C1F00F79436 /* ColorPiker.h */,
+				1465CD6B1D0D6C1F00F79436 /* ColorPiker.m */,
+				1465CD6C1D0D6C1F00F79436 /* Line.h */,
+				1465CD6D1D0D6C1F00F79436 /* Line.m */,
+				1465CD6F1D0D6C1F00F79436 /* TouchDrawView.h */,
+				1465CD701D0D6C1F00F79436 /* TouchDrawView.m */,
+				1465CD711D0D6C1F00F79436 /* TouchDrawViewController.h */,
+				1465CD721D0D6C1F00F79436 /* TouchDrawViewController.m */,
+				1465CD731D0D6C1F00F79436 /* TouchDrawViewController.xib */,
+			);
+			path = "画多根线且可以撤销";
+			sourceTree = "<group>";
+		};
 		146D82AC1AA7036700F0C7FD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -2420,11 +2436,11 @@
 		147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */ = {
 			isa = PBXGroup;
 			children = (
+				14DB40F01AEA752D00DA1682 /* main */,
 				14A7276D1CAB8B4500DC7BC0 /* Managers */,
 				1489C88D1CAA8AA3000CBC14 /* LocalResource */,
 				14CB771C1CA5241E00878C4E /* Units */,
 				14E604D91C5B101D000E0DED /* Model */,
-				14DB40F01AEA752D00DA1682 /* main */,
 				1403E3251B8C68EC009C8CAC /* UICustom */,
 				146D82AC1AA7036700F0C7FD /* Categories */,
 				1463B2011AA162C2006AE8D2 /* Classes */,
@@ -3343,7 +3359,6 @@
 				14FF81591CE1D7BA00C7855C /* tabbar_compose_button_highlighted@2x.png in Resources */,
 				14FF81061CE1BF6F00C7855C /* playing10@2x.png in Resources */,
 				14FF80DD1CE1BF6F00C7855C /* Chile.png in Resources */,
-				1465CD2F1D0D4DCF00F79436 /* MD_UndoManager_VC.xib in Resources */,
 				14FF81351CE1BF6F00C7855C /* playing53@2x.png in Resources */,
 				1465CD0B1D0D4DCF00F79436 /* SecondViewController.xib in Resources */,
 				14FF815F1CE1D7CC00C7855C /* tabbar_compose_icon_add@2x.png in Resources */,
@@ -3358,11 +3373,13 @@
 				14FF813D1CE1BF6F00C7855C /* playing60@2x.png in Resources */,
 				14FF80DE1CE1BF6F00C7855C /* CoteDIvoire.png in Resources */,
 				1465CD011D0D4DCF00F79436 /* MDModal2ViewController.xib in Resources */,
+				1465CD751D0D6C1F00F79436 /* MD_UndoManager_VC.xib in Resources */,
 				140925821CC0CC7C00B17B2E /* books.xml in Resources */,
 				14FF817F1CE1D84200C7855C /* navigationbar_pop_highlighted@2x.png in Resources */,
 				1465CCE81D0D4DCF00F79436 /* team.plist in Resources */,
 				14DB41081AEA752D00DA1682 /* TitleList.plist in Resources */,
 				14FF81551CE1D7AC00C7855C /* tabbar_background@2x.png in Resources */,
+				1465CD7A1D0D6C1F00F79436 /* TouchDrawViewController.xib in Resources */,
 				14FF80FB1CE1BF6F00C7855C /* Icon-Small-40@3x.png in Resources */,
 				14FF80EE1CE1BF6F00C7855C /* Portugal.png in Resources */,
 				14FF80DA1CE1BF6F00C7855C /* Australia.png in Resources */,
@@ -3516,7 +3533,6 @@
 				148643051D051497005C1381 /* MD_SettingBundle_VC.xib in Resources */,
 				1465CD641D0D556700F79436 /* undo.png in Resources */,
 				14FF80EC1CE1BF6F00C7855C /* NorthKorea.png in Resources */,
-				1465CD321D0D4DCF00F79436 /* TouchDrawViewController.xib in Resources */,
 				14FF81231CE1BF6F00C7855C /* playing37@2x.png in Resources */,
 				14FF80DB1CE1BF6F00C7855C /* Brazil.png in Resources */,
 				14FF81401CE1BF6F00C7855C /* playing8@2x.png in Resources */,
@@ -3564,7 +3580,6 @@
 				14FFBE421C9AA995006BEB2B /* MASCompositeConstraint.m in Sources */,
 				1465CCCA1D0D4DCF00F79436 /* MD_UIBezierPath_ViewController.m in Sources */,
 				146DE5A51CBD040900F366C9 /* MD_GCD_VC.m in Sources */,
-				1465CD2D1D0D4DCF00F79436 /* Line.m in Sources */,
 				1465CD041D0D4DCF00F79436 /* UINavigationItem+MDCustom.m in Sources */,
 				148642F61D050E47005C1381 /* MD_UsefulPath_VC.m in Sources */,
 				1465CCD11D0D4DCF00F79436 /* MDCustomView.m in Sources */,
@@ -3619,6 +3634,7 @@
 				14CB77241CA5254800878C4E /* IPAddress.c in Sources */,
 				14032AB31CF83E3700C97616 /* CustomURLCache.m in Sources */,
 				1465CD271D0D4DCF00F79436 /* MDStringNormalViewController.m in Sources */,
+				1465CD791D0D6C1F00F79436 /* TouchDrawViewController.m in Sources */,
 				1465CD331D0D4DCF00F79436 /* MDNSValueViewController.m in Sources */,
 				14A727CE1CABB67A00DC7BC0 /* UIImageView+AFNetworking.m in Sources */,
 				1465CCD21D0D4DCF00F79436 /* MD_UIControl_VC.m in Sources */,
@@ -3681,11 +3697,9 @@
 				14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */,
 				1465CCDD1D0D4DCF00F79436 /* MDPage3ViewController.m in Sources */,
 				1465CCC91D0D4DCF00F79436 /* MD_UIBezierPath_CustomView1.m in Sources */,
-				1465CD301D0D4DCF00F79436 /* TouchDrawView.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
 				14A727671CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m in Sources */,
 				148740911CABC335007CC45C /* NSDate+Tpages.m in Sources */,
-				1465CD2E1D0D4DCF00F79436 /* MD_UndoManager_VC.m in Sources */,
 				1465CD391D0D4DCF00F79436 /* MD_PhotoLibrary_GridVC.m in Sources */,
 				14EA84F71CA3A75600A70A46 /* MDImageItem.m in Sources */,
 				14CB771A1CA4F1B800878C4E /* MD_Socket_Server_VC.m in Sources */,
@@ -3710,7 +3724,6 @@
 				1497350B1CBB64D4006BF1A3 /* MyOperation.m in Sources */,
 				148740871CABC070007CC45C /* DGCPostManager.m in Sources */,
 				1465CCCB1D0D4DCF00F79436 /* MDUIButtonViewController.m in Sources */,
-				1465CD311D0D4DCF00F79436 /* TouchDrawViewController.m in Sources */,
 				140925871CC0D82200B17B2E /* MD_NSURLSession_VC.m in Sources */,
 				14A727741CAB8BB300DC7BC0 /* Reachability.m in Sources */,
 				1465CD291D0D4DCF00F79436 /* MD_NSTimer_VC2.m in Sources */,
@@ -3728,6 +3741,7 @@
 				1465CCC31D0D4DCF00F79436 /* MD_CGContext_ViewController.m in Sources */,
 				14A727971CABAC6D00DC7BC0 /* AFURLResponseSerialization.m in Sources */,
 				14F043EF1CBF797500D07048 /* MDCustomThread.m in Sources */,
+				1465CD761D0D6C1F00F79436 /* ColorPiker.m in Sources */,
 				1465CD581D0D519800F79436 /* MD_GestureRecognizerTest_VC.m in Sources */,
 				1465CD151D0D4DCF00F79436 /* MDNSAttributedStringViewController.m in Sources */,
 				1465CD171D0D4DCF00F79436 /* MDDicNormalViewController.m in Sources */,
@@ -3744,6 +3758,7 @@
 				14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */,
 				1465CCDF1D0D4DCF00F79436 /* MDPickerViewViewController.m in Sources */,
 				14A727A11CABAEAA00DC7BC0 /* ReachabilityManager.m in Sources */,
+				1465CD771D0D6C1F00F79436 /* Line.m in Sources */,
 				1465CCC71D0D4DCF00F79436 /* MDAVASViewController.m in Sources */,
 				1465CD2B1D0D4DCF00F79436 /* MD_NSTimer_VC1.m in Sources */,
 				14A727CB1CABB67A00DC7BC0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -3755,11 +3770,12 @@
 				1465CCC51D0D4DCF00F79436 /* MD_CATransform3D_VC.m in Sources */,
 				1465CD131D0D4DCF00F79436 /* TRTelphoneInfo.m in Sources */,
 				1465CD281D0D4DCF00F79436 /* MDCountStringRectangleViewController.m in Sources */,
+				1465CD741D0D6C1F00F79436 /* MD_UndoManager_VC.m in Sources */,
 				14A727B51CABB28500DC7BC0 /* DGCDelegateInfo.m in Sources */,
 				14A727CD1CABB67A00DC7BC0 /* UIButton+AFNetworking.m in Sources */,
 				1465CCFC1D0D4DCF00F79436 /* MDTBVC3ViewController.m in Sources */,
+				1465CD781D0D6C1F00F79436 /* TouchDrawView.m in Sources */,
 				1465CD191D0D4DCF00F79436 /* MDNSEnumeratorViewController.m in Sources */,
-				1465CD2C1D0D4DCF00F79436 /* ColorPiker.m in Sources */,
 				14A727941CABAC6D00DC7BC0 /* AFNetworkReachabilityManager.m in Sources */,
 				14A8AFD71CC367F9008A50EB /* TRCat.m in Sources */,
 				14A727911CABAC6D00DC7BC0 /* AFURLConnectionOperation.m in Sources */,

@@ -15,7 +15,8 @@
 @end
 @implementation MDAppDelegate
 
-#pragma mark - < method > -
+#pragma mark - <<<<< customize method >>>>>
+#pragma mark - < 推送 >
 #pragma mark 注册远程推送
 -(void)registerForRemoteNotification:(UIApplication *)application{
   
@@ -51,13 +52,16 @@
   [noti setRepeatInterval:NSCalendarUnitMinute];
 }
 
+#pragma mark - <<<<< callback >>>>>
 #pragma mark - < UIApplicationDelegate >
-#pragma mark - app lifecycle
+#pragma mark app lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
   
   MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
   cVC.data = [MDTool getPlistDataByName:@"TitleList"];
   MDNavigationController *navi = [[MDNavigationController alloc] initWithRootViewController:cVC];
+  
+  [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
   
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.window setBackgroundColor:[UIColor whiteColor]];
@@ -94,7 +98,7 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark - remote noti
+#pragma mark remote noti
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
   NSString *decToken = [NSString stringWithFormat:@"%@", deviceToken];
@@ -113,7 +117,7 @@
   [ud synchronize];
 }
 
-#pragma mark - local noti
+#pragma mark local noti
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
   //点击通知返回应用时会调用该方法
   //接收传递的参数

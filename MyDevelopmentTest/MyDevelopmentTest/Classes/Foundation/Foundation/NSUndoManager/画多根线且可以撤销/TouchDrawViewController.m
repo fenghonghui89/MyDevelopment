@@ -20,6 +20,7 @@
 
 @implementation TouchDrawViewController
 
+#pragma mark - <<<<<< override >>>>>>
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -27,6 +28,17 @@
   [self.selector2 setDelegate:self];
   [self.selector3 setDelegate:self];
   [self.selector4 setDelegate:self];
+}
+
+#pragma mark - <<<<< action >>>>>
+- (IBAction)undoBtnTap:(id)sender {
+
+  [self.drawArea undo];
+}
+
+- (IBAction)redoBtnTap:(id)sender {
+  
+  [self.drawArea redo];
 }
 
 #pragma mark - <<<<< callback >>>>>
@@ -40,4 +52,5 @@
   self.selector3.layer.borderWidth = 0.0f;
   self.selector4.layer.borderWidth = 0.0f;
 }
+
 @end
