@@ -34,7 +34,7 @@
 
 #pragma mark - ********** customize method **********
 #pragma mark - get
-//全国城市
+//http://www.webxml.com.cn 国内航班 - 全国城市
 -(void)af_get_allCity{
 
 //  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
