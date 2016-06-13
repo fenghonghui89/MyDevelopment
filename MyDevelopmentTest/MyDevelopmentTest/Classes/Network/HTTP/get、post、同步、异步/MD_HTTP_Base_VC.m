@@ -25,6 +25,16 @@
 }
 
 #pragma mark - < method > -
+
+-(void)request{
+  
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+  [request setHTTPMethod:@"POST"];
+  [request setValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
+  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+  [request setHTTPBody:UIImageJPEGRepresentation([UIImage imageNamed:@"Argentina"], 0.3)];
+}
+
 -(void)httpGet_Synchronous{
   
   NSURL *url = [NSURL URLWithString:@"http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getRegionCountry?"];
