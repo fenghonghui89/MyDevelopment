@@ -10,6 +10,8 @@
 		14032AB31CF83E3700C97616 /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 14032AAE1CF83E3700C97616 /* CustomURLCache.m */; };
 		14032AB51CF83E3700C97616 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 14032AB21CF83E3700C97616 /* Util.m */; };
 		1403E3281B8C68ED009C8CAC /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1403E3271B8C68ED009C8CAC /* myUILabel.m */; };
+		1406158B1D0EB2410057E192 /* MD_NSError_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 140615891D0EB2410057E192 /* MD_NSError_VC.m */; };
+		1406158C1D0EB2410057E192 /* MD_NSError_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1406158A1D0EB2410057E192 /* MD_NSError_VC.xib */; };
 		1408FABF1CF2F9BE00817061 /* MD_WebKit_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1408FABE1CF2F9BE00817061 /* MD_WebKit_VC.xib */; };
 		140925821CC0CC7C00B17B2E /* books.xml in Resources */ = {isa = PBXBuildFile; fileRef = 140925811CC0CC7C00B17B2E /* books.xml */; };
 		140925871CC0D82200B17B2E /* MD_NSURLSession_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 140925851CC0D82200B17B2E /* MD_NSURLSession_VC.m */; };
@@ -459,6 +461,9 @@
 		14032AB61CF8580A00C97616 /* WKWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebView.h; sourceTree = "<group>"; };
 		1403E3261B8C68ED009C8CAC /* myUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myUILabel.h; sourceTree = "<group>"; };
 		1403E3271B8C68ED009C8CAC /* myUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myUILabel.m; sourceTree = "<group>"; };
+		140615881D0EB2410057E192 /* MD_NSError_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSError_VC.h; sourceTree = "<group>"; };
+		140615891D0EB2410057E192 /* MD_NSError_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSError_VC.m; sourceTree = "<group>"; };
+		1406158A1D0EB2410057E192 /* MD_NSError_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSError_VC.xib; sourceTree = "<group>"; };
 		1408FABE1CF2F9BE00817061 /* MD_WebKit_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_WebKit_VC.xib; sourceTree = "<group>"; };
 		140925811CC0CC7C00B17B2E /* books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = books.xml; sourceTree = "<group>"; };
 		140925841CC0D82200B17B2E /* MD_NSURLSession_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSURLSession_VC.h; sourceTree = "<group>"; };
@@ -1223,6 +1228,16 @@
 			path = UICustom;
 			sourceTree = "<group>";
 		};
+		140615871D0EB2270057E192 /* NSError */ = {
+			isa = PBXGroup;
+			children = (
+				140615881D0EB2410057E192 /* MD_NSError_VC.h */,
+				140615891D0EB2410057E192 /* MD_NSError_VC.m */,
+				1406158A1D0EB2410057E192 /* MD_NSError_VC.xib */,
+			);
+			path = NSError;
+			sourceTree = "<group>";
+		};
 		140925831CC0D78100B17B2E /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -1927,6 +1942,7 @@
 			isa = PBXGroup;
 			children = (
 				1465CC2D1D0D4DCF00F79436 /* FoundationOther */,
+				140615871D0EB2270057E192 /* NSError */,
 				1465CC331D0D4DCF00F79436 /* NSArray */,
 				1465CC431D0D4DCF00F79436 /* NSAttributedString */,
 				1465CC461D0D4DCF00F79436 /* NSBundle */,
@@ -2357,15 +2373,15 @@
 		1465CD691D0D6C1F00F79436 /* 画多根线且可以撤销 */ = {
 			isa = PBXGroup;
 			children = (
+				1465CD711D0D6C1F00F79436 /* TouchDrawViewController.h */,
+				1465CD721D0D6C1F00F79436 /* TouchDrawViewController.m */,
+				1465CD731D0D6C1F00F79436 /* TouchDrawViewController.xib */,
+				1465CD6F1D0D6C1F00F79436 /* TouchDrawView.h */,
+				1465CD701D0D6C1F00F79436 /* TouchDrawView.m */,
 				1465CD6A1D0D6C1F00F79436 /* ColorPiker.h */,
 				1465CD6B1D0D6C1F00F79436 /* ColorPiker.m */,
 				1465CD6C1D0D6C1F00F79436 /* Line.h */,
 				1465CD6D1D0D6C1F00F79436 /* Line.m */,
-				1465CD6F1D0D6C1F00F79436 /* TouchDrawView.h */,
-				1465CD701D0D6C1F00F79436 /* TouchDrawView.m */,
-				1465CD711D0D6C1F00F79436 /* TouchDrawViewController.h */,
-				1465CD721D0D6C1F00F79436 /* TouchDrawViewController.m */,
-				1465CD731D0D6C1F00F79436 /* TouchDrawViewController.xib */,
 			);
 			path = "画多根线且可以撤销";
 			sourceTree = "<group>";
@@ -3531,6 +3547,7 @@
 				14FF811C1CE1BF6F00C7855C /* playing30@2x.png in Resources */,
 				14FF80FA1CE1BF6F00C7855C /* Icon-Small-40@2x.png in Resources */,
 				148643051D051497005C1381 /* MD_SettingBundle_VC.xib in Resources */,
+				1406158C1D0EB2410057E192 /* MD_NSError_VC.xib in Resources */,
 				1465CD641D0D556700F79436 /* undo.png in Resources */,
 				14FF80EC1CE1BF6F00C7855C /* NorthKorea.png in Resources */,
 				14FF81231CE1BF6F00C7855C /* playing37@2x.png in Resources */,
@@ -3720,6 +3737,7 @@
 				14032AB51CF83E3700C97616 /* Util.m in Sources */,
 				14FFBE461C9AA995006BEB2B /* MASViewAttribute.m in Sources */,
 				1465CCE61D0D4DCF00F79436 /* MDUIScrollView4ViewController.m in Sources */,
+				1406158B1D0EB2410057E192 /* MD_NSError_VC.m in Sources */,
 				1465CCFB1D0D4DCF00F79436 /* MDTBVC2ViewController.m in Sources */,
 				1497350B1CBB64D4006BF1A3 /* MyOperation.m in Sources */,
 				148740871CABC070007CC45C /* DGCPostManager.m in Sources */,

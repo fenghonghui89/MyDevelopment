@@ -5,7 +5,7 @@
 //  Created by 冯鸿辉 on 16/3/30.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
 //
-
+#import "GDataXMLNode.h"
 #import "MD_AFNetwork_VC.h"
 #import "AFNetworking.h"
 #import "DGCUserManager.h"
@@ -18,7 +18,8 @@
 
 @implementation MD_AFNetwork_VC
 
-#pragma mark - < vc lifecycle > -
+#pragma mark - ********** override **********
+#pragma mark - view lifecycle
 - (void)viewDidLoad {
   
   [super viewDidLoad];
@@ -28,26 +29,52 @@
 
   [super viewDidAppear:animated];
   
-  [self af_get1];
 }
-#pragma mark - < method > -
--(void)af_get{
-  //天气
-  //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-  //    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-  //    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-  //    [manager GET:@"http://webservice.webxml.com.cn//webservices/DomesticAirline.asmx/getDomesticCity?"
-  //      parameters:nil
-  //         success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-  //             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-  //             NSLog(@"me JSON: %@", dic);
-  //         }
-  //         failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-  //             NSLog(@"error..");
-  //         }];
+
+#pragma mark - ********** customize method **********
+#pragma mark - get
+//全国城市
+-(void)af_get_allCity{
+
   
-  //天工问答登录
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+  manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+  manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+  [manager GET:@"http://webservice.webxml.com.cn//webservices/DomesticAirline.asmx/getDomesticCity?"
+    parameters:nil
+       success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+         
+         //原来的xml
+         NSString *xmlStr = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
+         NSLog(@"原始xml:\n%@", xmlStr);
+         
+         //根据xml解析
+         NSError *error = nil;
+         GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithData:(NSData *)responseObject options:0 error:&error];
+         if (error) {
+           NSLog(@"xml parse error:%@",error.localizedDescription);
+         }else{
+           GDataXMLElement *root = document.rootElement;
+           GDataXMLElement *diffgr = [[root elementsForName:@"diffgr:diffgram"] lastObject];
+           GDataXMLElement *Airline1 = [[diffgr elementsForName:@"Airline1"] lastObject];
+           NSArray *citys = [Airline1 elementsForName:@"Address"];
+           for (GDataXMLElement *city in citys) {
+             GDataXMLElement *enCityName = [[city elementsForName:@"enCityName"] lastObject];
+             GDataXMLElement *cnCityName = [[city elementsForName:@"cnCityName"] lastObject];
+             GDataXMLElement *Abbreviation = [[city elementsForName:@"Abbreviation"] lastObject];
+             NSLog(@"%@ %@ %@",enCityName.stringValue,cnCityName.stringValue,Abbreviation.stringValue);
+           }
+         }
+       }
+       failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+         NSLog(@"error:%@",error.localizedDescription);
+       }];
+}
+
+//天工问答消息列表
+-(void)af_get_TianGongNewes{
+
   NSString *requestURL = @"http://api.wd.tgnet.com/Info/NewestList";
   NSDictionary *paraDic = @{@"class_no":@"",
                             @"page":@(1),
@@ -55,28 +82,25 @@
                             };
   
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-  //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+  manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
   //    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
   //    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
   [manager GET:requestURL
     parameters:paraDic
        success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-         NSLog(@"me JSON: %@", dic);
+         NSLog(@"success:\n%@", (NSDictionary *)responseObject);
        }
        failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-         NSLog(@"error..");
+         NSLog(@"error:%@",error.localizedDescription);
        }];
 
 }
 
--(void)af_get1{
-  
-  NSDictionary *delegateInfo = [NSDictionary dictionaryWithObject:FIRST_GET_INFO forKey:DELEGATE_INFO_KEY];
-  [[DGCPostManager share] getPostsBySince:0 before:0 per_page:0 site:0 location:0 place:0 type:0 user:0 userinfo:delegateInfo delegate:self];
-}
 
--(void)af_post{
+
+#pragma mark - post
+//优嫁login
+-(void)af_post_ucaLogin{
   NSString *requestURL = @"http://51uca.com/biz/login";
   
   NSString *md5_password = [MDTool md5:@"12345678"];
@@ -96,11 +120,12 @@
     NSLog(@"me JSON: %@", dic);
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    NSLog(@"me Error: %ld\n%@",(long)error.code,error.domain);
+    NSLog(@"me Error:\n%@",error.localizedDescription);
     
   }];
 }
 
+#pragma mark - Reachability
 -(void)af_Reachability{
 
   AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
@@ -111,7 +136,8 @@
 
 }
 
--(void)af_manager{
+#pragma mark - manager
+-(void)af_manager_uca{
   
   //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   //    NSLog(@"%@",manager.baseURL);
@@ -125,7 +151,15 @@
                                  delegate:self];
 }
 
--(void)af_uploadImg{
+//90days postlist
+-(void)af_manager_90days{
+  
+  NSDictionary *delegateInfo = [NSDictionary dictionaryWithObject:FIRST_GET_INFO forKey:DELEGATE_INFO_KEY];
+  [[DGCPostManager share] getPostsBySince:0 before:0 per_page:0 site:0 location:0 place:0 type:0 user:0 userinfo:delegateInfo delegate:self];
+}
+
+#pragma mark - upload
+-(void)af_uploadImg_90days{
   
   UIImage *img = [UIImage imageNamed:@"000.jpg"];
   NSData *imgData = UIImageJPEGRepresentation(img, 0.3);
@@ -148,9 +182,8 @@
   [[NSOperationQueue mainQueue] addOperations:@[operation] waitUntilFinished:NO];
 }
 
-#pragma mark - < action > -
 
-#pragma mark - < callback > -
+#pragma mark - ********** callback **********
 -(void)DGCLogin:(DGCUserManager *)userServices isSuccess:(BOOL)isSuccess data:(DGCUserInfo *)data errorCode:(DGCRequestErrorCode)code msg:(NSString *)msg userInfo:(NSDictionary *)userInfo{
   
   if (isSuccess) {

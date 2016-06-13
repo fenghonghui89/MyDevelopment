@@ -139,18 +139,18 @@
   }
 }
 
--(void)removeLineByEndPoint:(CGPoint)point{
-  
-  NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nonnull evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-    Line *evaluatedLine = (Line *)evaluatedObject;
-    return evaluatedLine.end.x == point.x && evaluatedLine.end.y == point.y;
-  }];
-  
-  NSArray *result = [self.linesCompleted filteredArrayUsingPredicate:predicate];
-  if (result && result.count>0) {
-    [self.linesCompleted removeObject:result[0]];
-  }
-}
+//-(void)removeLineByEndPoint:(CGPoint)point{
+//  
+//  NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nonnull evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+//    Line *evaluatedLine = (Line *)evaluatedObject;
+//    return evaluatedLine.end.x == point.x && evaluatedLine.end.y == point.y;
+//  }];
+//  
+//  NSArray *result = [self.linesCompleted filteredArrayUsingPredicate:predicate];
+//  if (result && result.count>0) {
+//    [self.linesCompleted removeObject:result[0]];
+//  }
+//}
 
 
 
