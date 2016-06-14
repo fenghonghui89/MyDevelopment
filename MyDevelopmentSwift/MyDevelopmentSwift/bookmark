@@ -152,5 +152,18 @@ module是个代码发布单元(如Framework或者应用程序), 通过使用impo
 oc层触发的异常必须在oc层处理 不能抛给swift处理
 
 guard
-异常捕获
-序列化 guard确保参数按照正确的格式传递进来 否则停止并走else
+异常捕获 序列化 guard确保参数按照正确的格式传递进来 否则停止并走else
+
+//MARK:- api可用性
+/*
+#available(iOS 8.0, OSX 10.10, *) 写在控制流中
+@available(iOS 8.0, OSX 10.10, *) 标识方法的可用性 常用
+星号代表潜在的未知平台
+*/
+
+
+
+Interacting with C APIs
+在c、oc里面没有用NS_ENUM或者NS_OPTION标识的枚举，在swift里面都作为结构体被加入
+用NS_OPTION标识的枚举在swift都是以选项设置（Option Set）形式出现
+Unions 、 Bit Fields 、 Unnamed Structure and Union Fields 未看

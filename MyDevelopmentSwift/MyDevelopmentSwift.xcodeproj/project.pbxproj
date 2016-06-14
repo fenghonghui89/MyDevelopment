@@ -20,6 +20,7 @@
 		143B82C71CE975C30025E675 /* InitializerRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C61CE975C30025E675 /* InitializerRequirements.swift */; };
 		143B82C91CE9813D0025E675 /* ClassOnlyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */; };
 		146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B18501CDADC8800F0D092 /* ViewController_Set.swift */; };
+		1481A2F61D10015400AA6E30 /* ViewController_InteractingWithCApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */; };
 		1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */; };
 		1486430C1D053103005C1381 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486430B1D053103005C1381 /* CustomView.swift */; };
 		1486430E1D053172005C1381 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1486430D1D053172005C1381 /* CustomView.xib */; };
@@ -73,6 +74,7 @@
 		143B82C61CE975C30025E675 /* InitializerRequirements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitializerRequirements.swift; sourceTree = "<group>"; };
 		143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOnlyProtocols.swift; sourceTree = "<group>"; };
 		146B18501CDADC8800F0D092 /* ViewController_Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Set.swift; sourceTree = "<group>"; };
+		1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_InteractingWithCApis.swift; sourceTree = "<group>"; };
 		1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ControlFlow.swift; sourceTree = "<group>"; };
 		1486430B1D053103005C1381 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1486430D1D053172005C1381 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 				140EA0FE1CC628640077DCF8 /* ClassModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		1481A2F41D10013700AA6E30 /* Interacting with C APIs */ = {
+			isa = PBXGroup;
+			children = (
+				1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */,
+			);
+			path = "Interacting with C APIs";
 			sourceTree = "<group>";
 		};
 		1486430A1D0530F2005C1381 /* View */ = {
@@ -193,6 +203,7 @@
 				14F347E01D003A7B005E5C29 /* AccessControl */,
 				149E4C1A1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift */,
 				14FA3B741D07B9FA00BD2902 /* Using Swift with Cocoa and Objective-C */,
+				1481A2F41D10013700AA6E30 /* Interacting with C APIs */,
 				140EA0F91CC5D7D50077DCF8 /* model */,
 				1486430A1D0530F2005C1381 /* View */,
 				14FC0CC41C9844FD008622B7 /* bookmark */,
@@ -256,10 +267,10 @@
 			children = (
 				14FA3B751D07B9FA00BD2902 /* OCViewController.h */,
 				14FA3B761D07B9FA00BD2902 /* OCViewController.m */,
-				14FA3B771D07B9FA00BD2902 /* ViewController_AdoptingCocoaDesignPatterns.swift */,
 				14FA3B781D07B9FA00BD2902 /* ViewController_InteractingWithOCAPIs.swift */,
-				14FA3B791D07B9FA00BD2902 /* ViewController_WorkingWithCocoaDataTypes.swift */,
 				14FA3B7A1D07B9FA00BD2902 /* ViewController_WritingSwiftClassesWithOCBehavior.swift */,
+				14FA3B791D07B9FA00BD2902 /* ViewController_WorkingWithCocoaDataTypes.swift */,
+				14FA3B771D07B9FA00BD2902 /* ViewController_AdoptingCocoaDesignPatterns.swift */,
 			);
 			path = "Using Swift with Cocoa and Objective-C";
 			sourceTree = "<group>";
@@ -379,6 +390,7 @@
 				14C2242B1CD350F800C4359E /* LinearCongruentialGenerator.swift in Sources */,
 				148793A51CE5B87D00C67D75 /* ViewController_ErrorHandling.swift in Sources */,
 				14FA3B7D1D07B9FA00BD2902 /* ViewController_InteractingWithOCAPIs.swift in Sources */,
+				1481A2F61D10015400AA6E30 /* ViewController_InteractingWithCApis.swift in Sources */,
 				140EA0F81CC5CE2C0077DCF8 /* ViewController_class.swift in Sources */,
 				149DDA201CC21B5E00C7A8B1 /* ViewController_Closures.swift in Sources */,
 				14C224251CD34DEA00C4359E /* ViewController_Protocols.swift in Sources */,

@@ -48,7 +48,7 @@ class ViewController_AdvancedOperators:UIViewController {
   
   //MARK:- <<< method >>>
   //MARK:- 位运算符
-  //MARK:按位取反运算符
+  //MARK:按位取反运算符 ~
   func func_BitwiseNOTOperators() {
     
     let bit:UInt8 = 0b11110000;
@@ -56,7 +56,7 @@ class ViewController_AdvancedOperators:UIViewController {
     print(invertedBit);
   }
   
-  //MARK:按位与运算符
+  //MARK:按位与运算符 &
   func func_BitwiseANDOperators() {
     
     let firstSixBits: UInt8 = 0b11111100
@@ -65,7 +65,7 @@ class ViewController_AdvancedOperators:UIViewController {
     print(middleFourBits)
   }
   
-  //MARK:按位或运算符
+  //MARK:按位或运算符 |
   func func_BitwiseOROperators() {
     
     let someBits: UInt8 = 0b10110010
@@ -74,7 +74,7 @@ class ViewController_AdvancedOperators:UIViewController {
     print(combinedbits)
   }
   
-  //MARK:按位或运算符
+  //MARK:按位异或运算符 ^
   func func_BitwiseXOROperators() {
     
     let firstBits: UInt8 = 0b00010100
@@ -83,7 +83,7 @@ class ViewController_AdvancedOperators:UIViewController {
     print(outputBits)
   }
   
-  //MARK:按位左移/右移运算符
+  //MARK:按位左移<< / 右移运算符>>
   func func_BitwiseLeftRightShiftOperators() {
     
     let shiftBits: UInt8 = 4   // 即二进制的00000100
@@ -100,8 +100,8 @@ class ViewController_AdvancedOperators:UIViewController {
     print(redComponent,greenComponent,blueComponent)
   }
   
-  //MARK:- 溢出运算符
-  //MARK:值的上溢出 下溢出
+  //MARK:- 溢出运算符 &
+  //MARK:值的上溢出&+ 下溢出&-
   func func_OverflowOperators() {
     
     //无符号int 上溢出

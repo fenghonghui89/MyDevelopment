@@ -21,7 +21,10 @@
 
 }
 
-//CF_RETURNS_RETAINED or CF_RETURNS_NOT_RETAINED
+/*
+ CF_RETURNS_RETAINED or CF_RETURNS_NOT_RETAINED
+ 见ViewController_WorkingWithCocoaDataTypes Core Foundataion
+ */
 -(CGPathRef)makeToPath CF_RETURNS_RETAINED
 {
   UIBezierPath* triangle = [UIBezierPath bezierPath];
