@@ -41,6 +41,12 @@
   [self.drawArea redo];
 }
 
+- (IBAction)actionBtnTap:(id)sender {
+  
+//  [self.drawArea.undoManager removeAllActions];
+  NSLog(@"%d",self.drawArea.undoManager.levelsOfUndo);
+}
+
 #pragma mark - <<<<< callback >>>>>
 
 -(void)aColorPikerIsSelected:(UIColor *)color{

@@ -19,7 +19,7 @@
     return self;
 }
 
-//Began
+//Began 触发一次
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"began %lu",(unsigned long)[touches count]);
@@ -29,7 +29,7 @@
     }
 }
 
-//Moved
+//Moved 随移动触发多次
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"moved %lu",(unsigned long)[touches count]);
@@ -40,7 +40,7 @@
     
 }
 
-//Ended
+//Ended 触发一次
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"ended %lu",(unsigned long)[touches count]);

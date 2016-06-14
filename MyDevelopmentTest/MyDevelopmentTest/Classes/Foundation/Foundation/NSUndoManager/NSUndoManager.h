@@ -34,8 +34,8 @@ NS_CLASS_AVAILABLE(10_0, 3_0)
 
         /* Begin/End Grouping */
 
-- (void)beginUndoGrouping;
-- (void)endUndoGrouping;
+- (void)beginUndoGrouping;//指定一组动作的开始
+- (void)endUndoGrouping;//指定一组动作的结束
     // These nest.
 
 @property (readonly) NSInteger groupingLevel;
@@ -99,6 +99,7 @@ NS_CLASS_AVAILABLE(10_0, 3_0)
 
         /* Invocation based undo */
 
+//准备一个undo的self对象
 - (id)prepareWithInvocationTarget:(id)target;
    // called as:
    // [[undoManager prepareWithInvocationTarget:self] setFont:oldFont color:oldColor]

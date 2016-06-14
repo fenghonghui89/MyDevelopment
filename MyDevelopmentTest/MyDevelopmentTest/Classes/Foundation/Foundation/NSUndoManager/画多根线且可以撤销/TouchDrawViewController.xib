@@ -22,10 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqM-hi-ENZ" customClass="TouchDrawView">
-                    <rect key="frame" x="0.0" y="142" width="320" height="426"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRJ-Fe-MzA">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
                     <subviews>
@@ -76,12 +72,27 @@
                                 <action selector="redoBtnTap:" destination="-1" eventType="touchUpInside" id="mgC-u5-ecT"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-Nx-4nB">
+                            <rect key="frame" x="124" y="67" width="47" height="47"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="YvE-Nx-4nB" secondAttribute="height" multiplier="1:1" id="TQf-fP-3WP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <state key="normal" title="action">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="actionBtnTap:" destination="-1" eventType="touchUpInside" id="MDb-Jg-MaA"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="OdU-V4-cRN" firstAttribute="width" secondItem="wJw-pH-SKa" secondAttribute="width" id="Ft6-KO-Tuy"/>
                         <constraint firstItem="Ys6-ah-0Ol" firstAttribute="leading" secondItem="cRJ-Fe-MzA" secondAttribute="leading" constant="10" id="LRg-I9-QzL"/>
                         <constraint firstItem="Ys6-ah-0Ol" firstAttribute="width" secondItem="wJw-pH-SKa" secondAttribute="width" id="OGb-SE-gPb"/>
+                        <constraint firstItem="YvE-Nx-4nB" firstAttribute="leading" secondItem="0Lh-cR-SR3" secondAttribute="trailing" constant="10" id="PoN-nq-OiD"/>
                         <constraint firstItem="wJw-pH-SKa" firstAttribute="height" secondItem="cRJ-Fe-MzA" secondAttribute="height" multiplier="0.33" id="QqH-ZW-3zg"/>
                         <constraint firstItem="Ys6-ah-0Ol" firstAttribute="top" secondItem="wJw-pH-SKa" secondAttribute="bottom" constant="10" id="R6g-Zl-V3x"/>
                         <constraint firstItem="OdU-V4-cRN" firstAttribute="leading" secondItem="7gp-GB-47k" secondAttribute="trailing" constant="10" id="Ttc-b9-ZTr"/>
@@ -89,16 +100,22 @@
                         <constraint firstItem="ghu-Z3-fSE" firstAttribute="width" secondItem="wJw-pH-SKa" secondAttribute="width" id="X2Y-ko-MQi"/>
                         <constraint firstItem="0Lh-cR-SR3" firstAttribute="leading" secondItem="Ys6-ah-0Ol" secondAttribute="trailing" constant="10" id="XOf-2O-OYY"/>
                         <constraint firstItem="ghu-Z3-fSE" firstAttribute="top" secondItem="wJw-pH-SKa" secondAttribute="top" id="XXA-r6-ehY"/>
+                        <constraint firstItem="YvE-Nx-4nB" firstAttribute="top" secondItem="7gp-GB-47k" secondAttribute="bottom" constant="10" id="YEW-YP-SKI"/>
                         <constraint firstItem="wJw-pH-SKa" firstAttribute="leading" secondItem="cRJ-Fe-MzA" secondAttribute="leading" constant="10" id="exN-m4-fSz"/>
                         <constraint firstItem="7gp-GB-47k" firstAttribute="leading" secondItem="ghu-Z3-fSE" secondAttribute="trailing" constant="10" id="ivC-aw-cGw"/>
                         <constraint firstItem="ghu-Z3-fSE" firstAttribute="leading" secondItem="wJw-pH-SKa" secondAttribute="trailing" constant="10" id="mo9-bP-IhY"/>
                         <constraint firstItem="OdU-V4-cRN" firstAttribute="top" secondItem="wJw-pH-SKa" secondAttribute="top" id="qyb-z4-dk7"/>
                         <constraint firstItem="7gp-GB-47k" firstAttribute="width" secondItem="wJw-pH-SKa" secondAttribute="width" id="tT0-qo-yun"/>
                         <constraint firstItem="wJw-pH-SKa" firstAttribute="top" secondItem="cRJ-Fe-MzA" secondAttribute="top" constant="10" id="vmA-IN-hRG"/>
+                        <constraint firstItem="YvE-Nx-4nB" firstAttribute="width" secondItem="Ys6-ah-0Ol" secondAttribute="width" id="vrX-1p-hUp"/>
                         <constraint firstItem="0Lh-cR-SR3" firstAttribute="top" secondItem="Ys6-ah-0Ol" secondAttribute="top" id="yDZ-qj-5RT"/>
                         <constraint firstItem="0Lh-cR-SR3" firstAttribute="width" secondItem="0Lh-cR-SR3" secondAttribute="height" multiplier="1:1" id="yjw-KZ-kZE"/>
                         <constraint firstItem="7gp-GB-47k" firstAttribute="top" secondItem="wJw-pH-SKa" secondAttribute="top" id="zrF-hF-lCI"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqM-hi-ENZ" customClass="TouchDrawView">
+                    <rect key="frame" x="0.0" y="142" width="320" height="426"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

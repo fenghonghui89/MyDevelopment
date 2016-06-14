@@ -18,9 +18,10 @@
   
   [super viewDidLoad];
   
-  [self test];
+  [self test_read];
 }
 
+#pragma mark - base
 -(void)test{
   
   //把plist文件 转为数组
@@ -46,9 +47,41 @@
   NSNumber* num3 = [NSNumber numberWithInt:3];
   
   NSDictionary* newLevels = [NSDictionary dictionaryWithObjectsAndKeys:num1,@"one",num2,@"two",num3,@"three", nil];
-  [newLevels writeToFile:@"/Users/apple/Desktop/newLevels.plist" atomically:YES];
+  [newLevels writeToFile:@"/Users/hanyfeng/Desktop/test.plist" atomically:YES];
   
 }
 
+#pragma mark - NSPropertyListSerialization
+-(void)test_write{
+
+  
+  NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] init];
+  [dataDictionary setValue:[NSNumber numberWithInt:222] forKey:@"intNumber"];
+  [dataDictionary setValue:[NSArray arrayWithObjects:@"1",@"2", nil] forKey:@"testArray"];
+  
+  NSError *error;
+  NSData *xmlData = [NSPropertyListSerialization dataWithPropertyList:dataDictionary
+                                                               format:NSPropertyListXMLFormat_v1_0
+                                                              options:0//该参数暂时未使用
+                                                                error:&error];
+  if(xmlData) {
+    NSLog(@"No error creating XML data.");
+    [xmlData writeToFile:@"/Users/hanyfeng/Desktop/test.plist" atomically:YES];
+  }else{
+    if (error) {
+      NSLog(@"error:%@", error);
+    }
+  }
+}
+
+-(void)test_read{
+  
+  NSError *error;
+  NSDictionary *dic = (NSDictionary *)[NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfFile:@"/Users/hanyfeng/Desktop/test.plist"]
+                                                                                options:NSPropertyListImmutable
+                                                                                 format:NULL
+                                                                                  error:&error];
+  NSLog(@"%@",dic);
+}
 
 @end

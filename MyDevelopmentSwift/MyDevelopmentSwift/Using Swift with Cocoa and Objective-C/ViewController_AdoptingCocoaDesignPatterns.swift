@@ -8,17 +8,18 @@
 
 import Foundation
 import UIKit
-
+import CoreLocation
 class ViewController_AdoptingCocoaDesignPatterns: UIViewController {
   override func viewDidLoad() {
     
+    SerialzationClass()
   }
 }
 
 //MARK:- <<<<<< class >>>>>>
 
 
-//MARK:delegate
+//MARK:- delegate
 //class MyDelegate: NSObject, NSWindowDelegate {
 //  func window(window: NSWindow, willUseFullScreenContentSize proposedSize: NSSize) -> NSSize {
 //    return proposedSize
@@ -163,5 +164,153 @@ class MyObserver: NSObject {
   }
 }
 
+//MARK:- undo 略
+//MARK:- Target-Action 略
+//MARK:- 单例
+class Singleton{
+  
+//  static let sharedInstance = Singleton();
+  
+  static let sharedInstance:Singleton = {
+    let instance = Singleton();
+    //...
+    return instance;
+  }();
+
+}
+
+//MARK:- 判断对象类型或是否遵守协议 略
+//MARK:- Serialization序列化 & Error Handle guard确保参数按照正确的格式传递进来 否则停止并走else
+class SerialzationClass {
+
+  init(){
+    
+//    let JSON = "{\"name\": \"Caffè Macs\",\"coordinates\": {\"lat\": 1.1,\"lng\":2.2},\"category\": \"Food\"}" //right
+    let JSON = "{\"name\": \"Caffè Macs\",\"coordinates\": {\"lat\": \"1.1\",\"lng\":\"1.1\"},\"category\": \"Food\"}" //wrong
+    let data = JSON.dataUsingEncoding(NSUTF8StringEncoding)!
+    let attributes = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String: AnyObject]
+    
+    //错误返回nil
+//    if let venue =  Venue(attributes: attributes){
+//      print(venue.name)// Prints "Caffè Macs"
+//    }else{
+//      print("error...")
+//    }
+    
+    //错误抛出异常
+    do {
+      let venue = try Venue(attributes: attributes)
+      print(venue.name)// Prints "Caffè Macs"
+    } catch Venue.ValidationError.Missing(let field) {
+      print("Missing Missing: \(field)")
+    } catch Venue.ValidationError.Invalid(let field) {
+      print("Missing Invalid: \(field)")
+    } catch{
+      print("unknow error")
+    }
+  }
+}
+
+struct Venue {
+  
+  enum Category: String {
+    case Entertainment
+    case Food
+    case Nightlife
+    case Shopping
+  }
+  
+  var name: String
+  var coordinates: CLLocationCoordinate2D
+  var category: Category
+  
+  
+  //数据错误就返回nil
+//  init?(attributes: [String: AnyObject]) {
+//    
+//    guard let name = attributes["name"] as? String,
+//      let coordinates = attributes["coordinates"] as? [String: Double],
+//      let latitude = coordinates["lat"],
+//      let longitude = coordinates["lng"],
+//      let category = Category(rawValue: attributes["category"] as? String ?? "Invalid")
+//      else {
+//        print("error~")
+//        return nil
+//    }
+//    
+//    self.name = name
+//    self.coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//    self.category = category
+//  }
+  
+  //数据错误就抛出异常
+  enum ValidationError:ErrorType {
+    case Missing(String)
+    case Invalid(String)
+  }
+  
+  init(attributes: [String:AnyObject])throws{
+  
+    guard let name = attributes["name"] as? String else{
+      throw ValidationError.Missing("name");
+    }
+    
+    guard let coordinates = attributes["coordinates"] as? [String:Double] else{
+      throw ValidationError.Missing("coordinates")
+    }
+    
+    guard let latitude = coordinates["lat"],
+      let longitude = coordinates["lng"]
+      else{
+      throw ValidationError.Invalid("coordinates")
+    }
+    
+    guard let categoryName = attributes["category"] as? String else{
+      throw ValidationError.Missing("category");
+    }
+    
+    guard let category = Category(rawValue:categoryName) else{
+      throw ValidationError.Invalid("category")
+    }
+    
+    self.name = name
+    self.coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    self.category = category
+  }
+}
 
 
+//MARK:- api可用性
+/*
+ #available(iOS 8.0, OSX 10.10, *) 写在控制流中
+ @available(iOS 8.0, OSX 10.10, *) 标识方法的可用性 常用
+ 星号代表潜在的未知平台
+ */
+class API_Availability_Class{
+
+  init(){
+    
+    
+    let locationManager = CLLocationManager()
+    if #available(iOS 8.0, OSX 10.10, *) {
+      locationManager.requestWhenInUseAuthorization()
+    }
+
+  
+    let locationManager1 = CLLocationManager()
+    guard #available(iOS 8.0, OSX 10.10, *) else {
+      return
+    }
+    locationManager1.requestWhenInUseAuthorization()
+    
+  }
+  
+  
+  
+  @available(iOS 8.0, OSX 10.10, *)
+  func useShinyNewFeature() {
+    // ...
+  }
+  
+//MARK:- 执行命令行参数(osx) 略
+}

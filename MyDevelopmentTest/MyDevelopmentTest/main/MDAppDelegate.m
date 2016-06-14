@@ -61,7 +61,7 @@
   cVC.data = [MDTool getPlistDataByName:@"TitleList"];
   MDNavigationController *navi = [[MDNavigationController alloc] initWithRootViewController:cVC];
   
-  [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
+  [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];//默认启动摇晃
   
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.window setBackgroundColor:[UIColor whiteColor]];

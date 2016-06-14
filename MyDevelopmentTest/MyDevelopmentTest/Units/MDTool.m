@@ -273,25 +273,43 @@ void STLogResponderChain(UIResponder *responder) {
  */
 -(void)showDeviceInfo
 {
+  //uuid
   CFUUIDRef puuid = CFUUIDCreate( nil );
   CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
   NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
   CFRelease(puuid);
   CFRelease(uuidString);
+  NSLog(@"CFUUID－－－－－%@",result);
   
   //或者
 //  CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
 //  NSString *strUUID = (NSString *)CFBridgingRelease(CFUUIDCreateString (kCFAllocatorDefault,uuidRef));
   
-  UIDevice *device_=[[UIDevice alloc] init];
+  //UIDevice
+  UIDevice *device_= [[UIDevice alloc] init];
   NSLog(@"设备所有者的名称－－%@",device_.name);
   NSLog(@"设备的类别－－－－－%@",device_.model);
   NSLog(@"设备的的本地化版本－%@",device_.localizedModel);
   NSLog(@"设备运行的系统－－－%@",device_.systemName);
   NSLog(@"当前系统的版本－－－%@",device_.systemVersion);
   NSLog(@"NSUUID－－－－－%@",[[NSUUID UUID] UUIDString]);
-  NSLog(@"CFUUID－－－－－%@",result);
   NSLog(@"IDFV－－－－－%@",device_.identifierForVendor.UUIDString);
+  NSLog(@"电池充电水平：%f",[UIDevice currentDevice].batteryLevel*100);
+  
+  //NSProcessInfo
+  NSProcessInfo *info = [NSProcessInfo processInfo];
+  NSLog(@"processName－－－－－%@",info.processName);
+  NSLog(@"processorCount－－－－－%d",info.processorCount);
+  NSLog(@"processIdentifier－－－－－%d",info.processIdentifier);
+  NSLog(@"arguments－－－－－\n%@",info.arguments);
+  NSLog(@"environment－－－－－\n%@",info.environment);
+  NSLog(@"patchVersion－－－－－%ld",(long)info.operatingSystemVersion.patchVersion);
+  NSLog(@"globallyUniqueString－－－－－%@",info.globallyUniqueString);
+  NSLog(@"operatingSystemVersionString－－－－－%@",info.operatingSystemVersionString);
+  NSLog(@"physicalMemory－－－－－%llu",info.physicalMemory/(1024*1024));
+  NSLog(@"systemUptime－－－－－%f",info.systemUptime);
+  NSLog(@"activeProcessorCount－－－－－%lu",(unsigned long)info.activeProcessorCount);
+
 }
 
 /**

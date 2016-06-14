@@ -1800,20 +1800,20 @@
 			children = (
 				1465CBEA1D0D4DCF00F79436 /* AutoLayout */,
 				1465CBEB1D0D4DCF00F79436 /* NSLayoutConstraint.h */,
-				1465CBEC1D0D4DCF00F79436 /* TabBar */,
 				1465CBFB1D0D4DCF00F79436 /* UIAppearance.h */,
 				1465CBFC1D0D4DCF00F79436 /* UIBarButtonItem.h */,
 				1465CBFD1D0D4DCF00F79436 /* UIBarItem.h */,
 				1465CBFE1D0D4DCF00F79436 /* UINavigationBar.h */,
-				1465CBFF1D0D4DCF00F79436 /* UINavigationController */,
 				1465CC0F1D0D4DCF00F79436 /* UINavigationController.h */,
 				1465CC101D0D4DCF00F79436 /* UITabBar.h */,
 				1465CC111D0D4DCF00F79436 /* UITabBarController.h */,
 				1465CC121D0D4DCF00F79436 /* UITabBarItem.h */,
-				1465CC131D0D4DCF00F79436 /* UIView */,
 				1465CC161D0D4DCF00F79436 /* UIView.h */,
-				1465CC171D0D4DCF00F79436 /* UIViewController */,
 				1465CC281D0D4DCF00F79436 /* UIViewController.h */,
+				1465CBEC1D0D4DCF00F79436 /* TabBar */,
+				1465CBFF1D0D4DCF00F79436 /* UINavigationController */,
+				1465CC131D0D4DCF00F79436 /* UIView */,
+				1465CC171D0D4DCF00F79436 /* UIViewController */,
 			);
 			path = "UI框架";
 			sourceTree = "<group>";
@@ -2365,6 +2365,8 @@
 		1465CD4A1D0D519800F79436 /* 触控 */ = {
 			isa = PBXGroup;
 			children = (
+				1465CD551D0D519800F79436 /* MD_Touch_VC.h */,
+				1465CD561D0D519800F79436 /* MD_Touch_VC.m */,
 				1465CD4B1D0D519800F79436 /* MD_Touch_CustomView.h */,
 				1465CD4C1D0D519800F79436 /* MD_Touch_CustomView.m */,
 				1465CD4D1D0D519800F79436 /* MD_Touch_CustomView1.h */,
@@ -2375,8 +2377,6 @@
 				1465CD521D0D519800F79436 /* MD_Touch_Line.m */,
 				1465CD531D0D519800F79436 /* MD_Touch_Point.h */,
 				1465CD541D0D519800F79436 /* MD_Touch_Point.m */,
-				1465CD551D0D519800F79436 /* MD_Touch_VC.h */,
-				1465CD561D0D519800F79436 /* MD_Touch_VC.m */,
 			);
 			path = "触控";
 			sourceTree = "<group>";

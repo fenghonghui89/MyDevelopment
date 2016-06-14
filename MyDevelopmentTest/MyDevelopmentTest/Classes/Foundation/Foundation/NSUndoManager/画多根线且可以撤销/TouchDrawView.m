@@ -33,10 +33,10 @@
 #pragma mark - touche
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-  [self.undoManager beginUndoGrouping];
+  [self.undoManager beginUndoGrouping];//标识一组动作的开始
   
   for (UITouch *touche in touches) {
-    
+
     CGPoint point = [touche locationInView:self];
     
     Line *line = [Line new];
@@ -44,7 +44,10 @@
     line.end = point;
     line.color = self.drawColor;
     self.currentLine = line;
+    
+    [self.undoManager setActionName:[NSString stringWithFormat:@"action %@",NSStringFromCGPoint(point)]];//设置action名称
   }
+  
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -71,8 +74,8 @@
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
-  [self.undoManager endUndoGrouping];
+  
+  [self.undoManager endUndoGrouping];//标识一组动作的结束
   [self setNeedsDisplay];
 }
 
@@ -84,7 +87,7 @@
 #pragma mark - draw
 -(void)drawRect:(CGRect)rect{
   
-  NSLog(@"%lu",(unsigned long)self.linesCompleted.count);
+//  NSLog(@"%lu",(unsigned long)self.linesCompleted.count);
   
   CGContextRef context = UIGraphicsGetCurrentContext();
   CGContextSetLineWidth(context, 1);
@@ -110,22 +113,35 @@
 }
 #pragma mark - <<<<<< customize method >>>>>>
 #pragma mark - undo
+//撤销
 -(void)undo{
   if ([self.undoManager canUndo]) {
     [self.undoManager undo];
+    NSLog(@"undo:%@",self.undoManager.undoActionName);
   }
 }
 
+//重做
 -(void)redo{
   if ([self.undoManager canRedo]) {
     [self.undoManager redo];
+    NSLog(@"redo:%@",self.undoManager.redoActionName);
+
   }
 }
 
 #pragma mark - add / remove line
 -(void)addLine:(Line *)line{
   
-  [[self.undoManager prepareWithInvocationTarget:self] removeLine:line];
+//  TouchDrawView *myself = [self.undoManager prepareWithInvocationTarget:self];
+//  [myself removeLine:line];//注册相反动作
+  
+//  [self.undoManager registerUndoWithTarget:self selector:@selector(removeLine:) object:line];
+  
+  [self.undoManager registerUndoWithTarget:self handler:^(id  _Nonnull target) {
+    [self removeLine:line];
+  }];
+  
   [self.linesCompleted addObject:line];
   [self setNeedsDisplay];
 }
@@ -133,7 +149,16 @@
 -(void)removeLine:(Line *)line{
   
   if ([self.linesCompleted containsObject:line]) {
-    [[self.undoManager prepareWithInvocationTarget:self] addLine:line];
+    
+//    TouchDrawView *myself = [self.undoManager prepareWithInvocationTarget:self];
+//    [myself addLine:line];//注册相反动作
+    
+//    [self.undoManager registerUndoWithTarget:self selector:@selector(addLine:) object:line];
+    
+    [self.undoManager registerUndoWithTarget:self handler:^(id  _Nonnull target) {
+      [self addLine:line];
+    }];
+    
     [self.linesCompleted removeObject:line];
     [self setNeedsDisplay];
   }

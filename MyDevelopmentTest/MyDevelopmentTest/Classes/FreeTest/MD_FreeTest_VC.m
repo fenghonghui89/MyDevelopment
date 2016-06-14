@@ -32,6 +32,7 @@
   
   NSString *str = @"aAc";
 
+
   //在这里添加不显示，为何
 //  MDCustomXIBView *cv = [[[NSBundle mainBundle] loadNibNamed:@"MDCustomXIBView" owner:self options:nil] lastObject];
 //  cv.frame = CGRectMake(100, 100, 50, 50);
