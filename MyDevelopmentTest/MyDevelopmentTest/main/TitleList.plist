@@ -1069,14 +1069,22 @@
 			</dict>
 			<dict>
 				<key>desc</key>
-				<string>NSURLCache</string>
+				<string>缓存</string>
 				<key>className</key>
 				<string></string>
 				<key>sub</key>
 				<array>
 					<dict>
 						<key>desc</key>
-						<string>离线缓存</string>
+						<string>RNCURLCache</string>
+						<key>className</key>
+						<string>MD_RNCURLCache_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
+						<string>NSURLCache</string>
 						<key>className</key>
 						<string>MD_UIWebViewCache_VC</string>
 						<key>sub</key>
