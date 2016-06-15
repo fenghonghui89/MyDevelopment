@@ -170,6 +170,8 @@ extension CGRect {
   
 }
 
+//oc调用以下编译会出错，因为类型名非acsii编码
+/*
 @objc(Color)
 enum Цвет: Int {
   @objc(Red)
@@ -195,6 +197,7 @@ class Белка: NSObject {
     // ...
   }
 }
+*/
 
 //MARK:oc选择器 #selector
 class MyViewController: UIViewController {

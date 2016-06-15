@@ -23,10 +23,10 @@
 
 /*
  CF_RETURNS_RETAINED or CF_RETURNS_NOT_RETAINED
- 见ViewController_WorkingWithCocoaDataTypes Core Foundataion
+ 见 ViewController_3_WorkingWithCocoaDataTypes - Core Foundataion
  */
--(CGPathRef)makeToPath CF_RETURNS_RETAINED
-{
+-(CGPathRef)makeToPath CF_RETURNS_RETAINED{
+  
   UIBezierPath* triangle = [UIBezierPath bezierPath];
   [triangle moveToPoint:CGPointZero];
   [triangle addLineToPoint:CGPointMake(self.view.frame.size.width,0)];

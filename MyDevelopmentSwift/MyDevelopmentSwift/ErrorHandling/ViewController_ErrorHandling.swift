@@ -154,6 +154,11 @@ class ViewController_ErrorHandling: UIViewController {
       return nil;
     }
   }
+  
+  //MARK:- fatalError 无条件打印日志并终止执行
+  func func_fatalError() {
+    fatalError("init(coder:) has not been implemented")
+  }
 }
 
 

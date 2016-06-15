@@ -154,7 +154,7 @@ class SuperClass{
     print("SuperClass init?:\(self.storeProperty) \(self.storeProperty1)");
   }
   
-  //required init
+  //required init 子类必须复写且也要加required
   required init(a:String,b:String,c:String){
   
   }
