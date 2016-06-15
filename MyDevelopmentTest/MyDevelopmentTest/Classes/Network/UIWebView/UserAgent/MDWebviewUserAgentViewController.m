@@ -28,14 +28,14 @@
 {
   [self.webview setDelegate:self];
   [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
-  NSLog(@"%@", [self userAgentString]);
+  NSLog(@"!!!%@", [self userAgentString]);
 }
 
 -(NSString *)userAgentString
 {
   while (self.userAgent == nil)
   {
-    NSLog(@"%@", @"in while");
+    NSLog(@"in while");
     [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
   }
   return self.userAgent;
@@ -45,7 +45,7 @@
 {
   if (webView == _webview) {
     self.userAgent = [request valueForHTTPHeaderField:@"User-Agent"];
-    // Return no, we don't care about executing an actual request.
+    NSLog(@"userAgent:%@",[request valueForHTTPHeaderField:@"User-Agent"]);
     return NO;
   }
   return YES;

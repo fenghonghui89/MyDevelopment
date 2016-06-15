@@ -218,7 +218,10 @@ implementors.
     NSRequestConcreteImplementation.
     @param request A request to inspect.
     @result YES if the protocol can handle the given request, NO if not.
-*/
+ 
+ 这个方法主要是说明你是否打算处理对应的request，如果不打算处理，返回NO，URL Loading System会使用系统默认的行为去处理；如果打算处理，返回YES，然后你就需要处理该请求的所有东西，包括获取请求数据并返回给 URL Loading System
+
+ */
 + (BOOL)canInitWithRequest:(NSURLRequest *)request;
 
 /*! 
@@ -238,7 +241,10 @@ implementors.
     NSRequestConcreteImplementation.
     @param request A request to make canonical.
     @result The canonical form of the given request. 
-*/
+ 
+ 这个方法主要是说明你是否打算处理对应的request，如果不打算处理，返回NO，URL Loading System会使用系统默认的行为去处理；如果打算处理，返回YES，然后你就需要处理该请求的所有东西，包括获取请求数据并返回给 URL Loading System
+ 
+ */
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request;
 
 /*!
@@ -249,6 +255,8 @@ implementors.
     protocol declares them equivalent after performing 
     implementation-specific checks.
     @result YES if the two requests are cache-equivalent, NO otherwise.
+ 
+ 主要判断两个request是否相同，如果相同的话可以使用缓存数据，通常只需要调用父类的实现。
 */
 + (BOOL)requestIsCacheEquivalent:(NSURLRequest *)a toRequest:(NSURLRequest *)b;
 

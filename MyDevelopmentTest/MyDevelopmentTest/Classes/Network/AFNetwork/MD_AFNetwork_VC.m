@@ -84,7 +84,7 @@
       NSLog(@"error response:%@",response);
     }else{
       //原来的xml
-      NSLog(@"success response:%@",response);
+      NSLog(@"success response:\n%@\n httpHeaderFields:\n%@\n",response,request.allHTTPHeaderFields);
       
       NSString *xmlStr = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
       NSLog(@"原始xml:\n%@", xmlStr);

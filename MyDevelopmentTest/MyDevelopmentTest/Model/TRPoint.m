@@ -7,7 +7,8 @@
 //
 
 #import "TRPoint.h"
-
+#import "MDTool.h"
+#import "MDDefine.h"
 @implementation TRPoint
 
 //-(NSString*)description
@@ -15,6 +16,23 @@
 //    return [NSString stringWithFormat:@"x:%d,y:%d",self.x,self.y];
 //}
 
+
+#pragma mark - ************** override **************
+#pragma mark - < runtime > -
++(void)initialize{
+  
+  DRLog(@"%@ initialize",[self class]);
+}
+
+-(instancetype)init{
+  
+  self = [super init];
+  if (self) {
+    DRLog(@"%@ init",[self class]);
+  }
+  return self;
+}
+#pragma mark - < NSSet 唯一性 >
 -(NSUInteger)hash//1.重写hash方法，使对象的hash值相同
 {
     NSLog(@"执行TRPoint的hash方法%@",self);
