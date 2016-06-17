@@ -43,6 +43,7 @@ WKScriptMessageHandler
   WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
   [config.userContentController addUserScript:script];
   [config.userContentController addScriptMessageHandler:self name:@"observe"];
+
   
   WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, viewW, viewH) configuration:config];
   webView.navigationDelegate = self;
@@ -59,21 +60,51 @@ WKScriptMessageHandler
                                                                   cacheTime:0];
   [CustomURLCache setSharedURLCache:urlCache];//缓存无效
   
+  WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+//  config.websiteDataStore = [WKWebsiteDataStore defaultDataStore];
+//  WKWebsiteDataStore *dataStore = [WKWebsiteDataStore defaultDataStore];
+//  
+//  [dataStore fetchDataRecordsOfTypes:[NSSet setWithObject:WKWebsiteDataTypeCookies] completionHandler:^(NSArray<WKWebsiteDataRecord *> * _Nonnull result) {
+//    NSLog(@"%@",result);
+//  }];
+  
+//  WKWebView * webView = /*set up your webView*/
+//  NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://example.com/index.html"]];
+//  [request addValue:@"TeskCookieKey1=TeskCookieValue1;TeskCookieKey2=TeskCookieValue2;" forHTTPHeaderField:@"Cookie"];
+//  // use stringWithFormat: in the above line to inject your values programmatically
+//  [webView loadRequest:request];
+  
   WKWebView *webView = [[WKWebView alloc] initWithFrame:self.webViewBgView.bounds];
   webView.navigationDelegate = self;
   [self.webViewBgView addSubview:webView];
-  [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://tpages.cn"]];
+  [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://tpages.cn"]]];
+  self.webView = webView;
   
 }
 #pragma mark - < action >
+
+- (IBAction)btnTap:(id)sender {
+  
+  WKWebsiteDataStore *dataStore = [WKWebsiteDataStore defaultDataStore];
+  
+  [dataStore fetchDataRecordsOfTypes:[NSSet setWithObject:WKWebsiteDataTypeCookies] completionHandler:^(NSArray<WKWebsiteDataRecord *> * _Nonnull result) {
+    NSLog(@"%@",result);
+  }];
+}
+
+- (IBAction)btnTap1:(id)sender {
+  
+  [self.webView  loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mall.tpages.cn"]]];
+}
 #pragma mark - < callback >
 #pragma mark WKNavigationDelegate
-//相当于shouldStart
+//didStart
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
   NSLog(@"didStartProvisionalNavigation");
 }
 
-//相当于didStart
+//也就是在页面内容加载到达mainFrame时会回调此API。如果我们要在mainFrame中注入什么JS，也可以在此处添加
 -(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
   NSLog(@"didCommitNavigation");
 }
@@ -81,7 +112,14 @@ WKScriptMessageHandler
 //finish
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
   NSLog(@"didFinishNavigation");
-  
+//  NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
+//  NSArray *cookies =[NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:response.URL];
+//  
+//  for (NSHTTPCookie *cookie in cookies) {
+//    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+//  }
+//  
+//  decisionHandler(WKNavigationResponsePolicyAllow);
 
 }
 
@@ -90,7 +128,7 @@ WKScriptMessageHandler
   NSLog(@"didFailNavigation");
 }
 
-//
+//是否允许跳转 shouldStart
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
   
   NSLog(@"decidePolicyForNavigationAction");
