@@ -12,6 +12,9 @@
 #import "MDTool.h"
 @interface MDAppDelegate ()
 
+@property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier backgroundTaskIdentifier;
+@property (nonatomic, strong) NSTimer *myTimer;
+
 @end
 @implementation MDAppDelegate
 
@@ -52,6 +55,36 @@
   [noti setRepeatInterval:NSCalendarUnitMinute];
 }
 
+#pragma mark < 后台延时 >
+- (void) endBackgroundTask{
+  
+  dispatch_queue_t mainQueue = dispatch_get_main_queue();
+  
+  dispatch_async(mainQueue, ^(void) {
+    
+    [self.myTimer invalidate];
+    
+    //标记任务停止
+    [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTaskIdentifier];
+    
+    //销毁后台任务标识符
+    self.backgroundTaskIdentifier = UIBackgroundTaskInvalid;
+    
+  });
+}
+
+// 模拟的一个 Long-Running Task 方法
+- (void) timerMethod:(NSTimer *)paramSender{
+  
+  // backgroundTimeRemaining 属性包含了程序留给的我们的时间
+  NSTimeInterval backgroundTimeRemaining = [[UIApplication sharedApplication] backgroundTimeRemaining];
+  if (backgroundTimeRemaining == DBL_MAX){
+    NSLog(@"Background Time Remaining = Undetermined");
+  } else {
+    NSLog(@"Background Time Remaining = %.02f Seconds", backgroundTimeRemaining);
+  }
+}
+
 #pragma mark - <<<<< callback >>>>>
 #pragma mark - < UIApplicationDelegate >
 #pragma mark app lifecycle
@@ -82,8 +115,16 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-  // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
+#pragma mark 后台延时
+//  self.backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^(void) {
+//    NSLog(@"停止后台任务");
+//    [self endBackgroundTask];
+//  }];
+//  
+//  //模拟一个Long-Running Task
+//  self.myTimer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerMethod:) userInfo:nil repeats:YES];
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -119,6 +160,7 @@
 
 #pragma mark local noti
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+  
   //点击通知返回应用时会调用该方法
   //接收传递的参数
   NSString* name = [notification.userInfo objectForKey:@"name"];
