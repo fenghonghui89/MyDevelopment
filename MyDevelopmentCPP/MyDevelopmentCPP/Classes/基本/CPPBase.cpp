@@ -1,0 +1,25 @@
+//
+//  CPPBase.cpp
+//  MyDevelopmentCPP
+//
+//  Created by 冯鸿辉 on 16/6/21.
+//  Copyright © 2016年 MD. All rights reserved.
+//
+
+#include "CPPBase.hpp"
+
+#pragma mark c++中的bool类型 运算符重载
+%:include <iostream>
+
+using namespace std;
+  
+void test_overload()<%
+
+  bool flag;
+  flag = false;
+  flag = "abc";
+
+  if(flag){
+    cout<<"flag is true "<<flag<<endl;
+    %>
+}
