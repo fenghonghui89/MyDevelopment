@@ -18,7 +18,7 @@
 
   [super viewDidLoad];
   
-  namespace_test3();
+
 }
 
 

@@ -12,6 +12,17 @@
 
 using namespace std;
 
+void namespace_test();
+void namespace_test1();
+void namespace_test2();
+void namespace_test3();
+
+#pragma mark - ********** method ***********
+void test_root_namespace(){
+
+  namespace_test();
+}
+
 #pragma mark 不使用命名空间
 void namespace_test(){
 

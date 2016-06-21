@@ -15,5 +15,6 @@
 
   [super viewDidLoad];
   
+  test_root_base();
 }
 @end

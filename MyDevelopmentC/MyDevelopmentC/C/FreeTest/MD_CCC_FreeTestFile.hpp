@@ -10,5 +10,5 @@
 #define MD_CCC_FreeTestFile_hpp
 
 #include <stdio.h>
-
+void test();
 #endif /* MD_CCC_FreeTestFile_hpp */

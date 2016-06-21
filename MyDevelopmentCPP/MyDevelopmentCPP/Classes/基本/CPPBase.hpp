@@ -10,5 +10,5 @@
 #define CPPBase_hpp
 
 #include <stdio.h>
-
+void test_root_base();
 #endif /* CPPBase_hpp */

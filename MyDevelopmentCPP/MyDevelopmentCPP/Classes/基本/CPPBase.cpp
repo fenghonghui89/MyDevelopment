@@ -8,6 +8,22 @@
 
 #include "CPPBase.hpp"
 
+void test_overload();
+void test_string();
+
+#pragma mark - ************ method **************
+void test_root_base(){
+
+  test_overload();
+}
+
+#pragma mark 字符串?
+void test_string(){
+
+  char *str = new char(20);
+  
+}
+
 #pragma mark c++中的bool类型 运算符重载
 %:include <iostream>
 

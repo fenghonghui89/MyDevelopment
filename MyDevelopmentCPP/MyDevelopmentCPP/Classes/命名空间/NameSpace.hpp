@@ -10,8 +10,5 @@
 #define NameSpace_hpp
 
 #include <stdio.h>
-void namespace_test();
-void namespace_test1();
-void namespace_test2();
-void namespace_test3();
+void test_root_namespace();
 #endif /* NameSpace_hpp */

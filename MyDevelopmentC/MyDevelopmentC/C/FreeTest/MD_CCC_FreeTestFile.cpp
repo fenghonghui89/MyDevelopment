@@ -9,21 +9,27 @@
 #include "MD_CCC_FreeTestFile.hpp"
 
 #include<iostream>
-#include<functional>
-#include<numeric>
-#include<algorithm>
+//#include<functional>
+//#include<numeric>
+//#include<algorithm>
 
 using namespace std;
 
-template <typename T>
-void count(T *a,size_t k,T &avg,size_t &num)
-{
-  accumulate(a,a + k,avg);
-  avg /=k;
-  num = count_if(a,a + k,bind2nd(less<T>(),avg));
+//template <typename T>
+//void count(T *a,size_t k,T &avg,size_t &num)
+//{
+//  accumulate(a,a + k,avg);
+//  avg /=k;
+//  num = count_if(a,a + k,bind2nd(less<T>(),avg));
+//}
+
+void test(){
+
+  char *s1 = new char(20);
+  s1 = "name~";
+  cout<<s1<<endl;
+  
 }
-
-
 
 
 
