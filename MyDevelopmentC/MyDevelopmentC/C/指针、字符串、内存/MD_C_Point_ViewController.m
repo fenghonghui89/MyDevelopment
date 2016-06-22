@@ -16,7 +16,7 @@
 {
     [super viewDidLoad];
 //    cPointTest();
-//    cStringTest();
-    cMemoryTest();
+    cStringTest();
+//    cMemoryTest();
 }
 @end

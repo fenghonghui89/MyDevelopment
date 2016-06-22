@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		141063F91CFC099F005E7DED /* MD_C_FreeTestVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 141063F81CFC099F005E7DED /* MD_C_FreeTestVC.mm */; };
-		141063FC1CFC0A03005E7DED /* MD_CCC_FreeTestFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 141063FA1CFC0A03005E7DED /* MD_CCC_FreeTestFile.cpp */; };
+		141063F91CFC099F005E7DED /* MD_C_FreeTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 141063F81CFC099F005E7DED /* MD_C_FreeTestVC.m */; };
+		14113ADC1D1A434900E03E9B /* MD_C_FreeTestFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14113ADA1D1A434900E03E9B /* MD_C_FreeTestFile.c */; };
 		143EA5251B0F16D9007B2D02 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 143EA50F1B0F16D9007B2D02 /* back_icon.png */; };
 		143EA5261B0F16D9007B2D02 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5111B0F16D9007B2D02 /* MDAppDelegate.m */; };
 		143EA5271B0F16D9007B2D02 /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5131B0F16D9007B2D02 /* MDBaseViewController.m */; };
@@ -56,9 +56,9 @@
 
 /* Begin PBXFileReference section */
 		141063F71CFC099F005E7DED /* MD_C_FreeTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_FreeTestVC.h; sourceTree = "<group>"; };
-		141063F81CFC099F005E7DED /* MD_C_FreeTestVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MD_C_FreeTestVC.mm; sourceTree = "<group>"; };
-		141063FA1CFC0A03005E7DED /* MD_CCC_FreeTestFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MD_CCC_FreeTestFile.cpp; sourceTree = "<group>"; };
-		141063FB1CFC0A03005E7DED /* MD_CCC_FreeTestFile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MD_CCC_FreeTestFile.hpp; sourceTree = "<group>"; };
+		141063F81CFC099F005E7DED /* MD_C_FreeTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_FreeTestVC.m; sourceTree = "<group>"; };
+		14113ADA1D1A434900E03E9B /* MD_C_FreeTestFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_FreeTestFile.c; sourceTree = "<group>"; };
+		14113ADB1D1A434900E03E9B /* MD_C_FreeTestFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_FreeTestFile.h; sourceTree = "<group>"; };
 		143EA4E51B0F168A007B2D02 /* MyDevelopmentC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		143EA50F1B0F16D9007B2D02 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		143EA5101B0F16D9007B2D02 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				141063F71CFC099F005E7DED /* MD_C_FreeTestVC.h */,
-				141063F81CFC099F005E7DED /* MD_C_FreeTestVC.mm */,
-				141063FA1CFC0A03005E7DED /* MD_CCC_FreeTestFile.cpp */,
-				141063FB1CFC0A03005E7DED /* MD_CCC_FreeTestFile.hpp */,
+				141063F81CFC099F005E7DED /* MD_C_FreeTestVC.m */,
+				14113ADA1D1A434900E03E9B /* MD_C_FreeTestFile.c */,
+				14113ADB1D1A434900E03E9B /* MD_C_FreeTestFile.h */,
 			);
 			path = FreeTest;
 			sourceTree = "<group>";
@@ -468,15 +468,15 @@
 				143EA57A1B0F2448007B2D02 /* MD_C_Keyword_ViewController.m in Sources */,
 				14720F711B1594C700773E5C /* MD_C_Memory_CFile.c in Sources */,
 				143EA58E1B0F2448007B2D02 /* MD_C_Union_CFile.c in Sources */,
-				141063FC1CFC0A03005E7DED /* MD_CCC_FreeTestFile.cpp in Sources */,
 				143EA58F1B0F2448007B2D02 /* MD_C1_ViewController.m in Sources */,
 				143EA5261B0F16D9007B2D02 /* MDAppDelegate.m in Sources */,
-				141063F91CFC099F005E7DED /* MD_C_FreeTestVC.mm in Sources */,
+				141063F91CFC099F005E7DED /* MD_C_FreeTestVC.m in Sources */,
 				143EA5831B0F2448007B2D02 /* MD_C_Array_ViewController.m in Sources */,
 				143EA58B1B0F2448007B2D02 /* MD_C_Enum_CFile.c in Sources */,
 				143EA57D1B0F2448007B2D02 /* MD_C_ValueSize_ViewController.m in Sources */,
 				143EA5791B0F2448007B2D02 /* MD_C_Keyword_CFile.c in Sources */,
 				14720F721B1594C700773E5C /* MD_C_Point_CFile.c in Sources */,
+				14113ADC1D1A434900E03E9B /* MD_C_FreeTestFile.c in Sources */,
 				143EA58D1B0F2448007B2D02 /* MD_C_Type_ViewController.m in Sources */,
 				143EA57C1B0F2448007B2D02 /* MD_C_Function_ViewController.m in Sources */,
 				14720F741B1594C700773E5C /* MD_C_String_CFile.c in Sources */,

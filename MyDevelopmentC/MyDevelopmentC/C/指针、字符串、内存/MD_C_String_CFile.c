@@ -13,12 +13,13 @@
 void cStringTest0();
 void cStringTest1();
 void cStringTest2();
-void GetMemory(char *p, int num);
-void GetMemory2(char **p, int num);
+void test_string_array();
+void GetMemoryValue(char *p, int num);
+void GetMemoryAddress(char **p, int num);
 
 void cStringTest()
 {
-  cStringTest1();
+  test_string_array();
 }
 
 
@@ -27,7 +28,7 @@ void cStringTest()
 #pragma mark - < 指针数组 >
 void cStringTest0()
 {
-  char* str[3]={"关羽","张飞","赵云"};
+  char *str[3]={"关羽","张飞","赵云"};
   for (int i=0; i<3; i++) {
     printf("str[%d]:%s\n",i,str[i]);
     printf("str[%d]:%p\n",i,str[i]);
@@ -101,6 +102,19 @@ void test_string_in(){
   printf("str4:%s\n",str4);
 }
 
+#pragma mark 字符串数组
+void test_string_array(){
+
+  char *s[] = {"Aa1","Bb2","Cc3"};
+  char **p = s;
+  
+  for (int i = 0; i<sizeof(s)/sizeof(s[0]); i++) {
+    printf("%s\n",s[i]);
+  }
+  
+  printf("%s",*(p+1)+1);//b2
+}
+
 #pragma mark - < 字符串函数库（要先#include <string.h>）>
 
 #pragma mark 常用
@@ -140,8 +154,8 @@ void test_string_fun(){
   char *stra = "abc";
   char *strb = "def";
   
-  GetMemory(stra, 100);//值传递
-  GetMemory2(&stra, 100);//地址传递
+  GetMemoryValue(stra, 100);//值传递
+  GetMemoryAddress(&stra, 100);//地址传递
   
   stpcpy(stra, strb);
   free(stra);

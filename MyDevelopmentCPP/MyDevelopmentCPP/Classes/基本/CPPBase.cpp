@@ -21,7 +21,14 @@ void test_root_base(){
 void test_string(){
 
   char *str = new char(20);
-  
+  char *p = "str";
+}
+
+#pragma mark 引用?
+void test_yinyong(){
+
+  int a = 10;
+  int &b = a;
 }
 
 #pragma mark c++中的bool类型 运算符重载

@@ -7,23 +7,26 @@
 //
 
 #import "MD_FreeTest_VC.h"
-
+#import "CPPFreeTest.hpp"
 @interface MD_FreeTest_VC ()<UIGestureRecognizerDelegate>
 
 
 @end
 
 @implementation MD_FreeTest_VC
+
 #pragma mark - < vc lifecycle > -
 - (void)viewDidLoad {
+  
   [super viewDidLoad];
- 
+  
+  test_root_freetest();
 }
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
   
-
+  
 }
 
 #pragma mark - < method > -

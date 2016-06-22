@@ -25,6 +25,8 @@ void cfunction(void)
     testb();
 }
 
+
+
 #pragma mark - 函数原型
 
 void cfunction1();//去掉函数体、形参，就是函数的原型。去掉参数则代表可以接受任意参数。

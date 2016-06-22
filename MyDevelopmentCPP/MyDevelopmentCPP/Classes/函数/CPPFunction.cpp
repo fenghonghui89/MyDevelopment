@@ -53,3 +53,5 @@ void test_defuleParama(){
   cout<<add()<<endl;//6
   cout<<add(100)<<endl;//105
 }
+
+

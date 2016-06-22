@@ -7,14 +7,14 @@
 //
 
 #import "MD_C_FreeTestVC.h"
-#import "MD_CCC_FreeTestFile.hpp"
+#import "MD_C_FreeTestFile.h"
 @implementation MD_C_FreeTestVC
 
 -(void)viewDidLoad{
 
   [super viewDidLoad];
   
-  test();
+  test_root_freetest();
 }
   
 @end

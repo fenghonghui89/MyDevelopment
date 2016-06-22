@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14113AD91D1A34FD00E03E9B /* CPPFreeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14113AD71D1A34FD00E03E9B /* CPPFreeTest.cpp */; };
 		14F8BBC81D18D4550015B9B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F8BBC11D18D4550015B9B2 /* Assets.xcassets */; };
 		14F8BBC91D18D4550015B9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F8BBC21D18D4550015B9B2 /* LaunchScreen.storyboard */; };
 		14F8BBCA1D18D4550015B9B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F8BBC41D18D4550015B9B2 /* Main.storyboard */; };
@@ -29,7 +30,7 @@
 		14F8BC121D18D57F0015B9B2 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8BC031D18D57F0015B9B2 /* NSString+URLEncoding.m */; };
 		14F8BC161D18D57F0015B9B2 /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8BC0B1D18D57F0015B9B2 /* UIView+MDCategory.m */; };
 		14F8BC191D18D7590015B9B2 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8BC181D18D7590015B9B2 /* NSString+Category.m */; };
-		14F8BC1F1D18D8330015B9B2 /* MD_FreeTest_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8BC1D1D18D8330015B9B2 /* MD_FreeTest_VC.m */; };
+		14F8BC1F1D18D8330015B9B2 /* MD_FreeTest_VC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14F8BC1D1D18D8330015B9B2 /* MD_FreeTest_VC.mm */; };
 		14F8BC201D18D8330015B9B2 /* MD_FreeTest_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F8BC1E1D18D8330015B9B2 /* MD_FreeTest_VC.xib */; };
 		14F8BC301D191D2C0015B9B2 /* MD_NameSpace_VC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14F8BC2C1D191D2C0015B9B2 /* MD_NameSpace_VC.mm */; };
 		14F8BC311D191D2C0015B9B2 /* NameSpace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F8BC2D1D191D2C0015B9B2 /* NameSpace.cpp */; };
@@ -42,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14113AD71D1A34FD00E03E9B /* CPPFreeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPPFreeTest.cpp; sourceTree = "<group>"; };
+		14113AD81D1A34FD00E03E9B /* CPPFreeTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CPPFreeTest.hpp; sourceTree = "<group>"; };
 		14F8BBA61D18D3DD0015B9B2 /* MyDevelopmentCPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentCPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F8BBC11D18D4550015B9B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14F8BBC31D18D4550015B9B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +81,7 @@
 		14F8BC171D18D7590015B9B2 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		14F8BC181D18D7590015B9B2 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		14F8BC1C1D18D8330015B9B2 /* MD_FreeTest_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_FreeTest_VC.h; sourceTree = "<group>"; };
-		14F8BC1D1D18D8330015B9B2 /* MD_FreeTest_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_FreeTest_VC.m; sourceTree = "<group>"; };
+		14F8BC1D1D18D8330015B9B2 /* MD_FreeTest_VC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MD_FreeTest_VC.mm; sourceTree = "<group>"; };
 		14F8BC1E1D18D8330015B9B2 /* MD_FreeTest_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_FreeTest_VC.xib; sourceTree = "<group>"; };
 		14F8BC2B1D191D2C0015B9B2 /* MD_NameSpace_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NameSpace_VC.h; sourceTree = "<group>"; };
 		14F8BC2C1D191D2C0015B9B2 /* MD_NameSpace_VC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MD_NameSpace_VC.mm; sourceTree = "<group>"; };
@@ -155,11 +158,11 @@
 		14F8BBCD1D18D4900015B9B2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				14F8BC1B1D18D8330015B9B2 /* FreeTest */,
 				14F8BC291D191D2C0015B9B2 /* 基本 */,
 				14F8BC281D191D2C0015B9B2 /* 函数 */,
 				14F8BC2A1D191D2C0015B9B2 /* 命名空间 */,
 				14F8BC2F1D191D2C0015B9B2 /* struct_union_enum */,
-				14F8BC1B1D18D8330015B9B2 /* FreeTest */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -225,8 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				14F8BC1C1D18D8330015B9B2 /* MD_FreeTest_VC.h */,
-				14F8BC1D1D18D8330015B9B2 /* MD_FreeTest_VC.m */,
+				14F8BC1D1D18D8330015B9B2 /* MD_FreeTest_VC.mm */,
 				14F8BC1E1D18D8330015B9B2 /* MD_FreeTest_VC.xib */,
+				14113AD71D1A34FD00E03E9B /* CPPFreeTest.cpp */,
+				14113AD81D1A34FD00E03E9B /* CPPFreeTest.hpp */,
 			);
 			path = FreeTest;
 			sourceTree = "<group>";
@@ -351,9 +356,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F8BC1F1D18D8330015B9B2 /* MD_FreeTest_VC.m in Sources */,
+				14F8BC1F1D18D8330015B9B2 /* MD_FreeTest_VC.mm in Sources */,
 				14F8BC3A1D191DF70015B9B2 /* MD_StructUnionEnum_VC.mm in Sources */,
 				14F8BBEA1D18D4900015B9B2 /* MDClassesViewController.m in Sources */,
+				14113AD91D1A34FD00E03E9B /* CPPFreeTest.cpp in Sources */,
 				14F8BBEE1D18D4900015B9B2 /* DGCDataParser.m in Sources */,
 				14F8BBCC1D18D4550015B9B2 /* main.m in Sources */,
 				14F8BBEF1D18D4900015B9B2 /* IPAddress.c in Sources */,
