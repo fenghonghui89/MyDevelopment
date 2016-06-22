@@ -10,6 +10,5 @@
 #define CPPFunction_hpp
 
 #include <stdio.h>
-void test_func();
-void test_defuleParama();
+void test_cppfun_root();
 #endif /* CPPFunction_hpp */

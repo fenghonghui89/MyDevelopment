@@ -11,6 +11,7 @@
 		14113AF51D1A71E400E03E9B /* test1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14113AF31D1A71E400E03E9B /* test1.cpp */; };
 		14113AF81D1A72B100E03E9B /* test2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14113AF61D1A72B100E03E9B /* test2.cpp */; };
 		14113AFB1D1A739000E03E9B /* test3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14113AF91D1A739000E03E9B /* test3.cpp */; };
+		14113AFE1D1A77ED00E03E9B /* test4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14113AFC1D1A77ED00E03E9B /* test4.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		14113AF71D1A72B100E03E9B /* test2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = test2.hpp; sourceTree = "<group>"; };
 		14113AF91D1A739000E03E9B /* test3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test3.cpp; sourceTree = "<group>"; };
 		14113AFA1D1A739000E03E9B /* test3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = test3.hpp; sourceTree = "<group>"; };
+		14113AFC1D1A77ED00E03E9B /* test4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test4.cpp; sourceTree = "<group>"; };
+		14113AFD1D1A77ED00E03E9B /* test4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = test4.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				14113AF71D1A72B100E03E9B /* test2.hpp */,
 				14113AF91D1A739000E03E9B /* test3.cpp */,
 				14113AFA1D1A739000E03E9B /* test3.hpp */,
+				14113AFC1D1A77ED00E03E9B /* test4.cpp */,
+				14113AFD1D1A77ED00E03E9B /* test4.hpp */,
 			);
 			path = cmtest;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14113AFE1D1A77ED00E03E9B /* test4.cpp in Sources */,
 				14113AEA1D1A6DCA00E03E9B /* main.mm in Sources */,
 				14113AFB1D1A739000E03E9B /* test3.cpp in Sources */,
 				14113AF51D1A71E400E03E9B /* test1.cpp in Sources */,
@@ -257,6 +263,7 @@
 				14113AEF1D1A6DCA00E03E9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -36,13 +36,6 @@
 		143EA57D1B0F2448007B2D02 /* MD_C_ValueSize_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA54F1B0F2448007B2D02 /* MD_C_ValueSize_ViewController.m */; };
 		143EA57E1B0F2448007B2D02 /* MDCDefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5521B0F2448007B2D02 /* MDCDefineViewController.m */; };
 		143EA5831B0F2448007B2D02 /* MD_C_Array_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA55E1B0F2448007B2D02 /* MD_C_Array_ViewController.m */; };
-		143EA5841B0F2448007B2D02 /* ASC.png in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5601B0F2448007B2D02 /* ASC.png */; };
-		143EA5851B0F2448007B2D02 /* 函数.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5611B0F2448007B2D02 /* 函数.rtf */; };
-		143EA5861B0F2448007B2D02 /* 基本数据类型及取值范围.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5621B0F2448007B2D02 /* 基本数据类型及取值范围.rtf */; };
-		143EA5871B0F2448007B2D02 /* 指针.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5631B0F2448007B2D02 /* 指针.rtf */; };
-		143EA5881B0F2448007B2D02 /* 数组.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5641B0F2448007B2D02 /* 数组.rtf */; };
-		143EA5891B0F2448007B2D02 /* 结构体、联合、枚举、大型软件开发.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5651B0F2448007B2D02 /* 结构体、联合、枚举、大型软件开发.rtf */; };
-		143EA58A1B0F2448007B2D02 /* 运算符.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 143EA5661B0F2448007B2D02 /* 运算符.rtf */; };
 		143EA58B1B0F2448007B2D02 /* MD_C_Enum_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 143EA5681B0F2448007B2D02 /* MD_C_Enum_CFile.c */; };
 		143EA58C1B0F2448007B2D02 /* MD_C_Struct_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 143EA56A1B0F2448007B2D02 /* MD_C_Struct_CFile.c */; };
 		143EA58D1B0F2448007B2D02 /* MD_C_Type_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143EA56D1B0F2448007B2D02 /* MD_C_Type_ViewController.m */; };
@@ -105,13 +98,6 @@
 		143EA5521B0F2448007B2D02 /* MDCDefineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCDefineViewController.m; sourceTree = "<group>"; };
 		143EA55D1B0F2448007B2D02 /* MD_C_Array_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Array_ViewController.h; sourceTree = "<group>"; };
 		143EA55E1B0F2448007B2D02 /* MD_C_Array_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_C_Array_ViewController.m; sourceTree = "<group>"; };
-		143EA5601B0F2448007B2D02 /* ASC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ASC.png; sourceTree = "<group>"; };
-		143EA5611B0F2448007B2D02 /* 函数.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "函数.rtf"; sourceTree = "<group>"; };
-		143EA5621B0F2448007B2D02 /* 基本数据类型及取值范围.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "基本数据类型及取值范围.rtf"; sourceTree = "<group>"; };
-		143EA5631B0F2448007B2D02 /* 指针.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "指针.rtf"; sourceTree = "<group>"; };
-		143EA5641B0F2448007B2D02 /* 数组.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "数组.rtf"; sourceTree = "<group>"; };
-		143EA5651B0F2448007B2D02 /* 结构体、联合、枚举、大型软件开发.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "结构体、联合、枚举、大型软件开发.rtf"; sourceTree = "<group>"; };
-		143EA5661B0F2448007B2D02 /* 运算符.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "运算符.rtf"; sourceTree = "<group>"; };
 		143EA5681B0F2448007B2D02 /* MD_C_Enum_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Enum_CFile.c; sourceTree = "<group>"; };
 		143EA5691B0F2448007B2D02 /* MD_C_Enum_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Enum_CFile.h; sourceTree = "<group>"; };
 		143EA56A1B0F2448007B2D02 /* MD_C_Struct_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Struct_CFile.c; sourceTree = "<group>"; };
@@ -224,7 +210,6 @@
 				143EA54D1B0F2448007B2D02 /* 基本变量类型及取值范围 */,
 				143EA5501B0F2448007B2D02 /* 宏定义 */,
 				143EA55C1B0F2448007B2D02 /* 数组 */,
-				143EA55F1B0F2448007B2D02 /* 笔记与资料 */,
 				143EA5671B0F2448007B2D02 /* 结构体、联合、枚举 */,
 				143EA5701B0F2448007B2D02 /* 转义字符、输入输出、运算符 */,
 			);
@@ -313,20 +298,6 @@
 				143EA55E1B0F2448007B2D02 /* MD_C_Array_ViewController.m */,
 			);
 			path = "数组";
-			sourceTree = "<group>";
-		};
-		143EA55F1B0F2448007B2D02 /* 笔记与资料 */ = {
-			isa = PBXGroup;
-			children = (
-				143EA5601B0F2448007B2D02 /* ASC.png */,
-				143EA5611B0F2448007B2D02 /* 函数.rtf */,
-				143EA5621B0F2448007B2D02 /* 基本数据类型及取值范围.rtf */,
-				143EA5631B0F2448007B2D02 /* 指针.rtf */,
-				143EA5641B0F2448007B2D02 /* 数组.rtf */,
-				143EA5651B0F2448007B2D02 /* 结构体、联合、枚举、大型软件开发.rtf */,
-				143EA5661B0F2448007B2D02 /* 运算符.rtf */,
-			);
-			path = "笔记与资料";
 			sourceTree = "<group>";
 		};
 		143EA5671B0F2448007B2D02 /* 结构体、联合、枚举 */ = {
@@ -425,19 +396,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				143EA5881B0F2448007B2D02 /* 数组.rtf in Resources */,
-				143EA5841B0F2448007B2D02 /* ASC.png in Resources */,
 				143EA5311B0F16D9007B2D02 /* Info.plist in Resources */,
-				143EA5891B0F2448007B2D02 /* 结构体、联合、枚举、大型软件开发.rtf in Resources */,
 				143EA52E1B0F16D9007B2D02 /* LaunchScreen.xib in Resources */,
-				143EA5871B0F2448007B2D02 /* 指针.rtf in Resources */,
 				143EA5251B0F16D9007B2D02 /* back_icon.png in Resources */,
 				143EA5301B0F16D9007B2D02 /* Images.xcassets in Resources */,
-				143EA5851B0F2448007B2D02 /* 函数.rtf in Resources */,
-				143EA58A1B0F2448007B2D02 /* 运算符.rtf in Resources */,
 				143EA52D1B0F16D9007B2D02 /* 记录.rtf in Resources */,
 				143EA52F1B0F16D9007B2D02 /* Main.storyboard in Resources */,
-				143EA5861B0F2448007B2D02 /* 基本数据类型及取值范围.rtf in Resources */,
 				143EA52C1B0F16D9007B2D02 /* TitleList.plist in Resources */,
 				143EA5291B0F16D9007B2D02 /* MDClassesTableViewCell.xib in Resources */,
 			);

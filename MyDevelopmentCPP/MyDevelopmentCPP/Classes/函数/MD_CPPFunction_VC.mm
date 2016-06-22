@@ -15,6 +15,6 @@
 
   [super viewDidLoad];
   
-  test_defuleParama();
+  test_cppfun_root();
 }
 @end

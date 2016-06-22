@@ -7,9 +7,19 @@
 //
 
 #include "CPPFunction.hpp"
-
 #include <iostream>
 using namespace std;
+
+void test_func();
+void test_defuleParama();
+
+
+
+#pragma mark - ********* method **********
+
+void test_cppfun_root(){
+  
+}
 
 #pragma mark c++中的函数重载
 

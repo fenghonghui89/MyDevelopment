@@ -13,14 +13,14 @@
 #include <iostream>
 using namespace std;
 
-void calculate();
+void calculate_sum();
 
 void test3_root(){
-  calculate();
+  calculate_sum();
 }
 
 
-void calculate(){
+void calculate_sum(){
   
   int x[100],k,i,n;
   double sum = 0.0,ave;
