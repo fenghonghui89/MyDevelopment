@@ -18,7 +18,7 @@
 
 int main(int argc, const char * argv[]) {
   
-  test3_root();
+  test1_root();
   
   return 0;
 }

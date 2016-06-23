@@ -15,6 +15,7 @@
 
 void test_root_freetest(){
   
+  char *p= "string" ;
 
 }
 
