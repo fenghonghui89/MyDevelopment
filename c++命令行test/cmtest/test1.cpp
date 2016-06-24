@@ -15,28 +15,11 @@ void print_figure(int, char);
 
 
 void test1_root(){
-   int a[][3] = { { 0,1 }, { 0 } };
-//  print_figure(10,'*');
   
-//  double a[] = { 1.1, 3.1, 5.1, 7.1, 9.1 }, *p ;
-//  int i;
-//  
-//  for( i = 0; i<5; i++ ) //①下标方式访问数组
-//    cout << "a[" << i << "]=" << a[i] << '\t';
-//  cout << endl;
-//  
-//  for( p = a, i = 0; i<5; i++ ) //②指针变量下标方式访问数组
-//    cout << "a[" << i << "]=" << p[i] << '\t';
-//  cout << endl;
-//  
-//  for( i = 0; i<5; i++ ) //③指针方式访问数组
-//    cout << "a[" << i << "]=" << *( a+i ) << '\t';
-//  cout << endl;
-//  
-//  for( p = a; p<a+5; p++ ) //④指针变量间址方式访问数组
-//    cout << "a[" << p-a << "]=" << *p << '\t';
-//  cout << endl;
-//  
+  print_figure(10,'*');
+  
+
+
   
 }
 

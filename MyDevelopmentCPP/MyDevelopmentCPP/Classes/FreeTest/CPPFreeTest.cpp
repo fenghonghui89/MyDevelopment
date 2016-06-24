@@ -9,13 +9,23 @@
 #include "CPPFreeTest.hpp"
 #include <iostream>
 #include <ctype.h>
-
+#include "MyData.hpp"
+using namespace std;
 
 
 
 void test_root_freetest(){
   
-  char *p= "string" ;
-
+//  Date date;
+//  date.SetDate(1, 1, 1);
+//  date.PrintDate();
+  
+  Date *datep = new Date;
+  datep->SetDate(2, 2, 2);
+  datep->PrintDate();
 }
+
+
+
+
 

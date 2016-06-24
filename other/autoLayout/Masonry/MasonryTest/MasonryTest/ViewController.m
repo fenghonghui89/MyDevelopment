@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger,PlantReferenceIndex) {
 {
   [super viewDidLoad];
  
-  [self test2];
+  [self test1];
 }
 
 #pragma mark - < test > -
@@ -57,10 +57,11 @@ typedef NS_ENUM(NSInteger,PlantReferenceIndex) {
   subview1.backgroundColor = [UIColor redColor];
   [self.bgview addSubview:subview1];
   [subview1 mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.top.equalTo(self.view).with.offset(0);
-    make.left.equalTo(self.view).with.offset(0);
-    make.right.equalTo(self.view).with.offset(0);
-    make.height.mas_equalTo(@20);
+    make.bottom.equalTo(self.view).with.offset(-10);
+    make.left.equalTo(self.view).with.offset(10);
+    make.right.equalTo(self.view).with.offset(-10);
+    make.top.equalTo(self.view).with.offset(10);
+//    make.height.mas_equalTo(@20);
   }];
 }
 

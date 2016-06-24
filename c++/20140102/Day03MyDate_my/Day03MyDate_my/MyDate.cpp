@@ -12,3 +12,4 @@ MyDate::MyDate(int y,int m,int d){
 void MyDate::show(){
     cout<<year<<"-"<<month<<"-"<<day<<endl;
 }
+
