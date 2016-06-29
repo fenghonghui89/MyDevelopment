@@ -7,10 +7,11 @@
 //
 
 #include "Keyword.h"
-
+#include "Const_base.h"
+#include "Extern_Static_base.h"
 void Keyword_root(){
   
-
+  Extern_Static_base_root();
 }
 
 

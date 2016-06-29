@@ -9,8 +9,11 @@
 #include "Extern_Static_base.h"
 #include "MD_C_Keyword3_CFile.h"
 
+void extern_test();
+void cKeywordTest0();
+
 void Extern_Static_base_root(){
-  
+  cKeywordTest0();
 }
 
 #pragma mark - ********** knowledge **************
@@ -19,13 +22,19 @@ void Extern_Static_base_root(){
 //extern关键字
 /*
  如果想在同一个项目中共享全局变量，
- 1.变量所在文件的.h公开.c的变量，用extern修饰；使用变量的文件中，include头文件
- 或者
- 2.在使用变量的文件中，要使用extern关键字声明全局变量才可使用，并且可以得到全局变量的值
+ 方法1：变量所在文件的.h公开.c的变量，用extern修饰；使用变量的文件中，include头文件 (推荐)
+ 方法2：在使用变量的文件中，要使用extern关键字声明全局变量才可使用，并且可以得到全局变量的值
  */
 #include "MD_C_Keyword1_CFile.h"//对应上面1
 extern char *name_Keyword;//对应上面2
 extern int i;//对应上面2
+
+void extern_test(){
+
+  printf("%d",age_Keyword);
+  printf("%s",name_Keyword);
+  printf("%d",i);
+}
 
 
 //static关键字

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FreeTest.h"
 #import "BaseDataTypeAndExpression_root.h"
 #import "Array_root.h"
 #import "Function_root.h"
@@ -21,6 +22,7 @@
 int main(int argc, const char * argv[]) {
   @autoreleasepool {
     
+//    FreeTest_root();
 //    BaseDataTypeAndExpression_root();
 //    Array_root();
 //    Function_root();
@@ -29,7 +31,8 @@ int main(int argc, const char * argv[]) {
 //    Point_root();
 //    String_root();
 //    Type_root();
-//    Keyword_root();
+    Keyword_root();
+    
   }
     return 0;
 }

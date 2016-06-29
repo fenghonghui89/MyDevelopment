@@ -11,4 +11,5 @@
 
 #include <stdio.h>
 extern int age_Keyword;//公开.c文件里面的变量时，要带extern
+
 #endif /* defined(__MyDevelopmentTest__MD_C_Keyword1_CFile__) */
