@@ -1,15 +1,11 @@
 //
-//  Extern_Static.c
+//  Root_Point.h
 //  HanyCLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
-
-#include "Extern_Static.h"
+//root 指针
 
 
-void Extern_Static_root(){
-  
-}
+void root_Point();
 

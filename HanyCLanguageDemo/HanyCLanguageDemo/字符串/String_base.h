@@ -4,11 +4,8 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//字符串 base
 
-#ifndef String_base_h
-#define String_base_h
 
-#include <stdio.h>
-void String_base_root();
-#endif /* String_base_h */
+void root_String_base();
+

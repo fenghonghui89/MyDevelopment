@@ -4,11 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//内存 base
 
-#ifndef Memory_base_h
-#define Memory_base_h
+void root_Memory_base();
 
-#include <stdio.h>
-void Memory_base_root();
-#endif /* Memory_base_h */

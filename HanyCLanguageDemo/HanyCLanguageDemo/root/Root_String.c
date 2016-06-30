@@ -1,13 +1,14 @@
 //
-//  String_root.c
+//  Root_String.c
 //  HanyCLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//root 字符串
 
-#include "String_root.h"
+#include "Root_String.h"
 #include "String_base.h"
-void String_root(){
-  String_base_root();
+void root_String(){
+
+  root_String_base();
 }

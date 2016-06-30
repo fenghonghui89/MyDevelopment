@@ -1,14 +1,11 @@
 //
-//  Const.h
+//  Root_BaseDataTypeAndExpression.h
 //  HanyCLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//root 基本数据类型与表达式
 
-#ifndef Const_h
-#define Const_h
 
-#include <stdio.h>
-void const_root();
-#endif /* Const_h */
+void root_BaseDataTypeAndExpression();
+

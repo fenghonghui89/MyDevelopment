@@ -8,36 +8,37 @@
 
 #include "BaseDataType.h"
 #include <stdbool.h>
-
-void BaseDataType_change();
-void BaseDataType_char();
-void BaseDataType_otherSystem();
-
-void BaseDataType_charBig();
+#include <stdio.h>
+#include <limits.h>
 
 
-void BaseDataType_root(){
-  
-
-}
 
 #pragma mark - ********** knowledge ********
 
-#pragma mark bool类型
-void BaseDataType_base(){
+#pragma mark float / double
+
+static void knowledge_floatAndDouble(){
+
+  float f = 2.14e+3;
+  printf("%f\n",f);//2.14*10^3 2140.000000
+  
+  double d = 2.14e+3;
+  printf("%lf\n",d);//2.14*10^3 2140.000000
+  printf("%.8f\n",d);//2.14*10^3 2140.00000000
+}
+
+#pragma mark bool
+static void knowledge_base(){
   
   bool bc = true;//c89没有定义bool，所以要#include <stdbool.h>
 //  BOOL boc = YES;//OC:or no
+  printf("%d",bc);
   
-  int *ic = NULL;//C
-//  int *ioc = nil;//OC
-  
-//  id pid = nil;//oc的id类型相当于void*
 }
 
 
 #pragma mark 数据类型转换
-void BaseDataType_change(){
+static void knowledge_change(){
   
   char c = 127;
   int i = 200;
@@ -49,7 +50,7 @@ void BaseDataType_change(){
 }
 
 #pragma mark char与ascii值
-void BaseDataType_char(){
+static void knowledge_char(){
   
   //字符与ascii值的对应
   char ch1 = 'A';
@@ -71,7 +72,7 @@ void BaseDataType_char(){
 }
 
 #pragma mark 8进制 16进制
-void BaseDataType_otherSystem(){
+static void knowledge_otherSystem(){
   
   int i = 11;//默认，10进制
   int i2 = 011;//8进制
@@ -83,29 +84,36 @@ void BaseDataType_otherSystem(){
   printf("i3=%d i3=%o i3=%x\n",i3,i3,i3);
 }
 
-#pragma mark sizeof计算数据类型所占空间
-void BaseDataType_size(){
+#pragma mark sizeof计算数据类型所占字节数 取值范围 类型后缀
+static void knowledge_size(){
   
-  /*
-   sizeof计算数据类型所占空间
-   不同数据类型所占空间不能按照理论得出，编译器和CPU不同，所占空间也不同。
-   */
+  //所占字节数
   printf("sizeof(char):%ld\n",sizeof(char));
+  
   printf("sizeof(short int):%ld\n",sizeof(short int));
   printf("sizeof(int):%ld\n",sizeof(int));
   printf("sizeof(long int):%ld\n",sizeof(long int));
-  printf("sizeof(long long int):%ld\n",sizeof(long long int));
+  printf("sizeof(long long int):%ld %d\n",sizeof(long long int),__SIZEOF_LONG_DOUBLE__);
+  
   printf("sizeof(float):%ld\n",sizeof(float));
   printf("sizeof(double):%ld\n",sizeof(double));
   printf("sizeof(long double):%ld\n",sizeof(long double));
   
-  int i=3ul;
-  printf("sizeof(int i=3ul):%ld\n",sizeof(i));
+  //取值范围
+  printf("short int:%d %d\n",INT16_MIN,INT16_MAX);
+  printf("int:%d %d\n",INT32_MIN,INT32_MAX);
+  printf("long:%ld %ld\n",LONG_MIN,LONG_MAX);
+  printf("long long:%lld %lld\n",LONG_LONG_MIN,LONG_LONG_MAX);
+  
+  //类型后缀，标识数值的准确类型，防止编译器错误判断
+  printf("sizeof(int i=3ul):%ld\n",sizeof(300,000ul));//300,000默认是int，加后缀则是unsign long
+
 }
 
-#pragma mark - *********** practice **************
+
+#pragma mark - *********** test **************
 #pragma mark 练习：输入任意小写字母得到相应的大写字母
-void BaseDataType_charBig(){
+static void test_charBig(){
   
   char ch;
   printf("请输入一个小写字母:\n");
@@ -113,3 +121,10 @@ void BaseDataType_charBig(){
   printf("%c->%c\n",ch,ch-('a'-'A'));
 }
 
+
+
+
+#pragma mark - *********** root ***********
+void root_BaseDataType(){
+  knowledge_size();
+}

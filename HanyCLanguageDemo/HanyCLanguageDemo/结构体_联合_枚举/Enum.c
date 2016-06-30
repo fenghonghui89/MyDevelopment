@@ -4,18 +4,16 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//枚举
 
 #include "Enum.h"
+#include <stdio.h>
 
-void Enum_root(){
-  
-}
 
 #pragma mark - ********** knowledge **************
 
 #pragma mark 定义
-void enum_init(){
+static void knowledge_init(){
 
   enum{
     SPR,
@@ -31,7 +29,7 @@ void enum_init(){
 }
 
 #pragma mark 枚举类型 起别名
-void enum_other(){
+static void knowledge_other(){
   
   //定义枚举类型
   enum SEASON{
@@ -66,9 +64,13 @@ typedef enum {
   WIN
 }Season1;
 
-void cEnumTest1(){
+static void knowledge_initOut(){
   Season1 season = SPR;
   printf("season1:%d\n",season);
 }
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** root ***********
+
+void root_Enum(){
+  
+}

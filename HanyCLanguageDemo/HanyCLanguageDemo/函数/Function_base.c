@@ -4,26 +4,24 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
-
+//函数base
+#include <stdio.h>
 #include "Function_base.h"
 
-void Function_base_root(){
 
-}
 #pragma mark - ********** knowledge **************
 #pragma mark - 递归、递推
 //递归
-int f1(int n)
-{
+static int knowledge_knowledge(int n){
+  
   printf("进入了f1函数 n:%d\n",n);
   if(n==1) return 1;
-  return n*f1(n-1);//f1(1)
+  return n*knowledge_knowledge(n-1);//knowledge_knowledge(1)
 }
 
 //递推
-int f2(int n)
-{
+static int knowledge_deferredCharges(int n){
+  
   int res=1;
   for (int i=1; i<=n; i++) {
     res=res*i;
@@ -35,14 +33,14 @@ int f2(int n)
 
 int i4 = 40;//全局变量
 
-void test()
-{
+static void knowledge_scope(){
+  
   int i4 = 60;//局部变量
   printf("test i4:%d\n",i4);
 }
 
-void test2()
-{
+static void knowledge_block(){
+  
   int i2=10;
   printf("i2:%d\n",i2);
   
@@ -51,18 +49,18 @@ void test2()
     int i2=22;
     printf("block i2:%d\n",i2);
   }
-  test();
+  knowledge_scope();
   printf("main i4:%d\n",i4);
 }
 
 #pragma mark - 终止程序
-int testb()
-{
+static int knowlede_exit(){
+  
   printf("终止程序");
-  exit(0);//终止程序，终止所有函数；exit(0)在stdlib.h头文件内
-  //return 0;return只会终止当前函数。
+  exit(0);//终止程序，终止所有函数；exit(0)在stdlib.h头文件内 return 0;return只会终止当前函数。
 }
-#pragma mark - *********** practice **************
+
+#pragma mark - *********** test **************
 #pragma mark - 练习：放球取球
 /*
  作业：使用程序解决放球、取球的问题。
@@ -77,16 +75,80 @@ int testb()
  e.空/满/当前状态
  f.得到最后的数据（元素）
  */
-int isFull();
-int isEmpty();
-void showStack();
-int pop();
-void push(int num);
+#pragma mark declare
+static int isFull();
+static int isEmpty();
+static void showStack();
+static int pop();
+static void push(int num);
 int count = -1;//状态标识
 int stack[3]={0};//创建保存球的容器
 
-void runStack()
-{
+
+
+#pragma mark action
+//查看数组中的状态
+static void showStack(){
+  
+  printf("showStack()\n");
+  for (int i=2; i>=0; i--) {
+    printf("stack[%d]:%d\n",i,stack[i]);
+  }
+}
+
+//从容器中取出数据
+int pop(){
+  
+  int temp=0;
+  if (!isEmpty()) {
+    temp = stack[count];
+    stack[count] = 0;
+    count--;
+    return temp;
+  }else{
+    printf("取值不成功\n");
+    return 0;
+  }
+}
+
+//向容器中添加数据
+void push(int num){
+  
+  if(!isFull()){
+    //不满的时候才可以添加数据
+    ++count;
+    stack[count] = num;
+    printf("添加数据成功: statck[%d]:%d\n",count,stack[count]);
+  }else{
+    printf("添加数据不成功\n");
+  }
+}
+
+//判断容器是否满了
+static int isFull(){
+  if(count==2){
+    printf("容器已满，不可添加数据\n");
+    return 1;
+  }else{
+    printf("容器未满，可添加数据\n");
+    return 0;
+  }
+}
+
+//判断容器是否为空
+static int isEmpty(){
+  if (count==-1) {
+    printf("容器为空，不可取出数据\n");
+    return 1;
+  }else{
+    printf("容器不为空，可取出数据\n");
+    return 0;
+  }
+}
+
+#pragma mark run
+static void runStack(){
+  
   showStack();
   push(1);
   push(2);
@@ -101,62 +163,7 @@ void runStack()
   
 }
 
-#pragma mark action
-//查看数组中的状态
-void showStack()
-{
-  printf("showStack()\n");
-  for (int i=2; i>=0; i--) {
-    printf("stack[%d]:%d\n",i,stack[i]);
-  }
-}
-
-//从容器中取出数据
-int pop()
-{
-  int temp=0;
-  if (!isEmpty()) {
-    temp = stack[count];
-    stack[count] = 0;
-    count--;
-    return temp;
-  }else{
-    printf("取值不成功\n");
-    return 0;
-  }
-}
-
-//向容器中添加数据
-void push(int num)
-{
-  if(!isFull()){
-    //不满的时候才可以添加数据
-    ++count;
-    stack[count] = num;
-    printf("添加数据成功: statck[%d]:%d\n",count,stack[count]);
-  }else{
-    printf("添加数据不成功\n");
-  }
-}
-
-//判断容器是否满了
-int isFull(){
-  if(count==2){
-    printf("容器已满，不可添加数据\n");
-    return 1;
-  }else{
-    printf("容器未满，可添加数据\n");
-    return 0;
-  }
-}
-
-//判断容器是否为空
-int isEmpty(){
-  if (count==-1) {
-    printf("容器为空，不可取出数据\n");
-    return 1;
-  }else{
-    printf("容器不为空，可取出数据\n");
-    return 0;
-  }
+#pragma mark - *********** root ***********
+void root_Function_base(){
+  
 }

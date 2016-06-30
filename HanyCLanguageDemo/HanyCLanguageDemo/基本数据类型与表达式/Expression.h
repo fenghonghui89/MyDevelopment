@@ -6,9 +6,6 @@
 //  Copyright © 2016年 MD. All rights reserved.
 //运算符与表达式
 
-#ifndef Expression_h
-#define Expression_h
 
-#include <stdio.h>
-void Expression_root();
-#endif /* Expression_h */
+void root_Expression();
+

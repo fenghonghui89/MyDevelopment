@@ -4,17 +4,15 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
-
+//一维数组
+#include <stdio.h>
 #include "OneArray.h"
 
-void OneArray_root(){
 
-}
 
 #pragma mark - ********** knowledge ********
 #pragma mark 数组的初始化，赋值，遍历，计算数组长度
-void OneArray_init(){
+static void knowledge_init(){
 
   int array[5] = {0};
   int array2[5] = {1,2,3,4,5};
@@ -30,9 +28,9 @@ void OneArray_init(){
   printf("num's length:%ld\n",sizeof(num)/sizeof(num[0]));
 }
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** test **************
 #pragma mark 输入10个整数，逆向输出该10个整数
-void OneArray_test(){
+static void test0(){
 
   int num[10],i=0;
   for (i=0; i<10; i++) {
@@ -43,4 +41,10 @@ void OneArray_test(){
   for (i=0; i<10; i++) {
     printf("%d\t",num[i]);
   }
+}
+
+#pragma mark - *********** root ***********
+
+void root_OneArray(){
+  
 }

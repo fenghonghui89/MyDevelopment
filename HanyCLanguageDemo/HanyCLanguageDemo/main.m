@@ -9,29 +9,28 @@
 #import <Foundation/Foundation.h>
 
 #import "FreeTest.h"
-#import "BaseDataTypeAndExpression_root.h"
-#import "Array_root.h"
-#import "Function_root.h"
-#import "Define_root.h"
-#import "Memory_root.h"
-#import "Point_root.h"
-#import "String_root.h"
-#import "Type_root.h"
-#import "Keyword.h"
+#import "Root_BaseDataTypeAndExpression.h"
+#import "Root_Array.h"
+#import "Root_Function.h"
+#import "Root_Define.h"
+#import "Root_Memory.h"
+#import "Root_Point.h"
+#import "Root_String.h"
+#import "Root_Type.h"
+#import "Root_Keyword.h"
 
 int main(int argc, const char * argv[]) {
   @autoreleasepool {
     
-//    FreeTest_root();
-//    BaseDataTypeAndExpression_root();
-//    Array_root();
-//    Function_root();
-//    Define_root();
-//    Memory_root();
-//    Point_root();
-//    String_root();
-//    Type_root();
-    Keyword_root();
+    root_BaseDataTypeAndExpression();
+//    root_Array();
+//    root_Function();
+//    root_Define();
+//    root_Memory();
+//    root_Point();
+//    root_String();
+//    root_Type();
+//    root_Keyword();
     
   }
     return 0;

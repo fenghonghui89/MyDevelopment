@@ -4,19 +4,18 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//内存 base
 
 #include "Memory_base.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <malloc/malloc.h>
 
-void Memory_base_root(){
 
-}
 
 #pragma mark - ********** knowledge **************
-void cMemoryTest0()
-{
+static void knowledge_base(){
+  
   //malloc分配内存
   int const *p0 = malloc(sizeof(int)*20);
   printf("p0's address:%p size:%lu\n",p0,malloc_size(p0));
@@ -63,4 +62,8 @@ void cMemoryTest0()
   
 }
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** root ***********
+
+void root_Memory_base(){
+  
+}

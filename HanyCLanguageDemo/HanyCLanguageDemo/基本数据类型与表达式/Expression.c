@@ -5,25 +5,14 @@
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
 //运算符与表达式
-
+#include <stdio.h>
 #include "Expression.h"
 
 
 
-void Expression_calculate();
-void Expression_priority();
-void Expression_logic();
-void Expression_access();
-void Expression_comma();
-
-void Expression_root(){
-
-  Expression_comma();
-}
-
 #pragma mark - ********** knowledge ********
 #pragma mark 算术运算符：+-*&%
-void Expression_calculate(){
+static void knowledge_calculate(){
 
   printf("7+3=%d\n",7+3);
   printf("7-3=%d\n",7-3);
@@ -45,7 +34,7 @@ void Expression_calculate(){
 }
 
 #pragma mark 运算符优先级与结合序
-void Expression_priority(){
+static void knowledge_priority(){
   
   int i=5;
   printf("i++:%d\n",i++);
@@ -63,7 +52,7 @@ void Expression_priority(){
 
 
 #pragma mark 逻辑运算符
-void Expression_logic(){
+static void knowledge_logic(){
   
   /*
    逻辑运算符 与或非
@@ -89,7 +78,7 @@ void Expression_logic(){
 }
 
 #pragma mark 取地址与间接寻址：& 、*(&i)
-void Expression_access(){
+static void knowledge_access(){
   
   int i=99;
   printf("i address:%p\n",&i);
@@ -99,9 +88,15 @@ void Expression_access(){
 
 
 #pragma mark 逗号表达式
-void Expression_comma(){
+static void knowledge_comma(){
   
   int a=2,b=3,c=4,x=0,y=0,z=0;
   z=(x+=1,x=a+b,y=b+c,x+y);//取最后的表达式的值
   printf("z=%d",z);
+}
+
+
+#pragma mark - ********** root ********
+void root_Expression(){
+  
 }

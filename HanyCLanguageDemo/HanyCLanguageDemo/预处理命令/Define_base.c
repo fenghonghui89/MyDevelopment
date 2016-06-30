@@ -4,13 +4,11 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
-
+//宏 base
+#include <stdio.h>
 #include "Define_base.h"
 
-void Define_base_root(){
 
-}
 
 #pragma mark - ********** knowledge **************
 
@@ -23,7 +21,7 @@ void Define_base_root(){
 
 
 #pragma mark #x与##x
-void define_x(){
+static void knowledge_x(){
   
   //#x代表x的内容转换成字符串
 #define STR(x) #x
@@ -39,7 +37,7 @@ void define_x(){
 }
 
 #pragma mark c语言常用的宏
-void define_common(){
+static void knowledge_common(){
   
   printf("当前的行号:%d",__LINE__);
   printf("当前的文件名:%s",__FILE__);
@@ -48,7 +46,7 @@ void define_common(){
 }
 
 #pragma mark 根据参数编译
-void define_if(){
+static void knowledgeif(){
   
 #define qidong @"启动"
   
@@ -60,7 +58,7 @@ void define_if(){
 }
 
 #pragma mark 根据条件来进行编译/undef
-void define_undef(){
+static void knowledge_undef(){
   
 #define kaiqi @"开启"
   
@@ -79,7 +77,7 @@ void define_undef(){
 }
 
 #pragma mark 根据宏值来进行编译
-void define_value(){
+static void knowledge_value(){
   
 #define value 3
   
@@ -90,4 +88,8 @@ void define_value(){
 #endif
 }
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** root ***********
+
+void root_Define_base(){
+  
+}

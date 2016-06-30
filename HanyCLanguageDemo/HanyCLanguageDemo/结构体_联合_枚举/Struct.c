@@ -4,19 +4,16 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//结构体
 
 #include "Struct.h"
+#include <stdio.h>
 
-void Struct_root(){
-  
-}
 
 #pragma mark - ********** knowledge **************
 
 #pragma mark 定义
-void cStructTest0()
-{
+static void knowledge_init(){
 
   struct{
     int age;
@@ -31,7 +28,7 @@ void cStructTest0()
 }
 
 #pragma mark 定义结构类型、起别名
-void struct_other(){
+static void knowledge_other(){
 
   //定义结构类型
   struct PERSON{
@@ -60,8 +57,9 @@ typedef struct {
   int age;
   char *name;
 }Human;
-void cStructTest1()
-{
+
+static void knowledge_initOut(){
+  
   Human human = {18,"Peter"};
   printf("human age:%d\n",human.age);
   printf("human name:%s\n",human.name);
@@ -69,7 +67,7 @@ void cStructTest1()
 
 
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** test **************
 /*
  定义一个学生结构体，学号、姓名、年龄、
  性别(F、M)，创建三个学生，并输入信息，
@@ -82,8 +80,8 @@ typedef struct{
   char sex;
 }Student;
 
-void cStructTest2()
-{
+static void test0(){
+  
   //保存学生信息
   Student students[3];
   
@@ -112,4 +110,10 @@ void cStructTest2()
     printf("请输入姓名:%s\n",students[i].name);
     printf("请输入性别:%c\n",students[i].sex);
   }
+}
+
+#pragma mark - *********** root ***********
+
+void root_Struct(){
+  
 }

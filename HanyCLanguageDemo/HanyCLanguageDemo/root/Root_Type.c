@@ -1,19 +1,19 @@
 //
-//  Type_root.c
+//  Root_Type.c
 //  HanyCLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//root 结构体_联合_枚举
 
-#include "Type_root.h"
+#include "Root_Type.h"
 #include "Enum.h"
 #include "Struct.h"
 #include "Union.h"
 
-void Type_root(){
+void root_Type(){
 
-//  Enum_root();
-//  Struct_root();
-//  Union_root();
+  root_Enum();
+//  root_Struct();
+//  root_Union();
 }

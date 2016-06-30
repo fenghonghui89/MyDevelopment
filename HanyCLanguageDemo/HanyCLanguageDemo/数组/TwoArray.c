@@ -4,15 +4,14 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
-
+//二维数组
+#include <stdio.h>
 #include "TwoArray.h"
-void TwoArray_root(){
-  
-}
+
+
 #pragma mark - ********** knowledge ********
 #pragma mark 二维数组的初始化，赋值，遍历
-void TwoArray_init(){
+static void knowledge_init(){
   
   int array[2][2];//会有随机数产生
   int array1[2][2] = {0};
@@ -29,9 +28,9 @@ void TwoArray_init(){
   }
   
 }
-#pragma mark - *********** practice **************
+#pragma mark - *********** test **************
 #pragma mark 输入5个人的三科成绩，输出5个人的成绩、分科平均分、个人平均分
-void TwoArray_test(){
+static void test0(){
   
   int s[3][5]={0};
   int sumID[3]={0};
@@ -136,5 +135,11 @@ void TwoArray_test(){
     }
     sum=0;
   }
+  
+}
+
+#pragma mark - *********** root ***********
+
+void root_TwoArray(){
   
 }

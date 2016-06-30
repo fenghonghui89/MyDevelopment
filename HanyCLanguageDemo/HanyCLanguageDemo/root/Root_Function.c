@@ -1,16 +1,16 @@
 //
-//  Function_root.c
+//  Root_Function.c
 //  HanyCLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//root 函数
 
-#include "Function_root.h"
+#include "Root_Function.h"
 #include "Function_base.h"
 
-void Function_root(){
+void root_Function(){
   
-  Function_base_root();
+  root_Function_base();
 }
 

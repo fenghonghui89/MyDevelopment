@@ -4,19 +4,16 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//联合
 
 #include "Union.h"
 
-void Union_root(){
-  
-}
+#include <stdio.h>
 
 
 #pragma mark - ********** knowledge **************
 #pragma mark 定义
-void cUnionTest0()
-{
+static void knowledge_init(){
   union {
     int age;
     char name[20];
@@ -30,7 +27,7 @@ void cUnionTest0()
 }
 
 #pragma mark 定义联合类型、起别名
-void union_other(){
+static void knowledge_other(){
 
   //定义一个联合类型
   union PERSON{
@@ -63,8 +60,8 @@ typedef union {
   int *p;
 }lian_he;
 
-void cUnionTest1()
-{
+static void knowledge_initOut(){
+  
   //声明一个联合变量
   lian_he l;
   
@@ -105,4 +102,8 @@ void cUnionTest1()
   printf("lian_he l size:%ld\n\n",sizeof(l));
 }
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** root ***********
+
+void root_Union(){
+  
+}

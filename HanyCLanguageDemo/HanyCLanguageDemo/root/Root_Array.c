@@ -1,19 +1,21 @@
 //
-//  Array.c
+//  Root_Array.c
 //  HanyCLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//root 数组
 
-#include "Array_root.h"
+
+
+#include "Root_Array.h"
 #include "OneArray.h"
 #include "TwoArray.h"
 
 
-void Array_root(){
+void root_Array(){
 
-  OneArray_root();
-  TwoArray_root();
+//  root_OneArray();
+//  root_TwoArray();
   
 }

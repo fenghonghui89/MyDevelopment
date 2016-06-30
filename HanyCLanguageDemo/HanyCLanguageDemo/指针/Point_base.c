@@ -4,28 +4,21 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//指针 base
 
 #include "Point_base.h"
+#include <stdio.h>
 #include <string.h>
 
 
-int * point_point();
-void point_point_1();
-void point_void_0();
-void point_test_1_1();
-void point_test_0_1();
 
 
-void Point_base_root(){
 
- 
-}
 
 #pragma mark - ********** knowledge **************
-#pragma mark - 指针的创建、指针的大小、指针做函数返回值
+#pragma mark 指针的创建、指针的大小
 //指针的创建、指针的大小
-void point_init(){
+static void knowledge_init(){
   
   int x =10,y = 20;
   int *p1,*p2;
@@ -45,8 +38,8 @@ void point_init(){
   printf("p1:%ld,p2:%ld",sizeof(p1),sizeof(p2));
 }
 
-//指针做函数返回值
-int* point_return(){
+#pragma mark 指针做函数返回值
+static int* knowledge_return(){
   
   int i = 10;
   int* p = &i;
@@ -54,8 +47,16 @@ int* point_return(){
   return p;
 }
 
-#pragma mark - 数组与指针
-void point_address(){
+#pragma mark NULL
+static void knowledge_null(){
+
+  int *ic = NULL;//C
+//  int *ioc = nil;//OC
+
+}
+
+#pragma mark 数组与指针
+static void knowledge_address(){
   
   //整形数组与指针
   int arr[5] = {1,2,3,4,5};
@@ -78,7 +79,8 @@ void point_address(){
   }
 }
 
-void point_char(){
+#pragma mark 数组与字符串
+static void knowledge_char(){
   
   //字符数组与指针
   char arr2[5] = {'a','b','c','d','e'};
@@ -99,9 +101,9 @@ void point_char(){
   }
 }
 
-#pragma mark - 数组与指针的运算
+#pragma mark 数组与指针的运算
 //只有在同一数组下，+i、-i、++、--、p1-p2（可以求两个指针之间有多少个元素）有意义，p1+p2无意义
-void point_calucate(){
+static void knowledge_calucate(){
   
   int arr[4] = {1,2,3,4};
   int *p = arr;
@@ -135,7 +137,7 @@ void point_calucate(){
   printf("p:%p\n",p);
   p = arr;
   
-#warning 未知为何为3
+  //未知为何为3
   printf("---%d\n",*p);
   printf("++(*p):%d\n",++(*p));
   printf("p:%p\n",p);
@@ -143,30 +145,32 @@ void point_calucate(){
 }
 
 #pragma mark - 指针函数与函数指针
-void point_func(){
-  
-  //函数指针是指向函数的指针变量，即本质是一个指针变量
-  //函数名相当于地址，由于malloc分配堆内存时，不确定内存存储类型，所以可以用void*代表任意指针类型
-  printf("func:%p\n&func:%p\n",point_point_1,&point_point_1);
-  
-  void(*func_ptr)(int x);
-  func_ptr = point_point_1;
-  
-  void *f2;
-  f2 = point_point_1;
-}
-
 //指针函数是指带指针的函数，即本质是一个函数。函数返回类型是某一类型的指针。
-int * point_point_0(int x){
+static int * knowledge_func_pointFunc(int x){
   
   int *p = &x;
   return p;
 }
 
-void point_point_1(int i){
+static void knowledge_func_func(int i){
   
   printf("函数运行了%d\n",i);
 }
+
+static void knowledge_func(){
+  
+  //函数指针是指向函数的指针变量，即本质是一个指针变量
+  //函数名相当于地址，由于malloc分配堆内存时，不确定内存存储类型，所以可以用void*代表任意指针类型
+  printf("func:%p\n&func:%p\n",knowledge_func_func,&knowledge_func_func);
+  
+  void(*func_ptr)(int x);
+  func_ptr = knowledge_func_func;
+  
+  void *f2;
+  f2 = knowledge_func_func;
+}
+
+
 
 #pragma mark - void* 任意类型指针
 typedef enum {
@@ -175,18 +179,7 @@ typedef enum {
   CHAR
 } type;
 
-void point_void(){
-  
-  int i = 10;
-  short s = 5;
-  char c = 'c';
-  
-  point_void_0(&i,INT);
-  point_void_0(&s,SHORT);
-  point_void_0(&c,CHAR);
-}
-
-void point_void_0(void *p,type t){
+static void knowledge_void_0(void *p,type t){
   
   switch (t) {
     case INT:
@@ -203,19 +196,25 @@ void point_void_0(void *p,type t){
   }
   
 }
-#pragma mark - *********** practice **************
 
-#pragma mark - 输入两个数，逆向输出
-
-void point_test_0(){
+static void knowledge_void(){
   
-  int x = 10,y = 20;
-  printf("p1->x's value:%d\tp2->y'value:%d\n",x,y);
-  point_test_0_1(&x, &y);
-  printf("p1->x's value:%d\tp2->y'value:%d\n",x,y);
+  int i = 10;
+  short s = 5;
+  char c = 'c';
+  
+  knowledge_void_0(&i,INT);
+  knowledge_void_0(&s,SHORT);
+  knowledge_void_0(&c,CHAR);
+  
+//  id pid = nil;//oc的id类型相当于void*
 }
 
-void point_test_0_1(int *p1,int *p2){
+
+#pragma mark - *********** test **************
+
+#pragma mark - 输入两个数，逆向输出
+static void test0_1(int *p1,int *p2){
   
   int temp = 0;
   temp = *p1;
@@ -223,24 +222,18 @@ void point_test_0_1(int *p1,int *p2){
   *p2 = temp;
 }
 
-#pragma mark - 输出数组中的最大值和最小值
-
-void point_test_1(){
+void test0(){
   
-  int num[5] = {0};
-  int max= -10000,min = 10000;
-  
-  for (int i=0; i<5; i++) {
-    printf("请输入第%d个数字：\n",i+1);
-    scanf("%d",&num[i]);
-  }
-  
-  point_test_1_1(num,5,&max,&min);
-  printf("max:%d\n",max);
-  printf("min:%d\n",min);
+  int x = 10,y = 20;
+  printf("p1->x's value:%d\tp2->y'value:%d\n",x,y);
+  test0_1(&x, &y);
+  printf("p1->x's value:%d\tp2->y'value:%d\n",x,y);
 }
 
-void point_test_1_1(int *arr,int size,int *max, int *min){
+
+
+#pragma mark - 输出数组中的最大值和最小值
+static void test1_1(int *arr,int size,int *max, int *min){
   
   for (int i=0; i<5; i++) {
     if (*(arr+i)>*max) {//arr[i]相当于*(arr+i)
@@ -250,4 +243,28 @@ void point_test_1_1(int *arr,int size,int *max, int *min){
       *min=*(arr+i);
     }
   }
+}
+
+static void test1(){
+  
+  int num[5] = {0};
+  int max= -10000,min = 10000;
+  
+  for (int i=0; i<5; i++) {
+    printf("请输入第%d个数字：\n",i+1);
+    scanf("%d",&num[i]);
+  }
+  
+  test1_1(num,5,&max,&min);
+  printf("max:%d\n",max);
+  printf("min:%d\n",min);
+}
+
+
+
+#pragma mark - *********** root ***********
+
+void root_Point_base(){
+  
+  
 }

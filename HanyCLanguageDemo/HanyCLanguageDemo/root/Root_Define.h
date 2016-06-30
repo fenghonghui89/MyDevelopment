@@ -1,13 +1,11 @@
 //
-//  Memory_root.c
+//  Root_Define.h
 //  HanyCLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//root 宏
 
-#include "Memory_root.h"
-#include "Memory_base.h"
-void Memory_root(){
-  Memory_base_root();
-}
+
+void root_Define();
+

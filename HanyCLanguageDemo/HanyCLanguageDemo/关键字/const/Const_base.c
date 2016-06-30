@@ -4,17 +4,15 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//const
 
 #include "Const_base.h"
+#include <stdio.h>
 
-void Const_base_root(){
-
-}
 
 #pragma mark - ********** knowledge **************
-void cConstTest0()
-{
+static void knowledge_base(){
+  
   const int i = 20;
   int const is = 20;
   //    i = 30;//被修饰的变量不能修改
@@ -37,4 +35,8 @@ void cConstTest0()
 
 
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** root ***********
+
+void root_const_base(){
+  
+}

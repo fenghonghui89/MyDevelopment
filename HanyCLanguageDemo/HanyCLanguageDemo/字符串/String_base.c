@@ -4,24 +4,22 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//字符串 base
 
 #include "String_base.h"
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <malloc/malloc.h>
 
-void GetMemoryValue();
-void GetMemoryAddress();
 
-void String_base_root(){
 
-}
+
 
 #pragma mark - ********** knowledge **************
 #pragma mark - < 指针数组 >
-void cStringTest0()
-{
+static void knowledge_pointArray(){
+  
   char *str[3]={"关羽","张飞","赵云"};
   for (int i=0; i<3; i++) {
     printf("str[%d]:%s\n",i,str[i]);
@@ -33,7 +31,7 @@ void cStringTest0()
 
 #pragma mark - < 字符串的声明、修改、输入输出 >
 #pragma mark 定义一个字符串的几种方式
-void cStringTest1(){
+static void knowledge_init(){
   
   char str[6] = {'h','e','l','l','o','\0'};//字符数组，标准字符串必须带\0
   
@@ -50,7 +48,7 @@ void cStringTest1(){
   
 }
 
-void test_string_change(){
+static void knowledge_change(){
   
   char str[6] = {'h','e','l','l','o','\0'};
   char str2_1[] = "hello";
@@ -76,7 +74,7 @@ void test_string_change(){
 }
 
 #pragma mark 控制台字符串输出
-void test_string_out(){
+static void knowledge_out(){
   
   char str[] = "hello world";
   
@@ -86,7 +84,7 @@ void test_string_out(){
 }
 
 #pragma mark 字符串输入
-void test_string_in(){
+static void knowledge_input(){
   
   char str4[10];
   printf("请输入一个字符串：\n");
@@ -97,7 +95,7 @@ void test_string_in(){
 }
 
 #pragma mark 字符串数组
-void test_string_array(){
+static void knowledge_stringArray(){
   
   char *s[] = {"Aa1","Bb2","Cc3"};
   char **p = s;
@@ -112,7 +110,7 @@ void test_string_array(){
 #pragma mark - < 字符串函数库（要先#include <string.h>）>
 
 #pragma mark 常用
-void cStringTest2(){
+static void knowledge_stringLibraryBase(){
   
   char str[10] = "abc";
   char str2[10] = "def";
@@ -142,35 +140,41 @@ void cStringTest2(){
 
 
 #pragma mark 值传递、地址传递（e.g.char **p）
+//值传递
+static void knowledge_transmit_GetMemoryValue(char *p, int num){
+  
+  p = (char *)malloc(sizeof(char) * num);
+}
+
+//地址传递
+static void knowledge_transmit_GetMemoryAddress(char **p, int num){
+  
+  *p = (char *)malloc(sizeof(char) * num) ;
+}
+
 /*
  以指针声明的字符串不能直接用于strcpy,strcat，但可用于strlen和strcmp
  因为那是指针指向字符串所在的地址，不能对指针和字符串进行复制或连接操作
  需要用地址传递的方式 分配内存才能用
  */
 
-void test_string_fun(){
+static void knowledge_transmit(){
   
   char *stra = "abc";
   char *strb = "def";
   
-  GetMemoryValue(stra, 100);//值传递
-  GetMemoryAddress(&stra, 100);//地址传递
+  knowledge_transmit_GetMemoryValue(stra, 100);//值传递
+  knowledge_transmit_GetMemoryAddress(&stra, 100);//地址传递
   
   stpcpy(stra, strb);
   free(stra);
   
 }
 
-//值传递
-void GetMemoryValue(char *p, int num){
-  
-  p = (char *)malloc(sizeof(char) * num);
-}
 
-//地址传递
-void GetMemoryAddress(char **p, int num){
-  
-  *p = (char *)malloc(sizeof(char) * num) ;
-}
 
-#pragma mark - *********** practice **************
+#pragma mark - *********** root ***********
+
+void root_String_base(){
+  
+}

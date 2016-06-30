@@ -4,20 +4,17 @@
 //
 //  Created by 冯鸿辉 on 16/6/27.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//extern static
 
 #include "Extern_Static_base.h"
 #include "MD_C_Keyword3_CFile.h"
 
-void extern_test();
-void cKeywordTest0();
+#include <stdio.h>
 
-void Extern_Static_base_root(){
-  cKeywordTest0();
-}
+
 
 #pragma mark - ********** knowledge **************
-#pragma mark - extern、static
+#pragma mark - extern
 
 //extern关键字
 /*
@@ -29,7 +26,7 @@ void Extern_Static_base_root(){
 extern char *name_Keyword;//对应上面2
 extern int i;//对应上面2
 
-void extern_test(){
+static void knowledge_extern(){
 
   printf("%d",age_Keyword);
   printf("%s",name_Keyword);
@@ -37,25 +34,27 @@ void extern_test(){
 }
 
 
+#pragma mark - auto与static
 //static关键字
 /*
  被修饰的变量只能该文件使用
  */
 static double money_Keyword = 100.1;
 
-void cKeywordTest0()
-{
+static void knowledge_autoAndStatic(){
+  
   printf("age:%d\n",age_Keyword);//在定义变量的文件中使用extern
   printf("name:%s\n",name_Keyword);//在使用“外部变量”的文件中使用extern
   printf("money:%f\n",money_Keyword);//static
   printf("i:%d\n",i);
 }
 
-#pragma mark - auto与static
-void cKeywordTest1()
-{
-  cKeyword3Test();
+
+
+
+
+#pragma mark - *********** root ***********
+
+void root_Extern_Static_base(){
+
 }
-
-
-#pragma mark - *********** practice **************
