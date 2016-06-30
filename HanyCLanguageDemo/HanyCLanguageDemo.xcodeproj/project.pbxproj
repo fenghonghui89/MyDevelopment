@@ -22,9 +22,8 @@
 		14C2D11D1D211B43004A38F0 /* Union.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D11B1D211B43004A38F0 /* Union.c */; };
 		14C2D12B1D2128C2004A38F0 /* Const_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D1291D2128C2004A38F0 /* Const_base.c */; };
 		14C2D12E1D21291A004A38F0 /* Extern_Static_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D12C1D21291A004A38F0 /* Extern_Static_base.c */; };
-		14C2D1371D2129FF004A38F0 /* MD_C_Keyword1_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D12F1D2129FF004A38F0 /* MD_C_Keyword1_CFile.c */; };
-		14C2D1381D2129FF004A38F0 /* MD_C_Keyword2_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D1311D2129FF004A38F0 /* MD_C_Keyword2_CFile.c */; };
-		14C2D1391D2129FF004A38F0 /* MD_C_Keyword3_CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D1331D2129FF004A38F0 /* MD_C_Keyword3_CFile.c */; };
+		14C2D1371D2129FF004A38F0 /* HasExtern.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D12F1D2129FF004A38F0 /* HasExtern.c */; };
+		14C2D1381D2129FF004A38F0 /* NoExtern.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D1311D2129FF004A38F0 /* NoExtern.c */; };
 		14C2D13D1D212C44004A38F0 /* FreeTest.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D13B1D212C44004A38F0 /* FreeTest.c */; };
 		14EB1C191D24D26A00CA2F73 /* Root_Array.c in Sources */ = {isa = PBXBuildFile; fileRef = 14EB1C071D24D26A00CA2F73 /* Root_Array.c */; };
 		14EB1C1A1D24D26A00CA2F73 /* Root_BaseDataTypeAndExpression.c in Sources */ = {isa = PBXBuildFile; fileRef = 14EB1C091D24D26A00CA2F73 /* Root_BaseDataTypeAndExpression.c */; };
@@ -80,12 +79,10 @@
 		14C2D12A1D2128C2004A38F0 /* Const_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const_base.h; sourceTree = "<group>"; };
 		14C2D12C1D21291A004A38F0 /* Extern_Static_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Extern_Static_base.c; sourceTree = "<group>"; };
 		14C2D12D1D21291A004A38F0 /* Extern_Static_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extern_Static_base.h; sourceTree = "<group>"; };
-		14C2D12F1D2129FF004A38F0 /* MD_C_Keyword1_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword1_CFile.c; sourceTree = "<group>"; };
-		14C2D1301D2129FF004A38F0 /* MD_C_Keyword1_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword1_CFile.h; sourceTree = "<group>"; };
-		14C2D1311D2129FF004A38F0 /* MD_C_Keyword2_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword2_CFile.c; sourceTree = "<group>"; };
-		14C2D1321D2129FF004A38F0 /* MD_C_Keyword2_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword2_CFile.h; sourceTree = "<group>"; };
-		14C2D1331D2129FF004A38F0 /* MD_C_Keyword3_CFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MD_C_Keyword3_CFile.c; sourceTree = "<group>"; };
-		14C2D1341D2129FF004A38F0 /* MD_C_Keyword3_CFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_C_Keyword3_CFile.h; sourceTree = "<group>"; };
+		14C2D12F1D2129FF004A38F0 /* HasExtern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HasExtern.c; sourceTree = "<group>"; };
+		14C2D1301D2129FF004A38F0 /* HasExtern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HasExtern.h; sourceTree = "<group>"; };
+		14C2D1311D2129FF004A38F0 /* NoExtern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NoExtern.c; sourceTree = "<group>"; };
+		14C2D1321D2129FF004A38F0 /* NoExtern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoExtern.h; sourceTree = "<group>"; };
 		14C2D13B1D212C44004A38F0 /* FreeTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FreeTest.c; sourceTree = "<group>"; };
 		14C2D13C1D212C44004A38F0 /* FreeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTest.h; sourceTree = "<group>"; };
 		14EB1C071D24D26A00CA2F73 /* Root_Array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Root_Array.c; sourceTree = "<group>"; };
@@ -258,12 +255,10 @@
 			children = (
 				14C2D12C1D21291A004A38F0 /* Extern_Static_base.c */,
 				14C2D12D1D21291A004A38F0 /* Extern_Static_base.h */,
-				14C2D12F1D2129FF004A38F0 /* MD_C_Keyword1_CFile.c */,
-				14C2D1301D2129FF004A38F0 /* MD_C_Keyword1_CFile.h */,
-				14C2D1311D2129FF004A38F0 /* MD_C_Keyword2_CFile.c */,
-				14C2D1321D2129FF004A38F0 /* MD_C_Keyword2_CFile.h */,
-				14C2D1331D2129FF004A38F0 /* MD_C_Keyword3_CFile.c */,
-				14C2D1341D2129FF004A38F0 /* MD_C_Keyword3_CFile.h */,
+				14C2D12F1D2129FF004A38F0 /* HasExtern.c */,
+				14C2D1301D2129FF004A38F0 /* HasExtern.h */,
+				14C2D1311D2129FF004A38F0 /* NoExtern.c */,
+				14C2D1321D2129FF004A38F0 /* NoExtern.h */,
 			);
 			path = extern_static;
 			sourceTree = "<group>";
@@ -361,11 +356,10 @@
 				14EB1C211D24D26A00CA2F73 /* Root_Type.c in Sources */,
 				14C2D13D1D212C44004A38F0 /* FreeTest.c in Sources */,
 				14C2D11D1D211B43004A38F0 /* Union.c in Sources */,
-				14C2D1381D2129FF004A38F0 /* MD_C_Keyword2_CFile.c in Sources */,
+				14C2D1381D2129FF004A38F0 /* NoExtern.c in Sources */,
 				14C2D0F01D210B41004A38F0 /* Function_base.c in Sources */,
-				14C2D1391D2129FF004A38F0 /* MD_C_Keyword3_CFile.c in Sources */,
 				14EB1C1F1D24D26A00CA2F73 /* Root_Point.c in Sources */,
-				14C2D1371D2129FF004A38F0 /* MD_C_Keyword1_CFile.c in Sources */,
+				14C2D1371D2129FF004A38F0 /* HasExtern.c in Sources */,
 				14C2D0F71D210C6E004A38F0 /* Define_base.c in Sources */,
 				14C2D0E71D210915004A38F0 /* Expression.c in Sources */,
 				14EB1C201D24D26A00CA2F73 /* Root_String.c in Sources */,

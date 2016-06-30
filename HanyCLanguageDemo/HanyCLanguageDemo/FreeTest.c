@@ -10,9 +10,10 @@
 
 #include <stdio.h>
 
+
 void root_FreeTest(){
 
-  
+  printf("hello world!\n");
 
 }
 

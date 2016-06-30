@@ -6,7 +6,6 @@
 //  Copyright © 2016年 MD. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
 #import "FreeTest.h"
 #import "Root_BaseDataTypeAndExpression.h"
@@ -20,18 +19,21 @@
 #import "Root_Keyword.h"
 
 int main(int argc, const char * argv[]) {
-  @autoreleasepool {
-    
-    root_BaseDataTypeAndExpression();
-//    root_Array();
-//    root_Function();
-//    root_Define();
-//    root_Memory();
-//    root_Point();
-//    root_String();
-//    root_Type();
-//    root_Keyword();
-    
-  }
-    return 0;
+  
+  
+//  root_BaseDataTypeAndExpression();
+//  root_Array();
+//  root_Function();
+//  root_Define();
+//  root_Memory();
+//  root_Point();
+//  root_String();
+//  root_Type();
+//  root_Keyword();
+  
+  root_FreeTest();
+  
+  
+  
+  return 0;
 }

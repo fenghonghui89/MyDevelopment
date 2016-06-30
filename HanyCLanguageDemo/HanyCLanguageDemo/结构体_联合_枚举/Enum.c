@@ -21,6 +21,7 @@ static void knowledge_init(){
     AUT,
     WIN
   }num = SPR;
+  
   printf("num:%d\n",num);
   printf("SPR:%d\n",SPR);
   printf("SUM:%d\n",SUM);

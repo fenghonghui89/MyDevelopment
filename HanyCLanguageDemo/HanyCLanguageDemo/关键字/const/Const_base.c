@@ -11,12 +11,18 @@
 
 
 #pragma mark - ********** knowledge **************
-static void knowledge_base(){
+static void knowledge_const(){
   
   const int i = 20;
   int const is = 20;
   //    i = 30;//被修饰的变量不能修改
   //    is = 30;//被修饰的变量不能修改
+  printf("%d %d",i,is);
+  
+
+}
+
+static void knowledge_pointAndConst(){
   
   //指向的内容不能改，在初始化之后可以再指向别的内存
   int i2 = 20;
@@ -32,8 +38,6 @@ static void knowledge_base(){
   //    pp = &i3s;
   *pp = i3s;
 }
-
-
 
 #pragma mark - *********** root ***********
 

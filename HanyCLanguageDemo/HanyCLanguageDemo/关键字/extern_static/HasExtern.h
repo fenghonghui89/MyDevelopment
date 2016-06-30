@@ -1,10 +1,12 @@
 //
-//  MD_C_Keyword2_CFile.c
+//  HasExtern.h
 //  MyDevelopmentTest
 //
 //  Created by hanyfeng on 15/5/13.
 //  Copyright (c) 2015年 hanyfeng. All rights reserved.
-//无关键字
+//extern关键字
 
-#include "MD_C_Keyword2_CFile.h"
-char *name_Keyword = "Hany";
+
+extern int age_Keyword;//公开.c文件里面的变量时，要带extern
+
+
