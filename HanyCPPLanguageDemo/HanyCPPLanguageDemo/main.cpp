@@ -33,8 +33,8 @@ int main(int argc, const char * argv[]) {
 //  root_Quote();
 //  root_Memory();
 //  root_Keyword();
-  root_Typecast();
-//  root_Class();
+//  root_Typecast();
+  root_Class();
   
   return 0;
 }

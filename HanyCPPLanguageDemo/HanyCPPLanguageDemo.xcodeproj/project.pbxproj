@@ -15,6 +15,8 @@
 		14B6AA811D2659E800737F20 /* Typecaset_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA7F1D2659E800737F20 /* Typecaset_base.cpp */; };
 		14B6AA841D2664A300737F20 /* Root_Class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA821D2664A300737F20 /* Root_Class.cpp */; };
 		14B6AA881D26659900737F20 /* Class_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA861D26659900737F20 /* Class_base.cpp */; };
+		14B6AA8B1D266B6600737F20 /* MyTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA891D266B6600737F20 /* MyTime.cpp */; };
+		14B6AA911D2675B300737F20 /* SuperClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA8F1D2675B300737F20 /* SuperClass.cpp */; };
 		14E9BAB71D2606BF000CD14E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E9BAB61D2606BF000CD14E /* main.cpp */; };
 		14E9BAC11D260BC1000CD14E /* Root_Namespace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E9BABF1D260BC1000CD14E /* Root_Namespace.cpp */; };
 		14E9BAC41D260C48000CD14E /* Namespace_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E9BAC21D260C48000CD14E /* Namespace_base.cpp */; };
@@ -65,6 +67,10 @@
 		14B6AA831D2664A300737F20 /* Root_Class.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Root_Class.hpp; sourceTree = "<group>"; };
 		14B6AA861D26659900737F20 /* Class_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Class_base.cpp; sourceTree = "<group>"; };
 		14B6AA871D26659900737F20 /* Class_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Class_base.hpp; sourceTree = "<group>"; };
+		14B6AA891D266B6600737F20 /* MyTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyTime.cpp; sourceTree = "<group>"; };
+		14B6AA8A1D266B6600737F20 /* MyTime.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyTime.hpp; sourceTree = "<group>"; };
+		14B6AA8F1D2675B300737F20 /* SuperClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperClass.cpp; sourceTree = "<group>"; };
+		14B6AA901D2675B300737F20 /* SuperClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SuperClass.hpp; sourceTree = "<group>"; };
 		14E9BAB31D2606BF000CD14E /* HanyCPPLanguageDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HanyCPPLanguageDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E9BAB61D2606BF000CD14E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		14E9BABF1D260BC1000CD14E /* Root_Namespace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root_Namespace.cpp; sourceTree = "<group>"; };
@@ -148,6 +154,10 @@
 			children = (
 				14B6AA861D26659900737F20 /* Class_base.cpp */,
 				14B6AA871D26659900737F20 /* Class_base.hpp */,
+				14B6AA891D266B6600737F20 /* MyTime.cpp */,
+				14B6AA8A1D266B6600737F20 /* MyTime.hpp */,
+				14B6AA8F1D2675B300737F20 /* SuperClass.cpp */,
+				14B6AA901D2675B300737F20 /* SuperClass.hpp */,
 			);
 			path = "类与对象";
 			sourceTree = "<group>";
@@ -356,6 +366,7 @@
 				14E9BAFE1D26329F000CD14E /* Quote_base.cpp in Sources */,
 				14E9BAD81D262C50000CD14E /* BaseDataType.cpp in Sources */,
 				14E9BAFB1D26325F000CD14E /* Root_Quote.cpp in Sources */,
+				14B6AA8B1D266B6600737F20 /* MyTime.cpp in Sources */,
 				14E9BAE81D262E68000CD14E /* Enum.cpp in Sources */,
 				14E9BADB1D262C6D000CD14E /* Expression.cpp in Sources */,
 				14B6AA811D2659E800737F20 /* Typecaset_base.cpp in Sources */,
@@ -365,6 +376,7 @@
 				14B6AA731D26484D00737F20 /* Memory_base.cpp in Sources */,
 				14B6AA7D1D26597F00737F20 /* Root_Typecast.cpp in Sources */,
 				14E9BAB71D2606BF000CD14E /* main.cpp in Sources */,
+				14B6AA911D2675B300737F20 /* SuperClass.cpp in Sources */,
 				14E9BAD51D262BE3000CD14E /* Root_BaseDataTypeAndExpression.cpp in Sources */,
 				14E9BACE1D262952000CD14E /* Root_Function.cpp in Sources */,
 				14E9BAE51D262E5B000CD14E /* Union.cpp in Sources */,
