@@ -16,6 +16,10 @@
 #include "Root_String.hpp"
 #include "Root_Point.hpp"
 #include "Root_Quote.hpp"
+#include "Root_Memory.hpp"
+#include "Root_Keyword.hpp"
+#include "Root_Typecast.hpp"
+#include "Root_Class.hpp"
 
 int main(int argc, const char * argv[]) {
   
@@ -27,6 +31,10 @@ int main(int argc, const char * argv[]) {
 //  root_String();
 //  root_Point();
 //  root_Quote();
+//  root_Memory();
+//  root_Keyword();
+  root_Typecast();
+//  root_Class();
   
   return 0;
 }

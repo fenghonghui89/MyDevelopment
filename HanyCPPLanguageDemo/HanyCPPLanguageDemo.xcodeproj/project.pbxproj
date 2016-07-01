@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14B6AA701D26481700737F20 /* Root_Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA6E1D26481700737F20 /* Root_Memory.cpp */; };
+		14B6AA731D26484D00737F20 /* Memory_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA711D26484D00737F20 /* Memory_base.cpp */; };
+		14B6AA761D264E1400737F20 /* Root_Keyword.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA741D264E1400737F20 /* Root_Keyword.cpp */; };
+		14B6AA7A1D264E7500737F20 /* Const_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA781D264E7500737F20 /* Const_base.cpp */; };
+		14B6AA7D1D26597F00737F20 /* Root_Typecast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA7B1D26597F00737F20 /* Root_Typecast.cpp */; };
+		14B6AA811D2659E800737F20 /* Typecaset_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA7F1D2659E800737F20 /* Typecaset_base.cpp */; };
+		14B6AA841D2664A300737F20 /* Root_Class.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA821D2664A300737F20 /* Root_Class.cpp */; };
+		14B6AA881D26659900737F20 /* Class_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AA861D26659900737F20 /* Class_base.cpp */; };
 		14E9BAB71D2606BF000CD14E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E9BAB61D2606BF000CD14E /* main.cpp */; };
 		14E9BAC11D260BC1000CD14E /* Root_Namespace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E9BABF1D260BC1000CD14E /* Root_Namespace.cpp */; };
 		14E9BAC41D260C48000CD14E /* Namespace_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E9BAC21D260C48000CD14E /* Namespace_base.cpp */; };
@@ -41,6 +49,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14B6AA6E1D26481700737F20 /* Root_Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root_Memory.cpp; sourceTree = "<group>"; };
+		14B6AA6F1D26481700737F20 /* Root_Memory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Root_Memory.hpp; sourceTree = "<group>"; };
+		14B6AA711D26484D00737F20 /* Memory_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory_base.cpp; sourceTree = "<group>"; };
+		14B6AA721D26484D00737F20 /* Memory_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Memory_base.hpp; sourceTree = "<group>"; };
+		14B6AA741D264E1400737F20 /* Root_Keyword.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root_Keyword.cpp; sourceTree = "<group>"; };
+		14B6AA751D264E1400737F20 /* Root_Keyword.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Root_Keyword.hpp; sourceTree = "<group>"; };
+		14B6AA781D264E7500737F20 /* Const_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Const_base.cpp; sourceTree = "<group>"; };
+		14B6AA791D264E7500737F20 /* Const_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Const_base.hpp; sourceTree = "<group>"; };
+		14B6AA7B1D26597F00737F20 /* Root_Typecast.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root_Typecast.cpp; sourceTree = "<group>"; };
+		14B6AA7C1D26597F00737F20 /* Root_Typecast.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Root_Typecast.hpp; sourceTree = "<group>"; };
+		14B6AA7F1D2659E800737F20 /* Typecaset_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Typecaset_base.cpp; sourceTree = "<group>"; };
+		14B6AA801D2659E800737F20 /* Typecaset_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Typecaset_base.hpp; sourceTree = "<group>"; };
+		14B6AA821D2664A300737F20 /* Root_Class.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root_Class.cpp; sourceTree = "<group>"; };
+		14B6AA831D2664A300737F20 /* Root_Class.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Root_Class.hpp; sourceTree = "<group>"; };
+		14B6AA861D26659900737F20 /* Class_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Class_base.cpp; sourceTree = "<group>"; };
+		14B6AA871D26659900737F20 /* Class_base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Class_base.hpp; sourceTree = "<group>"; };
 		14E9BAB31D2606BF000CD14E /* HanyCPPLanguageDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HanyCPPLanguageDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E9BAB61D2606BF000CD14E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		14E9BABF1D260BC1000CD14E /* Root_Namespace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root_Namespace.cpp; sourceTree = "<group>"; };
@@ -92,6 +116,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14B6AA6D1D26480500737F20 /* 内存 */ = {
+			isa = PBXGroup;
+			children = (
+				14B6AA711D26484D00737F20 /* Memory_base.cpp */,
+				14B6AA721D26484D00737F20 /* Memory_base.hpp */,
+			);
+			path = "内存";
+			sourceTree = "<group>";
+		};
+		14B6AA771D264E6700737F20 /* const */ = {
+			isa = PBXGroup;
+			children = (
+				14B6AA781D264E7500737F20 /* Const_base.cpp */,
+				14B6AA791D264E7500737F20 /* Const_base.hpp */,
+			);
+			path = const;
+			sourceTree = "<group>";
+		};
+		14B6AA7E1D2659D100737F20 /* 类型转换 */ = {
+			isa = PBXGroup;
+			children = (
+				14B6AA7F1D2659E800737F20 /* Typecaset_base.cpp */,
+				14B6AA801D2659E800737F20 /* Typecaset_base.hpp */,
+			);
+			path = "类型转换";
+			sourceTree = "<group>";
+		};
+		14B6AA851D26650D00737F20 /* 类与对象 */ = {
+			isa = PBXGroup;
+			children = (
+				14B6AA861D26659900737F20 /* Class_base.cpp */,
+				14B6AA871D26659900737F20 /* Class_base.hpp */,
+			);
+			path = "类与对象";
+			sourceTree = "<group>";
+		};
 		14E9BAAA1D2606BF000CD14E = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +183,9 @@
 				14E9BAEA1D26307F000CD14E /* 指针 */,
 				14E9BAEB1D26307F000CD14E /* 字符串 */,
 				14E9BAF81D263249000CD14E /* 引用 */,
+				14B6AA6D1D26480500737F20 /* 内存 */,
+				14B6AA7E1D2659D100737F20 /* 类型转换 */,
+				14B6AA851D26650D00737F20 /* 类与对象 */,
 			);
 			path = HanyCPPLanguageDemo;
 			sourceTree = "<group>";
@@ -153,6 +216,14 @@
 				14E9BAF61D2630EB000CD14E /* Root_Point.hpp */,
 				14E9BAF91D26325F000CD14E /* Root_Quote.cpp */,
 				14E9BAFA1D26325F000CD14E /* Root_Quote.hpp */,
+				14B6AA6E1D26481700737F20 /* Root_Memory.cpp */,
+				14B6AA6F1D26481700737F20 /* Root_Memory.hpp */,
+				14B6AA741D264E1400737F20 /* Root_Keyword.cpp */,
+				14B6AA751D264E1400737F20 /* Root_Keyword.hpp */,
+				14B6AA7B1D26597F00737F20 /* Root_Typecast.cpp */,
+				14B6AA7C1D26597F00737F20 /* Root_Typecast.hpp */,
+				14B6AA821D2664A300737F20 /* Root_Class.cpp */,
+				14B6AA831D2664A300737F20 /* Root_Class.hpp */,
 			);
 			path = root;
 			sourceTree = "<group>";
@@ -193,6 +264,7 @@
 		14E9BAE91D26307F000CD14E /* 关键字 */ = {
 			isa = PBXGroup;
 			children = (
+				14B6AA771D264E6700737F20 /* const */,
 			);
 			path = "关键字";
 			sourceTree = "<group>";
@@ -286,19 +358,27 @@
 				14E9BAFB1D26325F000CD14E /* Root_Quote.cpp in Sources */,
 				14E9BAE81D262E68000CD14E /* Enum.cpp in Sources */,
 				14E9BADB1D262C6D000CD14E /* Expression.cpp in Sources */,
+				14B6AA811D2659E800737F20 /* Typecaset_base.cpp in Sources */,
 				14E9BAD11D26296E000CD14E /* Function_base.cpp in Sources */,
 				14E9BAEE1D263099000CD14E /* String_base.cpp in Sources */,
+				14B6AA7A1D264E7500737F20 /* Const_base.cpp in Sources */,
+				14B6AA731D26484D00737F20 /* Memory_base.cpp in Sources */,
+				14B6AA7D1D26597F00737F20 /* Root_Typecast.cpp in Sources */,
 				14E9BAB71D2606BF000CD14E /* main.cpp in Sources */,
 				14E9BAD51D262BE3000CD14E /* Root_BaseDataTypeAndExpression.cpp in Sources */,
 				14E9BACE1D262952000CD14E /* Root_Function.cpp in Sources */,
 				14E9BAE51D262E5B000CD14E /* Union.cpp in Sources */,
 				14E9BAF41D2630E0000CD14E /* Root_String.cpp in Sources */,
+				14B6AA881D26659900737F20 /* Class_base.cpp in Sources */,
 				14E9BAC41D260C48000CD14E /* Namespace_base.cpp in Sources */,
 				14E9BAC11D260BC1000CD14E /* Root_Namespace.cpp in Sources */,
 				14E9BAC71D260ECC000CD14E /* FrssTest.cpp in Sources */,
+				14B6AA701D26481700737F20 /* Root_Memory.cpp in Sources */,
 				14E9BAF11D2630C3000CD14E /* Point_base.cpp in Sources */,
 				14E9BAF71D2630EB000CD14E /* Root_Point.cpp in Sources */,
 				14E9BADF1D262DEF000CD14E /* Root_Type.cpp in Sources */,
+				14B6AA841D2664A300737F20 /* Root_Class.cpp in Sources */,
+				14B6AA761D264E1400737F20 /* Root_Keyword.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

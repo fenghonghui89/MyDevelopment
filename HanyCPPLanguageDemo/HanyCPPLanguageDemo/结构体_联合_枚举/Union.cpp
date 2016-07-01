@@ -12,6 +12,7 @@
 using namespace std;
 
 #pragma mark - *********** knowledge ***********
+#pragma mark 匿名联合
 static void knowledge_base(){
   
   union{

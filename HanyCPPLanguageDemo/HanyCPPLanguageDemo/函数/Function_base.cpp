@@ -26,6 +26,7 @@ static double add(int x,double y){
   return  x+y;
 }
 
+//跨编译器调用:告诉g++编译器 按照c语言生成调用函数的方式 产生函数调用名
 extern "C" double add(double x,double y){
   
   cout<<"add(double,double )"<<endl;
@@ -34,13 +35,9 @@ extern "C" double add(double x,double y){
 
 static void knowledge_overload(){
   
-  int x = 1;
-  int y = 9526;
-  double z = 2.0;
-  
-  cout<< add(x,y) <<endl;
-  cout<< add(y,z) << endl;
-  cout<< add(1.0,2.0)<<endl;
+  cout<<add(1,9526)<<endl;
+  cout<<add(9526,2.0)<< endl;
+  cout<<add(1.0,2.0)<<endl;
 }
 
 
@@ -57,6 +54,37 @@ static void knowledge_defuleParama(){
   cout<<add(100)<<endl;//105
 }
 
+#pragma mark 哑元
+/*
+ 只有参数的类型 没有参数的名字
+ 作用:函数向前兼容
+ */
+void  decode(int key);
+void  decode();
+void  decode(int);//兼容
+
+#pragma mark 内联函数 inline
+/*
+ 内联函数 在调用的地方会像宏一样展开 减少调用函数的开销以提高效率
+ 但是inline只是一种请求 请求成功
+ 就会把代码粘贴过去，请求不成功 就会像普通函数一样调用。
+ 
+ 函数比较大 调用不频繁不适合内联
+ 递归函数 不适合内联
+ 函数比较小 调用频繁  适合内联
+ */
+#define  MAX(x,y)  (((x)>(y))?(x):(y))//宏不关心类型 有风险 c++不提倡使用宏
+static inline int getMax(int x,int y){
+  return x>y?x:y;
+}
+
+static void knowledge_inline(){
+  
+  int max = MAX(10, 20);
+  
+  max = getMax(20, 30);
+  
+}
 
 #pragma mark - *********** test ***********
 #pragma mark - *********** root ***********

@@ -13,6 +13,10 @@ using namespace std;
 
 #pragma mark - *********** knowledge ***********
 #pragma mark bool
+/*
+ 可以赋任何值 但是下面的四个表达假
+ 0 false NULL '\0'
+ */
 static void knowledge_bool(){
 
   bool flag;
