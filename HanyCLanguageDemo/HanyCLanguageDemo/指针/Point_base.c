@@ -67,8 +67,8 @@ static void knowledge_address(){
    每个元素的地址是该元素的首地址
    数组名 = 数组的第一个元素的地址 = 第一个元素的首地址 = 数组的首地址
    */
-  printf("arr[0]->address:%p\n",&arr[0]);
-  printf("p->address:%p\n",p);
+  printf("arr[0]->address:%p\n",&arr[0]);//0x7fff5fbff750
+  printf("p->address:%p\n",p);//0x7fff5fbff750
   
   /*
    假设指针类型与数组类型为int，则A指针的下一个不是内存地址+1，而是数组的下一个元素的地址
@@ -266,5 +266,5 @@ static void test1(){
 
 void root_Point_base(){
   
-  
+  knowledge_address();
 }

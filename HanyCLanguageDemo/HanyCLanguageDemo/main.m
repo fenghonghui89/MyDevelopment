@@ -26,12 +26,12 @@ int main(int argc, const char * argv[]) {
 //  root_Function();
 //  root_Define();
 //  root_Memory();
-//  root_Point();
+  root_Point();
 //  root_String();
 //  root_Type();
 //  root_Keyword();
   
-  root_FreeTest();
+//  root_FreeTest();
   
   
   
