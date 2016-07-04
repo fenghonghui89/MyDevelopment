@@ -7,53 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140EA0F81CC5CE2C0077DCF8 /* ViewController_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EA0F71CC5CE2C0077DCF8 /* ViewController_class.swift */; };
-		140EA0FD1CC61B0B0077DCF8 /* ViewController_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EA0FC1CC61B0B0077DCF8 /* ViewController_struct.swift */; };
 		140EA0FF1CC628640077DCF8 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EA0FE1CC628640077DCF8 /* ClassModel.swift */; };
-		140EB6A71CCF554B00E84F79 /* ViewController_OptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A61CCF554B00E84F79 /* ViewController_OptionalChaining.swift */; };
-		140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */; };
-		140EB6AB1CCF760800E84F79 /* ViewController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140EB6AA1CCF760800E84F79 /* ViewController_Extension.swift */; };
-		142C689F1CC4BF0600ED1F92 /* ViewController_Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C689E1CC4BF0600ED1F92 /* ViewController_Enumerations.swift */; };
-		14364B841CC7865100366F01 /* ViewController_ARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14364B831CC7865100366F01 /* ViewController_ARC.swift */; };
-		143B82C31CE968CA0025E675 /* ViewController_TypeNesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */; };
-		143B82C51CE974660025E675 /* OnOffSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C41CE974660025E675 /* OnOffSwitch.swift */; };
-		143B82C71CE975C30025E675 /* InitializerRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C61CE975C30025E675 /* InitializerRequirements.swift */; };
-		143B82C91CE9813D0025E675 /* ClassOnlyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */; };
-		146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B18501CDADC8800F0D092 /* ViewController_Set.swift */; };
 		1481A2F61D10015400AA6E30 /* ViewController_InteractingWithCApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */; };
-		1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */; };
 		1486430C1D053103005C1381 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486430B1D053103005C1381 /* CustomView.swift */; };
 		1486430E1D053172005C1381 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1486430D1D053172005C1381 /* CustomView.xib */; };
 		148793A01CE5866200C67D75 /* ViewController_FreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */; };
-		148793A51CE5B87D00C67D75 /* ViewController_ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148793A41CE5B87D00C67D75 /* ViewController_ErrorHandling.swift */; };
-		148793A71CE5B8CA00C67D75 /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148793A61CE5B8CA00C67D75 /* VendingMachine.swift */; };
-		149DDA1E1CC2021C00C7A8B1 /* ViewController_Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1D1CC2021C00C7A8B1 /* ViewController_Functions.swift */; };
-		149DDA201CC21B5E00C7A8B1 /* ViewController_Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DDA1F1CC21B5E00C7A8B1 /* ViewController_Closures.swift */; };
-		149E4BF71CD851E0000CFC0E /* OptionalProtocolRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E4BF61CD851E0000CFC0E /* OptionalProtocolRequirements.swift */; };
-		149E4C191CD85D85000CFC0E /* ViewController_Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E4C181CD85D85000CFC0E /* ViewController_Generics.swift */; };
-		149E4C1B1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E4C1A1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift */; };
-		14AC48D51C7608D900FD1C56 /* ViewController_BaseOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC48D41C7608D900FD1C56 /* ViewController_BaseOperator.swift */; };
-		14AC6F121CE9B77700DF697A /* ProtocolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC6F111CE9B77700DF697A /* ProtocolExtensions.swift */; };
 		14AF34B71C7362AC007DC722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF34B61C7362AC007DC722 /* AppDelegate.swift */; };
-		14AF34B91C7362AC007DC722 /* ViewController_Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF34B81C7362AC007DC722 /* ViewController_Basic.swift */; };
 		14AF34BC1C7362AC007DC722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AF34BA1C7362AC007DC722 /* Main.storyboard */; };
 		14AF34BE1C7362AC007DC722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AF34BD1C7362AC007DC722 /* Assets.xcassets */; };
 		14AF34C11C7362AC007DC722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AF34BF1C7362AC007DC722 /* LaunchScreen.storyboard */; };
-		14C224251CD34DEA00C4359E /* ViewController_Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224241CD34DEA00C4359E /* ViewController_Protocols.swift */; };
-		14C224271CD34E1E00C4359E /* SnakesAndLadders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224261CD34E1E00C4359E /* SnakesAndLadders.swift */; };
-		14C2242B1CD350F800C4359E /* LinearCongruentialGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C2242A1CD350F800C4359E /* LinearCongruentialGenerator.swift */; };
-		14C2242D1CD3511700C4359E /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C2242C1CD3511700C4359E /* Dice.swift */; };
-		14C224311CD3520300C4359E /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224301CD3520300C4359E /* Starship.swift */; };
-		14C224331CD3578C00C4359E /* Hamster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224321CD3578C00C4359E /* Hamster.swift */; };
-		14C224351CD35F1A00C4359E /* ProtocolComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C224341CD35F1A00C4359E /* ProtocolComposition.swift */; };
-		14DE33271CD9D6EC002A75C4 /* ViewController_StringAndCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE33261CD9D6EC002A75C4 /* ViewController_StringAndCharacter.swift */; };
-		14DE332B1CDA04AD002A75C4 /* ViewController_array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE33291CDA04AD002A75C4 /* ViewController_array.swift */; };
-		14DE332C1CDA04AD002A75C4 /* ViewController_dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE332A1CDA04AD002A75C4 /* ViewController_dictionary.swift */; };
 		14F1F1FF1D10F6930059EDC1 /* ViewController_SwiftAndOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F1F1FE1D10F6930059EDC1 /* ViewController_SwiftAndOC.swift */; };
 		14F1F2021D10F6B40059EDC1 /* OC_Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F1F2011D10F6B40059EDC1 /* OC_Object.m */; };
 		14F1F2041D1105EE0059EDC1 /* ViewController_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F1F2031D1105EE0059EDC1 /* ViewController_Swift.swift */; };
-		14F347E21D003A9C005E5C29 /* ViewController_AccessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F347E11D003A9C005E5C29 /* ViewController_AccessControl.swift */; };
-		14F347E41D003ABF005E5C29 /* ViewController_AccessControl1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F347E31D003ABF005E5C29 /* ViewController_AccessControl1.swift */; };
 		14FA3B7B1D07B9FA00BD2902 /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B761D07B9FA00BD2902 /* OCViewController.m */; };
 		14FA3B7C1D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B771D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift */; };
 		14FA3B7D1D07B9FA00BD2902 /* ViewController_1_InteractingWithOCAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B781D07B9FA00BD2902 /* ViewController_1_InteractingWithOCAPIs.swift */; };
@@ -63,57 +28,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		140EA0F71CC5CE2C0077DCF8 /* ViewController_class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_class.swift; sourceTree = "<group>"; };
-		140EA0FC1CC61B0B0077DCF8 /* ViewController_struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_struct.swift; sourceTree = "<group>"; };
 		140EA0FE1CC628640077DCF8 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
-		140EB6A61CCF554B00E84F79 /* ViewController_OptionalChaining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_OptionalChaining.swift; sourceTree = "<group>"; };
-		140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TypeCasting.swift; sourceTree = "<group>"; };
-		140EB6AA1CCF760800E84F79 /* ViewController_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Extension.swift; sourceTree = "<group>"; };
 		1412011B1D018C7E00AD535A /* MyDevelopmentSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDevelopmentSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		142C689E1CC4BF0600ED1F92 /* ViewController_Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Enumerations.swift; sourceTree = "<group>"; };
-		14364B831CC7865100366F01 /* ViewController_ARC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ARC.swift; sourceTree = "<group>"; };
-		143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_TypeNesting.swift; sourceTree = "<group>"; };
-		143B82C41CE974660025E675 /* OnOffSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnOffSwitch.swift; sourceTree = "<group>"; };
-		143B82C61CE975C30025E675 /* InitializerRequirements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitializerRequirements.swift; sourceTree = "<group>"; };
-		143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOnlyProtocols.swift; sourceTree = "<group>"; };
-		146B18501CDADC8800F0D092 /* ViewController_Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Set.swift; sourceTree = "<group>"; };
 		1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_InteractingWithCApis.swift; sourceTree = "<group>"; };
-		1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ControlFlow.swift; sourceTree = "<group>"; };
 		1486430B1D053103005C1381 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1486430D1D053172005C1381 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FreeTest.swift; sourceTree = "<group>"; };
-		148793A41CE5B87D00C67D75 /* ViewController_ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_ErrorHandling.swift; sourceTree = "<group>"; };
-		148793A61CE5B8CA00C67D75 /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
-		149DDA1D1CC2021C00C7A8B1 /* ViewController_Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Functions.swift; sourceTree = "<group>"; };
-		149DDA1F1CC21B5E00C7A8B1 /* ViewController_Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Closures.swift; sourceTree = "<group>"; };
-		149E4BF61CD851E0000CFC0E /* OptionalProtocolRequirements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalProtocolRequirements.swift; sourceTree = "<group>"; };
-		149E4C181CD85D85000CFC0E /* ViewController_Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Generics.swift; sourceTree = "<group>"; };
-		149E4C1A1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AdvancedOperators.swift; sourceTree = "<group>"; };
-		14AC48D41C7608D900FD1C56 /* ViewController_BaseOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_BaseOperator.swift; sourceTree = "<group>"; };
-		14AC6F111CE9B77700DF697A /* ProtocolExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolExtensions.swift; sourceTree = "<group>"; };
 		14AF34B31C7362AC007DC722 /* MyDevelopmentSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDevelopmentSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AF34B61C7362AC007DC722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14AF34B81C7362AC007DC722 /* ViewController_Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Basic.swift; sourceTree = "<group>"; };
 		14AF34BB1C7362AC007DC722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14AF34BD1C7362AC007DC722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14AF34C01C7362AC007DC722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14AF34C21C7362AC007DC722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14C224241CD34DEA00C4359E /* ViewController_Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Protocols.swift; sourceTree = "<group>"; };
-		14C224261CD34E1E00C4359E /* SnakesAndLadders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakesAndLadders.swift; sourceTree = "<group>"; };
-		14C2242A1CD350F800C4359E /* LinearCongruentialGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearCongruentialGenerator.swift; sourceTree = "<group>"; };
-		14C2242C1CD3511700C4359E /* Dice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
-		14C224301CD3520300C4359E /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
-		14C224321CD3578C00C4359E /* Hamster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hamster.swift; sourceTree = "<group>"; };
-		14C224341CD35F1A00C4359E /* ProtocolComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolComposition.swift; sourceTree = "<group>"; };
-		14DE33261CD9D6EC002A75C4 /* ViewController_StringAndCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_StringAndCharacter.swift; sourceTree = "<group>"; };
-		14DE33291CDA04AD002A75C4 /* ViewController_array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_array.swift; sourceTree = "<group>"; };
-		14DE332A1CDA04AD002A75C4 /* ViewController_dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_dictionary.swift; sourceTree = "<group>"; };
 		14F1F1FE1D10F6930059EDC1 /* ViewController_SwiftAndOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_SwiftAndOC.swift; sourceTree = "<group>"; };
 		14F1F2001D10F6B40059EDC1 /* OC_Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OC_Object.h; sourceTree = "<group>"; };
 		14F1F2011D10F6B40059EDC1 /* OC_Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OC_Object.m; sourceTree = "<group>"; };
 		14F1F2031D1105EE0059EDC1 /* ViewController_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Swift.swift; sourceTree = "<group>"; };
-		14F347E11D003A9C005E5C29 /* ViewController_AccessControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AccessControl.swift; sourceTree = "<group>"; };
-		14F347E31D003ABF005E5C29 /* ViewController_AccessControl1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_AccessControl1.swift; sourceTree = "<group>"; };
 		14FA3B751D07B9FA00BD2902 /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
 		14FA3B761D07B9FA00BD2902 /* OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
 		14FA3B771D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_4_AdoptingCocoaDesignPatterns.swift; sourceTree = "<group>"; };
@@ -159,15 +89,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		148793A31CE5B85600C67D75 /* ErrorHandling */ = {
-			isa = PBXGroup;
-			children = (
-				148793A41CE5B87D00C67D75 /* ViewController_ErrorHandling.swift */,
-				148793A61CE5B8CA00C67D75 /* VendingMachine.swift */,
-			);
-			path = ErrorHandling;
-			sourceTree = "<group>";
-		};
 		14AF34AA1C7362AC007DC722 = {
 			isa = PBXGroup;
 			children = (
@@ -189,26 +110,6 @@
 			children = (
 				14AF34B61C7362AC007DC722 /* AppDelegate.swift */,
 				1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */,
-				14AF34B81C7362AC007DC722 /* ViewController_Basic.swift */,
-				14AC48D41C7608D900FD1C56 /* ViewController_BaseOperator.swift */,
-				14DE33261CD9D6EC002A75C4 /* ViewController_StringAndCharacter.swift */,
-				14DE33281CDA04AD002A75C4 /* collection types */,
-				1484847E1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift */,
-				149DDA1D1CC2021C00C7A8B1 /* ViewController_Functions.swift */,
-				149DDA1F1CC21B5E00C7A8B1 /* ViewController_Closures.swift */,
-				142C689E1CC4BF0600ED1F92 /* ViewController_Enumerations.swift */,
-				140EA0FC1CC61B0B0077DCF8 /* ViewController_struct.swift */,
-				140EA0F71CC5CE2C0077DCF8 /* ViewController_class.swift */,
-				14364B831CC7865100366F01 /* ViewController_ARC.swift */,
-				140EB6A61CCF554B00E84F79 /* ViewController_OptionalChaining.swift */,
-				148793A31CE5B85600C67D75 /* ErrorHandling */,
-				140EB6A81CCF622F00E84F79 /* ViewController_TypeCasting.swift */,
-				143B82C21CE968CA0025E675 /* ViewController_TypeNesting.swift */,
-				140EB6AA1CCF760800E84F79 /* ViewController_Extension.swift */,
-				14C224221CD34D9900C4359E /* protocal */,
-				149E4C181CD85D85000CFC0E /* ViewController_Generics.swift */,
-				14F347E01D003A7B005E5C29 /* AccessControl */,
-				149E4C1A1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift */,
 				14FA3B741D07B9FA00BD2902 /* Using Swift with Cocoa and Objective-C */,
 				1481A2F41D10013700AA6E30 /* Interacting with C APIs */,
 				14F1F1FD1D10F6710059EDC1 /* Swift and Objective-C in the Same Project */,
@@ -224,43 +125,6 @@
 			path = MyDevelopmentSwift;
 			sourceTree = "<group>";
 		};
-		14C224221CD34D9900C4359E /* protocal */ = {
-			isa = PBXGroup;
-			children = (
-				14C224241CD34DEA00C4359E /* ViewController_Protocols.swift */,
-				14C224231CD34DCA00C4359E /* delegate */,
-			);
-			path = protocal;
-			sourceTree = "<group>";
-		};
-		14C224231CD34DCA00C4359E /* delegate */ = {
-			isa = PBXGroup;
-			children = (
-				14C224301CD3520300C4359E /* Starship.swift */,
-				14C2242A1CD350F800C4359E /* LinearCongruentialGenerator.swift */,
-				143B82C41CE974660025E675 /* OnOffSwitch.swift */,
-				143B82C61CE975C30025E675 /* InitializerRequirements.swift */,
-				14C2242C1CD3511700C4359E /* Dice.swift */,
-				14C224261CD34E1E00C4359E /* SnakesAndLadders.swift */,
-				14C224321CD3578C00C4359E /* Hamster.swift */,
-				143B82C81CE9813D0025E675 /* ClassOnlyProtocols.swift */,
-				14C224341CD35F1A00C4359E /* ProtocolComposition.swift */,
-				149E4BF61CD851E0000CFC0E /* OptionalProtocolRequirements.swift */,
-				14AC6F111CE9B77700DF697A /* ProtocolExtensions.swift */,
-			);
-			path = delegate;
-			sourceTree = "<group>";
-		};
-		14DE33281CDA04AD002A75C4 /* collection types */ = {
-			isa = PBXGroup;
-			children = (
-				14DE33291CDA04AD002A75C4 /* ViewController_array.swift */,
-				14DE332A1CDA04AD002A75C4 /* ViewController_dictionary.swift */,
-				146B18501CDADC8800F0D092 /* ViewController_Set.swift */,
-			);
-			path = "collection types";
-			sourceTree = "<group>";
-		};
 		14F1F1FD1D10F6710059EDC1 /* Swift and Objective-C in the Same Project */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,15 +134,6 @@
 				14F1F2011D10F6B40059EDC1 /* OC_Object.m */,
 			);
 			path = "Swift and Objective-C in the Same Project";
-			sourceTree = "<group>";
-		};
-		14F347E01D003A7B005E5C29 /* AccessControl */ = {
-			isa = PBXGroup;
-			children = (
-				14F347E11D003A9C005E5C29 /* ViewController_AccessControl.swift */,
-				14F347E31D003ABF005E5C29 /* ViewController_AccessControl1.swift */,
-			);
-			path = AccessControl;
 			sourceTree = "<group>";
 		};
 		14FA3B741D07B9FA00BD2902 /* Using Swift with Cocoa and Objective-C */ = {
@@ -384,54 +239,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AF34B91C7362AC007DC722 /* ViewController_Basic.swift in Sources */,
 				14FA3B7E1D07B9FA00BD2902 /* ViewController_3_WorkingWithCocoaDataTypes.swift in Sources */,
-				14364B841CC7865100366F01 /* ViewController_ARC.swift in Sources */,
 				14AF34B71C7362AC007DC722 /* AppDelegate.swift in Sources */,
-				14AC6F121CE9B77700DF697A /* ProtocolExtensions.swift in Sources */,
-				149E4C1B1CD8AA40000CFC0E /* ViewController_AdvancedOperators.swift in Sources */,
-				14C224331CD3578C00C4359E /* Hamster.swift in Sources */,
 				14FA3B7B1D07B9FA00BD2902 /* OCViewController.m in Sources */,
-				14AC48D51C7608D900FD1C56 /* ViewController_BaseOperator.swift in Sources */,
-				149E4BF71CD851E0000CFC0E /* OptionalProtocolRequirements.swift in Sources */,
-				140EB6AB1CCF760800E84F79 /* ViewController_Extension.swift in Sources */,
 				148793A01CE5866200C67D75 /* ViewController_FreeTest.swift in Sources */,
 				14FA3B7F1D07B9FA00BD2902 /* ViewController_2_WritingSwiftClassesWithOCBehavior.swift in Sources */,
-				146B18511CDADC8800F0D092 /* ViewController_Set.swift in Sources */,
-				14C224351CD35F1A00C4359E /* ProtocolComposition.swift in Sources */,
-				14F347E41D003ABF005E5C29 /* ViewController_AccessControl1.swift in Sources */,
-				14DE332C1CDA04AD002A75C4 /* ViewController_dictionary.swift in Sources */,
-				143B82C91CE9813D0025E675 /* ClassOnlyProtocols.swift in Sources */,
-				149DDA1E1CC2021C00C7A8B1 /* ViewController_Functions.swift in Sources */,
 				140EA0FF1CC628640077DCF8 /* ClassModel.swift in Sources */,
-				14C224271CD34E1E00C4359E /* SnakesAndLadders.swift in Sources */,
-				143B82C51CE974660025E675 /* OnOffSwitch.swift in Sources */,
-				14C2242B1CD350F800C4359E /* LinearCongruentialGenerator.swift in Sources */,
-				148793A51CE5B87D00C67D75 /* ViewController_ErrorHandling.swift in Sources */,
 				14FA3B7D1D07B9FA00BD2902 /* ViewController_1_InteractingWithOCAPIs.swift in Sources */,
 				1481A2F61D10015400AA6E30 /* ViewController_InteractingWithCApis.swift in Sources */,
-				140EA0F81CC5CE2C0077DCF8 /* ViewController_class.swift in Sources */,
-				149DDA201CC21B5E00C7A8B1 /* ViewController_Closures.swift in Sources */,
-				14C224251CD34DEA00C4359E /* ViewController_Protocols.swift in Sources */,
-				143B82C31CE968CA0025E675 /* ViewController_TypeNesting.swift in Sources */,
 				14F1F2021D10F6B40059EDC1 /* OC_Object.m in Sources */,
-				14DE33271CD9D6EC002A75C4 /* ViewController_StringAndCharacter.swift in Sources */,
 				14F1F2041D1105EE0059EDC1 /* ViewController_Swift.swift in Sources */,
 				14FA3B7C1D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift in Sources */,
-				143B82C71CE975C30025E675 /* InitializerRequirements.swift in Sources */,
-				140EB6A71CCF554B00E84F79 /* ViewController_OptionalChaining.swift in Sources */,
-				14F347E21D003A9C005E5C29 /* ViewController_AccessControl.swift in Sources */,
-				14C224311CD3520300C4359E /* Starship.swift in Sources */,
 				14F1F1FF1D10F6930059EDC1 /* ViewController_SwiftAndOC.swift in Sources */,
-				149E4C191CD85D85000CFC0E /* ViewController_Generics.swift in Sources */,
-				148793A71CE5B8CA00C67D75 /* VendingMachine.swift in Sources */,
-				14DE332B1CDA04AD002A75C4 /* ViewController_array.swift in Sources */,
-				14C2242D1CD3511700C4359E /* Dice.swift in Sources */,
 				1486430C1D053103005C1381 /* CustomView.swift in Sources */,
-				1484847F1CA1BA6A00FA0DFF /* ViewController_ControlFlow.swift in Sources */,
-				140EB6A91CCF622F00E84F79 /* ViewController_TypeCasting.swift in Sources */,
-				142C689F1CC4BF0600ED1F92 /* ViewController_Enumerations.swift in Sources */,
-				140EA0FD1CC61B0B0077DCF8 /* ViewController_struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
