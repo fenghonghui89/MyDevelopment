@@ -12,7 +12,7 @@ func root_AccessControl_base() {
   
 }
 
-func AccessControl_show() {
+private func AccessControl_show() {
   
   var stringToEdit = TrackedString()
   stringToEdit.numberOfEdits = 4;
@@ -25,43 +25,28 @@ func AccessControl_show() {
   
 }
 
-func AccessControl_show1() {
-  
-  var stringToEdit = TrackedString()
-  // stringToEdit.numberOfEdits = 4;//私有set
-  stringToEdit.value = "This string will be tracked."
-  stringToEdit.value += " This edit will increment numberOfEdits."
-  stringToEdit.value += " So will this one."
-  print("The number of edits is \(stringToEdit.numberOfEdits)")
-  // Prints "The number of edits is 3"
-  
-}
 
 
 
-//MARK:访问控制语法
-//public class SomePlublicClass{}
-//internal class SomeInternalClass{}
-//private class SomePrivateClass{}
-//
-//public var somePublicVariable = 0
-//internal let someInternalConstant = 0
-//private func somePrivateFunction() {}
 
 
 
 //MARK:指定访问级别
+
+//public
 public class SomePublicClass {          // explicitly public class
   public var somePublicProperty = 0    // explicitly public class member
   var someInternalProperty = 0         // implicitly internal class member
   private func somePrivateMethod() {}  // explicitly private class member
 }
 
-class SomeInternalClass {               // implicitly internal class
+//internal
+internal class SomeInternalClass {      // implicitly internal class
   var someInternalProperty = 0         // implicitly internal class member
   private func somePrivateMethod() {}  // explicitly private class member
 }
 
+//private
 private class SomePrivateClass {        // explicitly private class
   var somePrivateProperty = 0          // implicitly private class member
   func somePrivateMethod() {}          // implicitly private class member

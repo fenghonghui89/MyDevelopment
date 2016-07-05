@@ -9,14 +9,14 @@
 import Foundation
 
 func root_Basic_Tuples() {
-  
+  kl_getValueByIndex();
 }
 
 //MARK:通过下标取元组的元素值
 private func kl_getValueByIndex() {
   
   let pp = (11,111,1111);
-  print(pp.2);
+  print(pp.2);//1111
   
 }
 

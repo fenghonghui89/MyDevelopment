@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A100F21D2B902D002069D2 /* ARC_weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A100F11D2B902D002069D2 /* ARC_weak.swift */; };
+		14A100F41D2B904A002069D2 /* ARC_unowned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A100F31D2B904A002069D2 /* ARC_unowned.swift */; };
+		14A100F61D2B9092002069D2 /* ARC_closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A100F51D2B9092002069D2 /* ARC_closures.swift */; };
+		14A100F81D2B922A002069D2 /* AccessControl_base1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A100F71D2B922A002069D2 /* AccessControl_base1.swift */; };
 		14C8C6B91D2A5DCE000C14D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C6B81D2A5DCE000C14D0 /* main.swift */; };
 		14C8C6C21D2A60E1000C14D0 /* Basic_base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C6C11D2A60E1000C14D0 /* Basic_base.swift */; };
 		14C8C6C51D2A653C000C14D0 /* Root_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C6C41D2A653C000C14D0 /* Root_Base.swift */; };
@@ -87,6 +91,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14A100F11D2B902D002069D2 /* ARC_weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARC_weak.swift; sourceTree = "<group>"; };
+		14A100F31D2B904A002069D2 /* ARC_unowned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARC_unowned.swift; sourceTree = "<group>"; };
+		14A100F51D2B9092002069D2 /* ARC_closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARC_closures.swift; sourceTree = "<group>"; };
+		14A100F71D2B922A002069D2 /* AccessControl_base1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessControl_base1.swift; sourceTree = "<group>"; };
+		14A100F91D2B945F002069D2 /* bookmark */ = {isa = PBXFileReference; lastKnownFileType = text; path = bookmark; sourceTree = "<group>"; };
 		14C8C6B51D2A5DCE000C14D0 /* HanySwiftLanguageDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HanySwiftLanguageDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C8C6B81D2A5DCE000C14D0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		14C8C6C11D2A60E1000C14D0 /* Basic_base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basic_base.swift; sourceTree = "<group>"; };
@@ -188,6 +197,7 @@
 				14C8C6B81D2A5DCE000C14D0 /* main.swift */,
 				14C8C6CC1D2A6B85000C14D0 /* FreeTest.swift */,
 				14C8C7191D2A76A8000C14D0 /* ClassModel.swift */,
+				14A100F91D2B945F002069D2 /* bookmark */,
 				14C8C6C31D2A6527000C14D0 /* root */,
 				14C8C7531D2A7B4B000C14D0 /* AccessControl */,
 				14C8C7541D2A7B4B000C14D0 /* AdvancedOperators */,
@@ -324,6 +334,9 @@
 			isa = PBXGroup;
 			children = (
 				14C8C7171D2A766D000C14D0 /* ARC_base.swift */,
+				14A100F11D2B902D002069D2 /* ARC_weak.swift */,
+				14A100F31D2B904A002069D2 /* ARC_unowned.swift */,
+				14A100F51D2B9092002069D2 /* ARC_closures.swift */,
 			);
 			path = ARC;
 			sourceTree = "<group>";
@@ -408,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				14C8C75B1D2A7B84000C14D0 /* AccessControl_base.swift */,
+				14A100F71D2B922A002069D2 /* AccessControl_base1.swift */,
 			);
 			path = AccessControl;
 			sourceTree = "<group>";
@@ -490,6 +504,7 @@
 				14C8C7141D2A764E000C14D0 /* OptionalChaining_base.swift in Sources */,
 				14C8C7521D2A7B09000C14D0 /* Starship.swift in Sources */,
 				14C8C6D91D2A6E6B000C14D0 /* StringsAndCharacters_base.swift in Sources */,
+				14A100F81D2B922A002069D2 /* AccessControl_base1.swift in Sources */,
 				14C8C74A1D2A7B09000C14D0 /* Hamster.swift in Sources */,
 				14C8C6F11D2A7314000C14D0 /* Root_Enumerations.swift in Sources */,
 				14C8C7061D2A75D5000C14D0 /* Root_ARC.swift in Sources */,
@@ -506,6 +521,7 @@
 				14C8C7221D2A7879000C14D0 /* ErrorHanding_base.swift in Sources */,
 				14C8C7081D2A75E4000C14D0 /* Root_Extersion.swift in Sources */,
 				14C8C6C21D2A60E1000C14D0 /* Basic_base.swift in Sources */,
+				14A100F41D2B904A002069D2 /* ARC_unowned.swift in Sources */,
 				14C8C7581D2A7B6B000C14D0 /* Root_AdvancedOperators.swift in Sources */,
 				14C8C70A1D2A75F2000C14D0 /* Root_OptionalChaining.swift in Sources */,
 				14C8C7161D2A765F000C14D0 /* Extersion_base.swift in Sources */,
@@ -533,8 +549,10 @@
 				14C8C7301D2A7A02000C14D0 /* Root_Protocal.swift in Sources */,
 				14C8C6E11D2A709C000C14D0 /* Root_CollectionTypes.swift in Sources */,
 				14C8C6E31D2A70BA000C14D0 /* Root_ControlFlow.swift in Sources */,
+				14A100F21D2B902D002069D2 /* ARC_weak.swift in Sources */,
 				14C8C7561D2A7B5E000C14D0 /* Root_AccessControl.swift in Sources */,
 				14C8C6E71D2A71C5000C14D0 /* ControlFlow_while.swift in Sources */,
+				14A100F61D2B9092002069D2 /* ARC_closures.swift in Sources */,
 				14C8C7491D2A7B09000C14D0 /* Dice.swift in Sources */,
 				14C8C6EF1D2A7305000C14D0 /* Root_Closures.swift in Sources */,
 				14C8C6CD1D2A6B85000C14D0 /* FreeTest.swift in Sources */,

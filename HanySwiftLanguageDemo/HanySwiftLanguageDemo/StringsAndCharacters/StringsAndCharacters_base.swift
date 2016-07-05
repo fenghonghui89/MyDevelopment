@@ -9,7 +9,13 @@
 /*
  swift的String是值类型
  不能添加字符或字符串到一个字符中，因为字符类型只能有一个字符
- \0 (null character), \\ (backslash), \t (horizontal tab), \n (line feed), \r (carriage return), \" (double quote) and \' (single quote)
+ \0 (null character),
+ \\ (backslash), 
+ \t (horizontal tab), 
+ \n (line feed), 
+ \r (carriage return), 
+ \" (double quote) and 
+ \' (single quote)
  特殊字符写法：\u{n}，n是1-8位的十六进制数
  */
 

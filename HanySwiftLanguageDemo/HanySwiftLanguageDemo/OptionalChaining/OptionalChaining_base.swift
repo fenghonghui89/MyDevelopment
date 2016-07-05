@@ -86,6 +86,7 @@ private func kl_5(){
   }
 }
 
+//MARK:- *********** class ************
 //MARK:自判断链接
 
 class Person {

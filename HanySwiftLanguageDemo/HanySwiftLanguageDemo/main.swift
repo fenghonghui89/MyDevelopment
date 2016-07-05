@@ -10,7 +10,7 @@ import Foundation
 
 //root_FreeTest()
 
-//root_Basic()
+root_Basic()
 //root_BaseOperator()
 //root_StringsAndCharacters()
 //root_CollectionTypes()

@@ -38,22 +38,14 @@ private func kl_readNum(){
   let productid = 1_000_000.000_000_1;
   let 你好 = "你们";
   print("ID:\(productid) \n Name:\(你好)");
-  
-  let e1 = 1.21875e2
-  let e2 = 1.21875e-2
-  print(e1,e2)
 }
 
-//MARK:
+//MARK:int范围
 private func kl_typeScope(){
 
-  let productid = 1_000_000.000_000_1;
-  let 你好 = "你们";
-  print("ID:\(productid) \n Name:\(你好)");
-  
-  let e1 = 1.21875e2
-  let e2 = 1.21875e-2
-  print(e1,e2)
+  let min = INT64_MAX;
+  let max = Int64.max
+  print("wo shi \(min) \n \(max)");
 }
 
 //MARK:类型转换
