@@ -37,6 +37,16 @@
 3. $3
     """
 
+    '五个空行':
+      'prefix': 'br'
+      'body': """
+&ensp;
+&ensp;
+&ensp;
+&ensp;
+&ensp;
+      """
+
   'example1':
     'prefix': 'myex1'
     'body': """
