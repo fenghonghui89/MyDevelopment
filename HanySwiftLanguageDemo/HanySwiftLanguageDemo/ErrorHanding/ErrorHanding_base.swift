@@ -1,15 +1,18 @@
 //
-//  ErrorHanding.swift
+//  ErrorHanding_base.swift
 //  HanySwiftLanguageDemo
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//异常捕获
 
 import Foundation
 
+func root_ErrorHanding_base() {
+  
+}
 //MARK:- 例子 throws关键字接参数后面
-func func_Propagating_Errors_Using_Throwing_Functions(){
+private func func_Propagating_Errors_Using_Throwing_Functions(){
   
   let vendingMachine = VendingMachine()
   vendingMachine.coinsDeposited = 8
@@ -30,7 +33,7 @@ func func_Propagating_Errors_Using_Throwing_Functions(){
   
 }
 
-func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws{
+private func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws{
   
   let favoriteSnacks = [
     "Alice": "Chips",
@@ -45,7 +48,7 @@ func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws{
 }
 
 //MARK:- try?返回nil 方便一次性处理所有异常（出错依然进入do？）/ try!忽略所有错误，很可能有运行时错误
-func func_Converting_Errors_to_Optional_Values(){
+private func func_Converting_Errors_to_Optional_Values(){
   
   let data:String?
   
@@ -59,7 +62,7 @@ func func_Converting_Errors_to_Optional_Values(){
   
 }
 
-func fetchData()throws -> String? {
+private func fetchData()throws -> String? {
   
   if let data = try? fetchDataFromDisk() {
     print("receive disk data")
@@ -74,7 +77,7 @@ func fetchData()throws -> String? {
   return nil
 }
 
-enum FetchDataError:ErrorType {
+private enum FetchDataError:ErrorType {
   case diskError
   case serverError
   
@@ -89,7 +92,7 @@ enum FetchDataError:ErrorType {
   
 }
 
-func fetchDataFromDisk()throws -> String{
+private func fetchDataFromDisk()throws -> String{
   defer{
     print("clean disk");
   }
@@ -101,7 +104,7 @@ func fetchDataFromDisk()throws -> String{
   return "disk data"
 }
 
-func fetchDataFromServer()throws -> String{
+private func fetchDataFromServer()throws -> String{
   
   defer{
     print("server disk");
@@ -117,7 +120,7 @@ func fetchDataFromServer()throws -> String{
 
 
 //MARK:- 在你的代码块就要结束前 如果你使用了 defer 在其之中的代码就会运行
-func func_Specifying_Cleanup_Actions() {
+private func func_Specifying_Cleanup_Actions() {
   
   if let result = doSomething() {
     print("get data:\(result)");
@@ -126,7 +129,7 @@ func func_Specifying_Cleanup_Actions() {
   }
 }
 
-func doSomething()->String?{
+private func doSomething()->String?{
   
   defer{
     print("clean up");
@@ -140,6 +143,6 @@ func doSomething()->String?{
 }
 
 //MARK:- fatalError 无条件打印日志并终止执行
-func func_fatalError() {
+private func func_fatalError() {
   fatalError("init(coder:) has not been implemented")
 }

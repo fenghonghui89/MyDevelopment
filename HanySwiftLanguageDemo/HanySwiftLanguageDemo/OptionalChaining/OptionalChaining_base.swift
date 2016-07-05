@@ -4,30 +4,46 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//可选链
 
 import Foundation
 
 
 func root_OptionalChaining_base()  {
   
+
+
+}
+
+//MARK:通过自判断链接调用属性
+private func kl_1(){
+
   let john:Person = Person();
   
-  //通过自判断链接调用属性
   if let numberOfRooms = john.residence?.numberOfRooms {
     print("this is \(numberOfRooms)");
   }else{
     print("this is nil");
   }//this is nil
+}
+
+//MARK:使用自判断链接调用方法
+private func kl_2(){
+
+  let john:Person = Person();
   
-  //使用自判断链接调用方法
   if ((john.residence?.printNumberOfRooms()) != nil) {
     print("It was possible to print the number of rooms.")
   } else {
     print("It was not possible to print the number of rooms.")
   }//It was not possible to print the number of rooms.
+}
+
+//MARK:使用自判断链接调用子脚本
+private func kl_3(){
   
-  //使用自判断链接调用子脚本
+  let john:Person = Person();
+  
   let johnsHouse = Residence()
   johnsHouse.rooms.append(Room(name: "Living Room"))
   johnsHouse.rooms.append(Room(name: "Kitchen"))
@@ -39,8 +55,14 @@ func root_OptionalChaining_base()  {
   } else {
     print("Unable to retrieve the first room name.")
   }
+
+}
+
+//MARK:连接多层链接
+private func kl_4(){
   
-  //连接多层链接
+  let john:Person = Person();
+  
   let johnsAddress = Address()
   johnsAddress.buildingName = "The Larches"
   johnsAddress.street = "Laurel Street"
@@ -52,12 +74,16 @@ func root_OptionalChaining_base()  {
   } else {
     print("Unable to retrieve the address.")
   }
+}
+
+//MARK:链接自判断返回值的方法
+private func kl_5(){
   
-  //链接自判断返回值的方法
+  let john:Person = Person();
+  
   if let upper = john.residence?.address?.buildingIdentifier()?.uppercaseString {
     print("John's uppercase building identifier is \(upper).")//John's uppercase building identifier is THE LARCHES.
   }
-
 }
 
 //MARK:自判断链接

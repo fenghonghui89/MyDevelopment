@@ -4,13 +4,16 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//泛型
 
 import Foundation
 
+func root_Generics_base() {
+  
+}
 //MARK:- <<< method >>>
 //MARK:泛型函数 func<Element>(a.b)
-func func_GenericFunctions(){
+private func func_GenericFunctions(){
   
   var someInt = 3
   var anotherInt = 107
@@ -25,7 +28,7 @@ func func_GenericFunctions(){
   
 }
 
-func swapTwoValues<T>(inout a: T, inout _ b: T) {//inout修改参数值
+private func swapTwoValues<T>(inout a: T, inout _ b: T) {//inout修改参数值
   let temporaryA = a
   a = b
   b = temporaryA
@@ -33,7 +36,7 @@ func swapTwoValues<T>(inout a: T, inout _ b: T) {//inout修改参数值
 }
 
 //MARK:泛型类型
-func func_GenericTypes() {
+private func func_GenericTypes() {
   
   var st = Stack<String>()
   st.push("one")
@@ -50,7 +53,7 @@ func func_GenericTypes() {
 }
 
 //MARK:扩展泛型类型
-func func_ExtendingAGenericType() {
+private func func_ExtendingAGenericType() {
   
   var st = Stack<String>()
   st.append("1")
@@ -64,7 +67,7 @@ func func_ExtendingAGenericType() {
 }
 
 //MARK:类型约束 func<Element:Protocol>(a,b)
-func func_TypeConstraints(){
+private func func_TypeConstraints(){
   
   let arr = ["one","two","three"]
   
@@ -85,7 +88,7 @@ func func_TypeConstraints(){
 /*
  Equatable协议规定类型都能用==、!=判断
  */
-func findIndex<T:Equatable>(array:[T],valueToFound:T) -> Int? {
+private func findIndex<T:Equatable>(array:[T],valueToFound:T) -> Int? {
   for (index,value) in array.enumerate(){
     if value == valueToFound {
       return index
@@ -96,7 +99,7 @@ func findIndex<T:Equatable>(array:[T],valueToFound:T) -> Int? {
 }
 
 //MARK:关联类型 associatedtype
-func func_AssociatedTypes(){
+private func func_AssociatedTypes(){
   
   var st = Stack<String>()
   st.append("one")
@@ -111,7 +114,7 @@ func func_AssociatedTypes(){
 }
 
 //MARK:类型约束+where语句
-func func_WhereClauses(){
+private func func_WhereClauses(){
   
   var stackOfStrings = Stack<String>()
   stackOfStrings.push("1")
@@ -133,7 +136,7 @@ func func_WhereClauses(){
 }
 
 
-func allItemsMatch<
+private func allItemsMatch<
   C1: Container, C2: Container
   where C1.ItemType == C2.ItemType, C1.ItemType: Equatable>
   (someContainer: C1, _ anotherContainer: C2) -> Bool {
@@ -159,7 +162,7 @@ func allItemsMatch<
 //MARK:- <<< class / protocol >>>
 
 //非泛型类型struct
-struct IntStack: Container {
+private struct IntStack: Container {
   
   //非泛型类型
   var items = [Int]()
@@ -184,7 +187,7 @@ struct IntStack: Container {
 }
 
 //泛型类型struct
-struct Stack<T>: Container {
+private struct Stack<T>: Container {
   
   //泛型类型
   var items = [T]()
@@ -210,7 +213,7 @@ struct Stack<T>: Container {
 
 
 
-extension Stack {
+private extension Stack {
   var topItem: T? {
     return items.isEmpty ? nil : items[items.count - 1]
   }
@@ -220,7 +223,7 @@ extension Stack {
 
 
 
-protocol Container {
+private protocol Container {
   
   associatedtype ItemType
   mutating func append(item: ItemType)

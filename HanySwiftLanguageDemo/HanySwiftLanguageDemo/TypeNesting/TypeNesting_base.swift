@@ -4,12 +4,17 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//类型嵌套
 
 import Foundation
 
+func root_TypeNesting_base() {
+  
+  
+}
+
 //MARK:类型嵌套
-func func_ReferringToNestedTypes() {
+private func func_ReferringToNestedTypes() {
   
   let theAceOfSpades = BlackjackCard(rank: .Ace, suit: .Spades)
   print("theAceOfSpades: \(theAceOfSpades.description)")// 打印出 "theAceOfSpades: suit is ♠, value is 1 or 11"
@@ -22,7 +27,7 @@ func func_ReferringToNestedTypes() {
 //MARK:- <<< class >>>
 
 //MARK:类型嵌套
-struct BlackjackCard {
+private struct BlackjackCard {
   
   // 嵌套定义枚举型Suit
   enum Suit: Character {

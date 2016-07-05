@@ -4,13 +4,17 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//扩展
 
 import Foundation
 
+func root_Extersion_base()  {
+  
+}
+
 //MARK:- <<< method >>>
 //MARK:扩展计算属性
-func func_ComputedProperties() {
+private func func_ComputedProperties() {
   
   let oneInch = 25.4.mm
   print("One inch is \(oneInch) meters")// 打印输出："One inch is 0.0254 meters"
@@ -23,7 +27,7 @@ func func_ComputedProperties() {
 }
 
 //MARK:扩展init
-func func_Initializers(){
+private func func_Initializers(){
   
   let defaultRect = Rect()
   let memberwiseRect = Rect(origin: Point(x: 1, y: 1),size:Size(width: 2, height: 2))
@@ -31,7 +35,7 @@ func func_Initializers(){
 }
 
 //MARK:扩展方法
-func func_Methods(){
+private func func_Methods(){
   
   let i:Int = 4;
   
@@ -51,7 +55,7 @@ func func_Methods(){
 }
 
 //MARK:扩展方法 - mutating关键字修改self
-func func_MutatingInstanceMethods() {
+private func func_MutatingInstanceMethods() {
   
   var value:Int = 3;
   value.square1();
@@ -60,7 +64,7 @@ func func_MutatingInstanceMethods() {
 }
 
 //MARK:扩展下标subscript
-func func_Subscripts() {
+private func func_Subscripts() {
   
   let i:Int = 1234567;
   print(i[0]);//输出从右往左数第n-1个数字
@@ -81,7 +85,7 @@ func func_Subscripts() {
 }
 
 //MARK:嵌套类型
-func func_NestedTypes(){
+private func func_NestedTypes(){
   
   let str:String = "Hello"
   
@@ -114,7 +118,7 @@ func func_NestedTypes(){
 
 //MARK:- <<< class >>>
 //MARK:- 扩展计算属性
-extension Double{
+private extension Double{
   
   var km: Double { return self * 1_000.0 }
   var m : Double { return self }
@@ -125,20 +129,20 @@ extension Double{
 
 //MARK:- 扩展init
 
-struct Size {
+private struct Size {
   var width = 0.0, height = 0.0
 }
 
-struct Point {
+private struct Point {
   var x = 0.0, y = 0.0
 }
 
-struct Rect {
+private struct Rect {
   var origin = Point()
   var size = Size()
 }
 
-extension Rect {
+private extension Rect {
   
   init(center: Point, size: Size) {
     let originX = center.x - (size.width / 2)
@@ -148,7 +152,7 @@ extension Rect {
 }
 
 //MARK:- 扩展方法
-extension Int{
+private extension Int{
   
   func repetitions(task:()->()){
     for _ in 0...self {
@@ -158,7 +162,7 @@ extension Int{
 }
 
 //MARK:- 扩展方法 - mutating关键字修改self
-extension Int{
+private extension Int{
   
   mutating func square1(){
     self = self*self;
@@ -169,7 +173,7 @@ extension Int{
 
 
 //MARK:- 扩展下标subscript
-extension Int {
+private extension Int {
   
   subscript(digitIndex: Int) -> Int {
     
@@ -182,7 +186,7 @@ extension Int {
 }
 
 //MARK:- 嵌套类型
-extension Character {
+private extension Character {
   
   enum Kind {
     case Vowel, Consonant, Other
@@ -203,7 +207,7 @@ extension Character {
 
 
 
-extension Int {
+private extension Int {
   enum Kind {
     case Negative, Zero, Positive
   }

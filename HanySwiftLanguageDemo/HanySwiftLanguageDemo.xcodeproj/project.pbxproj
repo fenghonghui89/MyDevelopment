@@ -68,8 +68,10 @@
 		14C8C7521D2A7B09000C14D0 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C7471D2A7B09000C14D0 /* Starship.swift */; };
 		14C8C7561D2A7B5E000C14D0 /* Root_AccessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C7551D2A7B5E000C14D0 /* Root_AccessControl.swift */; };
 		14C8C7581D2A7B6B000C14D0 /* Root_AdvancedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C7571D2A7B6B000C14D0 /* Root_AdvancedOperators.swift */; };
-		14C8C75A1D2A7B76000C14D0 /* AdvancedOperators_base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C7591D2A7B76000C14D0 /* AdvancedOperators_base.swift */; };
+		14C8C75A1D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C7591D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift */; };
 		14C8C75C1D2A7B84000C14D0 /* AccessControl_base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C75B1D2A7B84000C14D0 /* AccessControl_base.swift */; };
+		14F9A5801D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9A57F1D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift */; };
+		14F9A5821D2B5D1C006BD9BA /* AdvancedOperators_Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9A5811D2B5D1C006BD9BA /* AdvancedOperators_Other.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -147,8 +149,10 @@
 		14C8C7471D2A7B09000C14D0 /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		14C8C7551D2A7B5E000C14D0 /* Root_AccessControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root_AccessControl.swift; sourceTree = "<group>"; };
 		14C8C7571D2A7B6B000C14D0 /* Root_AdvancedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root_AdvancedOperators.swift; sourceTree = "<group>"; };
-		14C8C7591D2A7B76000C14D0 /* AdvancedOperators_base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators_base.swift; sourceTree = "<group>"; };
+		14C8C7591D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators_BitwiseOperators.swift; sourceTree = "<group>"; };
 		14C8C75B1D2A7B84000C14D0 /* AccessControl_base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessControl_base.swift; sourceTree = "<group>"; };
+		14F9A57F1D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators_OperatorFunction.swift; sourceTree = "<group>"; };
+		14F9A5811D2B5D1C006BD9BA /* AdvancedOperators_Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators_Other.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,7 +415,9 @@
 		14C8C7541D2A7B4B000C14D0 /* AdvancedOperators */ = {
 			isa = PBXGroup;
 			children = (
-				14C8C7591D2A7B76000C14D0 /* AdvancedOperators_base.swift */,
+				14C8C7591D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift */,
+				14F9A57F1D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift */,
+				14F9A5811D2B5D1C006BD9BA /* AdvancedOperators_Other.swift */,
 			);
 			path = AdvancedOperators;
 			sourceTree = "<group>";
@@ -476,10 +482,11 @@
 				14C8C6D41D2A6DAE000C14D0 /* Root_StringsAndCharacters.swift in Sources */,
 				14C8C6C91D2A69B3000C14D0 /* Base_Optionals.swift in Sources */,
 				14C8C6FB1D2A744E000C14D0 /* Closures_base.swift in Sources */,
+				14F9A5801D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift in Sources */,
 				14C8C72B1D2A797F000C14D0 /* Root_Generics.swift in Sources */,
 				14C8C7501D2A7B09000C14D0 /* ProtocolExtensions.swift in Sources */,
 				14C8C71D1D2A781F000C14D0 /* Class_base.swift in Sources */,
-				14C8C75A1D2A7B76000C14D0 /* AdvancedOperators_base.swift in Sources */,
+				14C8C75A1D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift in Sources */,
 				14C8C7141D2A764E000C14D0 /* OptionalChaining_base.swift in Sources */,
 				14C8C7521D2A7B09000C14D0 /* Starship.swift in Sources */,
 				14C8C6D91D2A6E6B000C14D0 /* StringsAndCharacters_base.swift in Sources */,
@@ -503,6 +510,7 @@
 				14C8C70A1D2A75F2000C14D0 /* Root_OptionalChaining.swift in Sources */,
 				14C8C7161D2A765F000C14D0 /* Extersion_base.swift in Sources */,
 				14C8C75C1D2A7B84000C14D0 /* AccessControl_base.swift in Sources */,
+				14F9A5821D2B5D1C006BD9BA /* AdvancedOperators_Other.swift in Sources */,
 				14C8C6E91D2A71D3000C14D0 /* ControlFlow_switch.swift in Sources */,
 				14C8C6D21D2A6CCC000C14D0 /* BaseOperator_base.swift in Sources */,
 				14C8C7511D2A7B09000C14D0 /* SnakesAndLadders.swift in Sources */,
@@ -657,6 +665,7 @@
 				14C8C6BE1D2A5DCE000C14D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

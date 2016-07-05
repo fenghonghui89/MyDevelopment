@@ -4,10 +4,13 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//闭包
 
 import Foundation
 
+func root_Closures_base() {
+  
+}
 
 //MARK:- < 推导例子 闭包的写法 尾随闭包 >
 //MARK:推导例子 - 排序

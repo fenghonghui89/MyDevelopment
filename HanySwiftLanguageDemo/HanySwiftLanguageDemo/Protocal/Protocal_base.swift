@@ -8,9 +8,13 @@
 
 import Foundation
 
+func root_Protocal_base() {
+  
+}
+
 //MARK:- <<< method >>>
 //MARK:- 协议属性
-func func_PropertyRequirements(){
+private func func_PropertyRequirements(){
   //协议属性 协议方法
   let ncc1771 = Starship(name: "Enterprise", prefix: "USS")
   print(ncc1771.fullName);
@@ -21,7 +25,7 @@ func func_PropertyRequirements(){
 }
 
 //MARK:- 协议方法
-func func_MethodRequirements(){
+private func func_MethodRequirements(){
   
   let generator = LinearCongruentialGenerator()
   print("Here's a random number: \(generator.random())")// Prints "Here's a random number: 0.37464991998171"
@@ -30,7 +34,7 @@ func func_MethodRequirements(){
 }
 
 //MARK:- mutating方法修改实例的属性
-func func_MutatingMethodRequirements(){
+private func func_MutatingMethodRequirements(){
   
   var lightSwitch = OnOffSwitch.Off
   lightSwitch.toggle()
@@ -38,7 +42,7 @@ func func_MutatingMethodRequirements(){
 }
 
 //MARK:- 通过协议强制子类重写init方法
-func func_InitializerRequirements(){
+private func func_InitializerRequirements(){
   //详见InitializerRequirements.swift
 }
 
@@ -54,7 +58,7 @@ func func_ProtocolsAsTypes(){
 }
 
 //MARK:- 委托
-func func_Delegation(){
+private func func_Delegation(){
   
   let tracker = DiceGameTracker()
   
@@ -73,7 +77,7 @@ func func_Delegation(){
 }
 
 //MARK:- 用扩展给类添加协议实现
-func func_AddingProtocolConformanceWithAnExtension() {
+private func func_AddingProtocolConformanceWithAnExtension() {
   
   let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
   print(d12.textualDescription)// Prints "A 12-sided dice"
@@ -85,7 +89,7 @@ func func_AddingProtocolConformanceWithAnExtension() {
 }
 
 //MARK:- 使用空扩展声明一个符合要求的类采用协议
-func func_DeclaringProtocolAdoptionWithAnExtension(){
+private func func_DeclaringProtocolAdoptionWithAnExtension(){
   
   let simonTheHamster = Hamster(name: "Simon")
   let somethingTextRepresentable: TextRepresentable = simonTheHamster
@@ -96,7 +100,7 @@ func func_DeclaringProtocolAdoptionWithAnExtension(){
 
 
 //MARK:- 协议集合类型
-func func_CollectionsOfProtocolTypes(){
+private func func_CollectionsOfProtocolTypes(){
   
   let game = SnakesAndLadders();
   let dice = Dice(sides: 6, generator: LinearCongruentialGenerator())
@@ -114,7 +118,7 @@ func func_CollectionsOfProtocolTypes(){
 }
 
 //MARK:- 协议继承协议(不能写实现部分)
-func func_ProtocolInheritance() {
+private func func_ProtocolInheritance() {
   
   let game = SnakesAndLadders();
   print(game.prettyTextualDescription)
@@ -124,24 +128,24 @@ func func_ProtocolInheritance() {
 }
 
 //MARK:- Class-Only Protocols 只有类能采用的协议，枚举和结构体不能采用
-func func_ClassOnlyProtocols(){
+private func func_ClassOnlyProtocols(){
   //详见ClassOnlyProtocols.swift
 }
 
 //MARK:- 协议组合 类似于oc的id<delegate1,delegate2...> 只能修饰变量
-func func_ProtocolComposition() {
+private func func_ProtocolComposition() {
   
   let birthdayPerson = Person_ProtocolComposition(name: "Malcolm", age: 21)
   wishHappyBirthday(birthdayPerson)//Prints "Happy birthday Malcolm - you're 21!"
 }
 
-func wishHappyBirthday(celebrator: protocol<Named,Aged>) {//协议组合
+private func wishHappyBirthday(celebrator: protocol<Named,Aged>) {//协议组合
   print("Happy birthday \(celebrator.name) - you're \(celebrator.age)!")
 }
 
 
 //MARK:- is as 检查是否遵守协议
-func func_CheckingForProtocolConformance(){
+private func func_CheckingForProtocolConformance(){
   
   let p1 = Person_ProtocolComposition(name: "Hany", age: 21)
   let game = SnakesAndLadders()
@@ -162,12 +166,12 @@ func func_CheckingForProtocolConformance(){
 
 
 //MARK:- optional 可选协议实现只能用在@objc开头的协议
-func func_OptionalProtocolRequirements(){
+private func func_OptionalProtocolRequirements(){
   
   func_OptionalProtocolRequirements_example2();
 }
 
-func func_OptionalProtocolRequirements_example1() {
+private func func_OptionalProtocolRequirements_example1() {
   
   let student:OCProtocol = Studnet(name: "Hany")
   
@@ -175,7 +179,7 @@ func func_OptionalProtocolRequirements_example1() {
   print("name:\(occlass.student.name!)")
 }
 
-func func_OptionalProtocolRequirements_example2() {
+private func func_OptionalProtocolRequirements_example2() {
   
   let counter = Counter()
   counter.dataSource = ThreeSource()
@@ -205,7 +209,7 @@ func func_OptionalProtocolRequirements_example2() {
 }
 
 //MARK:- 扩展协议
-func func_ProtocolExtensions(){
+private func func_ProtocolExtensions(){
   
   let generator = LinearCongruentialGenerator()
   print("Here's a random number: \(generator.random())")// Prints "Here's a random number: 0.37464991998171"

@@ -4,9 +4,13 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//ARC
 
 import Foundation
+
+func root_ARC_base() {
+  
+}
 
 //MARK:- <<< class >>>
 //MARK:- arc base
@@ -14,7 +18,7 @@ import Foundation
  默认将一个实例赋值给一个不带weak的属性/变量/常量，这个属性/变量/常量就会持有这个实例，引用计数+1
  var+可选类型的对象才能置nil，但对象的属性另计，对象的属性根据属性关键字处理
  */
-class arc_base_result{
+private class arc_base_result{
   
   var obj:ChildClass?;
   
@@ -39,7 +43,7 @@ class arc_base_result{
 
 //MARK:- weak 解决引用环 / weak unowned修饰变量的差异
 
-class arc_weak_result{
+private class arc_weak_result{
   
   
   init(){
@@ -80,7 +84,7 @@ class arc_weak_result{
   }
 }
 
-class Customer {
+private class Customer {
   
   var name:String = "";
   var hotel:Hotel?;
@@ -94,7 +98,7 @@ class Customer {
   }
 }
 
-class Hotel {
+private class Hotel {
   
   var number:Int = 0;
   weak var customer:Customer?;
@@ -109,7 +113,7 @@ class Hotel {
 }
 
 //MARK:- unowned 解决引用环
-class arc_unowned_result{
+private class arc_unowned_result{
   
   init(){
     
@@ -133,7 +137,7 @@ class arc_unowned_result{
 }
 
 
-class BankCustomer {
+private class BankCustomer {
   
   var name:String = ""
   var creditCard:CreditCard?
@@ -148,7 +152,7 @@ class BankCustomer {
   
 }
 
-class CreditCard {
+private class CreditCard {
   
   var number:Int = 0;
   unowned var bankCustomer:BankCustomer;
@@ -169,7 +173,7 @@ class CreditCard {
 /*
  两个对象互相引用 都不可以为nil
  */
-class arc_unowned2_result{
+private class arc_unowned2_result{
   
   init(){
     
@@ -182,7 +186,7 @@ class arc_unowned2_result{
 }
 
 
-class Country {
+private class Country {
   
   let name: String
   var capitalCity: City!//隐式解析可选属性 这里必须是var否则编译不过
@@ -197,7 +201,7 @@ class Country {
   }
 }
 
-class City {
+private class City {
   
   let name: String
   unowned let country: Country//无主引用
@@ -218,7 +222,7 @@ class City {
  当闭包和占有的实例总是互相引用时并且总是同时销毁时，将闭包内的占有定义为无主引用。
  相反的，当占有引用有时可能会是nil时，将闭包内的占有定义为弱引用。弱引用总是可选类型，并且当引用的实例被销毁后，弱引用的值会自动置为nil。利用这个特性，我们可以在闭包内检查他们是否存在。
  */
-class arc_block_result{
+private class arc_block_result{
   
   init(){
     var html:HTMLElement? = HTMLElement(name: "p", text: "hello");
@@ -236,7 +240,7 @@ class arc_block_result{
   }
 }
 
-class HTMLElement{
+private class HTMLElement{
   
   let name:String
   let text:String?
@@ -262,7 +266,7 @@ class HTMLElement{
   
 }
 
-class HTMLElement1{
+private class HTMLElement1{
   
   let name:String
   let text:String?

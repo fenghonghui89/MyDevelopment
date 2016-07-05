@@ -4,10 +4,13 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//数组
 
 import Foundation
 
+func root_CollectionTypes_Array() {
+  
+}
 
 //MARK: - <<< 数组 >>> -
 //MARK:创建 初始化 指定类型初始化

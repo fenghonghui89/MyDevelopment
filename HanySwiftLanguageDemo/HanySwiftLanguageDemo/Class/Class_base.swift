@@ -4,15 +4,20 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//类和对象
 
 import Foundation
+
+func root_Class_base() {
+  
+  
+}
 
 //MARK:- <<< method >>> -
 
 
 //MARK:类是引用类型 恒等运算符(===,!==)
-func func_objCompare(){
+private func func_objCompare(){
   
   let p = SuperClass();
   p.storeProperty = "Tom";
@@ -30,7 +35,7 @@ func func_objCompare(){
 }
 
 //MARK:继承
-func func_subClass() {
+private func func_subClass() {
   
   //    let child = ChildClass(isChild: true);
   //    print("\(child.storeProperty),\(child.storeProperty1)");

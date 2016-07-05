@@ -4,14 +4,18 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//类型转换
 
 import Foundation
 
+func root_TypeCasting_base() {
+  
+  
+}
 
 //MARK:- <<< method >>>
 //MARK:is检查类型
-func func_CheckingType() {
+private func func_CheckingType() {
   
   let library = [
     Movie(name: "Casablanca", director: "Michael Curtiz"),
@@ -41,7 +45,7 @@ func func_CheckingType() {
 
 
 //MARK:as向下转型
-func func_Downcasting() {
+private func func_Downcasting() {
   
   let library = [
     Movie(name: "Casablanca", director: "Michael Curtiz"),
@@ -69,7 +73,7 @@ func func_Downcasting() {
 
 
 //MARK:AnyObject 对象类型
-func func_AnyObject() {
+private func func_AnyObject() {
   
   let someObjects: [AnyObject] = [
     Movie(name: "2001: A Space Odyssey", director: "Stanley Kubrick"),
@@ -97,7 +101,7 @@ func func_AnyObject() {
 }
 
 //MARK:Any 包含非对象类型
-func func_Any(){
+private func func_Any(){
   
   var things = [Any]()
   
@@ -148,14 +152,14 @@ func func_Any(){
 
 //MARK:- <<< class >>>
 //MARK:类型转换
-class MediaItem {
+private class MediaItem {
   var name: String
   init(name: String) {
     self.name = name
   }
 }
 
-class Movie: MediaItem {
+private class Movie: MediaItem {
   var director: String
   init(name: String, director: String) {
     self.director = director
@@ -163,7 +167,7 @@ class Movie: MediaItem {
   }
 }
 
-class Song: MediaItem {
+private class Song: MediaItem {
   var artist: String
   init(name: String, artist: String) {
     self.artist = artist

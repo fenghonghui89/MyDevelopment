@@ -4,9 +4,13 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+// switch
 
 import Foundation
+
+func root_ControlFlow_switch() {
+  
+}
 
 
 //MARK: - <<< switch >>>

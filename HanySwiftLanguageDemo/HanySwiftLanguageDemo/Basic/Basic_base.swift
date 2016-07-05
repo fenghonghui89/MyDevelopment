@@ -18,13 +18,13 @@ func root_Basic_base(){
 //MARK:常量及变量 定义 初始化 赋值 动态推导
 private func kl_init(){
 
-  //    var v;//不指定类型就要初始化，否则非法
+//    var v;//不指定类型就要初始化，否则非法
   var v:Int;//指定类型就可以不初始化
   var v1 = 20; v1 = 30;
   var v2:Int; v2 = 20;
   var v3:Int = 20; v3 = 30;
   
-  //    let l;//非法，同上
+//    let l;//非法，同上
   let l:Int;
   let l1 = 20; //l1 = 20;//常量不能改变值
   let l2:Int; l2 = 20;
@@ -44,7 +44,7 @@ private func kl_readNum(){
   print(e1,e2)
 }
 
-//MARK:数值可读性 中文变量/常量名
+//MARK:
 private func kl_typeScope(){
 
   let productid = 1_000_000.000_000_1;

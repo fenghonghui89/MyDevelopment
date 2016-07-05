@@ -4,9 +4,13 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//函数
 
 import Foundation
+
+func root_Functions_base() {
+  
+}
 
 //MARK: - <<< method >>> -
 //MARK:一个简单函数

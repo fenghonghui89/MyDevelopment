@@ -4,10 +4,13 @@
 //
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//字典
 
 import Foundation
 
+func root_CollectionTypes_dictionary() {
+  
+}
 
 //MARK: - <<< 字典>>> -
 //MARK:创建字典 空字典 清空字典
