@@ -9,7 +9,7 @@
 import Foundation
 
 func root_Closures_base() {
-  
+  func_autoClosures()
 }
 
 //MARK:- < 推导例子 闭包的写法 尾随闭包 >
@@ -20,21 +20,43 @@ private func func1() {
   
   var reversed:[String];
   
-  //原始
+  //方法1：函数做参数
   func backwards(s1: String, s2: String) -> Bool {
     return s1 < s2
   }
   
   reversed = names.sort(backwards);
   
-  //优化
-  reversed = names.sort({(s1: String, s2: String) -> Bool in return s1 > s2});
-  reversed = names.sort({ s1, s2 in return s1 > s2 });
-  reversed = names.sort({s1, s2 in s1 > s2});
-  reversed = names.sort({ $0 > $1 } );
-  reversed = names.sort(){$0>$1}//trailing闭包
-  reversed = names.sort{$0>$1}
-  reversed = names.sort(>);
+  
+  
+  //方法2：闭包
+  reversed = names.sort({(s1: String, s2: String) -> Bool in
+    return s1 > s2
+  });//闭包
+  
+  reversed = names.sort({s1, s2 in
+    return s1 > s2
+  });//Inferring Type From Context(从上下文推断类型)
+  
+  reversed = names.sort({s1, s2 in
+    s1 > s2
+  });//Implicit Returns from Single-Expression Closures(单个表达式闭包可以隐式return)
+  
+  reversed = names.sort({
+    $0 > $1
+  });//Shorthand Argument Names(用速记参数名可以省略参数列表)
+  
+  reversed = names.sort(){
+    $0 > $1
+  }//Trailing Closures(尾随闭包，当最后参数是闭包时可用，把闭包放到括号后面，可以不写参数列表)
+  
+  reversed = names.sort{
+    $0>$1
+  }//如果方法只有一个闭包参数，可以把括号去掉
+  
+  reversed = names.sort(
+    >
+  );//swift字符串定义了>是作为一个函数（Operator Functions运算符重载）
   
   for i in reversed {
     print(i);
@@ -44,6 +66,17 @@ private func func1() {
 
 
 //MARK:闭包的写法 - 转换数字为对应英文
+/*
+ 
+ 
+ { (parameters) -> return type in
+ 
+ statements
+ 
+ }
+ 
+
+ */
 private func func_closures() {
   
   let digitNames = [
@@ -71,12 +104,17 @@ private func func_closures() {
 }
 
 
-//MARK:trailing闭包
+//MARK:trailing闭包（尾随闭包）
 private func func_trailingClosures() {
   
-  func2_1({print("~~")});//原来
-  func2_1(){print("@@@")};//trailing闭包
-  func2_1{print("@@@")};//无参数可以把()去掉
+  //标准 fun(闭包)
+  func2_1({print("~~")});
+  
+  //trailing闭包 fun()闭包 当函数的最后一个参数是闭包时可用
+  func2_1(){print("@@@")};
+  
+  //无参数可以把()去掉
+  func2_1{print("@@@")};
 }
 
 private func func2_1(block:()->()){
@@ -219,14 +257,15 @@ private func func5_4_2(block:()->()){
 /*
  修饰的闭包在函数结束后也会随之结束，用于告诉编译器优化性能
  
- 什么情况下一个闭包参数会跳出函数的生命期呢？很简单，我们在函数实现内，将一个闭包用 dispatch_async 嵌套，这样这个闭包就会在另外一个线程中存在，从而跳出了当前函数的生命期。这样做主要是可以帮助编译器做性能的优化。
+ 什么情况下一个闭包参数会跳出函数的生命期呢？
+ 很简单，我们在函数实现内，将一个闭包用 dispatch_async嵌套，这样这个闭包就会在另外一个线程中存在，从而跳出了当前函数的生命期。
+ 这样做主要是可以帮助编译器做性能的优化。
  */
 private func func_noescape() {
   
   let instance = SomeClass()
   
   instance.doSomething()
-  
   print(instance.x)
   // Prints "200"
   
@@ -236,7 +275,8 @@ private func func_noescape() {
   
 }
 
-//MARK:- < 自动闭包 >
+//MARK:- < 自动闭包 @autoclosure @autoclosure(escaping) >
+//自动闭包 @autoclosure
 private func func_autoClosures(){
   
   var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
@@ -255,22 +295,49 @@ private func func_autoClosures(){
   print(customersInLine.count)
   // Prints "5"
   
+  //自动闭包
   print("Now serving \(customerProvider())!")
   // Prints "Now serving Chris!"
+  
   print(customersInLine.count)
   // Prints "4"
+  
+  
+  //显示闭包
+  // customersInLine is ["Alex", "Ewa", "Barry", "Daniella"]
+  func serve(customer customerProvider: () -> String) {
+    print("Now serving \(customerProvider())!")
+  }
+  
+  serve(customer: {
+    customersInLine.removeAtIndex(0)
+  })
+  // Prints "Now serving Alex!"
+  
+
+  //@autoclosure（标识后可以不用写大括号，尽量少用，因为可能会使逻辑难以理解）
+//  // customersInLine is ["Ewa", "Barry", "Daniella"]
+//  func serve(customer customerProvider: @autoclosure () -> String) {
+//    print("Now serving \(customerProvider())!")
+//  }
+//  serve(customer: customersInLine.removeAtIndex(0))
+//  // Prints "Now serving Ewa!"
+
 }
+
+//@autoclosure(escaping) 未看得明。。。
 
 
 //MARK:- ****************************** class ******************************
 
-var completionHandlers: [() -> Void] = []
-private func someFunctionWithEscapingClosure(completionHandler: () -> Void) {
-  completionHandlers.append(completionHandler)
-}
 
 private func someFunctionWithNonescapingClosure(@noescape closure: () -> Void) {
   closure()
+}
+
+var completionHandlers: [() -> Void] = []
+private func someFunctionWithEscapingClosure(completionHandler: () -> Void) {
+  completionHandlers.append(completionHandler)
 }
 
 class SomeClass {
@@ -278,7 +345,7 @@ class SomeClass {
   var x = 10
   
   func doSomething() {
+    someFunctionWithNonescapingClosure { x = 200 }//用@noescape标识闭包 可以隐式引用self
     someFunctionWithEscapingClosure { self.x = 100 }
-    someFunctionWithNonescapingClosure { x = 200 }//可以隐式self
   }
 }

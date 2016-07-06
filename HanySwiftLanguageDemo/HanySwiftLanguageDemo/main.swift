@@ -10,13 +10,13 @@ import Foundation
 
 //root_FreeTest()
 
-root_Basic()
+//root_Basic()
 //root_BaseOperator()
 //root_StringsAndCharacters()
 //root_CollectionTypes()
 //root_ControlFlow()
 //root_Functions()
-//root_Closures()
+root_Closures()
 //root_Enumerations()
 //root_Struct()
 //root_ARC()

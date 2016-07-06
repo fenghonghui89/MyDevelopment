@@ -43,10 +43,11 @@ private func funcResult2(){
 
 
 
-//MARK:扩展参数与本地参数
+//MARK:参数标签与参数名
 /*
- func(扩展参数名1 本地参数名1:参数类型,扩展参数名2 本地参数名2:参数类型,...)
- func(扩展参数名1 本地参数名1:参数类型,扩展本地参数名2:参数类型,...)
+ 参数标签在前 参数名在后
+ 参数标签-调用时显示 参数名-函数内部用
+ 默认参数标签跟参数名一样
  */
 private func func3(name s1:String,age s2:String)->(name:String,age:String){
   let result = (s1,s2);

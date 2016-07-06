@@ -22,7 +22,7 @@
 import Foundation
 
 func root_StringsAndCharacters_base() {
-  
+  kl_AccessAndChangeString();
 }
 
 
@@ -148,8 +148,8 @@ private func kl_AccessAndChangeString(){
   
   let greeting:String = "Guten Tag!"
   var result =  greeting[greeting.startIndex] // G
-  result = greeting[greeting.endIndex.predecessor()] // ! endIndex是最后一个字符的下一个位置，最好不要直接用
-  result = greeting[greeting.startIndex.successor()] // u
+  result = greeting[greeting.endIndex.predecessor()] // 上一个 ! endIndex是最后一个字符的下一个位置，最好不要直接用
+  result = greeting[greeting.startIndex.successor()] // 下一个 u
   
   let index = greeting.startIndex.advancedBy(7)//7
   result = greeting[index]// a
