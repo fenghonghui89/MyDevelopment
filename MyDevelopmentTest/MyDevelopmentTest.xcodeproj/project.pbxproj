@@ -250,6 +250,9 @@
 		14CB771B1CA4F1B800878C4E /* MD_Socket_Server_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CB77191CA4F1B800878C4E /* MD_Socket_Server_VC.xib */; };
 		14CB77201CA5243900878C4E /* MDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CB771F1CA5243900878C4E /* MDTool.m */; };
 		14CB77241CA5254800878C4E /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = 14CB77221CA5254800878C4E /* IPAddress.c */; };
+		14CD8AA21D2E0BF60078D740 /* UIView+STKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD8AA11D2E0BF60078D740 /* UIView+STKit.m */; };
+		14CD8AA71D2E0FD30078D740 /* MD_Responder_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CD8AA51D2E0FD30078D740 /* MD_Responder_VC.m */; };
+		14CD8AA81D2E0FD30078D740 /* MD_Responder_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CD8AA61D2E0FD30078D740 /* MD_Responder_VC.xib */; };
 		14DB41021AEA752D00DA1682 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F41AEA752D00DA1682 /* MDAppDelegate.m */; };
 		14DB41031AEA752D00DA1682 /* MDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F61AEA752D00DA1682 /* MDBaseViewController.m */; };
 		14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB40F81AEA752D00DA1682 /* MDClassesTableViewCell.m */; };
@@ -949,6 +952,11 @@
 		14CB771F1CA5243900878C4E /* MDTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTool.m; sourceTree = "<group>"; };
 		14CB77221CA5254800878C4E /* IPAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IPAddress.c; sourceTree = "<group>"; };
 		14CB77231CA5254800878C4E /* IPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddress.h; sourceTree = "<group>"; };
+		14CD8AA01D2E0BF60078D740 /* UIView+STKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+STKit.h"; sourceTree = "<group>"; };
+		14CD8AA11D2E0BF60078D740 /* UIView+STKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+STKit.m"; sourceTree = "<group>"; };
+		14CD8AA41D2E0FD30078D740 /* MD_Responder_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Responder_VC.h; sourceTree = "<group>"; };
+		14CD8AA51D2E0FD30078D740 /* MD_Responder_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Responder_VC.m; sourceTree = "<group>"; };
+		14CD8AA61D2E0FD30078D740 /* MD_Responder_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Responder_VC.xib; sourceTree = "<group>"; };
 		14DB40F31AEA752D00DA1682 /* MDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
 		14DB40F41AEA752D00DA1682 /* MDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
 		14DB40F51AEA752D00DA1682 /* MDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBaseViewController.h; sourceTree = "<group>"; };
@@ -1440,6 +1448,7 @@
 		1465CB551D0D4DCE00F79436 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				14CD8AA31D2E0FB10078D740 /* 事件传递与响应者链条 */,
 				1465CD441D0D519800F79436 /* 手势_触控 */,
 				1465CB561D0D4DCE00F79436 /* CoreGraphics */,
 				1465CB651D0D4DCE00F79436 /* QuartzCore */,
@@ -2423,6 +2432,8 @@
 				142EA34A1C853CCB003E5526 /* NSString+Encrypto.m */,
 				141F65C71CA52A97009939C5 /* NSString+Category.h */,
 				141F65C81CA52A98009939C5 /* NSString+Category.m */,
+				14CD8AA01D2E0BF60078D740 /* UIView+STKit.h */,
+				14CD8AA11D2E0BF60078D740 /* UIView+STKit.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -2449,7 +2460,6 @@
 		147DB1751A8C7FA600F38EA4 = {
 			isa = PBXGroup;
 			children = (
-				14F1F2121D1140F30059EDC1 /* libresolv.tbd */,
 				14A7276C1CAB8ACF00DC7BC0 /* SystemLibraries */,
 				147DB1801A8C7FA600F38EA4 /* MyDevelopmentTest */,
 				147DB17F1A8C7FA600F38EA4 /* Products */,
@@ -2710,6 +2720,7 @@
 		14A7276C1CAB8ACF00DC7BC0 /* SystemLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				14F1F2121D1140F30059EDC1 /* libresolv.tbd */,
 				14A727631CAB760100DC7BC0 /* libxml2.tbd */,
 				14FBF9651C27B4F700CC0A55 /* Photos.framework */,
 			);
@@ -2857,6 +2868,16 @@
 				14CB77231CA5254800878C4E /* IPAddress.h */,
 			);
 			path = Units;
+			sourceTree = "<group>";
+		};
+		14CD8AA31D2E0FB10078D740 /* 事件传递与响应者链条 */ = {
+			isa = PBXGroup;
+			children = (
+				14CD8AA41D2E0FD30078D740 /* MD_Responder_VC.h */,
+				14CD8AA51D2E0FD30078D740 /* MD_Responder_VC.m */,
+				14CD8AA61D2E0FD30078D740 /* MD_Responder_VC.xib */,
+			);
+			path = "事件传递与响应者链条";
 			sourceTree = "<group>";
 		};
 		14DB40F01AEA752D00DA1682 /* main */ = {
@@ -3382,6 +3403,7 @@
 				14FF80E71CE1BF6F00C7855C /* Italy.png in Resources */,
 				14FF80E41CE1BF6F00C7855C /* Greece.png in Resources */,
 				14FF80D41CE1BF6F00C7855C /* playing_volumn_slide_bg@2x.png in Resources */,
+				14CD8AA81D2E0FD30078D740 /* MD_Responder_VC.xib in Resources */,
 				14FF810E1CE1BF6F00C7855C /* playing18@2x.png in Resources */,
 				14FF810D1CE1BF6F00C7855C /* playing17@2x.png in Resources */,
 				1465CCEE1D0D4DCF00F79436 /* MD_TableViewCell.xib in Resources */,
@@ -3705,6 +3727,7 @@
 				1428AB7D1C84502C003CC10F /* MDWVViewController.m in Sources */,
 				1465CD1D1D0D4DCF00F79436 /* MD_FileManager_VC.m in Sources */,
 				140615BD1D0EB65C0057E192 /* UIWebView+AFNetworking.m in Sources */,
+				14CD8AA21D2E0BF60078D740 /* UIView+STKit.m in Sources */,
 				1465CD401D0D4DCF00F79436 /* MD_CoreMotion_VC.m in Sources */,
 				14FFBE491C9AA995006BEB2B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				14FFC0BA1CEDA18200AD74E2 /* MD_WebKit_VC.m in Sources */,
@@ -3745,6 +3768,7 @@
 				1465CCDD1D0D4DCF00F79436 /* MDPage3ViewController.m in Sources */,
 				1465CCC91D0D4DCF00F79436 /* MD_UIBezierPath_CustomView1.m in Sources */,
 				14DB41041AEA752D00DA1682 /* MDClassesTableViewCell.m in Sources */,
+				14CD8AA71D2E0FD30078D740 /* MD_Responder_VC.m in Sources */,
 				14A727671CAB776600DC7BC0 /* MD_XML_GDataXMLNode_VC.m in Sources */,
 				148740911CABC335007CC45C /* NSDate+Tpages.m in Sources */,
 				1465CD391D0D4DCF00F79436 /* MD_PhotoLibrary_GridVC.m in Sources */,
@@ -3965,7 +3989,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "26e984e3-bd6d-4ba9-a438-a3ec9d72495f";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
@@ -3984,7 +4008,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "26e984e3-bd6d-4ba9-a438-a3ec9d72495f";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;

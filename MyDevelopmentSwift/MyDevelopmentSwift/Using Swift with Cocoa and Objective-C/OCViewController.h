@@ -10,5 +10,5 @@
 
 @interface OCViewController : UIViewController
 
-
+-(CGPathRef)makeToPath;
 @end

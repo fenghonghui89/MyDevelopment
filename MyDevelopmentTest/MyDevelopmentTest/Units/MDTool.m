@@ -185,13 +185,17 @@
  *  @param responder 响应链
  */
 void STLogResponderChain(UIResponder *responder) {
+  
   NSLog(@"------------------The Responder Chain------------------");
+  
   NSMutableString *spaces = [NSMutableString stringWithCapacity:4];
   while (responder) {
     NSLog(@"%@%@", spaces, responder.class);
     responder = responder.nextResponder;
-    [spaces appendString:@"----"];
+    [spaces appendString:@"-"];
   }
+  
+  NSLog(@"------------------------------------------------------");
 }
 
 /**
@@ -257,7 +261,7 @@ void STLogResponderChain(UIResponder *responder) {
  *  输出设备型号
  *
  */
-- (NSString*) machineName
+- (NSString*)machineName
 {
   struct utsname systemInfo;
   uname(&systemInfo);

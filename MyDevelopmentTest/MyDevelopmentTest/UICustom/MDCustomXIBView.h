@@ -11,6 +11,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MDCustomXIBView : UIView
+
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+
 @property (nonatomic, assign)IBInspectable CGFloat cornerRadius;
 @property (nonatomic, assign)IBInspectable CGFloat bwidth;
 @property (nonatomic, assign)IBInspectable UIColor *bcolor;

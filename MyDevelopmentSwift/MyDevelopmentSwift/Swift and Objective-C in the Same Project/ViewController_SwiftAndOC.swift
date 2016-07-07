@@ -17,7 +17,7 @@ class ViewController_SwiftAndOC:UIViewController {
   
   /*
    swift调用oc，要在桥接文件里import oc的.h头文件
-   配置在build setting - Objective-C BridgingHeader
+   在build setting - Objective-C Bridging Header 指定桥接文件
    */
   func func_oc(){
     let objc:OC_Object = OC_Object()

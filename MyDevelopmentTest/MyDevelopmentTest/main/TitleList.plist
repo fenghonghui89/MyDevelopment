@@ -334,6 +334,14 @@
 		<array>
 			<dict>
 				<key>desc</key>
+				<string>事件传递与响应者链条</string>
+				<key>className</key>
+				<string>MD_Responder_VC</string>
+				<key>sub</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>desc</key>
 				<string>手势_触控</string>
 				<key>className</key>
 				<string></string>

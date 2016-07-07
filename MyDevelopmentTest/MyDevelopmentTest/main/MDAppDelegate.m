@@ -102,6 +102,7 @@
   self.window.rootViewController = navi;
   [self.window makeKeyAndVisible];
   
+  //输出设备信息
   [[MDTool sharedInstance] showDeviceInfo];
   
   [self registerForRemoteNotification:application];
