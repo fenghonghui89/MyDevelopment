@@ -10,7 +10,7 @@ import Foundation
 
 func root_ControlFlow() {
   
-//  root_ControlFlow_for()
+  root_ControlFlow_for()
 //  root_ControlFlow_while()
 //  root_ControlFlow_switch()
 //  root_ControlFlow_other()

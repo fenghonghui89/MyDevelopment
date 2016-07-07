@@ -147,7 +147,7 @@ void STLogResponderChain(UIResponder *responder);
  *
  *  @return ip
  */
--(NSString *)IPAddress;
+-(NSString *)ShowIPAddress;
 
 /**
  *  md5加密

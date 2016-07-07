@@ -314,6 +314,7 @@ void STLogResponderChain(UIResponder *responder) {
   NSLog(@"systemUptime－－－－－%f",info.systemUptime);
   NSLog(@"activeProcessorCount－－－－－%lu",(unsigned long)info.activeProcessorCount);
 
+  NSLog(@"ip:%@",[self ShowIPAddress]);
 }
 
 /**
@@ -338,7 +339,7 @@ void STLogResponderChain(UIResponder *responder) {
  *
  *  @return ip
  */
--(NSString *)IPAddress{
+-(NSString *)ShowIPAddress{
   InitAddresses();
   GetIPAddresses();
   GetHWAddresses();

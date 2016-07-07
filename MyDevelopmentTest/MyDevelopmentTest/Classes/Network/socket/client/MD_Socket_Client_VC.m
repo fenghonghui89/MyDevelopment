@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger,messageType) {
 #pragma mark - < method > -
 -(void)customInit{
 
-  NSLog(@"本机ip:%@",[[MDTool sharedInstance] IPAddress]);
+  NSLog(@"本机ip:%@",[[MDTool sharedInstance] ShowIPAddress]);
   
   self.clientSocket = [[AsyncSocket alloc] initWithDelegate:self];
   

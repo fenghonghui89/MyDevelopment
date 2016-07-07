@@ -83,7 +83,7 @@
   NSLog(@"接收到信息：%@",info);
   
   if ([info isEqualToString:@"谁在线"]) {
-    if ([[[MDTool sharedInstance] IPAddress] isEqualToString:host]) {//排除自己发送的
+    if ([[[MDTool sharedInstance] ShowIPAddress] isEqualToString:host]) {//排除自己发送的
       return YES;
     }else{
       //发送“我在线”给对方
@@ -91,7 +91,7 @@
   }
   
   if ([info isEqualToString:@"我在线"]) {
-    if ([[[MDTool sharedInstance] IPAddress] isEqualToString:host]) {//排除自己发送的
+    if ([[[MDTool sharedInstance] ShowIPAddress] isEqualToString:host]) {//排除自己发送的
       return YES;
     }else{
       UIAlertView *av = [[UIAlertView alloc] initWithTitle:info message:host delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
