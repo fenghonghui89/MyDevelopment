@@ -130,7 +130,11 @@ protocal
 只能用var
 
 
-@objc 暴露给oc
+@objc
+暴露给oc
+如果你用 Swift 写的 class 是继承自 NSObject 的话，Swift 会默认自动为所有的非 private 的类和成员加上 @objc
+如果swift的类名或者方法名是中文，即oc不支持的，要用@objc标识一个给oc用的英文名
+
 optional 只能用在@objc修饰协议，调用optional的方法或属性，要用？
 
 indirect
