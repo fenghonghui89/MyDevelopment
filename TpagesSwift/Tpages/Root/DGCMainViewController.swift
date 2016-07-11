@@ -42,16 +42,16 @@ class DGCMainViewController: UIViewController,RDVTabBarControllerDelegate {
   //MARK:- < customize init >
   private func commonInitTabBar() {
     
-    let tpagesPageVC = DGCTpagesPageVC()
+    let tpagesPageVC = DGCTpagesPageVC(pageType: DGCPageType.DGCPageTypeTpages)
     let nvc_home = DGCBaseNavigationController(rootViewController: tpagesPageVC)
     
-    let mallPageVC = DGCMallPageVC()
+    let mallPageVC = DGCMallPageVC(pageType: DGCPageType.DGCPageTypeMall)
     let nvc_mall = DGCBaseNavigationController(rootViewController: mallPageVC)
     
     let QRCodePageVC = DGCQRCodePageVC()
     let nvc_qrcode = DGCBaseNavigationController(rootViewController: QRCodePageVC)
     
-    let userCenterPageVC = DGCUserCenterPageVC()
+    let userCenterPageVC = DGCUserCenterPageVC(pageType:DGCPageType.DGCPageTypeUserCenter)
     let nvc_userCenter = DGCBaseNavigationController(rootViewController: userCenterPageVC)
     
     let tabbarVC:DGCBaseTabBarController = DGCBaseTabBarController()

@@ -18,9 +18,9 @@ let URL_TPAGES:String = "http://tpages.cn"
 
 //MARK:tpages mall url
 #if DEBUG
-let URL_TPAGES_MALL:String = "http://dev.123go.net.cn"
+let URL_TPAGES_MALL:String = "http://mall.dev.123go.net.cn"
 #else
-let URL_TPAGES_MALL:String = "http://tpages.cn"
+let URL_TPAGES_MALL:String = "http://mall.tpages.cn"
 #endif
 
 //MARK:会员中心 积分url

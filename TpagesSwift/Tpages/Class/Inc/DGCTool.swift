@@ -52,9 +52,11 @@ class DGCTool {
     let rString:String = cString.substringWithRange(range)
     
     range.startIndex = cString.startIndex.advancedBy(2)
+    range.endIndex = cString.startIndex.advancedBy(4)
     let gString:String = cString.substringWithRange(range)
     
     range.startIndex = cString.startIndex.advancedBy(4)
+    range.endIndex = cString.startIndex.advancedBy(6)
     let bString:String = cString.substringWithRange(range)
     
     //转为数值
