@@ -83,6 +83,10 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       make.edges.equalTo(self.view)
     })
     
+    let header:MJRefreshNormalHeader = MJRefreshNormalHeader { 
+      webView.reload()
+    }
+    webView.scrollView.mj_header = header
   }
   
 
@@ -220,11 +224,20 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   //MARK:- ********************** callback
   //MARK:- < UIWebViewDelegate >
   func webViewDidStartLoad(webView: UIWebView) {
+
+    dlog("webViewDidStartLoad \(self.dynamicType)")
     
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    self.webView?.scrollView.mj_header.endRefreshing()
   }
   
   func webViewDidFinishLoad(webView: UIWebView) {
     
+    dlog("webViewDidFinishLoad \(self.dynamicType)")
+    
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    self.webView?.scrollView.mj_header.endRefreshing()
+
   }
   
   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -233,6 +246,10 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   
   func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
     
+    dlog("didFailLoadWithError \(self.dynamicType)")
+    
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    self.webView?.scrollView.mj_header.endRefreshing()
   }
   
   //MARK:- < UIScrollViewDelegate>
