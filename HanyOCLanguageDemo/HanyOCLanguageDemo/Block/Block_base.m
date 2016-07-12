@@ -155,10 +155,9 @@ void fundation (int (^block1)(int,int))//参数写法：block指针
 #pragma mark - block做回调参数
 -(void)testBlock3
 {
-  [self.delegate blockDelegate:self block:^(BOOL b) {
-    if (b == YES) {
-      NSLog(@"block delegate 传入yes");
-    }
+  [self.delegate blockDelegate:self block:^(BOOL b,Block_root_block block) {
+    NSLog(@"block delegate 传入%d",b);
+    block(b);
   }];
   
 }
@@ -190,6 +189,31 @@ void fundation (int (^block1)(int,int))//参数写法：block指针
   [self blockTest1:^{
     blocktest();
   }];
+}
+
+#pragma mark - blck做属性
+//eg3
+-(instancetype)init{
+
+  if (self = [super init]) {
+    self.blockParama1 = ^(BOOL value,Block_root_block block){
+      NSLog(@"value1:%d",value);
+      block(11);
+    };
+
+  }
+  return self;
+}
+
+-(void)blockparamaTest{
+  
+//  //eg1
+//  self.blockParama(YES);
+//  
+//  //eg2
+//  self.blockParama1(YES,^(NSInteger value){
+//    NSLog(@"value:%ld",(long)value);
+//  });
 }
 
 @end

@@ -32,6 +32,8 @@ private func func_objCompare(){
   }else{
     print("不是同一个实例");
   }
+  
+
 }
 
 //MARK:继承

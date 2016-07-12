@@ -9,7 +9,7 @@
 import Foundation
 
 func root_Closures_base() {
-  func_autoClosures()
+  kl_blockParama()
 }
 
 //MARK:- < 推导例子 闭包的写法 尾随闭包 >
@@ -158,7 +158,7 @@ private func func3_2_2(forIncrement amount:Int)->((Int)->Int){
 }
 
 
-//MARK:- <用闭包定义变量的两种方式 做函数参数 做返回值>
+//MARK:- <用闭包定义变量的两种方式 做函数参数 做返回值 做属性>
 //MARK:用闭包定义变量的两种方式
 private func func4_1() {
   
@@ -170,7 +170,11 @@ private func func4_1() {
     return "name1"
   }
   
-  print("~~~\(name) \(name1())");
+  let name2 = {//自动闭包
+    return "name2"
+  }
+  
+  print("~~~\(name) \(name1()) \(name2)");
   
   
 }
@@ -253,6 +257,40 @@ private func func5_4_2(block:()->()){
   }
 }
 
+//MARK:闭包做属性
+private func kl_blockParama(){
+
+  let ftc = FTC()
+  
+  //eg1
+//  ftc.block = {
+//    (value:Int)->Void in
+//    print("值:\(value)")
+//  }
+  
+  //eg2
+//  ftc.block1 = {
+//    (flag:Bool,block:rootblock)->String in
+//    
+//    print("值:\(flag)")
+//    block(value: 13)
+//    return "a"
+//  }
+//
+//  ftc.blocktest()
+  
+  //eg3
+  ftc.block1!(value:true,block:{(value:Int)->Void in
+    print("value:\(value)")
+    })
+  
+  //eg3 尾随闭包形式
+  ftc.block1!(value:true){(value:Int)->Void in
+    print("value:\(value)")
+  }
+}
+
+
 //MARK:- < @noescape >
 /*
  修饰的闭包在函数结束后也会随之结束，用于告诉编译器优化性能
@@ -330,7 +368,7 @@ private func func_autoClosures(){
 
 //MARK:- ****************************** class ******************************
 
-
+//@noescape
 private func someFunctionWithNonescapingClosure(@noescape closure: () -> Void) {
   closure()
 }
@@ -340,12 +378,51 @@ private func someFunctionWithEscapingClosure(completionHandler: () -> Void) {
   completionHandlers.append(completionHandler)
 }
 
-class SomeClass {
+private class SomeClass {
   
   var x = 10
   
   func doSomething() {
     someFunctionWithNonescapingClosure { x = 200 }//用@noescape标识闭包 可以隐式引用self
     someFunctionWithEscapingClosure { self.x = 100 }
+  }
+  
+  
+}
+
+
+//闭包做属性
+private typealias rootblock = (value:Int)->Void
+private typealias myblock = (value:Bool,block:rootblock)->String
+
+private class FTC{
+  
+  var block:rootblock?
+  var block1:myblock?
+  
+  //eg3
+  init(){
+    self.block1 = {
+      (flag:Bool,block:rootblock)->String in
+      
+      print("值:\(flag)")
+      block(value: 13)
+      return "a"
+    }
+
+  }
+  
+  func blocktest() {
+    
+    //eg1
+//    self.block!(value: 12);
+    
+    
+    //eg2
+    let str = self.block1!(value:true,
+                 block:{(value:Int)->Void in
+                  print("value:\(value)")
+    });
+    print("str:\(str)")
   }
 }

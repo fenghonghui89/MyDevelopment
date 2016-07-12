@@ -12,9 +12,9 @@ import Foundation
 
 //root_Basic()
 //root_BaseOperator()
-root_StringsAndCharacters()
+//root_StringsAndCharacters()
 //root_CollectionTypes()
-root_ControlFlow()
+//root_ControlFlow()
 //root_Functions()
 root_Closures()
 //root_Enumerations()

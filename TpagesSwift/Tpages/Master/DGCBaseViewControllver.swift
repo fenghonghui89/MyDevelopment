@@ -198,6 +198,34 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
     return .DGCPageTypeUnknow
   }
   
+  func checkIsLogin() {
+    
+    let content:NSString = self.webView!.stringByEvaluatingJavaScriptFromString("dzuid")! as NSString
+    let newUid:Int = content.integerValue
+    let oldUid:Int = NSUserDefaults.standardUserDefaults().integerForKey("dzuid")
+    
+    if newUid > 0 {
+      dlog("dzuid>0 登录了")
+      if newUid != oldUid {
+        dlog("登录成功 发送token 发通知刷新其他页面 \(self.dynamicType)")
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_LOGIN_LOGOUT_SUCCESS, object: nil, userInfo: [NOTI_LOGIN_LOGOUT_SUCCESS:NSNumber(integer: self.pageType.rawValue)])
+      }else{
+      
+      }
+    }
+    
+    else{
+      dlog("dzuid=0 未登录")
+      if newUid != oldUid {
+        dlog("注销成功 发通知刷新其他页面 删除cookie \(self.dynamicType)")
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_LOGIN_LOGOUT_SUCCESS, object: nil, userInfo: [NOTI_LOGIN_LOGOUT_SUCCESS:NSNumber(integer: self.pageType.rawValue)])
+      }
+    }
+    
+    NSUserDefaults.standardUserDefaults().setInteger(newUid, forKey: "dzuid")
+    NSUserDefaults.standardUserDefaults().synchronize()
+  }
+  
   //MARK:- < 网页加载 >
   func loadHomePage() {
     

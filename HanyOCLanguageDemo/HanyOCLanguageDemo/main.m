@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
 //  [[Root_Protocol new] root_Protocol];
 //  [[Root_CategoryAndExtersion new] root_CategoryAndExtersion];
 //  [[Root_ParamaAndInit new] root_ParamaAndInit];
-//  [[Root_Block new] root_Block];
+  [[Root_Block new] root_Block];
   
   return 0;
 }

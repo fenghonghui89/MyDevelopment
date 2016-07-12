@@ -16,7 +16,7 @@
 
 @implementation Block_value
 -(void)root_Block_value{
-
+  [self test9];
 }
 
 #pragma mark - < method > -
@@ -102,12 +102,15 @@
 }
 
 -(void)blockDelegate:(Block_base *)vc block:(Block_base_block)block{
-  block(YES);
+  
+  block(YES,^void(NSInteger value){
+    NSLog(@"~~~value:%d",value);
+  });
 }
 
 #pragma mark block做block参数
--(void)test7
-{
+-(void)test7{
+  
   Block_base *obj = [Block_base new];
   [obj retryBlockMethod:^(BOOL a, retryblock reb) {
     reb(YES);
@@ -135,4 +138,29 @@
 //  };
 }
 
+#pragma mark blcok做属性
+-(void)test9{
+
+  Block_base *obj = [Block_base new];
+  
+  //eg1
+//  obj.blockParama = ^(NSInteger value){
+//    NSLog(@"value1:%ld",(long)value);
+//  };
+//  [obj blockparamaTest];
+
+  //eg2
+//  obj.blockParama1 = ^(BOOL value,Block_root_block block){
+//    NSLog(@"value1:%d",value);
+//    block(YES);
+//  };
+//  [obj blockparamaTest];
+  
+  //eg3
+  obj.blockParama1(YES,^(NSInteger value){
+    NSLog(@"值:%ld",(long)value);
+  });
+
+ 
+}
 @end

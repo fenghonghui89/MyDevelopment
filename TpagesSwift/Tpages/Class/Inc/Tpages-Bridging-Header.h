@@ -15,3 +15,10 @@
 #import "RDVTabBar.h"
 
 #import "MJRefresh.h"
+#import "AFNetworking.h"
+
+#import "UMSocial.h"
+#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialControllerService.h"

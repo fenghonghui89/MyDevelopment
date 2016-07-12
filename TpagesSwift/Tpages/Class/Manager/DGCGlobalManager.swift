@@ -61,30 +61,66 @@ class DGCGlobalManager: NSObject {
   
   static func deleteCookie(){
   
-/*
-     NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:kTpagesUrlKey];
-     if ([data length]) {
-     NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-     for (NSHTTPCookie *cookie in array) {
-     DRLog(@"清空tpages cookie");
-     [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
-     }
-     }
-     
-     NSData *dataMall = [[NSUserDefaults standardUserDefaults] objectForKey:kMallTapgesUrlKey];
-     if ([dataMall length]) {
-     NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:dataMall];
-     for (NSHTTPCookie *cookie in array) {
-     DRLog(@"清空mall cookie");
-     [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
-     }
-     }
-     */
+    if let data_tpages:NSData = NSUserDefaults.standardUserDefaults().objectForKey(kTpagesUrlKey) as? NSData {
+      if let cookie_tpages:NSArray = NSKeyedUnarchiver.unarchiveObjectWithData(data_tpages) as? NSArray {
+        for cookie in cookie_tpages {
+          dlog("清空tpages cookie \(cookie)")
+          NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(cookie as! NSHTTPCookie)
+        }
+      }
+    }
     
+    if let data_mall:NSData = NSUserDefaults.standardUserDefaults().objectForKey(kTpagesMallUrlKey) as? NSData {
+      if let cookie_mall:NSArray = NSKeyedUnarchiver.unarchiveObjectWithData(data_mall) as? NSArray {
+        for cookie in cookie_mall {
+          dlog("清空mall cookie \(cookie)")
+          NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(cookie as! NSHTTPCookie)
+        }
+      }
+    }
     
   }
   
+  //MARK:- other
+  func checkNetwork() {
+    
+    let monitor:AFNetworkReachabilityManager = AFNetworkReachabilityManager.sharedManager()
+    monitor.setReachabilityStatusChangeBlock { (status:AFNetworkReachabilityStatus) in
+      
+      switch status{
+      case .NotReachable:
+        dlog("网络中断")
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_NETWORK_STATE, object: nil, userInfo: [NOTI_NETWORK_STATE:NSNumber(bool: false)])
+      default:
+        dlog("网络正常")
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_NETWORK_STATE, object: nil, userInfo: [NOTI_NETWORK_STATE:NSNumber(bool: true)])
+        
+      }
+      
+    }
+    
+    monitor.startMonitoring()
+  }
   
+  func getUserAgent() {
+    
+    let webview_ua:UIWebView = UIWebView(frame: CGRectZero)
+    let url:NSURL  = NSURL(string: "http://tpages.cn/sign/in")!
+    webview_ua.loadRequest(NSURLRequest(URL: url))
+    
+    let userAgent:String = webview_ua.stringByEvaluatingJavaScriptFromString("navigator.userAgent")!
+    let dev:String = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone ? "iPhone":"iPad"
+    let ver:String = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleInfoDictionaryVersionKey as String) as! String
+    
+    let userAgent_custom:String = userAgent+" (TPages_"+dev+"/"+ver+")"
+    
+    let dic = ["UserAgent":userAgent_custom]
+    
+    NSUserDefaults.standardUserDefaults().registerDefaults(dic)
+    NSUserDefaults.standardUserDefaults().synchronize()
+    
+    dlog("UserAgent:\(userAgent_custom)")
+  }
   
   
 }
