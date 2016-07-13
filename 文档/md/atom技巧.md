@@ -3,6 +3,8 @@
 
 - cmd+r:显示目录树
 - alt+shift+s:显示当前可用的snip
+- cmd+shift+p:打开包选择器
+- cmd+\:打开左侧目录树
 
 # 常用插件
 

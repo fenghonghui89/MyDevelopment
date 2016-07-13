@@ -46,6 +46,9 @@
 		144F23F21C5F38E2004ED3BC /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 144F23EF1C5F38E2004ED3BC /* UICollectionView+Convenience.m */; };
 		14565E971BA98C5B009F7B2D /* MD_UICustom_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */; };
 		14565E9A1BA98F03009F7B2D /* MDCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14565E991BA98F03009F7B2D /* MDCircularSlider.m */; };
+		145B80791D35F66D00A4735E /* indexJS.html in Resources */ = {isa = PBXBuildFile; fileRef = 145B80781D35F66D00A4735E /* indexJS.html */; };
+		145B807B1D35F70D00A4735E /* indexJS.js in Resources */ = {isa = PBXBuildFile; fileRef = 145B807A1D35F70D00A4735E /* indexJS.js */; };
+		145B807E1D361E9E00A4735E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145B807D1D361E9E00A4735E /* JavaScriptCore.framework */; };
 		1461C0D71CA92301006ED51C /* MD_Socket_SendFile_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1461C0D51CA92301006ED51C /* MD_Socket_SendFile_VC.m */; };
 		1461C0D81CA92301006ED51C /* MD_Socket_SendFile_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1461C0D61CA92301006ED51C /* MD_Socket_SendFile_VC.xib */; };
 		1463A9C71B6612160087F38F /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1463A9C61B6612160087F38F /* UIView+MDCategory.m */; };
@@ -540,6 +543,9 @@
 		14565E961BA98C5B009F7B2D /* MD_UICustom_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UICustom_VC.m; sourceTree = "<group>"; };
 		14565E981BA98F03009F7B2D /* MDCircularSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCircularSlider.h; sourceTree = "<group>"; };
 		14565E991BA98F03009F7B2D /* MDCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCircularSlider.m; sourceTree = "<group>"; };
+		145B80781D35F66D00A4735E /* indexJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = indexJS.html; sourceTree = "<group>"; };
+		145B807A1D35F70D00A4735E /* indexJS.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = indexJS.js; sourceTree = "<group>"; };
+		145B807D1D361E9E00A4735E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		1461C0D41CA92301006ED51C /* MD_Socket_SendFile_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_SendFile_VC.h; sourceTree = "<group>"; };
 		1461C0D51CA92301006ED51C /* MD_Socket_SendFile_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Socket_SendFile_VC.m; sourceTree = "<group>"; };
 		1461C0D61CA92301006ED51C /* MD_Socket_SendFile_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Socket_SendFile_VC.xib; sourceTree = "<group>"; };
@@ -1227,6 +1233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145B807E1D361E9E00A4735E /* JavaScriptCore.framework in Frameworks */,
 				14F1F2131D1140F30059EDC1 /* libresolv.tbd in Frameworks */,
 				14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */,
 				14FBF9661C27B4F700CC0A55 /* Photos.framework in Frameworks */,
@@ -1385,6 +1392,8 @@
 			isa = PBXGroup;
 			children = (
 				1428AB751C84502C003CC10F /* index.html */,
+				145B80781D35F66D00A4735E /* indexJS.html */,
+				145B807A1D35F70D00A4735E /* indexJS.js */,
 			);
 			path = www;
 			sourceTree = "<group>";
@@ -2720,6 +2729,7 @@
 		14A7276C1CAB8ACF00DC7BC0 /* SystemLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				145B807D1D361E9E00A4735E /* JavaScriptCore.framework */,
 				14F1F2121D1140F30059EDC1 /* libresolv.tbd */,
 				14A727631CAB760100DC7BC0 /* libxml2.tbd */,
 				14FBF9651C27B4F700CC0A55 /* Photos.framework */,
@@ -3409,6 +3419,7 @@
 				1465CCEE1D0D4DCF00F79436 /* MD_TableViewCell.xib in Resources */,
 				14FF81161CE1BF6F00C7855C /* playing25@2x.png in Resources */,
 				14FF814D1CE1BF6F00C7855C /* Sky.jpg in Resources */,
+				145B807B1D35F70D00A4735E /* indexJS.js in Resources */,
 				14FF81771CE1D82D00C7855C /* navigationbar_friendsearch_highlighted@2x.png in Resources */,
 				1465CD0D1D0D4DCF00F79436 /* ThirdViewController.xib in Resources */,
 				14FF80D01CE1BF6F00C7855C /* bg94w100h@2x.png in Resources */,
@@ -3608,6 +3619,7 @@
 				14F1F2331D1160720059EDC1 /* MD_UIWebViewCache_VC.xib in Resources */,
 				14FF80E81CE1BF6F00C7855C /* Japan.png in Resources */,
 				14FF81451CE1BF6F00C7855C /* big1.jpg in Resources */,
+				145B80791D35F66D00A4735E /* indexJS.html in Resources */,
 				14FF80CF1CE1BF6F00C7855C /* 罗丹-思想者.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
