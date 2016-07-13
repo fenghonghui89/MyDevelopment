@@ -81,6 +81,7 @@
 		1420B25C1D33A6D300C1B17E /* DGCPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1420B25B1D33A6D300C1B17E /* DGCPushManager.swift */; };
 		1420B25E1D33A6E300C1B17E /* DGCShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1420B25D1D33A6E300C1B17E /* DGCShareManager.swift */; };
 		1420B2601D33A6F900C1B17E /* DGCPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1420B25F1D33A6F900C1B17E /* DGCPayManager.swift */; };
+		145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B80761D35EBB200A4735E /* DGCAlertController.swift */; };
 		147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABD81D2F43CF00236FB6 /* RDVTabBar.m */; };
 		147BABDE1D2F43CF00236FB6 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABDA1D2F43CF00236FB6 /* RDVTabBarController.m */; };
 		147BABDF1D2F43CF00236FB6 /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABDC1D2F43CF00236FB6 /* RDVTabBarItem.m */; };
@@ -301,6 +302,7 @@
 		1420B25B1D33A6D300C1B17E /* DGCPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPushManager.swift; sourceTree = "<group>"; };
 		1420B25D1D33A6E300C1B17E /* DGCShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCShareManager.swift; sourceTree = "<group>"; };
 		1420B25F1D33A6F900C1B17E /* DGCPayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPayManager.swift; sourceTree = "<group>"; };
+		145B80761D35EBB200A4735E /* DGCAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCAlertController.swift; sourceTree = "<group>"; };
 		147BABD71D2F43CF00236FB6 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		147BABD81D2F43CF00236FB6 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
 		147BABD91D2F43CF00236FB6 /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
@@ -963,6 +965,7 @@
 		14A101C11D2BB6B2002069D2 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				145B80761D35EBB200A4735E /* DGCAlertController.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -1254,6 +1257,7 @@
 				1420B1B41D339E4800C1B17E /* MJRefreshComponent.m in Sources */,
 				14DDE88F1D2D04A6000CAFE2 /* DGCThirdSDKDefine.swift in Sources */,
 				147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */,
+				145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */,
 				1420B2581D33A69A00C1B17E /* RNCachingURLProtocol.m in Sources */,
 				148380CA1D349E0B001F8822 /* AFHTTPSessionManager.m in Sources */,
 				1420B1B31D339E4800C1B17E /* MJRefreshBackFooter.m in Sources */,
