@@ -22,7 +22,7 @@
 import Foundation
 
 func root_StringsAndCharacters_base() {
-  kl_AccessAndChangeString();
+  kl_stringCompare();
 }
 
 
@@ -199,6 +199,21 @@ private func kl_stringCompare(){
   if st.hasSuffix("jpg") {
     print("has suffix")
   }
+  
+  //swift环境下 string与NSString都不能为nil
+  if let dt:String? = NSUserDefaults.standardUserDefaults().objectForKey("xxx") as? String{
+    print("dt:\(dt)")
+  }else{
+    print("nil string ...")//this
+  }
+  
+  if let dt:String = NSUserDefaults.standardUserDefaults().objectForKey("xxx") as? String{
+    print("dt:\(dt)")// dt:nil
+  }else{
+    print("nil string ...")
+  }
+  
+  
 }
 
 //MARK:字符串大小写转换

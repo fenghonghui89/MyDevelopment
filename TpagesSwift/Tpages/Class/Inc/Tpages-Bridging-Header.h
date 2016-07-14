@@ -27,3 +27,4 @@
 #import "Order.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApi.h"
+#import "UMessage.h"
