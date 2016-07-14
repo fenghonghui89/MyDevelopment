@@ -18,10 +18,10 @@ class ViewController_Swift: UIViewController,UIScrollViewDelegate,UIWebViewDeleg
   //MARK:- < lifecycle >
   //MARK:init
   convenience init(){
-    self.init(name:"Peter")!
+    self.init(name:"Peter",flag: true)!
   }
   
-  init?(name:String){
+  init?(name:String,flag:Bool){
     if name.isEmpty{
       return nil;
     }

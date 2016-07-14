@@ -13,59 +13,71 @@ class ViewController_FreeTest: UIViewController {
   override func viewDidLoad() {
     
     super.viewDidLoad();
-//    let scl:SuperClass = SuperClass(par1: "", par2: "")
-//    let myTableView: UITableView = UITableView(frame: CGRectZero, style: .Grouped)
-//    let color = UIColor(red: 1, green: 1, blue: 1, alpha: 1);
-//    let tf = UITextField(frame: CGRectZero)
-//    tf.backgroundColor = UIColor.darkGrayColor();
-//    
-//    let data:AnyObject = NSDate()
-//    let f = data.dateByAddingTimeInterval?(10)
-//    data.characterAtIndex?(5)
-//    // crash, myObject does't respond to that method
-//    if let ff = data.characterAtIndex?(5) {
-//      print("\(ff)");
-//    }else{
-//      print("nil..")
-//    }
-//    
-//    let mydata = f as! NSDate;
-//    mydata.timeIntervalSinceNow;
-    
-    let obj = TestClass();
-    obj.blockTest();
+
     
   }
 }
 
 
 
-class TestClass {
+class MyView: UIView {
   
-  var name:String = "";
-  
-  var block:(value:Int)->String = {
-    (num)->String in
-    return String(num)
-  };
-  
-  init(){
-    block = {
-     (value)->String in
-      return String(value)
+  init(flag:Bool){
+    
+    super.init(frame: CGRectZero)
+    
+    if flag {
+      print("yes")
     }
   }
   
-  func blockTest() {
-    self.block = {
-      [unowned self](age)->String in
-      self.name = String(age)
-      return self.name
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+}
+
+class MyVC: UIViewController {
+  
+  init(flag:Bool){
+  
+    super.init(nibName: nil, bundle: nil)
+    if flag {
+      print("yes")
     }
   }
   
-  deinit{
-    print("deinit...");
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
+  
+}
+
+class MyAC: UIAlertController {
+  
+ 
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+}
+
+class AAA {
+  
+  private var cpu:Int
+  
+  var type:Int{
+    get{
+      return self.cpu
+    }
+  }
+  
+  init(cpu:Int){
+    self.cpu = cpu
+  }
+  
+  convenience init(flag:Bool){
+    self.init(cpu:flag ? 100:1)
+  }
+  
 }
 

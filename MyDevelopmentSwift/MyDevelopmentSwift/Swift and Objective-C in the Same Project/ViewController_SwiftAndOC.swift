@@ -27,7 +27,7 @@ class ViewController_SwiftAndOC:UIViewController {
   
   func func_swift(){
     
-    let vc:ViewController_Swift = ViewController_Swift(name: "Hany")!;
+    let vc:ViewController_Swift = ViewController_Swift(name: "Hany",flag:true)!;
     vc.sayHello();
     
     let vc1:ViewController_Swift = ViewController_Swift();

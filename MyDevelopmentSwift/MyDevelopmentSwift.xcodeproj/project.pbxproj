@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144737901D37495E00E9ACC9 /* ViewController_FreeTest1.swift in Resources */ = {isa = PBXBuildFile; fileRef = 1447378F1D37495E00E9ACC9 /* ViewController_FreeTest1.swift */; };
 		1481A2F61D10015400AA6E30 /* ViewController_InteractingWithCApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */; };
 		1486430C1D053103005C1381 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486430B1D053103005C1381 /* CustomView.swift */; };
 		1486430E1D053172005C1381 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1486430D1D053172005C1381 /* CustomView.xib */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1412011B1D018C7E00AD535A /* MyDevelopmentSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDevelopmentSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		1447378F1D37495E00E9ACC9 /* ViewController_FreeTest1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FreeTest1.swift; sourceTree = "<group>"; };
 		1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_InteractingWithCApis.swift; sourceTree = "<group>"; };
 		1486430B1D053103005C1381 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1486430D1D053172005C1381 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				14AF34B61C7362AC007DC722 /* AppDelegate.swift */,
 				1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */,
+				1447378F1D37495E00E9ACC9 /* ViewController_FreeTest1.swift */,
 				14FA3B741D07B9FA00BD2902 /* Using Swift with Cocoa and Objective-C */,
 				1481A2F41D10013700AA6E30 /* Interacting with C APIs */,
 				14F1F1FD1D10F6710059EDC1 /* Swift and Objective-C in the Same Project */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF34C11C7362AC007DC722 /* LaunchScreen.storyboard in Resources */,
+				144737901D37495E00E9ACC9 /* ViewController_FreeTest1.swift in Resources */,
 				1486430E1D053172005C1381 /* CustomView.xib in Resources */,
 				14AF34BE1C7362AC007DC722 /* Assets.xcassets in Resources */,
 				14AF34BC1C7362AC007DC722 /* Main.storyboard in Resources */,
