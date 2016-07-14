@@ -16,71 +16,36 @@ enum DGCAlertType:Int {
 
 class DGCAlertController: UIAlertController {
   
-
-//  +(DGCAlertController *)alertControllerWithTitle:(NSString * __nullable)title
-//  message:(NSString * __nullable)message
-//  type:(DGCAlertType)type
-//  block:(void(^ __nullable)(bool run))block;
-//  {
-//  DGCAlertController *vc = [super alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-//  
-//  __block DGCAlertController *ac = vc;
-//  
-//  switch (type) {
-//  case DGCAlertTypeTwoSelect:
-//  {
-//  [vc addActionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//  [ac dismissViewControllerAnimated:YES completion:nil];
-//  }];
-//  [vc addActionWithTitle:NSLocalizedString(@"打开", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//  block(YES);
-//  }];
-//  }
-//  break;
-//  case DGCAlertTypeJustConfirm:
-//  {
-//  [vc addActionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleDefault handler:nil];
-//  }
-//  break;
-//  case DGCAlertTypeNoAction:
-//  break;
-//  default:
-//  break;
-//  }
-//  
-//  return vc;
-//  }
   
-  init(title:String,message:String,type:DGCAlertType,block:(run:Bool)->Void){
+  static func alertControlller(title:String,message:String,type:DGCAlertType,block:((run:Bool)->Void)?)->DGCAlertController{
+  
+    let ac = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     
-    super.init(nibName: nil, bundle: nil)
-
     switch type {
+      
     case .DGCAlertTypeTwoSelect:
-      self.addActionWithTitle("取消", style: .Default, handle: { (action) in
-        self.dismissViewControllerAnimated(true, completion: nil)
+      let action:UIAlertAction = UIAlertAction(title: "取消", style:.Default, handler:{
+        (action:UIAlertAction)->Void in
+        ac.dismissViewControllerAnimated(true, completion: nil)
       })
-      self.addActionWithTitle("打开", style: .Default, handle: { (action) in
-        block(run: true)
+      
+      let action1:UIAlertAction = UIAlertAction(title: "打开", style:.Default, handler:{
+        (action1:UIAlertAction)->Void in
+        block!(run: true)
       })
+      
+      ac.addAction(action)
+      ac.addAction(action1)
+      
     case .DGCAlertTypeJustConfirm:
-      self.addActionWithTitle("确定", style: .Default, handle: { (action) in
-        
-      })
+      let action:UIAlertAction = UIAlertAction(title: "确定", style:.Default, handler:nil)
+      ac.addAction(action)
     default: break
       
     }
+    
+    return ac as! DGCAlertController
 
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-  func addActionWithTitle(title:String,style:UIAlertActionStyle,handle:(action:UIAlertAction)->Void) {
-    
-    let action:UIAlertAction = UIAlertAction(title: title, style: style, handler: handle)
-    self.addAction(action)
-    
-  }
 }

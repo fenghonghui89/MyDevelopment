@@ -54,7 +54,8 @@ private func kl_typeChange(){
   let dv2:Double = Double(123);
   let ii = Int(12.3);
   let i:float_t = 1;
-  print("\(dv2)  \(ii) \(i)");
+  let ui32 = UInt32("123")!
+  print("\(dv2)  \(ii) \(i) \(ui32)");
 
 }
 

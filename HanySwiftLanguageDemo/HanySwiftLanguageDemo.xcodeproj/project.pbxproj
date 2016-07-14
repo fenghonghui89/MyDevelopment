@@ -74,6 +74,7 @@
 		14C8C7581D2A7B6B000C14D0 /* Root_AdvancedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C7571D2A7B6B000C14D0 /* Root_AdvancedOperators.swift */; };
 		14C8C75A1D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C7591D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift */; };
 		14C8C75C1D2A7B84000C14D0 /* AccessControl_base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8C75B1D2A7B84000C14D0 /* AccessControl_base.swift */; };
+		14F852431D3751D000483EDB /* FreeTest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F852421D3751D000483EDB /* FreeTest1.swift */; };
 		14F9A5801D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9A57F1D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift */; };
 		14F9A5821D2B5D1C006BD9BA /* AdvancedOperators_Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9A5811D2B5D1C006BD9BA /* AdvancedOperators_Other.swift */; };
 /* End PBXBuildFile section */
@@ -160,6 +161,7 @@
 		14C8C7571D2A7B6B000C14D0 /* Root_AdvancedOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root_AdvancedOperators.swift; sourceTree = "<group>"; };
 		14C8C7591D2A7B76000C14D0 /* AdvancedOperators_BitwiseOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators_BitwiseOperators.swift; sourceTree = "<group>"; };
 		14C8C75B1D2A7B84000C14D0 /* AccessControl_base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessControl_base.swift; sourceTree = "<group>"; };
+		14F852421D3751D000483EDB /* FreeTest1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeTest1.swift; sourceTree = "<group>"; };
 		14F9A57F1D2B5A01006BD9BA /* AdvancedOperators_OperatorFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators_OperatorFunction.swift; sourceTree = "<group>"; };
 		14F9A5811D2B5D1C006BD9BA /* AdvancedOperators_Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedOperators_Other.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 			children = (
 				14C8C6B81D2A5DCE000C14D0 /* main.swift */,
 				14C8C6CC1D2A6B85000C14D0 /* FreeTest.swift */,
+				14F852421D3751D000483EDB /* FreeTest1.swift */,
 				14C8C7191D2A76A8000C14D0 /* ClassModel.swift */,
 				14A100F91D2B945F002069D2 /* bookmark */,
 				14C8C6C31D2A6527000C14D0 /* root */,
@@ -552,6 +555,7 @@
 				14A100F21D2B902D002069D2 /* ARC_weak.swift in Sources */,
 				14C8C7561D2A7B5E000C14D0 /* Root_AccessControl.swift in Sources */,
 				14C8C6E71D2A71C5000C14D0 /* ControlFlow_while.swift in Sources */,
+				14F852431D3751D000483EDB /* FreeTest1.swift in Sources */,
 				14A100F61D2B9092002069D2 /* ARC_closures.swift in Sources */,
 				14C8C7491D2A7B09000C14D0 /* Dice.swift in Sources */,
 				14C8C6EF1D2A7305000C14D0 /* Root_Closures.swift in Sources */,

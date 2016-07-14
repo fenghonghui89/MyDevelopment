@@ -112,12 +112,14 @@ class DGCShareManager:NSObject,UMSocialUIDelegate {
         
         //取消登录
       else if response?.responseCode == UMSResponseCodeCancel{
-        
+        let ac = DGCAlertController.alertControlller("", message: "用户取消微信登录", type:DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+        viewController.presentViewController(ac, animated: true, completion: nil)
       }
         
         //登录失败
       else{
-        
+        let ac = DGCAlertController.alertControlller("", message: "微信登录失败", type:DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+        viewController.presentViewController(ac, animated: true, completion: nil)
       }
     }
     
@@ -171,12 +173,14 @@ class DGCShareManager:NSObject,UMSocialUIDelegate {
         
         //取消登录
       else if response?.responseCode == UMSResponseCodeCancel{
-        
+        let ac = DGCAlertController.alertControlller("", message: "用户取消qq登录", type:DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+        viewController.presentViewController(ac, animated: true, completion: nil)
       }
         
         //登录失败
       else{
-        
+        let ac = DGCAlertController.alertControlller("", message: "qq登录失败", type:DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+        viewController.presentViewController(ac, animated: true, completion: nil)
       }
     }
     
@@ -227,12 +231,14 @@ class DGCShareManager:NSObject,UMSocialUIDelegate {
         
         //取消登录
       else if response?.responseCode == UMSResponseCodeCancel{
-        
+        let ac = DGCAlertController.alertControlller("", message: "用户取消新浪微博登录", type:DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+        viewController.presentViewController(ac, animated: true, completion: nil)
       }
         
         //登录失败
       else{
-        
+        let ac = DGCAlertController.alertControlller("", message: "新浪微博登录失败", type:DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+        viewController.presentViewController(ac, animated: true, completion: nil)
       }
     }
     

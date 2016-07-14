@@ -61,22 +61,23 @@ class MyAC: UIAlertController {
   }
 }
 
-class AAA {
+class BasePC {
   
-  private var cpu:Int
+  private var cpu_count:Int
   
-  var type:Int{
+  var level:Int{
     get{
-      return self.cpu
+      print("cup count:\(self.cpu_count)")
+      return self.cpu_count
     }
   }
   
-  init(cpu:Int){
-    self.cpu = cpu
+  private init(cpu_count:Int){
+    self.cpu_count = cpu_count
   }
   
-  convenience init(flag:Bool){
-    self.init(cpu:flag ? 100:1)
+  convenience init(level:Int){
+    self.init(cpu_count: level)
   }
   
 }

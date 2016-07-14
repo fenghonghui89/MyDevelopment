@@ -22,3 +22,8 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocialControllerService.h"
+
+
+#import "Order.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "WXApi.h"

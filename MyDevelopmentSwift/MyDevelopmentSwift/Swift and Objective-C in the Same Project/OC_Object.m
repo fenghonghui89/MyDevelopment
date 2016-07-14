@@ -6,8 +6,12 @@
 //  Copyright © 2016年 MD. All rights reserved.
 //
 
+/*
+ oc调用swift方法，要手动import "Product Module Name-swift.h"头文件
+ 有时候可能无法识别swift，要多编译几次
+ */
 #import "OC_Object.h"
-#import "MyDevelopmentSwift-swift.h"//oc调用swift方法，要手动import "Product Module Name-swift.h"头文件
+#import "MyDevelopmentSwift-swift.h"
 @interface OC_Object ()
 
 @end

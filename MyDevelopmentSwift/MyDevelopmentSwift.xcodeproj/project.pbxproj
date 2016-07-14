@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		144737901D37495E00E9ACC9 /* ViewController_FreeTest1.swift in Resources */ = {isa = PBXBuildFile; fileRef = 1447378F1D37495E00E9ACC9 /* ViewController_FreeTest1.swift */; };
 		1481A2F61D10015400AA6E30 /* ViewController_InteractingWithCApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */; };
 		1486430C1D053103005C1381 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486430B1D053103005C1381 /* CustomView.swift */; };
 		1486430E1D053172005C1381 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1486430D1D053172005C1381 /* CustomView.xib */; };
@@ -20,6 +19,7 @@
 		14F1F1FF1D10F6930059EDC1 /* ViewController_SwiftAndOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F1F1FE1D10F6930059EDC1 /* ViewController_SwiftAndOC.swift */; };
 		14F1F2021D10F6B40059EDC1 /* OC_Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F1F2011D10F6B40059EDC1 /* OC_Object.m */; };
 		14F1F2041D1105EE0059EDC1 /* ViewController_Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F1F2031D1105EE0059EDC1 /* ViewController_Swift.swift */; };
+		14F852451D3751E100483EDB /* ViewController_FreeTest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F852441D3751E100483EDB /* ViewController_FreeTest1.swift */; };
 		14FA3B7B1D07B9FA00BD2902 /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B761D07B9FA00BD2902 /* OCViewController.m */; };
 		14FA3B7C1D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B771D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift */; };
 		14FA3B7D1D07B9FA00BD2902 /* ViewController_1_InteractingWithOCAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FA3B781D07B9FA00BD2902 /* ViewController_1_InteractingWithOCAPIs.swift */; };
@@ -29,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		1412011B1D018C7E00AD535A /* MyDevelopmentSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDevelopmentSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		1447378F1D37495E00E9ACC9 /* ViewController_FreeTest1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FreeTest1.swift; sourceTree = "<group>"; };
 		1481A2F51D10015400AA6E30 /* ViewController_InteractingWithCApis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_InteractingWithCApis.swift; sourceTree = "<group>"; };
 		1486430B1D053103005C1381 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1486430D1D053172005C1381 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		14F1F2001D10F6B40059EDC1 /* OC_Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OC_Object.h; sourceTree = "<group>"; };
 		14F1F2011D10F6B40059EDC1 /* OC_Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OC_Object.m; sourceTree = "<group>"; };
 		14F1F2031D1105EE0059EDC1 /* ViewController_Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Swift.swift; sourceTree = "<group>"; };
+		14F852441D3751E100483EDB /* ViewController_FreeTest1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FreeTest1.swift; sourceTree = "<group>"; };
 		14FA3B751D07B9FA00BD2902 /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
 		14FA3B761D07B9FA00BD2902 /* OCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
 		14FA3B771D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_4_AdoptingCocoaDesignPatterns.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			children = (
 				14AF34B61C7362AC007DC722 /* AppDelegate.swift */,
 				1487939F1CE5866200C67D75 /* ViewController_FreeTest.swift */,
-				1447378F1D37495E00E9ACC9 /* ViewController_FreeTest1.swift */,
+				14F852441D3751E100483EDB /* ViewController_FreeTest1.swift */,
 				14FA3B741D07B9FA00BD2902 /* Using Swift with Cocoa and Objective-C */,
 				1481A2F41D10013700AA6E30 /* Interacting with C APIs */,
 				14F1F1FD1D10F6710059EDC1 /* Swift and Objective-C in the Same Project */,
@@ -203,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AF34C11C7362AC007DC722 /* LaunchScreen.storyboard in Resources */,
-				144737901D37495E00E9ACC9 /* ViewController_FreeTest1.swift in Resources */,
 				1486430E1D053172005C1381 /* CustomView.xib in Resources */,
 				14AF34BE1C7362AC007DC722 /* Assets.xcassets in Resources */,
 				14AF34BC1C7362AC007DC722 /* Main.storyboard in Resources */,
@@ -243,6 +242,7 @@
 				1481A2F61D10015400AA6E30 /* ViewController_InteractingWithCApis.swift in Sources */,
 				14F1F2021D10F6B40059EDC1 /* OC_Object.m in Sources */,
 				14F1F2041D1105EE0059EDC1 /* ViewController_Swift.swift in Sources */,
+				14F852451D3751E100483EDB /* ViewController_FreeTest1.swift in Sources */,
 				14FA3B7C1D07B9FA00BD2902 /* ViewController_4_AdoptingCocoaDesignPatterns.swift in Sources */,
 				14F1F1FF1D10F6930059EDC1 /* ViewController_SwiftAndOC.swift in Sources */,
 				1486430C1D053103005C1381 /* CustomView.swift in Sources */,
@@ -360,6 +360,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MyDevelopmentSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hanyswift.test.MyDevelopmentSwift;
@@ -375,6 +377,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MyDevelopmentSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hanyswift.test.MyDevelopmentSwift;
