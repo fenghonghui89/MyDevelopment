@@ -22,7 +22,7 @@
 import Foundation
 
 func root_StringsAndCharacters_base() {
-  kl_stringCompare();
+  kl_nilString_hasValue();
 }
 
 
@@ -200,19 +200,120 @@ private func kl_stringCompare(){
     print("has suffix")
   }
   
-  //swift环境下 string与NSString都不能为nil
-  if let dt:String? = NSUserDefaults.standardUserDefaults().objectForKey("xxx") as? String{
-    print("dt:\(dt)")
+  }
+
+//MARK:判断nil 字符串 假设有值
+private func kl_nilString_hasValue(){
+  
+  var dic:NSDictionary = NSDictionary()
+  dic = ["xxx":"hello"]
+  
+  //有值 as?
+  if let value = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")//有值 hello
   }else{
-    print("nil string ...")//this
+    print("无值 nil")
   }
   
-  if let dt:String = NSUserDefaults.standardUserDefaults().objectForKey("xxx") as? String{
-    print("dt:\(dt)")// dt:nil
+  if let value:String = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")//有值 hello
   }else{
-    print("nil string ...")
+    print("无值 nil")
   }
   
+  if let value:String? = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")//有值 Optional("hello")
+  }else{
+    print("无值 nil")
+  }
+  
+  if let value:String! = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")//有值 Optional("hello")
+  }else{
+    print("无值 nil")
+  }
+  
+  //有值 as!
+//  if let value = dic.objectForKey("xxx") as! String {
+//    print("有值 \(value)")//有值 hello
+//  }else{
+//    print("无值 nil")
+//  }
+  
+  if let value:String = (dic.objectForKey("xxx") as! String) {
+    print("有值 \(value)")//有值 hello
+  }else{
+    print("无值 nil")
+  }
+  
+  if let value:String? = (dic.objectForKey("xxx") as! String) {
+    print("有值 \(value)")//有值 Optional("hello")
+  }else{
+    print("无值 nil")
+  }
+  
+  if let value:String! = dic.objectForKey("xxx") as! String {
+    print("有值 \(value)")//有值 hello
+  }else{
+    print("无值 nil")
+  }
+
+}
+
+//MARK:判断nil 字符串 假设无值
+private func kl_nilString_noValue(){
+  
+  let dic:NSDictionary = NSDictionary()
+  
+  //无值 as?
+  if let value = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")
+  }else{
+    print("无值 nil")//无值 nil
+  }
+  
+  if let value:String = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")
+  }else{
+    print("无值 nil")//无值 nil
+  }
+  
+  if let value:String? = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")//有值 nil
+  }else{
+    print("无值 nil")
+  }
+  
+  if let value:String! = dic.objectForKey("xxx") as? String {
+    print("有值 \(value)")//有值 nil
+  }else{
+    print("无值 nil")
+  }
+  
+  //无值 as!
+//  if let value = dic.objectForKey("xxx") as! String {
+//    print("有值 \(value)")//有值 hello
+//  }else{
+//    print("无值 nil")
+//  }
+  
+//  if let value:String = (dic.objectForKey("xxx") as! String) {
+//    print("有值 \(value)")
+//  }else{
+//    print("无值 nil")
+//  }
+  
+//  if let value:String? = (dic.objectForKey("xxx") as! String) {
+//    print("有值 \(value)")//有值 Optional("hello")
+//  }else{
+//    print("无值 nil")
+//  }
+  
+//  if let value:String! = dic.objectForKey("xxx") as! String {
+//    print("有值 \(value)")//有值 hello
+//  }else{
+//    print("无值 nil")
+//  }
   
 }
 

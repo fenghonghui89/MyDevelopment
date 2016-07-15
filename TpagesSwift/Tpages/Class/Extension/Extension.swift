@@ -27,4 +27,17 @@ extension String {
     return String(format: hash as String)
   }
   
+  var isBlankString:Bool{
+    
+    if self.isEmpty {
+      return true
+    }
+    
+    if self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count == 0 {
+      return true
+    }
+    
+    return false
+  }
+  
 }

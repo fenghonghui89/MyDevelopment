@@ -11,8 +11,8 @@ import Foundation
 func root_Basic(){
   
 //  root_Basic_base()
-  root_Basic_Tuples()
-//  root_Base_Optionals()
+//  root_Basic_Tuples()
+  root_Base_Optionals()
 //  root_Base_Assertions()
   
 }
