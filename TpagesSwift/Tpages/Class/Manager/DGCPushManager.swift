@@ -144,7 +144,7 @@ class DGCPushManager: NSObject {
     dlog("解析推送 content:\(content) url:\(urlString) tag:\(tabString)")
     
     //分析tab
-    var tabIndex:Int
+    let tabIndex:Int
     if tabString == "tv" {
       dlog("推送tab:T视界")
       tabIndex = 0
@@ -169,48 +169,6 @@ class DGCPushManager: NSObject {
   
   func checkURL(urlString:String?) -> DGCPageType {
     
-//    //如果url为空 则直接返回错误类型
-//    if (urlString == nil || [urlString isBlankString]) {
-//      DRLog(@"推送url：没有url");
-//      return DGCPageTypeURLError;
-//    }
-//    
-//    NSURL *url = [NSURL URLWithString:urlString];
-//    NSString *scheme = url.scheme;
-//    NSString *host = url.host;
-//    NSString *relativePath = url.relativePath;// /a/4003.html
-//    NSString *query = url.query;
-//    
-//    if ([scheme isEqualToString:@"http"] || [scheme isEqualToString:@"https"]) {
-//      if (
-//        [query isEqualToString:@"app=cart"]//购物车
-//        || [query isEqualToString:@"app=buyer_order&order_status=deal"]//我的订单
-//        || [query isEqualToString:@"app=buyer_order&order_status=canceled"]//取消订单
-//        || [query isEqualToString:@"mod=spacecp&ac=integral"]//会员信息
-//        || [query isEqualToString:@"mod=space&do=favorite"]//收藏
-//        || [query isEqualToString:@"mod=space&do=pm"]//提醒
-//        || [query isEqualToString:@"mod=spacecp&ac=profile&op=password"]//设置
-//        || [relativePath isEqualToString:@"/sign/up"]//注册
-//        || [query isEqualToString:@"mod=logging&action=getpassword"]//找回密码
-//        )
-//      {
-//        DRLog(@"推送url：会员");
-//        return DGCPageTypeUserCenter;
-//      }else if ([host isEqualToString:HOST_TPAGES_DEV] || [host isEqualToString:HOST_TPAGES_CN]) {
-//        DRLog(@"推送url：T视界");
-//        return DGCPageTypeTpages;
-//      }else if ([host isEqualToString:HOST_MALL_DEV] || [host isEqualToString:HOST_MALL_CN]) {
-//        DRLog(@"推送url：商城");
-//        return DGCPageTypeMall;
-//      }else{
-//        DRLog(@"推送url：外部url");
-//        return DGCPageTypeUnknow;
-//      }
-//    }else{
-//      DRLog(@"推送url：无效url");
-//      return DGCPageTypeURLError;
-//    }
-    
     if urlString == nil{
       return DGCPageType.DGCPageTypeURLError
     }
@@ -219,10 +177,98 @@ class DGCPushManager: NSObject {
       return DGCPageType.DGCPageTypeURLError
     }
     
-    return DGCPageType.DGCPageTypeMall
+    let url:NSURL = NSURL(string: urlString!)!
+    let scheme = url.scheme
+    let host = url.host
+    let relativePath = url.relativePath
+    let query = url.query
+    
+    if scheme == "http" || scheme == "https"{
+      if query == "app=cart"//购物车
+        || query == "app=buyer_order&order_status=deal"//我的订单
+        || query == "app=buyer_order&order_status=canceled"//取消订单
+        || query == "mod=spacecp&ac=integral"//会员信息
+        || query == "mod=space&do=favorite"//收藏
+        || query == "mod=space&do=pm"//提醒
+        || query == "mod=spacecp&ac=profile&op=password"//设置
+        || relativePath == "/sign/up"//注册
+        || query == "mod=logging&action=getpassword"//找回密码
+      {
+        dlog("推送url：会员")
+        return DGCPageType.DGCPageTypeUserCenter
+      }else if host == HOST_TPAGES_DEV || host == HOST_TPAGES_CN{
+        dlog("推送url：T视界")
+        return DGCPageType.DGCPageTypeTpages
+      }else if host == HOST_MALL_DEV || host == HOST_MALL_CN{
+        dlog("推送url：商城")
+        return DGCPageType.DGCPageTypeMall
+      }else{
+        dlog("推送url：外部url")
+        return DGCPageType.DGCPageTypeUnknow
+      }
+    }else{
+      dlog("推送url：无效url")
+      return DGCPageType.DGCPageTypeURLError
+    }
+
   }
   
   func handleRemoteNotification(userInfo:NSDictionary,tabIndex:Int,pageType:DGCPageType) {
+    
+    //解析userinfo
+    let title = "您收到一天新消息"//无法读取到标题，所以要自定义
+    let content = userInfo.objectForKey("aps")?.objectForKey("alert") as! String//内容一定会有
+    let urlString = userInfo.objectForKey("url")
+    
+
+    //执行的动作
+    let handleBlock = {(run:Bool) -> Void in
+      
+      //根据tabIndex跳转
+      switch tabIndex {
+      case 0,1,3://跳转到tpages mall 会员
+        DGCGlobalManager.sharedInstance.mainVC!.selectViewController(UInt(tabIndex))
+      case 404://不跳转
+        break
+      default:
+        break
+      }
+      
+      //根据pageType 发出通知/打开外部浏览器/提示url错误
+      switch pageType {
+      case .DGCPageTypeTpages:
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_TRANSITION_TPAGES, object: nil, userInfo: [NOTI_TRANSITION_TPAGES:urlString!])
+      case .DGCPageTypeMall:
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_TRANSITION_MALL, object: nil, userInfo: [NOTI_TRANSITION_MALL:urlString!])
+      case .DGCPageTypeUserCenter:
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_TRANSITION_USER_CENTER, object: nil, userInfo: [NOTI_TRANSITION_USER_CENTER:urlString!])
+      case .DGCPageTypeUnknow:
+        UIApplication.sharedApplication().openURL(NSURL(string: urlString! as! String)!)
+      case .DGCPageTypeURLError:
+        break
+      default:
+        break
+      }
+    }
+    
+    //分析app state 如果是前台则弹窗再执行 否则直接执行
+    switch UIApplication.sharedApplication().applicationState {
+    case UIApplicationState.Active:
+      dlog("app state:前台")
+      
+      let ac = DGCAlertController.alertControlller(title, message: content, type: DGCAlertType.DGCAlertTypeTwoSelect, block: { (run) in
+        handleBlock(true)
+      })
+      
+      let mainVC:DGCMainViewController = DGCGlobalManager.sharedInstance.mainVC!
+      mainVC.presentViewController(ac, animated: true, completion: nil)
+    case UIApplicationState.Background:
+      dlog("app state:后台")
+      handleBlock(true)
+    case UIApplicationState.Inactive:
+      dlog("app state:非活跃（被中断或从后台过渡到前台中）")
+      handleBlock(true)
+    }
     
   }
   

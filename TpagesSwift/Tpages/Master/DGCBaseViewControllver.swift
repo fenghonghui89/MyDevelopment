@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDelegate{
+class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDelegate,DGCPayManagerDelegate{
   
   //当前页面类型(T视界、商城、会员中心)
   var pageType:DGCPageType
@@ -26,7 +26,7 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   
   private var webView:UIWebView?
   
-  //MARK:- ********************** vc lifecycle
+  //MARK:- ********************** vc lifecycle **********************
   deinit{
     dlog("deinit......")
     self.removeObserver()
@@ -60,12 +60,16 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   
   override func viewWillDisappear(animated: Bool) {
     
+    //关闭侧栏
     self.webView?.stringByEvaluatingJavaScriptFromString("appjs.sideMenuHide()")
+    
+    //关闭登录框
+    self.webView?.stringByEvaluatingJavaScriptFromString("appjs.modalHide()")
     
     super.viewWillDisappear(animated)
   }
   
-  //MARK:- ********************** method
+  //MARK:- ********************** method **********************
   //MARK:- < customize init >
   private func commonInitUI() {
     
@@ -111,7 +115,7 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
     }
   }
   
-  //MARK:- < 通知 > -
+  //MARK:- < 通知 >
   private func addObserver(pageType:DGCPageType){
   
     switch pageType {
@@ -194,7 +198,30 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   }
   
   //MARK:- < ohter >
+  
+  func URLDecodedStringByString(originalString:String) -> String {
+
+    let result = originalString.stringByRemovingPercentEncoding
+    return result!
+  }
+  
+  func dataToJsonString(object:AnyObject) -> NSString {
+    
+    var jsonString:NSString = ""
+    
+    do{
+      let jsonData:NSData = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions.PrettyPrinted)
+      jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)!
+      return jsonString
+    }catch {
+      dlog("DataToJsonString error")
+    }
+    
+    return jsonString
+  }
+  
   func checkUrlIsWhichPageType(request:NSURLRequest) -> DGCPageType {
+    //页面间跳转逻辑，tpages 商城 会员 重写这个方法
     return .DGCPageTypeUnknow
   }
   
@@ -208,9 +235,15 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       dlog("dzuid>0 登录了")
       if newUid != oldUid {
         dlog("登录成功 发送token 发通知刷新其他页面 \(self.dynamicType)")
+        DGCPushManager.sharedInstance.sendTokenToServer()
         NSNotificationCenter.defaultCenter().postNotificationName(NOTI_LOGIN_LOGOUT_SUCCESS, object: nil, userInfo: [NOTI_LOGIN_LOGOUT_SUCCESS:NSNumber(integer: self.pageType.rawValue)])
       }else{
-      
+        if (DGCPushManager.sharedInstance.tokenIsChanged == true) {
+          dlog("已经登录，token改变了，发送最新的token \(self.dynamicType)")
+          DGCPushManager.sharedInstance.sendTokenToServer()
+        }else{
+          dlog("已经登录，token没有改变，不发送token \(self.dynamicType)");
+        }
       }
     }
     
@@ -218,6 +251,7 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       dlog("dzuid=0 未登录")
       if newUid != oldUid {
         dlog("注销成功 发通知刷新其他页面 删除cookie \(self.dynamicType)")
+        DGCGlobalManager.deleteCookie()
         NSNotificationCenter.defaultCenter().postNotificationName(NOTI_LOGIN_LOGOUT_SUCCESS, object: nil, userInfo: [NOTI_LOGIN_LOGOUT_SUCCESS:NSNumber(integer: self.pageType.rawValue)])
       }
     }
@@ -242,14 +276,186 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
     
   }
   
-  //MARK:- ********************** action
+  //MARK:- ********************** action **********************
+  //MARK:- < 支付 >
+  func AliPay(dic:NSDictionary) {
+    
+    DGCPayManager.sharedInstance.delegate = self
+    DGCPayManager.sharedInstance.Alipay(dic)
+  }
   
-  
-  @objc private func tapHandler(tap:UITapGestureRecognizer) {
+  func WXPay(dic:NSDictionary)  {
+    
+    if DGCPayManager.sharedInstance.isWXAppInstalled() == false{
+      let ac = DGCAlertController.alertControlller("进入兑换流程失败", message: "没有安装微信客户端，请先安装。", type: DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+      self.presentViewController(ac, animated: true, completion: nil)
+    }else{
+      DGCPayManager.sharedInstance.delegate = self
+      DGCPayManager.sharedInstance.WXSendPay(dic)
+    }
     
   }
   
-  //MARK:- ********************** callback
+  
+  func pay(request:NSURLRequest) {
+    
+    let conf = NSURLSessionConfiguration.defaultSessionConfiguration()
+    let manager = AFURLSessionManager(sessionConfiguration: conf)
+    let responseSerializer = AFHTTPResponseSerializer()
+    responseSerializer.acceptableContentTypes = ["text/html"]
+    manager.responseSerializer = responseSerializer
+    
+    let dataTask = manager.dataTaskWithRequest(request, uploadProgress: nil, downloadProgress: nil) {
+      (response:NSURLResponse, responseObject:AnyObject?, error:NSError?)->Void in
+      
+      if error != nil{
+        dlog("进入兑换流程失败:\(error?.description)")
+        let ac = DGCAlertController.alertControlller("进入兑换流程失败", message: (error?.description)!, type: DGCAlertType.DGCAlertTypeJustConfirm, block:nil)
+        self.presentViewController(ac, animated: true, completion: nil)
+      }else{
+        do{
+          let dic = try NSJSONSerialization.JSONObjectWithData(responseObject as! NSData, options: NSJSONReadingOptions.AllowFragments)
+          dlog("进入兑换流程成功 dic:\(dic)")
+          let status = dic.objectForKey("status") as! String
+          if status == "success"{
+            let type = dic.objectForKey("type") as! String
+            if type == "wxpay"{
+              self.WXPay(dic as! NSDictionary)
+            }else{
+              self.AliPay(dic as! NSDictionary)
+            }
+          }
+        }catch{
+          dlog("进入兑换流程失败：数据错误无法解析")
+        }
+      }
+    }
+    
+    dataTask.resume()
+    
+  }
+  
+  //MARK:- < 第三方登录 >
+  func weiboLogin() {
+    
+    DGCShareManager.sharedInstance.weiboLogin(self) { (paramDic) in
+      
+      //参数dic - json - utf8 - base64
+      let newDic = NSMutableDictionary(dictionary: paramDic)
+      newDic.setObject(self.oldRequestString!, forKey: "referer")
+      let jsonStr:NSString = self.dataToJsonString(newDic)
+      let jsonStrBase64:NSString = ((jsonStr.dataUsingEncoding(NSUTF8StringEncoding))?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength))!
+      
+      //拼接请求并发送
+
+      let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
+      let url:NSURL = NSURL(string: urlStrBase64)!
+      let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+      reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      reuqest.HTTPMethod = "GET"
+      reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
+      self.webView?.loadRequest(reuqest)
+      
+      //log
+      dlog("新浪微博用户信息jsonStr:\(jsonStr)")
+      dlog("新浪微博用户信息jsonStrBase64:\(jsonStrBase64)")
+      dlog("新浪微博登录跳转urlStrBase64:\(urlStrBase64)")
+    }
+  }
+
+  func qqLogin() {
+    
+    DGCShareManager.sharedInstance.qqLogin(self) { (paramDic) in
+      
+      //参数dic - json - utf8 - base64
+      let newDic = NSMutableDictionary(dictionary: paramDic)
+      newDic.setObject(self.oldRequestString!, forKey: "referer")
+      let jsonStr:NSString = self.dataToJsonString(newDic)
+      let jsonStrBase64:NSString = ((jsonStr.dataUsingEncoding(NSUTF8StringEncoding))?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength))!
+      
+      //拼接请求并发送
+      
+      let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
+      let url:NSURL = NSURL(string: urlStrBase64)!
+      let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+      reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      reuqest.HTTPMethod = "GET"
+      reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
+      self.webView?.loadRequest(reuqest)
+      
+      //log
+      dlog("QQ用户信息jsonStr:\(jsonStr)")
+      dlog("QQ用户信息jsonStrBase64:\(jsonStrBase64)")
+      dlog("QQ登录跳转urlStrBase64:\(urlStrBase64)")
+    }
+  }
+  
+  func weChatLogin() {
+    
+    DGCShareManager.sharedInstance.wechatLogin(self) { (paramDic) in
+      
+      //参数dic - json - utf8 - base64
+      let newDic = NSMutableDictionary(dictionary: paramDic)
+      newDic.setObject(self.oldRequestString!, forKey: "referer")
+      let jsonStr:NSString = self.dataToJsonString(newDic)
+      let jsonStrBase64:NSString = ((jsonStr.dataUsingEncoding(NSUTF8StringEncoding))?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength))!
+      
+      //拼接请求并发送
+      let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
+      let url:NSURL = NSURL(string: urlStrBase64)!
+      let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+      reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      reuqest.HTTPMethod = "GET"
+      reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
+      self.webView?.loadRequest(reuqest)
+      
+      //log
+      dlog("微信用户信息jsonStr:\(jsonStr)")
+      dlog("微信用户信息jsonStrBase64:\(jsonStrBase64)")
+      dlog("微信登录跳转urlStrBase64:\(urlStrBase64)")
+    }
+  }
+  
+  //MARK:- < share >
+  func share(request:NSURLRequest)  {
+    
+    self.rdv_tabBarController.setTabBarHidden(true, animated: true)
+    
+    let fragment:String = self.URLDecodedStringByString(request.URL!.fragment!)
+    let data:NSData = fragment.dataUsingEncoding(NSUTF8StringEncoding)!
+    
+    let dic = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+    if dic != nil {
+      let title:String = (dic?.objectForKey("title"))! as! String
+      let content:String = (dic?.objectForKey("content"))! as! String
+      let url:String = dic?.objectForKey("url") as! String
+      let imageUrl:String = dic?.objectForKey("img") as! String
+      
+      dlog("进入分享流程成功 title:\(title) content:\(content) url:\(url) img:\(imageUrl)")
+      DGCShareManager.sharedInstance.share(self, title: title, shareText: content, url: url, imgUrl: imageUrl)
+    }else{
+      dlog("进入分享流程失败：json解析错误")
+    }
+  }
+  
+  //MARK:- < 拍照 >
+  func takeHeadPhoto() {
+    
+  }
+  
+  func takeBanner() {
+    
+  }
+
+  //MARK:- ********************** callback **********************
+  //MARK:- < DGCPayManagerDelegate >
+  func payManagerResult(url: NSURL) {
+
+    dlog("支付跳转url:\(url)")
+    let request:NSURLRequest = NSURLRequest(URL: url)
+    self.webView?.loadRequest(request)
+  }
+  
   //MARK:- < UIWebViewDelegate >
   func webViewDidStartLoad(webView: UIWebView) {
 
@@ -263,13 +469,136 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
     
     dlog("webViewDidFinishLoad \(self.dynamicType)")
     
+    //ui
     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     self.webView?.scrollView.mj_header.endRefreshing()
 
+    //加载完判断登录状态 - 打开推送
+    self.checkIsLogin()
+    
+    //禁用长按弹出框
+    self.webView?.stringByEvaluatingJavaScriptFromString("document.documentElement.style.webkitTouchCallout = 'none';")
+    
+    //禁用用户选择
+    self.webView?.stringByEvaluatingJavaScriptFromString("document.documentElement.style.webkitUserSelect = 'none';")
   }
   
   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-    return true
+    
+    //log
+    let requestStr = request.URL?.absoluteString
+    let host = request.URL?.host
+    let relativePath = request.URL?.relativePath
+    let query = request.URL?.query
+    let params = query?.componentsSeparatedByString("&")
+    let firstParam = params![0]
+    let scheme = request.URL?.scheme
+    let type = navigationType
+    dlog("~~~ shouldStartLoadWithRequest host:\(host) relativePath:\(relativePath) firstParam:\(firstParam) requestStr:\(requestStr) type:\(type) scheme:\(scheme)")
+    
+    //判断是否跳转到其他tab
+    let urlPageType = self.checkUrlIsWhichPageType(request)
+    if urlPageType != self.pageType {
+      switch urlPageType {
+      case .DGCPageTypeTpages:
+        dlog("当前class:\(self.dynamicType) 将要切换到T视界")
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_TRANSITION_TPAGES, object: nil, userInfo: [NOTI_TRANSITION_TPAGES:requestStr!])
+        self.rdv_tabBarController.selectedIndex = 0
+        return false
+      case .DGCPageTypeMall:
+        dlog("当前class:\(self.dynamicType) 切换到商城")
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_TRANSITION_MALL, object: nil, userInfo: [NOTI_TRANSITION_MALL:requestStr!])
+        self.rdv_tabBarController.selectedIndex = 1
+        return false
+      case .DGCPageTypeUserCenter:
+        dlog("当前class:\(self.dynamicType) 切换到会员中心")
+        NSNotificationCenter.defaultCenter().postNotificationName(NOTI_TRANSITION_USER_CENTER, object: nil, userInfo: [NOTI_TRANSITION_USER_CENTER:requestStr!])
+        self.rdv_tabBarController.selectedIndex = 3
+        return false
+      case .DGCPageTypeUnknow:
+        dlog("当前class:\(self.dynamicType) 页面未知属于哪一类，或者属于登录登出流程，或者与当前页面类型一样，当前tab显示")
+      default:
+        break
+      }
+    }else{
+      dlog("当前class:\(self.dynamicType) 类型跟当前页面类型一样，不用切换，当前tab显示")
+    }
+    
+    //take header photo
+    if host == "TPagesApp.TakeHeaderPhoto" {
+      self.takeHeadPhoto()
+      return false
+    }
+    
+    //take banner photo
+    if host == "TPagesApp.TakeBanner" {
+      self.takeBanner()
+      return false
+    }
+    
+    //share
+    if host == "TPagesApp.Share"{
+      self.share(request)
+      return false
+    }
+    
+    //third login
+    if host == "TPagesApp.WeiboLogin"{
+      self.weiboLogin()
+      return false
+    }
+    if host == "TPagesApp.QQLogin"{
+      self.qqLogin()
+      return false
+    }
+    if host  == "TPagesApp.WeChatLogin"{
+      self.weChatLogin()
+      return false
+    }
+    
+    //图片预览
+    if host == "TPagesApp.OpenImg"{
+      dlog("打开了图片预览")
+      self.rdv_tabBarController.setTabBarHidden(true, animated: true)
+      return false
+    }
+    
+    if host == "TPagesApp.CloseImg"{
+      dlog("关闭了图片预览")
+      return false
+    }
+    
+    //pay
+    if host == URL_TPAGES_MALL.stringByReplacingOccurrencesOfString("http://", withString: "")
+      && relativePath == "/index.php"
+      && firstParam == "app=cashier"{
+      self.pay(request)
+      return false
+    }
+
+    
+    //logout
+    if relativePath == "/sign/out"{
+      if (params!.count != 0) {
+        dlog("自己加参数的注销，不处理");
+      }else{
+        dlog("默认注销，添加referer再重新请求");
+        
+        let encodeRefererString = self.oldRequestString?.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        let signOutString = URL_TPAGES.stringByAppendingString("/sign/out?referer=\(encodeRefererString)")
+        let request = NSURLRequest(URL: NSURL(string: signOutString)!)
+        self.webView?.loadRequest(request)
+        return false
+      }
+    }
+    
+    //记录上一个页面 当前页面 这个逻辑要放到最后 因为return no的情况下不能记录
+    let oldUrlStr = self.currentRequestString
+    self.currentRequestString = requestStr
+    self.oldRequestString = oldUrlStr
+    
+    return true;
+
   }
   
   func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
@@ -282,14 +611,45 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   
   //MARK:- < UIScrollViewDelegate>
   func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-    
+    self.contentOffsetY = scrollView.contentOffset.y;
   }
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
+    self.newContentOffsetY = scrollView.contentOffset.y;
     
+    if (newContentOffsetY > oldContentOffsetY && oldContentOffsetY > contentOffsetY) {//向上滚动
+      //    DLog(@"up");
+    } else if (newContentOffsetY < oldContentOffsetY && oldContentOffsetY < contentOffsetY) {//向下滚动
+      //    DLog(@"down");
+    } else {
+      //    DLog(@"dragging");
+    }
+    
+    if (scrollView.dragging) {//拖拽
+      if ((scrollView.contentOffset.y - self.contentOffsetY!) > 5.0) {//向上拖拽
+        self.rdv_tabBarController.setTabBarHidden(true, animated: true)
+      } else if ((self.contentOffsetY! - scrollView.contentOffset.y) > 5.0) {//向下拖拽
+        self.rdv_tabBarController.setTabBarHidden(false, animated: true)
+      } else {
+        
+      }
+    }
+    
+    //到底部就停止拖动
+    if ((scrollView.contentOffset.y+SCREEN_HEIGHT) >= scrollView.contentSize.height) {
+      scrollView.bounces = false
+    }else{
+      scrollView.bounces = true
+    }
   }
   
   func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    self.oldContentOffsetY = scrollView.contentOffset.y;
     
+    if ((scrollView.contentOffset.y+SCREEN_HEIGHT) >= scrollView.contentSize.height) {
+      scrollView.bounces = false
+    }else{
+      scrollView.bounces = true
+    }
   }
 }

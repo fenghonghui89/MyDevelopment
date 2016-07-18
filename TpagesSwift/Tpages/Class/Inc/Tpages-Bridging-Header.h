@@ -28,3 +28,5 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "WXApi.h"
 #import "UMessage.h"
+
+#import "RNCachingURLProtocol.h"

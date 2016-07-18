@@ -14,6 +14,9 @@ class DGCGlobalManager: NSObject {
   private static let kTpagesMallUrlKey = "kTpagesMallUrlKey"
   private static let kIsLoginKey = "kIsLoginKey"
   
+  var mainVC:DGCMainViewController?
+  
+  
   static let sharedInstance:DGCGlobalManager = {
     let instance = DGCGlobalManager()
     return instance
