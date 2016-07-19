@@ -17,7 +17,7 @@ enum DGCAlertType:Int {
 class DGCAlertController: UIAlertController {
   
   
-  static func alertControlller(title:String,message:String,type:DGCAlertType,block:((run:Bool)->Void)?)->DGCAlertController{
+  static func alertControlller(title:String?,message:String?,type:DGCAlertType,block:((run:Bool)->Void)?)->DGCAlertController{
   
     let ac = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     
