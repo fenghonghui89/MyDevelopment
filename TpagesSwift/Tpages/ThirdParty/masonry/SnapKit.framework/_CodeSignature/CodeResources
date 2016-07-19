@@ -22,7 +22,15 @@
 		</data>
 		<key>Modules/SnapKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		vyLPh3/wIbuzyxhY/GeYtq37PEY=
+		KVXqA21ATLNsVMHBOOVoSDeeEY8=
+		</data>
+		<key>Modules/SnapKit.swiftmodule/arm64.swiftdoc</key>
+		<data>
+		QWzYPe6WKSa7Atq4CEFXWuMQug0=
+		</data>
+		<key>Modules/SnapKit.swiftmodule/arm64.swiftmodule</key>
+		<data>
+		8b89WsG8dsSkTn/ltIuIq5541uY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -68,11 +76,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vyLPh3/wIbuzyxhY/GeYtq37PEY=
+			KVXqA21ATLNsVMHBOOVoSDeeEY8=
 			</data>
 			<key>hash2</key>
 			<data>
-			HE3iaxQTNUL1zhEGIgS5OeSniO6eyvwbpyJZTrZDHXs=
+			oxnbMeFF/1LfcDkXf6n42q+3qm12xHmf4mZ0L9Fmnd4=
+			</data>
+		</dict>
+		<key>Modules/SnapKit.swiftmodule/arm64.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QWzYPe6WKSa7Atq4CEFXWuMQug0=
+			</data>
+			<key>hash2</key>
+			<data>
+			HIEFGIOrPVWGUZZmxNvblgTvhfZaAWwJZFVMfoHFC3s=
+			</data>
+		</dict>
+		<key>Modules/SnapKit.swiftmodule/arm64.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8b89WsG8dsSkTn/ltIuIq5541uY=
+			</data>
+			<key>hash2</key>
+			<data>
+			I/p5F6EnN3nCUy2q/Hg/9boAuyrCI7IMOD0xpXTchno=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -48,14 +48,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   //MARK:app lifecycle
   func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
     
-    dlog("app state 1:willFinishLaunchingWithOptions~")
+    openLog = true
+    dlog("app state 1:willFinishLaunchingWithOptions~\(launchOptions)")
     return true
   }
   
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    dlog("app state 2:didFinishLaunchingWithOptions~")
+    dlog("app state 2:didFinishLaunchingWithOptions~\(launchOptions)")
     
     //开启离线缓存
     NSURLProtocol.registerClass(RNCachingURLProtocol)
@@ -72,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     DGCGlobalManager.sharedInstance.mainVC = mainVC
     
-    openLog = true
+    //打印信息
     DGCTool.showDeviceInfo()
     
     //支付
@@ -80,9 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //友盟分享
     DGCShareManager.sharedInstance.startUMShare()
-    
+
     //友盟推送
-    DGCPushManager.sharedInstance.registerUMengPushInfo(launchOptions!)
+    DGCPushManager.sharedInstance.registerUMengPushInfo(launchOptions)
     DGCPushManager.sharedInstance.startPush()
     
     //user agent

@@ -19,6 +19,7 @@ class DGCGlobalManager: NSObject {
   
   static let sharedInstance:DGCGlobalManager = {
     let instance = DGCGlobalManager()
+    instance.checkNetwork()
     return instance
   }()
   

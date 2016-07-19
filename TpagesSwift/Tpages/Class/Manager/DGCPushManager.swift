@@ -19,12 +19,12 @@ class DGCPushManager: NSObject {
     return instance
   }()
   
-  func registerUMengPushInfo(launchOptions:NSDictionary){
+  func registerUMengPushInfo(launchOptions:[NSObject : AnyObject]?){
     
-    UMessage.startWithAppkey(UMENG_APPKEY, launchOptions: launchOptions as [NSObject : AnyObject])
+    UMessage.startWithAppkey(UMENG_APPKEY, launchOptions: launchOptions)
     
     //如果app处于未运行时受到推送，点击通知打开app之后会有userInfo
-    if let userInfo = launchOptions.objectForKey(UIApplicationLaunchOptionsRemoteNotificationKey) {
+    if let userInfo = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] {
       self.didReceiveRemoteNotification(userInfo as! NSDictionary)
     }
   }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1420B1821D339DC600C1B17E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1420B17D1D339CED00C1B17E /* SnapKit.framework */; };
+		140B99E81D3DC43D00B37FCC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1420B17D1D339CED00C1B17E /* SnapKit.framework */; };
 		1420B1841D339DDC00C1B17E /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1420B17D1D339CED00C1B17E /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1420B1B21D339E4800C1B17E /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B1881D339E4800C1B17E /* MJRefreshAutoFooter.m */; };
 		1420B1B31D339E4800C1B17E /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1420B18A1D339E4800C1B17E /* MJRefreshBackFooter.m */; };
@@ -399,6 +399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140B99E81D3DC43D00B37FCC /* SnapKit.framework in Frameworks */,
 				1420B24D1D33A49400C1B17E /* CoreMotion.framework in Frameworks */,
 				1420B24B1D33A47900C1B17E /* CFNetwork.framework in Frameworks */,
 				1420B2491D33A46E00C1B17E /* CoreData.framework in Frameworks */,
@@ -421,7 +422,6 @@
 				1420B2271D33A37400C1B17E /* QuartzCore.framework in Frameworks */,
 				1420B2211D33A34100C1B17E /* libSocialQQ.a in Frameworks */,
 				1420B2101D33A34100C1B17E /* libssl.a in Frameworks */,
-				1420B1821D339DC600C1B17E /* SnapKit.framework in Frameworks */,
 				1420B1C81D33A28200C1B17E /* libUMessage_Sdk_1.3.0.a in Frameworks */,
 				1420B2251D33A34100C1B17E /* libWeChatSDK.a in Frameworks */,
 				1420B21E1D33A34100C1B17E /* libSocialSinaSSO.a in Frameworks */,
@@ -1423,6 +1423,10 @@
 					"$(PROJECT_DIR)/Tpages/ThirdParty/UMSocial/UMSocial_Sdk_Extra_Frameworks/WeChat",
 					"$(PROJECT_DIR)/Tpages/ThirdParty/WeChatSDK",
 				);
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG -D MYFINISH";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BiliApp.Tpages.Tpages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1456,6 +1460,10 @@
 					"$(PROJECT_DIR)/Tpages/ThirdParty/UMSocial/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/Tpages/ThirdParty/UMSocial/UMSocial_Sdk_Extra_Frameworks/WeChat",
 					"$(PROJECT_DIR)/Tpages/ThirdParty/WeChatSDK",
+				);
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
 				);
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BiliApp.Tpages.Tpages;

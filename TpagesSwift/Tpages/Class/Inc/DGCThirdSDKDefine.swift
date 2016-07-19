@@ -13,15 +13,15 @@ import Foundation
 let UMENG_APPKEY:String = "53ec86c7fd98c5cf630065c6"
 
 //MARK:新浪微博
-let UMENG_WEIBO_APPKEY:String = ""
-let UMENG_WEIBO_SECRET:String = ""
-let UMENG_WEIBO_URL:String = ""
+let UMENG_WEIBO_APPKEY:String = "3309468239"
+let UMENG_WEIBO_SECRET:String = "3a21eec0820508abc92ecedee90f381a"
+let UMENG_WEIBO_URL:String = "http://tpages.cn/wbcb"
 
 
 //MARK:qq
-let UMENG_QQ_APPID:String = ""
-let UMENG_QQ_APPKEY:String = ""
-let UMENG_QQ_URL:String = ""
+let UMENG_QQ_APPID:String = "1105220570"
+let UMENG_QQ_APPKEY:String = "Q8W9L5bJT8TFVJkc"
+let UMENG_QQ_URL:String = "http://tpages.cn/qqcb"
 
 //MARK:微信
 #if DEBUG

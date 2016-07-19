@@ -486,15 +486,29 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
     
     //log
-    let requestStr = request.URL?.absoluteString
-    let host = request.URL?.host
-    let relativePath = request.URL?.relativePath
-    let query = request.URL?.query
-    let params = query?.componentsSeparatedByString("&")
-    let firstParam = params![0]
-    let scheme = request.URL?.scheme
-    let type = navigationType
-    dlog("~~~ shouldStartLoadWithRequest host:\(host) relativePath:\(relativePath) firstParam:\(firstParam) requestStr:\(requestStr) type:\(type) scheme:\(scheme)")
+    var requestStr:String?
+    var host:String?
+    var relativePath:String?
+    var query:String?
+    var firstParam:String?
+    var params:[String]?
+    var scheme:String?
+    
+    if let url = request.URL {
+      requestStr = url.absoluteString
+      host = url.host
+      relativePath = url.relativePath
+      query = url.query
+      scheme = url.scheme
+      if query != nil {
+        params = query?.componentsSeparatedByString("&")
+        if params?.count>0{
+          firstParam = params![0]
+        }
+      }
+    }
+    
+    dlog("~~~ shouldStartLoadWithRequest host:\(host) relativePath:\(relativePath) firstParam:\(firstParam) requestStr:\(requestStr) type:\(navigationType) scheme:\(scheme)")
     
     //判断是否跳转到其他tab
     let urlPageType = self.checkUrlIsWhichPageType(request)
@@ -584,7 +598,7 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       }else{
         dlog("默认注销，添加referer再重新请求");
         
-        let encodeRefererString = self.oldRequestString?.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        let encodeRefererString = self.oldRequestString?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLPathAllowedCharacterSet())
         let signOutString = URL_TPAGES.stringByAppendingString("/sign/out?referer=\(encodeRefererString)")
         let request = NSURLRequest(URL: NSURL(string: signOutString)!)
         self.webView?.loadRequest(request)
