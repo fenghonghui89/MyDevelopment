@@ -41,3 +41,27 @@ extension String {
   }
   
 }
+
+
+extension AVCaptureVideoOrientation {
+  var uiInterfaceOrientation: UIDeviceOrientation {
+    get {
+      switch self {
+      case .LandscapeLeft:        return .LandscapeLeft
+      case .LandscapeRight:       return .LandscapeRight
+      case .Portrait:             return .Portrait
+      case .PortraitUpsideDown:   return .PortraitUpsideDown
+      }
+    }
+  }
+  
+  init(ui:UIDeviceOrientation) {
+    switch ui {
+    case .LandscapeRight:       self = .LandscapeRight
+    case .LandscapeLeft:        self = .LandscapeLeft
+    case .Portrait:             self = .Portrait
+    case .PortraitUpsideDown:   self = .PortraitUpsideDown
+    default:                    self = .Portrait
+    }
+  }
+}

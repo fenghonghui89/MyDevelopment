@@ -30,3 +30,4 @@
 #import "UMessage.h"
 
 #import "RNCachingURLProtocol.h"
+#import "VPImageCropperViewController.h"

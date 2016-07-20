@@ -83,6 +83,14 @@
 		1420B2601D33A6F900C1B17E /* DGCPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1420B25F1D33A6F900C1B17E /* DGCPayManager.swift */; };
 		142471361D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142471341D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift */; };
 		142471371D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142471351D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib */; };
+		1424713A1D3F6473008DA108 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142471391D3F6473008DA108 /* VPImageCropperViewController.m */; };
+		1424713D1D3F6597008DA108 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1424713C1D3F6597008DA108 /* UIImage+Resize.m */; };
+		142471401D3F6640008DA108 /* DGCPhotoLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424713E1D3F6640008DA108 /* DGCPhotoLibraryVC.swift */; };
+		142471411D3F6640008DA108 /* DGCPhotoLibraryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1424713F1D3F6640008DA108 /* DGCPhotoLibraryVC.xib */; };
+		142471441D3F6666008DA108 /* DGCPhotoLibraryGridVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142471421D3F6666008DA108 /* DGCPhotoLibraryGridVC.swift */; };
+		142471451D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142471431D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib */; };
+		142471481D3F6685008DA108 /* DGCPhotoPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142471461D3F6685008DA108 /* DGCPhotoPreviewVC.swift */; };
+		142471491D3F6685008DA108 /* DGCPhotoPreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142471471D3F6685008DA108 /* DGCPhotoPreviewVC.xib */; };
 		145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B80761D35EBB200A4735E /* DGCAlertController.swift */; };
 		147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABD81D2F43CF00236FB6 /* RDVTabBar.m */; };
 		147BABDE1D2F43CF00236FB6 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABDA1D2F43CF00236FB6 /* RDVTabBarController.m */; };
@@ -306,6 +314,16 @@
 		1420B25F1D33A6F900C1B17E /* DGCPayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPayManager.swift; sourceTree = "<group>"; };
 		142471341D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCHeaderPhotoVC.swift; sourceTree = "<group>"; };
 		142471351D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCHeaderPhotoVC.xib; sourceTree = "<group>"; };
+		142471381D3F6473008DA108 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		142471391D3F6473008DA108 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		1424713B1D3F6597008DA108 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		1424713C1D3F6597008DA108 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		1424713E1D3F6640008DA108 /* DGCPhotoLibraryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPhotoLibraryVC.swift; sourceTree = "<group>"; };
+		1424713F1D3F6640008DA108 /* DGCPhotoLibraryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCPhotoLibraryVC.xib; sourceTree = "<group>"; };
+		142471421D3F6666008DA108 /* DGCPhotoLibraryGridVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPhotoLibraryGridVC.swift; sourceTree = "<group>"; };
+		142471431D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCPhotoLibraryGridVC.xib; sourceTree = "<group>"; };
+		142471461D3F6685008DA108 /* DGCPhotoPreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPhotoPreviewVC.swift; sourceTree = "<group>"; };
+		142471471D3F6685008DA108 /* DGCPhotoPreviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCPhotoPreviewVC.xib; sourceTree = "<group>"; };
 		145B80761D35EBB200A4735E /* DGCAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCAlertController.swift; sourceTree = "<group>"; };
 		147BABD71D2F43CF00236FB6 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		147BABD81D2F43CF00236FB6 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
@@ -743,6 +761,14 @@
 			children = (
 				142471341D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift */,
 				142471351D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib */,
+				142471381D3F6473008DA108 /* VPImageCropperViewController.h */,
+				142471391D3F6473008DA108 /* VPImageCropperViewController.m */,
+				1424713E1D3F6640008DA108 /* DGCPhotoLibraryVC.swift */,
+				1424713F1D3F6640008DA108 /* DGCPhotoLibraryVC.xib */,
+				142471421D3F6666008DA108 /* DGCPhotoLibraryGridVC.swift */,
+				142471431D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib */,
+				142471461D3F6685008DA108 /* DGCPhotoPreviewVC.swift */,
+				142471471D3F6685008DA108 /* DGCPhotoPreviewVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -978,6 +1004,8 @@
 		14A101C01D2BB6B2002069D2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1424713B1D3F6597008DA108 /* UIImage+Resize.h */,
+				1424713C1D3F6597008DA108 /* UIImage+Resize.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1184,6 +1212,7 @@
 				14974BAB1D2FAC8400591167 /* tab-qr@2x.png in Resources */,
 				14A101D91D2BB6B2002069D2 /* Info.plist in Resources */,
 				1420B2161D33A34100C1B17E /* UMSCommentInputController.xib in Resources */,
+				142471451D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib in Resources */,
 				14974B871D2FAC8400591167 /* login.png in Resources */,
 				14974BA11D2FAC8400591167 /* Share-Button-SwitchCamera-on@2x.png in Resources */,
 				14974B7D1D2FAC8400591167 /* launch image_1242X2208.png in Resources */,
@@ -1202,6 +1231,7 @@
 				14974B8B1D2FAC8400591167 /* search.png in Resources */,
 				14974B831D2FAC8400591167 /* logo@3x.png in Resources */,
 				14974B991D2FAC8400591167 /* Share-Button-CameraGrid-on@2x.png in Resources */,
+				142471411D3F6640008DA108 /* DGCPhotoLibraryVC.xib in Resources */,
 				14974BAE1D2FAC8400591167 /* tab-tvision@3x.png in Resources */,
 				14974BA71D2FAC8400591167 /* tab-mall@2x.png in Resources */,
 				14974B951D2FAC8400591167 /* tickbox_on@3x.png in Resources */,
@@ -1237,6 +1267,7 @@
 				14974BAA1D2FAC8400591167 /* tab-personal@3x.png in Resources */,
 				14974BA61D2FAC8400591167 /* tab-bg-grey@3x.png in Resources */,
 				142471371D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib in Resources */,
+				142471491D3F6685008DA108 /* DGCPhotoPreviewVC.xib in Resources */,
 				1420B21C1D33A34100C1B17E /* UMSShareListController.xib in Resources */,
 				14974BA91D2FAC8400591167 /* tab-personal@2x.png in Resources */,
 				1420B2201D33A34100C1B17E /* WeiboSDK.bundle in Resources */,
@@ -1253,6 +1284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142471401D3F6640008DA108 /* DGCPhotoLibraryVC.swift in Sources */,
 				14A101D51D2BB6B2002069D2 /* AppDelegate.swift in Sources */,
 				147BABE11D2F443A00236FB6 /* DGCBaseViewControllver.swift in Sources */,
 				148380CC1D349E0B001F8822 /* AFSecurityPolicy.m in Sources */,
@@ -1273,6 +1305,7 @@
 				14A101DB1D2BB7C8002069D2 /* DGCTool.swift in Sources */,
 				1420B1B71D339E4800C1B17E /* MJRefreshAutoGifFooter.m in Sources */,
 				1420B25C1D33A6D300C1B17E /* DGCPushManager.swift in Sources */,
+				142471481D3F6685008DA108 /* DGCPhotoPreviewVC.swift in Sources */,
 				1420B2601D33A6F900C1B17E /* DGCPayManager.swift in Sources */,
 				1420B1BB1D339E4800C1B17E /* MJRefreshBackNormalFooter.m in Sources */,
 				1420B25A1D33A6C400C1B17E /* DGCGlobalManager.swift in Sources */,
@@ -1281,6 +1314,7 @@
 				14DDE88F1D2D04A6000CAFE2 /* DGCThirdSDKDefine.swift in Sources */,
 				147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */,
 				142471361D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift in Sources */,
+				1424713D1D3F6597008DA108 /* UIImage+Resize.m in Sources */,
 				145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */,
 				1420B2581D33A69A00C1B17E /* RNCachingURLProtocol.m in Sources */,
 				148380CA1D349E0B001F8822 /* AFHTTPSessionManager.m in Sources */,
@@ -1301,9 +1335,11 @@
 				1420B1B51D339E4800C1B17E /* MJRefreshFooter.m in Sources */,
 				1420B1C41D339E4800C1B17E /* UIView+MJExtension.m in Sources */,
 				1420B1C21D339E4800C1B17E /* UIScrollView+MJExtension.m in Sources */,
+				1424713A1D3F6473008DA108 /* VPImageCropperViewController.m in Sources */,
 				1420B1B61D339E4800C1B17E /* MJRefreshHeader.m in Sources */,
 				148380CE1D349E0B001F8822 /* AFURLResponseSerialization.m in Sources */,
 				1420B1BF1D339E4800C1B17E /* MJRefreshStateHeader.m in Sources */,
+				142471441D3F6666008DA108 /* DGCPhotoLibraryGridVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
