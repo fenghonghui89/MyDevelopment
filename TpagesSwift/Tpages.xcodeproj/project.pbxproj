@@ -81,6 +81,8 @@
 		1420B25C1D33A6D300C1B17E /* DGCPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1420B25B1D33A6D300C1B17E /* DGCPushManager.swift */; };
 		1420B25E1D33A6E300C1B17E /* DGCShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1420B25D1D33A6E300C1B17E /* DGCShareManager.swift */; };
 		1420B2601D33A6F900C1B17E /* DGCPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1420B25F1D33A6F900C1B17E /* DGCPayManager.swift */; };
+		142471361D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142471341D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift */; };
+		142471371D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142471351D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib */; };
 		145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B80761D35EBB200A4735E /* DGCAlertController.swift */; };
 		147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABD81D2F43CF00236FB6 /* RDVTabBar.m */; };
 		147BABDE1D2F43CF00236FB6 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABDA1D2F43CF00236FB6 /* RDVTabBarController.m */; };
@@ -302,6 +304,8 @@
 		1420B25B1D33A6D300C1B17E /* DGCPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPushManager.swift; sourceTree = "<group>"; };
 		1420B25D1D33A6E300C1B17E /* DGCShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCShareManager.swift; sourceTree = "<group>"; };
 		1420B25F1D33A6F900C1B17E /* DGCPayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPayManager.swift; sourceTree = "<group>"; };
+		142471341D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCHeaderPhotoVC.swift; sourceTree = "<group>"; };
+		142471351D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCHeaderPhotoVC.xib; sourceTree = "<group>"; };
 		145B80761D35EBB200A4735E /* DGCAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCAlertController.swift; sourceTree = "<group>"; };
 		147BABD71D2F43CF00236FB6 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		147BABD81D2F43CF00236FB6 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
@@ -727,6 +731,22 @@
 			path = RNCachingURLProtocol;
 			sourceTree = "<group>";
 		};
+		142471321D3F2C8B008DA108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		142471331D3F2C8B008DA108 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				142471341D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift */,
+				142471351D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		147BABD61D2F43CF00236FB6 /* RDVTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1033,6 +1053,8 @@
 		14A101C81D2BB6B2002069D2 /* TakeHeader */ = {
 			isa = PBXGroup;
 			children = (
+				142471331D3F2C8B008DA108 /* ViewController */,
+				142471321D3F2C8B008DA108 /* View */,
 			);
 			path = TakeHeader;
 			sourceTree = "<group>";
@@ -1214,6 +1236,7 @@
 				1420B2131D33A34100C1B17E /* UMSocialLocalizable.strings in Resources */,
 				14974BAA1D2FAC8400591167 /* tab-personal@3x.png in Resources */,
 				14974BA61D2FAC8400591167 /* tab-bg-grey@3x.png in Resources */,
+				142471371D3F2D1F008DA108 /* DGCHeaderPhotoVC.xib in Resources */,
 				1420B21C1D33A34100C1B17E /* UMSShareListController.xib in Resources */,
 				14974BA91D2FAC8400591167 /* tab-personal@2x.png in Resources */,
 				1420B2201D33A34100C1B17E /* WeiboSDK.bundle in Resources */,
@@ -1257,6 +1280,7 @@
 				1420B1B41D339E4800C1B17E /* MJRefreshComponent.m in Sources */,
 				14DDE88F1D2D04A6000CAFE2 /* DGCThirdSDKDefine.swift in Sources */,
 				147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */,
+				142471361D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift in Sources */,
 				145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */,
 				1420B2581D33A69A00C1B17E /* RNCachingURLProtocol.m in Sources */,
 				148380CA1D349E0B001F8822 /* AFHTTPSessionManager.m in Sources */,

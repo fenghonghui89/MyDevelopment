@@ -112,7 +112,7 @@ class DGCQRCodePageVC: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     
     //maskView
     let w = SCREEN_WIDTH*0.7
-    let h = SCREEN_HEIGHT*0.7
+    let h = SCREEN_WIDTH*0.7
     let x = (SCREEN_WIDTH - w)/2
     let y = (bgView.bounds.size.height - h)*0.5
     let maskView = UIView(frame: CGRectMake(x,y,w,h))
@@ -221,6 +221,8 @@ class DGCQRCodePageVC: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
       let metadataObject:AVMetadataMachineReadableCodeObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
       let qrcodeString:String = metadataObject.stringValue
       dlog("qrcodeString:\(qrcodeString)")
+      
+      self.operateQRCode(qrcodeString)
     }
 
   }
@@ -256,7 +258,7 @@ class DGCQRCodePageVC: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
         
         self.session?.stopRunning()
         
-        let ac:DGCAlertController = DGCAlertController.alertControlller("是否使用外部浏览器打开链接？", message: nil, type: DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
+        let ac:UIAlertController = DGCAlertController.alertControlller("是否使用外部浏览器打开链接？", message: nil, type: DGCAlertType.DGCAlertTypeNoAction, block: nil)
         
         let at1 = UIAlertAction(title: "不用", style: UIAlertActionStyle.Default, handler: { (action) in
           self.session?.startRunning()
@@ -277,9 +279,11 @@ class DGCQRCodePageVC: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
       
       self.session?.stopRunning()
       
-      let ac:DGCAlertController = DGCAlertController.alertControlller("错误：二维码不是指向网址。", message: nil, type: DGCAlertType.DGCAlertTypeJustConfirm, block: { (run) in
+      let ac:UIAlertController = DGCAlertController.alertControlller("错误：二维码不是指向网址。", message: nil, type: DGCAlertType.DGCAlertTypeNoAction, block: nil)
+      let at1 = UIAlertAction(title: "知道了", style: UIAlertActionStyle.Default, handler: { (action) in
         self.session?.startRunning()
       })
+      ac.addAction(at1)
       self.presentViewController(ac, animated: true, completion: nil)
     }
     

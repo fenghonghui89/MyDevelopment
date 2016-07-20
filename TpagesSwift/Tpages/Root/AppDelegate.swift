@@ -49,14 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
     
     openLog = true
-    dlog("app state 1:willFinishLaunchingWithOptions~\(launchOptions)")
+    dlog("app state 1:willFinishLaunchingWithOptions")
     return true
   }
   
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    dlog("app state 2:didFinishLaunchingWithOptions~\(launchOptions)")
+    dlog("app state 2:didFinishLaunchingWithOptions")
     
     //开启离线缓存
     NSURLProtocol.registerClass(RNCachingURLProtocol)
