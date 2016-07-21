@@ -91,6 +91,9 @@
 		142471451D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142471431D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib */; };
 		142471481D3F6685008DA108 /* DGCPhotoPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142471461D3F6685008DA108 /* DGCPhotoPreviewVC.swift */; };
 		142471491D3F6685008DA108 /* DGCPhotoPreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142471471D3F6685008DA108 /* DGCPhotoPreviewVC.xib */; };
+		14443C921D40B02A0068FC6A /* DGCMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 14443C8E1D40B02A0068FC6A /* DGCMBProgressHUD.m */; };
+		14443C931D40B02A0068FC6A /* Icon-Loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 14443C8F1D40B02A0068FC6A /* Icon-Loading.png */; };
+		14443C941D40B02A0068FC6A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 14443C911D40B02A0068FC6A /* MBProgressHUD.m */; };
 		145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B80761D35EBB200A4735E /* DGCAlertController.swift */; };
 		147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABD81D2F43CF00236FB6 /* RDVTabBar.m */; };
 		147BABDE1D2F43CF00236FB6 /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147BABDA1D2F43CF00236FB6 /* RDVTabBarController.m */; };
@@ -324,6 +327,11 @@
 		142471431D3F6666008DA108 /* DGCPhotoLibraryGridVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCPhotoLibraryGridVC.xib; sourceTree = "<group>"; };
 		142471461D3F6685008DA108 /* DGCPhotoPreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPhotoPreviewVC.swift; sourceTree = "<group>"; };
 		142471471D3F6685008DA108 /* DGCPhotoPreviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCPhotoPreviewVC.xib; sourceTree = "<group>"; };
+		14443C8D1D40B02A0068FC6A /* DGCMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCMBProgressHUD.h; sourceTree = "<group>"; };
+		14443C8E1D40B02A0068FC6A /* DGCMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCMBProgressHUD.m; sourceTree = "<group>"; };
+		14443C8F1D40B02A0068FC6A /* Icon-Loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Loading.png"; sourceTree = "<group>"; };
+		14443C901D40B02A0068FC6A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		14443C911D40B02A0068FC6A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		145B80761D35EBB200A4735E /* DGCAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCAlertController.swift; sourceTree = "<group>"; };
 		147BABD71D2F43CF00236FB6 /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
 		147BABD81D2F43CF00236FB6 /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
@@ -773,6 +781,18 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		14443C8C1D40B02A0068FC6A /* DGCMBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				14443C8D1D40B02A0068FC6A /* DGCMBProgressHUD.h */,
+				14443C8E1D40B02A0068FC6A /* DGCMBProgressHUD.m */,
+				14443C8F1D40B02A0068FC6A /* Icon-Loading.png */,
+				14443C901D40B02A0068FC6A /* MBProgressHUD.h */,
+				14443C911D40B02A0068FC6A /* MBProgressHUD.m */,
+			);
+			path = DGCMBProgressHUD;
+			sourceTree = "<group>";
+		};
 		147BABD61D2F43CF00236FB6 /* RDVTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,6 +1033,7 @@
 		14A101C11D2BB6B2002069D2 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				14443C8C1D40B02A0068FC6A /* DGCMBProgressHUD */,
 				145B80761D35EBB200A4735E /* DGCAlertController.swift */,
 			);
 			path = CustomUI;
@@ -1274,6 +1295,7 @@
 				14A101D71D2BB6B2002069D2 /* LaunchScreen.storyboard in Resources */,
 				14974BAC1D2FAC8400591167 /* tab-qr@3x.png in Resources */,
 				14974B931D2FAC8400591167 /* tickbox_on.png in Resources */,
+				14443C931D40B02A0068FC6A /* Icon-Loading.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,10 +1343,12 @@
 				1420B1B31D339E4800C1B17E /* MJRefreshBackFooter.m in Sources */,
 				1420B1BC1D339E4800C1B17E /* MJRefreshBackStateFooter.m in Sources */,
 				148380CD1D349E0B001F8822 /* AFURLRequestSerialization.m in Sources */,
+				14443C941D40B02A0068FC6A /* MBProgressHUD.m in Sources */,
 				1420B1BD1D339E4800C1B17E /* MJRefreshGifHeader.m in Sources */,
 				1420B1BA1D339E4800C1B17E /* MJRefreshBackGifFooter.m in Sources */,
 				1420B25E1D33A6E300C1B17E /* DGCShareManager.swift in Sources */,
 				1420B1C11D339E4800C1B17E /* MJRefreshConst.m in Sources */,
+				14443C921D40B02A0068FC6A /* DGCMBProgressHUD.m in Sources */,
 				147BABE71D2F4B4000236FB6 /* DGCTpagesPageVC.swift in Sources */,
 				14CD8AB41D2E63970078D740 /* Extension.swift in Sources */,
 				148380CF1D349E0B001F8822 /* AFURLSessionManager.m in Sources */,

@@ -32,7 +32,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   
   //Utilities.
   private var backgroundRecordingID:UIBackgroundTaskIdentifier? = UIBackgroundTaskInvalid
-  private let deviceAutorized:Bool? = false
+  private var deviceAutorized:Bool? = false
   private let sessionRunningAndDeviceAuthorized:Bool? = false
   private let runtimeErrorHandlingObserver:AnyObject? = nil
   
@@ -48,7 +48,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   @IBOutlet private weak var deleteBtn: UIButton!
   
   //data
-  private let stillImage:UIImage? = nil
+  private var stillImage:UIImage? = nil
   
   func isSessionRunningAndDeviceAuthorized() ->Bool {
     return false
@@ -93,7 +93,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
   
   //MARK:- ********************* method *********************
-  //MARK:- 设置设备flashMode（前后摄像头）
+  //MARK:设置设备flashMode（前后摄像头）
 
   static func setFlashModeForDevice(flashMode:AVCaptureFlashMode,device:AVCaptureDevice){
     
@@ -107,7 +107,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
       }
     }
   }
-  //MARK:- 获取device
+  //MARK:获取device
 
   static func deviceWithMediaType(mediaType:String,preferringPosition position:AVCaptureDevicePosition) -> AVCaptureDevice {
     
@@ -125,7 +125,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     return captureDevice as! AVCaptureDevice
     
   }
-  //MARK:- 设置自动曝光、对焦
+  //MARK:设置自动曝光、对焦
   func focusWithMode(focusMode:AVCaptureFocusMode,exposeWithMode exposureMode:AVCaptureExposureMode,atDevicePoint point:CGPoint,monitorSubjectAreaChange change:Bool) {
    
     dlog("point:\(NSStringFromCGPoint(point))");
@@ -152,17 +152,100 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
       }
     }
   }
-  //MARK:- 请求允许使用相机
+  //MARK:请求允许使用相机
   func checkDeviceAuthorizationStatus(){
     
+    AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo) { (granted:Bool) in
+      if granted == true{
+        self.deviceAutorized = true
+      }else{
+        dispatch_async(dispatch_get_main_queue(), { 
+          let ac = UIAlertController(title: nil, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+          let aa = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) in
+            UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+          })
+          ac.addAction(aa)
+          self.presentViewController(ac, animated: true, completion: nil)
+          self.deviceAutorized = false
+        })
+      }
+    }
   }
-  //MARK:- 裁剪 压缩 exif提取 修改 插入 （注：要先裁剪再改exif）
-  func cropAndZipImgByBuffer(imageDataSampleBuffer:CMSampleBufferRef) -> UIImage? {
-    return nil
+  //MARK:裁剪 压缩 exif提取 修改 插入 （注：要先裁剪再改exif）
+  func cropAndZipImgByBuffer(imageDataSampleBuffer:CMSampleBufferRef) -> UIImage {
+    
+    //原图
+    let imageNSData:NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+    let image:UIImage = UIImage(data: imageNSData)!
+    
+    //最终尺寸
+    let headHeight:CGFloat = 0
+    let r = self.previewView!.bounds.size.width/1000.0
+    let w = self.previewView!.bounds.size.width/r
+    let h = self.previewView!.bounds.size.height/r
+    let size:CGSize = CGSizeMake(w, h)
+    dlog("拍照原图尺寸：\(NSStringFromCGSize(image.size)) 裁剪尺寸:\(NSStringFromCGSize(size))")
+    
+    //旋转后图片
+    let scaledImage:UIImage = image.resizedImageWithContentMode(UIViewContentMode.ScaleAspectFill, bounds: size, interpolationQuality: CGInterpolationQuality.High)
+    
+    //最终图片
+    let cropFrame:CGRect = CGRectMake((scaledImage.size.width - size.width)/2, (scaledImage.size.height - size.height)/2 + headHeight, size.width, size.height)
+    let croppedImage:UIImage = scaledImage.croppedImage(cropFrame)
+    self.saveImgToPohotLibrary(UIImageJPEGRepresentation(croppedImage, 1)!)
+    return croppedImage
   }
   
   //保存拍照的照片到相册
   func saveImgToPohotLibrary(imageData:NSData){
+    
+    // To preserve the metadata, we create an asset from the JPEG NSData representation.
+    // Note that creating an asset from a UIImage discards the metadata.
+    // In iOS 9, we can use -[PHAssetCreationRequest addResourceWithType:data:options].
+    // In iOS 8, we save the image to a temporary file and use +[PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL:].
+    PHPhotoLibrary.requestAuthorization { (status:PHAuthorizationStatus) in
+      if status == PHAuthorizationStatus.Authorized
+      {
+        if #available(iOS 9.0, *)
+        {
+          PHPhotoLibrary.sharedPhotoLibrary().performChanges({ 
+            PHAssetCreationRequest.creationRequestForAsset().addResourceWithType(PHAssetResourceType.Photo, data: imageData, options: nil)
+            }, completionHandler: { (success:Bool, error:NSError?) in
+              if !success {
+                dlog("Error occurred while saving image to photo library: \(error?.localizedDescription)")
+              }
+          })
+        }
+        
+        else
+        {
+          let temporaryFileName = NSProcessInfo.processInfo().globallyUniqueString
+          let temporaryFileURL = NSURL(string: NSTemporaryDirectory())
+          temporaryFileURL?.URLByAppendingPathComponent(temporaryFileName.stringByAppendingString(".jpg"))
+          
+          PHPhotoLibrary.sharedPhotoLibrary().performChanges({ 
+            do{
+              try imageData.writeToURL(temporaryFileURL!, options: NSDataWritingOptions.AtomicWrite)
+            }catch let err as NSError{
+              dlog("Error occured while writing image data to a temporary file: \(err.localizedDescription)")
+            }
+            }, completionHandler: { (success:Bool, error:NSError?) in
+              if !success{
+                dlog("Error occurred while saving image to photo library: \(error?.localizedDescription)")
+              }
+              
+              do{
+                try NSFileManager.defaultManager().removeItemAtURL(temporaryFileURL!)
+              }catch let err as NSError{
+                dlog("Delete the temporary file error:\(err.localizedDescription)")
+              }
+          })
+        }
+       
+      }
+    }
+    
+    
     
   }
   
@@ -359,44 +442,223 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
 
   //MARK:- ********************* action *********************
-  //MARK:- 跳转到发送页面
+  //MARK:跳转到裁剪页面
   @IBAction func nextBtnTap(sender: AnyObject) {
+    
+    let vc:VPImageCropperViewController = VPImageCropperViewController()
+    vc.originalImage = self.stillImage!
+    vc.limitRatio = 3.0
+    vc.delegate = self
+    if self.isTakeHeaderOrBanner == true {
+      vc.cropFrame = CGRectMake(0, (SCREEN_HEIGHT-SCREEN_WIDTH-NAVI_HEIGHT)*0.5, SCREEN_WIDTH, SCREEN_WIDTH)
+    }else{
+      vc.cropFrame = CGRectMake(0, (SCREEN_HEIGHT-0.3*SCREEN_WIDTH-NAVI_HEIGHT)*0.5, SCREEN_WIDTH, SCREEN_WIDTH*0.3)
+    }
+    
+    self.navigationController?.pushViewController(vc, animated: true)
   }
 
-  //MARK:- 跳转到相册
+  //MARK:跳转到相册
   @IBAction func showActionSheetBtn(sender: AnyObject) {
+    
+    self.type = DGCTakePhotoStateType.Alubm
+    let vc:DGCPhotoLibraryVC = DGCPhotoLibraryVC(nibName: "DGCPhotoLibraryVC", bundle: nil)
+    vc.isTakeHeaderOrBanner = self.isTakeHeaderOrBanner
+    self.navigationController?.pushViewController(vc, animated: true)
   }
-  //MARK:- 切换前后摄像头
+  //MARK:切换前后摄像头
   @IBAction func changeCamera(sender: AnyObject) {
+    
+    self.cameraButton.enabled = false;
+    self.stillButton.enabled = false;
+    
+    //获取方向 设置方向 修改input
+    dispatch_async(self.sessionQueue!) { 
+      
+      let currentVideoDevice:AVCaptureDevice = self.videoDeviceInput!.device
+      var preferredPosition:AVCaptureDevicePosition = AVCaptureDevicePosition.Unspecified//待设置的方向
+      let currentPosition:AVCaptureDevicePosition = currentVideoDevice.position//当前方向
+      
+      switch currentPosition{
+      case .Unspecified:
+        preferredPosition = AVCaptureDevicePosition.Back;
+      case .Back:
+        preferredPosition = AVCaptureDevicePosition.Front;
+      case .Front:
+        preferredPosition = AVCaptureDevicePosition.Back;
+      }
+      
+      let videoDevice:AVCaptureDevice = DGCHeaderPhotoVC.deviceWithMediaType(AVMediaTypeVideo, preferringPosition: preferredPosition)
+      
+      do{
+        let videoDeviceInput:AVCaptureDeviceInput = try AVCaptureDeviceInput.init(device: videoDevice)
+        
+        self.session?.beginConfiguration()
+        self.session?.removeInput(self.videoDeviceInput)
+        
+        if self.session!.canAddInput(videoDeviceInput)
+        {
+          NSNotificationCenter.defaultCenter().removeObserver(self, name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: currentVideoDevice)
+          DGCHeaderPhotoVC.setFlashModeForDevice(AVCaptureFlashMode.Auto, device: videoDevice)
+          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.subjectAreaDidChange(_:)), name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: videoDevice)
+          self.session?.addInput(videoDeviceInput)
+          self.videoDeviceInput = videoDeviceInput
+        }
+        else
+        {
+          self.session?.addInput(self.videoDeviceInput)
+        }
+        
+        self.session?.commitConfiguration()
+
+      }catch let err as NSError{
+        dlog("切换前后摄像头 error:\(err.localizedDescription)")
+      }
+      
+      dispatch_async(dispatch_get_main_queue(), { 
+        self.cameraButton.enabled = true
+        self.stillButton.enabled = true
+      })
+    }
   }
-  //MARK:- 拍照
+  
+  
+  //MARK:拍照
   @IBAction func snapStillImage(sender: AnyObject) {
+    
+    dispatch_async(self.sessionQueue!) {
+      
+      let videoConnection:AVCaptureConnection = self.stillImageOutput!.connectionWithMediaType(AVMediaTypeVideo)
+      videoConnection.videoOrientation = self.previewLayer!.connection.videoOrientation
+      
+      DGCHeaderPhotoVC.setFlashModeForDevice(self.currentFlashMode!, device: self.videoDeviceInput!.device)
+      
+      self.stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: { (imageDataSampleBuffer:CMSampleBufferRef!, error:NSError!) in
+        
+        if imageDataSampleBuffer == nil{
+          dlog("获取照片失败")
+          return
+        }
+        
+        let croppedImg:UIImage = self.cropAndZipImgByBuffer(imageDataSampleBuffer)
+        self.stillImage = croppedImg
+        self.deleteBtn.hidden = false
+        self.stillButton.enabled = false
+        self.nextBtn.enabled = true
+        self.session?.stopRunning()
+      })
+    }
   }
-  //MARK:- 闪光控制
+  //MARK:闪光控制
   @IBAction func changeFlashMode(sender: AnyObject) {
-  }
-  //MARK:- HDR控制
-  @IBAction func chageHDRMode(sender: AnyObject) {
-  }
-  //MARK:- 删除照片
-  @IBAction func closeImageView(sender: AnyObject) {
-  }
-  //MARK:- UI
-  func runStillImageCaptureAnimation() {
+    
+
+
+    switch self.currentFlashMode! {
+    case .Auto:
+      self.currentFlashMode! = .On
+      self.flashButton.setTitle("On", forState: UIControlState.Normal)
+      self.flashButton.setImage(UIImage(named: "Share-Button-Flash-on.png")!, forState: UIControlState.Normal)
+    case .On:
+      self.currentFlashMode! = .Off
+      self.flashButton.setTitle("Off", forState: UIControlState.Normal)
+      self.flashButton.setImage(UIImage(named: "Share-Button-Flash.png")!, forState: UIControlState.Normal)
+    case .Off:
+      self.currentFlashMode! = .Auto
+      self.flashButton.setTitle("Auto", forState: UIControlState.Normal)
+      self.flashButton.setImage(UIImage(named: "Share-Button-Flash-on.png")!, forState: UIControlState.Normal)
+    }
     
   }
-  //MARK:- 预览图点击
+  //MARK:HDR控制
+  @IBAction func chageHDRMode(sender: AnyObject) {
+    
+
+
+    let HDRButton:UIButton = sender as! UIButton
+    HDRButton.selected = !HDRButton.selected
+    
+    if HDRButton.selected//开启HDR
+    {
+      self.stillButton.enabled = false
+      self.cameraButton.enabled = false
+      
+      try! self.videoDeviceInput?.device.lockForConfiguration()
+      self.videoDeviceInput?.device.activeFormat = self.videoDeviceInput?.device.activeFormat
+      self.session?.beginConfiguration()
+      self.videoDeviceInput?.device.automaticallyAdjustsVideoHDREnabled = false
+      if self.videoDeviceInput?.device.activeFormat.videoHDRSupported == true {
+        self.videoDeviceInput?.device.videoHDREnabled = true
+      }else{
+        self.videoDeviceInput?.device.automaticallyAdjustsVideoHDREnabled = true
+      }
+      
+      self.session?.commitConfiguration()
+      self.stillButton.enabled = true
+      self.cameraButton.enabled = true
+    }
+    else//关闭HDR
+    {
+      self.stillButton.enabled = false
+      self.cameraButton.enabled = false
+      
+      try! self.videoDeviceInput?.device.lockForConfiguration()
+      self.videoDeviceInput?.device.activeFormat = self.videoDeviceInput?.device.activeFormat
+      self.session?.beginConfiguration()
+      self.videoDeviceInput?.device.automaticallyAdjustsVideoHDREnabled = false
+      if self.videoDeviceInput?.device.activeFormat.videoHDRSupported == true {
+        self.videoDeviceInput?.device.videoHDREnabled = false
+      }else{
+        self.videoDeviceInput?.device.automaticallyAdjustsVideoHDREnabled = false
+      }
+      
+      self.session?.commitConfiguration()
+      self.stillButton.enabled = true
+      self.cameraButton.enabled = true
+    }
+    
+
+
+  }
+  //MARK:删除照片
+  @IBAction func closeImageView(sender: AnyObject) {
+    
+    self.stillImage = nil
+    self.deleteBtn.hidden = true
+    self.stillButton.enabled = true
+    self.nextBtn.enabled = false
+    self.session?.startRunning()
+  }
+  
+  //MARK:UI
+  func runStillImageCaptureAnimation() {
+    
+    dispatch_async(dispatch_get_main_queue()) { 
+      self.previewView!.layer.opacity = 0.0
+      UIView.animateWithDuration(0.25, animations: { 
+        self.previewView!.layer.opacity = 1.0
+      })
+    }
+  }
+  //MARK:预览图点击
   func focusAndExposeTap(gestureRecognizer:UITapGestureRecognizer) {
+    
+    let point:CGPoint = gestureRecognizer.locationInView(gestureRecognizer.view)
+    let devicePoint:CGPoint = self.previewLayer!.captureDevicePointOfInterestForPoint(point)
+    self.focusWithMode(AVCaptureFocusMode.AutoFocus, exposeWithMode: AVCaptureExposureMode.AutoExpose, atDevicePoint: devicePoint, monitorSubjectAreaChange: true)
     
   }
   //MARK:- ********************* callback *********************
   //MARK:- VPImageCropperDelegate
   func imageCropper(cropperViewController: VPImageCropperViewController!, didFinished editedImage: UIImage!) {
     
+    let vc:DGCPhotoPreviewVC = DGCPhotoPreviewVC(nibName: "DGCPhotoPreviewVC", bundle: nil)
+    vc.photo = editedImage
+    cropperViewController.navigationController!.pushViewController(vc, animated: true)
   }
   
   func imageCropperDidCancel(cropperViewController: VPImageCropperViewController!) {
-    
+    cropperViewController.navigationController?.popViewControllerAnimated(true)
   }
   
   

@@ -31,3 +31,5 @@
 
 #import "RNCachingURLProtocol.h"
 #import "VPImageCropperViewController.h"
+#import "UIImage+Resize.h"
+#import "DGCMBProgressHUD.h"
