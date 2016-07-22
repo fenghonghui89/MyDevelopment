@@ -111,6 +111,8 @@
 		148380CD1D349E0B001F8822 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 148380C51D349E0B001F8822 /* AFURLRequestSerialization.m */; };
 		148380CE1D349E0B001F8822 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 148380C71D349E0B001F8822 /* AFURLResponseSerialization.m */; };
 		148380CF1D349E0B001F8822 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 148380C91D349E0B001F8822 /* AFURLSessionManager.m */; };
+		1493F3EA1D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1493F3E81D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.swift */; };
+		1493F3EB1D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1493F3E91D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.xib */; };
 		14974B7D1D2FAC8400591167 /* launch image_1242X2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 14974B431D2FAC8400591167 /* launch image_1242X2208.png */; };
 		14974B7E1D2FAC8400591167 /* launch image_640X1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 14974B441D2FAC8400591167 /* launch image_640X1136.png */; };
 		14974B7F1D2FAC8400591167 /* launch image_750X1334.png in Resources */ = {isa = PBXBuildFile; fileRef = 14974B451D2FAC8400591167 /* launch image_750X1334.png */; };
@@ -359,6 +361,8 @@
 		148380C71D349E0B001F8822 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		148380C81D349E0B001F8822 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		148380C91D349E0B001F8822 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		1493F3E81D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGCPhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		1493F3E91D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGCPhotoLibraryCollectionViewCell.xib; sourceTree = "<group>"; };
 		14974B431D2FAC8400591167 /* launch image_1242X2208.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch image_1242X2208.png"; sourceTree = "<group>"; };
 		14974B441D2FAC8400591167 /* launch image_640X1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch image_640X1136.png"; sourceTree = "<group>"; };
 		14974B451D2FAC8400591167 /* launch image_750X1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch image_750X1334.png"; sourceTree = "<group>"; };
@@ -760,6 +764,8 @@
 		142471321D3F2C8B008DA108 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1493F3E81D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.swift */,
+				1493F3E91D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1253,6 +1259,7 @@
 				14974B831D2FAC8400591167 /* logo@3x.png in Resources */,
 				14974B991D2FAC8400591167 /* Share-Button-CameraGrid-on@2x.png in Resources */,
 				142471411D3F6640008DA108 /* DGCPhotoLibraryVC.xib in Resources */,
+				1493F3EB1D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.xib in Resources */,
 				14974BAE1D2FAC8400591167 /* tab-tvision@3x.png in Resources */,
 				14974BA71D2FAC8400591167 /* tab-mall@2x.png in Resources */,
 				14974B951D2FAC8400591167 /* tickbox_on@3x.png in Resources */,
@@ -1337,6 +1344,7 @@
 				147BABDD1D2F43CF00236FB6 /* RDVTabBar.m in Sources */,
 				142471361D3F2D1F008DA108 /* DGCHeaderPhotoVC.swift in Sources */,
 				1424713D1D3F6597008DA108 /* UIImage+Resize.m in Sources */,
+				1493F3EA1D41D30C007FB34D /* DGCPhotoLibraryCollectionViewCell.swift in Sources */,
 				145B80771D35EBB200A4735E /* DGCAlertController.swift in Sources */,
 				1420B2581D33A69A00C1B17E /* RNCachingURLProtocol.m in Sources */,
 				148380CA1D349E0B001F8822 /* AFHTTPSessionManager.m in Sources */,

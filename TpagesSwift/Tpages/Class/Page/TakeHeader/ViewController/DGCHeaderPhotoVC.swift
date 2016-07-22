@@ -14,7 +14,7 @@ enum DGCTakePhotoStateType {
   case Stop,Photo,Alubm
 }
 
-class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDelegate {
+class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
 
   //publish
   let rootVC:UIViewController? = nil
@@ -95,7 +95,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   //MARK:- ********************* method *********************
   //MARK:设置设备flashMode（前后摄像头）
 
-  static func setFlashModeForDevice(flashMode:AVCaptureFlashMode,device:AVCaptureDevice){
+  private static func setFlashModeForDevice(flashMode:AVCaptureFlashMode,device:AVCaptureDevice){
     
     if device.hasFlash && device.isFlashModeSupported(flashMode) {
       do{
@@ -109,7 +109,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
   //MARK:获取device
 
-  static func deviceWithMediaType(mediaType:String,preferringPosition position:AVCaptureDevicePosition) -> AVCaptureDevice {
+  private static func deviceWithMediaType(mediaType:String,preferringPosition position:AVCaptureDevicePosition) -> AVCaptureDevice {
     
     let devices = AVCaptureDevice.devicesWithMediaType(mediaType)
     var captureDevice = devices.first
@@ -126,7 +126,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     
   }
   //MARK:设置自动曝光、对焦
-  func focusWithMode(focusMode:AVCaptureFocusMode,exposeWithMode exposureMode:AVCaptureExposureMode,atDevicePoint point:CGPoint,monitorSubjectAreaChange change:Bool) {
+  private func focusWithMode(focusMode:AVCaptureFocusMode,exposeWithMode exposureMode:AVCaptureExposureMode,atDevicePoint point:CGPoint,monitorSubjectAreaChange change:Bool) {
    
     dlog("point:\(NSStringFromCGPoint(point))");
     dispatch_async(self.sessionQueue!) {
@@ -152,8 +152,9 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
       }
     }
   }
+  
   //MARK:请求允许使用相机
-  func checkDeviceAuthorizationStatus(){
+  private func checkDeviceAuthorizationStatus(){
     
     AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo) { (granted:Bool) in
       if granted == true{
@@ -171,8 +172,9 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
       }
     }
   }
+  
   //MARK:裁剪 压缩 exif提取 修改 插入 （注：要先裁剪再改exif）
-  func cropAndZipImgByBuffer(imageDataSampleBuffer:CMSampleBufferRef) -> UIImage {
+  private func cropAndZipImgByBuffer(imageDataSampleBuffer:CMSampleBufferRef) -> UIImage {
     
     //原图
     let imageNSData:NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
@@ -197,7 +199,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
   
   //保存拍照的照片到相册
-  func saveImgToPohotLibrary(imageData:NSData){
+  private func saveImgToPohotLibrary(imageData:NSData){
     
     // To preserve the metadata, we create an asset from the JPEG NSData representation.
     // Note that creating an asset from a UIImage discards the metadata.
@@ -250,7 +252,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
   
   //MARK:- customInit
-  func customInitUI(){
+  private func customInitUI(){
     
     self.edgesForExtendedLayout = UIRectEdge.None;
     
@@ -271,7 +273,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
   
   
-  func customInitCamera(){
+  private func customInitCamera(){
     
     //init
     self.currentFlashMode = AVCaptureFlashMode.Auto
@@ -329,7 +331,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     
   }
   
-  func showActionSheet(){
+  private func showActionSheet(){
         
 
     let ac:UIAlertController = UIAlertController(title: "请选择", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -353,9 +355,6 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     self.navigationController?.presentViewController(ac, animated: true, completion: nil)
   }
   
-  func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-    
-  }
   //MARK:- 旋屏
   override func shouldAutorotate() -> Bool {
     return false
@@ -417,7 +416,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     
   }
   
-  func subjectAreaDidChange(notification:NSNotification) {
+  @objc private func subjectAreaDidChange(notification:NSNotification) {
 
     let devicePoint:CGPoint = CGPointMake(0.5, 0.5)
     self.focusWithMode(AVCaptureFocusMode.ContinuousAutoFocus, exposeWithMode: AVCaptureExposureMode.ContinuousAutoExposure, atDevicePoint: devicePoint, monitorSubjectAreaChange: false)
@@ -425,15 +424,15 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   
   
 
-  func addObserver() {
+  private func addObserver() {
 
     self.addObserver(self, forKeyPath: "sessionRunningAndDeviceAuthorized", options: .New, context: &SessionRunningAndDeviceAuthorizedContext)
     self.addObserver(self, forKeyPath: "stillImageOutput.capturingStillImage", options: .New, context: &CapturingStillImageContext)
     self.addObserver(self, forKeyPath: "movieFileOutput.recording", options: .New, context: &RecordingContext)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(subjectAreaDidChange(_:)), name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: self.videoDeviceInput?.device)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.subjectAreaDidChange(_:)), name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: self.videoDeviceInput?.device)
   }
   
-  func removeObserver() {
+  private func removeObserver() {
     
     NSNotificationCenter.defaultCenter().removeObserver(self, name: AVCaptureDeviceSubjectAreaDidChangeNotification, object: self.videoDeviceInput?.device)
     self.removeObserver(self, forKeyPath: "stillImageOutput.capturingStillImage", context: &CapturingStillImageContext)
@@ -443,7 +442,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
 
   //MARK:- ********************* action *********************
   //MARK:跳转到裁剪页面
-  @IBAction func nextBtnTap(sender: AnyObject) {
+  @IBAction private func nextBtnTap(sender: AnyObject) {
     
     let vc:VPImageCropperViewController = VPImageCropperViewController()
     vc.originalImage = self.stillImage!
@@ -459,7 +458,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
 
   //MARK:跳转到相册
-  @IBAction func showActionSheetBtn(sender: AnyObject) {
+  @IBAction private func showActionSheetBtn(sender: AnyObject) {
     
     self.type = DGCTakePhotoStateType.Alubm
     let vc:DGCPhotoLibraryVC = DGCPhotoLibraryVC(nibName: "DGCPhotoLibraryVC", bundle: nil)
@@ -467,7 +466,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     self.navigationController?.pushViewController(vc, animated: true)
   }
   //MARK:切换前后摄像头
-  @IBAction func changeCamera(sender: AnyObject) {
+  @IBAction private func changeCamera(sender: AnyObject) {
     
     self.cameraButton.enabled = false;
     self.stillButton.enabled = false;
@@ -524,7 +523,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   
   
   //MARK:拍照
-  @IBAction func snapStillImage(sender: AnyObject) {
+  @IBAction private func snapStillImage(sender: AnyObject) {
     
     dispatch_async(self.sessionQueue!) {
       
@@ -550,7 +549,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     }
   }
   //MARK:闪光控制
-  @IBAction func changeFlashMode(sender: AnyObject) {
+  @IBAction private func changeFlashMode(sender: AnyObject) {
     
 
 
@@ -571,7 +570,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     
   }
   //MARK:HDR控制
-  @IBAction func chageHDRMode(sender: AnyObject) {
+  @IBAction private func chageHDRMode(sender: AnyObject) {
     
 
 
@@ -621,7 +620,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
 
   }
   //MARK:删除照片
-  @IBAction func closeImageView(sender: AnyObject) {
+  @IBAction private func closeImageView(sender: AnyObject) {
     
     self.stillImage = nil
     self.deleteBtn.hidden = true
@@ -631,7 +630,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
   }
   
   //MARK:UI
-  func runStillImageCaptureAnimation() {
+  private func runStillImageCaptureAnimation() {
     
     dispatch_async(dispatch_get_main_queue()) { 
       self.previewView!.layer.opacity = 0.0
@@ -641,7 +640,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     }
   }
   //MARK:预览图点击
-  func focusAndExposeTap(gestureRecognizer:UITapGestureRecognizer) {
+  @objc private func focusAndExposeTap(gestureRecognizer:UITapGestureRecognizer) {
     
     let point:CGPoint = gestureRecognizer.locationInView(gestureRecognizer.view)
     let devicePoint:CGPoint = self.previewLayer!.captureDevicePointOfInterestForPoint(point)
@@ -654,6 +653,7 @@ class DGCHeaderPhotoVC: UIViewController,UIActionSheetDelegate,VPImageCropperDel
     
     let vc:DGCPhotoPreviewVC = DGCPhotoPreviewVC(nibName: "DGCPhotoPreviewVC", bundle: nil)
     vc.photo = editedImage
+    vc.isTakeHeaderOrBanner = self.isTakeHeaderOrBanner
     cropperViewController.navigationController!.pushViewController(vc, animated: true)
   }
   

@@ -10,7 +10,7 @@ import UIKit
 
 class DGCPhotoPreviewVC: UIViewController {
   
-  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet private weak var imageView: UIImageView!
   var photo:UIImage?
   var isTakeHeaderOrBanner:Bool? = false//yes - 头像 no - 背景
   
@@ -22,7 +22,7 @@ class DGCPhotoPreviewVC: UIViewController {
   }
   
   //MARK:**************** method *****************
-  func customInitUI() {
+  private func customInitUI() {
     
     let titleLabel:UILabel = UILabel(frame: CGRectMake(0,0,100,44))
     if self.isTakeHeaderOrBanner == true {
@@ -40,7 +40,7 @@ class DGCPhotoPreviewVC: UIViewController {
     nextBtn.setTitle("下一步", forState: UIControlState.Normal)
     nextBtn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     nextBtn.backgroundColor = UIColor.clearColor()
-    nextBtn.addTarget(self, action: #selector(nextBtnTap(_:)), forControlEvents: .TouchUpInside)
+    nextBtn.addTarget(self, action: #selector(self.nextBtnTap(_:)), forControlEvents: .TouchUpInside)
     let nextItem:UIBarButtonItem = UIBarButtonItem(customView: nextBtn)
     nextItem.enabled = true
     
@@ -49,7 +49,7 @@ class DGCPhotoPreviewVC: UIViewController {
   }
   
   //MARK:**************** action *****************
-  func nextBtnTap(sender:UIButton) {
+  @objc private func nextBtnTap(sender:UIButton) {
     
     DGCMBProgressHUD.showHUDAddedTo(UIApplication.sharedApplication().keyWindow, animated: true, type: 0, block: nil)
     

@@ -65,3 +65,49 @@ extension AVCaptureVideoOrientation {
     }
   }
 }
+
+
+extension NSIndexSet{
+  
+  func aapl_indexPathsFromIndexesWithSection(section:Int) -> NSArray? {
+
+    let indexPaths:NSMutableArray? = NSMutableArray(capacity: self.count)
+    self.enumerateIndexesUsingBlock { (idx:Int, stop:UnsafeMutablePointer<ObjCBool>) in
+      indexPaths!.addObject(NSIndexPath(forItem: idx, inSection: section))
+    }
+    return indexPaths
+  }
+}
+
+
+
+extension UICollectionView{
+
+  func aapl_indexPathsForElementsInRect(rect:CGRect) -> NSArray? {
+    
+    let allLayoutAttributes:[UICollectionViewLayoutAttributes]? = self.collectionViewLayout.layoutAttributesForElementsInRect(rect)
+    if allLayoutAttributes == nil && allLayoutAttributes!.count == 0 {
+      return nil
+    }
+    
+    let indexPaths:NSMutableArray = NSMutableArray(capacity: allLayoutAttributes!.count)
+    for layoutAttributes:UICollectionViewLayoutAttributes in allLayoutAttributes! {
+      let indexPath:NSIndexPath = layoutAttributes.indexPath
+      indexPaths.addObject(indexPath)
+    }
+    
+    return indexPaths
+  }
+  
+
+}
+
+
+
+
+
+
+
+
+
+
