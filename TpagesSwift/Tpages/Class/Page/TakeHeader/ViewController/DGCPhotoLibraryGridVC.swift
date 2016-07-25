@@ -43,7 +43,7 @@ class DGCPhotoLibraryGridVC: UIViewController,UICollectionViewDataSource,UIColle
   //MARK:********************** method **********************
   //MARK:- < custom init >
   private func customInitUnit(){
-    self.imageManager! = PHCachingImageManager()
+    self.imageManager = PHCachingImageManager()
     self.resetCachedAssets()
   }
   
@@ -51,7 +51,7 @@ class DGCPhotoLibraryGridVC: UIViewController,UICollectionViewDataSource,UIColle
   
     //navi
     let titleLabel:UILabel = UILabel(frame: CGRectMake(0,0,100,44))
-    if self.assetCollection != nil {
+    if self.assetCollection == nil {
       titleLabel.text = "全部"
     }else{
       titleLabel.text = self.assetCollection?.localizedTitle
@@ -123,8 +123,8 @@ class DGCPhotoLibraryGridVC: UIViewController,UICollectionViewDataSource,UIColle
       })
       
       // Update the assets the PHCachingImageManager is caching.更新缓存
-      let assetsToStartCaching:NSArray = self.assetsAtIndexPaths(addedIndexPaths)!
-      let assetsToStopCaching:NSArray = self.assetsAtIndexPaths(removedIndexPaths)!
+      let assetsToStartCaching:NSArray = self.assetsAtIndexPaths(addedIndexPaths)
+      let assetsToStopCaching:NSArray = self.assetsAtIndexPaths(removedIndexPaths)
       
       self.imageManager?.startCachingImagesForAssets(assetsToStartCaching as! [PHAsset], targetSize: self.assetGridThumbnailSize!, contentMode: .AspectFill, options: nil)
       self.imageManager?.stopCachingImagesForAssets(assetsToStopCaching as! [PHAsset], targetSize: self.assetGridThumbnailSize!, contentMode: .AspectFill, options: nil)
@@ -173,10 +173,10 @@ class DGCPhotoLibraryGridVC: UIViewController,UICollectionViewDataSource,UIColle
   }
   
 
-  private func assetsAtIndexPaths(indexPaths:NSArray)->NSArray?{
+  private func assetsAtIndexPaths(indexPaths:NSArray)->NSArray{
     
     if indexPaths.count == 0 {
-      return nil
+      return NSArray()
     }
     
     let assets:NSMutableArray = NSMutableArray(capacity: indexPaths.count)

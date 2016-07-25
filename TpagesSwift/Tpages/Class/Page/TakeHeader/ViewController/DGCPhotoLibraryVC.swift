@@ -95,29 +95,37 @@ class DGCPhotoLibraryVC: UIViewController,UITableViewDataSource,UITableViewDeleg
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    var cell:UITableViewCell = UITableViewCell()
     switch indexPath.section {
     case 0:
-      if tableView.dequeueReusableCellWithIdentifier(AllPhotosReuseIdentifier) == nil {
+      var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(AllPhotosReuseIdentifier)
+      if cell == nil {
         cell = UITableViewCell(style: .Value1, reuseIdentifier: AllPhotosReuseIdentifier)
       }
-      cell.textLabel?.text = "全部"
+
+      cell!.textLabel?.text = "全部"
       
       let fetchResult = self.sectionFetchResults![indexPath.section]
-      cell.detailTextLabel?.text = "\(fetchResult.count)"
+      cell!.detailTextLabel?.text = "\(fetchResult.count)"
+      
+      return cell!
     case 1,2:
-      if tableView.dequeueReusableCellWithIdentifier(CollectionCellReuseIdentifier) == nil {
+      
+      var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(CollectionCellReuseIdentifier)
+      if cell == nil {
         cell = UITableViewCell(style: .Value1, reuseIdentifier: CollectionCellReuseIdentifier)
       }
+
       let fetchResult:PHFetchResult = self.sectionFetchResults![indexPath.section] as! PHFetchResult
       let assetCollection:PHAssetCollection = fetchResult[indexPath.row] as! PHAssetCollection
       let assetsFetchResult = PHAsset.fetchAssetsInAssetCollection(assetCollection, options: nil)
-      cell.textLabel?.text = assetCollection.localizedTitle
-      cell.detailTextLabel?.text = "\(assetsFetchResult.count)"
+      cell!.textLabel?.text = assetCollection.localizedTitle
+      cell!.detailTextLabel?.text = "\(assetsFetchResult.count)"
+      return cell!
     default:
       break
     }
-    return cell
+
+    return UITableViewCell()
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -130,13 +138,13 @@ class DGCPhotoLibraryVC: UIViewController,UITableViewDataSource,UITableViewDeleg
     let vc:DGCPhotoLibraryGridVC = DGCPhotoLibraryGridVC(nibName: "DGCPhotoLibraryGridVC", bundle: nil)
     vc.isTakeHeaderOrBanner = self.isTakeHeaderOrBanner
     
-    let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-    vc.title = cell.textLabel?.text
-    
-    let fetchResult:PHFetchResult = self.sectionFetchResults![indexPath.section] as! PHFetchResult
-    if indexPath.section == 0 {
+    //数据源
+    switch indexPath.section {
+    case 0:
+      let fetchResult:PHFetchResult = self.sectionFetchResults![indexPath.section] as! PHFetchResult
       vc.assetsFetchResults = fetchResult
-    }else{
+    case 1,2:
+      let fetchResult:PHFetchResult = self.sectionFetchResults![indexPath.section] as! PHFetchResult
       let collection = fetchResult[indexPath.row]
       if !(collection is PHAssetCollection) {
         return
@@ -145,7 +153,8 @@ class DGCPhotoLibraryVC: UIViewController,UITableViewDataSource,UITableViewDeleg
         vc.assetCollection = collection as? PHAssetCollection
         vc.assetsFetchResults = assetsFetchResult
       }
-      
+    default:
+      break
     }
     
     self.navigationController?.pushViewController(vc, animated: true)

@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //view set
     window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
-    window?.backgroundColor = UIColor.orangeColor()
+    window?.backgroundColor = UIColor.whiteColor()
     let mainVC:DGCMainViewController = DGCMainViewController()
     window?.rootViewController = mainVC;
     window?.makeKeyAndVisible()
