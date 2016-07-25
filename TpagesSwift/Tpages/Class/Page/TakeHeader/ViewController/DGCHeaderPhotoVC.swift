@@ -17,9 +17,8 @@ enum DGCTakePhotoStateType {
 class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
 
   //publish
-  let rootVC:UIViewController? = nil
   var type:DGCTakePhotoStateType? = nil
-  let isTakeHeaderOrBanner:Bool? = false//yes - 头像 no - 背景
+  var isTakeHeaderOrBanner:Bool? = false//yes - 头像 no - 背景
   
   //Carema
   private var sessionQueue:dispatch_queue_t? = nil
@@ -27,7 +26,7 @@ class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
   private var videoDeviceInput:AVCaptureDeviceInput? = nil//input
   private var stillImageOutput:AVCaptureStillImageOutput? = nil//图像output
   private var currentFlashMode:AVCaptureFlashMode? = nil//闪光灯模式
-  private let previewLayer:AVCaptureVideoPreviewLayer? = nil//预览层
+  private var previewLayer:AVCaptureVideoPreviewLayer? = nil//预览层
 
   
   //Utilities.
@@ -61,16 +60,19 @@ class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.type = DGCTakePhotoStateType.Stop
-    self.navigationController?.setNavigationBarHidden(false, animated:false)
-    self.rdv_tabBarController.setTabBarHidden(true, animated: true)
-    
-    self.customInitUI()
+
   }
   
   override func viewDidAppear(animated: Bool) {
     dlog("拍照页面 viewDidAppear type \(self.type)");
     super.viewDidAppear(animated)
+    
+    self.type = DGCTakePhotoStateType.Stop
+    self.navigationController?.setNavigationBarHidden(false, animated:false)
+    self.rdv_tabBarController.setTabBarHidden(true, animated: true)
+    
+    self.customInitUI()
+    
     self.showActionSheet()
   }
   
@@ -88,7 +90,7 @@ class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
     
     self.deleteBtn.hidden = true;
     self.stillButton.enabled = true;
-   
+    
     super.viewWillDisappear(animated)
   }
   
@@ -158,10 +160,12 @@ class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
     
     AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo) { (granted:Bool) in
       if granted == true{
+        dlog("已经允许使用照相机")
         self.deviceAutorized = true
       }else{
-        dispatch_async(dispatch_get_main_queue(), { 
-          let ac = UIAlertController(title: nil, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        dispatch_async(dispatch_get_main_queue(), {
+          dlog("请求允许使用相机")
+          let ac = UIAlertController(title: nil, message: "TPAGES未被授权使用相机功能，请先授权。", preferredStyle: UIAlertControllerStyle.Alert)
           let aa = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) in
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
           })
@@ -277,24 +281,23 @@ class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
     
     //init
     self.currentFlashMode = AVCaptureFlashMode.Auto
-    self.nextBtn.setTitle("下一步", forState: UIControlState.Normal)
     self.nextBtn.enabled = false
     self.session = AVCaptureSession()
 
     //设置预览图层
     let previewView:UIView = UIView(frame: self.previewBgView.bounds)
+    previewView.layer.masksToBounds = true
+    let tapGR:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(focusAndExposeTap(_:)))
+    previewView.addGestureRecognizer(tapGR)
     self.previewBgView.addSubview(previewView)
     self.previewView = previewView
-    
-    let tapGR:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(focusAndExposeTap(_:)))
-    self.previewView?.addGestureRecognizer(tapGR)
-    
-    let preiewLayer:AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session!)
-    let viewLayer:CALayer = self.previewView!.layer
-    viewLayer.masksToBounds = true
-    preiewLayer.frame = self.previewView!.bounds
-    preiewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-    viewLayer.insertSublayer(preiewLayer, above: viewLayer.sublayers![0])
+
+    let previewLayer:AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session!)
+    previewLayer.frame = previewView.bounds
+    previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+    previewView.layer.addSublayer(previewLayer)
+    self.previewLayer = previewLayer
+
     
     //请求用户使用相机
     self.checkDeviceAuthorizationStatus()
@@ -337,7 +340,7 @@ class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
     let ac:UIAlertController = UIAlertController(title: "请选择", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
     let aa:UIAlertAction = UIAlertAction(title: "拍照", style: UIAlertActionStyle.Default) { (action) in
       self.customInitCamera()
-      self.session?.stopRunning()
+      self.session?.startRunning()
     }
     let aa1:UIAlertAction = UIAlertAction(title: "相册", style: UIAlertActionStyle.Default) { (action) in
       self.type = DGCTakePhotoStateType.Alubm
@@ -548,6 +551,7 @@ class DGCHeaderPhotoVC: UIViewController,VPImageCropperDelegate {
       })
     }
   }
+  
   //MARK:闪光控制
   @IBAction private func changeFlashMode(sender: AnyObject) {
     

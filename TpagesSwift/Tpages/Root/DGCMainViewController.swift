@@ -159,7 +159,14 @@ class DGCMainViewController: UIViewController,RDVTabBarControllerDelegate {
     if tabBarController.selectedViewController.isEqual(viewController) {
       
       if tabBarController.selectedIndex == 2 {
-        return true
+        
+        let nvc:DGCBaseNavigationController = viewController as! DGCBaseNavigationController
+        let vc:DGCQRCodePageVC = nvc.visibleViewController as! DGCQRCodePageVC
+        
+        let hpvc:DGCHeaderPhotoVC = DGCHeaderPhotoVC(nibName: "DGCHeaderPhotoVC", bundle: nil)
+        hpvc.isTakeHeaderOrBanner = false
+        vc.navigationController?.pushViewController(hpvc, animated: true)
+        return false
       }
       
       dlog("点击了同一个tab \(tabBarController.selectedIndex)")

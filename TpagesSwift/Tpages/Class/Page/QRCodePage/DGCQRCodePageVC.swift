@@ -89,18 +89,16 @@ class DGCQRCodePageVC: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     
     //previewView
     let previewView = UIView(frame:bgView.bounds)
+    previewView.layer.masksToBounds = true
     self.bgView?.addSubview(previewView)
     self.previewView = previewView
 
     
     //previewLayer
-    let previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
-    previewLayer.frame = self.previewView!.bounds
+    let previewLayer:AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+    previewLayer.frame = previewView.bounds
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-    
-    let viewLayer:CALayer = self.previewView!.layer
-    viewLayer.masksToBounds = true
-    viewLayer.addSublayer(previewLayer)
+    previewView.layer.addSublayer(previewLayer)
     
     
     //overlayerView

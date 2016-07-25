@@ -441,10 +441,16 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   //MARK:- < 拍照 >
   func takeHeadPhoto() {
     
+    let hpvc:DGCHeaderPhotoVC = DGCHeaderPhotoVC(nibName: "DGCHeaderPhotoVC", bundle: nil)
+    hpvc.isTakeHeaderOrBanner = true
+    self.navigationController?.pushViewController(hpvc, animated: true)
   }
   
   func takeBanner() {
     
+    let hpvc:DGCHeaderPhotoVC = DGCHeaderPhotoVC(nibName: "DGCHeaderPhotoVC", bundle: nil)
+    hpvc.isTakeHeaderOrBanner = false
+    self.navigationController?.pushViewController(hpvc, animated: true)
   }
 
   //MARK:- ********************** callback **********************

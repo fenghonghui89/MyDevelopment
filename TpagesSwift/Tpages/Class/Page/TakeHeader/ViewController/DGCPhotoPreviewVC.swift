@@ -18,7 +18,7 @@ class DGCPhotoPreviewVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    self.customInitUI()
   }
   
   //MARK:**************** method *****************
@@ -37,6 +37,7 @@ class DGCPhotoPreviewVC: UIViewController {
     self.navigationItem.titleView = titleLabel
     
     let nextBtn:UIButton = UIButton(frame: CGRectMake(0,0,50,44))
+    nextBtn.titleLabel?.font = UIFont.systemFontOfSize(15)
     nextBtn.setTitle("下一步", forState: UIControlState.Normal)
     nextBtn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     nextBtn.backgroundColor = UIColor.clearColor()
