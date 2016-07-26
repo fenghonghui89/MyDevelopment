@@ -1,4 +1,25 @@
 
+## 开启Apache
+
+- 1.系统编好设置 - 共享 - 互联网共享 打开
+- 2.找到Apache藏身之处
+  - 命令行 open /etc 文件夹apache2就是Apache配置文件的存放目录
+  - cd /etc/apache2
+- 3.命令控制启动停止 sudo apachectl start/restart
+- 4.默认资源存放目录 /Library/WebServer/Documents/
+- 5.浏览器可以输入localhost或者127.0.0.1:端口号访问
+
+## 常用命令
+
+- apachectl configtest
+- 查看版本 httpd -v
+
+## 常用配置文件说明
+
+- httpd.conf
+  - DocumentRoot 默认资源存放目录
+  - Listen 默认端口
+
 ## 启动虚拟主机
 
 - 1.在终端运行“sudo vi /etc/apache2/httpd.conf”，打开Apche的配置文件

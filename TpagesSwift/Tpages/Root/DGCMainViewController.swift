@@ -160,12 +160,12 @@ class DGCMainViewController: UIViewController,RDVTabBarControllerDelegate {
       
       if tabBarController.selectedIndex == 2 {
         
-        let nvc:DGCBaseNavigationController = viewController as! DGCBaseNavigationController
-        let vc:DGCQRCodePageVC = nvc.visibleViewController as! DGCQRCodePageVC
-        
-        let hpvc:DGCHeaderPhotoVC = DGCHeaderPhotoVC(nibName: "DGCHeaderPhotoVC", bundle: nil)
-        hpvc.isTakeHeaderOrBanner = false
-        vc.navigationController?.pushViewController(hpvc, animated: true)
+//        let nvc:DGCBaseNavigationController = viewController as! DGCBaseNavigationController
+//        let vc:DGCQRCodePageVC = nvc.visibleViewController as! DGCQRCodePageVC
+//        
+//        let hpvc:DGCHeaderPhotoVC = DGCHeaderPhotoVC(nibName: "DGCHeaderPhotoVC", bundle: nil)
+//        hpvc.isTakeHeaderOrBanner = false
+//        vc.navigationController?.pushViewController(hpvc, animated: true)
         return false
       }
       
