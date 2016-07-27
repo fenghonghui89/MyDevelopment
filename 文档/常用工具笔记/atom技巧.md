@@ -13,6 +13,9 @@
 - Markdown TOC 方便给文章插入目录树
 - Markdown-Writer 方便写作，例如快速插入图片
 - Pretty JSON 格式化json内容
+- docblockr 方便写注释
+- block-comment 注释语句
+
 
 # snippet技巧
 
