@@ -1520,7 +1520,7 @@
 					"-ObjC",
 				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG -D MYFINISH";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BiliApp.Tpages.Tpages;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tpages.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tpages/Class/Inc/Tpages-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1558,7 +1558,7 @@
 					"-ObjC",
 				);
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BiliApp.Tpages.Tpages;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tpages.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tpages/Class/Inc/Tpages-Bridging-Header.h";
 			};

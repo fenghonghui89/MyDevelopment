@@ -25,15 +25,14 @@ let UMENG_QQ_URL:String = "http://tpages.cn/qqcb"
 
 //MARK:微信
 #if DEBUG
-let UMENG_WECHAT_APPID:String = "wx907b2964e73e9bb5"
-let UMENG_WECHAT_APPSECRET:String = "4462d23e308d86eca2bdde345999c9ee"
-let UMENG_WECHAT_URL:String = "http://tpages.cn"
-  
-#else
 let UMENG_WECHAT_APPID:String = "wxa9cec0d7b7d9d1f1"
 let UMENG_WECHAT_APPSECRET:String = "b2878be2a0922637868ff90f47351517"
+let UMENG_WECHAT_URL:String = "http://tpages.cn"
+#else
+let UMENG_WECHAT_APPID:String = "wx907b2964e73e9bb5"
+let UMENG_WECHAT_APPSECRET:String = "4462d23e308d86eca2bdde345999c9ee"
 let UMENG_WECHAT_URL:String = "http://tpages.cn"
 #endif
 
 //支付宝跳转用url scheme
-let ALIPAY_URL_SCHEME:String = "ALIPAY_URL_SCHEME_TPAGES"
+let ALIPAY_URL_SCHEME:String = "alipaybytpages"

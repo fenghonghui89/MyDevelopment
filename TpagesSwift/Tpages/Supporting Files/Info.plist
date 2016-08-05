@@ -60,7 +60,7 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>UrlSchemeTpagesMall</string>
+				<string>alipaybytpages</string>
 			</array>
 		</dict>
 	</array>

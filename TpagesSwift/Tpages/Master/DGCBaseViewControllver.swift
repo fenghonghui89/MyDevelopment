@@ -22,7 +22,6 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   
   private var homePageUrlString:String?
   private var currentRequestString:String?
-  private var oldRequestString:String?
   
   private var webView:UIWebView?
   
@@ -101,15 +100,12 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
     case .DGCPageTypeTpages:
       self.homePageUrlString = URL_TPAGES
       self.currentRequestString = URL_TPAGES
-      self.oldRequestString = URL_TPAGES
     case .DGCPageTypeMall:
       self.homePageUrlString = URL_TPAGES_MALL
       self.currentRequestString = URL_TPAGES_MALL
-      self.oldRequestString = URL_TPAGES_MALL
     case .DGCPageTypeUserCenter:
       self.homePageUrlString = URL_USER_CENTER_INTEGRAL
       self.currentRequestString = URL_USER_CENTER_INTEGRAL
-      self.oldRequestString = URL_USER_CENTER_INTEGRAL
     default:
       break
     }
@@ -193,7 +189,6 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       self.webView?.loadRequest(request)
     }else{
       self.currentRequestString = urlString
-      self.oldRequestString = urlString
     }
   }
   
@@ -205,13 +200,13 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
     return result!
   }
   
-  func dataToJsonString(object:AnyObject) -> NSString {
+  func dataToJsonString(object:AnyObject) -> String {
     
-    var jsonString:NSString = ""
+    var jsonString:String = ""
     
     do{
       let jsonData:NSData = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions.PrettyPrinted)
-      jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)!
+      jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)! as String
       return jsonString
     }catch {
       dlog("DataToJsonString error")
@@ -342,24 +337,27 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       
       //参数dic - json - utf8 - base64
       let newDic = NSMutableDictionary(dictionary: paramDic)
-      newDic.setObject(self.oldRequestString!, forKey: "referer")
-      let jsonStr:NSString = self.dataToJsonString(newDic)
-      let jsonStrBase64:NSString = ((jsonStr.dataUsingEncoding(NSUTF8StringEncoding))?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength))!
-      
-      //拼接请求并发送
-
-      let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
-      let url:NSURL = NSURL(string: urlStrBase64)!
-      let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
-      reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-      reuqest.HTTPMethod = "GET"
-      reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
-      self.webView?.loadRequest(reuqest)
-      
-      //log
+      newDic.setObject(self.currentRequestString!, forKey: "referer")
+      let jsonStr:String = self.dataToJsonString(newDic)
+      let jsonStrData = jsonStr.dataUsingEncoding(NSUTF8StringEncoding)
+      let jsonStrBase64:String = jsonStrData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.EncodingEndLineWithLineFeed)
       dlog("新浪微博用户信息jsonStr:\(jsonStr)")
       dlog("新浪微博用户信息jsonStrBase64:\(jsonStrBase64)")
-      dlog("新浪微博登录跳转urlStrBase64:\(urlStrBase64)")
+
+      //拼接请求并发送
+      let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
+      let url:NSURL? = NSURL(string: urlStrBase64)
+      if url != nil{
+        let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url!)
+        reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        reuqest.HTTPMethod = "GET"
+        reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
+        self.webView?.loadRequest(reuqest)
+        dlog("新浪微博登录跳转urlStrBase64:\(urlStrBase64)")
+      }else{
+        dlog("新浪微博登录失败：error url")
+      }
+
     }
   }
 
@@ -369,24 +367,27 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       
       //参数dic - json - utf8 - base64
       let newDic = NSMutableDictionary(dictionary: paramDic)
-      newDic.setObject(self.oldRequestString!, forKey: "referer")
-      let jsonStr:NSString = self.dataToJsonString(newDic)
-      let jsonStrBase64:NSString = ((jsonStr.dataUsingEncoding(NSUTF8StringEncoding))?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength))!
-      
-      //拼接请求并发送
-      
-      let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
-      let url:NSURL = NSURL(string: urlStrBase64)!
-      let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
-      reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-      reuqest.HTTPMethod = "GET"
-      reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
-      self.webView?.loadRequest(reuqest)
-      
-      //log
+      newDic.setObject(self.currentRequestString!, forKey: "referer")
+      let jsonStr:String = self.dataToJsonString(newDic)
+      let jsonStrData = jsonStr.dataUsingEncoding(NSUTF8StringEncoding)
+      let jsonStrBase64:String = jsonStrData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.EncodingEndLineWithLineFeed)
       dlog("QQ用户信息jsonStr:\(jsonStr)")
       dlog("QQ用户信息jsonStrBase64:\(jsonStrBase64)")
-      dlog("QQ登录跳转urlStrBase64:\(urlStrBase64)")
+      
+      //拼接请求并发送
+      let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
+      let url:NSURL? = NSURL(string: urlStrBase64)
+      if url != nil{
+        let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url!)
+        reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        reuqest.HTTPMethod = "GET"
+        reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
+        self.webView?.loadRequest(reuqest)
+        dlog("QQ登录跳转urlStrBase64:\(urlStrBase64)")
+      }else{
+        dlog("QQ登录失败：error url")
+      }
+
     }
   }
   
@@ -396,23 +397,28 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       
       //参数dic - json - utf8 - base64
       let newDic = NSMutableDictionary(dictionary: paramDic)
-      newDic.setObject(self.oldRequestString!, forKey: "referer")
-      let jsonStr:NSString = self.dataToJsonString(newDic)
-      let jsonStrBase64:NSString = ((jsonStr.dataUsingEncoding(NSUTF8StringEncoding))?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength))!
+      newDic.setObject(self.currentRequestString!, forKey: "referer")
+      let jsonStr:String = self.dataToJsonString(newDic)
+      let jsonStrData = jsonStr.dataUsingEncoding(NSUTF8StringEncoding)
+      let jsonStrBase64:String = jsonStrData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.EncodingEndLineWithLineFeed)
+      dlog("微信用户信息jsonStr:\(jsonStr)")
+      dlog("微信用户信息jsonStrBase64:\(jsonStrBase64)")
       
       //拼接请求并发送
       let urlStrBase64:String = URL_Third_Login.stringByAppendingString(jsonStrBase64 as String)
-      let url:NSURL = NSURL(string: urlStrBase64)!
-      let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
-      reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-      reuqest.HTTPMethod = "GET"
-      reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
-      self.webView?.loadRequest(reuqest)
+      dlog("微信urlbaset64str:\(urlStrBase64)")
+      let url:NSURL? = NSURL(string: urlStrBase64)
+      if url != nil{
+        let reuqest:NSMutableURLRequest = NSMutableURLRequest(URL: url!)
+        reuqest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        reuqest.HTTPMethod = "GET"
+        reuqest.setValue("application/json", forHTTPHeaderField: "Accept")
+        self.webView?.loadRequest(reuqest)
+        dlog("微信登录跳转urlStrBase64:\(urlStrBase64)")
+      }else{
+        dlog("微信登录失败：error url")
+      }
       
-      //log
-      dlog("微信用户信息jsonStr:\(jsonStr)")
-      dlog("微信用户信息jsonStrBase64:\(jsonStrBase64)")
-      dlog("微信登录跳转urlStrBase64:\(urlStrBase64)")
     }
   }
   
@@ -473,7 +479,10 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   
   func webViewDidFinishLoad(webView: UIWebView) {
     
-    dlog("webViewDidFinishLoad \(self.dynamicType)")
+    //log
+    self.currentRequestString = webView.request!.URL?.absoluteString
+    dlog("webViewDidFinishLoad \(self.dynamicType) 当前页面：\(self.currentRequestString)")
+    
     
     //ui
     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -602,9 +611,9 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       if (params!.count != 0) {
         dlog("自己加参数的注销，不处理");
       }else{
-        dlog("默认注销，添加referer再重新请求");
+        dlog("默认注销，添加referer再重新请求 当前页面：\(self.currentRequestString)");
         
-        let encodeRefererString = self.oldRequestString?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLPathAllowedCharacterSet())
+        let encodeRefererString = self.currentRequestString?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLPathAllowedCharacterSet())
         let signOutString = URL_TPAGES.stringByAppendingString("/sign/out?referer=\(encodeRefererString)")
         let request = NSURLRequest(URL: NSURL(string: signOutString)!)
         self.webView?.loadRequest(request)
@@ -612,10 +621,6 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
       }
     }
     
-    //记录上一个页面 当前页面 这个逻辑要放到最后 因为return no的情况下不能记录
-    let oldUrlStr = self.currentRequestString
-    self.currentRequestString = requestStr
-    self.oldRequestString = oldUrlStr
     
     return true;
 
