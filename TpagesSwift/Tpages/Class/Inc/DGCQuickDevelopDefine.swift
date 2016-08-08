@@ -23,13 +23,13 @@ func dlog(message:String = "",file:String = #file,function:String = #function,li
     #if DEBUG
       print("[\(fileName) \(function) \(lineNum)] \(message)")
     #else
-      
+      print("[\(fileName) \(function) \(lineNum)] \(message)")
     #endif
   }else{
     #if DEBUG
       print("[\(file) \(function) \(lineNum)] \(message)")
     #else
-      
+      print("[\(file) \(function) \(lineNum)] \(message)")
     #endif
   }
 }

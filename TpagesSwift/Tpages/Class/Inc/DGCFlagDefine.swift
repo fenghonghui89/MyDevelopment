@@ -55,7 +55,7 @@ let HOST_MALL_DEV:String = "mall.tpages.cn"
 #if DEBUG
 let HOST_MALL = "mall.dev.123go.net.cn"
 #else
-let HOST_Mall = "mall.tpages.cn"
+let HOST_MALL = "mall.tpages.cn"
 #endif
 
 

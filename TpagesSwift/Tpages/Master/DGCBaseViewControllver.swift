@@ -280,7 +280,7 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
   }
   
   func WXPay(dic:NSDictionary)  {
-    
+
     if DGCPayManager.sharedInstance.isWXAppInstalled() == false{
       let ac = DGCAlertController.alertControlller("进入兑换流程失败", message: "没有安装微信客户端，请先安装。", type: DGCAlertType.DGCAlertTypeJustConfirm, block: nil)
       self.presentViewController(ac, animated: true, completion: nil)
@@ -608,13 +608,13 @@ class DGCBaseViewController: UIViewController,UIWebViewDelegate,UIScrollViewDele
     
     //logout
     if relativePath == "/sign/out"{
-      if (params!.count != 0) {
+      if (params != nil && params?.count != 0) {
         dlog("自己加参数的注销，不处理");
       }else{
         dlog("默认注销，添加referer再重新请求 当前页面：\(self.currentRequestString)");
         
         let encodeRefererString = self.currentRequestString?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLPathAllowedCharacterSet())
-        let signOutString = URL_TPAGES.stringByAppendingString("/sign/out?referer=\(encodeRefererString)")
+        let signOutString = URL_TPAGES.stringByAppendingString("/sign/out?referer=\(encodeRefererString!)")
         let request = NSURLRequest(URL: NSURL(string: signOutString)!)
         self.webView?.loadRequest(request)
         return false

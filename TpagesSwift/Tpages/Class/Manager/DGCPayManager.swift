@@ -64,13 +64,13 @@ class DGCPayManager: NSObject,WXApiDelegate {
     
     self.dic = dic
     let req = PayReq()
-    req.partnerId = dic.objectForKey("partnerId") as! String
+    req.partnerId = dic.objectForKey("partnerid") as! String
     req.prepayId = dic.objectForKey("prepayid") as! String
     req.nonceStr = dic.objectForKey("noncestr") as! String
-    req.timeStamp = UInt32(dic.objectForKey("timestamp") as! String)!
+    let timeStamp:NSNumber = dic.objectForKey("timestamp") as! NSNumber
+    req.timeStamp = timeStamp.unsignedIntValue
     req.package = "Sign=WXPay"
     req.sign = dic.objectForKey("sign") as! String
-    
     WXApi.sendReq(req)
   }
   
@@ -115,7 +115,7 @@ class DGCPayManager: NSObject,WXApiDelegate {
   //MARK:- callback
   func onResp(resp: BaseResp!) {
     
-    if resp.isKindOfClass(PayReq) {
+    if resp.isKindOfClass(PayResp) {
       switch resp.errCode {
       case WXSuccess.rawValue:
         dlog("微信支付成功 retcode:\(resp.errCode)")
