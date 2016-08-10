@@ -149,6 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
     dlog("远程推送 - didReceiveRemoteNotification")
+    DGCPushManager.sharedInstance.didReceiveRemoteNotification(userInfo)
   }
   
   func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

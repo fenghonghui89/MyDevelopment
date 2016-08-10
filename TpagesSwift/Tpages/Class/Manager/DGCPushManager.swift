@@ -138,7 +138,8 @@ class DGCPushManager: NSObject {
     
     //解析推送
     let tabString = userInfo.objectForKey("tab") as? String
-    let urlString = userInfo.objectForKey("url") as? String
+    var urlString = userInfo.objectForKey("url") as? String
+    urlString = urlString?.lowercaseString
     let content = userInfo.objectForKey("aps")?.objectForKey("alert") as? String
     dlog("解析推送 userinfo:\(userInfo)")
     dlog("解析推送 content:\(content) url:\(urlString) tag:\(tabString)")
@@ -216,7 +217,7 @@ class DGCPushManager: NSObject {
   func handleRemoteNotification(userInfo:NSDictionary,tabIndex:Int,pageType:DGCPageType) {
     
     //解析userinfo
-    let title = "您收到一天新消息"//无法读取到标题，所以要自定义
+    let title = "您收到一条新消息"//无法读取到标题，所以要自定义
     let content = userInfo.objectForKey("aps")?.objectForKey("alert") as! String//内容一定会有
     let urlString = userInfo.objectForKey("url")
     

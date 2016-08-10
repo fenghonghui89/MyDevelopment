@@ -64,7 +64,7 @@ class DGCShareManager:NSObject,UMSocialUIDelegate {
     UMSocialQQHandler.setQQWithAppId(UMENG_QQ_APPID, appKey: UMENG_QQ_APPKEY, url: urlString)
     
     //sheetview形式
-    UMSocialSnsService.presentSnsController(viewController,
+    UMSocialSnsService.presentSnsIconSheetView(viewController,
                                             appKey: UMENG_APPKEY,
                                             shareText: shareText,
                                             shareImage: nil,
