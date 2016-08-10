@@ -1,17 +1,45 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 
-<head>
-    <title>Free Test</title>
-</head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <body>
+<h1>W3School.com.cn Internal Note</h1>
+<p>
+    <b>To:</b> <span id="to"></span><br />
+    <b>From:</b> <span id="from"></span><br />
+    <b>Message:</b> <span id="message"></span>
+</p>
 
-<h1 align="center">Free Test</h1>
+<script>
 
-<b>This text is bold</b>
-<i>This text is italic</i>
+    txt="<note>";
+    txt=txt+"<to>George</to>";
+    txt=txt+"<from>John</from>";
+    txt=txt+"<heading>Reminder</heading>";
+    txt=txt+"<body>Don't forget the meeting!</body>";
+    txt=txt+"</note>";
+
+    if (window.DOMParser)
+    {
+        parser=new DOMParser();
+        xmlDoc=parser.parseFromString(txt,"text/xml");
+    }
+    else // Internet Explorer
+    {
+        xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+        xmlDoc.async="false";
+        xmlDoc.loadXML(txt);
+    }
+
+    document.getElementById("to").innerHTML=xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+    document.getElementById("from").innerHTML=xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+    document.getElementById("message").innerHTML=xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+</script>
 
 </body>
+
+
 </html>
