@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+    <title>xml - http request</title>
+
+    <h1 align="center">根</h1>
+    下面是链接<br/><br/>
+    <a href="Basic/FreeTest.html">Free Test</a><br/>
+    <a href="Basic/Title.html">标题</a><br/>
+    <a href="Basic/Section.html">段落</a><br/>
+    <a href="Basic/Link.html">链接 - 跳转到链接页</a><br/>
+    <a href="Basic/Link.html#tips">链接 - 链接到某个页面某个id</a><br/>
+    <a href="Basic/Image/Image.html">图像</a><br/>
+    <a href="Basic/Format.html">格式化</a><br/>
+    <a href="Basic/Style/Style.html">样式 - 内部样式表</a><br/>
+    <a href="Basic/Style/Style1.html">样式 - 内联样式</a><br/>
+    <a href="Basic/Table.html">表格</a><br/>
+    <a href="Basic/List.html">列表</a><br/>
+    <a href="Basic/Layout.html">布局</a><br/>
+    <a href="Basic/Form/Form.html">表单</a><br/>
+    <a href="Basic/Frame/Frame.html">框架</a><br/>
+    <a href="Basic/Background.html">背景</a><br/>
+</head>
+
+<body>
+
+
+    <div id="showCD">点击某个CD就可以显示专辑信息</div><br />
+
+    <script type="text/javascript">
+        document.write("<table border='1'>");
+        for (var i=0;i<x.length;i++) {
+            document.write("<tr onclick='displayCDInfo(" + i + ")'>");
+            document.write("<td>");
+            document.write(x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+            document.write("</td></tr>");
+        }
+        document.write("</table>");
+    </script>
+
+</body>
+</html>
