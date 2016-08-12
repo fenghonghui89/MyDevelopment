@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 - Media</title>
+</head>
+
+<style type="text/css">
+    div#container{margin-top: 50px;margin-left: 10px;margin-right: 10px;height: 200px;background-color: #99bbbb}
+    div#subhe{margin-top: 0px;margin-left: 0px;margin-right: 0px;height: 100px;background-color: red;float: none}
+    div#subli{width: 100px;height: 100px;background-color: green;float: left}
+    div#subco{margin-left: 50px;width: 100px;height: 100px;background-color: blue;float: left}
+    h1{text-align: center;color: #ffff99}
+    ul{text-align: center;color: aqua}
+    p{text-align: center;color: aquamarine}
+</style>
+<body>
+
+<div id="container">
+    <div id="subhe">
+        <h1>header</h1>
+    </div>
+
+    <div id="subli">
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </div>
+
+    <div id="subco">
+        <p>content</p>
+    </div>
+</div>
+<br />
+
+<!--视频-->
+<div style="text-align:center;">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="makeBig()">大</button>
+    <button onclick="makeNormal()">中</button>
+    <button onclick="makeSmall()">小</button>
+    <br />
+    <video id="video1" width="420" style="margin-top:15px;" controls="controls">
+        <source src="testmv.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+<br />
+
+<!--音频-->
+<audio controls="controls">
+    <source src="testmp3.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<script type="text/javascript">
+    var myVideo=document.getElementById("video1");
+
+    function playPause()
+    {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function makeBig()
+    {
+        myVideo.width=560;
+    }
+
+    function makeSmall()
+    {
+        myVideo.width=320;
+    }
+
+    function makeNormal()
+    {
+        myVideo.width=420;
+    }
+</script>
+
+
+</body>
+</html>
