@@ -2,11 +2,470 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Root HTML</title>
+    <title>HTML演示页面</title>
 </head>
+
+<!--分类标题用-->
+<style type="text/css">
+    h1.HeaderTitle {color: red;font-family: "Al Bayan";font-size:xx-large;text-decoration: underline;text-decoration-color: black;text-align: center}
+</style>
+
+<!--多媒体分类用-->
+<style type="text/css">
+    div#container{margin-top: 50px;margin-left: 10px;margin-right: 10px;height: 200px;background-color: #99bbbb}
+    div#subhe{margin-top: 0px;margin-left: 0px;margin-right: 0px;height: 100px;background-color: red;float: none}
+    div#subli{width: 100px;height: 100px;background-color: green;float: left}
+    div#subco{margin-left: 50px;width: 100px;height: 100px;background-color: blue;float: left}
+</style>
+
+<!--div布局分类用-->
+<style type="text/css">
+    div#container_div{width:500px;height: 1000px;background-color: red}
+    div#header {height: 100px;background-color:#99bbbb;}
+    div#menu {background-color:#ffff99; height:200px; width:100px; float:left;}
+    div#content {background-color:#EEEEEE; height:200px; width:400px; float:left;}
+    div#footer {background-color:#99bbbb; clear:both; text-align:center;}
+    h1 {margin-bottom:0;}
+    h2 {margin-bottom:0; font-size:14px;}
+    ul {margin:0;}
+    li {list-style:none;}
+</style>
 <body>
 
-<a href="HTML4/Root_HTML4.html">html4</a><br />
-<a href="HTML5/Root_HTML5.html">html5</a><br />
+<!------------------------------------------------------------------标题------------------------------------------------------------------>
+<h1 class="HeaderTitle">标题</h1><hr />
+<h1 align="center">This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+<br /><br /><br />
+
+
+
+
+
+<!------------------------------------------------------------------链接------------------------------------------------------------------>
+<h1 class="HeaderTitle">链接</h1><hr />
+
+<!--target属性指定打开链接的位置 _blank 在新窗口 _self 在当前窗口-->
+<a href="http://www.w3school.com.cn" target="_blank">This is a link</a><br />
+
+<p>这是一个带图像链接</p>
+<a href="http://tpages.cn">
+    <img src="http://o9ivu69va.bkt.clouddn.com/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.png" width="104" height="142" />
+</a><br />
+
+<!--
+name/id属性创建书签
+可以在当前页面或者其他页面创建指向该name/id的链接
+Basic.html有指向该页面的链接
+-->
+<a href="#tips">tips</a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<a id="tips">tpages</a><br />
+
+<!--邮件链接 应该使用 %20 来替换单词之间的空格，这样浏览器就可以正确地显示文本了。-->
+<a href="mailto:someone@microsoft.com?cc=someoneelse@microsoft.com&bcc=andsomeoneelse2@microsoft.com&subject=Summer%20Party&body=You%20are%20invited%20to%20a%20big%20summer%20party!">发送邮件！</a>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------表格------------------------------------------------------------------>
+<h1 class="HeaderTitle">表格</h1><hr />
+<!--表头可以水平也可以垂直-->
+<table border="10">
+    <tr>
+        <th>&nbsp;</th><!--空格占位符-->
+        <th>表头</th>
+        <th>表头1</th>
+        <th>表头2</th>
+    </tr>
+    <tr>
+        <th>行1</th>
+        <td align="center">11</td>
+        <td bgcolor="#ffe4c4" align="center">12</td>
+        <td align="center">13</td>
+    </tr>
+    <tr>
+        <th>行2</th>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <th>行3</th>
+        <td>31</td>
+        <td>32</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<br/>
+
+<!--横跨两行或者两列的表头-->
+<table border="1" cellpadding="5" cellspacing="5" bgcolor="#7fffd4">
+    <tr>
+        <th>&nbsp;</th>
+        <th colspan="2">h1</th>
+        <th>h2</th>
+    </tr>
+    <tr>
+        <th>c1</th>
+        <td>d1-1-1</td>
+        <td>d1-1-2</td>
+        <td>d1-2</td>
+    </tr>
+    <tr>
+        <th rowspan="2">c2</th>
+        <td>d2-1-1</td>
+        <td>d2-1-2</td>
+        <td>d2-2</td>
+    </tr>
+    <tr>
+        <td>d3-1-1</td>
+        <td>d3-1-2</td>
+        <td>d3-2</td>
+    </tr>
+</table>
+<br/>
+
+
+
+
+<!--frame属性-->
+<table frame="below">
+    <tr>
+        <th>h1</th>
+        <th>h2</th>
+    </tr>
+    <tr>
+        <td>d1</td>
+        <td>d2</td>
+    </tr>
+</table>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------列表------------------------------------------------------------------>
+<h1 class="HeaderTitle">列表</h1><hr />
+<!--无极列表-->
+<ul type="circle">
+    <li>苹果</li>
+    <li>香蕉</li>
+    <li>菠萝</li>
+</ul>
+
+
+<!--分级列表-->
+<ol type="A">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ol>
+
+
+<!--自定义列表-->
+<dl>
+    <dt>计算机</dt>
+    <dd>用来计算的仪器 ... ...</dd>
+    <dt>显示器</dt>
+    <dd>以视觉方式显示信息的装置 ... ...</dd>
+</dl>
+
+<!--嵌套列表-->
+<ul type="disc">
+    <li>苹果</li>
+    <li>香蕉</li>
+    <li>菠萝
+        <ul>
+            <li>大菠萝</li>
+            <li>小菠萝</li>
+        </ul>
+    </li>
+</ul>
+
+<!--下拉列表-->
+<select>
+    <option value="1">1</option>
+    <option value="2" selected="selected">2</option>
+    <option value="3">3</option>
+</select>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------图像------------------------------------------------------------------>
+<h1 class="HeaderTitle">图像</h1><hr />
+<!--
+远程与本地图像
+alt 没有图片时的提示
+align 排列方式 bottom为默认
+width height 尺寸
+-->
+<img src="http://o9ivu69va.bkt.clouddn.com/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.png" width="104" height="142" alt="无这张图"/><br/>
+
+<p>
+    文字文字<img src="src/111111.jpg" alt="无这张图1" align="middle"/>文字文字
+</p>
+<br/>
+
+<!--
+把图像转换为图像映射
+-->
+<a href="http://www.baidu.com">
+    <img src="src/111111.jpg" ismap/>
+</a>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------格式化与引用------------------------------------------------------------------>
+<h1 class="HeaderTitle">格式化与引用</h1><hr />
+<!--文本格式化-->
+<p>
+    <sub>
+        <i>
+            strong文本格式化
+        </i>
+    </sub>
+</p>
+
+
+
+<!--预格式文本-->
+<pre>
+    这是   预格式文本  保留了空格
+</pre>
+
+
+<!--"计算机输出"标签-->
+<code>Computer code<br/></code>
+<kbd>Keyboard input<br/></kbd>
+<tt>Teletype text<br/></tt>
+<samp>Sample text<br/></samp>
+<var>Computer variable<br/></var>
+
+<!--地址-->
+<address>
+    Written by <a href="mailto:webmaster@example.com">Donald Duck</a>.<br>
+    Visit us at:<br>
+    Example.com<br>
+    Box 564, Disneyland<br>
+    USA<br>
+</address>
+<br />
+
+<!--abbr缩写-->
+<abbr title="etcetera">缩写abbr etc.<br/></abbr>
+<br />
+
+<!--dfn定义 建议用abbr-->
+<p>The<dfn><abbr title="World Health Organization">WHO</abbr></dfn>was founded in 1948.</p>
+
+<!--文字方向-->
+<bdo dir="rtl">
+    Here is some Hebrew text 文字方向
+</bdo>
+<br /><br />
+
+
+<!--块引用-->
+这是长的引用：
+<blockquote>这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。</blockquote>
+<br />
+
+这是短的引用：
+<q>这是短的引用。</q>
+
+<p>使用 blockquote 元素的话，浏览器会插入换行和外边距，而 q 元素不会有任何特殊的呈现。</p>
+
+<!--删除字 插入字-->
+<p>一打有 <del>二十</del> <ins>十二</ins> 件。</p>
+<p>大多数浏览器会改写为删除文本和下划线文本。</p>
+<p>一些老式的浏览器会把删除文本和下划线文本显示为普通文本。</p>
+
+<!--著作标题-->
+<p><cite>著作标题The Scream</cite> by Edward Munch. Painted in 1893.</p>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------多媒体------------------------------------------------------------------>
+<h1 class="HeaderTitle">多媒体</h1><hr />
+<div id="container">
+    <div id="subhe">
+        <h1>header</h1>
+    </div>
+
+    <div id="subli">
+        <ul>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    </div>
+
+    <div id="subco">
+        <p>content</p>
+    </div>
+</div>
+<br />
+
+<!--视频-->
+<div style="text-align:center;">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="makeBig()">大</button>
+    <button onclick="makeNormal()">中</button>
+    <button onclick="makeSmall()">小</button>
+    <br />
+    <video id="video1" width="420" style="margin-top:15px;" controls="controls">
+        <source src="src/testmv.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+<br />
+
+<!--音频-->
+<audio controls="controls">
+    <source src="src/testmp3.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<script type="text/javascript">
+    var myVideo=document.getElementById("video1");
+
+    function playPause()
+    {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function makeBig()
+    {
+        myVideo.width=560;
+    }
+
+    function makeSmall()
+    {
+        myVideo.width=320;
+    }
+
+    function makeNormal()
+    {
+        myVideo.width=420;
+    }
+</script>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------表单------------------------------------------------------------------>
+<h1 class="HeaderTitle">表单</h1><hr />
+<!--文本域-->
+<form>
+    FirstName:<input type="text" name="firstName" value="你的名称"/>
+    <br/>
+    Password:<input type="password" name="lastName" value="你的密码"/>
+</form>
+
+<!--单选框
+注意name要一样才能单选
+-->
+<form>
+    <input type="radio" name="sex" value="male" />male
+    <input type="radio" name="sex" value="female" />female
+</form>
+
+<!--复选框-->
+<form>
+    <input type="checkbox" name="car" />car
+    <input type="checkbox" name="bike" />bile
+</form>
+
+<!--动作属性 确认按钮-->
+<form action="Form1.html" method="get">
+    UserName:<input type="text" name="userName" /><input type="submit" value="提交" />
+</form>
+
+<!--多行文本域-->
+<textarea rows="10" cols="30">
+hahahahahahahahahhahahahah
+</textarea>
+
+<!--按钮-->
+<input type="button" value="Hello world!" />
+
+<!--带标题边框-->
+<fieldset>
+    <legend>健康信息</legend>
+    身高:<input type="text">
+    体重:<input type="text">
+</fieldset>
+
+<!--用表单发送电子邮件-->
+<form action="MAILTO:someone@w3school.com.cn" method="post" enctype="text/plain">
+    <h3>发邮件</h3><br />
+    姓名:<input type="text" name="name" value="name" size="20" />
+    电邮:<input type="text" name="mail" value="mail" size="20" />
+    内容<input type="text" name="comment" value="comment" size="20" />
+    <br/>
+    <input type="submit" value="发送" />
+    <input type="reset" value="重置" />
+</form>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------div布局------------------------------------------------------------------>
+<h1 class="HeaderTitle">div布局</h1><hr />
+<!--div 被包含的div的宽度会累加,当宽度和超过父div的宽度,会另起一行-->
+<div id="container_div">
+
+    <div id="header">
+        <h1>Main Title of Web Page</h1>
+    </div>
+
+    <div id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+
+    <div id="content">Content goes here</div>
+    <div id="footer">Copyright W3School.com.cn</div>
+</div>
 </body>
 </html>
