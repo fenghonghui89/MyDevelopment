@@ -1,0 +1,85 @@
+
+@charset "UTF-8";
+
+/*分类标题 子分类间隔线*/
+h1.HeaderTitle {color: red;font-family: "Al Bayan";font-size:xx-large;text-decoration: underline;text-decoration-color: black;text-align: center}
+hr.SectionHr {color: blueviolet;width: 400px;margin-left: 0px;border-style: dashed}
+hr.SubSectionHr {color: chartreuse;width: 200px;margin-left: 0px;border-style: dashed}
+
+
+
+/*1-7 块元素 内联元素 类 布局*/
+/*div布局*/
+#container_div{width:500px;height: 1000px;background-color: red}
+#header {height: 100px;background-color:#99bbbb;}
+#menu {background-color:#ffff99; height:200px; width:100px; float:left;}
+#content {background-color:#EEEEEE; height:200px; width:400px; float:left;}
+#footer {background-color:#99bbbb; clear:both; text-align:center;}
+h1 {margin-bottom:0;}
+h2 {margin-bottom:0; font-size:14px;}
+ul {margin:0;}
+li {list-style:none;}
+
+/*class*/
+div.cities {
+    background-color:black;
+    color:white;
+    margin:20px;
+    padding:20px;
+}
+
+/*html5语法布局*/
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+section {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+
+/*指定class的table及其子标签*/
+table.lamp {
+    width:100%;
+    border:1px solid #d4d4d4;
+}
+table.lamp th, td {
+    padding:10px;
+}
+table.lamp th {
+    width:40px;
+}
+
+/*3-1 HTML5 自定义标签*/
+myhero {
+    display: block;
+    background-color: chartreuse;
+    padding: 50px;
+    font-size: 14px;
+    width: 100px;
+    height: 100px;
+}
+
+/*多媒体*/
+#container{margin-top: 50px;margin-left: 10px;margin-right: 10px;height: 200px;background-color: #99bbbb}
+#subhe{margin-top: 0px;margin-left: 0px;margin-right: 0px;height: 100px;background-color: red;float: none}
+#subli{width: 100px;height: 100px;background-color: green;float: left}
+#subco{margin-left: 50px;width: 100px;height: 100px;background-color: blue;float: left}
