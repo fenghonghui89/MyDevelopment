@@ -5,9 +5,11 @@
     <title>HTML演示页面</title>
 </head>
 
-<!--分类标题-->
+<!--分类标题 子分类间隔线-->
 <style type="text/css">
     h1.HeaderTitle {color: red;font-family: "Al Bayan";font-size:xx-large;text-decoration: underline;text-decoration-color: black;text-align: center}
+    hr.SectionHr {color: blueviolet;width: 400px;margin-left: 0px;border-style: dashed}
+    hr.SubSectionHr {color: chartreuse;width: 200px;margin-left: 0px;border-style: dashed}
 </style>
 
 <!--1-7 div span 块元素 内联元素-->
@@ -95,7 +97,8 @@
 <a href="#root_layout">1-7 块元素 内联元素 类 布局</a><br />
 <a href="#root_framework">1-8 框架</a><br />
 <br />
-<a href="#root_form">2-1 表单form 表单元素input</a><br />
+<a href="#root_form">2-1 表单form</a><br />
+<a href="#root_formElement">2-2 各种表单元素</a><br />
 <br />
 <a href="#root_media">3-1 多媒体</a><br />
 
@@ -504,51 +507,26 @@ width height 尺寸
 
 
 
-<!------------------------------------------------------------------2-1 表单form 表单元素input------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="root_form">2-1 表单form 表单元素input</h1>
+<!------------------------------------------------------------------2-1 表单form------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_form">2-1 表单form</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<!--文本域-->
-<form>
-    FirstName:<input type="text" name="firstName" value="你的名称"/>
-    <br/>
-    Password:<input type="password" name="lastName" value="你的密码"/>
+<!-----------------form----------------->
+<!-----------------
+form / 最重要的表单元素input
+action - action 属性定义在提交表单时执行的动作。向服务器提交表单的通常做法是使用提交按钮。
+method - method 属性规定在提交表单时所用的 HTTP 方法（GET 或 POST）
+name - 如果要正确地被提交，每个输入字段必须设置一个 name 属性。
+当您使用 GET 时，表单数据在页面地址栏中是可见的：action_page.php?firstname=Mickey&lastname=Mouse
+----------------->
+<form action="Form1.html"
+      method="get"
+      accept-charset="utf-8"
+      enctype="application/x-www-form-urlencoded"
+>
+
 </form>
-
-<!--单选框
-注意name要一样才能单选
--->
-<form>
-    <input type="radio" name="sex" value="male" />male
-    <input type="radio" name="sex" value="female" />female
-</form>
-
-<!--复选框-->
-<form>
-    <input type="checkbox" name="car" />car
-    <input type="checkbox" name="bike" />bile
-</form>
-
-<!--动作属性 确认按钮-->
-<form action="Form1.html" method="get">
-    UserName:<input type="text" name="userName" /><input type="submit" value="提交" />
-</form>
-
-<!--多行文本域-->
-<textarea rows="10" cols="30">
-hahahahahahahahahhahahahah
-</textarea>
-
-<!--按钮-->
-<input type="button" value="Hello world!" />
-
-<!--带标题边框-->
-<fieldset>
-    <legend>健康信息</legend>
-    身高:<input type="text">
-    体重:<input type="text">
-</fieldset>
 
 <!--用表单发送电子邮件-->
 <form action="MAILTO:someone@w3school.com.cn" method="post" enctype="text/plain">
@@ -559,6 +537,108 @@ hahahahahahahahahhahahahah
     <br/>
     <input type="submit" value="发送" />
     <input type="reset" value="重置" />
+</form>
+<br /><br /><br />
+
+
+
+<!------------------------------------------------------------------2-2 表单form 各种表单元素------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_formElement">2-2 各种表单元素</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<!-----------------input----------------->
+<!--文本域 密码 提交按钮-->
+<form>
+    text/password/submit:<br />
+    FirstName:<input type="text" name="firstName" value="你的名称"/><br />
+    Password:<input type="password" name="lastName" value="你的密码"/><br />
+    <input type="submit" value="提交啦" />
+</form><hr class="SubSectionHr"/>
+
+<!--单选框 注意name要一样才能单选-->
+<form>
+    radio:
+    <input type="radio" name="sex" value="male" />male
+    <input type="radio" name="sex" value="female" />female
+</form><hr class="SubSectionHr"/>
+
+<!--复选框-->
+<form>
+    checkbox:
+    <input type="checkbox" name="car" />car
+    <input type="checkbox" name="bike" />bile
+</form><hr class="SubSectionHr"/>
+
+<!--按钮-->
+<form>
+    button:<input type="button" value="点击我!" onclick="alert('Hello~')"/>
+</form><hr class="SubSectionHr" />
+
+<!--other-->
+<form>
+    number:<input type="number" min="1" max="5" value="hhh" />
+</form>
+
+<form>
+    range:<input type="range" name="points" min="0" max="10" />
+</form>
+
+<form>
+    color:<input type="color" name="favcolor" />
+</form>
+
+<form>
+    Birthday (date and time):
+    <input type="datetime" name="bdaytime" />
+</form>
+
+<form>
+    Add your homepage:
+    <input type="url" name="homepage" />
+    <input type="submit" />
+</form>
+
+<form>
+    datalist:
+    <input id="myCar" list="cars" />
+    <datalist id="cars">
+        <option value="BMW">
+        <option value="Ford">
+        <option value="Volvo">
+    </datalist>
+</form><hr class="SubSectionHr" />
+
+
+
+
+
+<!-----------------select 下拉列表----------------->
+<form>
+    select下拉列表
+    <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat" selected>Fiat</option>
+        <option value="audi">Audi</option>
+    </select>
+    <input type="submit">
+</form><hr class="SectionHr"/>
+
+<!-----------------多行文本域----------------->
+<form>
+    <textarea rows="10" cols="30">
+textarea:hahahahahahahahahhahahahah
+    </textarea>
+</form><hr class="SectionHr"/>
+
+
+<!-----------------带标题边框----------------->
+<form>
+    <fieldset>
+        <legend>fieldset legend健康信息</legend>
+        身高:<input type="text" name="height" value="12">
+        体重:<input type="text" name="weight" value="13">
+    </fieldset>
 </form>
 <br /><br /><br />
 
