@@ -1,0 +1,158 @@
+/*CSS语法*/
+
+@charset "UTF-8";
+
+/*选择器的分组*/
+h1,h2,h3,h4,h5,h6 {
+    color: green;
+}
+
+
+
+
+
+
+/*
+继承
+body是最高级的元素
+*/
+body  {
+    font-family: Verdana, sans-serif;
+}
+
+td, ul, ol, ul, li, dl, dt, dd  {
+    font-family: Verdana, sans-serif;
+}
+
+p  {
+    font-family: Times, "Times New Roman", serif;
+}
+
+
+
+
+
+
+
+/*派生选择器*/
+/*针对列表的strong元素*/
+li strong {
+    font-style: italic;
+    font-weight: normal;
+}
+
+/*针对h2的strong元素*/
+strong {
+    color: red;
+}
+
+h2 {
+    color: red;
+}
+
+h2 strong {
+    color: blue;
+}
+
+
+
+
+
+
+
+/*id选择器*/
+#red {color:red;}
+#green {color:green;}
+
+
+/*某个id下的某些元素*/
+#sidebar p {
+    font-style: italic;
+    text-align: right;
+    margin-top: 0.5em;
+}
+
+#sidebar h2 {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+    text-align: right;
+}
+
+/*老版本ie用*/
+div#sidebar {
+    border: 1px dotted #000;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+/*类别选择器*/
+.center {text-align: center}
+
+/*class=fancy下的标签下的td元素*/
+.fancy td {
+    color: #f60;
+    background: #666;
+}
+
+/*class=fancy的td标签*/
+td.fancy {
+    color: #f60;
+    background: #666;
+}
+
+
+
+
+
+
+/*属性选择器*/
+[title]
+{
+    color:red;
+}
+
+/*title="W#School"*/
+[title=W3School]
+{
+    border:5px solid blue;
+}
+
+/*title="hello world" title="student hello" 适用于由空格分隔的属性值*/
+[title~=hello] { color:red; }
+
+/*p lang="en" p lang="en-us" 适用于由连字符分隔的属性值*/
+[lang|=en] { color:red; }
+
+/*其他*/
+[title^=hello] { color:red; }/*匹配属性值以指定值开头的每个元素*/
+[title$=hello] { color: red; }/*匹配属性值以指定值结尾的每个元素*/
+[title*=hello] { color: red; }/*匹配属性值中包含指定值的每个元素*/
+
+/*属性选择器在为不带有 class 或 id 的表单设置样式时特别有用*/
+input[type="text"]
+{
+    width:150px;
+    display:block;
+    margin-bottom:10px;
+    background-color:yellow;
+    font-family: Verdana, Arial;
+}
+
+input[type="button"]
+{
+    width:120px;
+    margin-left:35px;
+    display:block;
+    font-family: Verdana, Arial;
+}
+

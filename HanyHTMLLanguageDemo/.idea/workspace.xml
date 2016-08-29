@@ -22,58 +22,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Root_HTML.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Root_HTML.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Root_HTML.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59866965">
-              <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+            <state vertical-scroll-proportion="-8.222222">
+              <caret line="202" column="28" selection-start-line="202" selection-start-column="28" selection-end-line="202" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#th#0;n#tr#0;n#table#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#video#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#12;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Root_Frame.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/Frame/Root_Frame.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.333333">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo_see.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/php/demo_see.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demo_worker.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/js/demo_worker.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#42#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Root.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Root.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -81,8 +40,38 @@
       <file leaf-file-name="Root_Show_CSS.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Root_Show_CSS.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.074074">
-              <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+            <state vertical-scroll-proportion="3.5925925">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Root_CSS_Syntax.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSS/Root_CSS_Syntax.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-28.407408">
+              <caret line="155" column="32" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Root_CSS_Style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CSS/Root_CSS_Style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7868676">
+              <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Root_CSS.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSS/Root_CSS.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.0">
+              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -102,9 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Image.html" />
-        <option value="$PROJECT_DIR$/Link.html" />
-        <option value="$PROJECT_DIR$/Image/Image.html" />
         <option value="$PROJECT_DIR$/Table.html" />
         <option value="$PROJECT_DIR$/Layout.html" />
         <option value="$PROJECT_DIR$/Form.html" />
@@ -148,11 +134,14 @@
         <option value="$PROJECT_DIR$/XML/Root_XML.html" />
         <option value="$PROJECT_DIR$/Root.html" />
         <option value="$PROJECT_DIR$/HTML/Frame/Root_Frame.html" />
-        <option value="$PROJECT_DIR$/CSS/Root_CSS.html" />
-        <option value="$PROJECT_DIR$/HTML/Root_Show_CSS.css" />
         <option value="$PROJECT_DIR$/HTML/js/demo_worker.js" />
         <option value="$PROJECT_DIR$/HTML/php/demo_see.php" />
         <option value="$PROJECT_DIR$/HTML/Root_HTML.html" />
+        <option value="$PROJECT_DIR$/CSS/Root_CSS.css" />
+        <option value="$PROJECT_DIR$/HTML/Root_Show_CSS.css" />
+        <option value="$PROJECT_DIR$/CSS/Root_CSS_Syntax.css" />
+        <option value="$PROJECT_DIR$/CSS/Root_CSS.html" />
+        <option value="$PROJECT_DIR$/CSS/Root_CSS_Style.css" />
       </list>
     </option>
   </component>
@@ -229,20 +218,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="XML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HanyHTMLLanguageDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HanyHTMLLanguageDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="HTML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -285,10 +260,7 @@
       <recent name="$PROJECT_DIR$/HTML/HTML5/Media" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Root_HTML.html">
-    <configuration default="false" name="XML_HttpRequest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HanyHTMLLanguageDemo/XML/HttpRequest/XML_HttpRequest.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.Root_CSS.html">
     <configuration default="false" name="Root_XML.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HanyHTMLLanguageDemo/XML/Root_XML.html">
       <method />
     </configuration>
@@ -299,6 +271,9 @@
       <method />
     </configuration>
     <configuration default="false" name="Root_Frame.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HanyHTMLLanguageDemo/HTML/Frame/Root_Frame.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="Root_CSS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/HanyHTMLLanguageDemo/CSS/Root_CSS.html">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -330,19 +305,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.XML_HttpRequest.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Root_XML.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Root.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Root_HTML.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Root_Frame.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Root_XML.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Root.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Root_HTML.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Root_Frame.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Root_CSS.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Root_HTML.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Root_Frame.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Root.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Root_XML.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.XML_HttpRequest.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Root_CSS.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Root_HTML.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.Root_Frame.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.Root.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.Root_XML.html" />
       </list>
     </recent_temporary>
   </component>
@@ -497,14 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/XML/Root_XML.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019375673">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Frame/Frame3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17438105">
@@ -531,32 +498,17 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/Root_CSS.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Root.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
+        <state vertical-scroll-proportion="0.23250808">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Root_Show_CSS.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.074074">
-          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/js/demo_worker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.13179916">
           <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
@@ -566,29 +518,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/php/demo_see.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
+        <state vertical-scroll-proportion="0.17438105">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XML/Root_XML.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2131324">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Frame/Root_Frame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333">
+        <state vertical-scroll-proportion="0.44564047">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Root_Show_CSS.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.5925925">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Root_HTML.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59866965">
-          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        <state vertical-scroll-proportion="-8.222222">
+          <caret line="202" column="28" selection-start-line="202" selection-start-column="28" selection-end-line="202" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#img#0;n#th#0;n#tr#0;n#table#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#video#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#12;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/Root_CSS_Syntax.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.407408">
+          <caret line="155" column="32" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/Root_CSS.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.0">
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/Root_CSS_Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7868676">
+          <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

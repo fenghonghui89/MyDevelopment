@@ -1,6 +1,10 @@
 
 @charset "UTF-8";
 
+/*背景色 内边距*/
+body {background-color: darkkhaki;padding:100px}
+
+
 /*分类标题 子分类间隔线*/
 h1.HeaderTitle {color: red;font-family: "Al Bayan";font-size:xx-large;text-decoration: underline;text-decoration-color: black;text-align: center}
 hr.SectionHr {color: blueviolet;width: 400px;margin-left: 0px;border-style: dashed}
