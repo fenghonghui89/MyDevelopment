@@ -15,6 +15,7 @@
 <!------------------------------------------------------------------目录------------------------------------------------------------------>
 <h1 id="root_menu"><b>目录</b></h1>
 <br />
+HTML<br />
 <a href="#root_title">1-1 标题</a><br />
 <a href="#root_formatAndRef">1-2 格式化与引用</a><br />
 <a href="#root_link">1-3 链接</a><br />
@@ -22,15 +23,20 @@
 <a href="#root_table">1-5 表格</a><br />
 <a href="#root_list">1-6 列表</a><br />
 <a href="#root_layout">1-7 块元素 内联元素 类 布局</a><br />
-<a href="#root_framework">1-8 框架</a><br />
+<a href="#root_framework">1-8 框架 iframe</a><br />
 <br />
 <a href="#root_form">2-1 表单form</a><br />
 <a href="#root_formElement">2-2 各种表单元素</a><br />
 <br />
+HTML5<br />
 <a href="#root_customLabel">3-1 自定义标签</a><br />
 <a href="#root_newLabel">3-2 HTML5 新增标签</a><br />
-<a href="#root_media">3-1 多媒体</a><br />
-
+<a href="#root_media">3-3 多媒体</a><br />
+<a href="#root_drag">3-4 拖放</a><br />
+<a href="#root_location">3-5 定位</a><br />
+<a href="#root_webstorage">3-6 web存储</a><br />
+<a href="#root_webWorker">3-7 web worker</a><br />
+<a href="#root_serverSend">3-8 服务器发送事件</a><br />
 
 
 <!------------------------------------------------------------------1-1 标题------------------------------------------------------------------>
@@ -424,7 +430,7 @@ width height 尺寸
 
 
 <!------------------------------------------------------------------1-8 框架------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="root_framework">1-8 框架</h1>
+<h1 class="HeaderTitle" id="root_framework">1-8 框架 iframe</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
@@ -678,25 +684,6 @@ textarea:hahahahahahahahahhahahahah
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<div id="container">
-    <div id="subhe">
-        <h1>header</h1>
-    </div>
-
-    <div id="subli">
-        <ul>
-            <li>111</li>
-            <li>222</li>
-            <li>333</li>
-        </ul>
-    </div>
-
-    <div id="subco">
-        <p>content</p>
-    </div>
-</div>
-<br />
-
 <!--视频-->
 <div style="text-align:center;">
     <button onclick="playPause()">播放/暂停</button>
@@ -718,7 +705,7 @@ textarea:hahahahahahahahahhahahahah
 </audio>
 
 <script type="text/javascript">
-    var myVideo=document.getElementById("video1");
+    var myVideo = document.getElementById("video1");
 
     function playPause()
     {
@@ -730,17 +717,211 @@ textarea:hahahahahahahahahhahahahah
 
     function makeBig()
     {
-        myVideo.width=560;
+        myVideo.width = 560;
     }
 
     function makeSmall()
     {
-        myVideo.width=320;
+        myVideo.width = 320;
     }
 
     function makeNormal()
     {
-        myVideo.width=420;
+        myVideo.width = 420;
+    }
+</script>
+<br /><br /><br />
+
+
+<!------------------------------------------------------------------3-4 拖放------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_drag">3-4 拖放</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script type="text/javascript">
+    function allowDrop(ev)
+    {
+        ev.preventDefault();//默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。
+    }
+
+    function drag(ev)
+    {
+        ev.dataTransfer.setData("Text",ev.target.id);//设置被拖数据的数据类型和值
+    }
+
+    function drop(ev)
+    {
+        ev.preventDefault();//调用 preventDefault() 来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+        var data = ev.dataTransfer.getData("Text");//通过 dataTransfer.getData("Text") 方法获得被拖的数据
+        ev.target.appendChild(document.getElementById(data));//把被拖元素追加到放置元素（目标元素）中
+    }
+</script>
+
+<!--拖放-->
+<p>请把 W3School 的图片拖放到矩形中：</p>
+<div id="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br />
+<img id="dragImg" src="src/111111.jpg" draggable="true" ondragstart="drag(event)" />
+
+
+<!--来回拖放-->
+<div id="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="src/111111.jpg" draggable="true" ondragstart="drag(event)" id="dragImg1" />
+</div>
+<div id="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br /><br /><br />
+
+
+
+<!------------------------------------------------------------------3-5 定位------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_location">3-5 定位</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<!--
+    检测是否支持地理定位
+    如果支持，则运行 getCurrentPosition() 方法。如果不支持，则向用户显示一段消息。
+    如果getCurrentPosition()运行成功，则向参数showPosition中规定的函数返回一个coordinates对象
+    showPosition() 函数获得并显示经度和纬度
+-->
+
+<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+    var x=document.getElementById("root_location_demo");
+    function getLocation()
+    {
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        }
+        else{x.innerHTML="Geolocation is not supported by this browser.";}
+    }
+
+    function showPosition(position)
+    {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        latlon = new google.maps.LatLng(lat, lon)
+        mapholder = document.getElementById('mapholder')
+        mapholder.style.height='250px';
+        mapholder.style.width='500px';
+
+        var myOptions={
+            center:latlon,zoom:14,
+            mapTypeId:google.maps.MapTypeId.ROADMAP,
+            mapTypeControl:false,
+            navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+        };
+        var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+        var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+    }
+
+    function showError(error)
+    {
+        switch(error.code)
+        {
+            case error.PERMISSION_DENIED:
+                x.innerHTML="User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML="Location information is unavailable."
+                break;
+            case error.TIMEOUT:
+                x.innerHTML="The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML="An unknown error occurred."
+                break;
+        }
+    }
+</script>-->
+
+
+<p id="root_location_demo">点击这个按钮，获得您的坐标：</p>
+<button onclick="getLocation()">试一下</button>
+<div id="mapholder"></div>
+<br /><br /><br />
+
+
+<!------------------------------------------------------------------3-6 web存储------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_webstorage">3-6 web存储</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<!--localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。-->
+<script type="text/javascript">
+    if (localStorage.pagecount)
+    {
+        localStorage.pagecount=Number(localStorage.pagecount) +1;
+    }
+    else
+    {
+        localStorage.pagecount=1;
+    }
+    document.write("Visits "+ localStorage.pagecount + " time(s).");
+</script>
+<br />
+
+<!--localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。-->
+<script type="text/javascript">
+
+    if (sessionStorage.pagecount)
+    {
+        sessionStorage.pagecount=Number(sessionStorage.pagecount) +1;
+    }
+    else
+    {
+        sessionStorage.pagecount=1;
+    }
+    document.write("Visits " + sessionStorage.pagecount + " time(s) this session.");
+
+</script>
+<br /><br /><br />
+
+
+
+<!------------------------------------------------------------------3-7 web worker------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_webWorker">3-7 web worker</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+
+<!--
+由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
+window 对象
+document 对象
+parent 对象
+-->
+<p>计数: <output id="web_worker_result"></output></p>
+<button onclick="startWorker()">开始 Worker</button>
+<button onclick="stopWorker()">停止 Worker</button>
+<br /><br />
+
+<script type="text/javascript">
+    var w;
+
+    function startWorker()
+    {
+        if(typeof(Worker)!=="undefined")//检测浏览器是否支持web worker
+        {
+            if(typeof(w)=="undefined")//检测是否存在worker对象
+            {
+                w = new Worker("js/demo_worker.js");
+            }
+
+            //添加事件监听
+            w.onmessage = function (event) {
+                document.getElementById("web_worker_result").innerHTML = event.data;
+            };
+        }
+        else
+        {
+            document.getElementById("web_worker_result").innerHTML="Sorry, your browser does not support Web Workers...";
+        }
+    }
+
+    function stopWorker()
+    {
+        w.terminate();
     }
 </script>
 <br /><br /><br />
@@ -748,8 +929,29 @@ textarea:hahahahahahahahahhahahahah
 
 
 
+<!------------------------------------------------------------------3-8 服务器发送事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_serverSend">3-8 服务器发送事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<div id="server_send_result"></div>
+<script>
+    if(typeof(EventSource)!=="undefined")
+    {
+        var source = new EventSource("php/demo_see.php");
+        source.onmessage = function(event)
+        {
+            document.getElementById("server_send_result").innerHTML+=event.data + "<br />";
+        };
+    }
+    else
+    {
+        document.getElementById("server_send_result").innerHTML="Sorry, your browser does not support server-sent events...";
+    }
+</script>
 
 
 
+<br /><br /><br />
 </body>
 </html>

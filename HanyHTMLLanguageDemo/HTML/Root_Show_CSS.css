@@ -78,8 +78,5 @@ myhero {
     height: 100px;
 }
 
-/*多媒体*/
-#container{margin-top: 50px;margin-left: 10px;margin-right: 10px;height: 200px;background-color: #99bbbb}
-#subhe{margin-top: 0px;margin-left: 0px;margin-right: 0px;height: 100px;background-color: red;float: none}
-#subli{width: 100px;height: 100px;background-color: green;float: left}
-#subco{margin-left: 50px;width: 100px;height: 100px;background-color: blue;float: left}
+/*3-4 拖放*/
+#dragDiv {width:220px;height:220px;padding:10px;border:1px solid #aaaaaa;float: left}
