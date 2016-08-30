@@ -107,6 +107,10 @@ a:active {color:#0000FF;text-decoration:none;}	/* 正在被点击的链接 */
 
 
 
+
+
+
+
 /*列表
 list-style-type:常规标志类型
 list-style-image:用图像做标志
@@ -117,3 +121,35 @@ ul {list-style-type : square}
 li {list-style-image : url(xxx.gif)}
 li {list-style-position: inside}
 li {list-style : url(example.gif) square inside}
+
+
+
+
+
+
+
+
+/*表格
+border 边框
+border-collapse 都设置边框的话,是否折叠边框
+vertical-align 垂直对齐
+padding 内边距
+*/
+table,tr,th,td{
+    border: 1px solid blue;
+    border-collapse:collapse;
+    vertical-align: middle;
+    padding: 15px;
+    width: 100%;
+    text-align: right;
+    height: 50px;
+}
+
+
+/*轮廓*/
+p{
+    outline: red solid thin;
+    outline-style:solid;
+    outline-width:thin;
+    outline-color: red;
+}
