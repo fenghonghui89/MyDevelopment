@@ -107,6 +107,7 @@
 }
 
 #pragma mark - < callback > -
+#pragma mark NSURLConnectionDataDelegate
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
   
   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
@@ -119,12 +120,15 @@
   [self.allData appendData:data];
 }
 
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-  NSLog(@"~didFailWithError:%@",[error localizedDescription]);
-}
-
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
   NSLog(@"~connectionDidFinishLoading");
   [self.allData writeToFile:@"/Users/hanyfeng/Desktop/net.jpg" atomically:YES];
 }
+
+#pragma mark NSURLConnectionDelegate
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+  NSLog(@"~didFailWithError:%@",[error localizedDescription]);
+}
+
+
 @end

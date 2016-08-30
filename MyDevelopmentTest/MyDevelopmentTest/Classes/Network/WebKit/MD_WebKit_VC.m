@@ -32,11 +32,21 @@ WKScriptMessageHandler
 -(void)viewDidAppear:(BOOL)animated{
   
   [super viewDidAppear:animated];
-  [self commonInitUI1];
+  [self commonInitUI0];
 }
 #pragma mark - < method >
 
--(void)commonInitUI{
+-(void)commonInitUI0{
+
+  WKWebView *webView = [[WKWebView alloc] initWithFrame:self.webViewBgView.bounds];
+  webView.navigationDelegate = self;
+  [self.webViewBgView addSubview:webView];
+  self.webView = webView;
+  
+  [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://oc.123go.net.cn/modded/"]]];
+}
+
+-(void)commonInitUI1{
 
   NSString *js = @"window.webkit.messageHandlers.observe.postMessage(document.body.innerText);";
   WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
@@ -52,7 +62,7 @@ WKScriptMessageHandler
   [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
 }
 
--(void)commonInitUI1{
+-(void)commonInitUI2{
   
   CustomURLCache *urlCache = [[CustomURLCache alloc] initWithMemoryCapacity:20 * 1024 * 1024
                                                                diskCapacity:200 * 1024 * 1024
@@ -99,19 +109,24 @@ WKScriptMessageHandler
 }
 #pragma mark - < callback >
 #pragma mark WKNavigationDelegate
-//didStart
+//准备加载页面
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-  NSLog(@"didStartProvisionalNavigation");
+  NSLog(@"didStartProvisionalNavigation...");
 }
 
-//也就是在页面内容加载到达mainFrame时会回调此API。如果我们要在mainFrame中注入什么JS，也可以在此处添加
+/*
+ 已开始加载页面，可以在这一步向view中添加一个过渡动画
+ 也就是在页面内容加载到达mainFrame时会回调此API。如果我们要在mainFrame中注入什么JS，也可以在此处添加
+ */
 -(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
-  NSLog(@"didCommitNavigation");
+  NSLog(@"didCommitNavigation...");
 }
 
-//finish
+/*
+ 页面已全部加载，可以在这一步把过渡动画去掉
+ */
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-  NSLog(@"didFinishNavigation");
+  NSLog(@"didFinishNavigation...");
 //  NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
 //  NSArray *cookies =[NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:response.URL];
 //  
@@ -123,15 +138,24 @@ WKScriptMessageHandler
 
 }
 
-//fail
+/*
+ fail
+ */
 -(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-  NSLog(@"didFailNavigation");
+  NSLog(@"didFailNavigation...%@",error.localizedDescription);
 }
 
-//是否允许跳转 shouldStart
+
+-(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
+  NSLog(@"didFailProvisionalNavigation...%@",error.localizedDescription);
+}
+
+/*
+ 是否允许跳转 类似shouldStart
+ */
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
   
-  NSLog(@"decidePolicyForNavigationAction");
+  NSLog(@"decidePolicyForNavigationAction...");
   if (navigationAction.navigationType == WKNavigationTypeLinkActivated && ![navigationAction.request.URL.host.lowercaseString isEqualToString:@"www.baidu.com"]) {
     [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
     decisionHandler(WKNavigationActionPolicyCancel);
@@ -140,11 +164,22 @@ WKScriptMessageHandler
   }
 }
 
+/*
+ 请求https页面用
+ */
+-(void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
+  
+  NSLog(@"didReceiveAuthenticationChallenge...");
+  NSURLCredential *cred = [[NSURLCredential alloc] initWithTrust:challenge.protectionSpace.serverTrust];
+  completionHandler(NSURLSessionAuthChallengeUseCredential,cred);
+}
+
 #pragma mark WKScriptMessageHandler
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
 
-  NSString *str = message.body;
-  NSLog(@"str:%@",str);
+  NSLog(@"userContentController...:%@",message.body);
 }
+
+
 
 @end

@@ -70,8 +70,8 @@
 }
 
 #pragma mark - callback
--(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+  
   /*
    html中的界面跳转被触发时，会加载新界面，就会调用该方法
    */
@@ -95,14 +95,14 @@
   return YES;
 }
 
--(void)webViewDidStartLoad:(UIWebView *)webView
-{
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+  
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
   NSLog(@"webViewDidStartLoad");
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView
-{
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+  
   NSLog(@"webViewDidFinishLoad");
   [self method_JSToOC];
   //使用本地代码调用js函数helloWorld(msg)
@@ -110,8 +110,8 @@
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+  
   NSLog(@"didFailLoadWithError");
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
