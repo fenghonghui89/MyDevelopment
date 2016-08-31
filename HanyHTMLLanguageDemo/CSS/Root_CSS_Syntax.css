@@ -35,24 +35,18 @@ p  {
 
 
 /*派生选择器*/
-/*针对列表的strong元素*/
+/*子元素 只有下一级*/
+li>strong {
+    font-style: italic;
+    font-weight: normal;
+}
+
+/*后代元素 所有*/
 li strong {
     font-style: italic;
     font-weight: normal;
 }
 
-/*针对h2的strong元素*/
-strong {
-    color: red;
-}
-
-h2 {
-    color: red;
-}
-
-h2 strong {
-    color: blue;
-}
 
 
 
@@ -156,3 +150,12 @@ input[type="button"]
     font-family: Verdana, Arial;
 }
 
+*[title] {color:red;}
+a[href][title] {color:red;}
+
+
+
+
+
+/*通配符分组*/
+* {color: #0000FF}
