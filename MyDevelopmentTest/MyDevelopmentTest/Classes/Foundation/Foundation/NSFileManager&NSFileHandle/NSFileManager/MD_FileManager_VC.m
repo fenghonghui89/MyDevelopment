@@ -82,9 +82,9 @@
   NSFileManager* fm = [NSFileManager defaultManager];
   
   //创建保存用文件夹
-  NSString *dicPaht = @"/Users/hanyfeng/Desktop/头文件";
-  if (![fm fileExistsAtPath:dicPaht]) {
-    BOOL b = [fm createDirectoryAtPath:dicPaht withIntermediateDirectories:YES attributes:nil error:nil];
+  NSString *dicPath = @"/Users/hanyfeng/Desktop/头文件";
+  if (![fm fileExistsAtPath:dicPath]) {
+    BOOL b = [fm createDirectoryAtPath:dicPath withIntermediateDirectories:YES attributes:nil error:nil];
     if (b){
       DLog(@"创建文件夹成功");
     }else{
@@ -109,7 +109,7 @@
     }else {//如果是文件，则判断前后缀，类型符合就复制到文件夹下
       if ([sourceFileName hasSuffix:@"h"] && [sourceFileName hasPrefix:fileName]) {
         DLog(@"找到文件：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
-        NSString* newFilePath = [dicPaht stringByAppendingPathComponent:sourceFileName];
+        NSString* newFilePath = [dicPath stringByAppendingPathComponent:sourceFileName];
         [fm copyItemAtPath:filePath toPath:newFilePath error:nil];
         self.isFinish = YES;
         return;
@@ -117,8 +117,12 @@
         DLog(@"找不到文件：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
       }
     }
+    
   }
+  
 }
+
+
 
 
 @end

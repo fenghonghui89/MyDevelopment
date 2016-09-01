@@ -88,13 +88,21 @@ static NSString * const cellId = @"cellId";
 
 -(void)getWebImg{
   
-  NSURL *url = [NSURL URLWithString:@"http://www.sina.com.cn"];
+  NSString *baseUrl = @"http://www.sina.com.cn";
+  NSURL *url = [NSURL URLWithString:baseUrl];
   NSError *error = nil;
   NSString *htmlString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
   if (error) {
-    NSLog(@"error:%@",[error localizedDescription]);
+    NSLog(@"utf8 encoding error...:%@",[error localizedDescription]);
+    
+    htmlString = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];
+    if (error) {
+      NSLog(@"ascii encoding error...:%@",[error localizedDescription]);
+    }else{
+      NSLog(@"ascii string...:%@",htmlString);
+    }
   }else{
-    NSLog(@"string:%@",htmlString);
+    NSLog(@"utf8 string...:%@",htmlString);
   }
   
   //获取页面中所有图片的路径
@@ -102,10 +110,17 @@ static NSString * const cellId = @"cellId";
   NSArray *arr = [htmlString componentsSeparatedByString:@"\""];//按"分割源代码（转义字符\"）
   for (NSString *str in arr) {
     if ([str hasSuffix:@"jpg"] || [str hasSuffix:@"png"]) {
-      [self.imagePaths addObject:str];
+      if ([str rangeOfString:@"http"].location == NSNotFound) {
+        NSString *newPath = [baseUrl stringByAppendingString:str];
+        [self.imagePaths addObject:newPath];
+        NSLog(@"image path...:%@   %@",newPath,str);
+      }else{
+        [self.imagePaths addObject:str];
+        NSLog(@"image path...:%@",str);
+      }
     }
   }
-  
+  NSLog(@"images count...:%lu",(unsigned long)self.imagePaths.count);
 }
 
 #pragma mark - < callback > -

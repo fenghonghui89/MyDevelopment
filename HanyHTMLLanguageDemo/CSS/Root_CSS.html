@@ -20,6 +20,11 @@
 <a href="#CssImgLibrary">图库</a><br />
 <a href="#CssOpacityImg">图片透明</a><br />
 <a href="#CssMediaType">媒介类型</a><br/>
+<br />
+<a href="#Css3Border">CSS3 边框</a><br/>
+<a href="#Css3Bg">CSS3 背景</a><br/>
+<a href="#Css3Text">CSS3 文字效果</a><br/>
+
 
 <!------------------------------------------------------------------鼠标样式------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="CssCursor">鼠标样式</h1>
@@ -292,6 +297,162 @@
 
 <p class="CssMediaType1">This is some text that is placed in the transparent box.</p>
 <br /><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 边框------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Border">CSS3 边框</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+
+    /*边框圆角 边框阴影*/
+    div.Css3Border1{
+        text-align:center;
+        border:2px solid #a1a1a1;
+        padding:10px 40px;
+        background:#dddddd;
+        width:350px;
+
+        /*圆角*/
+        border-radius:25px;
+        -moz-border-radius:25px; /* 老的 Firefox */
+
+        /*阴影*/
+        box-shadow: 10px 10px 5px #888888;
+        -moz-box-shadow: 10px 10px 5px #888888; /* 老的 Firefox */
+
+    }
+
+
+    /*边框图片*/
+    #round,#stretch{
+        border:15px solid transparent;
+        width:300px;
+        padding:10px 20px;
+    }
+    #round
+    {
+        -moz-border-image:url("../src/border.png") 30 30 round;	/* Old Firefox */
+        -webkit-border-image:url("../src/border.png") 30 30 round;	/* Safari and Chrome */
+        -o-border-image:url("../src/border.png") 30 30 round;		/* Opera */
+        border-image:url("../src/border.png") 30 30 round;
+    }
+
+    #stretch
+    {
+        -moz-border-image:url("../src/border.png") 30 30 stretch;	/* Old Firefox */
+        -webkit-border-image:url("../src/border.png") 30 30 stretch;	/* Safari and Chrome */
+        -o-border-image:url("../src/border.png") 30 30 stretch;	/* Opera */
+        border-image:url("../src/border.png") 30 30 stretch;
+    }
+</style>
+
+<div class="Css3Border1">border-radius 属性允许您向元素添加圆角。</div><br />
+<div id="round">在这里，图片铺满整个边框。</div><br />
+<div id="stretch">在这里，图片被拉伸以填充该区域。</div>
+
+<br /><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 背景------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Bg">CSS3 背景</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    /*background-size*/
+    #Css3Bg1{
+        background:url("../src/bg_flower.gif");
+        background-size:35% 100%;
+        -moz-background-size:35% 100%; /* 老版本的 Firefox */
+        background-repeat:no-repeat;
+        width: 500px;
+        background-color: orange;/*放最后 否则无法显示??*/
+    }
+
+    /*background-origin*/
+    #Css3Bg2{
+        margin: 10px;
+        padding: 10px;
+        width: 500px;
+        height: 500px;
+        background: url("../src/bg_flower.gif");
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-color: #00FF00;
+    }
+
+    /*多重背景*/
+    #Css3Bg3{
+        width: 500px;
+        height: 500px;
+        background: url("../src/bg_flower.gif"),url("../src/bg_flower_2.gif");
+        background-color: #00FF00;
+    }
+</style>
+
+<!--background-size-->
+<div id="Css3Bg1">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br>
+
+<!--background-origin-->
+<div id="Css3Bg2">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br />
+
+<!--多重背景-->
+<div id="Css3Bg3">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br /><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 文字效果------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Text">CSS3 文字效果</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    #Css3Text1{
+        width: 11em;
+        text-shadow: 5px 5px 5px #FF0000;
+        color: #0000FF;
+        word-wrap:break-word;
+    }
+</style>
+
+<p id="Css3Text1">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
 
 </body>
 </html>
