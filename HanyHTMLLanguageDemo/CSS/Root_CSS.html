@@ -24,6 +24,13 @@
 <a href="#Css3Border">CSS3 边框</a><br/>
 <a href="#Css3Bg">CSS3 背景</a><br/>
 <a href="#Css3Text">CSS3 文字效果</a><br/>
+<a href="#Css3Font">CSS3 字体</a><br/>
+<a href="#Css32D">CSS3 2D转换</a><br/>
+<a href="#Css33D">CSS3 3D转换</a><br/>
+<a href="#Css3Transition">CSS3 过渡</a><br/>
+<a href="#Css3Animate">CSS3 动画</a><br/>
+<a href="#Css3Column">CSS3 多列</a><br/>
+<a href="#Css3UserScreen">CSS3 用户界面</a><br/>
 
 
 <!------------------------------------------------------------------鼠标样式------------------------------------------------------------------>
@@ -446,13 +453,345 @@
 <style>
     #Css3Text1{
         width: 11em;
-        text-shadow: 5px 5px 5px #FF0000;
+        text-shadow: 5px 5px 5px #FF0000;/*水平阴影、垂直阴影、模糊距离，以及阴影的颜色*/
         color: #0000FF;
-        word-wrap:break-word;
+        word-wrap:break-word;/*拆词 自动换行*/
     }
 </style>
 
 <p id="Css3Text1">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+<br/><br/><br/>
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------CSS3 字体------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Font">CSS3 字体</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url('../src/Sansation_Light.ttf')
+        ,url('../src/Sansation_Light.eot'); /* IE9+ */
+    }
+
+    /*必须为粗体文本添加另一个包含描述符的 @font-face：*/
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url('../src/Sansation_Bold.ttf')
+        ,url('../src/Sansation_Bold.eot'); /* IE9+ */
+        font-weight:bold;
+    }
+
+    #CSS3Font1
+    {
+        font-family:myFirstFont;
+    }
+</style>
+
+<p id="CSS3Font1">With CSS3, websites can <b>finally</b> use fonts other than the pre-selected "web-safe" fonts.</p>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------CSS3 2D转换------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css32D">CSS3 2D转换</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    #CSS32D1 {
+        margin: 30px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+
+        /*transform: translate(50px, 100px);!*根据给定的 left（x 坐标） 和 top（y 坐标） 位置参数*!*/
+        /*-ms-transform: translate(50px, 100px); !* IE 9 *!*/
+        /*-moz-transform: translate(50px, 100px); !* Firefox *!*/
+        /*-webkit-transform: translate(50px, 100px); !* Safari and Chrome *!*/
+        /*-o-transform: translate(50px, 100px); !* Opera *!*/
+
+        /*transform: rotate(30deg);!*元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转。*!*/
+        /*-ms-transform: rotate(30deg);		!* IE 9 *!*/
+        /*-webkit-transform: rotate(30deg);	!* Safari and Chrome *!*/
+        /*-o-transform: rotate(30deg);		!* Opera *!*/
+        /*-moz-transform: rotate(30deg);		!* Firefox *!*/
+
+        /*transform: scale(0.5,0.5);!*元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）参数*!*/
+        /*-ms-transform: scale(2,4);	!* IE 9 *!*/
+        /*-webkit-transform: scale(2,4);	!* Safari 和 Chrome *!*/
+        /*-o-transform: scale(2,4);	!* Opera *!*/
+        /*-moz-transform: scale(2,4);	!* Firefox *!*/
+
+        /*transform: skew(30deg,20deg);!*元素翻转给定的角度，根据给定的水平线（X 轴）和垂直线（Y 轴）参数*!*/
+        /*-ms-transform: skew(30deg,20deg);	!* IE 9 *!*/
+        /*-webkit-transform: skew(30deg,20deg);	!* Safari and Chrome *!*/
+        /*-o-transform: skew(30deg,20deg);	!* Opera *!*/
+        /*-moz-transform: skew(30deg,20deg);	!* Firefox *!*/
+
+        transform:matrix(0.866,0.5,-0.5,0.866,0,0);/*把所有 2D 转换方法组合在一起,需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。*/
+        -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* IE 9 */
+        -moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Firefox */
+        -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Safari and Chrome */
+        -o-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* Opera */
+    }
+</style>
+
+<div id="CSS32D1">Hello World</div><br/>
+
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------CSS3 3D转换------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css33D">CSS3 3D转换</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    #CSS33D1 {
+        margin: 30px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+
+        transform:rotateX(120deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+        -webkit-transform:rotateX(120deg); /* Safari and Chrome */
+        -moz-transform:rotateX(120deg); /* Firefox */
+
+        transform:rotateY(130deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+        -webkit-transform:rotateY(130deg); /* Safari and Chrome */
+        -moz-transform:rotateY(130deg); /* Firefox */
+    }
+</style>
+
+<div id="CSS33D1">Hello World</div><br/>
+
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------CSS3 过渡------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Transition">CSS3 过渡</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    div#Css3Transition1 {
+        width:100px;
+        height:100px;
+        background:yellow;
+
+        transition:width 2s, height 2s;
+        -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+        -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+        -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+    }
+
+    div#Css3Transition1:hover{
+        width:200px;
+        height:200px;
+        transform:rotate(180deg);
+        -moz-transform:rotate(180deg); /* Firefox 4 */
+        -webkit-transform:rotate(180deg); /* Safari and Chrome */
+        -o-transform:rotate(180deg); /* Opera */
+    }
+</style>
+
+<div id="Css3Transition1">Hello World</div><br/>
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 动画------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Animate">CSS3 动画</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    div#Css3Animate1 {
+        width:100px;
+        height:100px;
+        background:yellow;
+    }
+
+    /*点击之后不能放开 放开就会复原*/
+    div#Css3Animate1:active{
+        position:relative;
+        animation-name:myfirst;
+        animation-duration:5s;
+        animation-timing-function:linear;
+        animation-delay:0s;
+        animation-iteration-count:infinite;/*播放次数*/
+        animation-direction:alternate;/*是否在下一周期逆向地播放*/
+        animation-play-state:running;/*是否正在运行或暂停*/
+        /* Firefox: */
+        -moz-animation-name:myfirst;
+        -moz-animation-duration:5s;
+        -moz-animation-timing-function:linear;
+        -moz-animation-delay:0s;
+        -moz-animation-iteration-count:infinite;
+        -moz-animation-direction:alternate;
+        -moz-animation-play-state:running;
+        /* Safari and Chrome: */
+        -webkit-animation-name:myfirst;
+        -webkit-animation-duration:5s;
+        -webkit-animation-timing-function:linear;
+        -webkit-animation-delay:0s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-play-state:running;
+        /* Opera: */
+        -o-animation-name:myfirst;
+        -o-animation-duration:5s;
+        -o-animation-timing-function:linear;
+        -o-animation-delay:0s;
+        -o-animation-iteration-count:infinite;
+        -o-animation-direction:alternate;
+        -o-animation-play-state:running;
+    }
+
+    @keyframes myfirst
+    {
+        0%   {background:red; left:0px; top:0px;}
+        25%  {background:yellow; left:200px; top:0px;}
+        50%  {background:blue; left:200px; top:200px;}
+        75%  {background:green; left:0px; top:200px;}
+        100% {background:red; left:0px; top:0px;}
+    }
+
+    @-moz-keyframes myfirst /* Firefox */
+    {
+        0%   {background:red; left:0px; top:0px;}
+        25%  {background:yellow; left:200px; top:0px;}
+        50%  {background:blue; left:200px; top:200px;}
+        75%  {background:green; left:0px; top:200px;}
+        100% {background:red; left:0px; top:0px;}
+    }
+
+</style>
+
+<div style="width: 500px;height: 500px;background-color: lavender">
+    <div id="Css3Animate1">Hello World</div><br/>
+</div>
+
+
+<br/><br/><br/>
+
+
+
+
+
+<!------------------------------------------------------------------CSS3 多列------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Column">CSS3 多列</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<style>
+    #Css3Column1{
+        /*列数*/
+        -moz-column-count:3; /* Firefox */
+        -webkit-column-count:3; /* Safari and Chrome */
+        column-count:3;
+
+        /*列之间的间隔*/
+        -moz-column-gap:40px; /* Firefox */
+        -webkit-column-gap:40px; /* Safari and Chrome */
+        column-gap:40px;
+
+        /*列之间的宽度、样式和颜色规则*/
+        -moz-column-rule:4px outset #ff0000; /* Firefox */
+        -webkit-column-rule:4px outset #ff0000; /* Safari and Chrome */
+        column-rule:4px outset #ff0000;
+
+    }
+</style>
+
+<div id="Css3Column1">
+    人民网北京2月24日电 (记者 刘阳)国家发展改革委近日发出通知，决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和0.25元。
+
+    此次国内成品油价格调整幅度，是按照现行国内成品油价格形成机制，根据国际市场油价变化情况确定的。去年11月16日国内成品油价格调整以来，受市场预期欧美经济复苏前景向好以及中东局势持续动荡等因素影响，国际市场原油价格先抑后扬，2月上旬WTI和布伦特原油期货价格再次回升至每桶95美元和115美元以上。虽然近两日价格有所回落，但国内油价挂钩的国际市场三种原油连续22个工作日移动平均价格上涨幅度已超过4%，达到国内成品油价格调整的边界条件。
+
+    通知指出，这次成品油调价后，国家将按照已建立的补贴机制，继续对种粮农民、渔业（含远洋渔业）、林业、城市公交、农村道路客运（含岛际和农村水路客运）等给予补贴。同时，为保证市场物价基本稳定，防止连锁涨价，对与居民生活密切相关的铁路客运、城市公交、农村道路客运（含岛际和农村水路客运）价格不作调整。
+
+    通知要求，中石油、中石化、中海油三大公司要组织好成品油生产和调运，保持合理库存，加强综合协调和应急调度，保障成品油供应。各级价格主管部门要加大市场监督检查力度，依法查处不执行国家价格政策，以及囤积居奇、造谣惑众、合谋涨价、搭车涨价等违法行为，维护正常市场秩序。
+</div>
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 用户界面------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3UserScreen">CSS3 用户界面</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+
+    /*resize*/
+    div#Css3UserScreen1
+    {
+        border:2px solid;
+        padding:10px 40px;
+        width:300px;
+        resize:both;/*是否可由用户对元素的尺寸进行调整*/
+        overflow:auto;
+    }
+
+
+    /*box-sizing*/
+    div#Css3UserScreen_container
+    {
+        width:30em;
+        border:1em solid;
+    }
+    div.Css3UserScreen_box
+    {
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+        -webkit-box-sizing:border-box; /* Safari */
+        width:35%;
+        border:1em solid red;
+        float:left;
+    }
+    div#Css3UserScreen_clear{
+        clear: both;
+    }
+
+    /*outline*/
+    div#Css3UserScreen3
+    {
+        margin:20px;
+        width:150px;
+        padding:10px;
+        height:70px;
+        border:2px solid black;
+        outline:2px solid red;
+        outline-offset:15px;
+    }
+</style>
+
+<div id="Css3UserScreen1">resize 属性规定是否可由用户调整元素尺寸。</div><br/>
+
+<div id="Css3UserScreen_container">
+    <div class="Css3UserScreen_box">这个 div 占据左半部分。</div>
+    <div class="Css3UserScreen_box">这个 div 占据右半部分。</div>
+    <div id="Css3UserScreen_clear"></div>
+</div><br/>
+
+<div id="Css3UserScreen3">这个 div 在边框边缘之外 15 像素处有一个轮廓。</div>
+<br/><br/><br/>
 
 </body>
 </html>
