@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>XML演示页面</title>
+    <link href="../Root_CSS.css" type="text/css" rel="stylesheet">
 </head>
-<!--分类标题用-->
-<style type="text/css">
-    h1.HeaderTitle {color: red;font-family: "Al Bayan";font-size:xx-large;text-decoration: underline;text-decoration-color: black;text-align: center}
-</style>
+
 <body>
 
+
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
+<h1 id="root_menu"><b>目录</b></h1>
+<a href="#XML_DOM">DOM document object model</a><br/>
+<a href="#XML_HTTP_Request">http request</a><br/>
+<br />
+
+
+
+
+
+
+
 <!------------------------------------------------------------------DOM document object model------------------------------------------------------------------>
-<h1 class="HeaderTitle">DOM document object model</h1><hr />
+<h1 class="HeaderTitle" id="XML_DOM">DOM document object model</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+
 <h1>W3School.com.cn Internal Note</h1>
 <p>
     <b>To:</b> <span id="to"></span><br />
@@ -54,7 +69,10 @@
 
 
 <!------------------------------------------------------------------http request------------------------------------------------------------------>
-<h1 class="HeaderTitle">http request</h1><hr />
+<h1 class="HeaderTitle" id="XML_HTTP_Request">http request</h1>
+<a href="#root_menu">回到目录</a>
+<hr/>
+
 <script type="text/javascript">
     if (window.XMLHttpRequest)
     {// code for IE7+, Firefox, Chrome, Opera, Safari

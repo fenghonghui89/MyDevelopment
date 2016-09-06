@@ -3,54 +3,640 @@
 <head>
     <meta charset="UTF-8">
     <title>JS演示页面</title>
-    <script src="JS_JsBase.js"></script>
-    <script src="JS_JsHtmlDOM.js"></script>
+    <link href="../Root_CSS.css" type="text/css" rel="stylesheet">
+
 </head>
 <body>
 
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
+<h1 id="root_menu"><b>目录</b></h1>
 
-<!--js 基础-->
-<h1>js 基础</h1>
+<h2>js 基础</h2>
+<a href="#js_base_operator">js 运算符</a><br/>
+<a href="#js_base_fun">js 函数</a><br/>
+<a href="#js_base_err">js 异常捕获</a><br/>
+<a href="#js_base_checkForm">js 表单验证</a><br/>
+<br />
+
+<h2>js html dom</h2>
+<a href="#js_event_eg">js 事件例子</a><br/>
+<a href="#js_event_window">js window事件</a><br/>
+<a href="#js_event_form">js form事件</a><br/>
+<a href="#js_event_mouse">js 鼠标事件</a><br/>
+<a href="#js_dot_add">js 添加节点</a><br/>
+<a href="#js_dot_del">js 删除节点</a><br/>
+
+<h2>js 对象</h2>
+<a href="#js_obj_newObj">js 对象</a><br/>
+<a href="#js_obj_num">js 数字</a><br/>
+<a href="#js_obj_str">js 字符串</a><br/>
+<a href="#js_obj_date">js 日期</a><br/>
+<a href="#js_arr">js 数组</a><br/>
+<a href="#js_boolObj">js 逻辑对象bool</a><br/>
+<!------------------------------------------------------------------js 运算符------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_operator">js 运算符</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    //比较运算符
+    /*
+     * === 全等（值和类型）
+     * */
+    function operator_compare(){
+        var x = '5';
+        if (x === 5){
+            alert("yes, is 5");
+        }else{
+            alert("no, is '5'");
+        }
+
+    }
+
+    //条件运算符
+    function operator_condition(){
+        var x = 5;
+        var result = x>=5?">=5":"<5";
+        alert(result);
+    }
 
 
-js 对象<br/>
-<button type="button" onclick="obj_func('Hany','12')">带参数函数</button>
-<button type="button" onclick="alert('the return value:'+obj_return())">带返回值函数</button>
-<br/><br/><br/>
+    <!--JS 函数-->
 
+    //标签 / for in 循环
+    /*
+     * 注意for in 循环写法
+     * */
+    function func_label(){
+        var cars = ['BYD','QQ',"BMW",'Jeep','Audio','现代','长安','路虎'];
 
-js 运算符<br/>
+        var result = "";
+        list:{
+            var x;
+            for(x in cars){
+                if (cars[x] == 'BMW') continue;
+                if (cars[x] == '长安') break list;
+                result = result+cars[x]+" ";
+            }
+        }
+
+        alert(result);
+    }
+</script>
+
 <button type="button" onclick="operator_compare()">===</button>
 <button type="button" onclick="operator_condition()">xxx?y1:y2</button>
+
 <br/><br/><br/>
 
 
-js 函数<br/>
+<!------------------------------------------------------------------js 函数------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_fun">js 函数</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
 <button type="submit" onclick="func_label()">标签 / for in 循环</button>
+
 <br/><br/><br/>
 
 
-js 异常捕获<br/>
+
+<!------------------------------------------------------------------js 异常捕获------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_err">js 异常捕获</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    //try catch throw
+    function error_try(){
+        try{
+            var x = document.getElementById('error_try').value;
+            if(x=="") throw "值为空"
+            if(isNaN(x)) throw "值不是数字"
+            if(x>5) throw "数值太大"
+            if(x<5) throw "数值太小"
+        }catch (err){
+            alert("error happen...msg:"+err);
+        }
+    }
+</script>
+
 <input type="text" id="error_try" />
 <button type="button" onclick="error_try()">try catch throw</button>
+
 <br/><br/><br/>
 
 
-js 表单验证<br/>
+
+<!------------------------------------------------------------------js 表单验证------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_checkForm">js 表单验证</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function validate_require(field,alerttxt){
+        with (field){
+
+            //验证必填项目
+            if (value==null||value=="") {alert(alerttxt);return false}
+
+
+            /*
+             * 输入的数据必须包含 @ 符号和点号(.)。同时，@ 不可以是邮件地址的首字符，并且 @ 之后需有至少一个点号
+             * */
+            apos=value.indexOf("@");
+            dotpos=value.lastIndexOf(".");
+            if (apos<1||dotpos-apos<2) {alert(alerttxt);return false}
+            else {return true}
+
+        }
+    }
+
+    function validate_form(thisform){
+        with (thisform){
+            if (validate_require(email,"Email不能为空!或者是无效的email") == false){
+                email.focus();
+                return false;
+            }
+        }
+    }
+</script>
+
 <form action="http://www.baidu.com" onsubmit="return validate_form(this)" method="post">
     Email:<input type="text" name="email" size="30">
     <input type="submit" value="提交">
 </form>
+
 <br/><br/><br/>
 
 
 
 
-<!--js html dom-->
-<h1>js html dom</h1>
-<button type="button" onclick="obj_newObj()">JS 语句</button>
-<br />
 
+<!------------------------------------------------------------------js 事件例子------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_eg">js 事件例子</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<!--例子1-->
+<p onclick="this.innerHTML='thanks!'">eg1:tap it!</p>
+
+<!--例子2-->
+<script>
+    function changetext(id)
+    {
+        id.innerHTML="谢谢!";
+    }
+</script>
+<p onclick="changetext(this)">eg2:tap it!</p>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js window事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_window">js window事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+     * windonw事件 - 针对 window 对象触发的事件（应用到 <body> 标签）
+     * eg. <body onload = "....">
+     * onload onunload...
+     * */
+    function checkCookies()
+    {
+        if (navigator.cookieEnabled==true)
+        {
+            alert("已启用 cookie")
+        }
+        else
+        {
+            alert("未启用 cookie")
+        }
+    }
+</script>
+<p>window事件一般放body 这里只是为了体现效果</p>
+<button type="button" onclick="checkCookies()">检查浏览器是否支持cookie</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js form事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_form">js form事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /*
+     * form事件 - 由 HTML 表单内的动作触发的事件（应用到几乎所有 HTML 元素，但最常用在 form 元素中）
+     * eg. <input type="text" id="fname" onchange="....">
+     * onchange onselect..
+     * */
+    function myFunction()
+    {
+        var x=document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
+请输入英文字符,当您离开输入字段时,会触发将输入文本转换为大写的函数：<input type="text" id="fname" onchange="myFunction()">
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 鼠标事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_mouse">js 鼠标事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /*
+     * 鼠标事件 - 由鼠标或类似用户动作触发的事件
+     * eg. <div onclick="...">
+     * onclick onmousemove onmouseout...
+     * */
+    function mOver(obj){
+        obj.style.backgroundColor = "orange"
+        obj.innerHTML = 'you are here!';
+    }
+
+    function mOut(obj){
+        obj.style.backgroundColor = "green";
+        obj.innerHTML = "move to here~";
+    }
+
+    function mClick(obj){
+        obj.style.backgroundColor = "black";
+        obj.innerHTML = "you have click it!";
+    }
+
+    function mUp(obj){
+        obj.style.backgroundColor = "blue";
+        obj.innerHTML = "谢谢";
+    }
+
+    function mDown(obj){
+        obj.style.backgroundColor = "red";
+        obj.innerHTML = "你已经点击了,请放开鼠标";
+    }
+</script>
+<div onmouseover="mOver(this)"
+     onmouseout="mOut(this)"
+     onclick="mClick(this)"
+     onmousedown="mDown(this)"
+     onmouseup="mUp(this)"
+     style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;">
+    把鼠标移到上面
+</div>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 添加节点------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_dot_add">js 鼠标事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<div id="dotdiv1">
+    <p>这是节点1</p>
+</div>
+<button type="button" onclick="addDot()">添加节点</button>
+
+<script>
+    function addDot(){
+        var para = document.createElement("p");
+        var node = document.createTextNode("这是新节点");
+        para.appendChild(node);
+
+        var parent = document.getElementById("dotdiv1");
+        parent.appendChild(para);
+    }
+</script>
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 删除节点------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_dot_del">js 删除节点</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<div id="dotdiv2">
+    <p id="p1">这是一个段落。</p>
+    <p id="p2">这是另一个段落。</p>
+</div>
+<button type="button" onclick="delDot()">删除节点</button>
+
+<script>
+    function delDot(){
+        //方法1
+//        var parent = document.getElementById("dotdiv2");
+//        var child = document.getElementById("p2");
+//        parent.removeChild(child);
+
+        //方法2
+        var child = document.getElementById("p2");
+        child.parentNode.removeChild(child);
+    }
+</script>
+
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------js 对象------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_newObj">js 对象</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+    * JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...
+     JavaScript 提供多个内建对象，比如 String、Date、Array 等等。
+     JavaScript 是面向对象的语言，但 JavaScript 不使用类。
+     在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。
+     JavaScript 基于 prototype，而不是基于类的。
+    * */
+
+    //js字符串对象
+    function obj_string(){
+        var txt = "sample txt";
+        txt.length = 5;
+        txt.indexOf();
+        txt.search();
+
+        var txt1 = txt.toUpperCase();
+        alert(txt1);
+    }
+
+    //创建js对象方法1
+    function obj_newObj(){
+
+        var person=new Object();
+        person.firstname="Bill";
+        person.lastname="Gates";
+        person.age=56;
+        person.eyecolor="blue";
+        alert(person.firstname+" is "+person.age+" years old.")
+
+    }
+
+    //创建js对象方法2
+    function  obj_newObj1(){
+        var person1 = {fullname:"Bill",theAge:"12"};
+        alert(person1.fullname+" "+person1.theAge);
+    }
+
+    //使用对象构造器
+    function obj_newObj2(){
+
+        var human = new human1("Bill","12");
+        alert(human.humanName+" "+human.humanAge);
+
+    }
+
+    function human1(humanName,humanAge) {
+        this.humanName = humanName;
+        this.humanAge = humanAge;
+    }
+
+
+    //对象方法
+    function bigdog(dogName,dogAge,dogSex){
+        this.dogName = dogName;
+        this.dogAge = dogAge;
+        this.dogSex = dogSex;
+
+        //带参数方法
+        this.changeSex = changeSex;
+        function changeSex(sex){
+            this.dogSex = sex;
+        }
+
+        this.dogEat = dogEat;
+        function dogEat(food){
+            alert(this.dogName+" "+this.dogAge+" "+this.dogSex+" eat "+food);
+        }
+
+        //带返回值
+        this.dogFriend = dogFriend;
+        function dogFriend(){
+            return "cat";
+        }
+    }
+
+    function obj_func(){
+
+        var dog = new bigdog("Hany",12,"boy");
+        dog.changeSex("girl");
+        dog.dogEat("Apple");
+        alert(dog.dogName+"'s friend is "+dog.dogFriend());
+    }
+
+    //遍历对象
+    function obj_forin(){
+        var dog = new bigdog("Lala",13,"boy");
+
+        var x;
+        var txt="";
+        for (x in dog){
+            txt = txt+" "+dog[x];
+        }
+
+        alert(txt);
+    }
+
+</script>
+<button type="button" onclick="obj_string()">字符串对象</button>
+<button type="button" onclick="obj_newObj()">创建js对1</button>
+<button type="button" onclick="obj_newObj1()">创建js对象2</button>
+<button type="button" onclick="obj_newObj2()">使用对象构造器</button>
+<button type="button" onclick="obj_func()">对象方法</button>
+<button type="button" onclick="obj_forin()">遍历对象</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 数字------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_num">js 数字</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+    * JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。
+     JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。
+     整数（不使用小数点或指数计数法）最多为 15 位。
+     小数的最大位数是 17，但是浮点运算并不总是 100% 准确
+     如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0x，则解释为十六进制数。
+    * */
+    function obj_num(){
+        var pi=3.14;    // 使用小数点
+        var x=34;       // 不使用小数点
+        var y=123e5;    // 12300000
+        var z=123e-5;   // 0.00123
+        var sum=0.2+0.1;
+        var e=0377;
+        var st=0xFF;
+        alert(pi+" "+x+" "+y+" "+z+" "+sum+" "+e+" "+st);
+    }
+</script>
+<button type="button" onclick="obj_num()">输出各种数值</button>
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------js 字符串------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_str">js 字符串</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    function strobj(){
+        var txt = "hello world~";
+        alert(txt.length+" "+txt.toUpperCase());
+    }
+
+</script>
+<button type="button" onclick="strobj()">字符串对象</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 日期------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_date">js 日期</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    function datefun(){
+
+        //Date 对象自动使用当前的日期和时间作为其初始值。
+        var myDate = new Date();
+
+        //表示月份的参数介于 0 到 11 之间。也就是说，如果希望把月设置为 8 月，则参数应该是 7。
+        myDate.setFullYear(2007,8,5);
+
+        //如果增加天数会改变月份或者年份，那么日期对象会自动完成这种转换。
+        myDate.setDate(myDate.getDate()+5);
+
+        alert(myDate);
+    }
+
+    function dateCompare(){
+        var myDate=new Date();
+        myDate.setFullYear(2008,8,9);
+
+        var today = new Date();
+
+        if (myDate>today)
+        {
+            alert("Today is before 9th August 2008");
+        }
+        else
+        {
+            alert("Today is after 9th August 2008");
+        }
+    }
+</script>
+<button type="button" onclick="datefun()">操作日期</button>
+<button type="button" onclick="dateCompare()">比较日期</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 数组------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_arr">js 数组</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function arrCreate(){
+        var arr1 = new Array();
+        arr1[0] = "1";
+        arr1[1] = "2";
+        arr1[2] = "3";
+
+        var arr2 = new Array(3);
+        arr2[0] = "1";
+        arr2[1] = "2";
+        arr2[2] = "3";
+
+        var arr3 = new Array("1","2","3");
+        arr3[4] = 5;
+        arr3[0] = 11;
+        alert(arr3);
+    }
+
+</script>
+<button type="button" onclick="arrCreate()">创建数组</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 逻辑对象bool------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_boolObj">js 逻辑对象bool</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function boolobj(){
+
+        //下面的所有的代码行均会创建初始值为 false 的 Boolean 对象
+        var myBoolean=new Boolean();
+        myBoolean=new Boolean(0);
+        myBoolean=new Boolean(null);
+        myBoolean=new Boolean("");
+        myBoolean=new Boolean(false);
+        myBoolean=new Boolean(NaN);
+
+        //下面的所有的代码行均会创初始值为 true 的 Boolean 对象
+        var myBoolean1=new Boolean(1);
+        myBoolean1=new Boolean(true);
+        myBoolean1=new Boolean("true");
+        myBoolean1=new Boolean("false");
+        myBoolean1=new Boolean("Bill Gates");
+
+        alert(myBoolean+" "+myBoolean1);
+    }
+
+</script>
+<button type="button" onclick="boolobj()">逻辑对象bool</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 常见的算数任务------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_math">js 常见的算数任务</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function mathfun(){
+
+        //四舍五入
+        var value = Math.round(0.60);
+        value = Math.round(0.50);
+        value = Math.round(0.49);
+        value = Math.round(-4.40);
+        value = Math.round(-4.60);
+
+        value = Math.random();//随机值
+        value = Math.max(1,2,3);//最大值
+        value = Math.min(11,22,33);//最小值
+
+        alert(value);
+    }
+
+</script>
+<button type="button" onclick="mathfun()">常见的算数任务</button>
+<br/><br/><br/>
 
 
 </body>

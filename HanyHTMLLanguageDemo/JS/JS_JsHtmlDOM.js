@@ -4,13 +4,11 @@
 
 
 
-
-
 //改变html输出流
-document.write(Date());
-document.write("<p>This is a paragraph</p>"+"<br>");
-document.write("Hello " +
-    "World!"+"<br>");//折行
+//document.write(Date());
+//document.write("<p>This is a paragraph</p>"+"<br>");
+//document.write("Hello " +
+//    "World!"+"<br>");//折行
 
 
 //通过id/签名等查找html元素
@@ -28,5 +26,7 @@ document.getElementById('div1').style.visibility = true;
 document.getElementById('div1').style.color = 'blue'
 
 
-//事件
-<h1 onclick="this.innerHTML='谢谢!'">请点击该文本</h1>
+//添加节点 删除节点
+document.getElementById("").appendChild("");
+document.getElementById("").removeChild("");
+document.getElementById("").parentNode;
