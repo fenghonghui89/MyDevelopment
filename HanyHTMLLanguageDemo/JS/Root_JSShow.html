@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS演示页面</title>
+    <script src="JS_JsBase.js"></script>
+    <script src="JS_JsHtmlDOM.js"></script>
+</head>
+<body>
+
+
+<!--js 基础-->
+<h1>js 基础</h1>
+
+
+js 对象<br/>
+<button type="button" onclick="obj_func('Hany','12')">带参数函数</button>
+<button type="button" onclick="alert('the return value:'+obj_return())">带返回值函数</button>
+<br/><br/><br/>
+
+
+js 运算符<br/>
+<button type="button" onclick="operator_compare()">===</button>
+<button type="button" onclick="operator_condition()">xxx?y1:y2</button>
+<br/><br/><br/>
+
+
+js 函数<br/>
+<button type="submit" onclick="func_label()">标签 / for in 循环</button>
+<br/><br/><br/>
+
+
+js 异常捕获<br/>
+<input type="text" id="error_try" />
+<button type="button" onclick="error_try()">try catch throw</button>
+<br/><br/><br/>
+
+
+js 表单验证<br/>
+<form action="http://www.baidu.com" onsubmit="return validate_form(this)" method="post">
+    Email:<input type="text" name="email" size="30">
+    <input type="submit" value="提交">
+</form>
+<br/><br/><br/>
+
+
+
+
+<!--js html dom-->
+<h1>js html dom</h1>
+<button type="button" onclick="obj_newObj()">JS 语句</button>
+<br />
+
+
+
+</body>
+</html>
