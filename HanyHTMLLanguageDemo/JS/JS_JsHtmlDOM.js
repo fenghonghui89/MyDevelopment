@@ -12,21 +12,29 @@
 
 
 //通过id/签名等查找html元素
-var x = document.getElementById('demo');
-var x = document.getElementsByTagName('p');
+var xxx = document.getElementById('demo');
+var xxx = document.getElementsByTagName('p');
 
 //改变内容
-document.getElementById('demo').innerHTML = 'text~';
+document.getElementById('').innerHTML = 'text~';
+var yyy = 0;
+document.getElementById('').innerHTML = yyy+"xxx";
 
 //改变属性
-document.getElementById('image').src = '1111.jpg';
+document.getElementById('').src = '1111.jpg';
+document.getElementById('').setAttribute('name','value')
+document.getElementById('').removeAttribute('name')
 
 //改变css
-document.getElementById('div1').style.visibility = true;
-document.getElementById('div1').style.color = 'blue'
+document.getElementById('').style.visibility = true;
+document.getElementById('').style.color = 'blue'
 
 
 //添加节点 删除节点
 document.getElementById("").appendChild("");
 document.getElementById("").removeChild("");
-document.getElementById("").parentNode;
+document.getElementById("").parentNode;//父节点
+
+
+//自定义标签
+document.createElement(["myhero"])

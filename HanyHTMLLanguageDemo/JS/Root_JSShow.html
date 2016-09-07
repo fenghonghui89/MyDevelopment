@@ -33,6 +33,19 @@
 <a href="#js_obj_date">js 日期</a><br/>
 <a href="#js_arr">js 数组</a><br/>
 <a href="#js_boolObj">js 逻辑对象bool</a><br/>
+<a href="#js_math">js 常见的算数任务</a><br/>
+<a href="#js_RegExp">js 正则表达式</a><br/>
+
+<h2>js window</h2>
+<a href="#js_window">js window</a><br/>
+<a href="#js_screen">js screen</a><br/>
+<a href="#js_location">js location</a><br/>
+<a href="#js_history">js history</a><br/>
+<a href="#js_navigator">js navigator</a><br/>
+<a href="#js_Timing">js timing</a><br/>
+<a href="#js_cookie">js cookie</a><br/>
+
+
 <!------------------------------------------------------------------js 运算符------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_base_operator">js 运算符</h1>
 <a href="#root_menu">回到目录</a>
@@ -499,13 +512,20 @@
 
 <script>
 
-    function strobj(){
+    //字符串对象
+    function str_obj(){
         var txt = "hello world~";
         alert(txt.length+" "+txt.toUpperCase());
     }
 
+    //match 查找字符串中的特定字符串
+    function str_match(){
+        var str = "hello world";
+        alert(str.match('world')+" "+str.match('mm'));//world null
+    }
+
 </script>
-<button type="button" onclick="strobj()">字符串对象</button>
+<button type="button" onclick="str_match()">字符串对象</button>
 <br/><br/><br/>
 
 
@@ -520,14 +540,21 @@
 
         //Date 对象自动使用当前的日期和时间作为其初始值。
         var myDate = new Date();
+        console.log(myDate);//2016-09-07T09:50:04.432Z
+
+        //getDate会把时间转换为自当月开始到指定时间经过的天数
+        var myDate1 = myDate.getDate();
+        console.log(myDate1);//7
 
         //表示月份的参数介于 0 到 11 之间。也就是说，如果希望把月设置为 8 月，则参数应该是 7。
         myDate.setFullYear(2007,8,5);
+        console.log(myDate);//2007-09-05T09:50:04.432Z
+
 
         //如果增加天数会改变月份或者年份，那么日期对象会自动完成这种转换。
         myDate.setDate(myDate.getDate()+5);
+        console.log(myDate)//2007-09-05T09:50:04.432Z
 
-        alert(myDate);
     }
 
     function dateCompare(){
@@ -639,5 +666,353 @@
 <br/><br/><br/>
 
 
+
+
+<!------------------------------------------------------------------js 正则表达式------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_RegExp">js 正则表达式</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+
+
+    //test() 方法检索字符串中的指定值。返回值是 true 或 false。
+    function regExp_test(){
+        var reg = new RegExp('e');
+        var result = reg.test("the one");
+        alert(result);//true
+    }
+
+
+
+    //exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+    function regExp_exec(){
+        var reg = new RegExp('e');
+        var result = reg.exec("the one");
+        alert(result);//e
+    }
+
+
+
+    /*
+    *您可以向 RegExp 对象添加第二个参数，以设定检索。例如，如果需要找到所有某个字符的所有存在，则可以使用 "g" 参数 ("global")。
+    * 在使用 "g" 参数时，exec() 的工作原理如下：
+    *
+     找到第一个 "e"，并存储其位置
+     如果再次运行 exec()，则从存储的位置开始检索，并找到下一个 "e"，并存储其位置
+
+     * */
+    function  regExp_exec1(){
+        var  reg = new RegExp('e','g');
+
+        var result = '';
+        var index = '';
+        do {
+            index = reg.exec('the one');
+            result = result+" "+index;
+        }while (index != null)
+
+        alert(result);//e e null
+    }
+
+
+    function regExp_test(){
+        var str = 'Is this all there is?';
+        var pattl = /[a-h]/g;
+        var reg = new RegExp("[^a-h]",'g');
+        alert(str.match(reg));
+    }
+
+
+
+</script>
+<button type="button" onclick="regExp_test()">reg test</button>
+<button type="button" onclick="regExp_exec()">reg exec</button>
+<button type="button" onclick="regExp_exec1()">reg exec1</button>
+<button type="button" onclick="regExp_test()">reg test</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js window------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_window">js window</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    //浏览器尺寸
+    function window_size(){
+        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        alert("w:"+w+" h:"+h);
+    }
+
+    //其他方法
+    var win;
+    function window_method(){
+//        win = window.open("http://www.baidu.com")
+        win = window.location.assign("http://www.baidu.com");
+    }
+
+    function window_method1(){
+        win.close();
+    }
+</script>
+<button type="button" onclick="window_size()">浏览器尺寸</button>
+<button type="button" onclick="window_method()">其他方法</button>
+<button type="button" onclick="window_method1()">test</button>
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------js screen------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_screen">js screen</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //window.screen 对象在编写时可以不使用 window 这个前缀
+    function screen_test(){
+        var w = screen.availWidth;//window.screen.availWidth
+        var h = screen.availHeight;
+        alert("可用尺寸w:"+w+" h:"+h);
+    }
+
+</script>
+<button type="button" onclick="screen_test()">screen</button>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js location------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_location">js location</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //输出
+    function location0(){
+
+        var result = "hostname:"+location.hostname+"\n";
+        result += "pathname:"+location.pathname+"\n";
+        result += "port:"+location.port+"\n";
+        result += "protocol:"+location.protocol+"\n";
+        result += "href:"+location.href+"\n";
+        alert(result);
+    }
+
+    //跳转
+    function  location1(){
+        location.assign("http://tpages.cn");
+    }
+
+</script>
+<button type="button" onclick="location0()">输出</button>
+<button type="button" onclick="location1()">跳转</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js history------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_history">js history</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //后退
+    function history_back(){
+        history.back();
+    }
+
+    //前进
+    function  history_forward(){
+        history.forward();
+    }
+
+</script>
+<button type="button" onclick="history_back()">返回</button>
+<button type="button" onclick="history_forward()">前进</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js navigator------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_navigator">js navigator</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //window.navigator 对象包含有关访问者浏览器的信息
+    function navigator_info(){
+        var result = "Browser CodeName:"+navigator.appCodeName+"\n";
+        result += "Browser Name:"+navigator.appName+"\n";
+        result += "Browser Version:"+navigator.appVersion+"\n";
+        result += "Cookies Enabled:"+navigator.cookieEnabled+"\n";
+        result += "Platform:"+ navigator.platform+"\n";
+        result += "User-agent header:"+ navigator.userAgent+"\n";
+        result += "User-agent language:"+ navigator.systemLanguage+"\n";
+        alert(result);
+    }
+
+
+</script>
+<button type="button" onclick="navigator_info()">navigator_info</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 提示框------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_popupAlert">js 提示框</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //确认框
+    function popupAlert_confirm(){
+
+        var result = confirm("tap one");
+        if (result == true){
+            alert('you tap ok');
+        }else {
+            alert('you tap false');
+        }
+    }
+
+
+    function popupAlert_prompt(){
+        var result = prompt("请输入你的名字","Hany");
+        if(result !="" && result != null){
+            alert("你输入的名字是:"+result);
+        }
+    }
+</script>
+<button type="button" onclick="popupAlert_confirm()">确认框</button>
+<button type="button" onclick="popupAlert_prompt()">提示框</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js Timing------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_Timing">js Timing</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //计时
+    var timing;
+    var count=0;
+    function timing_start(){
+
+        document.getElementById('timing_p').innerHTML = count;
+        count = count+1;
+        timing = setTimeout('timing_start()',1000);
+
+        document.getElementById('timing_startBtn').disabled = 'disabled';
+    }
+
+    function timing_stop(){
+        clearTimeout(timing)
+
+        document.getElementById('timing_startBtn').removeAttribute('disabled');
+    }
+
+    //显示当前时间
+    function startTime() {
+
+        var today = new Date()
+        var h=today.getHours()
+        var m=today.getMinutes()
+        var s=today.getSeconds()
+
+        //add a zero in front of numbers<10
+        m=checkTime(m)
+        s=checkTime(s)
+        document.getElementById('timing_date').innerHTML= h+":"+m+":"+s
+        setTimeout('startTime()',500)
+    }
+
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i
+        }
+        return i
+    }
+</script>
+<p id="timing_p">计时</p>
+<button type="button" onclick="timing_start()" id="timing_startBtn">开始</button>
+<button type="button" onclick="timing_stop()">停止</button>
+<p id="timing_date">date</p>
+<button type="button" onclick="startTime()">显示时间</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js cookie------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_cookie">js cookie</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    function getCookie(c_name)
+    {
+        console.log("get cookie:"+document.cookie);
+
+        if (document.cookie.length>0)//检查 document.cookie 对象中是否存有 cookie
+        {
+            var c_start = document.cookie.indexOf(c_name + "=")//0 or -1
+            if (c_start != -1)//检查我们指定的 cookie 是否已储存
+            {
+                c_start = c_start + c_name.length + 1
+                var c_end = document.cookie.indexOf(";",c_start)//0 or -1
+                if (c_end == -1) c_end = document.cookie.length
+                return document.cookie.substring(c_start,c_end)
+            }
+        }
+        return ""
+    }
+
+    //cookie名称 值 过期天数
+    function setCookie(c_name,value,expiredays)
+    {
+        var exdate = new Date()
+        exdate.setDate(exdate.getDate()+expiredays)
+        var dayvalue = expiredays == null?"":"expires="+exdate.toGMTString();
+        console.log("day:"+dayvalue);
+
+        var namevalue = c_name+"="+value;
+        console.log("name:"+namevalue);
+
+        document.cookie = namevalue+";"+dayvalue;
+        console.log("set cookie:"+document.cookie);
+    }
+
+    function checkCookie()
+    {
+        var username = getCookie('username')
+        if (username != null && username != "")
+        {
+            alert('Welcome again '+username+'!')
+        }
+        else
+        {
+            username = prompt('Please enter your name:',"")
+            if (username != null && username != "")
+            {
+                setCookie('username',username,365)
+            }
+        }
+    }
+</script>
+<button type="button" onclick="checkCookie()">读取cookie</button>
+
+<br/><br/><br/>
 </body>
 </html>
