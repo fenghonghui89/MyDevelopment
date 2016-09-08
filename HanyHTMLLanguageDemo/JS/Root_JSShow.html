@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>JS演示页面</title>
     <link href="../Root_CSS.css" type="text/css" rel="stylesheet">
-
 </head>
 <body>
 
@@ -19,12 +18,13 @@
 <br />
 
 <h2>js html dom</h2>
+<a href="#js_html_dom">js html dom</a><br/>
 <a href="#js_event_eg">js 事件例子</a><br/>
 <a href="#js_event_window">js window事件</a><br/>
 <a href="#js_event_form">js form事件</a><br/>
 <a href="#js_event_mouse">js 鼠标事件</a><br/>
-<a href="#js_dot_add">js 添加节点</a><br/>
-<a href="#js_dot_del">js 删除节点</a><br/>
+<a href="#js_dot_add">js 节点</a><br/>
+<a href="#html_dom_node">html dom 属性:nodeName nodeType</a><br/>
 
 <h2>js 对象</h2>
 <a href="#js_obj_newObj">js 对象</a><br/>
@@ -45,6 +45,8 @@
 <a href="#js_Timing">js timing</a><br/>
 <a href="#js_cookie">js cookie</a><br/>
 
+<h2>json</h2>
+<a href="#js_json">json</a>
 
 <!------------------------------------------------------------------js 运算符------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_base_operator">js 运算符</h1>
@@ -184,7 +186,29 @@
 
 
 
+<!------------------------------------------------------------------js html dom------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_html_dom">js html dom</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
 
+<script>
+    function dot_test(){
+
+        var x  = document.getElementById('jsdom_dv1');
+        var list = x.getElementsByTagName('p')
+        alert("length:"+list.length+' tag:'+list[0].childNodes[0].nodeValue);
+        alert("length:"+list.length+' tag:'+list[0].firstChild.nodeValue);
+        alert("length:"+list.length+' tag:'+list[0].innerHTML);
+    }
+</script>
+
+<div id="jsdom_dv1">
+    <p id="jsdom_dv1_p1">1~1~</p>
+    <p id="jsdom_dv1_p2">2~2~</p>
+</div>
+<button type="button" onclick="dot_test()">test</button>
+
+<br/><br/><br/>
 
 <!------------------------------------------------------------------js 事件例子------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_event_eg">js 事件例子</h1>
@@ -307,15 +331,10 @@
 <br/><br/><br/>
 
 
-<!------------------------------------------------------------------js 添加节点------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_dot_add">js 鼠标事件</h1>
+<!------------------------------------------------------------------js 节点------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_dot_add">js 节点</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
-
-<div id="dotdiv1">
-    <p>这是节点1</p>
-</div>
-<button type="button" onclick="addDot()">添加节点</button>
 
 <script>
     function addDot(){
@@ -326,24 +345,7 @@
         var parent = document.getElementById("dotdiv1");
         parent.appendChild(para);
     }
-</script>
 
-<br/><br/><br/>
-
-
-
-<!------------------------------------------------------------------js 删除节点------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_dot_del">js 删除节点</h1>
-<a href="#root_menu">回到目录</a>
-<hr />
-
-<div id="dotdiv2">
-    <p id="p1">这是一个段落。</p>
-    <p id="p2">这是另一个段落。</p>
-</div>
-<button type="button" onclick="delDot()">删除节点</button>
-
-<script>
     function delDot(){
         //方法1
 //        var parent = document.getElementById("dotdiv2");
@@ -354,9 +356,92 @@
         var child = document.getElementById("p2");
         child.parentNode.removeChild(child);
     }
+
 </script>
 
+<p>添加节点</p>
+<div id="dotdiv1">
+    <p>这是节点1</p>
+</div>
+<button type="button" onclick="addDot()">添加节点</button>
+
+<p>删除节点</p>
+<div id="dotdiv2">
+    <p id="p1">这是一个段落。</p>
+    <p id="p2">这是另一个段落。</p>
+</div>
+<button type="button" onclick="delDot()">删除节点</button>
+
+
+
 <br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------html dom 属性:nodeName nodeType------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="html_dom_node">html dom 属性:nodeName nodeType</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /*
+    *
+     文档节点
+     nodeName 始终是 #document
+     nodeValue 是 undefined 或 null
+     type是9
+
+     元素节点
+     nodeName 与标签名相同
+     nodeValue 是 undefined 或 null
+     type是1
+
+     属性节点
+     nodeName 与属性名相同
+     nodeValue 是属性值
+     type是2
+
+     文本节点
+     nodeName 始终是 #text
+     nodeValue 是文本本身
+     type是3
+
+     * */
+    function html_dom_nodeName(){
+
+        //文档节点
+        console.log("文档节点:"+document.nodeName+" "+
+                document.nodeValue+" "+
+                document.nodeType);//#document null 9
+
+        //元素节点
+        var x = document.getElementById("intro");
+        console.log("元素节点:"+x.nodeName+" "+
+                x.nodeValue+" "+
+                x.nodeType+'\n');//P null 1
+
+        //属性节点
+        var attributeNode = document.getElementById("intro").getAttribute('id');
+        console.log("属性节点:"+attributeNode+" "+attributeNode.nodeName+" "+
+                attributeNode.nodeValue+" "+
+                attributeNode.nodeType);//intro undefined undefined undefined
+
+        //文本节点
+        var textNode = document.getElementById("intro").firstChild;
+        console.log("文本节点:"+textNode.nodeName+" "+
+                textNode.nodeValue+" "+
+                textNode.nodeType);//#text Hello World! 3
+
+
+
+    }
+</script>
+
+<p id="intro" style="text-align: left;color: #0000FF" >Hello World!</p>
+<button type="button" onclick="html_dom_nodeName()">html dom nodeName</button>
+
+<br/><br/><br/>
+
 
 
 
@@ -466,7 +551,7 @@
 
 </script>
 <button type="button" onclick="obj_string()">字符串对象</button>
-<button type="button" onclick="obj_newObj()">创建js对1</button>
+<button type="button" onclick="obj_newObj()">创建js对象1</button>
 <button type="button" onclick="obj_newObj1()">创建js对象2</button>
 <button type="button" onclick="obj_newObj2()">使用对象构造器</button>
 <button type="button" onclick="obj_func()">对象方法</button>
@@ -1012,7 +1097,72 @@
     }
 </script>
 <button type="button" onclick="checkCookie()">读取cookie</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------json------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_json">json</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function jsonParse(){
+
+        //json对象
+        var JSONObject= {
+            "name":"Bill Gates",
+            "street":"Fifth Avenue New York 666",
+            "age":56,
+            "phone":"555 1234567"};
+
+        document.getElementById("jname").innerHTML=JSONObject.name
+        document.getElementById("jage").innerHTML=JSONObject.age
+        document.getElementById("jstreet").innerHTML=JSONObject.street
+        document.getElementById("jphone").innerHTML=JSONObject.phone
+
+        //json数组
+        var employees = [
+            { "firstName":"Bill" , "lastName":"Gates" },
+            { "firstName":"George" , "lastName":"Bush" },
+            { "firstName":"Thomas" , "lastName": "Carter" }
+        ];
+        employees[0].firstName = 'Apple';
+        document.getElementById('jarray').innerHTML = employees[0].firstName;
+    }
+
+
+    function jsonParser(){
+
+            //用解析器解析json文本
+            var jsonObj = '{"students" : [' +
+                    '{"name":"Tom","age":12},' +
+                    '{"name":"Ann","age":13},' +
+                    '{"name":"Jim","age":14}' +
+                    ']}';
+
+
+            var obj = JSON.parse(jsonObj);
+            document.getElementById('jparser').innerHTML = obj.students[2].age;
+        }
+</script>
+
+<p>
+    Name: <span id="jname"></span><br />
+    Age: <span id="jage"></span><br />
+    Address: <span id="jstreet"></span><br />
+    Phone: <span id="jphone"></span><br /><br/>
+
+    jsonArray:<span id="jarray"></span><br/>
+</p>
+<button type="button" onclick="jsonParse()">json对象</button>
+
+<p id="jparser">json parser</p>
+<button type="button" onclick="jsonParser()">用解析器解析json文本</button>
 
 <br/><br/><br/>
+
+
+
+
 </body>
 </html>
