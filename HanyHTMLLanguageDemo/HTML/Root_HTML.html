@@ -513,7 +513,7 @@ width height 尺寸
 
 <!--内联框架-->
 <iframe src="http://o9ivu69va.bkt.clouddn.com/testimg.jpg" height="200" width="200" frameborder="0" name="iframe_a"></iframe>
-<a href="http://www.baidu.com" target="iframe_a">baidu</a>
+<a href="http://www.baidu.com" target="iframe_a">跳转到百度</a>
 <br /><br /><br />
 
 
@@ -828,40 +828,54 @@ textarea:hahahahahahahahahhahahahah
 <hr />
 
 <style>
-    #dragDiv {width:220px;height:220px;padding:10px;border:1px solid #aaaaaa;float: left}
+    div.dragDiv {width:220px;height:220px;padding:10px;border:1px solid #aaaaaa;float: left}
+    div.divclear {clear: both}
 </style>
 
-<script type="text/javascript">
+<script>
+
+    //默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。
     function allowDrop(ev)
     {
-        ev.preventDefault();//默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。
+        ev.preventDefault();
     }
 
+    //设置被拖数据的数据类型和值
     function drag(ev)
     {
-        ev.dataTransfer.setData("Text",ev.target.id);//设置被拖数据的数据类型和值
+        ev.dataTransfer.setData("Text",ev.target.id);
     }
+
 
     function drop(ev)
     {
         ev.preventDefault();//调用 preventDefault() 来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+
         var data = ev.dataTransfer.getData("Text");//通过 dataTransfer.getData("Text") 方法获得被拖的数据
         ev.target.appendChild(document.getElementById(data));//把被拖元素追加到放置元素（目标元素）中
     }
 </script>
 
 <!--拖放-->
-<p>请把 W3School 的图片拖放到矩形中：</p>
-<div id="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<br />
-<img id="dragImg" src="../src/111111.jpg" draggable="true" ondragstart="drag(event)" />
+<p>请把图片拖放到矩形中：</p>
+<div>
+    <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <img id="dragImg" src="../src/111111.jpg" draggable="true" ondragstart="drag(event)" />
+    <div class = "divclear"></div>
+</div>
 
 
 <!--来回拖放-->
-<div id="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <img src="../src/111111.jpg" draggable="true" ondragstart="drag(event)" id="dragImg1" />
+<p>来回拖放</p>
+<div>
+    <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="../src/111111.jpg" draggable="true" ondragstart="drag(event)" id="dragImg1" />
+    </div>
+    <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="divclear"></div>
 </div>
-<div id="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
 <br /><br /><br />
 
 
@@ -877,7 +891,8 @@ textarea:hahahahahahahahahhahahahah
     showPosition() 函数获得并显示经度和纬度
 -->
 
-<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<!--因为无法连接 所以先注释 否则网页会一直处于连接状态-->
+<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
 <script>
     var x=document.getElementById("root_location_demo");
     function getLocation()
@@ -926,7 +941,7 @@ textarea:hahahahahahahahahhahahahah
                 break;
         }
     }
-</script>-->
+</script>
 
 
 <p id="root_location_demo">点击这个按钮，获得您的坐标：</p>
@@ -940,34 +955,44 @@ textarea:hahahahahahahahahhahahahah
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<!--localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。-->
-<script type="text/javascript">
-    if (localStorage.pagecount)
-    {
-        localStorage.pagecount=Number(localStorage.pagecount) +1;
+
+<script>
+
+    //localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。
+    function fun_h5_wb_local(){
+        if (localStorage.pagecount)
+        {
+            localStorage.pagecount=Number(localStorage.pagecount) +1;
+        }
+        else
+        {
+            localStorage.pagecount=1;
+        }
+
+        document.getElementById('h5_ws_local').innerHTML = "Visits "+ localStorage.pagecount + " time(s)."
     }
-    else
-    {
-        localStorage.pagecount=1;
+
+    //sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。
+    function fun_h5_wb_session(){
+        if (sessionStorage.pagecount)
+        {
+            sessionStorage.pagecount=Number(sessionStorage.pagecount) +1;
+        }
+        else
+        {
+            sessionStorage.pagecount=1;
+        }
+
+        document.getElementById('h5_ws_session').innerHTML = "Visits " + sessionStorage.pagecount + " time(s) this session.";
     }
-    document.write("Visits "+ localStorage.pagecount + " time(s).");
 </script>
-<br />
 
-<!--localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。-->
-<script type="text/javascript">
-
-    if (sessionStorage.pagecount)
-    {
-        sessionStorage.pagecount=Number(sessionStorage.pagecount) +1;
-    }
-    else
-    {
-        sessionStorage.pagecount=1;
-    }
-    document.write("Visits " + sessionStorage.pagecount + " time(s) this session.");
-
-</script>
+<p>
+    local storage:<span id="h5_ws_local"></span><br/>
+    session storage:<span id="h5_ws_session"></span><br/>
+</p>
+<button type="button" onclick="fun_h5_wb_local()">local storage</button>
+<button type="button" onclick="fun_h5_wb_session()">session storage</button>
 <br /><br /><br />
 
 
@@ -977,19 +1002,14 @@ textarea:hahahahahahahahahhahahahah
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<script>
 
-<!--
-由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
-window 对象
-document 对象
-parent 对象
--->
-<p>计数: <output id="web_worker_result"></output></p>
-<button onclick="startWorker()">开始 Worker</button>
-<button onclick="stopWorker()">停止 Worker</button>
-<br /><br />
-
-<script type="text/javascript">
+    /*
+    * 由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
+     window 对象
+     document 对象
+     parent 对象
+    * */
     var w;
 
     function startWorker()
@@ -1017,6 +1037,12 @@ parent 对象
         w.terminate();
     }
 </script>
+
+<p>计数: <output id="web_worker_result"></output></p>
+<button onclick="startWorker()">开始 Worker</button>
+<button onclick="stopWorker()">停止 Worker</button>
+<br /><br />
+
 <br /><br /><br />
 
 
@@ -1027,23 +1053,25 @@ parent 对象
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<div id="server_send_result" style="color: black"></div>
 <script>
-    if(typeof(EventSource)!=="undefined")
-    {
-        var source = new EventSource("demo_see.php");
-        source.onmessage = function(event)
+    function fun_serverSend(){
+        if(typeof(EventSource)!=="undefined")
         {
-            document.getElementById("server_send_result").innerHTML+=event.data + "<br />";
-        };
-    }
-    else
-    {
-        document.getElementById("server_send_result").innerHTML="Sorry, your browser does not support server-sent events...";
+            var source = new EventSource("demo_see.php");
+            source.onmessage = function(event)
+            {
+                document.getElementById("server_send_result").innerHTML+=event.data + "<br />";
+            };
+        }
+        else
+        {
+            document.getElementById("server_send_result").innerHTML="Sorry, your browser does not support server-sent events...";
+        }
     }
 </script>
 
-
+<div id="server_send_result" style="color: black"></div>
+<button type="button" onclick="fun_serverSend()">服务器发送事件</button>
 <br /><br /><br />
 </body>
 </html>
