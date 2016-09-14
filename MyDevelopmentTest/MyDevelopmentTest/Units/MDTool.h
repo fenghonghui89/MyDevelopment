@@ -158,6 +158,13 @@ void STLogResponderChain(UIResponder *responder);
  */
 +(NSString *)md5:(NSString *)str;
 
+/**
+ *  返回随机字符串
+ *
+ *  @return 随机字符串
+ */
+-(NSString *)randomString;
+
 + (BOOL)cureentThreadIsMain;
 
 

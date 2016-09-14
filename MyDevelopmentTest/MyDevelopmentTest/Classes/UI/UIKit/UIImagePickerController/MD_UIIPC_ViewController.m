@@ -117,8 +117,8 @@
 -(void)getPhoto
 {
   UIImagePickerController *ipc = [[UIImagePickerController alloc]init];
-  [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//    [ipc setSourceType:UIImagePickerControllerSourceTypeCamera];
+//  [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [ipc setSourceType:UIImagePickerControllerSourceTypeCamera];
   ipc.delegate = self;
   _ipc = ipc;
   [self presentViewController:ipc animated:YES completion:Nil];
@@ -354,18 +354,18 @@
   NSLog(@"哈哈 相册已经显示");
   NSLog(@"ImagePickerController.view%@",NSStringFromCGRect(_ipc.view.frame));
   
-  _v = [[ UIView alloc]initWithFrame:CGRectMake(0, _ipc.view.frame.size.height-100, viewW, 100)];
-  _v.backgroundColor = [UIColor redColor];
-  _sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 20, viewW, 80)];
-  
-  [_sv setBackgroundColor:[UIColor blueColor]];
-  [_v addSubview:_sv];
-  [viewController.view addSubview:_v];
-  
-  //给滚动栏添加返回按钮
-  UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(220, 0, 100, 20)];
-  [backBtn setTitle:@"Done" forState:UIControlStateNormal];
-  [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-  [self.v addSubview:backBtn];
+//  _v = [[ UIView alloc]initWithFrame:CGRectMake(0, _ipc.view.frame.size.height-100, viewW, 100)];
+//  _v.backgroundColor = [UIColor redColor];
+//  _sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 20, viewW, 80)];
+//  
+//  [_sv setBackgroundColor:[UIColor blueColor]];
+//  [_v addSubview:_sv];
+//  [viewController.view addSubview:_v];
+//  
+//  //给滚动栏添加返回按钮
+//  UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(220, 0, 100, 20)];
+//  [backBtn setTitle:@"Done" forState:UIControlStateNormal];
+//  [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+//  [self.v addSubview:backBtn];
 }
 @end
