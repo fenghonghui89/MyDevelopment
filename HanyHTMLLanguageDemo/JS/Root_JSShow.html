@@ -12,7 +12,7 @@
 
 <h2>js 基础</h2>
 <a href="#js_base_operator">js 运算符</a><br/>
-<a href="#js_base_fun">js 函数</a><br/>
+<a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
 <a href="#js_base_err">js 异常捕获</a><br/>
 <a href="#js_base_checkForm">js 表单验证</a><br/>
 <br />
@@ -75,11 +75,23 @@
         alert(result);
     }
 
+</script>
 
-    <!--JS 函数-->
+<button type="button" onclick="operator_compare()">===</button>
+<button type="button" onclick="operator_condition()">xxx?y1:y2</button>
 
-    //标签 / for in 循环
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 标签与循环 函数参数默认值------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_fun">js 标签与循环 函数参数默认值</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
     /*
+     * /标签 / for in 循环
      * 注意for in 循环写法
      * */
     function func_label(){
@@ -97,21 +109,101 @@
 
         alert(result);
     }
+
+    /*
+    * 函数参数默认值1 三目运算符
+    * function func_parama(a,b)
+    * function func_parama()
+    * */
+    function func_p1(){
+        alert(
+                func_parama1()+" "+
+                func_parama1(10)+" "+
+                func_parama1(10,20)+" "+
+                func_parama1(null,20)
+        );//3 12 30 21
+    }
+
+    function func_parama1(a,b){
+        var a = arguments[0]?arguments[0]:1;
+        var b = arguments[1]?arguments[1]:2;
+        return a+b;
+    }
+
+    /*
+    * 函数参数默认值2 ||运算符
+    *
+    * */
+    function func_p2(){
+        alert(
+                func_parama2()+" "+
+                func_parama2(10)+" "+
+                func_parama2(10,20)+" "+
+                func_parama2(null,20)
+        );//3 12 30 21
+    }
+
+    function func_parama2(a,b){
+
+        var a = a||1;
+        var b = b||2;
+
+        //相当于
+//        var a,b;
+//        if (!a){
+//            a = 1;
+//        }
+//        if (!b){
+//            b = 2;
+//        }
+
+        return a+b;
+    }
+
+
+    /*
+     * 函数参数默认值3
+     * 这种方法适合用于参数较多的情况，使用了Jquery的扩展 要先加载jquery
+     * */
+    function func_p3(){
+
+        func_parama3({
+            name:'HanyFeng',
+            sex:'女',
+            phone:'100866'
+        });//输出：姓名：小红，性别：女，年龄：30，电话：100866，QQ：100866。
+    }
+
+    function func_parama3(settings){
+
+        var defaultSetting={
+            name:'小红',
+            age:'30',
+            sex:'女',
+            phone:'100866',
+            QQ:'100866',
+            birthday:'1949.10.01'
+        };
+        $.extend(defaultSetting,settings);
+        var message='姓名：'+defaultSetting.name
+                +'，性别：'+defaultSetting.sex
+                +'，年龄：'+defaultSetting.age
+                +'，电话：'+defaultSetting.phone
+                +'，QQ：'+defaultSetting.QQ
+                +'，生日：'+defaultSetting.birthday
+                +'。';
+        alert(message);
+
+    }
 </script>
 
-<button type="button" onclick="operator_compare()">===</button>
-<button type="button" onclick="operator_condition()">xxx?y1:y2</button>
-
-<br/><br/><br/>
-
-
-<!------------------------------------------------------------------js 函数------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_base_fun">js 函数</h1>
-<a href="#root_menu">回到目录</a>
-<hr />
+<!--加载jquery库-->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 
 <button type="submit" onclick="func_label()">标签 / for in 循环</button>
-
+<button type="submit" onclick="func_p1()">函数参数默认值1 三目运算符</button>
+<button type="submit" onclick="func_p2()">函数参数默认值2 ||运算符</button>
+<button type="submit" onclick="func_p3()">函数参数默认值3 jquery扩展</button>
 <br/><br/><br/>
 
 
@@ -461,8 +553,9 @@
      JavaScript 基于 prototype，而不是基于类的。
     * */
 
-    //js字符串对象
+    //举例:js字符串对象
     function obj_string(){
+
         var txt = "sample txt";
         txt.length = 5;
         txt.indexOf();
@@ -472,69 +565,126 @@
         alert(txt1);
     }
 
-    //创建js对象方法1
+    //创建js对象方法1 - new Object()
     function obj_newObj(){
 
-        var person=new Object();
-        person.firstname="Bill";
-        person.lastname="Gates";
-        person.age=56;
-        person.eyecolor="blue";
+        var person = new Object();
+        person.firstname = "Bill";
+        person.lastname = "Gates";
+        person.age = 56;
+        person.eyecolor = "blue";
+        person.eatFood = function(food){
+            alert(person.firstname+" eat "+food);
+        }
+
         alert(person.firstname+" is "+person.age+" years old.")
-
+        person.eatFood("Pig");
     }
 
-    //创建js对象方法2
-    function  obj_newObj1(){
-        var person1 = {fullname:"Bill",theAge:"12"};
+    //创建js对象方法2 - json对象
+    function obj_newObj1(){
+        var person1 = {
+            fullname:"Bill",
+            theAge:"12",
+            eatFood:function(food){
+                alert("eating "+food);
+            }
+        };
+
         alert(person1.fullname+" "+person1.theAge);
+        person1.eatFood("Orange");
     }
 
-    //使用对象构造器
+    //创建js对象方法3 - 使用对象构造器
     function obj_newObj2(){
 
         var human = new human1("Bill","12");
+
         alert(human.humanName+" "+human.humanAge);
+        human.eatFood("dog");
 
     }
 
     function human1(humanName,humanAge) {
+
         this.humanName = humanName;
         this.humanAge = humanAge;
+        this.eatFood = function(food){
+            alert("you are eating "+food);
+        }
     }
 
+    //创建js对象方法4 - 使用对象构造器返回一个json对象
+    function  obj_newObj3(){
+        var human = huamanConfig({
+            name:"Tom",
+            age:"13"
+        });
+
+        alert(human.name+" "+human.age);
+        human.eatFood("apple");
+    }
+
+    function huamanConfig(options){
+
+        var huamanConfig = {
+            name:"default name",
+            age:"12",
+            eatFood:function(food){
+              alert("I am eating "+food);
+            }
+        };
+
+        if (!options || typeof options !== "object") {
+            return huamanConfig;
+        }
+
+        for (var i in options) {
+            if (huamanConfig.hasOwnProperty(i)) {
+                huamanConfig[i] = options[i];
+            }
+        }
+
+        return huamanConfig;
+    }
 
     //对象方法
-    function bigdog(dogName,dogAge,dogSex){
-        this.dogName = dogName;
-        this.dogAge = dogAge;
-        this.dogSex = dogSex;
-
-        //带参数方法
-        this.changeSex = changeSex;
-        function changeSex(sex){
-            this.dogSex = sex;
-        }
-
-        this.dogEat = dogEat;
-        function dogEat(food){
-            alert(this.dogName+" "+this.dogAge+" "+this.dogSex+" eat "+food);
-        }
-
-        //带返回值
-        this.dogFriend = dogFriend;
-        function dogFriend(){
-            return "cat";
-        }
-    }
-
     function obj_func(){
 
         var dog = new bigdog("Hany",12,"boy");
         dog.changeSex("girl");
         dog.dogEat("Apple");
+
         alert(dog.dogName+"'s friend is "+dog.dogFriend());
     }
+
+    function bigdog(dogName,dogAge,dogSex){
+
+        this.dogName = dogName;
+        this.dogAge = dogAge;
+        this.dogSex = dogSex;
+
+        //带参数方法
+//        this.changeSex = changeSex;
+//        function changeSex(sex){
+//            this.dogSex = sex;
+//        }
+        this.changeSex = function(sex){
+            this.dogSex = sex;
+        }
+
+        this.dogEat = function(food){
+            alert(this.dogName+" "+this.dogAge+" "+this.dogSex+" eat "+food);
+        }
+
+        //带返回值
+        this.dogFriend = function(){
+            return "cat";
+        }
+
+    }
+
+
 
     //遍历对象
     function obj_forin(){
@@ -551,9 +701,10 @@
 
 </script>
 <button type="button" onclick="obj_string()">字符串对象</button>
-<button type="button" onclick="obj_newObj()">创建js对象1</button>
-<button type="button" onclick="obj_newObj1()">创建js对象2</button>
-<button type="button" onclick="obj_newObj2()">使用对象构造器</button>
+<button type="button" onclick="obj_newObj()">创建js对象1 - new Object()</button>
+<button type="button" onclick="obj_newObj1()">创建js对象2 - json对象</button>
+<button type="button" onclick="obj_newObj2()">创建js对象方法3 - 使用对象构造器</button>
+<button type="button" onclick="obj_newObj3()">创建js对象方法4 - 使用对象构造器返回一个json对象</button>
 <button type="button" onclick="obj_func()">对象方法</button>
 <button type="button" onclick="obj_forin()">遍历对象</button>
 <br/><br/><br/>
@@ -1106,14 +1257,25 @@
 <hr />
 
 <script>
+    /*
+    * JSON：JavaScript 对象表示法
+    * JSON 是存储和交换文本信息的语法。类似 XML。
+    * JSON 文本格式在语法上与创建 JavaScript 对象的代码相同。
+    * JSON不是一种语言，它仅仅是一种数据的表达方式，从某种程度上来讲，JSON跟XML没有什么区别。
+    * json文件类型 - xxx.json
+    *
+    * json - "key":"value" value可以是null
+    * json对象 - {"key":"value",...} (包含多个键值对,与firstName = "John";lastName = "Doe";等价)
+    * */
     function jsonParse(){
 
         //json对象
-        var JSONObject= {
+        var JSONObject = {
             "name":"Bill Gates",
             "street":"Fifth Avenue New York 666",
             "age":56,
-            "phone":"555 1234567"};
+            "phone":"555 1234567"
+        };
 
         document.getElementById("jname").innerHTML=JSONObject.name
         document.getElementById("jage").innerHTML=JSONObject.age
