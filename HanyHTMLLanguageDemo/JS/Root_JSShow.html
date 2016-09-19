@@ -111,7 +111,7 @@
     }
 
     /*
-    * 函数参数默认值1 三目运算符
+    * 函数参数默认值1 arguments
     * function func_parama(a,b)
     * function func_parama()
     * */
@@ -167,11 +167,12 @@
      * */
     function func_p3(){
 
-        func_parama3({
+        var json = {
             name:'HanyFeng',
-            sex:'女',
-            phone:'100866'
-        });//输出：姓名：小红，性别：女，年龄：30，电话：100866，QQ：100866。
+            phone:'100866',
+            sex:'女'
+        };
+        func_parama3(json);//输出：姓名：小红，性别：女，年龄：30，电话：100866，QQ：100866。
     }
 
     function func_parama3(settings){
@@ -201,7 +202,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 
 <button type="submit" onclick="func_label()">标签 / for in 循环</button>
-<button type="submit" onclick="func_p1()">函数参数默认值1 三目运算符</button>
+<button type="submit" onclick="func_p1()">函数参数默认值1 arguments</button>
 <button type="submit" onclick="func_p2()">函数参数默认值2 ||运算符</button>
 <button type="submit" onclick="func_p3()">函数参数默认值3 jquery扩展</button>
 <br/><br/><br/>
@@ -617,11 +618,11 @@
     //创建js对象方法4 - 使用对象构造器返回一个json对象
     function  obj_newObj3(){
         var human = huamanConfig({
-            name:"Tom",
+            sex:"boy",
             age:"13"
         });
 
-        alert(human.name+" "+human.age);
+        alert(human.name+" "+human.age+" "+human.sex);
         human.eatFood("apple");
     }
 
@@ -630,6 +631,7 @@
         var huamanConfig = {
             name:"default name",
             age:"12",
+            sex:"girl",
             eatFood:function(food){
               alert("I am eating "+food);
             }

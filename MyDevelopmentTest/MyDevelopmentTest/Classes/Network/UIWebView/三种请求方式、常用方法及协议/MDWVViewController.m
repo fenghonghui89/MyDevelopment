@@ -173,7 +173,7 @@
   return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
 }
 
-#pragma mark - NSURLConnectionDataDelegate
+#pragma mark NSURLConnectionDataDelegate
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
   NSLog(@"WebController received response via NSURLConnection");

@@ -82,6 +82,7 @@
 #pragma mark PayPal
 - (IBAction)singlePaymentBtnTap:(id)sender {
   
+  //PayPalPaymentDetails
   PayPalItem *item1 = [PayPalItem itemWithName:@"Ground Coffee 40 oz"
                                   withQuantity:1
                                      withPrice:[NSDecimalNumber decimalNumberWithString:@"7.5"]
@@ -101,6 +102,7 @@
                                                                                   withTax:[NSDecimalNumber decimalNumberWithString:@"1.20"]];
   
   
+  //PayPalPayment
   PayPalPayment *payment = [[PayPalPayment alloc] init];
   payment.amount = [NSDecimalNumber decimalNumberWithString:@"20.00"];
   payment.currencyCode = @"USD";
@@ -116,6 +118,8 @@
     // to handle that here.
   }
   
+  
+  //PayPalPaymentViewController
   PayPalPaymentViewController *paymentViewController = [[PayPalPaymentViewController alloc] initWithPayment:payment
                                                                                               configuration:self.payPalConfig
                                                                                                    delegate:self];

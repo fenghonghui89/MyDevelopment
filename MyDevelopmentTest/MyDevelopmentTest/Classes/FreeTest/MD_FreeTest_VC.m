@@ -20,13 +20,13 @@
 @end
 
 @implementation MD_FreeTest_VC
+
+
 #pragma mark - < vc lifecycle > -
 - (void)viewDidLoad {
   
   [super viewDidLoad];
  
-
-  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
