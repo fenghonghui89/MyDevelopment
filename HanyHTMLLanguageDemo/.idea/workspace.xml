@@ -25,11 +25,11 @@
       <file leaf-file-name="Root_JSShow.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JS/Root_JSShow.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15418503">
-              <caret line="633" column="23" selection-start-line="633" selection-start-column="23" selection-end-line="633" selection-end-column="23" />
+            <state vertical-scroll-proportion="1.284141">
+              <caret line="205" column="39" selection-start-line="205" selection-start-column="39" selection-end-line="205" selection-end-column="39" />
               <folding>
-                <marker date="1474279803000" expanded="true" signature="5662:5819" placeholder="{...}" />
-                <marker date="1474279803000" expanded="true" signature="5861:5881" placeholder="{...}" />
+                <marker date="1474359397000" expanded="true" signature="5663:5820" placeholder="{...}" />
+                <marker date="1474359397000" expanded="true" signature="5862:5882" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -146,6 +146,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,8 +224,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +328,7 @@
     <frame x="0" y="23" width="1920" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23269436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23482428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -743,11 +743,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JS/Root_JSShow.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15418503">
-          <caret line="633" column="23" selection-start-line="633" selection-start-column="23" selection-end-line="633" selection-end-column="23" />
+        <state vertical-scroll-proportion="1.284141">
+          <caret line="205" column="39" selection-start-line="205" selection-start-column="39" selection-end-line="205" selection-end-column="39" />
           <folding>
-            <marker date="1474279803000" expanded="true" signature="5662:5819" placeholder="{...}" />
-            <marker date="1474279803000" expanded="true" signature="5861:5881" placeholder="{...}" />
+            <marker date="1474359397000" expanded="true" signature="5663:5820" placeholder="{...}" />
+            <marker date="1474359397000" expanded="true" signature="5862:5882" placeholder="{...}" />
           </folding>
         </state>
       </provider>

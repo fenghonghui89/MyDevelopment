@@ -29,7 +29,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)navipresentTap:(id)sender
+- (IBAction)naviPushTap:(id)sender
 {
   MDModal2ViewController *vc2 = [[MDModal2ViewController alloc] initWithNibName:@"MDModal2ViewController" bundle:nil];
   [self.navigationController pushViewController:vc2 animated:YES];

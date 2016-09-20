@@ -42,7 +42,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 @property(nonatomic)AVCaptureStillImageOutput *stillImageOutput;
 
 // Utilities.
-@property(nonatomic)AVCamSetupResult setupResult;
+@property(nonatomic)AVCamSetupResult setupResult; //默认是success
 @property(nonatomic,getter=isSessionRunning)BOOL sessionRunning;
 @property(nonatomic)UIBackgroundTaskIdentifier backgroundRecordingId;
 
@@ -51,15 +51,15 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 @implementation MD_AVCamera_VC
 
 #pragma mark - < vc lifecycle > -
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
+  
   [super viewDidLoad];
   
   [self customInit];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
+  
   [super viewWillAppear:animated];
   
   dispatch_async( self.sessionQueue, ^{
@@ -118,8 +118,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 #pragma mark - < method > -
 #pragma mark customInit
--(void)customInit
-{
+-(void)customInit{
+  
   self.previewBgView.clipsToBounds = YES;
   
   self.cameraButton.enabled = NO;
@@ -130,10 +130,12 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   self.previewView.session = self.session;
   self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
   
+  //检查授权
   [self checkAuthorization];
   
   dispatch_async(self.sessionQueue, ^{
-    if (self.setupResult!=AVCamSetupResultSuccess) {
+    if (self.setupResult != AVCamSetupResultSuccess) {
+      DRLog(@"setup camera fail..");
       return;
     }
     
@@ -148,8 +150,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   });
 }
 
--(void)checkAuthorization
-{
+-(void)checkAuthorization{
+  
   self.setupResult = AVCamSetupResultSuccess;
   
   switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo])
@@ -158,6 +160,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
       break;
     case AVAuthorizationStatusNotDetermined:
     {
+      //挂起队列 得到授权结果再恢复队列
       dispatch_suspend(self.sessionQueue);
       [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
         if (!granted) {
@@ -641,6 +644,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     // Capture a still image.
     [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^( CMSampleBufferRef imageDataSampleBuffer, NSError *error ) {
       if ( imageDataSampleBuffer ) {
+        NSLog(@"获取到照片！！！");
+        [self.session stopRunning];
         // The sample buffer is not retained. Create image data before saving the still image to the photo library asynchronously.
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
 //        UIImage *image = [self cropAndZipImgByBuffer:imageDataSampleBuffer];

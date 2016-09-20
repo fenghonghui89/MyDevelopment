@@ -12,20 +12,20 @@
 @implementation MDAVCameraPreviewView
 
 //让UIView使用不同的CALayer来显示
-+(Class)layerClass
-{
++(Class)layerClass{
+  
   return [AVCaptureVideoPreviewLayer class];
 }
 
--(AVCaptureSession *)session
-{
+-(AVCaptureSession *)session{
+  
   AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.layer;
   previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
   return previewLayer.session;
 }
 
--(void)setSession:(AVCaptureSession *)session
-{
+-(void)setSession:(AVCaptureSession *)session{
+  
   AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.layer;
   previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
   previewLayer.session = session;
