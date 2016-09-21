@@ -30,6 +30,7 @@
 		140925871CC0D82200B17B2E /* MD_NSURLSession_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 140925851CC0D82200B17B2E /* MD_NSURLSession_VC.m */; };
 		140925881CC0D82200B17B2E /* MD_NSURLSession_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140925861CC0D82200B17B2E /* MD_NSURLSession_VC.xib */; };
 		141243431D926E1100CCEB5B /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141243421D926E1100CCEB5B /* VPImageCropperViewController.m */; };
+		141243481D927D6000CCEB5B /* MDGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 141243471D927D6000CCEB5B /* MDGlobalManager.m */; };
 		1417B11B1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */; };
 		1417B11C1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */; };
 		141F65C91CA52A98009939C5 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 141F65C81CA52A98009939C5 /* NSString+Category.m */; };
@@ -517,6 +518,8 @@
 		141243421D926E1100CCEB5B /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		141243441D926E7000CCEB5B /* MDRootDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRootDefine.h; sourceTree = "<group>"; };
 		141243451D9271D500CCEB5B /* MDSpecialDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSpecialDefine.h; sourceTree = "<group>"; };
+		141243461D927D6000CCEB5B /* MDGlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDGlobalManager.h; sourceTree = "<group>"; };
+		141243471D927D6000CCEB5B /* MDGlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDGlobalManager.m; sourceTree = "<group>"; };
 		1417B1181CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Scocket_ClientServer_VC.h; sourceTree = "<group>"; };
 		1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Scocket_ClientServer_VC.m; sourceTree = "<group>"; };
 		1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Scocket_ClientServer_VC.xib; sourceTree = "<group>"; };
@@ -2810,6 +2813,8 @@
 				14A727B41CABB28500DC7BC0 /* DGCUserManager.m */,
 				148740851CABC070007CC45C /* DGCPostManager.h */,
 				148740861CABC070007CC45C /* DGCPostManager.m */,
+				141243461D927D6000CCEB5B /* MDGlobalManager.h */,
+				141243471D927D6000CCEB5B /* MDGlobalManager.m */,
 			);
 			path = BusinessManager;
 			sourceTree = "<group>";
@@ -3695,6 +3700,7 @@
 				14FFBE451C9AA995006BEB2B /* MASLayoutConstraint.m in Sources */,
 				1465CCD51D0D4DCF00F79436 /* MD_UIGraphics_ViewController.m in Sources */,
 				1465CCD41D0D4DCF00F79436 /* MD_UIGraphics_CustomView.m in Sources */,
+				141243481D927D6000CCEB5B /* MDGlobalManager.m in Sources */,
 				144F23F21C5F38E2004ED3BC /* UICollectionView+Convenience.m in Sources */,
 				1465CD341D0D4DCF00F79436 /* MD_AVCamera_VC.m in Sources */,
 				1465CCD31D0D4DCF00F79436 /* MDSubclassUIControl.m in Sources */,

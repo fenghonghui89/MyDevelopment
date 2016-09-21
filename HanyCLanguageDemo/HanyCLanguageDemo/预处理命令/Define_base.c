@@ -11,13 +11,31 @@
 
 
 #pragma mark - ********** knowledge **************
+/*
+ 
+ C中的宏分为两类，对象宏(object-like macro)和函数宏(function-like macro)。
+ 
+ ##在宏中是一个特殊符号，它表示将两个参数连接起来这种运算
+ 在逗号和__VA_ARGS__之间的双井号，除了拼接前后文本之外，还有一个功能，那就是如果后方文本为空，那么它会将前面一个逗号吃掉
+ 
+ __VA_ARGS__表示的是宏定义中的...中的所有剩余参数
+ 
+ 写为...的参数被叫做可变参数列表，可变参数的个数不做限定
+ 
+ 换行之后要加 \
+ 
+ do-while(0)可以吃掉分号 防止if-else中if只有一个语句的情况下因为分号导致编译错误，几乎已经成为了标准写法。而且while(0)的好处在于，在编译的时候，编译器基本都会为你做好优化，把这部分内容去掉，最终编译的结果不会因为这个do while而导致运行效率上的差异
+ */
 
 
-#pragma mark 宏函数（注意参数是没有数据类型）
+#pragma mark 函数宏（注意参数是没有数据类型）
 #define MIANJI(r) 3.1415926*r*r
 #define CHENG(x,y) ((x)*(y))
 #define UPPER(x) ((x)>='a'&&(x)<='z')?x-('a'-'A'):x
 #define MAX1(x,y) ((x)>(y))?(x):(y)
+#define MD_TEST_DEFINE(fmt,...) do{   \
+                                    printf("111")                             \
+                                    }while(0)
 
 
 #pragma mark #x与##x

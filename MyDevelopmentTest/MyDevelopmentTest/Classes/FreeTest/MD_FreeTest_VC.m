@@ -11,7 +11,7 @@
 
 
 #import "MD_FreeTest_VC.h"
-
+#import <math.h>
 @interface MD_FreeTest_VC ()
 
 @property (weak, nonatomic) IBOutlet UIButton *btn;
@@ -22,11 +22,11 @@
 @implementation MD_FreeTest_VC
 
 
-#pragma mark - < vc lifecycle > -
+#pragma mark - < vc lifecycle >
 - (void)viewDidLoad {
   
   [super viewDidLoad];
- 
+  MIN(1, 2);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -35,14 +35,14 @@
   
 }
 
-#pragma mark - < method > -
+#pragma mark - < method >
 
 -(void)customInitUI{
   
   
 }
 
-#pragma mark - < action > -
+#pragma mark - < action >
 - (IBAction)btnTap:(id)sender {
   
 }

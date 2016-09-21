@@ -9,7 +9,9 @@
 #import "MDAppDelegate.h"
 #import "MDClassesViewController.h"
 #import "MDNavigationController.h"
-#import "MDTool.h"
+#import "MDRootDefine.h"
+#import "MDGlobalManager.h"
+#import <stdio.h>
 @interface MDAppDelegate ()
 
 @property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier backgroundTaskIdentifier;
@@ -18,9 +20,12 @@
 @end
 @implementation MDAppDelegate
 
-#pragma mark - <<<<< customize method >>>>>
-#pragma mark - < 推送 >
-#pragma mark 注册远程推送
+#pragma mark - < customize method >
+
+#pragma mark 推送
+/**
+ 注册远程推送
+ */
 -(void)registerForRemoteNotification:(UIApplication *)application{
   
   UIUserNotificationSettings *setting =[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];
@@ -28,7 +33,9 @@
   [application registerForRemoteNotifications];
 }
 
-#pragma mark 注册本地推送
+/**
+ 注册本地推送
+ */
 -(void)localNotification{
 
   UILocalNotification* noti = [[UILocalNotification alloc] init];
@@ -55,7 +62,7 @@
   [noti setRepeatInterval:NSCalendarUnitMinute];
 }
 
-#pragma mark < 后台延时 >
+#pragma mark 后台延时
 - (void) endBackgroundTask{
   
   dispatch_queue_t mainQueue = dispatch_get_main_queue();
@@ -73,10 +80,15 @@
   });
 }
 
-// 模拟的一个 Long-Running Task 方法
-- (void) timerMethod:(NSTimer *)paramSender{
+
+/**
+ 模拟的一个 Long-Running Task 方法
+
+ @param paramSender paramSender
+ */
+- (void)timerMethod:(NSTimer *)paramSender{
   
-  // backgroundTimeRemaining 属性包含了程序留给的我们的时间
+  //backgroundTimeRemaining 属性包含了程序留给的我们的时间
   NSTimeInterval backgroundTimeRemaining = [[UIApplication sharedApplication] backgroundTimeRemaining];
   if (backgroundTimeRemaining == DBL_MAX){
     NSLog(@"Background Time Remaining = Undetermined");
@@ -85,27 +97,44 @@
   }
 }
 
-#pragma mark - <<<<< callback >>>>>
-#pragma mark - < UIApplicationDelegate >
-#pragma mark app lifecycle
+#pragma mark - < callback >
+#pragma mark UIApplicationDelegate
+#pragma mark * app lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
   
-  MDClassesViewController *cVC = [[MDClassesViewController alloc] init];
-  cVC.data = [MDTool getPlistDataByName:@"TitleList"];
-  MDNavigationController *navi = [[MDNavigationController alloc] initWithRootViewController:cVC];
+
+  //默认启动摇晃
+  [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
   
-  [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];//默认启动摇晃
   
+  //setup rootvc
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.window setBackgroundColor:[UIColor whiteColor]];
 //  self.window.tintColor = [UIColor purpleColor];
+  
+  MDClassesViewController *vc = [[MDClassesViewController alloc] init];
+  vc.data = [MDTool getPlistDataByName:@"TitleList"];
+  MDNavigationController *navi = [[MDNavigationController alloc] initWithRootViewController:vc];
+  
   self.window.rootViewController = navi;
   [self.window makeKeyAndVisible];
   
   //输出设备信息
   [[MDTool sharedInstance] showDeviceInfo];
   
+  //注册远程推送
   [self registerForRemoteNotification:application];
+  
+  //开启日志输出
+  [MDGlobalManager sharedInstance].openLog = NO;
+
+
+  int a = 0;
+  if (a) PPLog(@"");
+    
+  else{
+    PPLog(@"0000");
+  }
   
   return YES;
 }
@@ -117,7 +146,8 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
 
-#pragma mark 后台延时
+//后台延时
+  
 //  self.backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^(void) {
 //    NSLog(@"停止后台任务");
 //    [self endBackgroundTask];
@@ -140,7 +170,7 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark remote noti
+#pragma mark * remote noti
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
   NSString *decToken = [NSString stringWithFormat:@"%@", deviceToken];
@@ -159,7 +189,7 @@
   [ud synchronize];
 }
 
-#pragma mark local noti
+#pragma mark * local noti
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
   
   //点击通知返回应用时会调用该方法

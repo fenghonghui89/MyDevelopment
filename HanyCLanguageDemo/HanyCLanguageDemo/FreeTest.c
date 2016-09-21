@@ -12,6 +12,15 @@
 
 #pragma mark - *********** knowledge ***********
 #pragma mark - *********** test ***********
+static void test1(){
+
+  int a = ({
+    int b = 2;
+    int c = 2;
+    b+c;
+  });
+  printf("a:%d",a);
+}
 #pragma mark - *********** root ***********
 void root_FreeTest(){
 

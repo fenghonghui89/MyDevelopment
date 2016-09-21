@@ -30,15 +30,31 @@
 //< log >
 
 #pragma mark - < log >
+
 #ifdef DEBUG
-#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#define DLog(format, ...) do{    \
+                              NSLog((@"%s [Line %d] " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);    \
+                              }while(0)
 #else
 #define DLog(...)
 #endif
 
-#define DRLog(fmt,...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#define DRLog(format,...) do{    \
+                              NSLog((@"%s [Line %d] " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);    \
+                              }while(0)
 
 
+#define ULog(format,...) do{   \
+                              if ([MDGlobalManager sharedInstance].openLog) {NSLog((@"%s [Line %d] " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);} \
+                              }while(0)
+
+#define PPLog(format, ...) do {                                                                          \
+                                fprintf(stderr, "<%s : %d> %s\n",                                           \
+                                [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__LINE__, __func__);                                                        \
+                                (NSLog)((format), ##__VA_ARGS__);                                           \
+                                fprintf(stderr, "-------\n");                                               \
+                                } while (0)
 
 //< 坐标系 >
 #pragma mark - < 坐标系 >
