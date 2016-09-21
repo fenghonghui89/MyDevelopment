@@ -29,6 +29,7 @@
 		140925821CC0CC7C00B17B2E /* books.xml in Resources */ = {isa = PBXBuildFile; fileRef = 140925811CC0CC7C00B17B2E /* books.xml */; };
 		140925871CC0D82200B17B2E /* MD_NSURLSession_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 140925851CC0D82200B17B2E /* MD_NSURLSession_VC.m */; };
 		140925881CC0D82200B17B2E /* MD_NSURLSession_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140925861CC0D82200B17B2E /* MD_NSURLSession_VC.xib */; };
+		141243431D926E1100CCEB5B /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141243421D926E1100CCEB5B /* VPImageCropperViewController.m */; };
 		1417B11B1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */; };
 		1417B11C1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */; };
 		141F65C91CA52A98009939C5 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 141F65C81CA52A98009939C5 /* NSString+Category.m */; };
@@ -512,6 +513,10 @@
 		140925841CC0D82200B17B2E /* MD_NSURLSession_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSURLSession_VC.h; sourceTree = "<group>"; };
 		140925851CC0D82200B17B2E /* MD_NSURLSession_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSURLSession_VC.m; sourceTree = "<group>"; };
 		140925861CC0D82200B17B2E /* MD_NSURLSession_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSURLSession_VC.xib; sourceTree = "<group>"; };
+		141243411D926E1100CCEB5B /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		141243421D926E1100CCEB5B /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		141243441D926E7000CCEB5B /* MDRootDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRootDefine.h; sourceTree = "<group>"; };
+		141243451D9271D500CCEB5B /* MDSpecialDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSpecialDefine.h; sourceTree = "<group>"; };
 		1417B1181CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Scocket_ClientServer_VC.h; sourceTree = "<group>"; };
 		1417B1191CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Scocket_ClientServer_VC.m; sourceTree = "<group>"; };
 		1417B11A1CA8CE0E002C6A69 /* MD_Scocket_ClientServer_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Scocket_ClientServer_VC.xib; sourceTree = "<group>"; };
@@ -958,7 +963,7 @@
 		14CB77171CA4F1B800878C4E /* MD_Socket_Server_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Socket_Server_VC.h; sourceTree = "<group>"; };
 		14CB77181CA4F1B800878C4E /* MD_Socket_Server_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Socket_Server_VC.m; sourceTree = "<group>"; };
 		14CB77191CA4F1B800878C4E /* MD_Socket_Server_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Socket_Server_VC.xib; sourceTree = "<group>"; };
-		14CB771D1CA5243800878C4E /* MDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDefine.h; sourceTree = "<group>"; };
+		14CB771D1CA5243800878C4E /* MDQuickDevelopDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDQuickDevelopDefine.h; sourceTree = "<group>"; };
 		14CB771E1CA5243900878C4E /* MDTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTool.h; sourceTree = "<group>"; };
 		14CB771F1CA5243900878C4E /* MDTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTool.m; sourceTree = "<group>"; };
 		14CB77221CA5254800878C4E /* IPAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IPAddress.c; sourceTree = "<group>"; };
@@ -2292,6 +2297,8 @@
 				1465CC9E1D0D4DCF00F79436 /* MD_AVCamera_VC.xib */,
 				1465CC9F1D0D4DCF00F79436 /* MDAVCameraPreviewView.h */,
 				1465CCA01D0D4DCF00F79436 /* MDAVCameraPreviewView.m */,
+				141243411D926E1100CCEB5B /* VPImageCropperViewController.h */,
+				141243421D926E1100CCEB5B /* VPImageCropperViewController.m */,
 			);
 			path = camear;
 			sourceTree = "<group>";
@@ -2877,11 +2884,13 @@
 		14CB771C1CA5241E00878C4E /* Units */ = {
 			isa = PBXGroup;
 			children = (
-				1487407C1CABBC1B007CC45C /* DGCDataParser.h */,
-				1487407D1CABBC1B007CC45C /* DGCDataParser.m */,
-				14CB771D1CA5243800878C4E /* MDDefine.h */,
+				141243441D926E7000CCEB5B /* MDRootDefine.h */,
+				14CB771D1CA5243800878C4E /* MDQuickDevelopDefine.h */,
+				141243451D9271D500CCEB5B /* MDSpecialDefine.h */,
 				14CB771E1CA5243900878C4E /* MDTool.h */,
 				14CB771F1CA5243900878C4E /* MDTool.m */,
+				1487407C1CABBC1B007CC45C /* DGCDataParser.h */,
+				1487407D1CABBC1B007CC45C /* DGCDataParser.m */,
 				14CB77221CA5254800878C4E /* IPAddress.c */,
 				14CB77231CA5254800878C4E /* IPAddress.h */,
 			);
@@ -3841,6 +3850,7 @@
 				1465CD171D0D4DCF00F79436 /* MDDicNormalViewController.m in Sources */,
 				14A7279B1CABAD2B00DC7BC0 /* MD_AFNetwork_VC.m in Sources */,
 				14F1F23B1D1161B80059EDC1 /* RNCachingURLProtocol.m in Sources */,
+				141243431D926E1100CCEB5B /* VPImageCropperViewController.m in Sources */,
 				1465CCEB1D0D4DCF00F79436 /* MD_TableView_VC.m in Sources */,
 				14FA3B8E1D07C21400BD2902 /* MD_KVC_VC.m in Sources */,
 				1465CCDA1D0D4DCF00F79436 /* MDPageControlViewController.m in Sources */,

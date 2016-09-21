@@ -7,8 +7,7 @@
 //
 
 #import "TRPoint.h"
-#import "MDTool.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 @implementation TRPoint
 
 //-(NSString*)description

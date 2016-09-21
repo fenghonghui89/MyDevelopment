@@ -7,8 +7,7 @@
 //示例：根据进度条的值画圆弧
 
 #import "MD_UIBezierPath_CustomView1.h"
-#import "MDDefine.h"
-#import "MDTool.h"
+#import "MDRootDefine.h"
 @interface MD_UIBezierPath_CustomView1()
 @property(nonatomic,assign)CGFloat value;
 @end

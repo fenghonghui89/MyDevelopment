@@ -8,7 +8,7 @@
 
 #import "TRXYZ.h"
 #import "MDTool.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 @implementation TRXYZ
 
 //-(NSString*)description

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 #define DGC_DELEGATE_INFO_KEY @"DelegateInfo"
 @interface DGCDelegateInfo : NSObject
 @property (nonatomic,weak)id delegate;

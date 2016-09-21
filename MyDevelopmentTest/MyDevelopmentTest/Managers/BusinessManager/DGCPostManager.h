@@ -7,7 +7,7 @@
 #import <UIKit/UIKit.h>
 #import "DGCListInfo.h"
 #import "DGCPostInfo.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 
 
 typedef NS_ENUM(NSInteger,DGCPostManagerEditActionType) {

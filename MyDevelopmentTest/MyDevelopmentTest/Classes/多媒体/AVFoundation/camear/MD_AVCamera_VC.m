@@ -11,7 +11,7 @@
 
 #import "MD_AVCamera_VC.h"
 #import "MDAVCameraPreviewView.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 #import "UIImage+Resize.h"
 
 static void * CapturingStillImageContext = &CapturingStillImageContext;
@@ -61,7 +61,97 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 - (void)viewWillAppear:(BOOL)animated{
   
   [super viewWillAppear:animated];
+  [self processByAuthorizationState];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+  dispatch_async(self.sessionQueue, ^{
+    if ( self.setupResult == AVCamSetupResultSuccess ) {
+      [self.session stopRunning];
+      [self removeObservers];
+    }
+  } );
   
+  [super viewWillDisappear:animated];
+}
+
+#pragma mark - < method > -
+#pragma mark * 初始化
+-(void)customInit{
+  
+  //ui
+  self.previewBgView.clipsToBounds = YES;
+  
+  self.cameraButton.enabled = NO;
+  self.recordButton.enabled = NO;
+  self.stillButton.enabled = NO;
+  
+  //
+  self.session = [[AVCaptureSession alloc] init];
+  self.previewView.session = self.session;
+  self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
+  
+  //检查授权
+  [self checkAuthorization];
+  
+  dispatch_async(self.sessionQueue, ^{
+    if (self.setupResult != AVCamSetupResultSuccess) {
+      DRLog(@"setup camera fail..");
+      return;
+    }
+    
+    self.backgroundRecordingId = UIBackgroundTaskInvalid;
+    
+    //添加input output
+    [self.session beginConfiguration];
+    [self addVideoDeviceInput];
+    [self addAudioDeviceInput];
+    [self addMovieFileOutput];
+    [self addStillImageOutput];
+    [self.session commitConfiguration];
+    
+  });
+}
+
+/**
+ 检测授权情况
+ */
+-(void)checkAuthorization{
+  
+  self.setupResult = AVCamSetupResultSuccess;
+  
+  switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo])
+  {
+    case AVAuthorizationStatusAuthorized:
+      break;
+    case AVAuthorizationStatusNotDetermined:
+    {
+      //挂起队列 得到授权结果再恢复队列
+      dispatch_suspend(self.sessionQueue);
+      [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        if (!granted) {
+          self.setupResult = AVCamSetupResultCameraNotAuthorized;
+        }
+        dispatch_resume(self.sessionQueue);
+      }];
+      break;
+    }
+    default:
+    {
+      self.setupResult = AVCamSetupResultCameraNotAuthorized;
+      break;
+    }
+  }
+}
+
+
+/**
+ 根据授权情况开启拍照功能或者弹窗提示
+ 注意要异步否则无法start而崩溃
+ */
+-(void)processByAuthorizationState{
+
   dispatch_async( self.sessionQueue, ^{
     switch ( self.setupResult )
     {
@@ -102,86 +192,13 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
       }
     }
   } );
-}
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-  dispatch_async( self.sessionQueue, ^{
-    if ( self.setupResult == AVCamSetupResultSuccess ) {
-      [self.session stopRunning];
-      [self removeObservers];
-    }
-  } );
-  
-  [super viewDidDisappear:animated];
-}
-
-#pragma mark - < method > -
-#pragma mark customInit
--(void)customInit{
-  
-  self.previewBgView.clipsToBounds = YES;
-  
-  self.cameraButton.enabled = NO;
-  self.recordButton.enabled = NO;
-  self.stillButton.enabled = NO;
-  
-  self.session = [[AVCaptureSession alloc] init];
-  self.previewView.session = self.session;
-  self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
-  
-  //检查授权
-  [self checkAuthorization];
-  
-  dispatch_async(self.sessionQueue, ^{
-    if (self.setupResult != AVCamSetupResultSuccess) {
-      DRLog(@"setup camera fail..");
-      return;
-    }
-    
-    self.backgroundRecordingId = UIBackgroundTaskInvalid;
-    [self.session beginConfiguration];
-    [self addVideoDeviceInput];
-    [self addAudioDeviceInput];
-    [self addMovieFileOutput];
-    [self addStillImageOutput];
-    [self.session commitConfiguration];
-    
-  });
-}
-
--(void)checkAuthorization{
-  
-  self.setupResult = AVCamSetupResultSuccess;
-  
-  switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo])
-  {
-    case AVAuthorizationStatusAuthorized:
-      break;
-    case AVAuthorizationStatusNotDetermined:
-    {
-      //挂起队列 得到授权结果再恢复队列
-      dispatch_suspend(self.sessionQueue);
-      [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-        if (!granted) {
-          self.setupResult = AVCamSetupResultCameraNotAuthorized;
-        }
-        dispatch_resume(self.sessionQueue);
-      }];
-      break;
-    }
-    default:
-    {
-      self.setupResult = AVCamSetupResultCameraNotAuthorized;
-      break;
-    }
-  }
 }
 
 -(void)addVideoDeviceInput
 {
   NSError *error = nil;
-  AVCaptureDevice *videoDevic = [MD_AVCamera_VC deviceWithMediaType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionBack];
+  AVCaptureDevice *videoDevic = [self deviceWithMediaType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionBack];
   AVCaptureDeviceInput *videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevic error:&error];
   if (!videoDeviceInput) {
     DLog(@"Could not create video device input: %@", error);
@@ -256,8 +273,15 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   }
 }
 
-#pragma mark 设置前后摄像头
-+ (void)setFlashMode:(AVCaptureFlashMode)flashMode forDevice:(AVCaptureDevice *)device
+
+#pragma mark * config camera
+/**
+ 设置设备flashMode（前后摄像头）
+ 
+ @param flashMode flashMode
+ @param device    device
+ */
+- (void)setFlashMode:(AVCaptureFlashMode)flashMode forDevice:(AVCaptureDevice *)device
 {
   if ( device.hasFlash && [device isFlashModeSupported:flashMode] ) {
     NSError *error = nil;
@@ -271,8 +295,15 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   }
 }
 
-#pragma mark 根据方向获取device
-+ (AVCaptureDevice *)deviceWithMediaType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position
+/**
+ 根据多媒体类型和方向获取device
+ 
+ @param mediaType 类型视频or音频
+ @param position  方向
+ 
+ @return device
+ */
+- (AVCaptureDevice *)deviceWithMediaType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position
 {
   NSArray *devices = [AVCaptureDevice devicesWithMediaType:mediaType];
   AVCaptureDevice *captureDevice = devices.firstObject;
@@ -287,7 +318,14 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   return captureDevice;
 }
 
-#pragma mark 对焦曝光
+/**
+ 设置自动曝光、对焦
+ 
+ @param focusMode                focusMode
+ @param exposureMode             exposureMode
+ @param point                    point
+ @param monitorSubjectAreaChange monitorSubjectAreaChange
+ */
 - (void)focusWithMode:(AVCaptureFocusMode)focusMode exposeWithMode:(AVCaptureExposureMode)exposureMode atDevicePoint:(CGPoint)point monitorSubjectAreaChange:(BOOL)monitorSubjectAreaChange
 {
   dispatch_async( self.sessionQueue, ^{
@@ -315,7 +353,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   } );
 }
 
-#pragma mark KVO and Notification
+#pragma mark * KVO and Notification
 -(void)addOBservers
 {
   [self.session addObserver:self forKeyPath:@"running" options:NSKeyValueObservingOptionNew context:SessionRunningContext];
@@ -457,7 +495,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   }
 }
 
-#pragma mark 裁剪
+#pragma mark * 裁剪
 -(UIImage *)cropAndZipImgByBuffer:(CMSampleBufferRef)imageDataSampleBuffer
 {
   //原图
@@ -484,7 +522,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
   return croppedImage;
 }
 
-#pragma mark 旋屏
+#pragma mark * 旋屏
 - (BOOL)shouldAutorotate
 {
   // Disable autorotation of the interface when recording is in progress.
@@ -558,7 +596,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
       connection.videoOrientation = previewLayer.connection.videoOrientation;
       
       // Turn OFF flash for video recording.
-      [MD_AVCamera_VC setFlashMode:AVCaptureFlashModeOff forDevice:self.videoDeviceInput.device];
+      [self setFlashMode:AVCaptureFlashModeOff forDevice:self.videoDeviceInput.device];
       
       // Start recording to a temporary file.
       NSString *outputFileName = [NSProcessInfo processInfo].globallyUniqueString;
@@ -593,7 +631,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
         break;
     }
     
-    AVCaptureDevice *videoDevice = [MD_AVCamera_VC deviceWithMediaType:AVMediaTypeVideo preferringPosition:preferredPosition];
+    AVCaptureDevice *videoDevice = [self deviceWithMediaType:AVMediaTypeVideo preferringPosition:preferredPosition];
     AVCaptureDeviceInput *videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:nil];
     
     [self.session beginConfiguration];
@@ -604,7 +642,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     if ( [self.session canAddInput:videoDeviceInput] ) {
       [[NSNotificationCenter defaultCenter] removeObserver:self name:AVCaptureDeviceSubjectAreaDidChangeNotification object:currentVideoDevice];
       
-      [MD_AVCamera_VC setFlashMode:AVCaptureFlashModeAuto forDevice:videoDevice];
+      [self setFlashMode:AVCaptureFlashModeAuto forDevice:videoDevice];
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subjectAreaDidChange:) name:AVCaptureDeviceSubjectAreaDidChangeNotification object:videoDevice];
       
       [self.session addInput:videoDeviceInput];
@@ -631,7 +669,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 - (IBAction)snapStillImage:(id)sender
 {
-  dispatch_async( self.sessionQueue, ^{
+  dispatch_async(self.sessionQueue, ^{
     AVCaptureConnection *connection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     
     // Update the orientation on the still image output video connection before capturing.
@@ -639,17 +677,20 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     connection.videoOrientation = previewLayer.connection.videoOrientation;
     
     // Flash set to Auto for Still Capture.
-    [MD_AVCamera_VC setFlashMode:AVCaptureFlashModeAuto forDevice:self.videoDeviceInput.device];
+    [self setFlashMode:AVCaptureFlashModeAuto forDevice:self.videoDeviceInput.device];
     
     // Capture a still image.
     [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^( CMSampleBufferRef imageDataSampleBuffer, NSError *error ) {
-      if ( imageDataSampleBuffer ) {
+      if ( imageDataSampleBuffer )
+      {
         NSLog(@"获取到照片！！！");
         [self.session stopRunning];
+        
         // The sample buffer is not retained. Create image data before saving the still image to the photo library asynchronously.
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
 //        UIImage *image = [self cropAndZipImgByBuffer:imageDataSampleBuffer];
 //        NSData *imageData = UIImageJPEGRepresentation(image, 1);
+        
         [PHPhotoLibrary requestAuthorization:^( PHAuthorizationStatus status ) {
           if ( status == PHAuthorizationStatusAuthorized ) {
             // To preserve the metadata, we create an asset from the JPEG NSData representation.
@@ -691,11 +732,13 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
           }
         }];
       }
-      else {
+      
+      else
+      {
         NSLog( @"Could not capture still image: %@", error );
       }
     }];
-  } );
+  });
 }
 
 - (IBAction)focusAndExposeTap:(UIGestureRecognizer *)gestureRecognizer

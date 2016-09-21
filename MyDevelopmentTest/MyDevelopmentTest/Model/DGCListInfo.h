@@ -7,7 +7,7 @@
 //
 
 #import "DGCBaseModel.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 @interface DGCListInfo : DGCBaseModel<NSCoding>
 
 PROPERTY_NON_ATOMIC_STRONG NSArray *items;

@@ -10,7 +10,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 #import "DGCBaseModel.h"
 
 typedef void (^DGCServiceSuccessBlock)(DGCBaseModel *baseModel,NSDictionary *userInfo);

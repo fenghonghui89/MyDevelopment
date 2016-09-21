@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MDDefine.h"
-#import "MDTool.h"
+#import "MDRootDefine.h"
 #import "UIView+MDCategory.h"
 #import "NSString+URLEncoding.h"
 @interface MDBaseViewController : UIViewController

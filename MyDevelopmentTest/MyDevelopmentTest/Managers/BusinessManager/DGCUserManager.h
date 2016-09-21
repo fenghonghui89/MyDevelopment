@@ -7,7 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "DGCUserInfo.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 @class DGCUserManager;
 @protocol DGCUserManagerDelegate <NSObject>
 

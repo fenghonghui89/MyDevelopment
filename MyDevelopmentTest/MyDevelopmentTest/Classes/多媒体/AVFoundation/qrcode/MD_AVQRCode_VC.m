@@ -8,8 +8,7 @@
 
 @import AVFoundation;
 #import "MD_AVQRCode_VC.h"
-#import "MDDefine.h"
-#import "MDTool.h"
+#import "MDRootDefine.h"
 #import "Masonry.h"
 @interface MD_AVQRCode_VC()<AVCaptureMetadataOutputObjectsDelegate>
 

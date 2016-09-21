@@ -30,7 +30,7 @@
 }
 
 
-#pragma mark - 坐标系
+#pragma mark - < 坐标系 >
 /**
  *  屏幕宽度
  *
@@ -110,7 +110,7 @@
   return  CGRectMake(x, y, w, h);;
 }
 
-#pragma mark - color
+#pragma mark - < color >
 
 /**
  *  获取到颜色UICOLOR
@@ -178,7 +178,7 @@
 }
 
 
-#pragma mark - other
+#pragma mark - < other >
 /**
  *  展示响应链
  *
@@ -303,7 +303,7 @@ void STLogResponderChain(UIResponder *responder) {
   //NSProcessInfo
   NSProcessInfo *info = [NSProcessInfo processInfo];
   NSLog(@"processName－－－－－%@",info.processName);
-  NSLog(@"processorCount－－－－－%d",info.processorCount);
+  NSLog(@"processorCount－－－－－%lu",(unsigned long)info.processorCount);
   NSLog(@"processIdentifier－－－－－%d",info.processIdentifier);
   NSLog(@"arguments－－－－－\n%@",info.arguments);
   NSLog(@"environment－－－－－\n%@",info.environment);

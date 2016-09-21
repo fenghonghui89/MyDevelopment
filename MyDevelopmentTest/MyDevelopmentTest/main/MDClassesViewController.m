@@ -7,8 +7,7 @@
 //
 
 #import "MDClassesViewController.h"
-#import "MDTool.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 #import "MDClassesTableViewCell.h"
 @interface MDClassesViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UIView *bgView;
@@ -64,15 +63,15 @@
   UIView *bgView = [[UIView alloc] init];
   [bgView setBackgroundColor:[UIColor redColor]];
   CGFloat bgViewY = 0;
-  CGFloat bgViewW = defaultViewW;
+  CGFloat bgViewW = viewW;
   CGFloat bgViewH = 0;
   CGFloat systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
   if (systemVersion < 7.0) {
     bgViewY = naviH;
-    bgViewH = defaultViewH - naviH;
+    bgViewH = viewH - naviH;
   }else{
     bgViewY = stateH + naviH;
-    bgViewH = defaultViewH - stateH - naviH;
+    bgViewH = viewH - stateH - naviH;
   }
   [bgView setFrame:[MDTool setRectX:0 y:bgViewY w:bgViewW h:bgViewH]];
   [self.view addSubview:bgView];

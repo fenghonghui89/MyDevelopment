@@ -8,8 +8,7 @@
 
 #import "MDKVO_View.h"
 #import "MDStudent.h"
-#import "MDDefine.h"
-#import "MDTool.h"
+#import "MDRootDefine.h"
 #import "MDKVO_VC.h"
 @implementation MDKVO_View
 

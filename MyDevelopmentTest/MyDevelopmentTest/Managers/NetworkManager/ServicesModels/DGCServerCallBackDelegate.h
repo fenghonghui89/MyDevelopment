@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DGCBaseModel.h"
-#import "MDDefine.h"
+#import "MDRootDefine.h"
 @protocol DGCServerCallBackDelegate <NSObject>
 
 @optional
