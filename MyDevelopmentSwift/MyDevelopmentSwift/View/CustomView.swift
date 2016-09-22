@@ -25,7 +25,7 @@ class CustomView:UIView {
   
   @IBInspectable var bColor: UIColor = UIColor() {
     didSet {
-      layer.borderColor = bColor.CGColor
+      layer.borderColor = bColor.cgColor
     }
   }
   

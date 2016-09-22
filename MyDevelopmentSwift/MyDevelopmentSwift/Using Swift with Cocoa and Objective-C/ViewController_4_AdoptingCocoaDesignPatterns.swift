@@ -34,11 +34,11 @@ class ViewController_AdoptingCocoaDesignPatterns: UIViewController {
 class LazyInitClass{
 
 //  lazy var XMLDocument: NSXMLDocument = try! NSXMLDocument(contentsOfURL: NSBundle.mainBundle().URLForResource("document", withExtension: "xml")!, options: 0)
-  lazy var bgView:UIView = try! UIView(frame: CGRectZero)
+  lazy var bgView:UIView = try! UIView(frame: CGRect.zero)
   
-  lazy var ISO8601DateFormatter: NSDateFormatter = {
-    let formatter = NSDateFormatter()
-    formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+  lazy var ISO8601DateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.locale = Locale(identifier: "en_US_POSIX")
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
     return formatter
   }()
@@ -66,16 +66,16 @@ class ErrorClass {
     
 
     //Swift
-    let fileManager = NSFileManager.defaultManager()
-    let fromURL = NSURL(fileURLWithPath: "/path/to/old")
-    let toURL = NSURL(fileURLWithPath: "/path/to/new")
+    let fileManager = FileManager.default
+    let fromURL = URL(fileURLWithPath: "/path/to/old")
+    let toURL = URL(fileURLWithPath: "/path/to/new")
     
     
     do {
-      try fileManager.moveItemAtURL(fromURL, toURL: toURL)
-    } catch NSCocoaError.FileNoSuchFileError {
+      try fileManager.moveItem(at: fromURL, to: toURL)
+    } catch CocoaError.fileNoSuchFile {
       print("Error: no such file exists")
-    } catch NSCocoaError.FileReadUnsupportedSchemeError {
+    } catch CocoaError.fileReadUnsupportedScheme {
       print("Error: unsupported scheme (should be 'file://')")
     } catch{
       print("other error");
@@ -94,8 +94,8 @@ class ErrorClass {
 //    }
     
     //Swift
-    let fileManager = NSFileManager.defaultManager()
-    if let tmpURL = try? fileManager.URLForDirectory(.CachesDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true) {
+    let fileManager = FileManager.default
+    if let tmpURL = try? fileManager.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true) {
       // ...
     }
     
@@ -126,10 +126,10 @@ class ErrorClass {
 //https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID57
 class MyObjectToObserve: NSObject {
   
-  dynamic var myDate = NSDate()
+  dynamic var myDate = Date()
   
   func updateDate() {
-    myDate = NSDate()
+    myDate = Date()
   }
 }
 
@@ -144,18 +144,18 @@ class MyObserver: NSObject {
   
   override init() {
     super.init()
-    objectToObserve.addObserver(self, forKeyPath: "myDate", options: .New, context: &myContext)
+    objectToObserve.addObserver(self, forKeyPath: "myDate", options: .new, context: &myContext)
   }
   
-  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
     
     if context == &myContext {
       
-      if let newValue = change?[NSKeyValueChangeNewKey] {
+      if let newValue = change?[NSKeyValueChangeKey.newKey] {
         print("Date changed: \(newValue)")
       }
     } else {
-      super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+      super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
     }
   }
   
@@ -187,8 +187,8 @@ class SerialzationClass {
     
 //    let JSON = "{\"name\": \"Caffè Macs\",\"coordinates\": {\"lat\": 1.1,\"lng\":2.2},\"category\": \"Food\"}" //right
     let JSON = "{\"name\": \"Caffè Macs\",\"coordinates\": {\"lat\": \"1.1\",\"lng\":\"1.1\"},\"category\": \"Food\"}" //wrong
-    let data = JSON.dataUsingEncoding(NSUTF8StringEncoding)!
-    let attributes = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String: AnyObject]
+    let data = JSON.data(using: String.Encoding.utf8)!
+    let attributes = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
     
     //错误返回nil
 //    if let venue =  Venue(attributes: attributes){
@@ -201,9 +201,9 @@ class SerialzationClass {
     do {
       let venue = try Venue(attributes: attributes)
       print(venue.name)// Prints "Caffè Macs"
-    } catch Venue.ValidationError.Missing(let field) {
+    } catch Venue.ValidationError.missing(let field) {
       print("Missing Missing: \(field)")
-    } catch Venue.ValidationError.Invalid(let field) {
+    } catch Venue.ValidationError.invalid(let field) {
       print("Missing Invalid: \(field)")
     } catch{
       print("unknow error")
@@ -244,33 +244,33 @@ struct Venue {
 //  }
   
   //数据错误就抛出异常
-  enum ValidationError:ErrorType {
-    case Missing(String)
-    case Invalid(String)
+  enum ValidationError:Error {
+    case missing(String)
+    case invalid(String)
   }
   
   init(attributes: [String:AnyObject])throws{
   
     guard let name = attributes["name"] as? String else{
-      throw ValidationError.Missing("name");
+      throw ValidationError.missing("name");
     }
     
     guard let coordinates = attributes["coordinates"] as? [String:Double] else{
-      throw ValidationError.Missing("coordinates")
+      throw ValidationError.missing("coordinates")
     }
     
     guard let latitude = coordinates["lat"],
       let longitude = coordinates["lng"]
       else{
-      throw ValidationError.Invalid("coordinates")
+      throw ValidationError.invalid("coordinates")
     }
     
     guard let categoryName = attributes["category"] as? String else{
-      throw ValidationError.Missing("category");
+      throw ValidationError.missing("category");
     }
     
     guard let category = Category(rawValue:categoryName) else{
-      throw ValidationError.Invalid("category")
+      throw ValidationError.invalid("category")
     }
     
     self.name = name

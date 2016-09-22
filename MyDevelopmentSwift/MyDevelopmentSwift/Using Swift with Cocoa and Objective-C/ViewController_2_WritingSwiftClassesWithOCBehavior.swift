@@ -13,7 +13,7 @@ class ViewController_WritingSwiftClassesWithOCBehavior: UIViewController {
   
   @IBOutlet weak var btn: UIButton!
   
-  @IBAction func btnTap(sender: AnyObject) {
+  @IBAction func btnTap(_ sender: AnyObject) {
     print("tap tap tap")
   }
   
@@ -26,8 +26,8 @@ class ViewController_WritingSwiftClassesWithOCBehavior: UIViewController {
   
   //MARK:实时渲染
   func func_LiveRendering() {
-    if let cv:CustomView = NSBundle.mainBundle().loadNibNamed("CustomView", owner: self, options: nil).last as? CustomView{
-      cv.frame = CGRectMake(10, 10, 50, 50)
+    if let cv:CustomView = Bundle.main.loadNibNamed("CustomView", owner: self, options: nil)?.last as? CustomView{
+      cv.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
       self.view.addSubview(cv)
     }
   }
@@ -37,7 +37,7 @@ class ViewController_WritingSwiftClassesWithOCBehavior: UIViewController {
 //MARK:NSCoding
 class MyViewController1:UIViewController {
   
-  var tv:protocol<UITableViewDataSource, UITableViewDelegate>
+  var tv:UITableViewDataSource & UITableViewDelegate
   
   required init(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -48,12 +48,12 @@ class MyViewController1:UIViewController {
 //MARK:协议
 class MySwiftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
     return 1
   }
   
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
     return UITableViewCell()
   }
 }

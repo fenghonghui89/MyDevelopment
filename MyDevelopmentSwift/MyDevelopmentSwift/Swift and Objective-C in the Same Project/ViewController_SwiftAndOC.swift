@@ -31,7 +31,7 @@ class ViewController_SwiftAndOC:UIViewController {
     vc.sayHello();
     
     let vc1:ViewController_Swift = ViewController_Swift();
-    self.presentViewController(vc1, animated: true, completion: nil);
+    self.present(vc1, animated: true, completion: nil);
     vc1.sayHello();
     vc1.func_internal();
     vc1.func_public();

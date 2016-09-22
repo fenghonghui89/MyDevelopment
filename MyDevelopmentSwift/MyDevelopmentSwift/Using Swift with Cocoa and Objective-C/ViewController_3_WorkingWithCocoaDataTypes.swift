@@ -21,7 +21,7 @@ class ViewController_WorkingWithCocoaDataTypes: UIViewController {
   func func_String(){
     
     let greeting = "hello, world!"
-    let capitalizedGreeting = greeting.capitalizedString
+    let capitalizedGreeting = greeting.capitalized
     // capitalizedGreeting: String = Hello, World!
     
     
@@ -43,8 +43,8 @@ class ViewController_WorkingWithCocoaDataTypes: UIViewController {
     // Prints "Hello, Mei!"
     
     
-    if let path = NSBundle.mainBundle().pathForResource("Localization", ofType: "strings", inDirectory: nil, forLocalization: "ja"),
-      let bundle = NSBundle(path: path) {
+    if let path = Bundle.main.path(forResource: "Localization", ofType: "strings", inDirectory: nil, forLocalization: "ja"),
+      let bundle = Bundle(path: path) {
       let translation = NSLocalizedString("Hello", bundle: bundle, comment: "")
       print(translation)
     }
@@ -56,7 +56,7 @@ class ViewController_WorkingWithCocoaDataTypes: UIViewController {
   func func_Number(){
     
     let n = 42
-    let m: NSNumber = n
+//    let m: NSNumber = NSNumber(n)
   }
   
   
@@ -80,7 +80,7 @@ class ViewController_WorkingWithCocoaDataTypes: UIViewController {
     print(schoolSupplies);
     
     
-    let arr = [1,2,"2"];
+    let arr = [1,2,"2"] as [Any];
     if let b = arr as? NSArray {
       print("yes \(b)")
     }else{
@@ -117,13 +117,13 @@ class ViewController_WorkingWithCocoaDataTypes: UIViewController {
    */
   func func_CoreFoundation() {
     
-    var cfstr:CFString = "hello world"
-    var str:String = cfstr as String;
-    var cfstr1:CFString = str;
+    let cfstr:CFString = "hello world" as CFString
+    let str:String = cfstr as String;
+    var cfstr1:CFString = str as CFString;
     
     
     //takeRetainedValue()或takeUnretainedValue()
-    let host: CFHost = CFHostCreateWithName(kCFAllocatorDefault,"127.0.0.1").takeRetainedValue()
+    let host: CFHost = CFHostCreateWithName(kCFAllocatorDefault,"127.0.0.1" as CFString).takeRetainedValue()
     let hostNames: CFArray = CFHostGetNames(host, nil)!.takeUnretainedValue()
     
     
@@ -144,7 +144,7 @@ class ViewController_WorkingWithCocoaDataTypes: UIViewController {
 
 
 //MARK:Error ErrorType与NSError互操作性
-@objc public enum CustomError: Int, ErrorType {
-  case A, B, C
+@objc public enum CustomError: Int, Error {
+  case a, b, c
 }
 

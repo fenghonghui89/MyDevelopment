@@ -10,4 +10,7 @@
    <FileRef
       location = "group:HanyCPPLanguageDemo/HanyCPPLanguageDemo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:HanySwiftLanguageDemo/HanySwiftLanguageDemo.xcodeproj">
+   </FileRef>
 </Workspace>

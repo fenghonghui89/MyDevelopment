@@ -10,47 +10,49 @@ import Foundation
 
 class ViewController_FreeTest1: UIViewController {
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    let basePC = BasePC(level: 10)
-    print(basePC.level)
-    
-    
-    let fileManager = NSFileManager.defaultManager()
-    let URL = NSURL.fileURLWithPath("/path/to/file")
-    do {
-      try fileManager.removeItemAtURL(URL)
-    } catch let error as NSError {
-      print("Error: \(error.domain)")
-    }
-    
-    do{
-      let dic = try NSJSONSerialization.JSONObjectWithData(NSData(), options: NSJSONReadingOptions.AllowFragments)
-    }catch let error as NSError{
-    
-    }
-    
-    
-    let str = self.test(true) {
-      
-      (response:NSURLResponse, responseObject:AnyObject?, error:NSError?)->Void in
-      
-      if (error != nil){
-        do{
-          let dic = try NSJSONSerialization.JSONObjectWithData(NSData(), options: NSJSONReadingOptions.AllowFragments)
-        }catch let error as NSError{
-          print("")
-        }
-      }
-      
-      
-    }
-  }
-  
-  func test(flag:Bool,block:(response:NSURLResponse, responseObject:AnyObject?, error:NSError?)->Void) ->String {
-    return ""
-  }
+//  override func viewDidLoad() {
+//    super.viewDidLoad()
+//    
+//    let basePC = BasePC(level: 10)
+//    print(basePC.level)
+//    
+//    
+//    let fileManager = FileManager.default
+////    let URL = URL(fileURLWithPath: "/path/to/file")
+//    let URL = URL
+//    
+//    do {
+//      try fileManager.removeItem(at: URL)
+//    } catch let error as NSError {
+//      print("Error: \(error.domain)")
+//    }
+//    
+//    do{
+//      let dic = try JSONSerialization.jsonObject(with: Data(), options: JSONSerialization.ReadingOptions.allowFragments)
+//    }catch let error as NSError{
+//    
+//    }
+//    
+//    
+//    let str = self.test(true) {
+//      
+//      (response:URLResponse, responseObject:AnyObject?, error:NSError?)->Void in
+//      
+//      if (error != nil){
+//        do{
+//          let dic = try JSONSerialization.jsonObject(with: Data(), options: JSONSerialization.ReadingOptions.allowFragments)
+//        }catch let error as NSError{
+//          print("")
+//        }
+//      }
+//      
+//      
+//    }
+//  }
+//  
+//  func test(_ flag:Bool,block:(_ response:URLResponse, _ responseObject:AnyObject?, _ error:NSError?)->Void) ->String {
+//    return ""
+//  }
 }
 
 

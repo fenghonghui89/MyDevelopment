@@ -24,7 +24,7 @@ class MyView: UIView {
   
   init(flag:Bool){
     
-    super.init(frame: CGRectZero)
+    super.init(frame: CGRect.zero)
     
     if flag {
       print("yes")
@@ -63,7 +63,7 @@ class MyAC: UIAlertController {
 
 class BasePC {
   
-  private var cpu_count:Int
+  fileprivate var cpu_count:Int
   
   var level:Int{
     get{
@@ -72,7 +72,7 @@ class BasePC {
     }
   }
   
-  private init(cpu_count:Int){
+  fileprivate init(cpu_count:Int){
     self.cpu_count = cpu_count
   }
   
