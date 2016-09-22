@@ -15,7 +15,7 @@
  
  C中的宏分为两类，对象宏(object-like macro)和函数宏(function-like macro)。
  
- ##在宏中是一个特殊符号，它表示将两个参数连接起来这种运算
+ ##在宏中是一个特殊符号，它表示将两个参数连接起来这种运算，成为新的标识
  在逗号和__VA_ARGS__之间的双井号，除了拼接前后文本之外，还有一个功能，那就是如果后方文本为空，那么它会将前面一个逗号吃掉
  
  __VA_ARGS__表示的是宏定义中的...中的所有剩余参数
@@ -28,33 +28,40 @@
  */
 
 
-#pragma mark 函数宏（注意参数是没有数据类型）
+#pragma mark - 函数宏（注意参数是没有数据类型）
 #define MIANJI(r) 3.1415926*r*r
 #define CHENG(x,y) ((x)*(y))
 #define UPPER(x) ((x)>='a'&&(x)<='z')?x-('a'-'A'):x
 #define MAX1(x,y) ((x)>(y))?(x):(y)
+
+
+#pragma mark - do while(0) 与换行
 #define MD_TEST_DEFINE(fmt,...) do{   \
-                                    printf("111")                             \
+                                    printf("111");                             \
                                     }while(0)
+static void knowledge_dowhile(){
+
+  MD_TEST_DEFINE(1111);
+}
 
 
-#pragma mark #x与##x
+#pragma mark - #x与##x
+#define STR(x) #x
+#define fun(x) printf( "%s = %d\n", #x, x)
+#define DEF(x) student##x
 static void knowledge_x(){
   
   //#x代表x的内容转换成字符串
-#define STR(x) #x
-#define fun(x) printf( "%s = %d\n", #x, x)
-  printf(STR(11111111111\n));
+  printf(STR(11111111111\n));//11111111111
   int m = 5;
-  fun(m);
+  fun(m);//m = 5
   
-  //##运算符可以将标识与其它内容拼接在一起，成为新的标识
-#define DEF(x) student##x
+  //##运算符
   int DEF(10) = 10;
-  printf("~%d",DEF(10));
+  printf("~%d",student10);//~10
 }
 
-#pragma mark c语言常用的宏
+#pragma mark - c语言常用的宏
 static void knowledge_common(){
   
   printf("当前的行号:%d",__LINE__);
@@ -63,7 +70,7 @@ static void knowledge_common(){
   printf("当前的时间:%s"__TIME__);
 }
 
-#pragma mark 根据参数编译
+#pragma mark - 根据参数编译
 static void knowledgeif(){
   
 #define qidong @"启动"
@@ -75,7 +82,7 @@ static void knowledgeif(){
 #endif
 }
 
-#pragma mark 根据条件来进行编译/undef
+#pragma mark - 根据条件来进行编译/undef
 static void knowledge_undef(){
   
 #define kaiqi @"开启"
@@ -94,7 +101,7 @@ static void knowledge_undef(){
 #endif
 }
 
-#pragma mark 根据宏值来进行编译
+#pragma mark - 根据宏值来进行编译
 static void knowledge_value(){
   
 #define value 3
@@ -110,4 +117,5 @@ static void knowledge_value(){
 
 void root_Define_base(){
   
+  knowledge_x();
 }

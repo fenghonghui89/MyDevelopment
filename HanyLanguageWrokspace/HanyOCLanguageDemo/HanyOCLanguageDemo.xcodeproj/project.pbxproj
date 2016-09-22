@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1457B4421D9377DA00507486 /* Root_Define.m in Sources */ = {isa = PBXBuildFile; fileRef = 1457B4411D9377DA00507486 /* Root_Define.m */; };
+		1457B4451D9378F300507486 /* Define_base.m in Sources */ = {isa = PBXBuildFile; fileRef = 1457B4441D9378F300507486 /* Define_base.m */; };
 		14A101221D2B96B1002069D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A101211D2B96B1002069D2 /* main.m */; };
 		14A1012E1D2B972D002069D2 /* TRMyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A1012A1D2B972D002069D2 /* TRMyClass.m */; };
 		14A101321D2B97A8002069D2 /* Root_Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A101311D2B97A8002069D2 /* Root_Protocol.m */; };
@@ -41,6 +43,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1457B4401D9377DA00507486 /* Root_Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Root_Define.h; sourceTree = "<group>"; };
+		1457B4411D9377DA00507486 /* Root_Define.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Root_Define.m; sourceTree = "<group>"; };
+		1457B4431D9378F300507486 /* Define_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define_base.h; sourceTree = "<group>"; };
+		1457B4441D9378F300507486 /* Define_base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Define_base.m; sourceTree = "<group>"; };
 		14A1011E1D2B96B1002069D2 /* HanyOCLanguageDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HanyOCLanguageDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A101211D2B96B1002069D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14A101291D2B972D002069D2 /* TRMyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRMyClass.h; sourceTree = "<group>"; };
@@ -96,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1457B43F1D93772600507486 /* 宏 */ = {
+			isa = PBXGroup;
+			children = (
+				1457B4431D9378F300507486 /* Define_base.h */,
+				1457B4441D9378F300507486 /* Define_base.m */,
+			);
+			path = "宏";
+			sourceTree = "<group>";
+		};
 		14A101151D2B96B1002069D2 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +132,7 @@
 			children = (
 				14A101211D2B96B1002069D2 /* main.m */,
 				14A1012F1D2B9762002069D2 /* root */,
+				1457B43F1D93772600507486 /* 宏 */,
 				14A1018A1D2BACA5002069D2 /* Block */,
 				14A1016E1D2BA7B8002069D2 /* 属性与初始化 */,
 				14A101361D2B9904002069D2 /* 分类与扩展 */,
@@ -150,6 +166,8 @@
 				14A101851D2BA8B3002069D2 /* Root_ParamaAndInit.m */,
 				14A101871D2BAC90002069D2 /* Root_Block.h */,
 				14A101881D2BAC90002069D2 /* Root_Block.m */,
+				1457B4401D9377DA00507486 /* Root_Define.h */,
+				1457B4411D9377DA00507486 /* Root_Define.m */,
 			);
 			path = root;
 			sourceTree = "<group>";
@@ -304,12 +322,14 @@
 				14A101321D2B97A8002069D2 /* Root_Protocol.m in Sources */,
 				14A101351D2B9808002069D2 /* Protocol_base.m in Sources */,
 				14A101571D2BA130002069D2 /* Category_base.m in Sources */,
+				1457B4451D9378F300507486 /* Define_base.m in Sources */,
 				14A101221D2B96B1002069D2 /* main.m in Sources */,
 				14A1017F1D2BA7B8002069D2 /* MDCat.m in Sources */,
 				14A101891D2BAC90002069D2 /* Root_Block.m in Sources */,
 				14A1014D1D2B9DBA002069D2 /* MDModel_Extersion.m in Sources */,
 				14A101811D2BA7B8002069D2 /* XYPoint.m in Sources */,
 				14A101541D2B9FEC002069D2 /* MDModel_Category+MyCategory.m in Sources */,
+				1457B4421D9377DA00507486 /* Root_Define.m in Sources */,
 				14A101861D2BA8B3002069D2 /* Root_ParamaAndInit.m in Sources */,
 				14A101831D2BA7B8002069D2 /* Student1.m in Sources */,
 				14A101821D2BA7B8002069D2 /* Student.m in Sources */,
@@ -437,6 +457,7 @@
 				14A101271D2B96B1002069D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

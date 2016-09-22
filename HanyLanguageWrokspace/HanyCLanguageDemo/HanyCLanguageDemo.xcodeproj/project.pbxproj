@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		14113B0C1D1AA16500E03E9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14113B0B1D1AA16500E03E9B /* main.m */; };
+		149FA97C1D93963900A4A606 /* Define_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 149FA97A1D9390A300A4A606 /* Define_base.c */; };
 		14C2D0E61D210915004A38F0 /* BaseDataType.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D0E21D210915004A38F0 /* BaseDataType.c */; };
 		14C2D0E71D210915004A38F0 /* Expression.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D0E41D210915004A38F0 /* Expression.c */; };
 		14C2D0EC1D210992004A38F0 /* OneArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D0E81D210992004A38F0 /* OneArray.c */; };
 		14C2D0ED1D210992004A38F0 /* TwoArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D0EA1D210992004A38F0 /* TwoArray.c */; };
 		14C2D0F01D210B41004A38F0 /* Function_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D0EE1D210B41004A38F0 /* Function_base.c */; };
-		14C2D0F71D210C6E004A38F0 /* Define_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D0F51D210C6E004A38F0 /* Define_base.c */; };
 		14C2D1061D2112F3004A38F0 /* Memory_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D1041D2112F3004A38F0 /* Memory_base.c */; };
 		14C2D1091D211304004A38F0 /* Point_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D1071D211304004A38F0 /* Point_base.c */; };
 		14C2D10C1D211313004A38F0 /* String_base.c in Sources */ = {isa = PBXBuildFile; fileRef = 14C2D10A1D211313004A38F0 /* String_base.c */; };
@@ -51,6 +51,8 @@
 /* Begin PBXFileReference section */
 		14113B081D1AA16500E03E9B /* HanyCLanguageDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HanyCLanguageDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		14113B0B1D1AA16500E03E9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		149FA97A1D9390A300A4A606 /* Define_base.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Define_base.c; sourceTree = "<group>"; };
+		149FA97B1D9390A300A4A606 /* Define_base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define_base.h; sourceTree = "<group>"; };
 		14C2D0E21D210915004A38F0 /* BaseDataType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BaseDataType.c; sourceTree = "<group>"; };
 		14C2D0E31D210915004A38F0 /* BaseDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataType.h; sourceTree = "<group>"; };
 		14C2D0E41D210915004A38F0 /* Expression.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Expression.c; sourceTree = "<group>"; };
@@ -61,8 +63,6 @@
 		14C2D0EB1D210992004A38F0 /* TwoArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoArray.h; sourceTree = "<group>"; };
 		14C2D0EE1D210B41004A38F0 /* Function_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Function_base.c; sourceTree = "<group>"; };
 		14C2D0EF1D210B41004A38F0 /* Function_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function_base.h; sourceTree = "<group>"; };
-		14C2D0F51D210C6E004A38F0 /* Define_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Define_base.c; sourceTree = "<group>"; };
-		14C2D0F61D210C6E004A38F0 /* Define_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define_base.h; sourceTree = "<group>"; };
 		14C2D1041D2112F3004A38F0 /* Memory_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Memory_base.c; sourceTree = "<group>"; };
 		14C2D1051D2112F3004A38F0 /* Memory_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory_base.h; sourceTree = "<group>"; };
 		14C2D1071D211304004A38F0 /* Point_base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Point_base.c; sourceTree = "<group>"; };
@@ -144,12 +144,21 @@
 				14C2D0F81D2112B7004A38F0 /* 内存 */,
 				14C2D0F91D2112B7004A38F0 /* 指针 */,
 				14C2D0FA1D2112B7004A38F0 /* 字符串 */,
-				14C2D0F11D210BF0004A38F0 /* 预处理命令 */,
+				149FA9791D9390A300A4A606 /* 宏 */,
 				14C2D0DB1D2107A1004A38F0 /* 函数 */,
 				14C2D0D21D210593004A38F0 /* 数组 */,
 				14C2D0BE1D20C4C7004A38F0 /* 基本数据类型与表达式 */,
 			);
 			path = HanyCLanguageDemo;
+			sourceTree = "<group>";
+		};
+		149FA9791D9390A300A4A606 /* 宏 */ = {
+			isa = PBXGroup;
+			children = (
+				149FA97A1D9390A300A4A606 /* Define_base.c */,
+				149FA97B1D9390A300A4A606 /* Define_base.h */,
+			);
+			path = "宏";
 			sourceTree = "<group>";
 		};
 		14C2D0BE1D20C4C7004A38F0 /* 基本数据类型与表达式 */ = {
@@ -181,15 +190,6 @@
 				14C2D0EF1D210B41004A38F0 /* Function_base.h */,
 			);
 			path = "函数";
-			sourceTree = "<group>";
-		};
-		14C2D0F11D210BF0004A38F0 /* 预处理命令 */ = {
-			isa = PBXGroup;
-			children = (
-				14C2D0F51D210C6E004A38F0 /* Define_base.c */,
-				14C2D0F61D210C6E004A38F0 /* Define_base.h */,
-			);
-			path = "预处理命令";
 			sourceTree = "<group>";
 		};
 		14C2D0F81D2112B7004A38F0 /* 内存 */ = {
@@ -358,9 +358,9 @@
 				14C2D11D1D211B43004A38F0 /* Union.c in Sources */,
 				14C2D1381D2129FF004A38F0 /* NoExtern.c in Sources */,
 				14C2D0F01D210B41004A38F0 /* Function_base.c in Sources */,
+				149FA97C1D93963900A4A606 /* Define_base.c in Sources */,
 				14EB1C1F1D24D26A00CA2F73 /* Root_Point.c in Sources */,
 				14C2D1371D2129FF004A38F0 /* HasExtern.c in Sources */,
-				14C2D0F71D210C6E004A38F0 /* Define_base.c in Sources */,
 				14C2D0E71D210915004A38F0 /* Expression.c in Sources */,
 				14EB1C201D24D26A00CA2F73 /* Root_String.c in Sources */,
 				14C2D0EC1D210992004A38F0 /* OneArray.c in Sources */,

@@ -129,12 +129,7 @@
   [MDGlobalManager sharedInstance].openLog = NO;
 
 
-  int a = 0;
-  if (a) PPLog(@"");
-    
-  else{
-    PPLog(@"0000");
-  }
+
   
   return YES;
 }

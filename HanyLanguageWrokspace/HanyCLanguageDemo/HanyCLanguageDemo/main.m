@@ -20,20 +20,18 @@
 
 int main(int argc, const char * argv[]) {
   
-  
-//  root_BaseDataTypeAndExpression();
-//  root_Array();
-//  root_Function();
-//  root_Define();
-//  root_Memory();
-  root_Point();
-//  root_String();
-//  root_Type();
-//  root_Keyword();
-  
 //  root_FreeTest();
+//  root_BaseDataTypeAndExpression();//基本数据类型与表达式
+//  root_Array();//数组
+//  root_Function();//函数
+  root_Define();//宏
+//  root_Memory();//内存
+//  root_Point();//指针
+//  root_String();//字符串
+//  root_Type();//结构体_联合_枚举
+//  root_Keyword();//关键字
   
-  
+
   
   return 0;
 }
