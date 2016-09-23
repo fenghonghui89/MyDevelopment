@@ -1,0 +1,173 @@
+等号左右两边要有空格
+数值可读性，例如120_000_000
+字符串不带@
+字符串比较很简单，可以直接 == > <
+新增元组类型，可选类型
+正常情况下溢出会过不了编译，如果要过编译，要用加&运算符，例如a&*b
+浮点数可以求余，可以自增自减1
+支持区间操作符..<和... 例如数组区间赋值
+
+
+for-in循环里面的变量不用var声明
+
+
+跟oc不同，枚举和结构体可以定义实例方法和类方法
+都可定义存储型和计算型的类属性
+
+
+重点：闭包和函数类型是一样的，都是引用类型，默认闭包里面调用self会增加self引用计数，被属性引用会增加闭包引用计数
+如果值在闭包内没有改变，swift会copy值代替捕获，以最优化处理。swift会处理闭包中的内存，不再使用则会释放
+
+
+is 检查类型
+as 向下转型
+Swift为不确定类型提供了两种特殊类型别名：
+AnyObject可以代表任何class类型的实例
+Any可以表示任何类型，除了方法类型（function types）
+
+swift没有readwrite和readonly 对应有let var
+
+/*
+类 关键字
+
+mutating
+类不能用这个关键字 因为不像struct/enum有变异方法 也没必要有变异方法
+
+final
+不允许复写
+
+required
+标识子类必须复写 子类复写时前面也要加required
+
+
+weak
+弱引用 必须是var+可选类型（？or!）
+修饰变量时默认值为nil 例如: weak var person:Person?/!
+设置为weak的属性，则当前类的对象不持有该属性所指向的对象
+如果在方法里面 用weak修饰一个对象类型 就算给他赋值也是为nil 不持有对象
+只能用在对象
+
+unowned
+无主引用 必须要有默认值 不管是直接赋值还是通过指定构造方法赋值 所以不能用可选类型
+修饰变量时默认有值 例如: unowned var person:Person
+设置为unowned的属性，则当前类的对象不持有该属性所指向的对象
+如果在方法里面 用unowned修饰一个对象类型 默认有值 不持有对象 调用对象会崩但跟weak报错不一样
+只能用在对象
+
+lazy
+延时加载 可以用self 因为一定是实例化后才会调用的
+如果类型是block 必须是var不能是let
+子类复写时不能加lazy关键字
+
+class
+修饰类属性 必须指定值，因为无法在构造过程中设置
+         不能用闭包/等号赋默认值 只能用get方法设置默认值 不能写set否则死循环
+        子类可以复写 复写依旧只能用get方法设置默认值 不能写set否则死循环
+修饰类方法 子类可以复写
+
+static
+修饰类属性 必须指定值，因为无法在构造过程中设置
+          可以用闭包/等号/get方法 赋默认值
+          子类不能复写
+修饰类方法 子类不能复写
+
+
+willSet/didSet
+作用类似oc的set
+初始化的时候不会触发
+哪怕新值和旧值一样 也会触发
+willSet有newValue，didset有oldValu
+如果在didSet监视器里为属性赋值，这个值会替换监视器之前设置的值
+可以用来修改static类属性的值
+
+subscript
+附属脚本 调用方法为 objName[parama]，例如 person[10]
+必须要有get;set可选
+
+
+init? or init!
+可选指定构造，可以调用指定构造，但反过来调用是不可以的
+子类可以复写
+
+deinit
+反构造 相当于dealloc 子类不能复写 不用加()
+
+convenience
+便利构造方法 一般为：convenience init(参数可有可无){self.init...}
+
+存储属性
+实例的 - 一般，如果不是var+可选类型，都要有默认值，都必须在定义属性的地方或者指定构造方法里面赋值
+        特别的，在“ViewController_arc - unowned以及隐式解析可选属性”例子中，Country类的capitalCity属性不单要有默认值，还必须是var
+类的 -  所有类型要有默认值，可通过实例属性中的disset修改类属性的值
+
+计算属性
+本身不是一个值
+必须用var,因为不是固定的
+计算属性的set/get跟oc的set/get不一样，这里是set其他属性的值，通过其他属性的值get自己
+只有get没有set的话则是只读计算属性
+
+*/
+
+
+
+
+/*
+默认将一个实例赋值给一个不带weak的属性/变量/常量，这个属性/变量/常量就会持有这个实例，引用计数+1
+var+可选类型的对象才能置nil，但对象的属性另计，对象的属性根据属性关键字处理
+*/
+
+
+
+
+extension
+注意：扩展可以添加新的计算属性，但是不可以添加存储属性，也不可以向已有属性添加属性观测器(property observers)。
+
+
+
+typealias
+
+protocal
+只能用var
+
+
+@objc
+暴露给oc
+如果你用 Swift 写的 class 是继承自 NSObject 的话，Swift 会默认自动为所有的非 private 的类和成员加上 @objc
+如果swift的类名或者方法名是中文，即oc不支持的，要用@objc标识一个给oc用的英文名
+
+optional 只能用在@objc修饰协议，调用optional的方法或属性，要用？
+
+indirect
+枚举递归用
+
+一个指向实例的swift变量/常量 类似于c/c++/oc的指针，但又不是直接指向内存地址，也不需要*
+
+在Objective-C中，对象的引用可以是值为NULL的原始指针（同样也是Objective-C中的nil）。而在Swift中，所有的值–包括结构体与对象的引用–都被保证为非空
+
+闭包与 blocks 语义上想通但是在一个地方不同：变量是可以直接改变的，而不是像 block 那样会拷贝变量。换句话说，Swift 中变量的默认行为与 Objective-C 中 __block 变量一致。
+
+
+dynamic
+用于oc runtime
+
+
+module是个代码发布单元(如Framework或者应用程序), 通过使用import关键字导入使用
+所有 Objective-C 的对象都是AnyObject类型的
+oc层触发的异常必须在oc层处理 不能抛给swift处理
+
+guard
+异常捕获 序列化 guard确保参数按照正确的格式传递进来 否则停止并走else
+
+//MARK:- api可用性
+/*
+#available(iOS 8.0, OSX 10.10, *) 写在控制流中
+@available(iOS 8.0, OSX 10.10, *) 标识方法的可用性 常用
+星号代表潜在的未知平台
+*/
+
+
+
+Interacting with C APIs
+在c、oc里面没有用NS_ENUM或者NS_OPTION标识的枚举，在swift里面都作为结构体被加入
+用NS_OPTION标识的枚举在swift都是以选项设置（Option Set）形式出现
+Unions 、 Bit Fields 、 Unnamed Structure and Union Fields 未看

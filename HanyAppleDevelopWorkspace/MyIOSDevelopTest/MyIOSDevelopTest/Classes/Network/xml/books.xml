@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book id = "001">
+        <name>乔布斯传</name>
+        <author>乔布斯</author>
+        <price>30</price>
+        <page>200</page>
+    </book>
+    <book id = "002">
+        <name>三国演义</name>
+        <author>罗贯中</author>
+        <price>2</price>
+        <page>300</page>
+    </book>
+    <book id = "003">
+        <name>红楼梦</name>
+        <author>曹雪芹</author>
+        <price>5</price>
+        <page>800</page>
+    </book>
+</books>
