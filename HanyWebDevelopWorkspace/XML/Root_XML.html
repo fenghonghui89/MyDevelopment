@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XML演示页面</title>
+    <link href="../Root_CSS.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
+<h1 id="root_menu"><b>目录</b></h1>
+<a href="#XML_DOM">DOM document object model</a><br/>
+<a href="#XML_HTTP_Request">http request</a><br/>
+<br />
+
+
+
+
+
+
+
+<!------------------------------------------------------------------DOM document object model------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="XML_DOM">DOM document object model</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+
+<h1>W3School.com.cn Internal Note</h1>
+<p>
+    <b>To:</b> <span id="to"></span><br />
+    <b>From:</b> <span id="from"></span><br />
+    <b>Message:</b> <span id="message"></span>
+</p>
+
+<script>
+    <!--自定义xml-->
+    txt="<note>";
+    txt=txt+"<to>George</to>";
+    txt=txt+"<from>John</from>";
+    txt=txt+"<heading>Reminder</heading>";
+    txt=txt+"<body>Don't forget the meeting!</body>";
+    txt=txt+"</note>";
+
+    <!--创建xml解析器-->
+    if (window.DOMParser)
+    {
+        parser=new DOMParser();
+        xmlDoc=parser.parseFromString(txt,"text/xml");
+    }
+    else // Internet Explorer
+    {
+        xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+        xmlDoc.async="false";
+        xmlDoc.loadXML(txt);
+    }
+
+    <!--更新页面-->
+    document.getElementById("to").innerHTML=xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+    document.getElementById("from").innerHTML=xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+    document.getElementById("message").innerHTML=xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+</script>
+<br /><br /><br />
+
+
+
+
+
+
+<!------------------------------------------------------------------http request------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="XML_HTTP_Request">http request</h1>
+<a href="#root_menu">回到目录</a>
+<hr/>
+
+<script type="text/javascript">
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET","cd.xml",false);
+    xmlhttp.send();
+    xmlDoc=xmlhttp.responseXML;
+    x=xmlDoc.getElementsByTagName("CD");
+
+    function displayCDInfo(i)
+    {
+        artist=(x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue);
+        title=(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+        year=(x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue);
+        country=(x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue);
+        company=(x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue);
+        price=(x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue);
+        txt="Artist: "+artist+"<br />Title: "+title+"<br />Year: "+year+"<br />Country: "+country+"<br />Company: "+company+"<br />Price: "+price  ;
+        document.getElementById("showCD").innerHTML=txt;
+    }
+</script>
+
+
+<div id="showCD">点击某个CD就可以显示专辑信息</div><br />
+<script type="text/javascript">
+    document.write("<table border='1'>");
+    for (var i=0;i<x.length;i++) {
+        document.write("<tr onclick='displayCDInfo(" + i + ")'>");
+        document.write("<td>");
+        document.write(x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue);
+        document.write("</td><td>");
+        document.write(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+        document.write("</td></tr>");
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>

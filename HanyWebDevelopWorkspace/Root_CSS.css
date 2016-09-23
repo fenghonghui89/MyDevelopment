@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/*背景色 内边距*/
+body {background-color: darkkhaki;padding:100px}
+
+
+/*大分类标题*/
+h1.HeaderTitle {
+    color: red;
+    font-family: "Al Bayan";
+    font-size:xx-large;
+    text-decoration: underline;
+    text-decoration-color: yellow;
+    text-align: center;
+}
+
+
+
+/*子分类间隔线*/
+hr.SectionHr {
+    color: blueviolet;
+    width: 400px;
+    margin-left: 0px;
+    border-style: dashed;
+}
+
+hr.SubSectionHr {color: chartreuse;
+    width: 200px;
+    margin-left: 0px;
+    border-style: dashed;
+}
