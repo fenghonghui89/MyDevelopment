@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS演示页面</title>
+    <link href="../Root_CSS.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
+<h1 id="root_menu"><b>目录</b></h1>
+
+<h2>js 基础</h2>
+<a href="#js_base_operator">js 运算符</a><br/>
+<a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
+<a href="#js_base_err">js 异常捕获</a><br/>
+<a href="#js_base_checkForm">js 表单验证</a><br/>
+<br />
+
+<h2>js html dom</h2>
+<a href="#js_html_dom">js html dom</a><br/>
+<a href="#js_event_eg">js 事件例子</a><br/>
+<a href="#js_event_window">js window事件</a><br/>
+<a href="#js_event_form">js form事件</a><br/>
+<a href="#js_event_mouse">js 鼠标事件</a><br/>
+<a href="#js_dot_add">js 节点</a><br/>
+<a href="#html_dom_node">html dom 属性:nodeName nodeType</a><br/>
+
+<h2>js 对象</h2>
+<a href="#js_obj_newObj">js 对象</a><br/>
+<a href="#js_obj_num">js 数字</a><br/>
+<a href="#js_obj_str">js 字符串</a><br/>
+<a href="#js_obj_date">js 日期</a><br/>
+<a href="#js_arr">js 数组</a><br/>
+<a href="#js_boolObj">js 逻辑对象bool</a><br/>
+<a href="#js_math">js 常见的算数任务</a><br/>
+<a href="#js_RegExp">js 正则表达式</a><br/>
+
+<h2>js window</h2>
+<a href="#js_window">js window</a><br/>
+<a href="#js_screen">js screen</a><br/>
+<a href="#js_location">js location</a><br/>
+<a href="#js_history">js history</a><br/>
+<a href="#js_navigator">js navigator</a><br/>
+<a href="#js_Timing">js timing</a><br/>
+<a href="#js_cookie">js cookie</a><br/>
+
+<h2>json</h2>
+<a href="#js_json">json</a>
+
+<!------------------------------------------------------------------js 运算符------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_operator">js 运算符</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    //比较运算符
+    /*
+     * === 全等（值和类型）
+     * */
+    function operator_compare(){
+        var x = '5';
+        if (x === 5){
+            alert("yes, is 5");
+        }else{
+            alert("no, is '5'");
+        }
+
+    }
+
+    //条件运算符
+    function operator_condition(){
+        var x = 5;
+        var result = x>=5?">=5":"<5";
+        alert(result);
+    }
+
+</script>
+
+<button type="button" onclick="operator_compare()">===</button>
+<button type="button" onclick="operator_condition()">xxx?y1:y2</button>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 标签与循环 函数参数默认值------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_fun">js 标签与循环 函数参数默认值</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+     * /标签 / for in 循环
+     * 注意for in 循环写法
+     * */
+    function func_label(){
+        var cars = ['BYD','QQ',"BMW",'Jeep','Audio','现代','长安','路虎'];
+
+        var result = "";
+        list:{
+            var x;
+            for(x in cars){
+                if (cars[x] == 'BMW') continue;
+                if (cars[x] == '长安') break list;
+                result = result+cars[x]+" ";
+            }
+        }
+
+        alert(result);
+    }
+
+    /*
+    * 函数参数默认值1 arguments
+    * function func_parama(a,b)
+    * function func_parama()
+    * */
+    function func_p1(){
+        alert(
+                func_parama1()+" "+
+                func_parama1(10)+" "+
+                func_parama1(10,20)+" "+
+                func_parama1(null,20)
+        );//3 12 30 21
+    }
+
+    function func_parama1(a,b){
+        var a = arguments[0]?arguments[0]:1;
+        var b = arguments[1]?arguments[1]:2;
+        return a+b;
+    }
+
+    /*
+    * 函数参数默认值2 ||运算符
+    *
+    * */
+    function func_p2(){
+        alert(
+                func_parama2()+" "+
+                func_parama2(10)+" "+
+                func_parama2(10,20)+" "+
+                func_parama2(null,20)
+        );//3 12 30 21
+    }
+
+    function func_parama2(a,b){
+
+        var a = a||1;
+        var b = b||2;
+
+        //相当于
+//        var a,b;
+//        if (!a){
+//            a = 1;
+//        }
+//        if (!b){
+//            b = 2;
+//        }
+
+        return a+b;
+    }
+
+
+    /*
+     * 函数参数默认值3
+     * 这种方法适合用于参数较多的情况，使用了Jquery的扩展 要先加载jquery
+     * */
+    function func_p3(){
+
+        var json = {
+            name:'HanyFeng',
+            phone:'100866',
+            sex:'女'
+        };
+        func_parama3(json);//输出：姓名：小红，性别：女，年龄：30，电话：100866，QQ：100866。
+    }
+
+    function func_parama3(settings){
+
+        var defaultSetting={
+            name:'小红',
+            age:'30',
+            sex:'女',
+            phone:'100866',
+            QQ:'100866',
+            birthday:'1949.10.01'
+        };
+        $.extend(defaultSetting,settings);
+        var message='姓名：'+defaultSetting.name
+                +'，性别：'+defaultSetting.sex
+                +'，年龄：'+defaultSetting.age
+                +'，电话：'+defaultSetting.phone
+                +'，QQ：'+defaultSetting.QQ
+                +'，生日：'+defaultSetting.birthday
+                +'。';
+        alert(message);
+
+    }
+
+</script>
+
+<!--加载jquery库-->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+
+<button type="submit" onclick="func_label()">标签 / for in 循环</button>
+<button type="submit" onclick="func_p1()">函数参数默认值1 arguments</button>
+<button type="submit" onclick="func_p2()">函数参数默认值2 ||运算符</button>
+<button type="submit" onclick="func_p3()">函数参数默认值3 jquery扩展</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 异常捕获------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_err">js 异常捕获</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    //try catch throw
+    function error_try(){
+        try{
+            var x = document.getElementById('error_try').value;
+            if(x=="") throw "值为空"
+            if(isNaN(x)) throw "值不是数字"
+            if(x>5) throw "数值太大"
+            if(x<5) throw "数值太小"
+        }catch (err){
+            alert("error happen...msg:"+err);
+        }
+    }
+</script>
+
+<input type="text" id="error_try" />
+<button type="button" onclick="error_try()">try catch throw</button>
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 表单验证------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_checkForm">js 表单验证</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function validate_require(field,alerttxt){
+        with (field){
+
+            //验证必填项目
+            if (value==null||value=="") {alert(alerttxt);return false}
+
+
+            /*
+             * 输入的数据必须包含 @ 符号和点号(.)。同时，@ 不可以是邮件地址的首字符，并且 @ 之后需有至少一个点号
+             * */
+            apos=value.indexOf("@");
+            dotpos=value.lastIndexOf(".");
+            if (apos<1||dotpos-apos<2) {alert(alerttxt);return false}
+            else {return true}
+
+        }
+    }
+
+    function validate_form(thisform){
+        with (thisform){
+            if (validate_require(email,"Email不能为空!或者是无效的email") == false){
+                email.focus();
+                return false;
+            }
+        }
+    }
+</script>
+
+<form action="http://www.baidu.com" onsubmit="return validate_form(this)" method="post">
+    Email:<input type="text" name="email" size="30">
+    <input type="submit" value="提交">
+</form>
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js html dom------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_html_dom">js html dom</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function dot_test(){
+
+        var x  = document.getElementById('jsdom_dv1');
+        var list = x.getElementsByTagName('p')
+        alert("length:"+list.length+' tag:'+list[0].childNodes[0].nodeValue);
+        alert("length:"+list.length+' tag:'+list[0].firstChild.nodeValue);
+        alert("length:"+list.length+' tag:'+list[0].innerHTML);
+    }
+</script>
+
+<div id="jsdom_dv1">
+    <p id="jsdom_dv1_p1">1~1~</p>
+    <p id="jsdom_dv1_p2">2~2~</p>
+</div>
+<button type="button" onclick="dot_test()">test</button>
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------js 事件例子------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_eg">js 事件例子</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<!--例子1-->
+<p onclick="this.innerHTML='thanks!'">eg1:tap it!</p>
+
+<!--例子2-->
+<script>
+    function changetext(id)
+    {
+        id.innerHTML="谢谢!";
+    }
+</script>
+<p onclick="changetext(this)">eg2:tap it!</p>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js window事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_window">js window事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+     * windonw事件 - 针对 window 对象触发的事件（应用到 <body> 标签）
+     * eg. <body onload = "....">
+     * onload onunload...
+     * */
+    function checkCookies()
+    {
+        if (navigator.cookieEnabled==true)
+        {
+            alert("已启用 cookie")
+        }
+        else
+        {
+            alert("未启用 cookie")
+        }
+    }
+</script>
+<p>window事件一般放body 这里只是为了体现效果</p>
+<button type="button" onclick="checkCookies()">检查浏览器是否支持cookie</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js form事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_form">js form事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /*
+     * form事件 - 由 HTML 表单内的动作触发的事件（应用到几乎所有 HTML 元素，但最常用在 form 元素中）
+     * eg. <input type="text" id="fname" onchange="....">
+     * onchange onselect..
+     * */
+    function myFunction()
+    {
+        var x=document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
+请输入英文字符,当您离开输入字段时,会触发将输入文本转换为大写的函数：<input type="text" id="fname" onchange="myFunction()">
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 鼠标事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_event_mouse">js 鼠标事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /*
+     * 鼠标事件 - 由鼠标或类似用户动作触发的事件
+     * eg. <div onclick="...">
+     * onclick onmousemove onmouseout...
+     * */
+    function mOver(obj){
+        obj.style.backgroundColor = "orange"
+        obj.innerHTML = 'you are here!';
+    }
+
+    function mOut(obj){
+        obj.style.backgroundColor = "green";
+        obj.innerHTML = "move to here~";
+    }
+
+    function mClick(obj){
+        obj.style.backgroundColor = "black";
+        obj.innerHTML = "you have click it!";
+    }
+
+    function mUp(obj){
+        obj.style.backgroundColor = "blue";
+        obj.innerHTML = "谢谢";
+    }
+
+    function mDown(obj){
+        obj.style.backgroundColor = "red";
+        obj.innerHTML = "你已经点击了,请放开鼠标";
+    }
+</script>
+<div onmouseover="mOver(this)"
+     onmouseout="mOut(this)"
+     onclick="mClick(this)"
+     onmousedown="mDown(this)"
+     onmouseup="mUp(this)"
+     style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;">
+    把鼠标移到上面
+</div>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 节点------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_dot_add">js 节点</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function addDot(){
+        var para = document.createElement("p");
+        var node = document.createTextNode("这是新节点");
+        para.appendChild(node);
+
+        var parent = document.getElementById("dotdiv1");
+        parent.appendChild(para);
+    }
+
+    function delDot(){
+        //方法1
+//        var parent = document.getElementById("dotdiv2");
+//        var child = document.getElementById("p2");
+//        parent.removeChild(child);
+
+        //方法2
+        var child = document.getElementById("p2");
+        child.parentNode.removeChild(child);
+    }
+
+</script>
+
+<p>添加节点</p>
+<div id="dotdiv1">
+    <p>这是节点1</p>
+</div>
+<button type="button" onclick="addDot()">添加节点</button>
+
+<p>删除节点</p>
+<div id="dotdiv2">
+    <p id="p1">这是一个段落。</p>
+    <p id="p2">这是另一个段落。</p>
+</div>
+<button type="button" onclick="delDot()">删除节点</button>
+
+
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------html dom 属性:nodeName nodeType------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="html_dom_node">html dom 属性:nodeName nodeType</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /*
+    *
+     文档节点
+     nodeName 始终是 #document
+     nodeValue 是 undefined 或 null
+     type是9
+
+     元素节点
+     nodeName 与标签名相同
+     nodeValue 是 undefined 或 null
+     type是1
+
+     属性节点
+     nodeName 与属性名相同
+     nodeValue 是属性值
+     type是2
+
+     文本节点
+     nodeName 始终是 #text
+     nodeValue 是文本本身
+     type是3
+
+     * */
+    function html_dom_nodeName(){
+
+        //文档节点
+        console.log("文档节点:"+document.nodeName+" "+
+                document.nodeValue+" "+
+                document.nodeType);//#document null 9
+
+        //元素节点
+        var x = document.getElementById("intro");
+        console.log("元素节点:"+x.nodeName+" "+
+                x.nodeValue+" "+
+                x.nodeType+'\n');//P null 1
+
+        //属性节点
+        var attributeNode = document.getElementById("intro").getAttribute('id');
+        console.log("属性节点:"+attributeNode+" "+attributeNode.nodeName+" "+
+                attributeNode.nodeValue+" "+
+                attributeNode.nodeType);//intro undefined undefined undefined
+
+        //文本节点
+        var textNode = document.getElementById("intro").firstChild;
+        console.log("文本节点:"+textNode.nodeName+" "+
+                textNode.nodeValue+" "+
+                textNode.nodeType);//#text Hello World! 3
+
+
+
+    }
+</script>
+
+<p id="intro" style="text-align: left;color: #0000FF" >Hello World!</p>
+<button type="button" onclick="html_dom_nodeName()">html dom nodeName</button>
+
+<br/><br/><br/>
+
+
+
+
+
+<!------------------------------------------------------------------js 对象------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_newObj">js 对象</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+    * JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...
+     JavaScript 提供多个内建对象，比如 String、Date、Array 等等。
+     JavaScript 是面向对象的语言，但 JavaScript 不使用类。
+     在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。
+     JavaScript 基于 prototype，而不是基于类的。
+    * */
+
+    //举例:js字符串对象
+    function obj_string(){
+
+        var txt = "sample txt";
+        txt.length = 5;
+        txt.indexOf();
+        txt.search();
+
+        var txt1 = txt.toUpperCase();
+        alert(txt1);
+    }
+
+    //创建js对象方法1 - new Object()
+    function obj_newObj(){
+
+        var person = new Object();
+        person.firstname = "Bill";
+        person.lastname = "Gates";
+        person.age = 56;
+        person.eyecolor = "blue";
+        person.eatFood = function(food){
+            alert(person.firstname+" eat "+food);
+        }
+
+        alert(person.firstname+" is "+person.age+" years old.")
+        person.eatFood("Pig");
+    }
+
+    //创建js对象方法2 - json对象
+    function obj_newObj1(){
+        var person1 = {
+            fullname:"Bill",
+            theAge:"12",
+            eatFood:function(food){
+                alert("eating "+food);
+            }
+        };
+
+        alert(person1.fullname+" "+person1.theAge);
+        person1.eatFood("Orange");
+    }
+
+    //创建js对象方法3 - 使用对象构造器
+    function obj_newObj2(){
+
+        var human = new human1("Bill","12");
+
+        alert(human.humanName+" "+human.humanAge);
+        human.eatFood("dog");
+
+    }
+
+    function human1(humanName,humanAge) {
+
+        this.humanName = humanName;
+        this.humanAge = humanAge;
+        this.eatFood = function(food){
+            alert("you are eating "+food);
+        }
+    }
+
+    //创建js对象方法4 - 使用对象构造器返回一个json对象
+    function  obj_newObj3(){
+        var human = huamanConfig({
+            sex:"boy",
+            age:"13"
+        });
+
+        alert(human.name+" "+human.age+" "+human.sex);
+        human.eatFood("apple");
+    }
+
+    function huamanConfig(options){
+
+        var huamanConfig = {
+            name:"default name",
+            age:"12",
+            sex:"girl",
+            eatFood:function(food){
+              alert("I am eating "+food);
+            }
+        };
+
+        if (!options || typeof options !== "object") {
+            return huamanConfig;
+        }
+
+        for (var i in options) {
+            if (huamanConfig.hasOwnProperty(i)) {
+                huamanConfig[i] = options[i];
+            }
+        }
+
+        return huamanConfig;
+    }
+
+    //对象方法
+    function obj_func(){
+
+        var dog = new bigdog("Hany",12,"boy");
+        dog.changeSex("girl");
+        dog.dogEat("Apple");
+
+        alert(dog.dogName+"'s friend is "+dog.dogFriend());
+    }
+
+    function bigdog(dogName,dogAge,dogSex){
+
+        this.dogName = dogName;
+        this.dogAge = dogAge;
+        this.dogSex = dogSex;
+
+        //带参数方法
+//        this.changeSex = changeSex;
+//        function changeSex(sex){
+//            this.dogSex = sex;
+//        }
+        this.changeSex = function(sex){
+            this.dogSex = sex;
+        }
+
+        this.dogEat = function(food){
+            alert(this.dogName+" "+this.dogAge+" "+this.dogSex+" eat "+food);
+        }
+
+        //带返回值
+        this.dogFriend = function(){
+            return "cat";
+        }
+
+    }
+
+
+
+    //遍历对象
+    function obj_forin(){
+        var dog = new bigdog("Lala",13,"boy");
+
+        var x;
+        var txt="";
+        for (x in dog){
+            txt = txt+" "+dog[x];
+        }
+
+        alert(txt);
+    }
+
+</script>
+<button type="button" onclick="obj_string()">字符串对象</button>
+<button type="button" onclick="obj_newObj()">创建js对象1 - new Object()</button>
+<button type="button" onclick="obj_newObj1()">创建js对象2 - json对象</button>
+<button type="button" onclick="obj_newObj2()">创建js对象方法3 - 使用对象构造器</button>
+<button type="button" onclick="obj_newObj3()">创建js对象方法4 - 使用对象构造器返回一个json对象</button>
+<button type="button" onclick="obj_func()">对象方法</button>
+<button type="button" onclick="obj_forin()">遍历对象</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 数字------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_num">js 数字</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+    * JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。
+     JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。
+     整数（不使用小数点或指数计数法）最多为 15 位。
+     小数的最大位数是 17，但是浮点运算并不总是 100% 准确
+     如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0x，则解释为十六进制数。
+    * */
+    function obj_num(){
+        var pi=3.14;    // 使用小数点
+        var x=34;       // 不使用小数点
+        var y=123e5;    // 12300000
+        var z=123e-5;   // 0.00123
+        var sum=0.2+0.1;
+        var e=0377;
+        var st=0xFF;
+        alert(pi+" "+x+" "+y+" "+z+" "+sum+" "+e+" "+st);
+    }
+</script>
+<button type="button" onclick="obj_num()">输出各种数值</button>
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------js 字符串------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_str">js 字符串</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //字符串对象
+    function str_obj(){
+        var txt = "hello world~";
+        alert(txt.length+" "+txt.toUpperCase());
+    }
+
+    //match 查找字符串中的特定字符串
+    function str_match(){
+        var str = "hello world";
+        alert(str.match('world')+" "+str.match('mm'));//world null
+    }
+
+</script>
+<button type="button" onclick="str_match()">字符串对象</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 日期------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_obj_date">js 日期</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    function datefun(){
+
+        //Date 对象自动使用当前的日期和时间作为其初始值。
+        var myDate = new Date();
+        console.log(myDate);//2016-09-07T09:50:04.432Z
+
+        //getDate会把时间转换为自当月开始到指定时间经过的天数
+        var myDate1 = myDate.getDate();
+        console.log(myDate1);//7
+
+        //表示月份的参数介于 0 到 11 之间。也就是说，如果希望把月设置为 8 月，则参数应该是 7。
+        myDate.setFullYear(2007,8,5);
+        console.log(myDate);//2007-09-05T09:50:04.432Z
+
+
+        //如果增加天数会改变月份或者年份，那么日期对象会自动完成这种转换。
+        myDate.setDate(myDate.getDate()+5);
+        console.log(myDate)//2007-09-05T09:50:04.432Z
+
+    }
+
+    function dateCompare(){
+        var myDate=new Date();
+        myDate.setFullYear(2008,8,9);
+
+        var today = new Date();
+
+        if (myDate>today)
+        {
+            alert("Today is before 9th August 2008");
+        }
+        else
+        {
+            alert("Today is after 9th August 2008");
+        }
+    }
+</script>
+<button type="button" onclick="datefun()">操作日期</button>
+<button type="button" onclick="dateCompare()">比较日期</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 数组------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_arr">js 数组</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function arrCreate(){
+        var arr1 = new Array();
+        arr1[0] = "1";
+        arr1[1] = "2";
+        arr1[2] = "3";
+
+        var arr2 = new Array(3);
+        arr2[0] = "1";
+        arr2[1] = "2";
+        arr2[2] = "3";
+
+        var arr3 = new Array("1","2","3");
+        arr3[4] = 5;
+        arr3[0] = 11;
+        alert(arr3);
+    }
+
+</script>
+<button type="button" onclick="arrCreate()">创建数组</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 逻辑对象bool------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_boolObj">js 逻辑对象bool</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function boolobj(){
+
+        //下面的所有的代码行均会创建初始值为 false 的 Boolean 对象
+        var myBoolean=new Boolean();
+        myBoolean=new Boolean(0);
+        myBoolean=new Boolean(null);
+        myBoolean=new Boolean("");
+        myBoolean=new Boolean(false);
+        myBoolean=new Boolean(NaN);
+
+        //下面的所有的代码行均会创初始值为 true 的 Boolean 对象
+        var myBoolean1=new Boolean(1);
+        myBoolean1=new Boolean(true);
+        myBoolean1=new Boolean("true");
+        myBoolean1=new Boolean("false");
+        myBoolean1=new Boolean("Bill Gates");
+
+        alert(myBoolean+" "+myBoolean1);
+    }
+
+</script>
+<button type="button" onclick="boolobj()">逻辑对象bool</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 常见的算数任务------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_math">js 常见的算数任务</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function mathfun(){
+
+        //四舍五入
+        var value = Math.round(0.60);
+        value = Math.round(0.50);
+        value = Math.round(0.49);
+        value = Math.round(-4.40);
+        value = Math.round(-4.60);
+
+        value = Math.random();//随机值
+        value = Math.max(1,2,3);//最大值
+        value = Math.min(11,22,33);//最小值
+
+        alert(value);
+    }
+
+</script>
+<button type="button" onclick="mathfun()">常见的算数任务</button>
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------js 正则表达式------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_RegExp">js 正则表达式</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+
+
+    //test() 方法检索字符串中的指定值。返回值是 true 或 false。
+    function regExp_test(){
+        var reg = new RegExp('e');
+        var result = reg.test("the one");
+        alert(result);//true
+    }
+
+
+
+    //exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+    function regExp_exec(){
+        var reg = new RegExp('e');
+        var result = reg.exec("the one");
+        alert(result);//e
+    }
+
+
+
+    /*
+    *您可以向 RegExp 对象添加第二个参数，以设定检索。例如，如果需要找到所有某个字符的所有存在，则可以使用 "g" 参数 ("global")。
+    * 在使用 "g" 参数时，exec() 的工作原理如下：
+    *
+     找到第一个 "e"，并存储其位置
+     如果再次运行 exec()，则从存储的位置开始检索，并找到下一个 "e"，并存储其位置
+
+     * */
+    function  regExp_exec1(){
+        var  reg = new RegExp('e','g');
+
+        var result = '';
+        var index = '';
+        do {
+            index = reg.exec('the one');
+            result = result+" "+index;
+        }while (index != null)
+
+        alert(result);//e e null
+    }
+
+
+    function regExp_test(){
+        var str = 'Is this all there is?';
+        var pattl = /[a-h]/g;
+        var reg = new RegExp("[^a-h]",'g');
+        alert(str.match(reg));
+    }
+
+
+
+</script>
+<button type="button" onclick="regExp_test()">reg test</button>
+<button type="button" onclick="regExp_exec()">reg exec</button>
+<button type="button" onclick="regExp_exec1()">reg exec1</button>
+<button type="button" onclick="regExp_test()">reg test</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js window------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_window">js window</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    //浏览器尺寸
+    function window_size(){
+        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        alert("w:"+w+" h:"+h);
+    }
+
+    //其他方法
+    var win;
+    function window_method(){
+//        win = window.open("http://www.baidu.com")
+        win = window.location.assign("http://www.baidu.com");
+    }
+
+    function window_method1(){
+        win.close();
+    }
+</script>
+<button type="button" onclick="window_size()">浏览器尺寸</button>
+<button type="button" onclick="window_method()">其他方法</button>
+<button type="button" onclick="window_method1()">test</button>
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------js screen------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_screen">js screen</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //window.screen 对象在编写时可以不使用 window 这个前缀
+    function screen_test(){
+        var w = screen.availWidth;//window.screen.availWidth
+        var h = screen.availHeight;
+        alert("可用尺寸w:"+w+" h:"+h);
+    }
+
+</script>
+<button type="button" onclick="screen_test()">screen</button>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js location------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_location">js location</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //输出
+    function location0(){
+
+        var result = "hostname:"+location.hostname+"\n";
+        result += "pathname:"+location.pathname+"\n";
+        result += "port:"+location.port+"\n";
+        result += "protocol:"+location.protocol+"\n";
+        result += "href:"+location.href+"\n";
+        alert(result);
+    }
+
+    //跳转
+    function  location1(){
+        location.assign("http://tpages.cn");
+    }
+
+</script>
+<button type="button" onclick="location0()">输出</button>
+<button type="button" onclick="location1()">跳转</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js history------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_history">js history</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //后退
+    function history_back(){
+        history.back();
+    }
+
+    //前进
+    function  history_forward(){
+        history.forward();
+    }
+
+</script>
+<button type="button" onclick="history_back()">返回</button>
+<button type="button" onclick="history_forward()">前进</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js navigator------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_navigator">js navigator</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //window.navigator 对象包含有关访问者浏览器的信息
+    function navigator_info(){
+        var result = "Browser CodeName:"+navigator.appCodeName+"\n";
+        result += "Browser Name:"+navigator.appName+"\n";
+        result += "Browser Version:"+navigator.appVersion+"\n";
+        result += "Cookies Enabled:"+navigator.cookieEnabled+"\n";
+        result += "Platform:"+ navigator.platform+"\n";
+        result += "User-agent header:"+ navigator.userAgent+"\n";
+        result += "User-agent language:"+ navigator.systemLanguage+"\n";
+        alert(result);
+    }
+
+
+</script>
+<button type="button" onclick="navigator_info()">navigator_info</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js 提示框------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_popupAlert">js 提示框</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //确认框
+    function popupAlert_confirm(){
+
+        var result = confirm("tap one");
+        if (result == true){
+            alert('you tap ok');
+        }else {
+            alert('you tap false');
+        }
+    }
+
+
+    function popupAlert_prompt(){
+        var result = prompt("请输入你的名字","Hany");
+        if(result !="" && result != null){
+            alert("你输入的名字是:"+result);
+        }
+    }
+</script>
+<button type="button" onclick="popupAlert_confirm()">确认框</button>
+<button type="button" onclick="popupAlert_prompt()">提示框</button>
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------js Timing------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_Timing">js Timing</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    //计时
+    var timing;
+    var count=0;
+    function timing_start(){
+
+        document.getElementById('timing_p').innerHTML = count;
+        count = count+1;
+        timing = setTimeout('timing_start()',1000);
+
+        document.getElementById('timing_startBtn').disabled = 'disabled';
+    }
+
+    function timing_stop(){
+        clearTimeout(timing)
+
+        document.getElementById('timing_startBtn').removeAttribute('disabled');
+    }
+
+    //显示当前时间
+    function startTime() {
+
+        var today = new Date()
+        var h=today.getHours()
+        var m=today.getMinutes()
+        var s=today.getSeconds()
+
+        //add a zero in front of numbers<10
+        m=checkTime(m)
+        s=checkTime(s)
+        document.getElementById('timing_date').innerHTML= h+":"+m+":"+s
+        setTimeout('startTime()',500)
+    }
+
+    function checkTime(i){
+        if (i<10) {
+            i="0" + i
+        }
+        return i
+    }
+</script>
+<p id="timing_p">计时</p>
+<button type="button" onclick="timing_start()" id="timing_startBtn">开始</button>
+<button type="button" onclick="timing_stop()">停止</button>
+<p id="timing_date">date</p>
+<button type="button" onclick="startTime()">显示时间</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------js cookie------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_cookie">js cookie</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    function getCookie(c_name)
+    {
+        console.log("get cookie:"+document.cookie);
+
+        if (document.cookie.length>0)//检查 document.cookie 对象中是否存有 cookie
+        {
+            var c_start = document.cookie.indexOf(c_name + "=")//0 or -1
+            if (c_start != -1)//检查我们指定的 cookie 是否已储存
+            {
+                c_start = c_start + c_name.length + 1
+                var c_end = document.cookie.indexOf(";",c_start)//0 or -1
+                if (c_end == -1) c_end = document.cookie.length
+                return document.cookie.substring(c_start,c_end)
+            }
+        }
+        return ""
+    }
+
+    //cookie名称 值 过期天数
+    function setCookie(c_name,value,expiredays)
+    {
+        var exdate = new Date()
+        exdate.setDate(exdate.getDate()+expiredays)
+        var dayvalue = expiredays == null?"":"expires="+exdate.toGMTString();
+        console.log("day:"+dayvalue);
+
+        var namevalue = c_name+"="+value;
+        console.log("name:"+namevalue);
+
+        document.cookie = namevalue+";"+dayvalue;
+        console.log("set cookie:"+document.cookie);
+    }
+
+    function checkCookie()
+    {
+        var username = getCookie('username')
+        if (username != null && username != "")
+        {
+            alert('Welcome again '+username+'!')
+        }
+        else
+        {
+            username = prompt('Please enter your name:',"")
+            if (username != null && username != "")
+            {
+                setCookie('username',username,365)
+            }
+        }
+    }
+</script>
+<button type="button" onclick="checkCookie()">读取cookie</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------json------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_json">json</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /*
+    * JSON：JavaScript 对象表示法
+    * JSON 是存储和交换文本信息的语法。类似 XML。
+    * JSON 文本格式在语法上与创建 JavaScript 对象的代码相同。
+    * JSON不是一种语言，它仅仅是一种数据的表达方式，从某种程度上来讲，JSON跟XML没有什么区别。
+    * json文件类型 - xxx.json
+    *
+    * json - "key":"value" value可以是null
+    * json对象 - {"key":"value",...} (包含多个键值对,与firstName = "John";lastName = "Doe";等价)
+    * */
+    function jsonParse(){
+
+        //json对象
+        var JSONObject = {
+            "name":"Bill Gates",
+            "street":"Fifth Avenue New York 666",
+            "age":56,
+            "phone":"555 1234567"
+        };
+
+        document.getElementById("jname").innerHTML=JSONObject.name
+        document.getElementById("jage").innerHTML=JSONObject.age
+        document.getElementById("jstreet").innerHTML=JSONObject.street
+        document.getElementById("jphone").innerHTML=JSONObject.phone
+
+        //json数组
+        var employees = [
+            { "firstName":"Bill" , "lastName":"Gates" },
+            { "firstName":"George" , "lastName":"Bush" },
+            { "firstName":"Thomas" , "lastName": "Carter" }
+        ];
+        employees[0].firstName = 'Apple';
+        document.getElementById('jarray').innerHTML = employees[0].firstName;
+    }
+
+
+    function jsonParser(){
+
+            //用解析器解析json文本
+            var jsonObj = '{"students" : [' +
+                    '{"name":"Tom","age":12},' +
+                    '{"name":"Ann","age":13},' +
+                    '{"name":"Jim","age":14}' +
+                    ']}';
+
+
+            var obj = JSON.parse(jsonObj);
+            document.getElementById('jparser').innerHTML = obj.students[2].age;
+        }
+</script>
+
+<p>
+    Name: <span id="jname"></span><br />
+    Age: <span id="jage"></span><br />
+    Address: <span id="jstreet"></span><br />
+    Phone: <span id="jphone"></span><br /><br/>
+
+    jsonArray:<span id="jarray"></span><br/>
+</p>
+<button type="button" onclick="jsonParse()">json对象</button>
+
+<p id="jparser">json parser</p>
+<button type="button" onclick="jsonParser()">用解析器解析json文本</button>
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS演示页面</title>
+    <link href="../Root_CSS.css" type="text/css" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+
+
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
+<h1 id="root_menu"><b>目录</b></h1>
+<br />
+
+<h2>CSS</h2>
+<a href="#CssCursor">鼠标样式</a><br />
+<a href="#CssNavi">导航栏</a><br />
+<a href="#CssImgLibrary">图库</a><br />
+<a href="#CssOpacityImg">图片透明</a><br />
+<a href="#CssMediaType">媒介类型</a><br/>
+<br />
+<h2>CSS3</h2>
+<a href="#Css3Border">CSS3 边框</a><br/>
+<a href="#Css3Bg">CSS3 背景</a><br/>
+<a href="#Css3Text">CSS3 文字效果</a><br/>
+<a href="#Css3Font">CSS3 字体</a><br/>
+<a href="#Css32D">CSS3 2D转换</a><br/>
+<a href="#Css33D">CSS3 3D转换</a><br/>
+<a href="#Css3Transition">CSS3 过渡</a><br/>
+<a href="#Css3Animate">CSS3 动画</a><br/>
+<a href="#Css3Column">CSS3 多列</a><br/>
+<a href="#Css3UserScreen">CSS3 用户界面</a><br/>
+
+
+<!------------------------------------------------------------------鼠标样式------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CssCursor">鼠标样式</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<p>请把鼠标移动到单词上，可以看到鼠标指针发生变化：</p>
+<span style="cursor:auto">Auto</span><br />
+<span style="cursor:crosshair">Crosshair</span><br />
+<span style="cursor:default">Default</span><br />
+<span style="cursor:pointer">Pointer</span><br />
+<span style="cursor:move">Move</span><br />
+<span style="cursor:e-resize">e-resize</span><br />
+<span style="cursor:ne-resize">ne-resize</span><br />
+<span style="cursor:nw-resize">nw-resize</span><br />
+<span style="cursor:n-resize">n-resize</span><br />
+<span style="cursor:se-resize">se-resize</span><br />
+<span style="cursor:sw-resize">sw-resize</span><br />
+<span style="cursor:s-resize">s-resize</span><br />
+<span style="cursor:w-resize">w-resize</span><br />
+<span style="cursor:text">text</span><br />
+<span style="cursor:wait">wait</span><br />
+<span style="cursor:help">help</span>
+<br /><br /><br />
+
+
+
+
+
+<!------------------------------------------------------------------导航栏------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CssNavi">导航栏</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<!--垂直导航栏-->
+<style>
+    ul.CssNavi1
+    {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+    }
+    a.CssNavi1:link,a.CssNavi1:visited
+    {
+        display:block;/*使点击区域增大 可设置大小*/
+        font-weight:bold;
+        color:#FFFFFF;
+        background-color:#bebebe;
+        width:120px;
+        text-align:center;
+        padding:4px;
+        text-decoration:none;
+        text-transform:uppercase;
+    }
+    a.CssNavi1:hover,a.CssNavi1:active
+    {
+        background-color:#cc0000;
+    }
+</style>
+
+<ul class="CssNavi1">
+    <li><a href="#" class="CssNavi1">Home</a></li>
+    <li><a href="#" class="CssNavi1">News</a></li>
+    <li><a href="#" class="CssNavi1">Contact</a></li>
+    <li><a href="#" class="CssNavi1">About</a></li>
+</ul>
+<br />
+<!--水平导航栏-->
+<style>
+    ul.CssNavi2
+    {
+        float:left;
+        width:100%;
+        padding:0;
+        margin:0;
+        list-style-type:none;
+    }
+    a.CssNavi2
+    {
+        float:left;
+        width:7em;
+        text-decoration:none;
+        color:white;
+        background-color:purple;
+        padding:0.2em 0.6em;
+        border-right:1px solid white;
+    }
+    a.CssNavi2:hover {background-color:#ff3300}
+
+    /*水平方法 2选1*/
+    /*li.CssNavi2 {float: left}*/
+    li.CssNavi2 {display: inline}
+</style>
+
+<ul class="CssNavi2">
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link one</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link two</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link three</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link four</a></li>
+</ul>
+
+
+<br /><br /><br />
+
+
+
+<!------------------------------------------------------------------图库------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CssImgLibrary">图库</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    div.img
+    {
+        margin:3px;
+        border:1px solid #bebebe;
+        height:auto;
+        width:auto;
+        float:left;
+        text-align:center;
+    }
+    div.img img
+    {
+        display:inline;
+        margin:3px;
+        border:1px solid #bebebe;
+    }
+    div.img a:hover img
+    {
+        border:1px solid #00FF00;
+    }
+    div.desc
+    {
+        text-align:center;
+        font-weight:normal;
+        width:150px;
+        font-size:12px;
+        margin:10px 5px 10px 5px;
+    }
+    div.clear{
+        clear: both;
+    }
+</style>
+
+<div>
+    <div class="img">
+        <a target="_blank" href="/i/tulip_ballade.jpg">
+            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+        </a>
+        <div class="desc">在此处添加对图像的描述</div>
+    </div>
+
+    <div class="img">
+        <a target="_blank" href="/i/tulip_flaming_club.jpg">
+            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+        </a>
+        <div class="desc">在此处添加对图像的描述</div>
+    </div>
+
+    <div class="img">
+        <a target="_blank" href="/i/tulip_fringed_family.jpg">
+            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+        </a>
+        <div class="desc">在此处添加对图像的描述</div>
+    </div>
+
+    <div class="img">
+        <a target="_blank" href="/i/tulip_peach_blossom.jpg">
+            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+        </a>
+        <div class="desc">在此处添加对图像的描述</div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<br /><br /><br />
+
+
+
+
+<!------------------------------------------------------------------图片透明------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CssOpacityImg">图片透明</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<!--图片透明-->
+<style>
+    img.CssOpacityImg1{
+        opacity: 0.4;
+        filter:alpha(opacity=40); /* 针对 IE8 以及更早的版本 */
+    }
+    img.CssOpacityImg1:hover{
+        opacity: 1.0;
+        filter:alpha(opacity=100); /* 针对 IE8 以及更早的版本 */
+    }
+</style>
+
+<img src="../src/111111.jpg" class="CssOpacityImg1">
+
+<br />
+
+<!--透明框中的文本-->
+<style>
+    div.background
+    {
+        width: 400px;
+        height: 266px;
+        background: url('../src/111111.jpg') repeat;
+        border: 1px solid black;
+    }
+
+    div.transbox
+    {
+        width: 338px;
+        height: 204px;
+        margin:30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        /* for IE */
+        filter:alpha(opacity=60);
+        /* CSS3 standard */
+        opacity:0.6;
+    }
+
+    div.transbox p
+    {
+        margin: 30px 40px;
+    }
+</style>
+
+<div class="background">
+    <div class="transbox">
+        <p>
+            This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+        </p>
+    </div>
+</div>
+
+
+<br /><br /><br />
+
+
+
+<!------------------------------------------------------------------媒介类型------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CssMediaType">媒介类型</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    @media screen /*用于电脑显示器*/
+    {
+        p.CssMediaType1 {font-family:verdana,sans-serif; font-size:20px}
+    }
+
+    @media print /*用于打印机*/
+    {
+        p.CssMediaType1 {font-family:times,serif; font-size:10px}
+    }
+
+    @media screen,print
+    {
+        p.CssMediaType1 {font-weight:bold;color: #0000FF}
+    }
+</style>
+
+<p class="CssMediaType1">显示了适用于电脑显示器的样式:This is some text that is placed in the transparent box.</p>
+<br /><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 边框------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Border">CSS3 边框</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+
+    /*边框圆角 边框阴影*/
+    div.Css3Border1{
+        text-align:center;
+        border:2px solid #a1a1a1;
+        padding:10px 40px;
+        background:#dddddd;
+        width:350px;
+
+        /*圆角*/
+        border-radius:25px;
+        -moz-border-radius:25px; /* 老的 Firefox */
+
+        /*阴影*/
+        box-shadow: 10px 10px 5px #888888;
+        -moz-box-shadow: 10px 10px 5px #888888; /* 老的 Firefox */
+
+    }
+
+
+    /*边框图片*/
+    #round,#stretch{
+        border:15px solid transparent;
+        width:300px;
+        padding:10px 20px;
+    }
+    #round
+    {
+        -moz-border-image:url("../src/border.png") 30 30 round;	/* Old Firefox */
+        -webkit-border-image:url("../src/border.png") 30 30 round;	/* Safari and Chrome */
+        -o-border-image:url("../src/border.png") 30 30 round;		/* Opera */
+        border-image:url("../src/border.png") 30 30 round;
+    }
+
+    #stretch
+    {
+        -moz-border-image:url("../src/border.png") 30 30 stretch;	/* Old Firefox */
+        -webkit-border-image:url("../src/border.png") 30 30 stretch;	/* Safari and Chrome */
+        -o-border-image:url("../src/border.png") 30 30 stretch;	/* Opera */
+        border-image:url("../src/border.png") 30 30 stretch;
+    }
+</style>
+
+<div class="Css3Border1">border-radius 属性允许您向元素添加圆角。</div><br />
+<div id="round">在这里，图片铺满整个边框。</div><br />
+<div id="stretch">在这里，图片被拉伸以填充该区域。</div>
+
+<br /><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 背景------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Bg">CSS3 背景</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    /*background-size*/
+    #Css3Bg1{
+        background:url("../src/bg_flower.gif");
+        background-size:35% 100%;
+        -moz-background-size:35% 100%; /* 老版本的 Firefox */
+        background-repeat:no-repeat;
+        width: 500px;
+        background-color: orange;/*放最后 否则无法显示??*/
+    }
+
+    /*background-origin*/
+    #Css3Bg2{
+        margin: 10px;
+        padding: 10px;
+        width: 500px;
+        height: 500px;
+        background: url("../src/bg_flower.gif");
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-color: #00FF00;
+    }
+
+    /*多重背景*/
+    #Css3Bg3{
+        width: 500px;
+        height: 500px;
+        background: url("../src/bg_flower.gif"),url("../src/bg_flower_2.gif");
+        background-color: #00FF00;
+    }
+</style>
+
+<!--background-size-->
+<div id="Css3Bg1">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br>
+
+<!--background-origin-->
+<div id="Css3Bg2">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br />
+
+<!--多重背景-->
+<div id="Css3Bg3">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br /><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 文字效果------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Text">CSS3 文字效果</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    #Css3Text1{
+        width: 11em;
+        text-shadow: 5px 5px 5px #FF0000;/*水平阴影、垂直阴影、模糊距离，以及阴影的颜色*/
+        color: #0000FF;
+        word-wrap:break-word;/*拆词 自动换行*/
+    }
+</style>
+
+<p id="Css3Text1">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+<br/><br/><br/>
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------CSS3 字体------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Font">CSS3 字体</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url('../src/Sansation_Light.ttf')
+        ,url('../src/Sansation_Light.eot'); /* IE9+ */
+    }
+
+    /*必须为粗体文本添加另一个包含描述符的 @font-face：*/
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url('../src/Sansation_Bold.ttf')
+        ,url('../src/Sansation_Bold.eot'); /* IE9+ */
+        font-weight:bold;
+    }
+
+    #CSS3Font1
+    {
+        font-family:myFirstFont;
+    }
+</style>
+
+<p id="CSS3Font1">With CSS3, websites can <b>finally</b> use fonts other than the pre-selected "web-safe" fonts.</p>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------CSS3 2D转换------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css32D">CSS3 2D转换</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    #CSS32D1 {
+        margin: 30px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+
+        /*transform: translate(50px, 100px);!*根据给定的 left（x 坐标） 和 top（y 坐标） 位置参数*!*/
+        /*-ms-transform: translate(50px, 100px); !* IE 9 *!*/
+        /*-moz-transform: translate(50px, 100px); !* Firefox *!*/
+        /*-webkit-transform: translate(50px, 100px); !* Safari and Chrome *!*/
+        /*-o-transform: translate(50px, 100px); !* Opera *!*/
+
+        /*transform: rotate(30deg);!*元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转。*!*/
+        /*-ms-transform: rotate(30deg);		!* IE 9 *!*/
+        /*-webkit-transform: rotate(30deg);	!* Safari and Chrome *!*/
+        /*-o-transform: rotate(30deg);		!* Opera *!*/
+        /*-moz-transform: rotate(30deg);		!* Firefox *!*/
+
+        /*transform: scale(0.5,0.5);!*元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）参数*!*/
+        /*-ms-transform: scale(2,4);	!* IE 9 *!*/
+        /*-webkit-transform: scale(2,4);	!* Safari 和 Chrome *!*/
+        /*-o-transform: scale(2,4);	!* Opera *!*/
+        /*-moz-transform: scale(2,4);	!* Firefox *!*/
+
+        /*transform: skew(30deg,20deg);!*元素翻转给定的角度，根据给定的水平线（X 轴）和垂直线（Y 轴）参数*!*/
+        /*-ms-transform: skew(30deg,20deg);	!* IE 9 *!*/
+        /*-webkit-transform: skew(30deg,20deg);	!* Safari and Chrome *!*/
+        /*-o-transform: skew(30deg,20deg);	!* Opera *!*/
+        /*-moz-transform: skew(30deg,20deg);	!* Firefox *!*/
+
+        transform:matrix(0.866,0.5,-0.5,0.866,0,0);/*把所有 2D 转换方法组合在一起,需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。*/
+        -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* IE 9 */
+        -moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Firefox */
+        -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0);	/* Safari and Chrome */
+        -o-transform:matrix(0.866,0.5,-0.5,0.866,0,0);		/* Opera */
+    }
+</style>
+
+<div id="CSS32D1">Hello World</div><br/>
+
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------CSS3 3D转换------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css33D">CSS3 3D转换</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    #CSS33D1 {
+        margin: 30px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+
+        transform:rotateX(120deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+        -webkit-transform:rotateX(120deg); /* Safari and Chrome */
+        -moz-transform:rotateX(120deg); /* Firefox */
+
+        transform:rotateY(130deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+        -webkit-transform:rotateY(130deg); /* Safari and Chrome */
+        -moz-transform:rotateY(130deg); /* Firefox */
+    }
+</style>
+
+<div id="CSS33D1">Hello World</div><br/>
+
+<br/><br/><br/>
+
+
+
+
+<!------------------------------------------------------------------CSS3 过渡------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Transition">CSS3 过渡</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    div#Css3Transition1 {
+        width:100px;
+        height:100px;
+        background:yellow;
+
+        transition:width 2s, height 2s;
+        -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+        -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+        -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+    }
+
+    div#Css3Transition1:hover{
+        width:200px;
+        height:200px;
+        transform:rotate(180deg);
+        -moz-transform:rotate(180deg); /* Firefox 4 */
+        -webkit-transform:rotate(180deg); /* Safari and Chrome */
+        -o-transform:rotate(180deg); /* Opera */
+    }
+</style>
+
+<div id="Css3Transition1">Hello World</div><br/>
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 动画------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Animate">CSS3 动画</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+    div#Css3Animate1 {
+        width:100px;
+        height:100px;
+        background:yellow;
+    }
+
+    /*点击方块后不能放开鼠标 放开就会复原*/
+    div#Css3Animate1:active{
+        position:relative;
+        animation-name:myfirst;
+        animation-duration:5s;
+        animation-timing-function:linear;
+        animation-delay:0s;
+        animation-iteration-count:infinite;/*播放次数*/
+        animation-direction:alternate;/*是否在下一周期逆向地播放*/
+        animation-play-state:running;/*是否正在运行或暂停*/
+        /* Firefox: */
+        -moz-animation-name:myfirst;
+        -moz-animation-duration:5s;
+        -moz-animation-timing-function:linear;
+        -moz-animation-delay:0s;
+        -moz-animation-iteration-count:infinite;
+        -moz-animation-direction:alternate;
+        -moz-animation-play-state:running;
+        /* Safari and Chrome: */
+        -webkit-animation-name:myfirst;
+        -webkit-animation-duration:5s;
+        -webkit-animation-timing-function:linear;
+        -webkit-animation-delay:0s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-play-state:running;
+        /* Opera: */
+        -o-animation-name:myfirst;
+        -o-animation-duration:5s;
+        -o-animation-timing-function:linear;
+        -o-animation-delay:0s;
+        -o-animation-iteration-count:infinite;
+        -o-animation-direction:alternate;
+        -o-animation-play-state:running;
+    }
+
+    @keyframes myfirst
+    {
+        0%   {background:red; left:0px; top:0px;}
+        25%  {background:yellow; left:200px; top:0px;}
+        50%  {background:blue; left:200px; top:200px;}
+        75%  {background:green; left:0px; top:200px;}
+        100% {background:red; left:0px; top:0px;}
+    }
+
+    @-moz-keyframes myfirst /* Firefox */
+    {
+        0%   {background:red; left:0px; top:0px;}
+        25%  {background:yellow; left:200px; top:0px;}
+        50%  {background:blue; left:200px; top:200px;}
+        75%  {background:green; left:0px; top:200px;}
+        100% {background:red; left:0px; top:0px;}
+    }
+
+</style>
+
+<p>点击方块后不能放开鼠标 放开就会复原</p>
+<div style="width: 500px;height: 500px;background-color: lavender">
+    <div id="Css3Animate1">Hello World</div><br/>
+</div>
+
+
+<br/><br/><br/>
+
+
+
+
+
+<!------------------------------------------------------------------CSS3 多列------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3Column">CSS3 多列</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<style>
+    #Css3Column1{
+        /*列数*/
+        -moz-column-count:3; /* Firefox */
+        -webkit-column-count:3; /* Safari and Chrome */
+        column-count:3;
+
+        /*列之间的间隔*/
+        -moz-column-gap:40px; /* Firefox */
+        -webkit-column-gap:40px; /* Safari and Chrome */
+        column-gap:40px;
+
+        /*列之间的宽度、样式和颜色规则*/
+        -moz-column-rule:4px outset #ff0000; /* Firefox */
+        -webkit-column-rule:4px outset #ff0000; /* Safari and Chrome */
+        column-rule:4px outset #ff0000;
+
+    }
+</style>
+
+<div id="Css3Column1">
+    人民网北京2月24日电 (记者 刘阳)国家发展改革委近日发出通知，决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和0.25元。
+
+    此次国内成品油价格调整幅度，是按照现行国内成品油价格形成机制，根据国际市场油价变化情况确定的。去年11月16日国内成品油价格调整以来，受市场预期欧美经济复苏前景向好以及中东局势持续动荡等因素影响，国际市场原油价格先抑后扬，2月上旬WTI和布伦特原油期货价格再次回升至每桶95美元和115美元以上。虽然近两日价格有所回落，但国内油价挂钩的国际市场三种原油连续22个工作日移动平均价格上涨幅度已超过4%，达到国内成品油价格调整的边界条件。
+
+    通知指出，这次成品油调价后，国家将按照已建立的补贴机制，继续对种粮农民、渔业（含远洋渔业）、林业、城市公交、农村道路客运（含岛际和农村水路客运）等给予补贴。同时，为保证市场物价基本稳定，防止连锁涨价，对与居民生活密切相关的铁路客运、城市公交、农村道路客运（含岛际和农村水路客运）价格不作调整。
+
+    通知要求，中石油、中石化、中海油三大公司要组织好成品油生产和调运，保持合理库存，加强综合协调和应急调度，保障成品油供应。各级价格主管部门要加大市场监督检查力度，依法查处不执行国家价格政策，以及囤积居奇、造谣惑众、合谋涨价、搭车涨价等违法行为，维护正常市场秩序。
+</div>
+
+<br/><br/><br/>
+
+
+
+<!------------------------------------------------------------------CSS3 用户界面------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="Css3UserScreen">CSS3 用户界面</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<style>
+
+    /*resize*/
+    div#Css3UserScreen1
+    {
+        border:2px solid;
+        padding:10px 40px;
+        width:300px;
+        resize:both;/*是否可由用户对元素的尺寸进行调整*/
+        overflow:auto;
+    }
+
+
+    /*box-sizing*/
+    div#Css3UserScreen_container
+    {
+        width:30em;
+        border:1em solid;
+    }
+    div.Css3UserScreen_box
+    {
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+        -webkit-box-sizing:border-box; /* Safari */
+        width:35%;
+        border:1em solid red;
+        float:left;
+    }
+    div#Css3UserScreen_clear{
+        clear: both;
+    }
+
+    /*outline*/
+    div#Css3UserScreen3
+    {
+        margin:20px;
+        width:150px;
+        padding:10px;
+        height:70px;
+        border:2px solid black;
+        outline:2px solid red;
+        outline-offset:15px;
+    }
+</style>
+
+<div id="Css3UserScreen1">resize 属性规定是否可由用户调整元素尺寸。</div><br/>
+
+<div id="Css3UserScreen_container">
+    <div class="Css3UserScreen_box">这个 div 占据左半部分。</div>
+    <div class="Css3UserScreen_box">这个 div 占据右半部分。</div>
+    <div id="Css3UserScreen_clear"></div>
+</div><br/>
+
+<div id="Css3UserScreen3">这个 div 在边框边缘之外 15 像素处有一个轮廓。</div>
+<br/><br/><br/>
+
+</body>
+</html>
