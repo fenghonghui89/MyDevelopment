@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP演示页面</title>
+    <link href="../Root_CSS.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
+<h1 id="root_menu"><b>目录</b></h1>
+<br />
+
+<h2>php 表单</h2>
+<a href="#php_formProcess">php 表单处理</a><br />
+<a href="#php_formCheck">php 表单验证</a>
+
+
+<!------------------------------------------------------------------php 表单处理------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="php_formProcess">php 表单处理</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<form method="post" action="PHP_Form/PHP_FormProcess.php">
+    your name:<input type="text" name="name" value="hany"/><br/>
+    you email:<input type="text" name="email" value="112233@qq.com"/><br/>
+    <input type="submit" value="submit"/>
+</form>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------php 表单验证------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="php_formCheck">php 表单验证</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+
+<form method="post" action="PHP_Form/PHP_FormCheck.php">
+    name:<input type="text" name="name"><br/>
+    email:<input type="email" name="email"><br/>
+    website:<input type="text" name="website"><br/>
+    comment:<textarea rows="5" cols="40" name="comment"></textarea><br/>
+    sex:
+    <input type="radio" name="gender" value="female">girl
+    <input type="radio" name="gender" value="male">boy
+    <br/>
+    <input type="submit" value="submit">
+</form>
+
+
+
+
+</body>
+</html>
