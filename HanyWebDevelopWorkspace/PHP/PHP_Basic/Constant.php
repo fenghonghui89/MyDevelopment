@@ -9,10 +9,7 @@
 
 
 
-function root_Constant(){
-
-    kl_setConstant();//define() 设置 PHP 常量
-}
+kl_setConstant();//define() 设置 PHP 常量
 
 
 

@@ -14,19 +14,14 @@
 
  * */
 
-function root_Basic_Variable(){
-
-
-
 //    kl_basic_scope();//作用域
 //    kl_basic_global();//global关键字
     kl_basic_globalIndex();//$GLOBALS[index]
 
 
-    //static关键字
+//static关键字
 //    kl_basic_static();//11
 //    kl_basic_static();//12
-}
 
 
 

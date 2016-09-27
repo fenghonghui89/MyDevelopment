@@ -16,13 +16,10 @@ echo 和 print 之间的差异：
 
 
 
-function root_EchoAndPrint(){
-
 //    kl_EchoAndPrint_echo_string();//echo显示字符串
 //    kl_EchoAndPrint_echo_variable();//echo显示变量
 //    kl_EchoAndPrint_print_string();//print显示字符串
     kl_EchoAndPrint_print_variable();//print显示变量
-}
 
 
 

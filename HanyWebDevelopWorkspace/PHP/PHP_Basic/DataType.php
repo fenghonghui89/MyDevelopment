@@ -13,8 +13,6 @@
 
 
 
-function root_DataType(){
-
 //    kl_string();//字符串
     kl_int();//整数
 //    kl_float();//浮点数
@@ -22,7 +20,6 @@ function root_DataType(){
 //    kl_array();//数组
 //    kl_object();//对象
 //    kl_null();//null值
-}
 
 
 

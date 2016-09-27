@@ -26,11 +26,8 @@
  * */
 
 
-function root_SuperGolbal(){
-
 //    kl_superGlobals_globals_result();//$GLOBALS — 引用全局作用域中可用的全部变量
     kl_superGlobals_server();//$_SERVER 保存关于报头、路径和脚本位置的信息
-}
 
 
 

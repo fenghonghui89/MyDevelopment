@@ -569,9 +569,12 @@ name - 如果要正确地被提交，每个输入字段必须设置一个 name �
 
 <!--单选框 注意name要一样才能单选-->
 <form>
-    radio:
-    <input type="radio" name="sex" value="male" />male
-    <input type="radio" name="sex" value="female" />female
+    radio:<br/>
+    <label for="id_root_formElement_male">Male</label>
+    <input type="radio" name="sex" value="male" id="id_root_formElement_male"/>male
+    <br/>
+    <label for="id_root_formElement_female">Female</label>
+    <input type="radio" name="sex" value="female" id="id_root_formElement_female"/>female
 </form><hr class="SubSectionHr"/>
 
 <!--复选框-->

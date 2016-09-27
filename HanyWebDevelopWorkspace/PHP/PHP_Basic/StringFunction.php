@@ -8,11 +8,8 @@
 //1-4字符串函数
 
 
-function root_StringFunction(){
-
 //    kl_strlen();//返回字符串长度
     kl_strpos();//检索字符串内的字符或文本
-}
 
 
 

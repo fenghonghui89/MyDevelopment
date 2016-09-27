@@ -11,8 +11,6 @@
 
 
 
-function root_BaseOperator(){
-
 //    kl_calculateOperator();//算术运算符 +-*/%
 //    kl_assignmentOperator();//赋值运算符= += -= *= /= %=
 //    kl_stringOperator();//字符串运算符 . .=
@@ -20,9 +18,6 @@ function root_BaseOperator(){
 //    kl_compareOperator();//比较运算符 == === != !== <> < >
 //    kl_logicOperator();//逻辑运算符 and && or || xor !
     kl_arrayOperator();//数组运算符 == === != !== <> < >
-}
-
-
 
 
 

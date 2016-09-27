@@ -7,8 +7,6 @@
  */
 //1-10 数组排序
 
-function root_ArraySort(){
-
 //    kl_sort();//升序
 //    kl_rsort();//降序
 
@@ -17,8 +15,6 @@ function root_ArraySort(){
 
 //    kl_arsort();//根据值对数组进行降序排序
     kl_krsort();//根据键对数组进行降序排序
-}
-
 
 
 

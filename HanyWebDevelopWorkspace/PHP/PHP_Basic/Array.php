@@ -10,15 +10,11 @@
 
 
 
-function root_Array(){
-
-//    kl_indexArray();//索引数组
+    kl_indexArray();//索引数组
 //    kl_arrayCount();//获得数组长度
 //    kl_showArray();//遍历索引数组 可以用for和foreach
 //    kl_unionArray();//关联数组
-    kl_showUnionArray();//遍历关联数组 只能用foreach
-}
-
+//    kl_showUnionArray();//遍历关联数组 只能用foreach
 
 
 
