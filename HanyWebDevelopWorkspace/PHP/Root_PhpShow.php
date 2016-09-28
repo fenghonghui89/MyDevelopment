@@ -6,45 +6,58 @@
  * Time: 13:00
  */
 
-include_once("FreeTest.php");
 
 /*基础教程*/
-include_once("PHP_Basic/Variable.php");//1-1 常量
-include_once("PHP_Basic/EchoAndPrint.php");//1-2 echo / print
-include_once("PHP_Basic/DataType.php");//1-3 数据类型
-include_once("PHP_Basic/StringFunction.php");//1-4 字符串函数
-include_once("PHP_Basic/Constant.php");//1-5 常量
-include_once("PHP_Basic/BaseOperator.php");//1-6 运算符
-include_once("PHP_Basic/ControlFlow.php");//1-7 if else / switch / while do while for
-include_once("PHP_Basic/Function.php");//1-8 函数
-include_once("PHP_Basic/Array.php");//1-9 数组
-include_once("PHP_Basic/ArraySort.php");//1-10 数组排序
-include_once("PHP_Basic/SuperGolbal.php");//1-11 超全局变量
+/*
+ *
+ * 1-1 常量
+ * 1-2 echo / print
+ * 1-3 数据类型
+ * 1-4 字符串函数
+ * 1-5 常量
+ * 1-6 运算符
+ * 1-7 if else / switch / while do while for
+ * 1-8 函数
+ * 1-9 数组
+ * 1-10 数组排序
+ * 1-11 超全局变量
+ *
+ * */
+
+
+
+/*表单*/
+/*
+ * 2-1 php 表单处理
+ * 2-2 php 表单验证
+ * 2-3 php 必填
+ * 2-4 php 正则匹配
+ * 2-5 php 表单完成
+ *
+ * */
 
 /*高级教程*/
-include_once("PHP_Advance/MultiArray.php");//3-1 多维数组
-include_once("PHP_Advance/Date.php");//3-2 日期
+/*
+ *
+ * 3-1 多维数组
+ * 3-2 日期
+ * 3-3 include / require
+ * 3-4 文件
+ * 3-5 文件打开/读取
+ * 3-6 文件创建/写入
+ * 3-7 文件上传
+ * 3-8 cookie
+ * 3-9 session
+ * 3-10 email
+ * 3-11 安全email
+ * 3-12 error
+ * 3-13 exception
+ * 3-14 filter
+ *
+ * */
 
 
 
 
-//root_FreeTest();
 
 
-/*基础教程*/
-//root_Basic_Variable();//1-1 变量
-//root_EchoAndPrint();//1-2 echo / print
-//root_DataType();//1-3 数据类型
-//root_StringFunction();//1-4 字符串函数
-//root_Constant();//1-5 常量
-//root_BaseOperator();//1-6 运算符
-//root_ControlFlow();//1-7 if else / switch / while do while for
-//root_Function();//1-8 函数
-//root_Array();//1-9 数组
-//root_ArraySort();//1-10 数组排序
-//root_SuperGolbal();//1-11 超全局变量
-
-
-/*高级教程*/
-//root_MultiArray();//3-1 多维数组
-//root_Date();//3-2 日期
