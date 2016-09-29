@@ -990,12 +990,13 @@
     //其他方法
     var win;
     function window_method(){
-//        win = window.open("http://www.baidu.com")
-        win = window.location.assign("http://www.baidu.com");
+        var win;
+        win = window.open("http://www.baidu.com")
+//        win = window.location.assign("http://www.baidu.com");
     }
 
     function window_method1(){
-        win.close();
+        window.close();
     }
 </script>
 <button type="button" onclick="window_size()">浏览器尺寸</button>
@@ -1042,6 +1043,13 @@
         result += "protocol:"+location.protocol+"\n";
         result += "href:"+location.href+"\n";
         alert(result);
+        /*
+        * hostname:localhost
+         pathname:/HanyHTMLLanguageDemo/JS/Root_JSShow.html
+         port:63342
+         protocol:http:
+         href:http://localhost:63342/HanyHTMLLanguageDemo/JS/Root_JSShow.html#js_location
+        * */
     }
 
     //跳转
@@ -1097,6 +1105,15 @@
         result += "User-agent header:"+ navigator.userAgent+"\n";
         result += "User-agent language:"+ navigator.systemLanguage+"\n";
         alert(result);
+        /*
+        * Browser CodeName:Mozilla
+         Browser Name:Netscape
+         Browser Version:5.0 (Macintosh)
+         Cookies Enabled:true
+         Platform:MacIntel
+         User-agent header:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:47.0) Gecko/20100101 Firefox/47.0
+         User-agent language:undefined
+        * */
     }
 
 
