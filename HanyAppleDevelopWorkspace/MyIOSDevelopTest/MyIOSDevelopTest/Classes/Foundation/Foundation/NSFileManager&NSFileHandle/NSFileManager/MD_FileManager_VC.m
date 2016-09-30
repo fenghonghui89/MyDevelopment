@@ -20,7 +20,7 @@
   
   dispatch_queue_t myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_PRIORITY_DEFAULT);
   dispatch_async(myQueue, ^{
-    [self findFileInDirecotryPath:@"/Users/hanyfeng/Desktop/Library" fileName:@"NSPredicate"];
+    [self findFileInDirecotryPath:@"/Users/hanyfeng/Desktop/Library" fileName:@"NSRange"];
   });
 }
 
@@ -86,19 +86,23 @@
   if (![fm fileExistsAtPath:dicPath]) {
     BOOL b = [fm createDirectoryAtPath:dicPath withIntermediateDirectories:YES attributes:nil error:nil];
     if (b){
-      DLog(@"创建文件夹成功");
+      DLog(@"创建文件夹成功..");
     }else{
-      DLog(@"创建文件夹失败");
+      DLog(@"创建文件夹失败..");
     }
   }
   
   //得到文件夹下所有文件的名称
   NSArray* sourceFileNames = [fm contentsOfDirectoryAtPath:path error:nil];
+  if (sourceFileNames == nil) {
+    DLog(@"library文件夹不存在..");
+    return;
+  }
   for (NSString* sourceFileName in sourceFileNames) {
     
     //如果同一层次某个子目录下已经找到，则不再找同层次其他子目录
     if (self.isFinish) {
-      DLog(@"已经完成，退出方法。");
+      DLog(@"已经完成，退出方法..");
       return;
     }
     
@@ -108,13 +112,13 @@
         [self findFileInDirecotryPath:filePath fileName:fileName];
     }else {//如果是文件，则判断前后缀，类型符合就复制到文件夹下
       if ([sourceFileName hasSuffix:@"h"] && [sourceFileName hasPrefix:fileName]) {
-        DLog(@"找到文件：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
+        DLog(@"找到文件..：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
         NSString* newFilePath = [dicPath stringByAppendingPathComponent:sourceFileName];
         [fm copyItemAtPath:filePath toPath:newFilePath error:nil];
         self.isFinish = YES;
         return;
       }else{
-        DLog(@"找不到文件：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
+        DLog(@"找不到文件..：%@ %@ %@ %d %d",fileName,sourceFileName,filePath,[sourceFileName hasSuffix:@"h"],[sourceFileName hasPrefix:fileName]);
       }
     }
     

@@ -78,12 +78,14 @@
   
   self.webView.delegate = self;
   
-//  NSString *path = @"https://oc.123go.net.cn/modded/";//不能忽略协议名
+//  NSString *path = @"http://www.baidu.com";//不能忽略协议名
   NSString *path = @"https://oc.123go.net.cn/modded/";//不能忽略协议名
   NSURL *url = [NSURL URLWithString:path];
   NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
   self.request = urlRequest;
   [self.webView loadRequest:urlRequest];
+  
+  DLog(@"..%@",urlRequest.mainDocumentURL.relativePath);
 }
 
 - (IBAction)lastPage:(id)sender{

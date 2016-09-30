@@ -35,7 +35,7 @@
   
   NSString *desc = customError.localizedDescription;
   NSInteger code = customError.code;
-  NSLog(@"%@ %d",desc,code);
+  NSLog(@"%@ %ld",desc,(long)code);
 }
 
 @end

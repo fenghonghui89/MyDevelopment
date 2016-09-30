@@ -51,6 +51,14 @@
 				<array>
 					<dict>
 						<key>desc</key>
+						<string>NSRange</string>
+						<key>className</key>
+						<string>MD_NSRange_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
 						<string>NSError</string>
 						<key>className</key>
 						<string>MD_NSError_VC</string>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		145B807E1D361E9E00A4735E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145B807D1D361E9E00A4735E /* JavaScriptCore.framework */; };
 		14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A727631CAB760100DC7BC0 /* libxml2.tbd */; };
+		14B16DBC1D9E474600659FA8 /* MD_NSRange_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */; };
 		14F1F2131D1140F30059EDC1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1F2121D1140F30059EDC1 /* libresolv.tbd */; };
 		14FAA7271D9507CA002D81CC /* CIImage+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3841D9507C9002D81CC /* CIImage+Convenience.m */; };
 		14FAA7281D9507CA002D81CC /* NSDate+Tpages.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3861D9507C9002D81CC /* NSDate+Tpages.m */; };
@@ -475,6 +476,9 @@
 		145B807D1D361E9E00A4735E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		147DB17E1A8C7FA600F38EA4 /* MyIOSDevelopTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyIOSDevelopTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A727631CAB760100DC7BC0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		14B16DBA1D9E474600659FA8 /* MD_NSRange_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSRange_VC.h; sourceTree = "<group>"; };
+		14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRange_VC.m; sourceTree = "<group>"; };
+		14B16DBD1D9E4B9100659FA8 /* NSRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSRange.h; sourceTree = "<group>"; };
 		14F1F2121D1140F30059EDC1 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		14FAA3831D9507C9002D81CC /* CIImage+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIImage+Convenience.h"; sourceTree = "<group>"; };
 		14FAA3841D9507C9002D81CC /* CIImage+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIImage+Convenience.m"; sourceTree = "<group>"; };
@@ -1287,6 +1291,16 @@
 			name = SystemLibraries;
 			sourceTree = "<group>";
 		};
+		14B16DB61D9E45FB00659FA8 /* NSRange */ = {
+			isa = PBXGroup;
+			children = (
+				14B16DBD1D9E4B9100659FA8 /* NSRange.h */,
+				14B16DBA1D9E474600659FA8 /* MD_NSRange_VC.h */,
+				14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */,
+			);
+			path = NSRange;
+			sourceTree = "<group>";
+		};
 		14FAA3811D9507C9002D81CC /* MyIOSDevelopTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1371,6 +1385,7 @@
 		14FAA39F1D9507C9002D81CC /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				14B16DB61D9E45FB00659FA8 /* NSRange */,
 				14FAA3A01D9507C9002D81CC /* FoundationOther */,
 				14FAA3A51D9507C9002D81CC /* NSArray */,
 				14FAA3B51D9507C9002D81CC /* NSAttributedString */,
@@ -1693,27 +1708,26 @@
 		14FAA4111D9507CA002D81CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				14FAA4121D9507CA002D81CC /* AFNetwork */,
-				14FAA4161D9507CA002D81CC /* HTTP */,
 				14FAA41E1D9507CA002D81CC /* NSHTTPCookieStorage.h */,
 				14FAA41F1D9507CA002D81CC /* NSJSONSerialization.h */,
 				14FAA4201D9507CA002D81CC /* NSURL.h */,
 				14FAA4211D9507CA002D81CC /* NSURLCache.h */,
 				14FAA4221D9507CA002D81CC /* NSURLConnection.h */,
-				14FAA4231D9507CA002D81CC /* NSURLProtocol */,
 				14FAA4281D9507CA002D81CC /* NSURLProtocol.h */,
 				14FAA4291D9507CA002D81CC /* NSURLRequest.h */,
 				14FAA42A1D9507CA002D81CC /* NSURLResponse.h */,
-				14FAA42B1D9507CA002D81CC /* NSURLSession */,
 				14FAA42F1D9507CA002D81CC /* NSURLSession.h */,
+				14FAA4601D9507CA002D81CC /* UIWebView.h */,
+				14FAA4651D9507CA002D81CC /* WKWebView.h */,
+				14FAA4121D9507CA002D81CC /* AFNetwork */,
+				14FAA4161D9507CA002D81CC /* HTTP */,
+				14FAA4231D9507CA002D81CC /* NSURLProtocol */,
+				14FAA42B1D9507CA002D81CC /* NSURLSession */,
 				14FAA4301D9507CA002D81CC /* Other */,
 				14FAA4331D9507CA002D81CC /* Reachability */,
 				14FAA4361D9507CA002D81CC /* socket */,
-				14FAA44E1D9507CA002D81CC /* udp */,
 				14FAA44F1D9507CA002D81CC /* UIWebView */,
-				14FAA4601D9507CA002D81CC /* UIWebView.h */,
 				14FAA4611D9507CA002D81CC /* WebKit */,
-				14FAA4651D9507CA002D81CC /* WKWebView.h */,
 				14FAA4661D9507CA002D81CC /* xml */,
 				14FAA46F1D9507CA002D81CC /* 缓存 */,
 			);
@@ -1858,13 +1872,6 @@
 				14FAA44B1D9507CA002D81CC /* MD_Socket_UDP_VC.h */,
 				14FAA44C1D9507CA002D81CC /* MD_Socket_UDP_VC.m */,
 				14FAA44D1D9507CA002D81CC /* MD_Socket_UDP_VC.xib */,
-			);
-			path = udp;
-			sourceTree = "<group>";
-		};
-		14FAA44E1D9507CA002D81CC /* udp */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = udp;
 			sourceTree = "<group>";
@@ -3728,6 +3735,7 @@
 				14FAA7DB1D9507CB002D81CC /* MD_Runtime_VC.m in Sources */,
 				14FAA7771D9507CB002D81CC /* MDHybridViewController.m in Sources */,
 				14FAA8EE1D9507CB002D81CC /* DGCDataParser.m in Sources */,
+				14B16DBC1D9E474600659FA8 /* MD_NSRange_VC.m in Sources */,
 				14FAA7581D9507CA002D81CC /* MDNSValueViewController.m in Sources */,
 				14FAA7F71D9507CB002D81CC /* MDMouse.m in Sources */,
 				14FAA7491D9507CA002D81CC /* MDNSSetNormalViewController.m in Sources */,
