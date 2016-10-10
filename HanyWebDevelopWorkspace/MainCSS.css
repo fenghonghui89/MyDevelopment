@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
 /*背景色 内边距*/
-body {background-color: darkkhaki;padding:100px}
+body {
+    background-color: darkkhaki;
+    padding:100px;
+}
 
 
 /*大分类标题*/
