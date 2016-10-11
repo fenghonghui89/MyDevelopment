@@ -68,14 +68,14 @@
     view2.backgroundColor = [UIColor greenColor];
     [self.view addSubview:view2];
     
-    NSLog(@"1 start---%d",[[self.view subviews] indexOfObject:view]);
-    NSLog(@"2 start---%d",[[self.view subviews] indexOfObject:view2]);
+    NSLog(@"1 start---%lu",(unsigned long)[[self.view subviews] indexOfObject:view]);
+    NSLog(@"2 start---%lu",(unsigned long)[[self.view subviews] indexOfObject:view2]);
     
     [self.view exchangeSubviewAtIndex:[[self.view subviews] indexOfObject:view]
                    withSubviewAtIndex:[[self.view subviews] indexOfObject:view2]];
     
-    NSLog(@"1 now---%d",[[self.view subviews] indexOfObject:view]);
-    NSLog(@"2 now---%d",[[self.view subviews] indexOfObject:view2]);
+    NSLog(@"1 now---%lu",(unsigned long)[[self.view subviews] indexOfObject:view]);
+    NSLog(@"2 now---%lu",(unsigned long)[[self.view subviews] indexOfObject:view2]);
 }
 
 #pragma mark appearance

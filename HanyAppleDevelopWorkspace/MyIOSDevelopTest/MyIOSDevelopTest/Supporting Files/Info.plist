@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.HanyAppDev.OCTest</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -45,6 +45,8 @@
 	<string>可以允许我用照相机吗？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>可以允许我用相册吗？</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>可以允许我用定位吗？</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

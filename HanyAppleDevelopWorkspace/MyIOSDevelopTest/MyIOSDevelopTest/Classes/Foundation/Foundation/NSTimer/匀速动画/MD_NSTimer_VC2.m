@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
     [self customInitUI];
-    NSLog(@"self.times:%d",self.times);
+    NSLog(@"self.times:%ld",(long)self.times);
 }
 
 -(void)customInitUI
@@ -60,7 +60,7 @@
     self.times ++;
     
     self.iv.alpha = 0 + self.times * (1 - 0) / (FPS * 1.0);
-    NSLog(@"self.times:%d", self.times);
+    NSLog(@"self.times:%ld", (long)self.times);
     
     //让self.timer停止
     if (self.times > FPS * 1.0) {//当前帧数>总帧数

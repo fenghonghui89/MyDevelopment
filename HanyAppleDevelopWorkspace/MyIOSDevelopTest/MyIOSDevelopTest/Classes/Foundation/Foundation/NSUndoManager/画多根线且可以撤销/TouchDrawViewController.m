@@ -44,7 +44,7 @@
 - (IBAction)actionBtnTap:(id)sender {
   
 //  [self.drawArea.undoManager removeAllActions];
-  NSLog(@"%d",self.drawArea.undoManager.levelsOfUndo);
+  NSLog(@"%lu",self.drawArea.undoManager.levelsOfUndo);
 }
 
 #pragma mark - <<<<< callback >>>>>

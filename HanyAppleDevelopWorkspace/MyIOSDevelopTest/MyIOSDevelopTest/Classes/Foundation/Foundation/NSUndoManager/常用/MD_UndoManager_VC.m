@@ -34,7 +34,7 @@
 
 -(void)undoAction:(NSNumber *)number{
   
-  NSLog(@"number:%d",[number integerValue]);
+  NSLog(@"number:%ld",(long)[number integerValue]);
   [self.undoManager registerUndoWithTarget:self
                                   selector:@selector(undoAction:)
                                     object:number];

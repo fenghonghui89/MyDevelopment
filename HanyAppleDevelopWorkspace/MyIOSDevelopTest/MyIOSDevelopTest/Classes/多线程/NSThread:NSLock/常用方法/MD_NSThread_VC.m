@@ -67,7 +67,7 @@
   NSLog(@"arrSymbols:%@",arrSymbols);
   
   NSInteger stackSize = [[NSThread currentThread] stackSize];
-  NSLog(@"stackSize:%d",stackSize);
+  NSLog(@"stackSize:%ld",(long)stackSize);
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiAction:) name:NSThreadWillExitNotification object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiAction:) name:NSDidBecomeSingleThreadedNotification object:nil];

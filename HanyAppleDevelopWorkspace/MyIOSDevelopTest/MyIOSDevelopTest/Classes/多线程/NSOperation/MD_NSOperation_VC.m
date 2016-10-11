@@ -107,7 +107,7 @@
     NSLog(@"这里是子线程4代码 结束");
   }];
   
-  NSLog(@"这里是主线程 %d",queue.operationCount);
+  NSLog(@"这里是主线程 %lu",(unsigned long)queue.operationCount);
 }
 
 #pragma mark - 依赖关系 优先级
