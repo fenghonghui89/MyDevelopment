@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 @implementation UINavigationItem (MDCustom)
 
-#define flag 1
+#define flag 3 //对应方法1、2、3
 #if flag == 1
 
 #elif flag == 2

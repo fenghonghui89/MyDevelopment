@@ -8,6 +8,7 @@
 
 #import "MDModal1ViewController.h"
 #import "MDModal2ViewController.h"
+
 @interface MDModal1ViewController ()
 
 @end
@@ -18,9 +19,10 @@
 {
     [super viewDidLoad];
   
-//  //方法1
-//  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"方法1" style:UIBarButtonItemStylePlain target:nil action:NULL];
-//  NSLog(@"%@",self.navigationItem.backBarButtonItem.title);
+  //方法1（方法2、3不用import）
+  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"方法1" style:UIBarButtonItemStylePlain target:nil action:NULL];
+  
+  NSLog(@"title..%@",self.navigationItem.backBarButtonItem.title);
 }
 
 
