@@ -31,8 +31,7 @@
   DLog(@"默认navi%@",NSStringFromCGSize(self.navigationController.navigationBar.bounds.size));
   DLog(@"默认view%@",NSStringFromCGRect(self.view.frame));
   DLog(@"默认bgview%@",NSStringFromCGRect(self.bgView.frame));
-  
-  NSLog(@"1%d",1);
+
 }
 
 #pragma mark - < method > -

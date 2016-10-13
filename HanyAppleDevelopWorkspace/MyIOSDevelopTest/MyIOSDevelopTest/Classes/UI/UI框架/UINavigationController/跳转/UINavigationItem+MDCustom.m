@@ -7,6 +7,7 @@
 //
 
 #import "UINavigationItem+MDCustom.h"
+#import "MDRootDefine.h"
 #import <objc/runtime.h>
 @implementation UINavigationItem (MDCustom)
 
@@ -21,9 +22,9 @@
 }
 #else
 //方法3
-+(void)load
-{
-  NSLog(@"loadview");
++(void)load{
+  
+  DRLog(@"loadview..");
   static dispatch_once_t onceToken;
   
   dispatch_once(&onceToken, ^{
@@ -39,23 +40,18 @@
 
 static char kCustomBackButtonKey;
 -(UIBarButtonItem *)myCustomBackButton_backBarbuttonItem{
-  NSLog(@"myCustomBackButton_backBarbuttonItem");
+  
+  DRLog(@"myCustomBackButton_backBarbuttonItem..");
   UIBarButtonItem *item = [self myCustomBackButton_backBarbuttonItem];
   
   if (item) {
-    
     return item;
-    
   }
   
   item = objc_getAssociatedObject(self, &kCustomBackButtonKey);
-  
   if (!item) {
-    
     item = [[UIBarButtonItem alloc] initWithTitle:@"方法3" style:UIBarButtonItemStylePlain target:nil action:NULL];
-    
     objc_setAssociatedObject(self, &kCustomBackButtonKey, item, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
   }
   
   return item;

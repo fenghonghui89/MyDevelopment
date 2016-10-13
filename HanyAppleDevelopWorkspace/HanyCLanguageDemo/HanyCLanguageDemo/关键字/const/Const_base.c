@@ -24,7 +24,20 @@ static void knowledge_const(){
 
 static void knowledge_pointAndConst(){
   
-  //指向的内容不能改，在初始化之后可以再指向别的内存 类型是const *int
+  /*
+   p是指针，const p即const修饰指针，则指向不可改，内容可改
+   *p是值，const *p即const修饰值，则内容不可改，指向可改
+   */
+  
+  //类型是int *const 在初始化之后不能再指向别的内存 指向内容可改
+  int i3 = 20;
+  int i3s = 30;
+  int * const pp = &i3;
+  //  pp = &i3s;
+  *pp = i3s;
+  
+  
+  //类型是const *int 在初始化之后指向的内容不能改 可以再指向别的内存
   int i2 = 20;
   int i2s = 20;
   const int *p = &i2;
@@ -33,11 +46,6 @@ static void knowledge_pointAndConst(){
   int const *p1 = &i2;
   p1 = &i2s;
   
-  //指向的内容可以改，在初始化之后不能再指向别的内存 类型是int *const
-  int i3 = 20;
-  int i3s = 30;
-  int * const pp = &i3;
-  *pp = i3s;
   
   
 }
