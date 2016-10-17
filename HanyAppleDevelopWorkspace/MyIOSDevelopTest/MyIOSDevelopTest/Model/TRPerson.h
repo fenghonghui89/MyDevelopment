@@ -10,5 +10,7 @@
 
 @interface TRPerson : NSObject<NSCoding>//1.遵循协议
 @property (nonatomic,copy)NSString *name;
-@property (nonatomic)int age;
+@property (nonatomic,assign)NSInteger age;
+@property (nonatomic,strong)NSArray *books;
++(TRPerson *)testData;
 @end

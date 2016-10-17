@@ -16,6 +16,7 @@
 #import "TRPoint.h"
 #import "DGCListInfo.h"
 #import "AFNetworking.h"
+#import "MDWeather.h"
 @interface MD_Runtime_VC ()
 
 @end
@@ -31,7 +32,7 @@
 
   [super viewDidAppear:animated];
   
-  [self test_3];
+  [self test_4];
 }
 
 #pragma mark - ************** method **************
@@ -87,15 +88,50 @@
   DRLog(@"%@",array);//1,2
 }
 
+//
 -(void)test_4{
 
-  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://v.juhe.cn/toutiao/index"]];
+  NSString *bodyString = @"cityname=北京&dtype=json&key=31d9b0a8a3e3d4086ad3c6dd1bfeb7ed";
+  [bodyString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+  NSData *bodyData = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+  
+  NSURL *url = [NSURL URLWithString:@"http://op.juhe.cn/onebox/weather/query"];
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+  [request setHTTPMethod:@"POST"];
+  [request setHTTPBody:bodyData];
   
   NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
-  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
-  AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
-  responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/xml"];
-  manager.responseSerializer = responseSerializer;
+  AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:conf];
+  AFHTTPResponseSerializer *respon = [AFHTTPResponseSerializer serializer];
+  respon.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+  manager.responseSerializer = respon;
+  
+  NSURLSessionTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+    if (error) {
+      DRLog(@"error response..:%@",respon);
+    }else{
+      NSError *dataError = nil;
+      NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
+      if (dataError) {
+        DRLog(@"dateError response..:%@",response);
+      }else{
+        NSArray *arr = [[[data objectForKey:@"result"] objectForKey:@"data"] objectForKey:@"weather"];
+        DRLog(@"post arr count..%lu",(unsigned long)arr.count);
+        
+        NSMutableArray *dataArr = [NSMutableArray array];
+        [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+          MDWeather *weather = [MDWeather parseByData:obj];
+          [dataArr addObject:weather];
+        }];
+        
+        [dataArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+          MDWeather *weather = (MDWeather *)obj;
+          DRLog(@"data..%@",[weather.info_night objectAtIndex:1]);
+        }];
+      }
+    }
+  }];
+  [task resume];
   
 
 }

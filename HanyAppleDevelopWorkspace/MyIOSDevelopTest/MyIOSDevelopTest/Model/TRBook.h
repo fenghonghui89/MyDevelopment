@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TRBook : NSObject
+@interface TRBook : NSObject<NSCoding>
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *price;
 @property (nonatomic, strong) NSString *page;
-
+-(instancetype)initWithName:(NSString *)name author:(NSString *)author price:(NSString *)price page:(NSString *)page;
 @end

@@ -55,6 +55,9 @@
 		14C833961DB474A0009363F9 /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833881DB474A0009363F9 /* UIView+MDCategory.m */; };
 		14C833971DB474A0009363F9 /* UIView+STKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C8338A1DB474A0009363F9 /* UIView+STKit.m */; };
 		14C8339A1DB47527009363F9 /* UINavigationItem+MDCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833991DB47527009363F9 /* UINavigationItem+MDCustom.m */; };
+		14C8339D1DB4B1DD009363F9 /* MDCityWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C8339C1DB4B1DD009363F9 /* MDCityWeather.m */; };
+		14C833A01DB4BB21009363F9 /* MDWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C8339F1DB4BB21009363F9 /* MDWeather.m */; };
+		14C833A21DB4D933009363F9 /* MD_KeyedArchiver_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C833A11DB4D933009363F9 /* MD_KeyedArchiver_VC.xib */; };
 		14F1F2131D1140F30059EDC1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1F2121D1140F30059EDC1 /* libresolv.tbd */; };
 		14FAA7331D9507CA002D81CC /* MDNSArrayNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3A91D9507C9002D81CC /* MDNSArrayNormalViewController.m */; };
 		14FAA7341D9507CA002D81CC /* TRStudent4.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3AB1D9507C9002D81CC /* TRStudent4.m */; };
@@ -589,6 +592,11 @@
 		14C8338A1DB474A0009363F9 /* UIView+STKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+STKit.m"; sourceTree = "<group>"; };
 		14C833981DB47527009363F9 /* UINavigationItem+MDCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+MDCustom.h"; sourceTree = "<group>"; };
 		14C833991DB47527009363F9 /* UINavigationItem+MDCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+MDCustom.m"; sourceTree = "<group>"; };
+		14C8339B1DB4B1DD009363F9 /* MDCityWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCityWeather.h; sourceTree = "<group>"; };
+		14C8339C1DB4B1DD009363F9 /* MDCityWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCityWeather.m; sourceTree = "<group>"; };
+		14C8339E1DB4BB21009363F9 /* MDWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDWeather.h; sourceTree = "<group>"; };
+		14C8339F1DB4BB21009363F9 /* MDWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDWeather.m; sourceTree = "<group>"; };
+		14C833A11DB4D933009363F9 /* MD_KeyedArchiver_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_KeyedArchiver_VC.xib; sourceTree = "<group>"; };
 		14F1F2121D1140F30059EDC1 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		14FAA39E1D9507C9002D81CC /* CFBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBase.h; sourceTree = "<group>"; };
 		14FAA3A11D9507C9002D81CC /* NSByteOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSByteOrder.h; sourceTree = "<group>"; };
@@ -3034,6 +3042,7 @@
 			children = (
 				14FAA5C11D9507CA002D81CC /* MD_KeyedArchiver_VC.h */,
 				14FAA5C21D9507CA002D81CC /* MD_KeyedArchiver_VC.m */,
+				14C833A11DB4D933009363F9 /* MD_KeyedArchiver_VC.xib */,
 				14FAA5C31D9507CA002D81CC /* NSKeyedArchiver.h */,
 			);
 			path = "归档反归档";
@@ -3380,6 +3389,10 @@
 				14FAA6B61D9507CA002D81CC /* TRSuperman.m */,
 				14FAA6B71D9507CA002D81CC /* TRXYZ.h */,
 				14FAA6B81D9507CA002D81CC /* TRXYZ.m */,
+				14C8339B1DB4B1DD009363F9 /* MDCityWeather.h */,
+				14C8339C1DB4B1DD009363F9 /* MDCityWeather.m */,
+				14C8339E1DB4BB21009363F9 /* MDWeather.h */,
+				14C8339F1DB4BB21009363F9 /* MDWeather.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3636,6 +3649,7 @@
 				14FAA7E71D9507CB002D81CC /* MD_PhotoLibrary_VC.xib in Resources */,
 				14FAA8181D9507CB002D81CC /* icon.jpg in Resources */,
 				14FAA86B1D9507CB002D81CC /* navigationbar_friendsearch@2x.png in Resources */,
+				14C833A21DB4D933009363F9 /* MD_KeyedArchiver_VC.xib in Resources */,
 				14FAA8A01D9507CB002D81CC /* USA.png in Resources */,
 				14FAA8AB1D9507CB002D81CC /* 记录.rtf in Resources */,
 				14FAA8781D9507CB002D81CC /* tabbar_home@2x.png in Resources */,
@@ -3790,6 +3804,7 @@
 				14FAA8A91D9507CB002D81CC /* MDNavigationController.m in Sources */,
 				14FAA78C1D9507CB002D81CC /* MD_CATransform3D_VC.m in Sources */,
 				14FAA7A41D9507CB002D81CC /* MDPage3ViewController.m in Sources */,
+				14C8339D1DB4B1DD009363F9 /* MDCityWeather.m in Sources */,
 				14FAA7661D9507CA002D81CC /* MD_Socket_Client_VC.m in Sources */,
 				14FAA7B71D9507CB002D81CC /* RDVTabBarItem.m in Sources */,
 				14FAA7D41D9507CB002D81CC /* MD_Touch_CustomView.m in Sources */,
@@ -3939,6 +3954,7 @@
 				14FAA7A01D9507CB002D81CC /* MDUILabelViewController.m in Sources */,
 				14FAA8AE1D9507CB002D81CC /* DGCUserManager.m in Sources */,
 				140CAA951DACA8EF009EE8A7 /* AFSecurityPolicy.m in Sources */,
+				14C833A01DB4BB21009363F9 /* MDWeather.m in Sources */,
 				14FAA7681D9507CA002D81CC /* MD_Scocket_ClientServer_VC.m in Sources */,
 				14FAA7431D9507CA002D81CC /* MD_FileManager_VC.m in Sources */,
 				14FAA8C01D9507CB002D81CC /* TRStudent.m in Sources */,
