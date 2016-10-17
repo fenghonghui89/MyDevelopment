@@ -29,7 +29,7 @@
 
   [super viewDidAppear:animated];
   
-  [self test_download_suspend_cancle];
+  [self test_post_DataTask_block];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{

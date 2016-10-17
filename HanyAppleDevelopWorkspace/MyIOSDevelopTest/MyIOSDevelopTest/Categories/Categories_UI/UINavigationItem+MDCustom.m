@@ -11,7 +11,7 @@
 #import <objc/runtime.h>
 @implementation UINavigationItem (MDCustom)
 
-#define flag 3 //对应方法1、2、3
+#define flag 1 //对应方法1、2、3
 #if flag == 1
 
 #elif flag == 2
@@ -24,7 +24,7 @@
 //方法3
 +(void)load{
   
-  DRLog(@"loadview..");
+  DRLog(@"load UINavigationItem+MDCustom..");
   static dispatch_once_t onceToken;
   
   dispatch_once(&onceToken, ^{

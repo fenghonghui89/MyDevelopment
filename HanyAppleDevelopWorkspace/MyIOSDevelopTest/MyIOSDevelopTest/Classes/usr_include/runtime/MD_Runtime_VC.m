@@ -15,6 +15,7 @@
 #import "TRXYZ.h"
 #import "TRPoint.h"
 #import "DGCListInfo.h"
+#import "AFNetworking.h"
 @interface MD_Runtime_VC ()
 
 @end
@@ -30,7 +31,7 @@
 
   [super viewDidAppear:animated];
   
-  [self test_2];
+  [self test_3];
 }
 
 #pragma mark - ************** method **************
@@ -74,5 +75,28 @@
     NSLog(@"%d----%@",i,key);
 
   }
+}
+
+//交换方法 - 数组添加nil不会崩溃(要打开NSMutableArray+Extension开关)
+-(void)test_3{
+
+  NSMutableArray *array = [NSMutableArray array];
+  [array addObject:@"1"];
+  [array addObject:@"2"];
+  [array addObject:nil];
+  DRLog(@"%@",array);//1,2
+}
+
+-(void)test_4{
+
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://v.juhe.cn/toutiao/index"]];
+  
+  NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
+  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
+  AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
+  responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/xml"];
+  manager.responseSerializer = responseSerializer;
+  
+
 }
 @end
