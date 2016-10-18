@@ -7,9 +7,9 @@
 //
 
 #import "MDKVO_View.h"
-#import "MDStudent.h"
+#import "MD_Model1.h"
 #import "MDRootDefine.h"
-#import "MDKVO_VC.h"
+
 @implementation MDKVO_View
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{

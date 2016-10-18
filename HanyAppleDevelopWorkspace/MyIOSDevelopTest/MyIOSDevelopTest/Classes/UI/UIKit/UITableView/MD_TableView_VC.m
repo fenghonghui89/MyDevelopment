@@ -7,7 +7,7 @@
 //
 
 #import "MD_TableView_VC.h"
-#import "MDImageItem.h"
+#import "MD_Model1.h"
 #import "ImageDownloader.h"
 #import "MD_TableViewCell.h"
 

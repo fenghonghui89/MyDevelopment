@@ -12,7 +12,7 @@
  */
 
 #import "MDNSEnumeratorViewController.h"
-#import "TRStudent5.h"
+#import "MD_Model2.h"
 @interface MDNSEnumeratorViewController ()
 
 @end
@@ -30,13 +30,13 @@
 #pragma mark 遍历或反向遍历
 -(void)normal_NSEnumerator
 {
-  TRStudent5* student1 = [TRStudent5 new];
+  TRStudent6* student1 = [TRStudent6 new];
   student1.name = @"张三";
   student1.age = 18;
-  TRStudent5* student2 = [TRStudent5 new];
+  TRStudent6* student2 = [TRStudent6 new];
   student2.name = @"李四";
   student2.age = 20;
-  TRStudent5* student3 = [TRStudent5 new];
+  TRStudent6* student3 = [TRStudent6 new];
   student3.name = @"王五";
   student3.age = 30;
   NSArray* students = [NSArray arrayWithObjects:student1,student2,student3, nil];
@@ -55,7 +55,7 @@
 //  }
   
   NSEnumerator* enumerator = [students reverseObjectEnumerator];
-  for (TRStudent5 *student in enumerator) {
+  for (TRStudent6 *student in enumerator) {
     NSLog(@"反向---name:%@ age:%d",student.name,student.age);
   }
   
@@ -64,14 +64,14 @@
 #pragma mark 练习：1学校-2学院-4班级-8学生 遍历所有学生
 -(void)test_NSEnumerator
 {
-  TRStudent5* student1 = [TRStudent5 studentInitWithName:@"a1" AndAge:1];
-  TRStudent5* student2 = [TRStudent5 studentInitWithName:@"a2" AndAge:2];
-  TRStudent5* student3 = [TRStudent5 studentInitWithName:@"a3" AndAge:3];
-  TRStudent5* student4 = [TRStudent5 studentInitWithName:@"a4" AndAge:4];
-  TRStudent5* student5 = [TRStudent5 studentInitWithName:@"a5" AndAge:5];
-  TRStudent5* student6 = [TRStudent5 studentInitWithName:@"a6" AndAge:6];
-  TRStudent5* student7 = [TRStudent5 studentInitWithName:@"a7" AndAge:7];
-  TRStudent5* student8 = [TRStudent5 studentInitWithName:@"a8" AndAge:8];
+  TRStudent6* student1 = [TRStudent6 studentInitWithName:@"a1" AndAge:1];
+  TRStudent6* student2 = [TRStudent6 studentInitWithName:@"a2" AndAge:2];
+  TRStudent6* student3 = [TRStudent6 studentInitWithName:@"a3" AndAge:3];
+  TRStudent6* student4 = [TRStudent6 studentInitWithName:@"a4" AndAge:4];
+  TRStudent6* student5 = [TRStudent6 studentInitWithName:@"a5" AndAge:5];
+  TRStudent6* student6 = [TRStudent6 studentInitWithName:@"a6" AndAge:6];
+  TRStudent6* student7 = [TRStudent6 studentInitWithName:@"a7" AndAge:7];
+  TRStudent6* student8 = [TRStudent6 studentInitWithName:@"a8" AndAge:8];
   
   NSMutableArray* class1 = [NSMutableArray arrayWithObjects:student1,student2, nil];
   NSMutableArray* class2 = [NSMutableArray arrayWithObjects:student3,student4, nil];
@@ -87,7 +87,7 @@
   printf("用快速枚举遍历所有学生信息======================================================\n");
   for (NSMutableArray* tempcollege in school) {
     for (NSMutableArray* tempclass in tempcollege) {
-      for (TRStudent5* tempstudent in tempclass) {
+      for (TRStudent6* tempstudent in tempclass) {
         NSLog(@"name:%@,age:%d",tempstudent.name,tempstudent.age);
       }
     }
@@ -104,7 +104,7 @@
     NSEnumerator* enumratorClass = [classID1And2 objectEnumerator];
     id studentID1And2;
     while (studentID1And2 = [enumratorClass nextObject]) {
-      TRStudent5 *tempStudent1And2 = studentID1And2;
+      TRStudent6 *tempStudent1And2 = studentID1And2;
       NSLog(@"name:%@,age:%d",tempStudent1And2.name,tempStudent1And2.age);
     }
     classNo1And2++;
@@ -118,7 +118,7 @@
     NSEnumerator* enumratorClass = [classID3And4 objectEnumerator];
     id studentID3And4;
     while (studentID3And4 = [enumratorClass nextObject]) {
-      TRStudent5 *tempStudent3And4 = studentID3And4;
+      TRStudent6 *tempStudent3And4 = studentID3And4;
       NSLog(@"name:%@,age:%d",tempStudent3And4.name,tempStudent3And4.age);
     }
     classNo3And4++;
@@ -138,7 +138,7 @@
       NSEnumerator* enumratorClass = [collegeID objectEnumerator];
       id studentID;
       while (studentID = [enumratorClass nextObject] ) {
-        TRStudent5* tempStudent = studentID;
+        TRStudent6* tempStudent = studentID;
         NSLog(@"name:%@,age:%d",tempStudent.name,tempStudent.age);
       }
       classNo++;

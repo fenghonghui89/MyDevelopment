@@ -7,7 +7,8 @@
 //
 
 #import "MDStringNormalViewController.h"
-#import "TRStudent.h"
+#import "MD_Model.h"
+#import "MD_Model2.h"
 #import "MD_String_CustomView.h"
 #import <Foundation/NSObjCRuntime.h>
 #import <CoreFoundation/CFByteOrder.h>

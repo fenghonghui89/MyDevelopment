@@ -7,7 +7,7 @@
 //
 
 #import "MDDicNormalViewController.h"
-#import "TRStudent8.h"
+#import "MD_Model2.h"
 @interface MDDicNormalViewController ()
 
 @end
@@ -60,14 +60,14 @@
 #pragma mark 用NSDictionary重构练习：1学校-2学院-4班级-8学生 遍历所有学生
 -(void)test_NSDic
 {
-    TRStudent8* student1 = [TRStudent8 studentInitWithName:@"a1" AndAge:1];
-    TRStudent8* student2 = [TRStudent8 studentInitWithName:@"a2" AndAge:2];
-    TRStudent8* student3 = [TRStudent8 studentInitWithName:@"a3" AndAge:3];
-    TRStudent8* student4 = [TRStudent8 studentInitWithName:@"a4" AndAge:4];
-    TRStudent8* student5 = [TRStudent8 studentInitWithName:@"a6" AndAge:5];
-    TRStudent8* student6 = [TRStudent8 studentInitWithName:@"a6" AndAge:6];
-    TRStudent8* student7 = [TRStudent8 studentInitWithName:@"a7" AndAge:8];
-    TRStudent8* student8 = [TRStudent8 studentInitWithName:@"a8" AndAge:8];
+    TRStudent6* student1 = [TRStudent6 studentInitWithName:@"a1" AndAge:1];
+    TRStudent6* student2 = [TRStudent6 studentInitWithName:@"a2" AndAge:2];
+    TRStudent6* student3 = [TRStudent6 studentInitWithName:@"a3" AndAge:3];
+    TRStudent6* student4 = [TRStudent6 studentInitWithName:@"a4" AndAge:4];
+    TRStudent6* student5 = [TRStudent6 studentInitWithName:@"a6" AndAge:5];
+    TRStudent6* student6 = [TRStudent6 studentInitWithName:@"a6" AndAge:6];
+    TRStudent6* student7 = [TRStudent6 studentInitWithName:@"a7" AndAge:8];
+    TRStudent6* student8 = [TRStudent6 studentInitWithName:@"a8" AndAge:8];
     
     NSArray* class1 = [NSArray arrayWithObjects:student1,student2, nil];
     NSArray* class2 = [NSArray arrayWithObjects:student3,student4, nil];
@@ -83,7 +83,7 @@
         NSMutableDictionary* collegeValue = [school objectForKey:collegeKey];
         for (NSArray* classKey in collegeValue) {
             NSArray* classValue = [collegeValue objectForKey:classKey];
-            for (TRStudent8* student in classValue) {
+            for (TRStudent6* student in classValue) {
                 NSLog(@"name:%@,age:%d",student.name,student.age);
             }
         }

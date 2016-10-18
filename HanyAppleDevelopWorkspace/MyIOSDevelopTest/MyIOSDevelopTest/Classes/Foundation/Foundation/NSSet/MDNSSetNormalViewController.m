@@ -7,9 +7,8 @@
 //
 
 #import "MDNSSetNormalViewController.h"
-#import "TRPoint.h"
-#import "TRXYZ.h"
-#import "TRStudent.h"
+#import "MD_Model.h"
+#import "MD_Model2.h"
 @interface MDNSSetNormalViewController ()
 
 @end
@@ -30,8 +29,8 @@
  注意：经测试，如果涉及到子类，可能会有问题
  */
 
--(void)normal_NSSet
-{
+-(void)normal_NSSet{
+  
   TRPoint* point1 = [TRPoint new];
   point1.x = 1;
   point1.y = 2;

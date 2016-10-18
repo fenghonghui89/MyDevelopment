@@ -7,7 +7,8 @@
 //
 
 #import "MDNSArrayNormalViewController.h"
-#import "TRStudent4.h"
+#import "MD_Model.h"
+#import "MD_Model2.h"
 @interface MDNSArrayNormalViewController ()
 
 @end
@@ -85,9 +86,9 @@
     //13.如果数组中保存的某个对象，给数组中的所有对象都发送一个消息
     //数组中的所有对象必须都拥有该消息，否则会有问题
     //最好先判断对象是否又该方法
-    TRStudent4* student = [TRStudent4 new];
+    TRStudent* student = [TRStudent new];
     student.age  = 18;
-    TRStudent4* student2 = [TRStudent4 new];
+    TRStudent* student2 = [TRStudent new];
     student2.age  = 20;
     NSArray* students = [NSArray arrayWithObjects:student,student2,nil];
     [students makeObjectsPerformSelector:@selector(study)];

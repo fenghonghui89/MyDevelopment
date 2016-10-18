@@ -7,9 +7,8 @@
 //
 
 #import "MDNArrayAdvancedViewController.h"
-#import "TRStudent6.h"
-#import "TRTelphoneInfo.h"
-#import "TRUserInfo.h"
+#import "MD_Model2.h"
+
 @interface MDNArrayAdvancedViewController ()
 
 @end

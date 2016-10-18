@@ -7,7 +7,7 @@
 //
 
 #import "MD_NSXML_VC.h"
-#import "TRBook.h"
+#import "MD_Model3.h"
 
 @interface MD_NSXML_VC ()<NSXMLParserDelegate>
 @property (nonatomic, strong)TRBook *currentBook;

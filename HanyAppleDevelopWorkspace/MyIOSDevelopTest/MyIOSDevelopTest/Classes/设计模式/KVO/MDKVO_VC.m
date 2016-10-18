@@ -7,8 +7,7 @@
 //
 #import "MDKVO_View.h"
 #import "MDKVO_VC.h"
-#import "MDStudent.h"
-#import "MDBag.h"
+#import "MD_Model1.h"
 
 
 

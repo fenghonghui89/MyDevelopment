@@ -7,10 +7,11 @@
 //
 
 #import "MD_NSObject_VC.h"
-#import "TRStudent.h"
-#import "TRSuperman.h"
-#import "TRPerson.h"
-#import "TRCat.h"
+#import "MD_Model.h"
+#import "MD_Model2.h"
+#import "MD_Model4.h"
+#import "MD_Model3.h"
+
 @interface MD_NSObject_VC ()
 
 @end
@@ -32,7 +33,7 @@
 -(void)test_classObj{
 
   Class abc = [TRPerson class];//1.创建父类的类对象
-  BOOL b = [TRCat isSubclassOfClass:abc];//2.方法得出的是BOOL型变量
+  BOOL b = [TRBook isSubclassOfClass:abc];//2.方法得出的是BOOL型变量
   //BOOL b = [TRStudent isSubclassOfClass:[TRPerson class]];//两种方式
   
   if (b) {//3.判断

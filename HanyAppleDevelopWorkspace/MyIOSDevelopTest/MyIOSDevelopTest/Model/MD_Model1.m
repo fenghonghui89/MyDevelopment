@@ -1,13 +1,25 @@
 //
-//  MDImageItem.m
-//  MyDevelopmentTest
+//  MD_Model1.m
+//  MyIOSDevelopTest
 //
-//  Created by 冯鸿辉 on 16/3/24.
+//  Created by 冯鸿辉 on 2016/10/18.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
 //
 
-#import "MDImageItem.h"
+#import "MD_Model1.h"
+
 #import "ImageDownloader.h"
+
+@implementation MDBag
+
+@end
+
+@implementation MDStudent
+
+@end
+
+
+
 @implementation MDImageItem
 
 -(id)initWithDic:(NSDictionary *)dic{
