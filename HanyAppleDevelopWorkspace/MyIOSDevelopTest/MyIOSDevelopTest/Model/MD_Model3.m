@@ -9,7 +9,7 @@
 
 #import "MD_Model3.h"
 #import "MDRootDefine.h"
-
+#import <objc/runtime.h>
 
 #pragma mark - ******************** TRStudent ********************
 @implementation TRStudent
@@ -116,23 +116,46 @@
   return person;
 }
 #pragma mark * NSCoding
-- (void)encodeWithCoder:(NSCoder *)aCoder{
-  
-  DRLog(@"encodeWithCoder..");
-  [aCoder encodeObject:_name forKey:@"name"];
-  [aCoder encodeInteger:_age forKey:@"age"];
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder{
-  
-  DRLog(@"initWithCoder..");
-  self = [super init];
-  if (self) {
-    self.age = [aDecoder decodeIntegerForKey:@"age"];
-    self.name = [aDecoder decodeObjectForKey:@"name"];
-  }
-  return self;
-}
+//- (id)initWithCoder:(NSCoder *)aDecoder{
+//  
+//  DRLog(@"initWithCoder..");
+//  
+////  self = [super init];
+////  if (self) {
+////    self.age = [aDecoder decodeIntegerForKey:@"age"];
+////    self.name = [aDecoder decodeObjectForKey:@"name"];
+////  }
+////  return self;
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRStudent class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
+//  }
+//  return self;
+//}
+//
+//- (void)encodeWithCoder:(NSCoder *)aCoder{
+//  
+//  DRLog(@"encodeWithCoder..");
+//  
+////  [aCoder encodeObject:_name forKey:@"name"];
+////  [aCoder encodeInteger:_age forKey:@"age"];
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRStudent class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
+//  }
+//}
 
 #pragma mark * TRStudy
 -(void)studentStudy{
@@ -215,23 +238,44 @@
 
 #pragma mark - < callback >
 #pragma mark * NSCoding
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-
-  self = [super initWithCoder:aDecoder];
-  if(self){
-    _school = [aDecoder decodeObjectForKey:@"school"];
-    _books = [aDecoder decodeObjectForKey:@"books"];
-  }
-  
-  return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder{
-
-  [super encodeWithCoder:aCoder];
-  [aCoder encodeObject:_school forKey:@"school"];
-  [aCoder encodeObject:_books forKey:@"books"];
-}
+//-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+//
+////  self = [super initWithCoder:aDecoder];
+////  if(self){
+////    _school = [aDecoder decodeObjectForKey:@"school"];
+////    _books = [aDecoder decodeObjectForKey:@"books"];
+////  }
+////  
+////  return self;
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRMidStudent class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
+//  }
+//  return self;
+//}
+//
+//-(void)encodeWithCoder:(NSCoder *)aCoder{
+//
+////  [super encodeWithCoder:aCoder];
+////  [aCoder encodeObject:_school forKey:@"school"];
+////  [aCoder encodeObject:_books forKey:@"books"];
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRMidStudent class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
+//  }
+//}
 
 @end
 
@@ -284,26 +328,47 @@
 
 #pragma mark - < callback >
 #pragma mark * NSCoding
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-  
-  self = [super init];
-  if (self) {
-    _name = [aDecoder decodeObjectForKey:@"name"];
-    _author = [aDecoder decodeObjectForKey:@"author"];
-    _price = [aDecoder decodeObjectForKey:@"price"];
-    _page = [aDecoder decodeIntegerForKey:@"page"];
-  }
-  
-  return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder{
-  
-  [aCoder encodeObject:_name forKey:@"name"];
-  [aCoder encodeObject:_author forKey:@"author"];
-  [aCoder encodeObject:_price forKey:@"price"];
-  [aCoder encodeInteger:_page forKey:@"page"];
-}
+//-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+//  
+////  self = [super init];
+////  if (self) {
+////    _name = [aDecoder decodeObjectForKey:@"name"];
+////    _author = [aDecoder decodeObjectForKey:@"author"];
+////    _price = [aDecoder decodeObjectForKey:@"price"];
+////    _page = [aDecoder decodeIntegerForKey:@"page"];
+////  }
+////  
+////  return self;
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRBook class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
+//  }
+//  return self;
+//}
+//
+//-(void)encodeWithCoder:(NSCoder *)aCoder{
+//  
+////  [aCoder encodeObject:_name forKey:@"name"];
+////  [aCoder encodeObject:_author forKey:@"author"];
+////  [aCoder encodeObject:_price forKey:@"price"];
+////  [aCoder encodeInteger:_page forKey:@"page"];
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRBook class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
+//  }
+//}
 
 @end
 
@@ -350,22 +415,43 @@
 
 #pragma mark - < callback >
 #pragma mark * NSCoding
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-
-  self = [super init];
-  if (self) {
-    _schoolName = [aDecoder decodeObjectForKey:@"schoolName"];
-    _schoolCode = [aDecoder decodeIntegerForKey:@"schoolCode"];
-  }
-  
-  return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder{
-
-  [aCoder encodeObject:_schoolName forKey:@"schoolName"];
-  [aCoder encodeInteger:_schoolCode forKey:@"schoolCode"];
-}
+//-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+//
+////  self = [super init];
+////  if (self) {
+////    _schoolName = [aDecoder decodeObjectForKey:@"schoolName"];
+////    _schoolCode = [aDecoder decodeIntegerForKey:@"schoolCode"];
+////  }
+////  
+////  return self;
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRSchool class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
+//  }
+//  return self;
+//}
+//
+//-(void)encodeWithCoder:(NSCoder *)aCoder{
+//
+////  [aCoder encodeObject:_schoolName forKey:@"schoolName"];
+////  [aCoder encodeInteger:_schoolCode forKey:@"schoolCode"];
+//  
+//  unsigned int count = 0;
+//  objc_property_t *properties = class_copyPropertyList([TRSchool class], &count);
+//  
+//  for (int i = 0;i < count;i ++) {
+//    objc_property_t property = properties[i];
+//    const char *name = property_getName(property);
+//    NSString *key = [NSString stringWithUTF8String:name];
+//    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
+//  }
+//}
 @end
 
 

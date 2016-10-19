@@ -10,14 +10,14 @@
  */
 
 #import <Foundation/Foundation.h>
-
+#import "MD_BaseModel.h"
 
 
 @protocol TRStudy <NSObject>
 @required -(void)studentStudy;
 @end
 
-@interface TRStudent : NSObject<NSCoding,NSCopying,TRStudy>
+@interface TRStudent : MD_BaseModel<NSCopying,TRStudy>
 @property(nonatomic,copy)NSString *name;
 @property(nonatomic,assign)NSInteger age;
 
@@ -32,7 +32,7 @@
 
 
 @class TRSchool;
-@interface TRMidStudent : TRStudent<NSCoding>
+@interface TRMidStudent : TRStudent
 @property(nonatomic,strong)TRSchool *school;
 @property(nonatomic,strong)NSArray *books;
 +(NSArray *)testData;
@@ -41,7 +41,7 @@
 
 
 
-@interface TRBook : NSObject<NSCoding>
+@interface TRBook : MD_BaseModel
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *price;
@@ -51,7 +51,7 @@
 
 
 
-@interface TRSchool : NSObject<NSCoding>
+@interface TRSchool : MD_BaseModel
 @property(nonatomic,copy)NSString *schoolName;
 @property(nonatomic,assign)NSInteger schoolCode;
 -(instancetype)initWithSchoolName:(NSString *)schoolName schoolCode:(NSInteger)schoolCode;
