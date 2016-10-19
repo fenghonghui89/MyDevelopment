@@ -199,10 +199,8 @@
 		141504081DB623D500D1737C /* Switzerland.png in Resources */ = {isa = PBXBuildFile; fileRef = 141503691DB623D500D1737C /* Switzerland.png */; };
 		141504091DB623D500D1737C /* Uruguay.png in Resources */ = {isa = PBXBuildFile; fileRef = 1415036A1DB623D500D1737C /* Uruguay.png */; };
 		1415040A1DB623D500D1737C /* USA.png in Resources */ = {isa = PBXBuildFile; fileRef = 1415036B1DB623D500D1737C /* USA.png */; };
-		1415040D1DB6245900D1737C /* MD_Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415040C1DB6245900D1737C /* MD_Model1.m */; };
 		141504101DB6272A00D1737C /* MD_Model2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415040F1DB6272A00D1737C /* MD_Model2.m */; };
 		141504191DB62C5000D1737C /* MD_Model3.m in Sources */ = {isa = PBXBuildFile; fileRef = 141504181DB62C5000D1737C /* MD_Model3.m */; };
-		1415041C1DB62EE900D1737C /* MD_Model4.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415041B1DB62EE900D1737C /* MD_Model4.m */; };
 		141504281DB62FF100D1737C /* DGCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415041F1DB62FF100D1737C /* DGCBaseModel.m */; };
 		141504291DB62FF100D1737C /* DGCListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141504211DB62FF100D1737C /* DGCListInfo.m */; };
 		1415042A1DB62FF100D1737C /* DGCPlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141504231DB62FF100D1737C /* DGCPlaceInfo.m */; };
@@ -710,14 +708,10 @@
 		141503691DB623D500D1737C /* Switzerland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switzerland.png; sourceTree = "<group>"; };
 		1415036A1DB623D500D1737C /* Uruguay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uruguay.png; sourceTree = "<group>"; };
 		1415036B1DB623D500D1737C /* USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USA.png; sourceTree = "<group>"; };
-		1415040B1DB6245900D1737C /* MD_Model1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Model1.h; sourceTree = "<group>"; };
-		1415040C1DB6245900D1737C /* MD_Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Model1.m; sourceTree = "<group>"; };
 		1415040E1DB6272A00D1737C /* MD_Model2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Model2.h; sourceTree = "<group>"; };
 		1415040F1DB6272A00D1737C /* MD_Model2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Model2.m; sourceTree = "<group>"; };
 		141504171DB62C5000D1737C /* MD_Model3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Model3.h; sourceTree = "<group>"; };
 		141504181DB62C5000D1737C /* MD_Model3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Model3.m; sourceTree = "<group>"; };
-		1415041A1DB62EE900D1737C /* MD_Model4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Model4.h; sourceTree = "<group>"; };
-		1415041B1DB62EE900D1737C /* MD_Model4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_Model4.m; sourceTree = "<group>"; };
 		1415041E1DB62FF100D1737C /* DGCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCBaseModel.h; sourceTree = "<group>"; };
 		1415041F1DB62FF100D1737C /* DGCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCBaseModel.m; sourceTree = "<group>"; };
 		141504201DB62FF100D1737C /* DGCListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCListInfo.h; sourceTree = "<group>"; };
@@ -3350,14 +3344,10 @@
 				1415041D1DB62FF100D1737C /* DGCModel */,
 				1415017C1DB621E100D1737C /* MD_Model.h */,
 				1415017D1DB621E100D1737C /* MD_Model.m */,
-				1415040B1DB6245900D1737C /* MD_Model1.h */,
-				1415040C1DB6245900D1737C /* MD_Model1.m */,
 				1415040E1DB6272A00D1737C /* MD_Model2.h */,
 				1415040F1DB6272A00D1737C /* MD_Model2.m */,
 				141504171DB62C5000D1737C /* MD_Model3.h */,
 				141504181DB62C5000D1737C /* MD_Model3.m */,
-				1415041A1DB62EE900D1737C /* MD_Model4.h */,
-				1415041B1DB62EE900D1737C /* MD_Model4.m */,
 				14C8339B1DB4B1DD009363F9 /* MDCityWeather.h */,
 				14C8339C1DB4B1DD009363F9 /* MDCityWeather.m */,
 			);
@@ -3880,7 +3870,6 @@
 				14FAA7551D9507CA002D81CC /* TouchDrawView.m in Sources */,
 				14FAA7ED1D9507CB002D81CC /* MD_GCD_group_VC.m in Sources */,
 				14FAA7F61D9507CB002D81CC /* MD_NSThread_Game_VC.m in Sources */,
-				1415041C1DB62EE900D1737C /* MD_Model4.m in Sources */,
 				14C833971DB474A0009363F9 /* UIView+STKit.m in Sources */,
 				14FAA7331D9507CA002D81CC /* MDNSArrayNormalViewController.m in Sources */,
 				14FAA79E1D9507CB002D81CC /* MD_UIIV_CustomView.m in Sources */,
@@ -3950,7 +3939,6 @@
 				14FAA7501D9507CA002D81CC /* MD_NSTimer_VC1.m in Sources */,
 				14FAA74F1D9507CA002D81CC /* MD_NSTimer_VC3.m in Sources */,
 				14FAA76C1D9507CB002D81CC /* MD_Socket_SendFile_VC.m in Sources */,
-				1415040D1DB6245900D1737C /* MD_Model1.m in Sources */,
 				14FAA7C31D9507CB002D81CC /* MDModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

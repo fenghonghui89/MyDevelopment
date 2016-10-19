@@ -5,7 +5,7 @@
 //  Created by 冯鸿辉 on 2016/10/18.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
 /*
- runtime NSSet
+ runtime
  */
 
 #import <Foundation/Foundation.h>
@@ -36,14 +36,8 @@ PROPERTY_NON_ATOMIC_STRONG NSArray *info_night;//夜间天气
 @end
 
 
-
-
-
-
 @interface TRXYZ : TRPoint
 
-@property(nonatomic,assign)int x;
-@property(nonatomic,assign)int y;
 @property(nonatomic,assign)int z;
 
 @end
@@ -51,10 +45,3 @@ PROPERTY_NON_ATOMIC_STRONG NSArray *info_night;//夜间天气
 
 
 
-
-@interface TRStudent : NSObject
-@property(nonatomic,assign) int age;
-@property(nonatomic,copy)NSString *name;
--(void)study;
-+(id)studentInitWithName:(NSString*)name AndAge:(int)age;
-@end

@@ -5,56 +5,34 @@
 //  Created by 冯鸿辉 on 2016/10/18.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
 /*
- NSObject  NSString
- 深拷贝浅拷贝 排序
+ KVO TableView
  */
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
+@class MDStudent;
+@interface MDBag : NSObject
+@property(nonatomic,weak)MDStudent *student;
+@property(nonatomic,assign)NSInteger model;
+@property(nonatomic,copy)NSString *brand;
+@end
 
 
-
-@interface TRStudent6 : NSObject <NSCopying>//1.深拷贝：先遵守NSCopying协议
-
-@property(nonatomic,copy)NSString* name;
-@property(nonatomic,assign)int age;
-
-+(id)studentInitWithName:(NSString*)name AndAge:(int)age;
--(id)initwithName:(NSString*)name AndAge:(int)age;
-
--(NSComparisonResult)compareStudentWithName:(TRStudent6*)student;
--(NSComparisonResult)compareStudentWithAge:(TRStudent6*)student;
--(NSComparisonResult)compareStudentWithSameAge:(TRStudent6*)student;
+@class MDBag;
+@interface MDStudent : NSObject
+@property(nonatomic,assign)NSInteger age;
+@property(nonatomic,copy)NSString *name;
+@property(nonatomic,strong)MDBag *bag;
 @end
 
 
 
-@interface TRUserInfo : NSObject
-
-@property(nonatomic,copy)NSString* name;
-@property(nonatomic,copy)NSString* email;
-@property(nonatomic,copy)NSString* telphone;
-
-+(id)userInfoWithName:(NSString*)name AndEmail:(NSString*)email AndTelphone:(NSString*)telphone;
--(id)initWithName:(NSString*)name AndEmail:(NSString*)email AndTelphone:(NSString*)telphone;
--(NSComparisonResult)compareUserInfo:(NSString*)userInfoC;
--(void)print;
-
-@end
-
-
-@interface TRTelphoneInfo : NSObject
-
-//@property(nonatomic,copy)NSString* telpName;
-@property(nonatomic)NSMutableArray* telphoneInfo;
-
-+(id)telpInfoWithUser:(TRUserInfo*)userinfo;
--(id)initInfoWithUser:(TRUserInfo *)userinfo;
--(void)addUserInfo:(TRUserInfo*)userInfoA;
--(void)removeUserInfo:(NSString*)removeName;
--(void)lookupUserName:(NSString*)searchName;
--(void)TelpInfoList;
--(void)sort;
-
+@interface MDImageItem : NSObject
+@property(nonatomic,copy)NSString *imageName;
+@property(nonatomic,copy)NSString *imageUrl;
+@property(nonatomic,strong)UIImage *image;
+-(id)initWithDic:(NSDictionary *)dic;
++(NSMutableArray *)handleData:(NSData *)data;
 @end

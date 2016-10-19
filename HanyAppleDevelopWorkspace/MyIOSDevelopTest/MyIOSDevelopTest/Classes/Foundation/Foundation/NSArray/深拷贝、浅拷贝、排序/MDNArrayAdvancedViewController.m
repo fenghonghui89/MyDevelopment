@@ -7,40 +7,71 @@
 //
 
 #import "MDNArrayAdvancedViewController.h"
+#import "MD_Model3.h"
 #import "MD_Model2.h"
-
 @interface MDNArrayAdvancedViewController ()
 
 @end
 
 @implementation MDNArrayAdvancedViewController
 
-- (void)viewDidLoad
-{
+#pragma mark - < overwrite >
+#pragma mark * vc lifecycle
+- (void)viewDidLoad{
+  
   [super viewDidLoad];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+
+  [super viewDidAppear:animated];
   [self advanced_NSArrayCopy];
 }
 
+#pragma mark - < method >
 #pragma mark 数组的深拷贝、浅拷贝
--(void)advanced_NSArrayCopy
-{
-  TRStudent6* student1 = [TRStudent6 studentInitWithName:@"zhangsan" AndAge:18];
-  TRStudent6* student2 = [TRStudent6 studentInitWithName:@"lisi" AndAge:20];
-  NSArray* array1 = @[student1,student2];
-  NSLog(@"array1:%@,%p",array1,array1[0]);
+-(void)advanced_NSArrayCopy{
   
-  //数组的浅拷贝
-  NSArray* array2 = [[NSArray alloc] initWithArray:array1 copyItems:NO];
-  NSLog(@"array2:%@,%p",array2,array2[0]);
+  TRStudent *student1 = [TRStudent studentWithName:@"zhangsan" age:13];
+  TRStudent *student2 = [TRStudent studentWithName:@"lisi" age:14];
+  NSArray* arr = @[student1,student2];
+  NSLog(@"arr:%@,%p",arr,arr[0]);
+  /*
+   arr:(
+   "<TRStudent: 0x170227680>",
+   "<TRStudent: 0x1702275e0>"
+   ),0x170227680
+   */
   
-  //数组的深拷贝-1.每个对象都要遵守NSCopying协议，2.然后重写copyWithZone方法
-  NSArray* array3 = [[NSArray alloc] initWithArray:array1 copyItems:YES];
-  NSLog(@"array3:%@,%p",array3,array3[0]);
+  
+  //数组的浅拷贝-以下都是
+  NSArray *arr_shallow = arr;
+//  NSArray *arr_shallow = [NSArray arrayWithArray:arr];
+//  NSArray* arr_shallow = [[NSArray alloc] initWithArray:arr copyItems:NO];
+  NSLog(@"arr_shallow:%@,%p",arr_shallow,arr_shallow[0]);
+  /*
+   arr_shallow:(
+   "<TRStudent: 0x170227680>",
+   "<TRStudent: 0x1702275e0>"
+   ),0x170227680
+   */
+  
+  
+  //数组的深拷贝-NSCopying协议
+  NSArray* arr_deep = [[NSArray alloc] initWithArray:arr copyItems:YES];
+  NSLog(@"arr_deep:%@,%p",arr_deep,arr_deep[0]);
+  /*
+   arr_deep:(
+   "<TRStudent: 0x1742290c0>",
+   "<TRStudent: 0x1742295e0>"
+   ),0x1742290c0
+   */
+  
 }
 
 #pragma mark 数组的排序
--(void)advanced_NSArraySort
-{
+-(void)advanced_NSArraySort{
+  
   NSArray* array = @[@"zhangsan",@"lisi",@"wangwu"];
   NSLog(@"array:%@",array);
   NSArray* newarray =  [array sortedArrayUsingSelector:@selector(compare:)];
@@ -54,9 +85,9 @@
 -(void)test_NSArraySort
 {
   //创建三个对象并放入数组
-  TRStudent6* student = [TRStudent6 studentInitWithName:@"zhangsan" AndAge:20];
-  TRStudent6* student2 = [TRStudent6 studentInitWithName:@"lisi" AndAge:10];
-  TRStudent6* student3 = [TRStudent6 studentInitWithName:@"wangwu" AndAge:30];
+  TRStudent* student = [TRStudent studentWithName:@"zhangsan" age:20];
+  TRStudent* student2 = [TRStudent studentWithName:@"lisi" age:10];
+  TRStudent* student3 = [TRStudent studentWithName:@"wangwu" age:30];
   NSArray* array = @[student,student2,student3];
   NSLog(@"array:%@",array);
   
@@ -64,24 +95,4 @@
   NSLog(@"array2:%@",array2);
 }
 
-#pragma mark 数组排序练习：手机通讯录
--(void)test_addressBook
-{
-  TRUserInfo* user1=[TRUserInfo userInfoWithName:@"Steve Jobs" AndEmail:@"Steve_Jobs@gmail.com" AndTelphone:@"18666776612"];
-  TRUserInfo* user2=[TRUserInfo userInfoWithName:@"Johny Ive" AndEmail:@"Johny_Ive@gmail.com" AndTelphone:@"18666776512"];
-  TRUserInfo* user3=[TRUserInfo userInfoWithName:@"Steven Hotting" AndEmail:@"Steven_Hotting@gmail.com" AndTelphone:@"13766776321"];
-  TRUserInfo* user4=[TRUserInfo userInfoWithName:@"NaNa Lee" AndEmail:@"NaNa_Lee@gmail.com" AndTelphone:@"020-88886488"];
-  TRUserInfo* user5=[TRUserInfo userInfoWithName:@"Steven Hotting" AndEmail:@"Steven_Hotting1@gmail.com" AndTelphone:@"13666668884"];
-  TRTelphoneInfo*addressBook=[TRTelphoneInfo telpInfoWithUser:user1];
-  
-  [addressBook addUserInfo:user2];
-  [addressBook addUserInfo:user3];
-  [addressBook addUserInfo:user4];
-  [addressBook addUserInfo:user5];
-  [addressBook sort];
-  [addressBook removeUserInfo:@"Steven Hotting"];
-  [addressBook lookupUserName:@"Johny Ive"];
-  [addressBook sort];
-  [addressBook TelpInfoList];
-}
 @end

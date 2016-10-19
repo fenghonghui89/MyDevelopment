@@ -7,7 +7,7 @@
 //
 #import "MDKVO_View.h"
 #import "MDKVO_VC.h"
-#import "MD_Model1.h"
+#import "MD_Model2.h"
 
 
 

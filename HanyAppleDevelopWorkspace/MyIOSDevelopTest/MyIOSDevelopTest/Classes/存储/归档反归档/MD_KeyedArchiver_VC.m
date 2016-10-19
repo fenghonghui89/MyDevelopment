@@ -45,7 +45,7 @@
   
   
   //简便方法
-  TRPerson *person = [TRPerson testData];
+  TRMidStudent *person = [[TRMidStudent testData] objectAtIndex:0];
   
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
   path = [path stringByAppendingString:@"/person"];
@@ -80,10 +80,10 @@
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
   path = [path stringByAppendingString:@"/person"];
   
-  TRPerson *person = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+  TRMidStudent *person = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
   if (person != nil) {
-    TRBook *book = [person.books objectForKey:@"book2"];
-    DRLog(@"person..name:%@ age:%ld book:%@",person.name,(long)person.age,book.name);
+    TRBook *book = [person.books objectAtIndex:0];
+    DRLog(@"person..name:%@ age:%ld school:%@ book:%@",person.name,(long)person.age,person.school.schoolName,book.name);
   }else{
     DRLog(@"error...no file");
   }

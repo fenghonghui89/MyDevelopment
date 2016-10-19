@@ -8,7 +8,6 @@
 
 #import "MDStringNormalViewController.h"
 #import "MD_Model.h"
-#import "MD_Model2.h"
 #import "MD_String_CustomView.h"
 #import <Foundation/NSObjCRuntime.h>
 #import <CoreFoundation/CFByteOrder.h>
@@ -131,7 +130,7 @@
 
 }
 
-#pragma mark 字符串与基本类型、引用类型的互相转换（重写description方法）、字母的大小写转换
+#pragma mark 字符串与基本类型、字母的大小写转换
 /**
  *  字符串与基本类型、引用类型的互相转换（重写description方法）、字母的大小写转换
  */
@@ -157,16 +156,7 @@
     NSString* s6 = [NSString stringWithFormat:@"%d",b6];
     NSLog(@"s4:%@,s5:%@,s6:%@",s4,s5,s6);
     printf("\n");
-    
-    //引用数据类型的转换
-    //重写description方法，返回对象的内容
-    NSLog(@"引用数据类型的转换");
-    TRStudent* student = [TRStudent new];
-    student.age = 18;
-    NSLog(@"student :%p",student);//输出地址
-    NSLog(@"student :%@",student);//输出实例变量（如不重写方法，默认输出对象名+地址）
-    printf("\n");
-    
+  
     //字符串的大小写转换
     NSLog(@"字符串的大小写转换");
     NSString* str4 = @"a我c";//中文按原样输出
