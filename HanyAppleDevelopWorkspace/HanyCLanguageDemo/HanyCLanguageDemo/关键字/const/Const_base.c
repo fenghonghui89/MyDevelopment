@@ -25,8 +25,8 @@ static void knowledge_const(){
 static void knowledge_pointAndConst(){
   
   /*
-   const p即const修饰指针，则指向不可改，内容可改
-   const *p即const修饰值，则内容不可改，指向可改
+   const p可看成const修饰指针，则指向不可改，内容可改
+   const *p可看成const修饰值，则内容不可改，指向可改
    */
   
   //类型是int *const 在初始化之后不能再指向别的内存 指向内容可改
