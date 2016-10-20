@@ -5,16 +5,13 @@
 //  Created by 冯鸿辉 on 16/6/15.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
 //
-/*
- initialize不是init
- 运行时间的行为之一就是initialize。虽然看起来有点像大家常见的init，但是他们并不相同。
- 在程序运行过程中，它会在你程序中每个类调用一次initialize。这个调用的时间发生在你的类接收到消息之前，但是在它的超类接收到initialize之后。
- */
+
 #import "MD_Runtime_VC.h"
 #import <objc/runtime.h>
 #import "DGCListInfo.h"
 #import "AFNetworking.h"
 #import "MD_Model.h"
+#import "BadBoyModel.h"
 @interface MD_Runtime_VC ()
 
 @end
@@ -34,6 +31,11 @@
 }
 
 #pragma mark - ************** method **************
+/*
+ initialize不是init
+ 运行时间的行为之一就是initialize。虽然看起来有点像大家常见的init，但是他们并不相同。
+ 在程序运行过程中，它会在你程序中每个类调用一次initialize。这个调用的时间发生在你的类接收到消息之前，但是在它的超类接收到initialize之后。
+ */
 -(void)test_initialize{
   
   /*
@@ -41,18 +43,18 @@
    */
   
   
-  TRXYZ *xyz = [TRXYZ new];
-  TRPoint *p = [TRPoint new];
-  TRPoint *p1 = [TRPoint new];
-  
-  /*
-   2016-10-18 12:19:34.710666 MyIOSDevelopTest[583:104530] +[TRPoint initialize] [Line 23] TRPoint initialize
-   2016-10-18 12:19:34.710792 MyIOSDevelopTest[583:104530] +[TRXYZ initialize] [Line 23] TRXYZ initialize
-   2016-10-18 12:19:34.710918 MyIOSDevelopTest[583:104530] -[TRPoint init] [Line 30] TRXYZ init
-   2016-10-18 12:19:34.711009 MyIOSDevelopTest[583:104530] -[TRXYZ init] [Line 30] TRXYZ init
-   2016-10-18 12:19:34.711122 MyIOSDevelopTest[583:104530] -[TRPoint init] [Line 30] TRPoint init
-   2016-10-18 12:19:34.711215 MyIOSDevelopTest[583:104530] -[TRPoint init] [Line 30] TRPoint init
-   */
+//  TRXYZ *xyz = [TRXYZ new];
+//  TRPoint *p = [TRPoint new];
+//  TRPoint *p1 = [TRPoint new];
+//  
+//  /*
+//   2016-10-18 12:19:34.710666 MyIOSDevelopTest[583:104530] +[TRPoint initialize] [Line 23] TRPoint initialize
+//   2016-10-18 12:19:34.710792 MyIOSDevelopTest[583:104530] +[TRXYZ initialize] [Line 23] TRXYZ initialize
+//   2016-10-18 12:19:34.710918 MyIOSDevelopTest[583:104530] -[TRPoint init] [Line 30] TRXYZ init
+//   2016-10-18 12:19:34.711009 MyIOSDevelopTest[583:104530] -[TRXYZ init] [Line 30] TRXYZ init
+//   2016-10-18 12:19:34.711122 MyIOSDevelopTest[583:104530] -[TRPoint init] [Line 30] TRPoint init
+//   2016-10-18 12:19:34.711215 MyIOSDevelopTest[583:104530] -[TRPoint init] [Line 30] TRPoint init
+//   */
   
   
 //  TRPoint *p = [TRPoint new];
@@ -69,36 +71,82 @@
 //   */
 }
 
-//遍历一个类的全部成员变量
+//遍历一个类的全部成员变量名及类型
 -(void)test_showAllmemberVariable{
 
   unsigned int count = 0;
   
-  //Ivar:表示成员变量类型
-  Ivar *ivars = class_copyIvarList([DGCListInfo class], &count);//获得一个指向该类所有成员变量的指针
+  /*
+   Ivar:表示成员变量类型
+   获得一个指向该类所有成员变量的指针
+   */
+  Ivar *ivars = class_copyIvarList([MDWeather class], &count);//
   
   for (int i =0; i < count; i ++) {
     
     Ivar ivar = ivars[i];
-    const char *name = ivar_getName(ivar);//根据ivar获得其成员变量的名称--->C语言的字符串
-    NSString *key = [NSString stringWithUTF8String:name];
-    NSLog(@"%d----%@",i,key);
+    
+    const char *name = ivar_getName(ivar);
+    NSString *nameStr = [NSString stringWithUTF8String:name];
+    
+    const char *type = ivar_getTypeEncoding(ivar);
+    NSString *typeStr = [NSString stringWithUTF8String:type];
+    
+    NSLog(@"%@----%@",nameStr,typeStr);
   }
+  
+  free(ivars);
+  /*
+   2016-10-20 11:34:55.703083 MyIOSDevelopTest[1085:278138] _date----@"NSString"
+   2016-10-20 11:34:55.703237 MyIOSDevelopTest[1085:278138] _week----@"NSString"
+   2016-10-20 11:34:55.703324 MyIOSDevelopTest[1085:278138] _nongli----@"NSString"
+   2016-10-20 11:34:55.703455 MyIOSDevelopTest[1085:278138] _info_day----@"NSArray"
+   2016-10-20 11:34:55.703538 MyIOSDevelopTest[1085:278138] _info_night----@"NSArray"
+   2016-10-20 11:34:55.703619 MyIOSDevelopTest[1085:278138] _point----@"TRPoint"
+   */
 }
 
 
-//遍历一个类的全部属性
+//遍历一个类的全部属性名及类型
 -(void)test_showAllProperty{
 
   unsigned int count = 0;
-  objc_property_t *properties = class_copyPropertyList([DGCListInfo class], &count);//获得一个指向该类所有属性的指针
+  objc_property_t *propertyList = class_copyPropertyList([MDWeather class], &count);
   
-  for (int i = 0; i<count; i++) {
-    objc_property_t property = properties[i];
-    const char *name = property_getName(property);//根据objc_property_t获得其属性的名称--->C语言的字符串
+  for(int i = 0;i<count;i++){
+    objc_property_t property = propertyList[i];
+    
+    const char *name = property_getName(property);
+    NSString *nameStr = [NSString stringWithUTF8String:name];
+    
+    const char *type = property_getAttributes(property);
+    NSString *typeStr = [NSString stringWithUTF8String:type];
+    
+    NSLog(@"%@ --- %@",nameStr,typeStr);
+  }
+  
+  free(propertyList);
+  /*
+   2016-10-20 11:36:41.339529 MyIOSDevelopTest[1090:278689] date --- T@"NSString",C,N,V_date
+   2016-10-20 11:36:41.339626 MyIOSDevelopTest[1090:278689] week --- T@"NSString",C,N,V_week
+   2016-10-20 11:36:41.339713 MyIOSDevelopTest[1090:278689] nongli --- T@"NSString",C,N,V_nongli
+   2016-10-20 11:36:41.339798 MyIOSDevelopTest[1090:278689] info_day --- T@"NSArray",&,N,V_info_day
+   2016-10-20 11:36:41.339883 MyIOSDevelopTest[1090:278689] info_night --- T@"NSArray",&,N,V_info_night
+   2016-10-20 11:36:41.339968 MyIOSDevelopTest[1090:278689] point --- T@"TRPoint",&,N,V_point
+   */
+}
+
+//遍历一个类的全部实例方法
+-(void)test_showAllMethod{
+
+  unsigned int count = 0;
+  Method *methods = class_copyMethodList([MDWeather class], &count);
+  for(int i = 0; i<count;i++){
+    Method method = methods[i];
+    SEL selector = method_getName(method);
+    const char *name = sel_getName(selector);
     NSString *key = [NSString stringWithUTF8String:name];
     NSLog(@"%d----%@",i,key);
-
   }
 }
 
@@ -173,11 +221,19 @@
 }
 
 
+-(void)test_0{
+
+  NSDictionary *dic = @{@"netName":@"Hany",@"netAge":@(12)};
+  BadBoyModel *badBoy = [[BadBoyModel alloc] initWithDictionary:dic];
+  [badBoy displayCurrentModleProperty];
+
+}
+
 #pragma mark - ************** action **************
 
 - (IBAction)btnTap:(id)sender {
   
-  [self test_arch];
+  [self test_showAllProperty];
 }
 
 - (IBAction)btn1Tap:(id)sender {

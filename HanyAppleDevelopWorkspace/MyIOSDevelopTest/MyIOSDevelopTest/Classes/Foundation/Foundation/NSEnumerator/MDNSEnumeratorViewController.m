@@ -28,8 +28,8 @@
 }
 
 #pragma mark 遍历或反向遍历
--(void)normal_NSEnumerator
-{
+-(void)normal_NSEnumerator{
+  
   TRStudent* student1 = [TRStudent new];
   student1.name = @"张三";
   student1.age = 18;
@@ -56,7 +56,7 @@
   
   NSEnumerator* enumerator = [students reverseObjectEnumerator];
   for (TRStudent *student in enumerator) {
-    NSLog(@"反向---name:%@ age:%d",student.name,student.age);
+    NSLog(@"反向---name:%@ age:%ld",student.name,(long)student.age);
   }
   
 }

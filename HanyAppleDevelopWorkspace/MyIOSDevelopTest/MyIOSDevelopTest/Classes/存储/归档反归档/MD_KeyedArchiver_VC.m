@@ -45,12 +45,13 @@
   
   
   //简便方法
-  TRMidStudent *person = [[TRMidStudent testData] objectAtIndex:0];
+  TRStudent *student = [[TRStudent alloc] initWithName:@"Tom" age:13];
+//  TRMidStudent *student = [[TRMidStudent testData] objectAtIndex:0];
   
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-  path = [path stringByAppendingString:@"/person"];
+  path = [path stringByAppendingString:@"/student"];
   
-  BOOL b = [NSKeyedArchiver archiveRootObject:person toFile:path];
+  BOOL b = [NSKeyedArchiver archiveRootObject:student toFile:path];
   if (b) {
     DRLog(@"finish..path:%@",path);
   }else{
@@ -78,12 +79,15 @@
   
   //简便方法
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-  path = [path stringByAppendingString:@"/person"];
+  path = [path stringByAppendingString:@"/student"];
   
-  TRMidStudent *person = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-  if (person != nil) {
-    TRBook *book = [person.books objectAtIndex:0];
-    DRLog(@"person..name:%@ age:%ld school:%@ book:%@",person.name,(long)person.age,person.school.schoolName,book.name);
+  TRStudent *student = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+//  TRMidStudent *person = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+  if (student != nil) {
+//    TRBook *book = [person.books objectAtIndex:0];
+//    DRLog(@"person..name:%@ age:%ld school:%@ book:%@",person.name,(long)person.age,person.school.schoolName,book.name);
+//    //person..name:(null) age:0 school:一中 book:西游记
+    DRLog(@"student..name:%@ age:%ld",student.name,(long)student.age);
   }else{
     DRLog(@"error...no file");
   }

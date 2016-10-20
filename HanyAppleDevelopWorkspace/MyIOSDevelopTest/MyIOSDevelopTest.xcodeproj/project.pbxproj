@@ -224,7 +224,6 @@
 		14C833961DB474A0009363F9 /* UIView+MDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833881DB474A0009363F9 /* UIView+MDCategory.m */; };
 		14C833971DB474A0009363F9 /* UIView+STKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C8338A1DB474A0009363F9 /* UIView+STKit.m */; };
 		14C8339A1DB47527009363F9 /* UINavigationItem+MDCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833991DB47527009363F9 /* UINavigationItem+MDCustom.m */; };
-		14C8339D1DB4B1DD009363F9 /* MDCityWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C8339C1DB4B1DD009363F9 /* MDCityWeather.m */; };
 		14C833A21DB4D933009363F9 /* MD_KeyedArchiver_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C833A11DB4D933009363F9 /* MD_KeyedArchiver_VC.xib */; };
 		14F1F2131D1140F30059EDC1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1F2121D1140F30059EDC1 /* libresolv.tbd */; };
 		14FAA7331D9507CA002D81CC /* MDNSArrayNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3A91D9507C9002D81CC /* MDNSArrayNormalViewController.m */; };
@@ -464,6 +463,7 @@
 		14FAA8EF1D9507CB002D81CC /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA7201D9507CA002D81CC /* IPAddress.c */; };
 		14FAA8F01D9507CB002D81CC /* MDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA7261D9507CA002D81CC /* MDTool.m */; };
 		14FBF9661C27B4F700CC0A55 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBF9651C27B4F700CC0A55 /* Photos.framework */; };
+		14FF8AA71DB8749500537CE2 /* BadBoyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF8AA61DB8749500537CE2 /* BadBoyModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -759,8 +759,6 @@
 		14C8338A1DB474A0009363F9 /* UIView+STKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+STKit.m"; sourceTree = "<group>"; };
 		14C833981DB47527009363F9 /* UINavigationItem+MDCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+MDCustom.h"; sourceTree = "<group>"; };
 		14C833991DB47527009363F9 /* UINavigationItem+MDCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+MDCustom.m"; sourceTree = "<group>"; };
-		14C8339B1DB4B1DD009363F9 /* MDCityWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCityWeather.h; sourceTree = "<group>"; };
-		14C8339C1DB4B1DD009363F9 /* MDCityWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCityWeather.m; sourceTree = "<group>"; };
 		14C833A11DB4D933009363F9 /* MD_KeyedArchiver_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_KeyedArchiver_VC.xib; sourceTree = "<group>"; };
 		14F1F2121D1140F30059EDC1 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		14FAA39E1D9507C9002D81CC /* CFBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBase.h; sourceTree = "<group>"; };
@@ -1235,6 +1233,8 @@
 		14FAA7251D9507CA002D81CC /* MDTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTool.h; sourceTree = "<group>"; };
 		14FAA7261D9507CA002D81CC /* MDTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTool.m; sourceTree = "<group>"; };
 		14FBF9651C27B4F700CC0A55 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		14FF8AA51DB8749500537CE2 /* BadBoyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadBoyModel.h; sourceTree = "<group>"; };
+		14FF8AA61DB8749500537CE2 /* BadBoyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadBoyModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3351,10 +3351,10 @@
 				1415040F1DB6272A00D1737C /* MD_Model2.m */,
 				141504171DB62C5000D1737C /* MD_Model3.h */,
 				141504181DB62C5000D1737C /* MD_Model3.m */,
-				14C8339B1DB4B1DD009363F9 /* MDCityWeather.h */,
-				14C8339C1DB4B1DD009363F9 /* MDCityWeather.m */,
 				1494EF4C1DB7831200A3492F /* MD_BaseModel.h */,
 				1494EF4D1DB7831200A3492F /* MD_BaseModel.m */,
+				14FF8AA51DB8749500537CE2 /* BadBoyModel.h */,
+				14FF8AA61DB8749500537CE2 /* BadBoyModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3765,7 +3765,6 @@
 				14FAA8A91D9507CB002D81CC /* MDNavigationController.m in Sources */,
 				14FAA78C1D9507CB002D81CC /* MD_CATransform3D_VC.m in Sources */,
 				14FAA7A41D9507CB002D81CC /* MDPage3ViewController.m in Sources */,
-				14C8339D1DB4B1DD009363F9 /* MDCityWeather.m in Sources */,
 				141504291DB62FF100D1737C /* DGCListInfo.m in Sources */,
 				14FAA7661D9507CA002D81CC /* MD_Socket_Client_VC.m in Sources */,
 				14FAA7B71D9507CB002D81CC /* RDVTabBarItem.m in Sources */,
@@ -3809,6 +3808,7 @@
 				14FAA77E1D9507CB002D81CC /* MD_XML_GDataXMLNode_VC.m in Sources */,
 				14FAA7541D9507CA002D81CC /* Line.m in Sources */,
 				14FAA7B21D9507CB002D81CC /* MD_TableView_VC.m in Sources */,
+				14FF8AA71DB8749500537CE2 /* BadBoyModel.m in Sources */,
 				140CAAAE1DACA8EF009EE8A7 /* ViewController+MASAdditions.m in Sources */,
 				14FAA73F1D9507CA002D81CC /* MD_NSError_VC.m in Sources */,
 				14FAA7C71D9507CB002D81CC /* FirstViewController.m in Sources */,

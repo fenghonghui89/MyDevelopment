@@ -11,7 +11,14 @@
 #import "DGCDataParser.h"
 #import <objc/runtime.h>
 
+#pragma mark - ******************* MDCityWeather *******************
+@implementation MDCityWeather
++(MDCityWeather *)parseByData:(NSDictionary *)data{
+  
+  return nil;
+}
 
+@end
 #pragma mark - ******************* MDWeather *******************
 @implementation MDWeather
 
