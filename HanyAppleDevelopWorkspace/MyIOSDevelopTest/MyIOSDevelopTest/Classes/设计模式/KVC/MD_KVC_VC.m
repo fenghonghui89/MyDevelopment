@@ -8,13 +8,21 @@
 
 #import "MD_KVC_VC.h"
 
-@interface People : NSObject
--(id)initWithDic:(NSDictionary *)jsonObj;
+
+#pragma mark - ************ Father People *************
+@interface Father : NSObject
 @property(nonatomic,strong)NSString *name;
-@property(nonatomic,strong)NSString *age;
+@property(nonatomic,assign)NSInteger age;
+@end
+
+@interface People : NSObject
+@property(nonatomic,strong)NSString *name;
+@property(nonatomic,assign)NSInteger age;
 @property(nonatomic,strong)NSArray *guys;
 @property(nonatomic,strong)NSString *sex;
 @property(nonatomic,assign)BOOL isGuys;
+@property(nonatomic,strong)Father *father;
+-(id)initWithDic:(NSDictionary *)jsonObj;
 @end
 
 @implementation People
@@ -28,10 +36,11 @@
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{
   
-  if ([key isEqualToString:@"name1"]) {
+  DRLog(@"forUndefinedKey..%@ %@",key,value);
+  if ([key hasPrefix:@"name"]) {
     self.name = value;
-  }else if ([key isEqualToString:@"ageXXX"]) {
-    self.age = value;
+  }else if ([key hasPrefix:@"age"]) {
+    self.age = [value integerValue];
   }else{
     [super setValue:value forUndefinedKey:key];
   }
@@ -41,22 +50,26 @@
 @end
 
 
-#pragma mark - 
+#pragma mark - ************ MD_KVC_VC *************
 @interface MD_KVC_VC ()
 @property(nonatomic,strong)NSMutableArray *dataArray;
 @end
 
 @implementation MD_KVC_VC
 
-#pragma mark - ************* overwrite *************
+#pragma mark - < overwrite >
 - (void)viewDidLoad {
   
   [super viewDidLoad];
-  
-  [self test3];
+
 }
 
-#pragma mark - ************* method *************
+-(void)viewDidAppear:(BOOL)animated{
+
+  [super viewDidAppear:animated];
+  [self test3];
+}
+#pragma mark - < method >
 
 -(void)data{
 
@@ -65,13 +78,13 @@
   for (int i = 0; i<20; i++) {
     People *people = [People new];
     people.name = [NSString stringWithFormat:@"name_%d",i];
-    people.age = [NSString stringWithFormat:@"age_%d",i];
+    people.age = i;
     [self.dataArray addObject:people];
   }
 }
 
 
-#pragma mark valueForKey 简化代码 不能传递关系 会为nil
+#pragma mark * valueForKey 简化代码 不能传递关系 会为nil
 -(void)test{
   
   [self data];
@@ -85,14 +98,14 @@
 //    NSLog(@"name:%@",people.name);
 //  }
 //  if ([tag isEqualToString:@"age"]) {
-//    NSLog(@"age:%@",people.age);
+//    NSLog(@"age:%d",people.age);
 //  }
   
   //kvc
   NSLog(@"%@:%@",tag,[people valueForKey:tag]);
 }
 
-#pragma mark valueForKeyPath 传递关系
+#pragma mark * valueForKeyPath 传递关系
 -(void)test2{
   
   [self data];
@@ -102,28 +115,37 @@
   }
 }
 
-#pragma mark setValue:forUndefinedKey: 处理未定义的key
+#pragma mark * setValue:forUndefinedKey: 处理未定义的key
 -(void)test1{
 
   [self data];
   
-  NSDictionary *jsonObj = @{@"name1":@"Hany",@"age":@"12"};
+  NSDictionary *jsonObj = @{@"name111":@"Hany",@"age111":@"12"};
   People *people = [[People alloc] initWithDic:jsonObj];
-  NSLog(@"%@ %@",people.name,people.age);
+  NSLog(@"%@ %ld",people.name,(long)people.age);
 }
 
-#pragma mark setValuesForKeysWithDictionary 快速赋值
+#pragma mark * setValuesForKeysWithDictionary 快速赋值
+/*
+ 如果model有一个属性，类型是自定义类型，则setValuesForKeysWithDictionary无法解析
+ */
 -(void)test3{
 
-  NSDictionary *jsonObj = @{@"name":@"Jim",
-                            @"age":@"32",
+  NSDictionary *jsonObj = @{@"namexxx":@"Jim",
+                            @"agexxx":@(32),
+                            @"sex":@"boy",
+                            @"isGuys":@(1),
+                            @"father":@{
+                                @"name":@"Boo",
+                                @"age":@(33)
+                                },
                             @"guys":@[
                                 @{@"name":@"Hany",@"age":@"12"},
                                 @{@"name":@"Peter",@"age":@"13"}
                                 ]};
   
   People *people = [[People alloc] initWithDic:jsonObj];
-  NSLog(@"%@",people.sex);
+  NSLog(@"people..%@ %ld",people.name,(long)people.age);
   
 }
 

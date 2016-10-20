@@ -14,7 +14,7 @@
 
 @implementation MD_NSInvocation_VC
 
-#pragma mark - < vc lifecycle > -
+#pragma mark - < vc lifecycle >
 - (void)viewDidLoad {
   
   [super viewDidLoad];
@@ -27,20 +27,28 @@
   [self test_returnValue];
 }
 
-#pragma mark - < method > -
+#pragma mark - < method >
 
-#pragma mark - 单参数
+#pragma mark * 单参数
 -(void)test_singleParama{
   
   SEL myMethod = @selector(myLog);
   
   //创建一个函数签名，这个签名可以是任意的,但需要注意，签名函数的参数数量要和调用的一致。
-  NSMethodSignature *sig = [NSNumber instanceMethodSignatureForSelector:@selector(init)];
+//  NSMethodSignature *sign = [NSNumber instanceMethodSignatureForSelector:@selector(init)];
+  NSMethodSignature *sign = [self methodSignatureForSelector:myMethod];
   
   //通过签名初始化
-  NSInvocation *invocatin = [NSInvocation invocationWithMethodSignature:sig];
-  [invocatin setTarget:self];
-  [invocatin setSelector:myMethod];
+  NSInvocation *invocatin = [NSInvocation invocationWithMethodSignature:sign];
+  
+  //方式1
+//  [invocatin setTarget:self];
+//  [invocatin setSelector:myMethod];
+  
+  //方式2 与方式1等价
+  MD_NSInvocation_VC *vc = self;
+  [invocatin setArgument:&vc atIndex:0];
+  [invocatin setArgument:&myMethod atIndex:1];
   
   //消息调用
   [invocatin invoke];
@@ -51,24 +59,20 @@
   NSLog(@"MyLog");
 }
 
-#pragma mark - 多参数
+#pragma mark * 多参数
 -(void)test_mulitParama{
 
   SEL myMethod = @selector(myLog1:parm:parm:);
-  NSMethodSignature * sig  = [[self class] instanceMethodSignatureForSelector:myMethod];
+  NSMethodSignature *sign = [self methodSignatureForSelector:myMethod];
+  NSInvocation *invocatin = [NSInvocation invocationWithMethodSignature:sign];
+  [invocatin setTarget:self];
+  [invocatin setSelector:myMethod];
+
   
-  NSInvocation * invocatin = [NSInvocation invocationWithMethodSignature:sig];
-  
-  [invocatin setTarget:self];//与下面两句等价
-//  MD_NSInvocation_VC * view = self;
-//  [invocatin setArgument:&view atIndex:0];
-  
-  [invocatin setSelector:myMethod];//与下面等价
-//  [invocatin setArgument:&myMethod atIndex:1];
-  
-  int a=1;
-  int b=2;
-  int c=3;
+  //设置参数 index0/1已经被target和selector占用
+  int a = 1;
+  int b = 2;
+  int c = 3;
   [invocatin setArgument:&a atIndex:2];
   [invocatin setArgument:&b atIndex:3];
   [invocatin setArgument:&c atIndex:4];
@@ -79,33 +83,44 @@
   NSLog(@"MyLog%d:%d:%d",a,b,c);
 }
 
-#pragma mark - 返回值
+#pragma mark * 返回值
 -(void)test_returnValue{
 
   SEL myMethod = @selector(myLog2:parm:parm:);
-  NSMethodSignature * sig  = [[self class] instanceMethodSignatureForSelector:myMethod];
+  NSMethodSignature *sign = [self methodSignatureForSelector:myMethod];
   
-  NSInvocation * invocatin = [NSInvocation invocationWithMethodSignature:sig];
+  NSInvocation *invocatin = [NSInvocation invocationWithMethodSignature:sign];
   [invocatin setTarget:self];
   [invocatin setSelector:myMethod];
-  int a=1;
-  int b=2;
-  int c=3;
+  
+  int a = 1;
+  int b = 2;
+  int c = 3;
   [invocatin setArgument:&a atIndex:2];
   [invocatin setArgument:&b atIndex:3];
   [invocatin setArgument:&c atIndex:4];
-  [invocatin retainArguments];
+  [invocatin retainArguments];//将参数和target都retain一次
   
-  //我们将c的值设置为返回值
+  /*
+   eq1.设置返回值，取这个返回值，但并不是函数的返回值
+   */
   [invocatin setReturnValue:&c];
   int d;
-  //取这个返回值
   [invocatin getReturnValue:&d];
-  NSLog(@"%d",d);
+  NSLog(@"d:%d",d);//3
   
+  
+  /*
+   eq2.获取函数的返回值
+   */
+  [invocatin invoke];
+  int e;
+  [invocatin getReturnValue:&e];
+  NSLog(@"e:%d",e);
 }
 
 -(int)myLog2:(int)a parm:(int)b parm:(int)c{
+  
   NSLog(@"MyLog%d:%d:%d",a,b,c);
   return a+b+c;
 }
