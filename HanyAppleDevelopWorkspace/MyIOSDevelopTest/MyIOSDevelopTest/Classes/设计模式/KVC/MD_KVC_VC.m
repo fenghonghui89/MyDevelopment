@@ -48,8 +48,8 @@
 
 -(void)setNilValueForKey:(NSString *)key{
 
-  DRLog(@"setNilValueForKey..");
-  [super setNilValueForKey:key];
+  DRLog(@"setNilValueForKey..不抛出异常~");
+//  [super setNilValueForKey:key];//默认抛出NSInvalidArgumentException
 }
 
 @end
@@ -72,7 +72,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self test1];
+  [self test_valueForKey];
 }
 #pragma mark - < method >
 
@@ -91,13 +91,12 @@
 }
 
 
-#pragma mark * valueForKey 简化代码 不能传递关系 会为nil
+#pragma mark * valueForKey
 /*
+简化代码 不能传递关系 会为nil
  基本类型用%@和valueForKey 不会有问题？
  */
--(void)test{
-  
-  NSString *tag = arc4random()%2==2?@"name":@"age";
+-(void)test_valueForKey{
   
   People *people = [[self data] objectAtIndex:10];
   
@@ -110,27 +109,29 @@
 //  }
   
   //kvc
-  NSLog(@"%@:%@",tag,[people valueForKey:tag]);//name_10 or 10
+  DRLog(@"%@ %@",[people valueForKey:@"name"],[people valueForKey:@"age"]);//name_10 10
 }
 
-#pragma mark * valueForKeyPath 传递关系
+#pragma mark * valueForKeyPath
 /*
+ 可以传递关系
  基本类型用%@和valueForKeyPath 不会有问题？
  */
--(void)test2{
+-(void)test_valueForKeyPath{
   
   for (People *people in [self data]) {
 //    NSLog(@"%@",[people valueForKeyPath:@"name.capitalizedString"]);//首字母大写
-    NSLog(@"%@",[people valueForKeyPath:@"age"]);// 1 2 3..
+    DRLog(@"%@",[people valueForKeyPath:@"age"]);// 1 2 3..
   }
 }
 
-#pragma mark * setValuesForKeysWithDictionary 快速赋值
+#pragma mark * setValuesForKeysWithDictionary
 /*
+ 快速赋值
  如果有属性类型是基本类型 setValuesForKeysWithDictionary也可以正确赋值
  但如果类型是自定义类型，则无法正确解析
  */
--(void)test3{
+-(void)test_setValuesForKeysWithDictionary{
 
   NSDictionary *jsonObj = @{@"namexxx":@"Jim",
                             @"agexxx":@(32),
@@ -145,20 +146,34 @@
                                 @{@"name":@"Peter",@"age":@"13"}
                                 ]};
   
-  People *people = [[People alloc] initWithDic:jsonObj];
-  NSLog(@"people..%@ %ld",people.name,(long)people.age);
+  People *people = [People new];
+  [people setValuesForKeysWithDictionary:jsonObj];
+  DRLog(@"people..%@ %ld",people.name,(long)people.age);//Jim 32
+}
+
+#pragma mark * 重写setValue:forUndefinedKey
+/*
+ 处理未定义的key
+ */
+-(void)test_forUndefinedKey{
+  
+  NSDictionary *jsonObj = @{@"name111":@"Hany",@"age111":@(12)};
+  People *people = [People new];
+  [people setValuesForKeysWithDictionary:jsonObj];
+  DRLog(@"%@ %ld",people.name,(long)people.age);// Hany 12
   
 }
 
-#pragma mark * setValue:forUndefinedKey: 处理未定义的key
--(void)test1{
-  
-//  NSDictionary *jsonObj = @{@"name111":@"Hany",@"age111":@(12)};
-//  People *people = [[People alloc] initWithDic:jsonObj];
+#pragma mark * 重写setNilValueForKey
+/*
+ 默认抛出NSInvalidArgumentException
+ 可以复写该方法修改处理
+ */
+-(void)test_nil{
+
   People *people = [People new];
   [people setNilValueForKey:@"name"];
-  NSLog(@"%@ %ld",people.name,(long)people.age);
-  
+  DRLog(@"%@ %ld",people.name,(long)people.age);// null 0
 }
 
 @end

@@ -11,7 +11,7 @@
 #import "DGCListInfo.h"
 #import "AFNetworking.h"
 #import "MD_Model.h"
-#import "BadBoyModel.h"
+#import "YYModel.h"
 @interface MD_Runtime_VC ()
 
 @end
@@ -72,7 +72,7 @@
 }
 
 //遍历一个类的全部成员变量名及类型
--(void)test_showAllmemberVariable{
+-(void)test_showAllmemberVariable_nameAndType{
 
   unsigned int count = 0;
   
@@ -97,18 +97,19 @@
   
   free(ivars);
   /*
-   2016-10-20 11:34:55.703083 MyIOSDevelopTest[1085:278138] _date----@"NSString"
-   2016-10-20 11:34:55.703237 MyIOSDevelopTest[1085:278138] _week----@"NSString"
-   2016-10-20 11:34:55.703324 MyIOSDevelopTest[1085:278138] _nongli----@"NSString"
-   2016-10-20 11:34:55.703455 MyIOSDevelopTest[1085:278138] _info_day----@"NSArray"
-   2016-10-20 11:34:55.703538 MyIOSDevelopTest[1085:278138] _info_night----@"NSArray"
-   2016-10-20 11:34:55.703619 MyIOSDevelopTest[1085:278138] _point----@"TRPoint"
+   2016-10-21 17:50:51.502280 MyIOSDevelopTest[1762:438990] _date----@"NSString"
+   2016-10-21 17:50:51.502468 MyIOSDevelopTest[1762:438990] _week----@"NSString"
+   2016-10-21 17:50:51.502559 MyIOSDevelopTest[1762:438990] _nongli----@"NSString"
+   2016-10-21 17:50:51.502707 MyIOSDevelopTest[1762:438990] _info_day----@"NSArray"
+   2016-10-21 17:50:51.502795 MyIOSDevelopTest[1762:438990] _info_night----@"NSArray"
+   2016-10-21 17:50:51.502877 MyIOSDevelopTest[1762:438990] _point----@"TRPoint"
+   2016-10-21 17:50:51.502960 MyIOSDevelopTest[1762:438990] _testIntValue----q
    */
 }
 
 
 //遍历一个类的全部属性名及类型
--(void)test_showAllProperty{
+-(void)test_showAllProperty__nameAndType{
 
   unsigned int count = 0;
   objc_property_t *propertyList = class_copyPropertyList([MDWeather class], &count);
@@ -127,17 +128,18 @@
   
   free(propertyList);
   /*
-   2016-10-20 11:36:41.339529 MyIOSDevelopTest[1090:278689] date --- T@"NSString",C,N,V_date
-   2016-10-20 11:36:41.339626 MyIOSDevelopTest[1090:278689] week --- T@"NSString",C,N,V_week
-   2016-10-20 11:36:41.339713 MyIOSDevelopTest[1090:278689] nongli --- T@"NSString",C,N,V_nongli
-   2016-10-20 11:36:41.339798 MyIOSDevelopTest[1090:278689] info_day --- T@"NSArray",&,N,V_info_day
-   2016-10-20 11:36:41.339883 MyIOSDevelopTest[1090:278689] info_night --- T@"NSArray",&,N,V_info_night
-   2016-10-20 11:36:41.339968 MyIOSDevelopTest[1090:278689] point --- T@"TRPoint",&,N,V_point
+   2016-10-21 17:52:05.455139 MyIOSDevelopTest[1768:439617] date --- T@"NSString",C,N,V_date
+   2016-10-21 17:52:05.455331 MyIOSDevelopTest[1768:439617] week --- T@"NSString",C,N,V_week
+   2016-10-21 17:52:05.455425 MyIOSDevelopTest[1768:439617] nongli --- T@"NSString",C,N,V_nongli
+   2016-10-21 17:52:05.455512 MyIOSDevelopTest[1768:439617] info_day --- T@"NSArray",&,N,V_info_day
+   2016-10-21 17:52:05.455597 MyIOSDevelopTest[1768:439617] info_night --- T@"NSArray",&,N,V_info_night
+   2016-10-21 17:52:05.455683 MyIOSDevelopTest[1768:439617] point --- T@"TRPoint",&,N,V_point
+   2016-10-21 17:52:05.455837 MyIOSDevelopTest[1768:439617] testIntValue --- Tq,N,V_testIntValue
    */
 }
 
 //遍历一个类的全部实例方法
--(void)test_showAllMethod{
+-(void)test_showAllMethod_name{
 
   unsigned int count = 0;
   Method *methods = class_copyMethodList([MDWeather class], &count);
@@ -148,6 +150,25 @@
     NSString *key = [NSString stringWithUTF8String:name];
     NSLog(@"%d----%@",i,key);
   }
+  
+  /*
+   2016-10-21 18:00:12.289961 MyIOSDevelopTest[1780:441564] 0----displayCurrentModleProperty
+   2016-10-21 18:00:12.290145 MyIOSDevelopTest[1780:441564] 1----setNongli:
+   2016-10-21 18:00:12.290230 MyIOSDevelopTest[1780:441564] 2----setInfo_day:
+   2016-10-21 18:00:12.290308 MyIOSDevelopTest[1780:441564] 3----setInfo_night:
+   2016-10-21 18:00:12.290493 MyIOSDevelopTest[1780:441564] 4----nongli
+   2016-10-21 18:00:12.290570 MyIOSDevelopTest[1780:441564] 5----info_day
+   2016-10-21 18:00:12.290645 MyIOSDevelopTest[1780:441564] 6----info_night
+   2016-10-21 18:00:12.290720 MyIOSDevelopTest[1780:441564] 7----testIntValue
+   2016-10-21 18:00:12.290795 MyIOSDevelopTest[1780:441564] 8----setTestIntValue:
+   2016-10-21 18:00:12.290871 MyIOSDevelopTest[1780:441564] 9----.cxx_destruct
+   2016-10-21 18:00:12.290946 MyIOSDevelopTest[1780:441564] 10----date
+   2016-10-21 18:00:12.291019 MyIOSDevelopTest[1780:441564] 11----point
+   2016-10-21 18:00:12.291092 MyIOSDevelopTest[1780:441564] 12----setDate:
+   2016-10-21 18:00:12.291167 MyIOSDevelopTest[1780:441564] 13----setPoint:
+   2016-10-21 18:00:12.291949 MyIOSDevelopTest[1780:441564] 14----week
+   2016-10-21 18:00:12.292032 MyIOSDevelopTest[1780:441564] 15----setWeek:
+   */
 }
 
 //交换方法 - 数组添加nil不会崩溃(要打开NSMutableArray+Extension开关)
@@ -162,70 +183,49 @@
 
 //快速归档反归档
 -(void)test_arch{
+  
+  //看存储 - 归档与反归档（运用YYModel）
+}
 
-  //request
-  NSString *bodyString = @"cityname=北京&dtype=json&key=31d9b0a8a3e3d4086ad3c6dd1bfeb7ed";
-  [bodyString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
-  NSData *bodyData = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+//查看某个对象的全部属性的值
+-(void)test_getAllPropertiesValue{
+
+//  NSDictionary *dic = @{@"netName":@"Hany",@"netAge":@(12)};
+//  BadBoyModel *badBoy = [[BadBoyModel alloc] initWithDictionary:dic];
+//  [badBoy displayCurrentModleProperty];
   
-  NSURL *url = [NSURL URLWithString:@"http://op.juhe.cn/onebox/weather/query"];
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  [request setHTTPMethod:@"POST"];
-  [request setHTTPBody:bodyData];
+  NSString *urlString = @"http://op.juhe.cn/onebox/weather/query?cityname=北京&dtype=json&key=31d9b0a8a3e3d4086ad3c6dd1bfeb7ed";
+  urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+  NSURL *url = [NSURL URLWithString:urlString];
+  NSURLRequest *request = [NSURLRequest requestWithURL:url];
+  DRLog(@"url..%@",urlString);
   
-  //af
   NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
-  AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:conf];
-  AFHTTPResponseSerializer *respon = [AFHTTPResponseSerializer serializer];
-  respon.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-  manager.responseSerializer = respon;
+  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
+  AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
+  responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];//application/json;charset=utf-8会报错
+  manager.responseSerializer = responseSerializer;
   
-  NSURLSessionTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+  NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
     if (error) {
-      DRLog(@"error response..:%@",respon);
+      NSLog(@"error response:%@",response);
     }else{
       NSError *dataError = nil;
       NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
       if (dataError) {
         DRLog(@"dateError response..:%@",response);
       }else{
-        //parse
+        
         NSArray *arr = [[[data objectForKey:@"result"] objectForKey:@"data"] objectForKey:@"weather"];
-        NSMutableArray *dataArr = [NSMutableArray array];
-        [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-          MDWeather *weather = [MDWeather parseByData:obj];
-          [dataArr addObject:weather];
-        }];
+        DRLog(@"get arr count..%lu",(unsigned long)arr.count);
         
-        //log
-        [dataArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-          MDWeather *weather = (MDWeather *)obj;
-          DRLog(@"data..%@",[weather.info_night objectAtIndex:1]);
-        }];
-        
-        //save to localstore
-        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        path = [path stringByAppendingString:@"/weathers"];
-        BOOL b = [NSKeyedArchiver archiveRootObject:dataArr toFile:path];
-        if (b) {
-          DRLog(@"save success..");
-        }else{
-          DRLog(@"save error..");
-        }
+        MDWeather *weather = [MDWeather yy_modelWithJSON:[arr objectAtIndex:0]];
+        DRLog(@"weather..%@",weather);
+        [weather displayCurrentModleProperty];
       }
     }
   }];
-  [task resume];
-  
-
-}
-
-
--(void)test_0{
-
-  NSDictionary *dic = @{@"netName":@"Hany",@"netAge":@(12)};
-  BadBoyModel *badBoy = [[BadBoyModel alloc] initWithDictionary:dic];
-  [badBoy displayCurrentModleProperty];
+  [dataTask resume];
 
 }
 
@@ -233,22 +233,11 @@
 
 - (IBAction)btnTap:(id)sender {
   
-  [self test_showAllProperty];
+  [self test_getAllPropertiesValue];
 }
 
 - (IBAction)btn1Tap:(id)sender {
   
-  NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-  path = [path stringByAppendingString:@"/weathers"];
-  NSArray *data = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-  if (data) {
-    [data enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-      MDWeather *weather = (MDWeather *)obj;
-      DRLog(@"data..%@",[weather.info_night objectAtIndex:1]);
-    }];
-  }else{
-    DRLog(@"data load error..");
-  }
 
 }
 @end

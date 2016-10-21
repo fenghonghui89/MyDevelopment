@@ -7,25 +7,14 @@
 //
 
 #import "MD_Model.h"
-
+#import "YYModel.h"
 #import "DGCDataParser.h"
-#import <objc/runtime.h>
 
-#pragma mark - ******************* MDCityWeather *******************
-@implementation MDCityWeather
-+(MDCityWeather *)parseByData:(NSDictionary *)data{
-  
-  return nil;
-}
 
-@end
 #pragma mark - ******************* MDWeather *******************
 @implementation MDWeather
-
-#pragma mark - < overwrite >
-+(void)initialize{
-  
-  DRLog(@"%@ initialize",[self class]);
+-(NSString *)description{
+  return [self yy_modelDescription];
 }
 
 #pragma mark - < method >
@@ -44,51 +33,61 @@
   return weather;
 }
 
-#pragma mark - < callback >
-#pragma mark * NSCoding
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-  
-  //  self = [super init];
-  //  if (self) {
-  //    _date = [aDecoder decodeObjectForKey:@"date"];
-  //    _week = [aDecoder decodeObjectForKey:@"week"];
-  //    _nongli = [aDecoder decodeObjectForKey:@"nongli"];
-  //    _info_day = [aDecoder decodeObjectForKey:@"day"];
-  //    _info_night = [aDecoder decodeObjectForKey:@"night"];
-  //  }
-  //  return self;
-  
-  
-  unsigned int count = 0;
-  objc_property_t *properties = class_copyPropertyList([MDWeather class], &count);
-  
-  for (int i = 0;i < count;i ++) {
-    objc_property_t property = properties[i];
-    const char *name = property_getName(property);
-    NSString *key = [NSString stringWithUTF8String:name];
-    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];//解码每个属性,利用kVC取出每个属性对应的数值
-  }
-  return self;
-}
 
--(void)encodeWithCoder:(NSCoder *)aCoder{
+-(void)displayCurrentModleProperty{
   
-  //  [aCoder encodeObject:_date forKey:@"date"];
-  //  [aCoder encodeObject:_week forKey:@"week"];
-  //  [aCoder encodeObject:_nongli forKey:@"nongli"];
-  //  [aCoder encodeObject:_info_day forKey:@"day"];
-  //  [aCoder encodeObject:_info_night forKey:@"night"];
+  //获取实体类的属性名
+  NSMutableArray *allNames = [[NSMutableArray alloc] init];
   
+  unsigned int propertyCount = 0;
+  objc_property_t *propertys = class_copyPropertyList([self class], &propertyCount);
   
-  unsigned int count = 0;
-  objc_property_t *properties = class_copyPropertyList([MDWeather class], &count);
-  
-  for (int i = 0;i < count;i ++) {
-    objc_property_t property = properties[i];
-    const char *name = property_getName(property);
-    NSString *key = [NSString stringWithUTF8String:name];
-    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];//编码每个属性,利用kVC取出每个属性对应的数值
+  for (int i = 0; i < propertyCount; i ++) {
+    objc_property_t property = propertys[i];
+    const char *propertyName = property_getName(property);
+    [allNames addObject:[NSString stringWithUTF8String:propertyName]];
   }
+  
+  free(propertys);
+  
+  //拼接参数
+  NSMutableString *resultString = [[NSMutableString alloc] init];
+  
+  for (int i = 0; i < allNames.count; i ++) {
+    
+    //获取get方法
+    SEL getSel = NSSelectorFromString(allNames[i]);
+    
+    if ([self respondsToSelector:getSel]) {
+      
+      //NSInvocation调用get方法
+      NSMethodSignature *signature = [self methodSignatureForSelector:getSel];
+      NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+      [invocation setTarget:self];
+      [invocation setSelector:getSel];
+      
+      //接收返回的值
+      NSObject *__unsafe_unretained returnValue = nil;
+      [invocation invoke];
+      [invocation getReturnValue:&returnValue];
+      
+      [resultString appendFormat:@"displayCurrentModleProperty..%@\n", returnValue];
+    }
+  }
+  NSLog(@"%@", resultString);
+  
+}
+//PROPERTY_NON_ATOMIC_COPY NSString *date;
+//PROPERTY_NON_ATOMIC_COPY NSString *week;
+//PROPERTY_NON_ATOMIC_COPY NSString *nongli;
+//PROPERTY_NON_ATOMIC_STRONG NSArray *info_day;//白天天气：天气id、天气、高温、风向、风力
+//PROPERTY_NON_ATOMIC_STRONG NSArray *info_night;//夜间天气
+//PROPERTY_NON_ATOMIC_STRONG TRPoint *point;
+//PROPERTY_NON_ATOMIC_ASSIGN NSInteger testIntValue;
+//Model 属性名和 JSON 中的 Key 不相同
++(NSDictionary *)modelCustomPropertyMapper{
+  return @{@"info_day" : @"info.day",
+           @"info_night" : @"info.night"};
 }
 
 @end
@@ -101,7 +100,7 @@
 #pragma mark * other
 -(NSString*)description{
   
-  return [NSString stringWithFormat:@"x:%d,y:%d",self.x,self.y];
+  return [self yy_modelDescription];
 }
 #pragma mark * obj lifecycle
 +(void)initialize{
@@ -126,7 +125,7 @@
 #pragma mark - < override >
 #pragma mark * other
 -(NSString*)description{
-  return [NSString stringWithFormat:@"x:%d,y:%d,z:%d",self.x,self.y,self.z];
+  return [self yy_modelDescription];
 }
 
 #pragma mark * obj lifecycle

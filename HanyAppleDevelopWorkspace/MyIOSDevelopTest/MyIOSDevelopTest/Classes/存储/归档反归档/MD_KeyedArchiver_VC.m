@@ -4,10 +4,14 @@
 //
 //  Created by 冯鸿辉 on 16/6/6.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
-//
+/*
+ 如果a对象的父类实现了NSCoding协议，只要NSCoding协议通用，则子类不用实现
+ 如果a对象有属性是自定义类型 或者是“元素是自定义类型”的容器类型 则自定义类型也要实现NSCoding，否则个别属性无法存储
+ */
 
 #import "MD_KeyedArchiver_VC.h"
 #import "MD_Model3.h"
+#import "YYModel.h"
 @interface MD_KeyedArchiver_VC ()
 
 @end
@@ -22,40 +26,34 @@
 //归档
 - (IBAction)archBtnTap:(id)sender {
   
-  //详细方法
-//  //准备要归档的对象（该对象遵守NSCoding协议）
-//  TRPerson *person = [TRPerson testData];
+  //完整方法
+//  TRMidStudent *student = [[TRMidStudent testData] objectAtIndex:0];
 //  
-//  //归档对象
 //  NSMutableData *data = [NSMutableData data];
 //  NSKeyedArchiver *arch = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-//  [arch encodeObject:person forKey:@"person"];
+//  [arch encodeObject:student forKey:@"student"];
 //  [arch finishEncoding];
 //  
-//  //保存到本地
 //  NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-//  path = [path stringByAppendingString:@"/person"];
+//  path = [path stringByAppendingString:@"/student"];
 //  NSError *error = nil;
 //  [data writeToFile:path options:NSDataWritingAtomic error:&error];
-//  if (error) {
-//    DRLog(@"arch error..%@",error.localizedDescription);
+//  if (!error) {
+//    DRLog(@"finish..path:%@",path);
 //  }else{
-//    DRLog(@"finish..path:%@ length:%ld",path,(unsigned long)data.length);
+//    DRLog(@"arch error..%@",error.localizedDescription);
 //  }
   
-  
   //简便方法
-  TRStudent *student = [[TRStudent alloc] initWithName:@"Tom" age:13];
-//  TRMidStudent *student = [[TRMidStudent testData] objectAtIndex:0];
+  TRMidStudent *student = [[TRMidStudent testData] objectAtIndex:0];
   
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
   path = [path stringByAppendingString:@"/student"];
-  
   BOOL b = [NSKeyedArchiver archiveRootObject:student toFile:path];
   if (b) {
     DRLog(@"finish..path:%@",path);
   }else{
-    DRLog(@"arch error..%@",@"error...");
+    DRLog(@"arch error..");
   }
   
 }
@@ -63,35 +61,46 @@
 //反归档
 - (IBAction)unarchBtnTap:(id)sender {
   
-  //详细方法
+  //完整方法
 //  NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-//  path = [path stringByAppendingString:@"/person"];
+//  path = [path stringByAppendingString:@"/student"];
+//  
 //  NSError *error = nil;
 //  NSData *personData = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:&error];
-//  if (error) {
-//    DRLog(@"unarch error..%@",error.localizedDescription);
+//  NSKeyedUnarchiver *unarch = [[NSKeyedUnarchiver alloc] initForReadingWithData:personData];
+//  TRMidStudent *student = [unarch decodeObjectForKey:@"student"];
+//  if (student != nil) {
+//    DRLog(@"student..%@",student);
 //  }else{
-//    
-//    TRPerson *person = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-//    TRBook *book = [person.books objectForKey:@"book2"];
-//    DRLog(@"person..name:%@ age:%ld book:%@",person.name,(long)person.age,book.name);
+//    DRLog(@"error...no file");
 //  }
   
   //简便方法
   NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
   path = [path stringByAppendingString:@"/student"];
-  
-  TRStudent *student = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-//  TRMidStudent *person = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+  TRMidStudent *student = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
   if (student != nil) {
-//    TRBook *book = [person.books objectAtIndex:0];
-//    DRLog(@"person..name:%@ age:%ld school:%@ book:%@",person.name,(long)person.age,person.school.schoolName,book.name);
-//    //person..name:(null) age:0 school:一中 book:西游记
-    DRLog(@"student..name:%@ age:%ld",student.name,(long)student.age);
+    DRLog(@"student..%@",student);
   }else{
     DRLog(@"error...no file");
   }
   
 }
+
+//删除文件
+- (IBAction)deleteBtnTap:(id)sender {
+  
+  NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+  path = [path stringByAppendingString:@"/student"];
+  
+  NSError *error;
+  [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+  if (error) {
+    DRLog(@"rm error..%@",error.localizedDescription);
+  }else{
+    DRLog(@"rm success..");
+  }
+}
+
 
 @end

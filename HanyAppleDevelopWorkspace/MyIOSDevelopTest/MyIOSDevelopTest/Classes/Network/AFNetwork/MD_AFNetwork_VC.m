@@ -11,6 +11,7 @@
 #import "DGCUserManager.h"
 #import "DGCPostManager.h"
 #import "MDRootDefine.h"
+
 @interface MD_AFNetwork_VC()<DGCUserManagerDelegate,DGCPostManagerDelegate>
 
 @end

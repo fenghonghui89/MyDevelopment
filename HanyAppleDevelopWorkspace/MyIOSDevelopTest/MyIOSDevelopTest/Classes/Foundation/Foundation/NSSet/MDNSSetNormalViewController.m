@@ -9,11 +9,19 @@
 /*
  集合:1.不允许重复 2.无序
  可以存在于集合里面元素：不同类的对象，同类或子类但实例变量值不同的(要注意重写hash和isEqual方法)
- hash - （来自api说明）如果isEqual返回yes则hash则一定相等，可变对象放在容器中一定要确保对象状态不变或者hash不根据于对象状态
+ 
+ hash
+ 有可能相等
+ （来自api说明）如果isEqual返回yes则hash则一定相等，可变对象放在容器中一定要确保对象状态不变或者hash不根据于对象状态
+ 
+ 如果a对象的父类实现了hash和isEqual，只要hash和isEqual通用，则子类不用实现
+ 如果a对象有属性是自定义类型 或者是“元素是自定义类型”的容器类型 则自定义类型也要实现hash和isEqual 否则无法正确判断
  */
 
 #import "MDNSSetNormalViewController.h"
 #import "MD_Model3.h"
+
+
 @interface MDNSSetNormalViewController ()
 
 @end
@@ -31,7 +39,7 @@
   [self test_NSSet];
 }
 #pragma mark - < method >
-#pragma mark * NSSet练习
+#pragma mark * NSSet hash方法 isEqual方法
 -(void)test_NSSet{
   
   NSArray *arr = [TRMidStudent testData];
@@ -43,7 +51,8 @@
   DRLog(@"is equal..%d",[student isEqual:student2]);
  
   NSSet *set = [NSSet setWithObjects:student,student2,nil];
-  NSLog(@"%@",set);
+  NSLog(@"set..%@",set);
+  NSLog(@"finish...");
 }
 
 #pragma mark * 用NSSet重构练习：1学校-2学院-4班级-8学生 遍历所有学生

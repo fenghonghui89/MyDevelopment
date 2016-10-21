@@ -22,7 +22,7 @@
 
 #pragma mark - < customize method >
 
-#pragma mark 推送
+#pragma mark * 推送
 /**
  注册远程推送
  */
@@ -62,7 +62,7 @@
   [noti setRepeatInterval:NSCalendarUnitMinute];
 }
 
-#pragma mark 后台延时
+#pragma mark * 后台延时
 - (void) endBackgroundTask{
   
   dispatch_queue_t mainQueue = dispatch_get_main_queue();

@@ -10,9 +10,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MDRootDefine.h"
-#import "MD_BaseModel.h"
 
-@interface MDCityWeather : MD_BaseModel
+@interface MDCityWeather : NSObject
 
 PROPERTY_NON_ATOMIC_ASSIGN NSInteger error_code;//返回码
 PROPERTY_NON_ATOMIC_COPY NSString *reason;//返回说明
@@ -70,21 +69,6 @@ PROPERTY_NON_ATOMIC_COPY NSString *cityName;//城市名
 
 
 
-@class TRPoint;
-@interface MDWeather : MD_BaseModel
-
-PROPERTY_NON_ATOMIC_COPY NSString *date;
-PROPERTY_NON_ATOMIC_COPY NSString *week;
-PROPERTY_NON_ATOMIC_COPY NSString *nongli;
-PROPERTY_NON_ATOMIC_STRONG NSArray *info_day;//白天天气：天气id、天气、高温、风向、风力
-PROPERTY_NON_ATOMIC_STRONG NSArray *info_night;//夜间天气
-PROPERTY_NON_ATOMIC_STRONG TRPoint *point;
-PROPERTY_NON_ATOMIC_ASSIGN NSInteger testIntValue;
-+(MDWeather *)parseByData:(NSDictionary *)data;
-@end
-
-
-
 
 
 @interface TRPoint : NSObject
@@ -95,10 +79,28 @@ PROPERTY_NON_ATOMIC_ASSIGN NSInteger testIntValue;
 @end
 
 
+
+
 @interface TRXYZ : TRPoint
 
 @property(nonatomic,assign)int z;
 
+@end
+
+
+
+
+@interface MDWeather : NSObject
+
+PROPERTY_NON_ATOMIC_COPY NSString *date;
+PROPERTY_NON_ATOMIC_COPY NSString *week;
+PROPERTY_NON_ATOMIC_COPY NSString *nongli;
+PROPERTY_NON_ATOMIC_STRONG NSArray *info_day;//白天天气：天气id、天气、高温、风向、风力
+PROPERTY_NON_ATOMIC_STRONG NSArray *info_night;//夜间天气
+PROPERTY_NON_ATOMIC_STRONG TRPoint *point;
+PROPERTY_NON_ATOMIC_ASSIGN NSInteger testIntValue;
++(MDWeather *)parseByData:(NSDictionary *)data;
+-(void)displayCurrentModleProperty;
 @end
 
 

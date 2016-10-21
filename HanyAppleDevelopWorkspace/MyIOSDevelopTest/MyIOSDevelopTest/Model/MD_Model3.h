@@ -10,8 +10,7 @@
  */
 
 #import <Foundation/Foundation.h>
-//#import "MD_BaseModel.h"
-
+#import "YYModel.h"
 
 @protocol TRStudy <NSObject>
 @required -(void)studentStudy;
@@ -28,18 +27,10 @@
 -(NSComparisonResult)compareStudentWithName:(TRStudent*)student;
 -(NSComparisonResult)compareStudentWithAge:(TRStudent*)student;
 -(NSComparisonResult)compareStudentWithSameAge:(TRStudent*)student;
+
 -(void)studentRun;
 @end
 
-
-
-
-@class TRSchool;
-@interface TRMidStudent : TRStudent<NSCoding>
-@property(nonatomic,strong)TRSchool *school;
-@property(nonatomic,strong)NSArray *books;
-+(NSArray *)testData;
-@end
 
 
 
@@ -60,4 +51,10 @@
 @end
 
 
+
+@interface TRMidStudent : TRStudent
+@property(nonatomic,strong)TRSchool *school;
+@property(nonatomic,strong)NSArray *books;
++(NSArray *)testData;
+@end
 

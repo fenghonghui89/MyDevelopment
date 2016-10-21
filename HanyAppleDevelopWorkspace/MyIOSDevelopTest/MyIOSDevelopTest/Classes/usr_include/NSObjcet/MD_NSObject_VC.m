@@ -25,11 +25,11 @@
 -(void)viewDidAppear:(BOOL)animated{
   
   [super viewDidAppear:animated];
-  [self test_desc];
+  [self test_obj];
 }
 
 #pragma mark - < method >
-#pragma mark description debugDescription(用于断点时po xxx输出)
+#pragma mark description方法 debugDescription方法(用于断点时po xxx输出)
 -(void)test_desc{
 
   TRStudent *student = [[TRStudent alloc] init];
@@ -58,7 +58,7 @@
   NSLog(@"class address:%p",abc);//类不占用内存空间，但类对象占用内存空间 class address:0x10021db50
 }
 
-#pragma mark copy
+#pragma mark NSCopying协议
 -(void)test_obj{
   
   TRStudent *person = [[TRStudent alloc] init];

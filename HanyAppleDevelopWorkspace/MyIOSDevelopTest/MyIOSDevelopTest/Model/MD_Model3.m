@@ -16,40 +16,44 @@
 
 #pragma mark - < overwrite >
 #pragma mark * description
-//-(NSString *)description{
-//  return [NSString stringWithFormat:@"TRStudent %@ %ld",self.name,(long)self.age];
-//}
-//
-//-(NSString *)debugDescription{
-//  return [NSString stringWithFormat:@"TRStudent %@ %ld",self.name,(long)self.age];
-//}
+-(NSString *)description{
+  return [self yy_modelDescription];
+}
+
+-(NSString *)debugDescription{
+  return [self yy_modelDescription];
+}
 
 #pragma mark * hash
 -(NSUInteger)hash{
 
-  NSUInteger hashValue = self.age ^ [self.name hash];
-  DRLog(@"TRStudent hash.. %lu",(unsigned long)hashValue);
-  return hashValue;
+//  NSUInteger hashValue = self.age ^ [self.name hash];
+//  DRLog(@"TRStudent hash.. %lu",(unsigned long)hashValue);
+//  return hashValue;
+  
+  return [self yy_modelHash];
 }
 
 -(BOOL)isEqual:(id)object{
   
-  BOOL result = NO;
-  if (![object isKindOfClass:[TRStudent class]] || !object) {
-    result = NO;
-  }
+//  BOOL result = NO;
+//  if (![object isKindOfClass:[TRStudent class]] || !object) {
+//    result = NO;
+//  }
+//  
+//  if (self == object) {
+//    result = YES;
+//  }
+//  
+//  TRStudent *student = object;
+//  BOOL b_name = (!self.name && !student.name) || [self.name isEqual:student.name];
+//  BOOL b_age = self.age == student.age;
+//  result = b_name && b_age;
+//  
+//  DRLog(@"TRStudent isEqual..name:%d,age:%d,result:%d",b_name,b_age,result);
+//  return result;
   
-  if (self == object) {
-    result = YES;
-  }
-  
-  TRStudent *student = object;
-  BOOL b_name = (!self.name && !student.name) || [self.name isEqual:student.name];
-  BOOL b_age = self.age == student.age;
-  result = b_name && b_age;
-  
-  DRLog(@"TRStudent isEqual..name:%d,age:%d,result:%d",b_name,b_age,result);
-  return result;
+  return [self yy_modelIsEqual:object];
 }
 
 #pragma mark - < method >
@@ -110,10 +114,12 @@
 #pragma mark * NSCopying
 -(id)copyWithZone:(NSZone *)zone{
   
-  TRStudent *person = [TRStudent new];
-  person.age = self.age;
-  person.name = self.name;
-  return person;
+//  TRStudent *person = [TRStudent new];
+//  person.age = self.age;
+//  person.name = self.name;
+//  return person;
+  
+  return [self yy_modelCopy];
 }
 #pragma mark * NSCoding
 - (id)initWithCoder:(NSCoder *)aDecoder{
@@ -126,18 +132,9 @@
 //    self.name = [aDecoder decodeObjectForKey:@"name"];
 //  }
 //  return self;
-  
-  
-  unsigned int count = 0;
-  objc_property_t *properties = class_copyPropertyList([TRStudent class], &count);
-  
-  for (int i = 0;i < count;i ++) {
-    objc_property_t property = properties[i];
-    const char *name = property_getName(property);
-    NSString *key = [NSString stringWithUTF8String:name];
-    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
-  }
-  return self;
+
+  self = [super init];
+  return [self yy_modelInitWithCoder:aDecoder];
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
@@ -147,20 +144,7 @@
 //  [aCoder encodeObject:_name forKey:@"name"];
 //  [aCoder encodeInteger:_age forKey:@"age"];
   
-  unsigned int count = 0;
-  objc_property_t *properties = class_copyPropertyList([TRStudent class], &count);
-  
-  for (int i = 0;i < count;i ++) {
-    objc_property_t property = properties[i];
-    const char *name = property_getName(property);
-    NSString *key = [NSString stringWithUTF8String:name];
-    if ([key isEqualToString:@"age"]) {
-      [aCoder encodeInteger:[self valueForKeyPath:key] forKey:key];
-    }else{
-    
-    }
-    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
-  }
+  [self yy_modelEncodeWithCoder:aCoder];
 }
 
 #pragma mark * TRStudy
@@ -171,42 +155,94 @@
 
 @end
 
-#pragma mark - ******************** TRMidStudent ********************
-@implementation TRMidStudent
 
+
+#pragma mark - ******************** TRBook ********************
+@implementation TRBook
 #pragma mark - < overwrite >
-#pragma mark * NSSet hash
+#pragma mark * hash
 -(NSUInteger)hash{
   
-  NSUInteger hash = self.age ^ [self.name hash] ^ [self.school hash] ^ [self.books hash];
-//  hash = (NSUInteger)self;
-  DRLog(@"TRMidStudent hash.. %@ %lu",self,(unsigned long)hash);
-  return hash;
+  return [self yy_modelHash];
 }
-
 
 -(BOOL)isEqual:(id)object{
   
-  BOOL result = NO;
-  if (![object isKindOfClass:[TRStudent class]] || !object) {
-    result = NO;
+  return [self yy_modelIsEqual:object];
+}
+#pragma mark - < method >
+#pragma mark * custom init
+-(instancetype)initWithName:(NSString *)name author:(NSString *)author price:(NSString *)price page:(NSInteger)page{
+  
+  self = [super init];
+  if (self) {
+    self.name = name;
+    self.author = author;
+    self.price = price;
+    self.page = page;
   }
   
-  if (self == object) {
-    result = YES;
-  }
-  
-  TRMidStudent *student = object;
-  BOOL b_name = (!self.name && !student.name) || [self.name isEqual:student.name];
-  BOOL b_age = self.age == student.age;
-  BOOL b_school = (!self.school && !student.school) || [self.school isEqual:student.school];
-  BOOL b_books = (!self.books && !student.books) || [self.books isEqual:student.books];
-  result = b_name && b_age && b_school && b_books;
-  
-  DRLog(@"TRMidStudent isEqual..name:%d,age:%d,school:%d,books:%d,result:%d",b_name,b_age,b_school,b_books,result);
-  return result;
+  return self;
 }
 
+#pragma mark - < callback >
+#pragma mark * NSCoding
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+  
+  self = [super init];
+  return [self yy_modelInitWithCoder:aDecoder];
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+  
+  [self yy_modelEncodeWithCoder:aCoder];
+}
+
+@end
+
+#pragma mark - ******************** TRSchool ********************
+@implementation TRSchool
+#pragma mark - < overwrite >
+#pragma mark * hash
+-(NSUInteger)hash{
+  
+  return [self yy_modelHash];
+}
+
+-(BOOL)isEqual:(id)object{
+  
+  return [self yy_modelIsEqual:object];
+}
+
+#pragma mark - < method >
+#pragma mark * custom init
+-(instancetype)initWithSchoolName:(NSString *)schoolName schoolCode:(NSInteger)schoolCode{
+  
+  self = [super init];
+  if (self) {
+    self.schoolName = schoolName;
+    self.schoolCode = schoolCode;
+  }
+  return self;
+}
+
+#pragma mark - < callback >
+#pragma mark * NSCoding
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+
+  self = [super init];
+  return [self yy_modelInitWithCoder:aDecoder];
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+
+  [self yy_modelEncodeWithCoder:aCoder];
+}
+@end
+
+
+#pragma mark - ******************** TRMidStudent ********************
+@implementation TRMidStudent
 #pragma mark - < method >
 #pragma mark * other
 +(NSArray *)testData{
@@ -242,228 +278,5 @@
   return @[student,student1];
 }
 
-#pragma mark - < callback >
-#pragma mark * NSCoding
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-
-  DRLog(@"initWithCoder..");
-  
-//  self = [super initWithCoder:aDecoder];
-//  if(self){
-//    _school = [aDecoder decodeObjectForKey:@"school"];
-//    _books = [aDecoder decodeObjectForKey:@"books"];
-//  }
-//  
-//  return self;
-  
-  unsigned int count = 0;
-  objc_property_t *properties = class_copyPropertyList([TRMidStudent class], &count);
-  
-  for (int i = 0;i < count;i ++) {
-    objc_property_t property = properties[i];
-    const char *name = property_getName(property);
-    NSString *key = [NSString stringWithUTF8String:name];
-    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
-  }
-  return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder{
-
-  DRLog(@"encodeWithCoder..");
-  
-  [super encodeWithCoder:aCoder];
-  [aCoder encodeObject:_school forKey:@"school"];
-  [aCoder encodeObject:_books forKey:@"books"];
-  
-//  unsigned int count = 0;
-//  objc_property_t *properties = class_copyPropertyList([TRMidStudent class], &count);
-//  
-//  for (int i = 0;i < count;i ++) {
-//    objc_property_t property = properties[i];
-//    const char *name = property_getName(property);
-//    NSString *key = [NSString stringWithUTF8String:name];
-//    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
-//  }
-}
-
 @end
-
-#pragma mark - ******************** TRBook ********************
-@implementation TRBook
-
-#pragma mark - < overwrite >
-#pragma mark * hash
--(NSUInteger)hash{
-  
-  NSUInteger hashValue = [self.name hash] ^ [self.author hash] ^ [self.price hash] ^ self.page;
-  return hashValue;
-}
-
--(BOOL)isEqual:(id)object{
-  
-  BOOL result = NO;
-  if (![object isKindOfClass:[TRBook class]] || !object) {
-    result = NO;
-  }
-  
-  if (self == object) {
-    result = YES;
-  }
-  
-  TRBook *book = object;
-  BOOL b_name = (!self.name && !book.name) || [self.name isEqualToString:book.name];
-  BOOL b_author = (!self.author && !book.author) || [self.author isEqualToString:book.author];
-  BOOL b_price = (!self.price && !book.price) || [self.price isEqualToString:book.price];
-  BOOL b_page = self.page == book.page;
-  result = b_name && b_author && b_price && b_page;
-  
-  return result;
-}
-
-#pragma mark - < method >
-#pragma mark * custom init
--(instancetype)initWithName:(NSString *)name author:(NSString *)author price:(NSString *)price page:(NSInteger)page{
-  
-  self = [super init];
-  if (self) {
-    self.name = name;
-    self.author = author;
-    self.price = price;
-    self.page = page;
-  }
-  
-  return self;
-}
-
-#pragma mark - < callback >
-#pragma mark * NSCoding
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-  
-  self = [super init];
-  if (self) {
-    _name = [aDecoder decodeObjectForKey:@"name"];
-    _author = [aDecoder decodeObjectForKey:@"author"];
-    _price = [aDecoder decodeObjectForKey:@"price"];
-    _page = [aDecoder decodeIntegerForKey:@"page"];
-  }
-  
-  return self;
-  
-//  unsigned int count = 0;
-//  objc_property_t *properties = class_copyPropertyList([TRBook class], &count);
-//  
-//  for (int i = 0;i < count;i ++) {
-//    objc_property_t property = properties[i];
-//    const char *name = property_getName(property);
-//    NSString *key = [NSString stringWithUTF8String:name];
-//    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
-//  }
-//  return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder{
-  
-  [aCoder encodeObject:_name forKey:@"name"];
-  [aCoder encodeObject:_author forKey:@"author"];
-  [aCoder encodeObject:_price forKey:@"price"];
-  [aCoder encodeInteger:_page forKey:@"page"];
-  
-//  unsigned int count = 0;
-//  objc_property_t *properties = class_copyPropertyList([TRBook class], &count);
-//  
-//  for (int i = 0;i < count;i ++) {
-//    objc_property_t property = properties[i];
-//    const char *name = property_getName(property);
-//    NSString *key = [NSString stringWithUTF8String:name];
-//    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
-//  }
-}
-
-@end
-
-#pragma mark - ******************** TRSchool ********************
-@implementation TRSchool
-
-#pragma mark - < overwrite >
-#pragma mark * hash
--(NSUInteger)hash{
-  
-  NSUInteger hashValue = self.schoolCode ^ [self.schoolName hash];
-  return hashValue;
-}
-
--(BOOL)isEqual:(id)object{
-
-  BOOL result = NO;
-  if (![object isKindOfClass:[TRSchool class]] || !object) {
-    result = NO;
-  }
-  
-  if (self == object) {
-    result = YES;
-  }
-  
-  TRSchool *school = object;
-  BOOL b_schoolName = (!self.schoolName && !school.schoolName) || [self.schoolName isEqualToString:school.schoolName];
-  BOOL b_schoolCode = self.schoolCode == school.schoolCode;
-  result = b_schoolName && b_schoolCode;
-  
-  return result;
-}
-#pragma mark - < method >
-#pragma mark * custom init
--(instancetype)initWithSchoolName:(NSString *)schoolName schoolCode:(NSInteger)schoolCode{
-  
-  self = [super init];
-  if (self) {
-    self.schoolName = schoolName;
-    self.schoolCode = schoolCode;
-  }
-  return self;
-}
-
-#pragma mark - < callback >
-#pragma mark * NSCoding
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-
-  self = [super init];
-  if (self) {
-    _schoolName = [aDecoder decodeObjectForKey:@"schoolName"];
-    _schoolCode = [aDecoder decodeIntegerForKey:@"schoolCode"];
-  }
-  
-  return self;
-  
-//  unsigned int count = 0;
-//  objc_property_t *properties = class_copyPropertyList([TRSchool class], &count);
-//  
-//  for (int i = 0;i < count;i ++) {
-//    objc_property_t property = properties[i];
-//    const char *name = property_getName(property);
-//    NSString *key = [NSString stringWithUTF8String:name];
-//    [self setValue:[aDecoder decodeObjectForKey:key] forKeyPath:key];
-//  }
-//  return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder{
-
-  [aCoder encodeObject:_schoolName forKey:@"schoolName"];
-  [aCoder encodeInteger:_schoolCode forKey:@"schoolCode"];
-  
-//  unsigned int count = 0;
-//  objc_property_t *properties = class_copyPropertyList([TRSchool class], &count);
-//  
-//  for (int i = 0;i < count;i ++) {
-//    objc_property_t property = properties[i];
-//    const char *name = property_getName(property);
-//    NSString *key = [NSString stringWithUTF8String:name];
-//    [aCoder encodeObject:[self valueForKeyPath:key] forKey:key];
-//  }
-}
-@end
-
-
-
 
