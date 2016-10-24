@@ -22,7 +22,7 @@
 }
 
 #pragma mark - < method > -
-#pragma mark NSValue
+#pragma mark NSValue 把结构体转换成对象
 -(void)test_NSValue{
   
   //定义结构体
@@ -45,7 +45,7 @@
   NSLog(@"point: x:%d,y:%d",newPoint.x,newPoint.y);
 }
 
-#pragma mark NSNumber
+#pragma mark NSNumber 把基本数据类型转换成对象
 -(void)test_NSNumber{
 
   int i =18,i1;

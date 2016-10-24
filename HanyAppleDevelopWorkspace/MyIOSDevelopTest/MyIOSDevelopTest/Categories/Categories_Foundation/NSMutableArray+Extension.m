@@ -27,7 +27,7 @@
    __NSArrayM是NSMutableArray的真正类型
    */
   Method orginalMethod = class_getInstanceMethod(NSClassFromString(@"__NSArrayM"), @selector(addObject:));
-  Method newMethod = class_getInstanceMethod(NSClassFromString(@"__NSArrayM"), @selector(gp_addObject:));
+  Method newMethod = class_getInstanceMethod(NSClassFromString(@"__NSArrayM"), @selector(addObjectCanNil:));
   method_exchangeImplementations(orginalMethod, newMethod);
 }
 #elif flag == 2
@@ -40,10 +40,10 @@
 
 
 
--(void)gp_addObject:(id)object{
+-(void)addObjectCanNil:(id)object{
 
   if(object != nil){
-    [self gp_addObject:object];
+    [self addObjectCanNil:object];
   }
 }
 @end

@@ -12,6 +12,7 @@
 #import "AFNetworking.h"
 #import "MD_Model.h"
 #import "YYModel.h"
+#import "NSMutableArray+Extension.h"
 @interface MD_Runtime_VC ()
 
 @end
@@ -171,15 +172,42 @@
    */
 }
 
-//交换方法 - 数组添加nil不会崩溃(要打开NSMutableArray+Extension开关)
+//交换方法的实现
 -(void)test_changeMethod{
 
+  //数组添加nil不会崩溃(要打开NSMutableArray+Extension开关)
   NSMutableArray *array = [NSMutableArray array];
   [array addObject:@"1"];
   [array addObject:@"2"];
-  [array addObject:nil];
+//  [array addObject:nil];//本来会崩，交换后不会
+  [array addObjectCanNil:nil];//提出成原来的官方实现，所以会崩
   DRLog(@"%@",array);//1,2
+  
+  /*
+   其他例子，看UINaviagtionController - 跳转
+   注意被交换的方法内部会有递归调用，不用在意，因为已经交换了方法实现
+   */
+
 }
+
+-(void)test_AddMethod{
+
+  //添加方法
+  IMP myIMP = imp_implementationWithBlock(^(id _self, NSString *string) {
+    NSLog(@"Hello %@", string);
+  });
+  class_addMethod([TRPoint class], @selector(sayHello:), myIMP, "v@:@");
+  
+  
+  //测试
+  SEL sel = @selector(sayHello:);
+  if ([TRPoint instancesRespondToSelector:sel]) {
+    [[TRPoint new] performSelector:sel withObject:@"你好"];
+  }else{
+    DRLog(@"no sel..");
+  }
+}
+
 
 //快速归档反归档
 -(void)test_arch{
@@ -233,7 +261,7 @@
 
 - (IBAction)btnTap:(id)sender {
   
-  [self test_getAllPropertiesValue];
+  [self test_AddMethod];
 }
 
 - (IBAction)btn1Tap:(id)sender {

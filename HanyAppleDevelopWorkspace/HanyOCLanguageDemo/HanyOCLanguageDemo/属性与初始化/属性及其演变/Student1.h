@@ -17,6 +17,9 @@
 //}
 
 //属性
+/*
+ 属性声明时属性的名字不能为newXXXXX
+ */
 @property int age;
 @property char sex;
 @property(nonatomic,copy) NSString *name;

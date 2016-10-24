@@ -15,16 +15,16 @@
 @implementation MDUIScrollView2ViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    UIImage *image = [UIImage imageNamed:@"shu.jpg"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    scrollView.contentSize = CGSizeMake(imageView.frame.size.width,imageView.frame.size.height);
-    
-    [scrollView addSubview:imageView];
-    [self.view addSubview:scrollView];
+  [super viewDidLoad];
+  
+  UIImage *image = [UIImage imageNamed:@"shu.jpg"];
+  UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+  
+  UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+  scrollView.contentSize = CGSizeMake(imageView.frame.size.width,imageView.frame.size.height);
+  
+  [scrollView addSubview:imageView];
+  [self.view addSubview:scrollView];
 }
 
 @end

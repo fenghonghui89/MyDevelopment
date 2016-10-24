@@ -7,7 +7,9 @@
 //分类
 
 /*
- 分类一般不能添加属性，要添加属性要用到runtime，且属性是对象类型
+ 分类与runtime的应用
+ 添加属性 - 分类一般不能添加属性，要添加属性要用到runtime，且属性是对象类型
+ 替换方法 - 看MyIOSDevelpTest - runtime
  */
 #import "MDModel_Category.h"
 

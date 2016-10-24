@@ -25,16 +25,12 @@
 +(void)load{
   
   DRLog(@"load UINavigationItem+MDCustom..");
-  static dispatch_once_t onceToken;
   
+  static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    
     Method originalMethodImp = class_getInstanceMethod(self, @selector(backBarButtonItem));
-    
     Method destMethodImp = class_getInstanceMethod(self, @selector(myCustomBackButton_backBarbuttonItem));
-    
     method_exchangeImplementations(originalMethodImp, destMethodImp);
-    
   });
 }
 

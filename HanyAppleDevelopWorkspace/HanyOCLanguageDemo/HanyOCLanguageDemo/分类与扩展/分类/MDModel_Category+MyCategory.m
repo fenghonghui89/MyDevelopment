@@ -12,11 +12,14 @@ static const void *tag_city = &tag_city;
 
 @implementation MDModel_Category (MyCategory)
 
+//添加方法
 -(void)sayGoodBye{
   
   NSLog(@"bye~");
 }
 
+
+//添加属性
 -(void)setCity:(NSString *)city{
 
   objc_setAssociatedObject(self, tag_city, city, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -27,4 +30,7 @@ static const void *tag_city = &tag_city;
   return objc_getAssociatedObject(self, tag_city);
 }
 
+
+//替换方法
+//看MyIOSDevelpTest - runtime
 @end

@@ -71,10 +71,10 @@
       [invocation invoke];
       [invocation getReturnValue:&returnValue];
       
-      [resultString appendFormat:@"displayCurrentModleProperty..%@\n", returnValue];
+      [resultString appendFormat:@"%@\n", returnValue];
     }
   }
-  NSLog(@"%@", resultString);
+  DRLog(@"displayCurrentModleProperty..%@", resultString);
   
 }
 //PROPERTY_NON_ATOMIC_COPY NSString *date;

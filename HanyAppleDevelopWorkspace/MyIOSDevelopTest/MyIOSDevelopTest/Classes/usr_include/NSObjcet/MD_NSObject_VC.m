@@ -25,7 +25,7 @@
 -(void)viewDidAppear:(BOOL)animated{
   
   [super viewDidAppear:animated];
-  [self test_obj];
+  [self test_methodSelector];
 }
 
 #pragma mark - < method >
@@ -43,19 +43,31 @@
 }
 
 
-#pragma mark 类对象
+#pragma mark 类对象 isSubclassOfClass isKindOfClass isMemberOfClass
 -(void)test_classObj{
   
-  Class abc = [TRStudent class];
-  BOOL b = [TRMidStudent isSubclassOfClass:abc];
+  DRLog(@"class address:%p",[TRStudent class]);//类不占用内存空间，但类对象占用内存空间 class address:0x10021db50
   
-  if (b) {
-    NSLog(@"是子类");
+  //判断是不是某个类的子类
+  if ([TRMidStudent isSubclassOfClass:[TRStudent class]]) {
+    DRLog(@"isSubclassOfClass yes..");
   }else{
-    NSLog(@"不是子类");
-  }
+    DRLog(@"isSubclassOfClass no..");
+  }//yes
   
-  NSLog(@"class address:%p",abc);//类不占用内存空间，但类对象占用内存空间 class address:0x10021db50
+  //判断是否是这个类或者这个类的子类的实例:
+  if ([[TRMidStudent new] isKindOfClass:[TRStudent class]]) {
+    DRLog(@"isKindOfClass yes..");
+  }else{
+    DRLog(@"isKindOfClass no..");
+  }//yes
+  
+  //判断是否是这个类的实例：
+  if ([[TRMidStudent new] isMemberOfClass:[TRStudent class]]) {
+    DRLog(@"isMemberOfClass yes..");
+  }else{
+    DRLog(@"isMemberOfClass no..");
+  }//no
 }
 
 #pragma mark NSCopying协议
@@ -71,34 +83,34 @@
   NSLog(@"person2:%p %@ %ld",person2,person2.name,(long)person2.age);//person2:0x17002dc00 hany 18
 }
 
-#pragma mark 方法选择器
+#pragma mark 方法选择器 协议选择器
 -(void)test_methodSelector{
   
-  TRStudent *person = [TRStudent new];
-  
+
   SEL method = @selector(studentRun);//相当于一个方法的指针
   NSLog(@"SEL address:%p",method);//SEL address:0x1001cfff7
   
-  //选择方法时要细心，这里用的是ToSelector，有另外一个方法名是ForSelector
-  BOOL b = [TRStudent instancesRespondToSelector:method];
-  if (b) {
-    NSLog(@"有这个方法");
-    [person performSelector:method];
-    //区别：[student study]运行时编译器不会验证，而是直接运行，可能会有风险
+
+  if ([TRStudent instancesRespondToSelector:method]) {
+    NSLog(@"instancesRespondToSelector yes..");
+    [[TRStudent new] performSelector:method];//区别：[student study]运行时编译器不会验证，而是直接运行，可能会有风险
   }else{
-    NSLog(@"没有这个方法");
+    NSLog(@"instancesRespondToSelector no..");
+  }
+  
+  if ([[TRStudent new] respondsToSelector:method]) {
+    NSLog(@"respondsToSelector yes..");
+  }else{
+    NSLog(@"respondsToSelector no..");
+  }
+  
+  
+  Protocol *p = @protocol(TRStudy);//定义一个协议类型的指引指向协议
+  if ([TRStudent conformsToProtocol:p]) {
+    NSLog(@"conformsToProtocol yes..");
+  }else{
+    NSLog(@"conformsToProtocol no..");
   }
 }
 
-#pragma mark 协议选择器
--(void)test_protocolSelector{
-  
-  Protocol *p = @protocol(TRStudy);//定义一个协议类型的指引指向协议
-  BOOL b1 = [TRStudent conformsToProtocol:p];
-  if (b1) {
-    NSLog(@"遵守了协议");
-  }else{
-    NSLog(@"未遵守协议");
-  }
-}
 @end

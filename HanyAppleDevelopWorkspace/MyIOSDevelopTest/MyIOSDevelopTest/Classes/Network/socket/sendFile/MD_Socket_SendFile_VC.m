@@ -227,8 +227,8 @@
   
   [self refreshMessageTextView:[NSString stringWithFormat:@"<系统>：收到数据tag:%ld",tag]];
   
-  NSData *headerData = [data subdataWithRange:NSMakeRange(0, 100)];
-  NSString *headerStr = [[NSString alloc] initWithData:headerData encoding:NSUTF8StringEncoding];//如果不是第一次的数据大部分为nil 也有个别情况会是乱码
+  NSData *headerData = [data subdataWithRange:NSMakeRange(0, 100)];//截取接收到的数据的前100个字节 （一般50就足够）
+  NSString *headerStr = [[NSString alloc] initWithData:headerData encoding:NSUTF8StringEncoding];//通常一块未经修改的data的前100字节通过编码表翻译后可能为乱码，大部分情况为空
   NSArray *arr = [headerStr componentsSeparatedByString:@"&&"];
   
   if (headerStr && arr.count == 3)//证明是自定义插入数据

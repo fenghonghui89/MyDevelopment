@@ -184,12 +184,12 @@
 		14A101371D2B993D002069D2 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				14A101551D2BA130002069D2 /* Category_base.h */,
+				14A101561D2BA130002069D2 /* Category_base.m */,
 				14A1014F1D2B9FCE002069D2 /* MDModel_Category.h */,
 				14A101501D2B9FCE002069D2 /* MDModel_Category.m */,
 				14A101521D2B9FEC002069D2 /* MDModel_Category+MyCategory.h */,
 				14A101531D2B9FEC002069D2 /* MDModel_Category+MyCategory.m */,
-				14A101551D2BA130002069D2 /* Category_base.h */,
-				14A101561D2BA130002069D2 /* Category_base.m */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
