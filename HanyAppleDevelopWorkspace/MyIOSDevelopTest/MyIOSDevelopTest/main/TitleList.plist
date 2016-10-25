@@ -57,7 +57,16 @@
 				<key>className</key>
 				<string></string>
 				<key>sub</key>
-				<array/>
+				<array>
+					<dict>
+						<key>desc</key>
+						<string>CFRunLoop</string>
+						<key>className</key>
+						<string>MD_CFRunLoop_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>desc</key>
@@ -66,6 +75,14 @@
 				<string></string>
 				<key>sub</key>
 				<array>
+					<dict>
+						<key>desc</key>
+						<string>NSRunLoop</string>
+						<key>className</key>
+						<string>MD_NSRunLoop_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
 					<dict>
 						<key>desc</key>
 						<string>NSRange</string>

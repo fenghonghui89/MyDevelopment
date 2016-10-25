@@ -8,6 +8,7 @@
 
 #import "MD_Runtime_VC.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 #import "DGCListInfo.h"
 #import "AFNetworking.h"
 #import "MD_Model.h"
@@ -262,6 +263,7 @@
 - (IBAction)btnTap:(id)sender {
   
   [self test_AddMethod];
+  
 }
 
 - (IBAction)btn1Tap:(id)sender {
