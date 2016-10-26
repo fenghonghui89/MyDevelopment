@@ -18,8 +18,8 @@ int main(int argc, const char * argv[]) {
 //  [[Root_Protocol new] root_Protocol];//协议
 //  [[Root_CategoryAndExtersion new] root_CategoryAndExtersion];//分类与扩展
 //  [[Root_ParamaAndInit new] root_ParamaAndInit];//属性与初始化
-//  [[Root_Block new] root_Block];//block
-  [[Root_Define new] root_Define];//宏
+  [[Root_Block new] root_Block];//block
+//  [[Root_Define new] root_Define];//宏
   
   return 0;
 }

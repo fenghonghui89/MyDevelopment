@@ -10,13 +10,13 @@
 #import "Block_base.h"
 
 
-@interface Block_value ()<Block_base_Delegate>
+@interface Block_value ()<BlockDelegate>
 @property(nonatomic,copy)void(^block)(BOOL b);
 @end
 
 @implementation Block_value
 -(void)root_Block_value{
-  [self test9];
+  [self test6];
 }
 
 #pragma mark - < method > -
@@ -92,29 +92,27 @@
 }
 
 #pragma mark block delegate
--(void)test6
-{
-
+-(void)test6{
   
   Block_base *obj = [Block_base new];
   obj.delegate = self;
-  
+  [obj downloadFile];
 }
 
--(void)blockDelegate:(Block_base *)vc block:(Block_base_block)block{
-  
-  block(YES,^void(NSInteger value){
-    NSLog(@"~~~value:%d",value);
-  });
-}
+-(void)blockDelegate:(Block_base *)vc data:(NSInteger)data finishDownload:(Type_BiggerBlock)block{
 
-#pragma mark block做block参数
--(void)test7{
+  NSLog(@"2.获取到数据：%ld",(long)data);
   
-  Block_base *obj = [Block_base new];
-  [obj retryBlockMethod:^(BOOL a, retryblock reb) {
-    reb(YES);
-  }];
+  //设置参数
+  NSInteger clientId = 90;
+  
+  void(^Ablock)(NSInteger,void(^)(void)) = ^void(NSInteger value,void(^block)(void)){
+    NSLog(@"4.编号%ld的服务器说：请求客户端关闭客户端端口...关闭好了",(long)value);
+    block();
+  };
+  
+  //触发响应block
+  block(clientId,Ablock);
 }
 
 #pragma mark block循环引用问题
@@ -131,36 +129,11 @@
   };
   
   //解决(ios下)
-//  __weak typeof(self) weakSelf = self;
-//  self.block = ^(BOOL a){
-//    __strong typeof(self) strongSelf = weakSelf;//可忽略
-//    [strongSelf isViewLoaded];
-//  };
+  //  __weak typeof(self) weakSelf = self;
+  //  self.block = ^(BOOL a){
+  //    __strong typeof(self) strongSelf = weakSelf;//可忽略
+  //    [strongSelf isViewLoaded];
+  //  };
 }
 
-#pragma mark blcok做属性
--(void)test9{
-
-  Block_base *obj = [Block_base new];
-  
-  //eg1
-//  obj.blockParama = ^(NSInteger value){
-//    NSLog(@"value1:%ld",(long)value);
-//  };
-//  [obj blockparamaTest];
-
-  //eg2
-//  obj.blockParama1 = ^(BOOL value,Block_root_block block){
-//    NSLog(@"value1:%d",value);
-//    block(YES);
-//  };
-//  [obj blockparamaTest];
-  
-  //eg3
-  obj.blockParama1(YES,^(NSInteger value){
-    NSLog(@"值:%ld",(long)value);
-  });
-
- 
-}
 @end

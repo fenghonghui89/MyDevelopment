@@ -8,35 +8,29 @@
 #import <Foundation/Foundation.h>
 
 
-typedef void (^Block_root_block)(NSInteger value);
-typedef void (^Block_base_block)(BOOL b,Block_root_block block);
+//block做block的参数
+typedef void (^Type_Block)(NSInteger value,void(^block)(void));
+typedef void (^Type_BiggerBlock)(NSInteger value,Type_Block block);
 
 
 
-typedef void (^retryblock)(BOOL b);
-typedef void (^Block_base_retryBlock)(BOOL a,retryblock reb);//把retryblock放到外面定义
 
 
 
 
 
 @class Block_base;
-@protocol Block_base_Delegate <NSObject>
-
+@protocol BlockDelegate <NSObject>
 @optional
--(void)blockDelegate:(Block_base *)vc block:(Block_base_block)block;
-
+-(void)blockDelegate:(Block_base *)vc data:(NSInteger)data finishDownload:(Type_BiggerBlock)block;
 @end
 
 
 
+
 @interface Block_base : NSObject
-@property(nonatomic,copy)Block_root_block blockParama;//block做属性
-@property(nonatomic,copy)Block_base_block blockParama1;//block做属性
-
-@property(nonatomic,weak)id<Block_base_Delegate> delegate;
--(void)retryBlockMethod:(Block_base_retryBlock)block;
-
--(void)blockparamaTest;
--(void)root_Block_base;
+@property(nonatomic,copy)Type_Block blockParama;
+@property(nonatomic,copy)Type_BiggerBlock bigBlockParam;
+@property(nonatomic,weak)id<BlockDelegate> delegate;
+-(void)downloadFile;
 @end
