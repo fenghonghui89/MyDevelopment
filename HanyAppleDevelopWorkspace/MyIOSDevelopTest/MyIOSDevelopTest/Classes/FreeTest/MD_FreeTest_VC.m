@@ -50,6 +50,7 @@
 #pragma mark - < action >
 - (IBAction)btnTap:(id)sender {
   
+  UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[] applicationActivities:@[]];
 }
 
 @end

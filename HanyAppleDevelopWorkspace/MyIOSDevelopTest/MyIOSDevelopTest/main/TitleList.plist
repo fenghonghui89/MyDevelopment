@@ -450,6 +450,14 @@
 				<array>
 					<dict>
 						<key>desc</key>
+						<string>UIActivityViewController</string>
+						<key>className</key>
+						<string>MD_UIActivityVC_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
 						<string>UIControl</string>
 						<key>className</key>
 						<string>MD_UIControl_VC</string>
