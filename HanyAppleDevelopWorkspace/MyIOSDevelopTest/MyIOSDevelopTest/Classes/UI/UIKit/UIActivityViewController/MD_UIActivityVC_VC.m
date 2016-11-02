@@ -22,20 +22,21 @@
 
 - (IBAction)btnTap:(id)sender {
   
-  NSString *message = @"this is message..";
-  NSString *subject = @"this is subject..";
-  NSURL *url = [NSURL URLWithString:@"http://tpages.cn"];
-  NSArray *files = @[
-                     [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://o9ivu69va.bkt.clouddn.com/images/testimg1.jpg"]]],
-                     [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://o9ivu69va.bkt.clouddn.com/images/testimg.jpg"]]]
+  NSString *message = [NSString stringWithFormat:@"this is message"];
+  NSString *subject = [NSString stringWithFormat:@"this is subject"];
+  NSURL *url = [NSURL URLWithString:[@"http://tpages.cn" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];
+  UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://o9ivu69va.bkt.clouddn.com/images/testimg.jpg"]]];
+  UIImage *img1 = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://o9ivu69va.bkt.clouddn.com/images/testimg1.jpg"]]];
+  NSArray *files = @[img
+//                     ,img1
                      ];
-  NSArray *activityItems = @[message,subject,url,files];
+  NSArray *activityItems = @[message,subject,img,url];
   
-  UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[[[ZSCustomActivity alloc] init]]];
-  activity.excludedActivityTypes = @[UIActivityTypeAirDrop];
+  UIActivityViewController *ac = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[[[ZSCustomActivity alloc] init]]];
+  ac.excludedActivityTypes = @[UIActivityTypeAirDrop];
+//  [ac setValue:subject forKey:@"subject"];
   
-  
-  [self presentViewController:activity animated:YES completion:NULL];
+  [self presentViewController:ac animated:YES completion:NULL];
 }
 
 @end
