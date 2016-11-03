@@ -7,7 +7,8 @@
 //
 
 #import "ZSCustomActivity.h"
-#import <Social/Social.h>
+#import "MD_UIActivityVC_VC1.h"
+#import "MDRootDefine.h"
 @implementation ZSCustomActivity
 
 NSString *const UIActivityTypeZSCustomMine = @"ZSCustomActivityMine";
@@ -51,6 +52,14 @@ NSString *const UIActivityTypeZSCustomMine = @"ZSCustomActivityMine";
 -(void)performActivity{
 
   NSLog(@"Activity run");
+  
+//  MD_UIActivityVC_VC1 *vc = [[MD_UIActivityVC_VC1 alloc] initWithNibName:@"MD_UIActivityVC_VC1" bundle:nil];
+//  [[MDTool getCurrentVC] presentViewController:vc animated:YES completion:nil];
+  
+  NSURL *instagramURL = [NSURL URLWithString:@"instagram://camera"];
+  if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+    [[UIApplication sharedApplication] openURL:instagramURL];
+  }
 }
 
 - (void)activityDidFinish:(BOOL)completed{

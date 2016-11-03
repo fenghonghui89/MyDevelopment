@@ -45,6 +45,12 @@
 	<string>可以允许我用照相机吗？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>可以允许我用相册吗？</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>instagram</string>
+	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>可以允许我用定位吗？</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>

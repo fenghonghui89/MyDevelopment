@@ -399,4 +399,59 @@ void STLogResponderChain(UIResponder *responder) {
   
 }
 
+
+/**
+ 获取当前显示的vc
+
+ @return vc
+ */
++(UIViewController *)getCurrentVC{
+  
+  UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+  if(window.windowLevel != UIWindowLevelNormal)
+  {
+    NSArray *windows = [[UIApplication sharedApplication] windows];
+    for(UIWindow * tmpWin in windows)
+    {
+      if(tmpWin.windowLevel == UIWindowLevelNormal)
+      {
+        window = tmpWin;
+        break;
+      }
+    }
+  }
+  
+  
+  UIView *frontView = [[window subviews] objectAtIndex:0];
+  id nextResponder = [frontView nextResponder];
+  UIViewController *result = nil;
+  if([nextResponder isKindOfClass:[UIViewController class]])
+  {
+    result = nextResponder;
+  }
+  else
+  {
+    result = window.rootViewController;
+  }
+  
+  return result;
+}
+
+
+/**
+ 获取当前屏幕中present出来的viewcontroller
+
+ @return vc
+ */
++(UIViewController *)getPresentedViewController
+{
+  UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+  UIViewController *topVC = appRootVC;
+  if(topVC.presentedViewController)
+  {
+    topVC = topVC.presentedViewController;
+  }
+  
+  return topVC;
+}
 @end

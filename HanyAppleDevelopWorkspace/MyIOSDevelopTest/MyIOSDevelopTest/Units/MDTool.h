@@ -167,5 +167,17 @@ void STLogResponderChain(UIResponder *responder);
 
 + (BOOL)cureentThreadIsMain;
 
+/**
+ 获取当前显示的vc
+ 
+ @return vc
+ */
++(UIViewController *)getCurrentVC;
 
+/**
+ 获取当前屏幕中present出来的viewcontroller
+ 
+ @return vc
+ */
++(UIViewController *)getPresentedViewController;
 @end
