@@ -49,6 +49,7 @@ NSString *const UIActivityTypeZSCustomMine = @"ZSCustomActivityMine";
   return UIActivityCategoryShare;
 }
 
+//点击icon
 -(void)performActivity{
 
   NSLog(@"Activity run");
@@ -56,7 +57,7 @@ NSString *const UIActivityTypeZSCustomMine = @"ZSCustomActivityMine";
 //  MD_UIActivityVC_VC1 *vc = [[MD_UIActivityVC_VC1 alloc] initWithNibName:@"MD_UIActivityVC_VC1" bundle:nil];
 //  [[MDTool getCurrentVC] presentViewController:vc animated:YES completion:nil];
   
-  NSURL *instagramURL = [NSURL URLWithString:@"instagram://camera"];
+  NSURL *instagramURL = [NSURL URLWithString:@"instagram://media?id=1"];
   if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
     [[UIApplication sharedApplication] openURL:instagramURL];
   }
