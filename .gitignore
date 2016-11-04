@@ -1,4 +1,5 @@
-testmp3.mp3
-testmv.mp4
+*.mp3
+*.mp4
+*.pdf
 *.xcuserstate
 workspace.xml
