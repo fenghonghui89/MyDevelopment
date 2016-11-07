@@ -9,6 +9,7 @@
 #import "ZSCustomActivity.h"
 #import "MD_UIActivityVC_VC1.h"
 #import "MDRootDefine.h"
+#import <Social/Social.h>
 @implementation ZSCustomActivity
 
 NSString *const UIActivityTypeZSCustomMine = @"ZSCustomActivityMine";
@@ -57,10 +58,12 @@ NSString *const UIActivityTypeZSCustomMine = @"ZSCustomActivityMine";
 //  MD_UIActivityVC_VC1 *vc = [[MD_UIActivityVC_VC1 alloc] initWithNibName:@"MD_UIActivityVC_VC1" bundle:nil];
 //  [[MDTool getCurrentVC] presentViewController:vc animated:YES completion:nil];
   
-  NSURL *instagramURL = [NSURL URLWithString:@"instagram://media?id=1"];
-  if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
-    [[UIApplication sharedApplication] openURL:instagramURL];
-  }
+//  NSURL *instagramURL = [NSURL URLWithString:@"instagram://media?id=1"];
+//  if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+//    [[UIApplication sharedApplication] openURL:instagramURL];
+//  }
+  
+  
 }
 
 - (void)activityDidFinish:(BOOL)completed{

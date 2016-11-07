@@ -41,7 +41,7 @@
    显示：@[text,text,...,img,img...url]
    注意：会忽略text；同时有文本与url时只会分享url
    
-   google+
+   google+ 扩展
    显示：@[text,text,...,img,img,...,url]
    注意：同时有图片与url，url会显示为链接；多个链接或文本之间会隔行
    
@@ -49,7 +49,7 @@
    显示：@[text,text,...,img,url]
    注意：只能分享一张图；分享时url不会显示，分享后才能见到，放在文本末尾；多个文字链接或文本之间会隔行
    
-   instagram
+   instagram 扩展
    显示：@[img]
    注意：分享内容只能包含一张图，否则不会出现在列表上；文本可以放到UIPasteboard粘贴板，提示用户分享时粘贴
    
@@ -58,7 +58,7 @@
    */
   
   
-  NSArray *activityItems = @[fileUrl];//fb twitter google+
+  NSArray *activityItems = @[fileUrl];
   
   
   UIActivityViewController *ac = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[[ZSCustomActivity new]]];
