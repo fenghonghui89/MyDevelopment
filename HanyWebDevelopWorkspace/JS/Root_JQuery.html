@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery演示页面</title>
+    <link type="text/css" href="../MainCSS.css" rel="stylesheet">
+    <script src="../jquery-3.1.1.js"></script>
+</head>
+<body>
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
+<h1 id="root_menu"><b>目录</b></h1>
+
+<h2>jQuery效果</h2>
+<a href="#jq_result_hideshow">隐藏 显示</a><br/>
+<a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
+<a href="#js_base_err">js 异常捕获</a><br/>
+<a href="#js_base_checkForm">js 表单验证</a><br/>
+
+
+
+<!------------------------------------------------------------------隐藏 显示------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_result_hideshow">隐藏 显示</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function () {
+       $("p").click(function(){
+           $(this).hide(1000,function(){alert("hide..");});
+       });
+    });
+
+</script>
+
+<p>如果您点击我，我会消失。</p>
+<p>点击我，我会消失。</p>
+<p>也要点击我哦。</p>
+
+<br/><br/><br/>
+</body>
+</html>
