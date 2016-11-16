@@ -1289,7 +1289,10 @@
     * json - 一种语法,"key":"value" value可以是null
     * json对象 - {"key":"value",...} (包含多个键值对,与firstName = "John";lastName = "Doe";等价)
     * */
-    function jsonParse(){
+
+
+    //json对象 json字符串 json对象数组
+    function jsonObj(){
 
         //json对象
         var JSONObject = {
@@ -1299,12 +1302,12 @@
             "phone":"555 1234567"
         };
 
-        document.getElementById("jname").innerHTML=JSONObject.name
-        document.getElementById("jage").innerHTML=JSONObject.age
-        document.getElementById("jstreet").innerHTML=JSONObject.street
-        document.getElementById("jphone").innerHTML=JSONObject.phone
+        document.getElementById("jname").innerHTML = JSONObject.name
+        document.getElementById("jage").innerHTML = JSONObject.age
+        document.getElementById("jstreet").innerHTML = JSONObject['street']
+        document.getElementById("jphone").innerHTML = JSONObject['phone']
 
-        //json数组
+        //json对象数组
         var employees = [
             { "firstName":"Bill" , "lastName":"Gates" },
             { "firstName":"George" , "lastName":"Bush" },
@@ -1312,22 +1315,38 @@
         ];
         employees[0].firstName = 'Apple';
         document.getElementById('jarray').innerHTML = employees[0].firstName;
+
+
     }
 
-
+    //字符串->json对象
     function jsonParser(){
 
-            //用解析器解析json文本
-            var jsonObj = '{"students" : [' +
-                    '{"name":"Tom","age":12},' +
-                    '{"name":"Ann","age":13},' +
-                    '{"name":"Jim","age":14}' +
-                    ']}';
+        var jsonObj = '{"students" : [' +
+                '{"jsName":"Tom","jsAge":12},' +
+                '{"jsName":"Ann","jsAge":13},' +
+                '{"jsName":"Jim","jsAge":14}' +
+                ']}';
 
 
-            var obj = JSON.parse(jsonObj);
-            document.getElementById('jparser').innerHTML = obj.students[2].age;
-        }
+        var obj = JSON.parse(jsonObj);
+        document.getElementById('jparser').innerHTML = obj.students[2].jsAge;
+        document.getElementById('jparser').innerHTML = obj['students'][1]['jsAge'];
+    }
+
+    //json对象->字符串
+    function  jsonStr(){
+
+        var JSONObject = {
+            "name":"Bill Gates",
+            "street":"Fifth Avenue New York 666",
+            "age":56,
+            "phone":"555 1234567"
+        };
+
+        var jsonStr = JSON.stringify(JSONObject);
+        document.getElementById('jstr').innerHTML = jsonStr;
+    }
 </script>
 
 <p>
@@ -1338,10 +1357,15 @@
 
     jsonArray:<span id="jarray"></span><br/>
 </p>
-<button type="button" onclick="jsonParse()">json对象</button>
+<button type="button" onclick="jsonObj()">json对象</button>
 
 <p id="jparser">json parser</p>
-<button type="button" onclick="jsonParser()">用解析器解析json文本</button>
+<button type="button" onclick="jsonParser()">字符串->json对象</button>
+
+<div>
+    <textarea id="jstr">text</textarea>
+</div>
+<button type="button" onclick="jsonStr()">json对象->字符串</button>
 
 <br/><br/><br/>
 
