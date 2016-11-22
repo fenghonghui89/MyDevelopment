@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "GAI.h"
 
-static NSString *const kTrackingId = @"UA-87378503-1";
+static NSString *const kTrackingId = @"UA-87378503-5";
 
 
 @interface AppDelegate ()

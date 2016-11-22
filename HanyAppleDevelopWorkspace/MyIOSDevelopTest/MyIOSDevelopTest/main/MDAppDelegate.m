@@ -12,6 +12,7 @@
 #import "MDRootDefine.h"
 #import "MDGlobalManager.h"
 #import <stdio.h>
+@import UserNotifications;
 @interface MDAppDelegate ()
 
 @property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier backgroundTaskIdentifier;
@@ -23,21 +24,95 @@
 #pragma mark - < customize method >
 
 #pragma mark * 推送
+
+-(void)registerForNotification:(NSDictionary *)launchOptions{
+  
+  //如果app处于未运行时收到推送，点击通知打开app之后会有userInfo
+  NSDictionary *remoteNotiUserInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+  if (remoteNotiUserInfo) {
+    
+  }
+  
+  NSDictionary *localNotiUserInfo = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
+  if (localNotiUserInfo) {
+    
+  }
+}
+
 /**
  注册远程推送
  */
--(void)registerForRemoteNotification:(UIApplication *)application{
+-(void)registerForRemoteNotification{
   
-  UIUserNotificationSettings *setting =[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];
+  UIUserNotificationType allUserNotificationTypes = (UIUserNotificationTypeSound|UIUserNotificationTypeAlert|UIUserNotificationTypeBadge);
+  UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:allUserNotificationTypes categories:nil];
   [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
-  [application registerForRemoteNotifications];
+  
+  
+  //ios10
+  UNAuthorizationOptions allAuthorizationOptions = (UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert);
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+  [center requestAuthorizationWithOptions:allAuthorizationOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
+    if (!error) {
+      NSLog(@"request authorization succeeded!");
+    }
+  }];
+  
+  [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+    NSLog(@"%@",settings);
+  }];
+  
+  //注册token
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 /**
  注册本地推送
  */
--(void)localNotification{
+-(void)registerForLocalNotification{
+  
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+  NSLog(@"~~~");
+#else
+  NSLog(@"~~~");
+#endif
+  
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+ 	NSLog(@"~~~");
+#else
+  NSLog(@"~~~");
+#endif
+  
+#if defined(__IPHONE_10_0)
+  NSLog(@"~~~");
+#else
+  NSLog(@"~~~");
+#endif
+  
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
+  //Local Notification
+  UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+  content.title = @"Introduction to Notifications";
+  content.subtitle = @"Session 707";
+  content.body = @"Woah! These new notifications look amazing! Don’t you agree?";
+  content.badge = @1;
+  
+  //2 分钟后提醒
+  UNTimeIntervalNotificationTrigger *trigger1 = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:120 repeats:NO];
+  NSString *requestIdentifier = @"sampleRequest";
+  
+  UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:requestIdentifier
+                                                                        content:content
+                                                                        trigger:trigger1];
+  
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+  [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+    
+  }];
+
+#endif
+  
   UILocalNotification* noti = [[UILocalNotification alloc] init];
   
   //设置发射时间为5s之后
@@ -45,21 +120,18 @@
   noti.fireDate = [date dateByAddingTimeInterval:5];
   
   //设置弹出内容
-  noti.alertBody = @"好久没来玩啦~";
+  noti.alertBody = @"alertBody..";
+  noti.alertAction = @"alertAction..";
   
-  noti.alertAction = @"alertAction";
-  
-  //设置应用图标右上角显示的数字
-  noti.applicationIconBadgeNumber = 3;
-  
-  //传参（在AppDelegate）
-  noti.userInfo = @{@"name":@"zhangsan"};
+  noti.applicationIconBadgeNumber = 3;//设置应用图标右上角显示的数字
+  noti.userInfo = @{@"name":@"zhangsan"};//传参
+  noti.repeatInterval = NSCalendarUnitMinute;//设置每隔1分钟弹出通知
   
   //把通知添加进日程
-  [[UIApplication sharedApplication]scheduleLocalNotification:noti];
+  [[UIApplication sharedApplication] scheduleLocalNotification:noti];
   
-  //设置每隔1分钟弹出通知
-  [noti setRepeatInterval:NSCalendarUnitMinute];
+  
+  
 }
 
 #pragma mark * 后台延时
@@ -83,7 +155,7 @@
 
 /**
  模拟的一个 Long-Running Task 方法
-
+ 
  @param paramSender paramSender
  */
 - (void)timerMethod:(NSTimer *)paramSender{
@@ -102,7 +174,7 @@
 #pragma mark * app lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
   
-
+  
   //默认启动摇晃
   [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
   
@@ -110,7 +182,7 @@
   //setup rootvc
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.window setBackgroundColor:[UIColor whiteColor]];
-//  self.window.tintColor = [UIColor purpleColor];
+  //  self.window.tintColor = [UIColor purpleColor];
   
   MDClassesViewController *vc = [[MDClassesViewController alloc] init];
   vc.data = [MDTool getPlistDataByName:@"TitleList"];
@@ -123,13 +195,13 @@
   [[MDTool sharedInstance] showDeviceInfo];
   
   //注册远程推送
-  [self registerForRemoteNotification:application];
+  [self registerForRemoteNotification];
   
   //开启日志输出
   [MDGlobalManager sharedInstance].openLog = NO;
-
-
-
+  
+  
+  
   
   return YES;
 }
@@ -140,17 +212,17 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-
-//后台延时
   
-//  self.backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^(void) {
-//    NSLog(@"停止后台任务");
-//    [self endBackgroundTask];
-//  }];
-//  
-//  //模拟一个Long-Running Task
-//  self.myTimer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerMethod:) userInfo:nil repeats:YES];
-
+  //后台延时
+  
+  //  self.backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^(void) {
+  //    NSLog(@"停止后台任务");
+  //    [self endBackgroundTask];
+  //  }];
+  //
+  //  //模拟一个Long-Running Task
+  //  self.myTimer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerMethod:) userInfo:nil repeats:YES];
+  
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -180,7 +252,7 @@
     NSLog(@"decToken不一样");
     [ud setObject:decToken forKey:@"deviceToken"];
   }
-
+  
   [ud synchronize];
 }
 

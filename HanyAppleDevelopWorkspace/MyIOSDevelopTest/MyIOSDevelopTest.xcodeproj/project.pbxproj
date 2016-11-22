@@ -4231,10 +4231,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.MyIOSDevelopTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDevPush.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = HanyAppDev;
+				PROVISIONING_PROFILE_SPECIFIER = HanyAppDevPush;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
@@ -4254,10 +4254,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.MyIOSDevelopTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDevPush.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = HanyAppDev;
+				PROVISIONING_PROFILE_SPECIFIER = HanyAppDevPush;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
