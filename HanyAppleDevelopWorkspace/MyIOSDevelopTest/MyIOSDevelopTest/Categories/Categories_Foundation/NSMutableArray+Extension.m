@@ -26,9 +26,28 @@
   /*
    __NSArrayM是NSMutableArray的真正类型
    */
-  Method orginalMethod = class_getInstanceMethod(NSClassFromString(@"__NSArrayM"), @selector(addObject:));
-  Method newMethod = class_getInstanceMethod(NSClassFromString(@"__NSArrayM"), @selector(addObjectCanNil:));
-  method_exchangeImplementations(orginalMethod, newMethod);
+  SEL orignalSel = @selector(addObject:);
+  SEL swizzledSel = @selector(md_addObject:);
+  Class thClass = NSClassFromString(@"__NSArrayM");
+  
+  Method orignalMethod = class_getInstanceMethod(thClass, orignalSel);
+  Method swizzledMethod = class_getInstanceMethod(thClass, swizzledSel);
+  
+  BOOL canAdd = class_addMethod(thClass,
+                                orignalSel,
+                                method_getImplementation(swizzledMethod),
+                                method_getTypeEncoding(swizzledMethod));
+  if (canAdd) {
+    NSLog(@"can add..");
+    class_replaceMethod(thClass,
+                        swizzledSel,
+                        method_getImplementation(orignalMethod),
+                        method_getTypeEncoding(orignalMethod));
+  }else{
+    NSLog(@"can not add..");
+    method_exchangeImplementations(orignalMethod, swizzledMethod);
+  }
+  
 }
 #elif flag == 2
 
@@ -40,10 +59,10 @@
 
 
 
--(void)addObjectCanNil:(id)object{
+-(void)md_addObject:(id)object{
 
   if(object != nil){
-    [self addObjectCanNil:object];
+    [self md_addObject:object];
   }
 }
 @end

@@ -32,6 +32,7 @@
     Method destMethodImp = class_getInstanceMethod(self, @selector(myCustomBackButton_backBarbuttonItem));
     method_exchangeImplementations(originalMethodImp, destMethodImp);
   });
+  
 }
 
 static char kCustomBackButtonKey;

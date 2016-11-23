@@ -90,7 +90,7 @@ shared##className = [[self alloc] init]; \
 return shared##className; \
 }
 
-//固件版本判断
+//运行时判断设备系统版本
 #define IOS_VERSION_OR_ABOVE(_version) (([[[UIDevice currentDevice] systemVersion] floatValue] >= _version)? (YES):(NO))
 
 

@@ -14,5 +14,6 @@
 #import "MDTool.h"
 #import "MDQuickDevelopDefine.h"
 #import "MDSpecialDefine.h"
+#import "MDGlobalManager.h"
 
 #endif /* MDRootDefine_h */

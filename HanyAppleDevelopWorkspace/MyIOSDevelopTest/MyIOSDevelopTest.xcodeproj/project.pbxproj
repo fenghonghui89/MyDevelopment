@@ -242,6 +242,8 @@
 		14D5AA221DBEF7CB00085365 /* MD_NSRunLoop_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D5AA201DBEF7CB00085365 /* MD_NSRunLoop_VC.xib */; };
 		14D5AA271DBEF8B000085365 /* MD_CFRunLoop_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5AA251DBEF8B000085365 /* MD_CFRunLoop_VC.m */; };
 		14D5AA281DBEF8B000085365 /* MD_CFRunLoop_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D5AA261DBEF8B000085365 /* MD_CFRunLoop_VC.xib */; };
+		14DE61CF1DE5A0AA001A9968 /* MyString.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DE61CE1DE5A0AA001A9968 /* MyString.m */; };
+		14DE61D21DE5A443001A9968 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DE61D11DE5A443001A9968 /* NSObject+Swizzle.m */; };
 		14F1F2131D1140F30059EDC1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1F2121D1140F30059EDC1 /* libresolv.tbd */; };
 		14FAA7331D9507CA002D81CC /* MDNSArrayNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3A91D9507C9002D81CC /* MDNSArrayNormalViewController.m */; };
 		14FAA7351D9507CA002D81CC /* MDNArrayAdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3AE1D9507C9002D81CC /* MDNArrayAdvancedViewController.m */; };
@@ -804,6 +806,10 @@
 		14D5AA241DBEF8B000085365 /* MD_CFRunLoop_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CFRunLoop_VC.h; sourceTree = "<group>"; };
 		14D5AA251DBEF8B000085365 /* MD_CFRunLoop_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CFRunLoop_VC.m; sourceTree = "<group>"; };
 		14D5AA261DBEF8B000085365 /* MD_CFRunLoop_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_CFRunLoop_VC.xib; sourceTree = "<group>"; };
+		14DE61CD1DE5A0AA001A9968 /* MyString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyString.h; sourceTree = "<group>"; };
+		14DE61CE1DE5A0AA001A9968 /* MyString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyString.m; sourceTree = "<group>"; };
+		14DE61D01DE5A443001A9968 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		14DE61D11DE5A443001A9968 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
 		14F1F2121D1140F30059EDC1 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		14FAA39E1D9507C9002D81CC /* CFBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBase.h; sourceTree = "<group>"; };
 		14FAA3A11D9507C9002D81CC /* NSByteOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSByteOrder.h; sourceTree = "<group>"; };
@@ -1800,6 +1806,10 @@
 				14C8337B1DB474A0009363F9 /* NSString+Sha1.m */,
 				14C8337C1DB474A0009363F9 /* NSString+URLEncoding.h */,
 				14C8337D1DB474A0009363F9 /* NSString+URLEncoding.m */,
+				14DE61D01DE5A443001A9968 /* NSObject+Swizzle.h */,
+				14DE61D11DE5A443001A9968 /* NSObject+Swizzle.m */,
+				14DE61CD1DE5A0AA001A9968 /* MyString.h */,
+				14DE61CE1DE5A0AA001A9968 /* MyString.m */,
 			);
 			path = Categories_Foundation;
 			sourceTree = "<group>";
@@ -3934,6 +3944,7 @@
 				14C833961DB474A0009363F9 /* UIView+MDCategory.m in Sources */,
 				14FAA7621D9507CA002D81CC /* MD_NSURLSession_VC.m in Sources */,
 				14FAA7AA1D9507CB002D81CC /* UIScrollView.m in Sources */,
+				14DE61CF1DE5A0AA001A9968 /* MyString.m in Sources */,
 				14C833941DB474A0009363F9 /* UIImage+Resize.m in Sources */,
 				14FAA7A11D9507CB002D81CC /* MDPageControlViewController.m in Sources */,
 				1415042C1DB62FF100D1737C /* DGCUserInfo.m in Sources */,
@@ -4024,6 +4035,7 @@
 				14C8338F1DB474A0009363F9 /* NSString+Encrypto.m in Sources */,
 				14FAA7901D9507CB002D81CC /* MD_UIBezierPath_CustomView1.m in Sources */,
 				14FAA7611D9507CA002D81CC /* MD_NSURLProtocol_VC.m in Sources */,
+				14DE61D21DE5A443001A9968 /* NSObject+Swizzle.m in Sources */,
 				14FAA8ED1D9507CB002D81CC /* ZTCameraView.m in Sources */,
 				14FAA76A1D9507CA002D81CC /* MD_Socket_SendFile_TVC.m in Sources */,
 				14FAA8E81D9507CB002D81CC /* MD_UICustom_VC.m in Sources */,
@@ -4227,7 +4239,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "MyIOSDevelopTest/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
@@ -4251,7 +4263,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "MyIOSDevelopTest/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDevPush.test;

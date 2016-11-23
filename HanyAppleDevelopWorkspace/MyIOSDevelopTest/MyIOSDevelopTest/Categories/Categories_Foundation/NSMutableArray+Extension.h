@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSMutableArray (Extension)
--(void)addObjectCanNil:(id)object;
+-(void)md_addObject:(id)object;
 @end

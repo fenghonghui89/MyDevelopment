@@ -14,6 +14,7 @@
 #import "MD_Model.h"
 #import "YYModel.h"
 #import "NSMutableArray+Extension.h"
+#import "MyString.h"
 @interface MD_Runtime_VC ()
 
 @end
@@ -37,6 +38,7 @@
  initialize不是init
  运行时间的行为之一就是initialize。虽然看起来有点像大家常见的init，但是他们并不相同。
  在程序运行过程中，它会在你程序中每个类调用一次initialize。这个调用的时间发生在你的类接收到消息之前，但是在它的超类接收到initialize之后。
+ load方法 - 一个类加入到runtime系统中就会调用，eg:一个自定义类重写load方法，那么程序一启动就会执行load方法
  */
 -(void)test_initialize{
   
@@ -180,8 +182,8 @@
   NSMutableArray *array = [NSMutableArray array];
   [array addObject:@"1"];
   [array addObject:@"2"];
-//  [array addObject:nil];//本来会崩，交换后不会
-  [array addObjectCanNil:nil];//提出成原来的官方实现，所以会崩
+  [array addObject:nil];//本来会崩，交换后不会
+//  [array addObjectCanNil:nil];//会替换成原来的官方实现，所以会崩
   DRLog(@"%@",array);//1,2
   
   /*
@@ -191,14 +193,20 @@
 
 }
 
+//添加方法
 -(void)test_AddMethod{
 
-  //添加方法
   IMP myIMP = imp_implementationWithBlock(^(id _self, NSString *string) {
     NSLog(@"Hello %@", string);
   });
-  class_addMethod([TRPoint class], @selector(sayHello:), myIMP, "v@:@");
   
+  
+  BOOL canAdd = class_addMethod([TRPoint class], @selector(sayHello:), myIMP, "v@:@");
+  if (canAdd) {
+    ULog(@"添加方法成功..");
+  }else{
+    ULog(@"添加方法失败..可能已经有同名方法");
+  }
   
   //测试
   SEL sel = @selector(sayHello:);
@@ -268,6 +276,10 @@
 
 - (IBAction)btn1Tap:(id)sender {
   
-
+//  [self test_changeMethod];
+  
+  MyString *string = [[MyString alloc] init];
+  [string performSelector:@selector(countAll)];
+  [string performSelector:@selector(pushViewController)];
 }
 @end
