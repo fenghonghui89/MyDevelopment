@@ -17,6 +17,7 @@
 //如果没有声明实例变量就用如下写法（匹配ios5）
 @synthesize age, sex, name;
 
+//因为@property默认给该属性生成getter和setter方法，当getter和setter方法同时被重写时，则系统就不会自动生成getter和setter方法了，也不会自动帮你生成_num变量，所以不会识别
 
 -(void)say
 {

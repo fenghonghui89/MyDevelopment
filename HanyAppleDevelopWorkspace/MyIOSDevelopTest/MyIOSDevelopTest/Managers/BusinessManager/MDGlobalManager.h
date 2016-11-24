@@ -10,5 +10,7 @@
 
 @interface MDGlobalManager : NSObject
 @property(nonatomic,assign)BOOL openLog;
+@property(nonatomic,assign)BOOL isOpenNotification;
+@property(nonatomic,assign)BOOL hasFirstLaunch;
 +(MDGlobalManager *)sharedInstance;
 @end

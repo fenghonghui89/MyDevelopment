@@ -11,9 +11,10 @@
 #import "MDNavigationController.h"
 #import "MDRootDefine.h"
 #import "MDGlobalManager.h"
+#import "MDLocalNotificationManager.h"
 #import <stdio.h>
 @import UserNotifications;
-@import Speech;
+
 @interface MDAppDelegate ()
 
 @property (nonatomic, unsafe_unretained) UIBackgroundTaskIdentifier backgroundTaskIdentifier;
@@ -26,7 +27,7 @@
 
 #pragma mark * 推送
 
--(void)registerForNotification:(NSDictionary *)launchOptions{
+-(void)registerNotification:(NSDictionary *)launchOptions{
   
   //如果app处于未运行时收到推送，点击通知打开app之后会有userInfo
   NSDictionary *remoteNotiUserInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
@@ -39,8 +40,10 @@
     ULog(@"未运行时收到推送 localNotiUserInfo..%@",localNotiUserInfo);
   }
   
-  [self registerForLocalNotification];
-//  [self registerForRemoteNotification];
+  if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
+    [[MDLocalNotificationManager sharedInstance] registerLocalNotification];
+  }
+
 }
 
 /**
@@ -70,128 +73,6 @@
   [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
-/**
- 注册本地推送
- */
--(void)registerForLocalNotification{
-  
-  ULog(@"ios 10或以上..");
-  
-  //设置推送内容
-  UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-  content.title = @"Introduction to Notifications";
-  content.subtitle = @"Session 707";
-  content.body = @"Woah! These new notifications look amazing! Don’t you agree?";
-  content.badge = @1;
-  content.sound = [UNNotificationSound defaultSound];
-  
-  UNTimeIntervalNotificationTrigger *timeTrigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:61 repeats:YES];
-  
-  NSString *requestIdentifier = @"sampleRequest";
-  
-  //center
-  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-  
-  //授权
-  UNAuthorizationOptions allAuthorizationOptions = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
-  [center requestAuthorizationWithOptions:allAuthorizationOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
-    if (error) {
-      ULog(@"error..%@",error);
-    }else{
-      if (granted) {
-        
-      }
-    }
-  }];
-  
-  //request
-  UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:requestIdentifier
-                                                                        content:content
-                                                                        trigger:timeTrigger];
-  
-  [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-    if (error) {
-      ULog(@"error..%@",error);
-    }else{
-      ULog(@"success..");
-    }
-  }];
-  
-
-  
-//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-//
-//  ULog(@"ios 10或以上..");
-//  
-//  //设置推送内容
-//  UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-//  content.title = @"Introduction to Notifications";
-//  content.subtitle = @"Session 707";
-//  content.body = @"Woah! These new notifications look amazing! Don’t you agree?";
-//  content.badge = @1;
-//  
-//  UNTimeIntervalNotificationTrigger *trigger1 = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:5 repeats:YES];//两分钟后推送
-//
-//  NSString *requestIdentifier = @"sampleRequest";
-//  
-//  //request
-//  UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:requestIdentifier
-//                                                                        content:content
-//                                                                        trigger:trigger1];
-//  
-//  //add
-//  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-//  [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-//    NSLog(@"local noti compleate..%@",error);
-//  }];
-//  
-//#else
-//  
-//  ULog(@"ios 10以下..");
-//  
-//  UILocalNotification* noti = [[UILocalNotification alloc] init];
-//  
-//  noti.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];//设置触发时间
-//  noti.repeatInterval = NSCalendarUnitMinute;//重复间隔
-//  noti.alertBody = @"alertBody..";
-//  noti.alertAction = @"alertAction..";
-//  noti.timeZone = [NSTimeZone defaultTimeZone];
-//  noti.applicationIconBadgeNumber = 3;//设置应用图标右上角显示的数字
-//  noti.soundName = UILocalNotificationDefaultSoundName;//通知被触发时播放的声音
-//  noti.userInfo = @{@"name":@"zhangsan"};//传参
-//  
-//  //把通知添加进日程
-//  [[UIApplication sharedApplication] scheduleLocalNotification:noti];
-//#endif
-  
-//  ULog(@"ios 10以下..");
-//  
-//  UILocalNotification* noti = [[UILocalNotification alloc] init];
-//  
-//  noti.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];//设置触发时间
-//  noti.repeatInterval = NSCalendarUnitMinute;//重复间隔
-//  noti.alertBody = @"alertBody..";
-//  noti.alertAction = @"alertAction..";
-//  noti.timeZone = [NSTimeZone defaultTimeZone];
-//  noti.applicationIconBadgeNumber = 3;//设置应用图标右上角显示的数字
-//  noti.soundName = UILocalNotificationDefaultSoundName;//通知被触发时播放的声音
-//  noti.userInfo = @{@"name":@"zhangsan"};//传参
-//
-//  //ios8后，需要添加这个注册，才能得到授权
-//  if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
-//  {
-//    UIUserNotificationType type =  UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-//    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:nil];
-//    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-//  }
-//  else
-//  {
-//
-//  }
-//
-//  //把通知添加进日程
-//  [[UIApplication sharedApplication] scheduleLocalNotification:noti];
-}
 
 #pragma mark * 后台延时
 - (void) endBackgroundTask{
@@ -233,8 +114,6 @@
 #pragma mark * app lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
   
-  SFSpeechRecognizer *sf = [SFSpeechRecognizer new];
-  
   //开启日志输出
   [MDGlobalManager sharedInstance].openLog = YES;
   
@@ -245,12 +124,19 @@
   [[MDTool sharedInstance] showDeviceInfo];
   
   //注册推送
-  [self registerForNotification:launchOptions];
+  [self registerNotification:launchOptions];
+  
+  //修改标识
+  if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
+    ULog(@"第一次运行，初始化完成");
+    [MDGlobalManager sharedInstance].hasFirstLaunch = YES;
+  }else{
+    ULog(@"不是第一次运行，初始化完成");
+  }
   
   //setup rootvc
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.window setBackgroundColor:[UIColor whiteColor]];
-  //  self.window.tintColor = [UIColor purpleColor];
   
   MDClassesViewController *vc = [[MDClassesViewController alloc] init];
   vc.data = [MDTool getPlistDataByName:@"TitleList"];
@@ -293,7 +179,16 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark * remote noti
+
+#pragma mark * 推送授权
+//ios9 or earlier
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+  
+  [[MDLocalNotificationManager sharedInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
+}
+
+#pragma mark * 远程推送
+//ios9 or earlier
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
   NSString *decToken = [NSString stringWithFormat:@"%@", deviceToken];
@@ -312,26 +207,17 @@
   [ud synchronize];
 }
 
-#pragma mark * local noti
-//点击通知返回应用时会调用该方法
+
+
+#pragma mark * 本地推送
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
   
-  //接收传递的参数
-  NSString* name = [notification.userInfo objectForKey:@"name"];
-  NSLog(@"name = %@",name);
-  
-  
-  //更新显示的徽章个数
-  NSInteger badge = [UIApplication sharedApplication].applicationIconBadgeNumber;
-  badge = badge-1;
-  badge = (badge>=0?badge:0);
-  [UIApplication sharedApplication].applicationIconBadgeNumber = badge;
-  
-  //在不需要再推送时，删除通知
-//  [[UIApplication sharedApplication] cancelAllLocalNotifications];
-//  [[UIApplication sharedApplication] cancelLocalNotification:notification];
-  
+  [[MDLocalNotificationManager sharedInstance] application:application didReceiveLocalNotification:notification];
 }
 
+-(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler{
+  
+  [[MDLocalNotificationManager sharedInstance] application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
+}
 
 @end

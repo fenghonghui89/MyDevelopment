@@ -221,6 +221,9 @@
 		145ECB2D1DC99B60008D729F /* ZS_60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 145ECB291DC99B60008D729F /* ZS_60x60.png */; };
 		145ECB2E1DC99B60008D729F /* ZS_76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 145ECB2A1DC99B60008D729F /* ZS_76x76.png */; };
 		147BF7CC1DCC869100361A77 /* testmv.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 147BF7CB1DCC85C500361A77 /* testmv.mp4 */; };
+		1481FEC81DE688E1001B5FD2 /* MDLocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1481FEC71DE688E1001B5FD2 /* MDLocalNotificationManager.m */; };
+		1481FECC1DE6A064001B5FD2 /* MDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1481FECA1DE6A064001B5FD2 /* MDSettingViewController.m */; };
+		1481FECD1DE6A064001B5FD2 /* MDSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1481FECB1DE6A064001B5FD2 /* MDSettingViewController.xib */; };
 		14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A727631CAB760100DC7BC0 /* libxml2.tbd */; };
 		14B16DBC1D9E474600659FA8 /* MD_NSRange_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */; };
 		14C8338B1DB474A0009363F9 /* NSDate+Tpages.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833711DB474A0009363F9 /* NSDate+Tpages.m */; };
@@ -767,6 +770,11 @@
 		145ECB2A1DC99B60008D729F /* ZS_76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZS_76x76.png; sourceTree = "<group>"; };
 		147BF7CB1DCC85C500361A77 /* testmv.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = testmv.mp4; sourceTree = "<group>"; };
 		147DB17E1A8C7FA600F38EA4 /* MyIOSDevelopTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyIOSDevelopTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1481FEC61DE688E1001B5FD2 /* MDLocalNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLocalNotificationManager.h; sourceTree = "<group>"; };
+		1481FEC71DE688E1001B5FD2 /* MDLocalNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLocalNotificationManager.m; sourceTree = "<group>"; };
+		1481FEC91DE6A064001B5FD2 /* MDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSettingViewController.h; sourceTree = "<group>"; };
+		1481FECA1DE6A064001B5FD2 /* MDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSettingViewController.m; sourceTree = "<group>"; };
+		1481FECB1DE6A064001B5FD2 /* MDSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSettingViewController.xib; sourceTree = "<group>"; };
 		14A727631CAB760100DC7BC0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		14B16DBA1D9E474600659FA8 /* MD_NSRange_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSRange_VC.h; sourceTree = "<group>"; };
 		14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRange_VC.m; sourceTree = "<group>"; };
@@ -3426,6 +3434,9 @@
 				14FAA67F1D9507CA002D81CC /* MDClassesViewController.m */,
 				14FAA6801D9507CA002D81CC /* MDNavigationController.h */,
 				14FAA6811D9507CA002D81CC /* MDNavigationController.m */,
+				1481FEC91DE6A064001B5FD2 /* MDSettingViewController.h */,
+				1481FECA1DE6A064001B5FD2 /* MDSettingViewController.m */,
+				1481FECB1DE6A064001B5FD2 /* MDSettingViewController.xib */,
 				14FAA6821D9507CA002D81CC /* TitleList.plist */,
 				14FAA6831D9507CA002D81CC /* 记录.rtf */,
 			);
@@ -3452,6 +3463,8 @@
 				14FAA68B1D9507CA002D81CC /* DGCUserManager.m */,
 				14FAA68C1D9507CA002D81CC /* MDGlobalManager.h */,
 				14FAA68D1D9507CA002D81CC /* MDGlobalManager.m */,
+				1481FEC61DE688E1001B5FD2 /* MDLocalNotificationManager.h */,
+				1481FEC71DE688E1001B5FD2 /* MDLocalNotificationManager.m */,
 			);
 			path = BusinessManager;
 			sourceTree = "<group>";
@@ -3646,6 +3659,7 @@
 				141503711DB623D500D1737C /* Icon-Small@2x.png in Resources */,
 				141503A31DB623D500D1737C /* playing20@2x.png in Resources */,
 				141503B61DB623D500D1737C /* playing38@2x.png in Resources */,
+				1481FECD1DE6A064001B5FD2 /* MDSettingViewController.xib in Resources */,
 				141503791DB623D500D1737C /* Default@2x.png in Resources */,
 				141503D81DB623D500D1737C /* navigationbar_back_highlighted@2x.png in Resources */,
 				141503D61DB623D500D1737C /* navigationbar_arrow_up@2x.png in Resources */,
@@ -3964,6 +3978,7 @@
 				14FAA7921D9507CB002D81CC /* MDUIButtonViewController.m in Sources */,
 				14FAA73A1D9507CA002D81CC /* MDNSDateViewController.m in Sources */,
 				14FAA7B91D9507CB002D81CC /* MDTBVC1ViewController.m in Sources */,
+				1481FEC81DE688E1001B5FD2 /* MDLocalNotificationManager.m in Sources */,
 				140CAAA21DACA8EF009EE8A7 /* AsyncSocket.m in Sources */,
 				14FAA7DF1D9507CB002D81CC /* VPImageCropperViewController.m in Sources */,
 				14FAA77F1D9507CB002D81CC /* MD_NSXML_VC.m in Sources */,
@@ -3994,6 +4009,7 @@
 				14FAA7721D9507CB002D81CC /* MDWebviewUserAgentViewController.m in Sources */,
 				14FAA79F1D9507CB002D81CC /* MDUIImageViewViewController.m in Sources */,
 				14FAA79D1D9507CB002D81CC /* MD_UIIPC_ViewController.m in Sources */,
+				1481FECC1DE6A064001B5FD2 /* MDSettingViewController.m in Sources */,
 				14FAA7E41D9507CB002D81CC /* MD_PhotoLibrary_PreviewVC.m in Sources */,
 				14C833911DB474A0009363F9 /* NSString+URLEncoding.m in Sources */,
 				14FAA7D21D9507CB002D81CC /* MD_GestureRecognizer_VC.m in Sources */,

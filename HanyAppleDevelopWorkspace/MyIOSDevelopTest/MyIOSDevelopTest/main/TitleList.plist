@@ -1160,5 +1160,13 @@
 		<key>sub</key>
 		<array/>
 	</dict>
+	<dict>
+		<key>desc</key>
+		<string>设置</string>
+		<key>className</key>
+		<string>MDSettingViewController</string>
+		<key>sub</key>
+		<array/>
+	</dict>
 </array>
 </plist>
