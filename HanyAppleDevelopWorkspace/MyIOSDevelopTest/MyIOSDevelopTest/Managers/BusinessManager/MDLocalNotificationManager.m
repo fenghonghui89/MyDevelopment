@@ -30,42 +30,38 @@
 //注册推送
 -(void)registerLocalNotification{
   
-  //ios9 or earlier
+  //ios9 or earlier register
   if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max)
   {
     ULog(@"ios9 or earlier auth..");
     
-    //ios8以后提示授权
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
-    {
-      //type
-      UIUserNotificationType type = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-      
-      //categories
-      //点击action不会自动取消角标和通知
-      UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
-      action1.identifier = @"action1_identifier";
-      action1.title=@"Accept..";
-      action1.activationMode = UIUserNotificationActivationModeForeground;//当点击的时候启动程序
-      
-      UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
-      action2.identifier = @"action2_identifier";
-      action2.title=@"Reject..";
-      action2.activationMode = UIUserNotificationActivationModeBackground;//当点击的时候不启动程序，在后台处理
-      action2.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略；
-      action2.destructive = YES;
-      
-      UIMutableUserNotificationCategory *actionCategory = [[UIMutableUserNotificationCategory alloc] init];
-      actionCategory.identifier = @"category1";//这组动作的唯一标示
-      [actionCategory setActions:@[action1,action2] forContext:(UIUserNotificationActionContextDefault)];
-      NSSet *categories = [NSSet setWithObject:actionCategory];
-      
-      UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:categories];
-      [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
+    //type
+    UIUserNotificationType type = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+    
+    //categories
+    //点击action不会自动取消角标和通知
+    UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
+    action1.identifier = @"action1_identifier";
+    action1.title=@"Accept..";
+    action1.activationMode = UIUserNotificationActivationModeForeground;//当点击的时候启动程序
+    
+    UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
+    action2.identifier = @"action2_identifier";
+    action2.title=@"Reject..";
+    action2.activationMode = UIUserNotificationActivationModeBackground;//当点击的时候不启动程序，在后台处理
+    action2.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略；
+    action2.destructive = YES;
+    
+    UIMutableUserNotificationCategory *actionCategory = [[UIMutableUserNotificationCategory alloc] init];
+    actionCategory.identifier = @"category1";//这组动作的唯一标示
+    [actionCategory setActions:@[action1,action2] forContext:(UIUserNotificationActionContextDefault)];
+    NSSet *categories = [NSSet setWithObject:actionCategory];
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:categories];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
   }
   
-  //ios10 or later
+  //ios10 or later register
   else
   {
     ULog(@"ios10 or later auth..");
@@ -101,8 +97,8 @@
           //设置标识
           [MDGlobalManager sharedInstance].isOpenNotification = YES;
 
-          //调度推送
-          [self scheduleLocalNotification];
+          //调度本地推送推送
+//          [self scheduleLocalNotification];
           
           //获取当前的通知设置
           [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
@@ -124,6 +120,9 @@
     
     
   }
+  
+  //注册token
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
   
 }
 
@@ -223,8 +222,8 @@
     //设置标识
     [MDGlobalManager sharedInstance].isOpenNotification = YES;
     
-    //调度推送
-    [self scheduleLocalNotification];
+    //调度本地推送
+//    [self scheduleLocalNotification];
   }
   else
   {
@@ -262,6 +261,38 @@
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 
   completionHandler();
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+  
+  NSString *decToken = [NSString stringWithFormat:@"%@", deviceToken];
+  ULog(@"ios9/10 decToken get:%@",decToken);
+  
+  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+  NSString *dt = [ud objectForKey:@"deviceToken"];
+  
+  if ([dt isEqualToString:decToken]) {
+    ULog(@"decToken一样");
+  }else{
+    ULog(@"decToken不一样");
+    [ud setObject:decToken forKey:@"deviceToken"];
+  }
+  
+  [ud synchronize];
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+  
+  ULog(@"ios9/10 fail to register remote noti error..%@",error.localizedDescription);
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+  
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+  
+  completionHandler(UIBackgroundFetchResultNoData);
 }
 
 #pragma mark - < callback >

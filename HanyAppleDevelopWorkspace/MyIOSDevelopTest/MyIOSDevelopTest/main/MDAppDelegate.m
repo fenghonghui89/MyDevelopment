@@ -46,32 +46,7 @@
 
 }
 
-/**
- 注册远程推送
- */
--(void)registerForRemoteNotification{
-  
-  UIUserNotificationType allUserNotificationTypes = UIUserNotificationTypeSound|UIUserNotificationTypeAlert|UIUserNotificationTypeBadge;
-  UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:allUserNotificationTypes categories:nil];
-  [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
-  
-  
-  //ios10
-  UNAuthorizationOptions allAuthorizationOptions = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
-  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-  [center requestAuthorizationWithOptions:allAuthorizationOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
-    if (!error) {
-      NSLog(@"request authorization succeeded!");
-    }
-  }];
-  
-  [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-    NSLog(@"%@",settings);
-  }];
-  
-  //注册token
-  [[UIApplication sharedApplication] registerForRemoteNotifications];
-}
+
 
 
 #pragma mark * 后台延时
@@ -179,36 +154,32 @@
 }
 
 
-#pragma mark * 推送授权
-//ios9 or earlier
+#pragma mark * 推送（ios9 or earlier）
+//推送授权
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
   
   [[MDLocalNotificationManager sharedInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
-#pragma mark * 远程推送
-//ios9 or earlier
+//远程推送
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
-  NSString *decToken = [NSString stringWithFormat:@"%@", deviceToken];
-  NSLog(@"decToken get:%@",decToken);
-  
-  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-  NSString *dt = [ud objectForKey:@"deviceToken"];
-  
-  if ([dt isEqualToString:decToken]) {
-    NSLog(@"decToken一样");
-  }else{
-    NSLog(@"decToken不一样");
-    [ud setObject:decToken forKey:@"deviceToken"];
-  }
-  
-  [ud synchronize];
+  [[MDLocalNotificationManager sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+  [[MDLocalNotificationManager sharedInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
 
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+  [[MDLocalNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo];
+}
 
-#pragma mark * 本地推送
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+  [[MDLocalNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+
+//本地推送
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
   
   [[MDLocalNotificationManager sharedInstance] application:application didReceiveLocalNotification:notification];

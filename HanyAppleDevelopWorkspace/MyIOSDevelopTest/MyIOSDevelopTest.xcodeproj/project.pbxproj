@@ -779,6 +779,7 @@
 		14B16DBA1D9E474600659FA8 /* MD_NSRange_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSRange_VC.h; sourceTree = "<group>"; };
 		14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRange_VC.m; sourceTree = "<group>"; };
 		14B16DBD1D9E4B9100659FA8 /* NSRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSRange.h; sourceTree = "<group>"; };
+		14BA1C931DE833CB00FF668A /* MyIOSDevelopTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyIOSDevelopTest.entitlements; sourceTree = "<group>"; };
 		14C833701DB474A0009363F9 /* NSDate+Tpages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Tpages.h"; sourceTree = "<group>"; };
 		14C833711DB474A0009363F9 /* NSDate+Tpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Tpages.m"; sourceTree = "<group>"; };
 		14C833721DB474A0009363F9 /* NSIndexSet+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Convenience.h"; sourceTree = "<group>"; };
@@ -1866,6 +1867,7 @@
 		14FAA3811D9507C9002D81CC /* MyIOSDevelopTest */ = {
 			isa = PBXGroup;
 			children = (
+				14BA1C931DE833CB00FF668A /* MyIOSDevelopTest.entitlements */,
 				14FAA6751D9507CA002D81CC /* main */,
 				141502C51DB623D500D1737C /* LocalResource */,
 				14FAA3821D9507C9002D81CC /* Categories */,
@@ -3590,6 +3592,11 @@
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = UT3AAGTGVE;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -4247,6 +4254,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyIOSDevelopTest/MyIOSDevelopTest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
 				DEVELOPMENT_TEAM = "";
@@ -4271,6 +4279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyIOSDevelopTest/MyIOSDevelopTest.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
