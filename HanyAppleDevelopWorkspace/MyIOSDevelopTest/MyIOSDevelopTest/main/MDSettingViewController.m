@@ -8,7 +8,7 @@
 
 #import "MDSettingViewController.h"
 #import "MDGlobalManager.h"
-#import "MDLocalNotificationManager.h"
+#import "MDPushNotificationManager.h"
 
 @interface MDSettingViewController ()
 
@@ -114,12 +114,12 @@
     }
     else//打开接收推送，系统推送开关已打开
     {
-      [[MDLocalNotificationManager sharedInstance] registerLocalNotification];
+      [[MDPushNotificationManager sharedInstance] registerLocalNotification];
     }
   }
   else//不接收推送
   {
-    [[MDLocalNotificationManager sharedInstance] cancleAllNotifications];
+    [[MDPushNotificationManager sharedInstance] cancleAllNotifications];
   }
 
   

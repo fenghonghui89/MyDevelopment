@@ -11,7 +11,7 @@
 #import "MDNavigationController.h"
 #import "MDRootDefine.h"
 #import "MDGlobalManager.h"
-#import "MDLocalNotificationManager.h"
+#import "MDPushNotificationManager.h"
 #import <stdio.h>
 @import UserNotifications;
 
@@ -41,7 +41,7 @@
   }
   
   if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
-    [[MDLocalNotificationManager sharedInstance] registerLocalNotification];
+    [[MDPushNotificationManager sharedInstance] registerLocalNotification];
   }
 
 }
@@ -158,36 +158,36 @@
 //推送授权
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
   
-  [[MDLocalNotificationManager sharedInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
+  [[MDPushNotificationManager sharedInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
 //远程推送
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
-  [[MDLocalNotificationManager sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+  [[MDPushNotificationManager sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-  [[MDLocalNotificationManager sharedInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+  [[MDPushNotificationManager sharedInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-  [[MDLocalNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo];
+  [[MDPushNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo];
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-  [[MDLocalNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+  [[MDPushNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
 //本地推送
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
   
-  [[MDLocalNotificationManager sharedInstance] application:application didReceiveLocalNotification:notification];
+  [[MDPushNotificationManager sharedInstance] application:application didReceiveLocalNotification:notification];
 }
 
 -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler{
   
-  [[MDLocalNotificationManager sharedInstance] application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
+  [[MDPushNotificationManager sharedInstance] application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
 }
 
 @end

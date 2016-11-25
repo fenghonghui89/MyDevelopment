@@ -6,20 +6,20 @@
 //  Copyright © 2016年 hanyfeng. All rights reserved.
 //
 
-#import "MDLocalNotificationManager.h"
+#import "MDPushNotificationManager.h"
 #import "MDRootDefine.h"
 #import "MDGlobalManager.h"
 @import UserNotifications;
-@interface MDLocalNotificationManager()<UNUserNotificationCenterDelegate>
+@interface MDPushNotificationManager()<UNUserNotificationCenterDelegate>
 
 @end
 
-@implementation MDLocalNotificationManager
+@implementation MDPushNotificationManager
 
 #pragma mark - < method >
-+(MDLocalNotificationManager *)sharedInstance{
++(MDPushNotificationManager *)sharedInstance{
   
-  static MDLocalNotificationManager *sharedInstance = nil;
+  static MDPushNotificationManager *sharedInstance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedInstance = [[self alloc] init];

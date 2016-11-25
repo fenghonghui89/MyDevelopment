@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface MDLocalNotificationManager : NSObject
-+(MDLocalNotificationManager *)sharedInstance;
+@interface MDPushNotificationManager : NSObject
+
++(MDPushNotificationManager *)sharedInstance;
 -(void)registerLocalNotification;
 -(void)cancleAllNotifications;
+
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
 -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler;
