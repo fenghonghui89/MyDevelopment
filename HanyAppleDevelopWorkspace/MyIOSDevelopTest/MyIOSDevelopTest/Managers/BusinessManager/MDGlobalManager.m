@@ -10,7 +10,7 @@
 
 @implementation MDGlobalManager
 
-@synthesize isOpenNotification = _isOpenNotification,hasFirstLaunch = _hasFirstLaunch;
+@synthesize isOpenNotification = _isOpenNotification,hasFirstLaunch = _hasFirstLaunch,count = _count;
 
 +(MDGlobalManager *)sharedInstance{
 
@@ -31,9 +31,8 @@
   if (isOpenNotification != isOpenNotification_uf) {
     _isOpenNotification = isOpenNotification;
     
-    NSUserDefaults *uf = [NSUserDefaults standardUserDefaults];
-    [uf setBool:isOpenNotification forKey:@"isOpenNotification"];
-    [uf synchronize];
+    [[NSUserDefaults standardUserDefaults] setBool:isOpenNotification forKey:@"isOpenNotification"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
   }
   
 }
@@ -51,9 +50,8 @@
   if (hasFirstLaunch != hasFirstLaunch_uf) {
     _hasFirstLaunch = hasFirstLaunch;
     
-    NSUserDefaults *uf = [NSUserDefaults standardUserDefaults];
-    [uf setBool:hasFirstLaunch forKey:@"hasFirstLaunch"];
-    [uf synchronize];
+    [[NSUserDefaults standardUserDefaults] setBool:hasFirstLaunch forKey:@"hasFirstLaunch"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
   }
 }
 
@@ -61,5 +59,22 @@
   
   BOOL hasFirstLaunch = [[NSUserDefaults standardUserDefaults] boolForKey:@"hasFirstLaunch"];
   return hasFirstLaunch;
+}
+
+-(void)setCount:(NSInteger)count{
+
+  NSInteger count_uf = [[NSUserDefaults standardUserDefaults] integerForKey:@"count"];
+  if (count_uf != count) {
+    _count = count;
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:count forKey:@"count"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+  }
+}
+
+-(NSInteger)count{
+
+  NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:@"count"];
+  return count;
 }
 @end

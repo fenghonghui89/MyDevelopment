@@ -12,5 +12,6 @@
 @property(nonatomic,assign)BOOL openLog;
 @property(nonatomic,assign)BOOL isOpenNotification;
 @property(nonatomic,assign)BOOL hasFirstLaunch;
+@property(nonatomic,assign)NSInteger count;
 +(MDGlobalManager *)sharedInstance;
 @end
