@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14AFD3971DE41F8A0019302E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AFD3961DE41F8A0019302E /* main.m */; };
+		14AFD39A1DE41F8A0019302E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AFD3991DE41F8A0019302E /* AppDelegate.m */; };
+		14AFD39D1DE41F8A0019302E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AFD39C1DE41F8A0019302E /* ViewController.m */; };
+		14AFD3A01DE41F8A0019302E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD39E1DE41F8A0019302E /* Main.storyboard */; };
+		14AFD3A21DE41F8A0019302E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD3A11DE41F8A0019302E /* Assets.xcassets */; };
+		14AFD3A51DE41F8A0019302E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD3A31DE41F8A0019302E /* LaunchScreen.storyboard */; };
+		14AFD3F41DE433420019302E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD3F31DE433420019302E /* GoogleService-Info.plist */; };
+		14AFD3FB1DE435340019302E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3C11DE42CF90019302E /* libz.tbd */; };
+		14AFD3FC1DE435A20019302E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3F91DE435250019302E /* libc++.tbd */; };
+		14AFD3FD1DE435B90019302E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3CD1DE42FE90019302E /* AddressBook.framework */; };
+		14AFD3FE1DE435C00019302E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3B71DE42C720019302E /* libsqlite3.0.tbd */; };
+		14BA1C961DE83AFD00FF668A /* MDPushNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BA1C951DE83AFD00FF668A /* MDPushNotificationManager.m */; };
+		14BA1C991DE83C3000FF668A /* MDGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BA1C981DE83C3000FF668A /* MDGlobalManager.m */; };
+		14BA1D051DE84EEB00FF668A /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1CFB1DE84EEB00FF668A /* FirebaseAnalytics.framework */; };
+		14BA1D061DE84EEB00FF668A /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1CFC1DE84EEB00FF668A /* FirebaseCore.framework */; };
+		14BA1D071DE84EEB00FF668A /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1CFD1DE84EEB00FF668A /* FirebaseInstanceID.framework */; };
+		14BA1D081DE84EEB00FF668A /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1CFE1DE84EEB00FF668A /* GoogleInterchangeUtilities.framework */; };
+		14BA1D091DE84EEB00FF668A /* GoogleIPhoneUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1CFF1DE84EEB00FF668A /* GoogleIPhoneUtilities.framework */; };
+		14BA1D0A1DE84EEB00FF668A /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1D001DE84EEB00FF668A /* GoogleSymbolUtilities.framework */; };
+		14BA1D0B1DE84EEB00FF668A /* FirebaseMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1D031DE84EEB00FF668A /* FirebaseMessaging.framework */; };
+		14BA1D0C1DE84EEB00FF668A /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BA1D041DE84EEB00FF668A /* GoogleUtilities.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14AFD3921DE41F8A0019302E /* FCMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14AFD3961DE41F8A0019302E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14AFD3981DE41F8A0019302E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14AFD3991DE41F8A0019302E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14AFD39B1DE41F8A0019302E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		14AFD39C1DE41F8A0019302E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14AFD39F1DE41F8A0019302E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14AFD3A11DE41F8A0019302E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14AFD3A41DE41F8A0019302E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14AFD3A61DE41F8A0019302E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14AFD3B31DE42C640019302E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		14AFD3B51DE42C6A0019302E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		14AFD3B71DE42C720019302E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		14AFD3B91DE42CB70019302E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		14AFD3BB1DE42CBB0019302E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		14AFD3BD1DE42CC90019302E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		14AFD3BF1DE42CEE0019302E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		14AFD3C11DE42CF90019302E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		14AFD3C31DE42D020019302E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		14AFD3C51DE42D0C0019302E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		14AFD3C71DE42D160019302E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		14AFD3C91DE42D1E0019302E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		14AFD3CB1DE42EAE0019302E /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = FCMTest/Firebase/FirebaseMessaging.framework/Modules/module.modulemap; sourceTree = "<group>"; };
+		14AFD3CD1DE42FE90019302E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		14AFD3D01DE42FFD0019302E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		14AFD3F31DE433420019302E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14AFD3F71DE435170019302E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		14AFD3F91DE435250019302E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		14BA1C941DE83AFD00FF668A /* MDPushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPushNotificationManager.h; sourceTree = "<group>"; };
+		14BA1C951DE83AFD00FF668A /* MDPushNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPushNotificationManager.m; sourceTree = "<group>"; };
+		14BA1C971DE83C3000FF668A /* MDGlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDGlobalManager.h; sourceTree = "<group>"; };
+		14BA1C981DE83C3000FF668A /* MDGlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDGlobalManager.m; sourceTree = "<group>"; };
+		14BA1C9A1DE8431400FF668A /* FCMTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FCMTest.entitlements; sourceTree = "<group>"; };
+		14BA1CFB1DE84EEB00FF668A /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		14BA1CFC1DE84EEB00FF668A /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		14BA1CFD1DE84EEB00FF668A /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		14BA1CFE1DE84EEB00FF668A /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		14BA1CFF1DE84EEB00FF668A /* GoogleIPhoneUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleIPhoneUtilities.framework; sourceTree = "<group>"; };
+		14BA1D001DE84EEB00FF668A /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		14BA1D011DE84EEB00FF668A /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		14BA1D031DE84EEB00FF668A /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseMessaging.framework; sourceTree = "<group>"; };
+		14BA1D041DE84EEB00FF668A /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14AFD38F1DE41F8A0019302E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AFD3FE1DE435C00019302E /* libsqlite3.0.tbd in Frameworks */,
+				14BA1D081DE84EEB00FF668A /* GoogleInterchangeUtilities.framework in Frameworks */,
+				14BA1D0A1DE84EEB00FF668A /* GoogleSymbolUtilities.framework in Frameworks */,
+				14AFD3FD1DE435B90019302E /* AddressBook.framework in Frameworks */,
+				14BA1D061DE84EEB00FF668A /* FirebaseCore.framework in Frameworks */,
+				14AFD3FC1DE435A20019302E /* libc++.tbd in Frameworks */,
+				14BA1D0C1DE84EEB00FF668A /* GoogleUtilities.framework in Frameworks */,
+				14BA1D071DE84EEB00FF668A /* FirebaseInstanceID.framework in Frameworks */,
+				14AFD3FB1DE435340019302E /* libz.tbd in Frameworks */,
+				14BA1D091DE84EEB00FF668A /* GoogleIPhoneUtilities.framework in Frameworks */,
+				14BA1D051DE84EEB00FF668A /* FirebaseAnalytics.framework in Frameworks */,
+				14BA1D0B1DE84EEB00FF668A /* FirebaseMessaging.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14AFD3891DE41F8A0019302E = {
+			isa = PBXGroup;
+			children = (
+				14AFD3941DE41F8A0019302E /* FCMTest */,
+				14AFD3931DE41F8A0019302E /* Products */,
+				14AFD3B21DE42C630019302E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		14AFD3931DE41F8A0019302E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14AFD3921DE41F8A0019302E /* FCMTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14AFD3941DE41F8A0019302E /* FCMTest */ = {
+			isa = PBXGroup;
+			children = (
+				14BA1CF91DE84EEB00FF668A /* Firebase */,
+				14BA1C9A1DE8431400FF668A /* FCMTest.entitlements */,
+				14AFD3981DE41F8A0019302E /* AppDelegate.h */,
+				14AFD3991DE41F8A0019302E /* AppDelegate.m */,
+				14AFD3F31DE433420019302E /* GoogleService-Info.plist */,
+				14AFD39B1DE41F8A0019302E /* ViewController.h */,
+				14AFD39C1DE41F8A0019302E /* ViewController.m */,
+				14AFD39E1DE41F8A0019302E /* Main.storyboard */,
+				14BA1C971DE83C3000FF668A /* MDGlobalManager.h */,
+				14BA1C981DE83C3000FF668A /* MDGlobalManager.m */,
+				14BA1C941DE83AFD00FF668A /* MDPushNotificationManager.h */,
+				14BA1C951DE83AFD00FF668A /* MDPushNotificationManager.m */,
+				14AFD3A11DE41F8A0019302E /* Assets.xcassets */,
+				14AFD3A31DE41F8A0019302E /* LaunchScreen.storyboard */,
+				14AFD3A61DE41F8A0019302E /* Info.plist */,
+				14AFD3951DE41F8A0019302E /* Supporting Files */,
+			);
+			path = FCMTest;
+			sourceTree = "<group>";
+		};
+		14AFD3951DE41F8A0019302E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14AFD3961DE41F8A0019302E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14AFD3B21DE42C630019302E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14AFD3F91DE435250019302E /* libc++.tbd */,
+				14AFD3F71DE435170019302E /* StoreKit.framework */,
+				14AFD3D01DE42FFD0019302E /* libsqlite3.tbd */,
+				14AFD3CD1DE42FE90019302E /* AddressBook.framework */,
+				14AFD3CB1DE42EAE0019302E /* module.modulemap */,
+				14AFD3C91DE42D1E0019302E /* AdSupport.framework */,
+				14AFD3C71DE42D160019302E /* CoreFoundation.framework */,
+				14AFD3C51DE42D0C0019302E /* CoreData.framework */,
+				14AFD3C31DE42D020019302E /* CFNetwork.framework */,
+				14AFD3C11DE42CF90019302E /* libz.tbd */,
+				14AFD3BF1DE42CEE0019302E /* CoreText.framework */,
+				14AFD3BD1DE42CC90019302E /* MobileCoreServices.framework */,
+				14AFD3BB1DE42CBB0019302E /* Security.framework */,
+				14AFD3B91DE42CB70019302E /* SystemConfiguration.framework */,
+				14AFD3B71DE42C720019302E /* libsqlite3.0.tbd */,
+				14AFD3B51DE42C6A0019302E /* Foundation.framework */,
+				14AFD3B31DE42C640019302E /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14BA1CF91DE84EEB00FF668A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				14BA1CFA1DE84EEB00FF668A /* Analytics */,
+				14BA1D011DE84EEB00FF668A /* Firebase.h */,
+				14BA1D021DE84EEB00FF668A /* Messaging */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		14BA1CFA1DE84EEB00FF668A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				14BA1CFB1DE84EEB00FF668A /* FirebaseAnalytics.framework */,
+				14BA1CFC1DE84EEB00FF668A /* FirebaseCore.framework */,
+				14BA1CFD1DE84EEB00FF668A /* FirebaseInstanceID.framework */,
+				14BA1CFE1DE84EEB00FF668A /* GoogleInterchangeUtilities.framework */,
+				14BA1CFF1DE84EEB00FF668A /* GoogleIPhoneUtilities.framework */,
+				14BA1D001DE84EEB00FF668A /* GoogleSymbolUtilities.framework */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		14BA1D021DE84EEB00FF668A /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				14BA1D031DE84EEB00FF668A /* FirebaseMessaging.framework */,
+				14BA1D041DE84EEB00FF668A /* GoogleUtilities.framework */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14AFD3911DE41F8A0019302E /* FCMTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14AFD3A91DE41F8A0019302E /* Build configuration list for PBXNativeTarget "FCMTest" */;
+			buildPhases = (
+				14AFD38E1DE41F8A0019302E /* Sources */,
+				14AFD38F1DE41F8A0019302E /* Frameworks */,
+				14AFD3901DE41F8A0019302E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FCMTest;
+			productName = FCMTest;
+			productReference = 14AFD3921DE41F8A0019302E /* FCMTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14AFD38A1DE41F8A0019302E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = HanyAppDev;
+				TargetAttributes = {
+					14AFD3911DE41F8A0019302E = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 14AFD38D1DE41F8A0019302E /* Build configuration list for PBXProject "FCMTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14AFD3891DE41F8A0019302E;
+			productRefGroup = 14AFD3931DE41F8A0019302E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14AFD3911DE41F8A0019302E /* FCMTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14AFD3901DE41F8A0019302E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AFD3A51DE41F8A0019302E /* LaunchScreen.storyboard in Resources */,
+				14AFD3F41DE433420019302E /* GoogleService-Info.plist in Resources */,
+				14AFD3A21DE41F8A0019302E /* Assets.xcassets in Resources */,
+				14AFD3A01DE41F8A0019302E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14AFD38E1DE41F8A0019302E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AFD39D1DE41F8A0019302E /* ViewController.m in Sources */,
+				14BA1C961DE83AFD00FF668A /* MDPushNotificationManager.m in Sources */,
+				14AFD39A1DE41F8A0019302E /* AppDelegate.m in Sources */,
+				14BA1C991DE83C3000FF668A /* MDGlobalManager.m in Sources */,
+				14AFD3971DE41F8A0019302E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14AFD39E1DE41F8A0019302E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14AFD39F1DE41F8A0019302E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14AFD3A31DE41F8A0019302E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14AFD3A41DE41F8A0019302E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14AFD3A71DE41F8A0019302E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		14AFD3A81DE41F8A0019302E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14AFD3AA1DE41F8A0019302E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FCMTest/FCMTest.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/FCMTest/Firebase/Analytics",
+					"$(PROJECT_DIR)/FCMTest/Firebase/Messaging",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = FCMTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDevPush.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = HanyAppDevPush;
+			};
+			name = Debug;
+		};
+		14AFD3AB1DE41F8A0019302E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FCMTest/FCMTest.entitlements;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/FCMTest/Firebase/Analytics",
+					"$(PROJECT_DIR)/FCMTest/Firebase/Messaging",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = FCMTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDevPush.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = HanyAppDevPush;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14AFD38D1DE41F8A0019302E /* Build configuration list for PBXProject "FCMTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14AFD3A71DE41F8A0019302E /* Debug */,
+				14AFD3A81DE41F8A0019302E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14AFD3A91DE41F8A0019302E /* Build configuration list for PBXNativeTarget "FCMTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14AFD3AA1DE41F8A0019302E /* Debug */,
+				14AFD3AB1DE41F8A0019302E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14AFD38A1DE41F8A0019302E /* Project object */;
+}
