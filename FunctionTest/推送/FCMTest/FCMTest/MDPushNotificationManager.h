@@ -11,7 +11,7 @@
 @interface MDPushNotificationManager : NSObject
 
 +(MDPushNotificationManager *)sharedInstance;
--(void)registerLocalNotification;
+-(void)registerNotification;
 -(void)cancleAllNotifications;
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;

@@ -41,7 +41,7 @@
   }
   
   if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
-    [[MDPushNotificationManager sharedInstance] registerLocalNotification];
+    [[MDPushNotificationManager sharedInstance] registerNotification];
   }
 
 }

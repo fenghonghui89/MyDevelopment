@@ -33,7 +33,7 @@ if ([MDGlobalManager sharedInstance].openLog) {NSLog((@"%s [Line %d] " format), 
 }
 
 //注册推送
--(void)registerLocalNotification{
+-(void)registerNotification{
   
   //ios9 or earlier register
   if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max)
@@ -279,7 +279,7 @@ if ([MDGlobalManager sharedInstance].openLog) {NSLog((@"%s [Line %d] " format), 
 #pragma mark app lifecycle
 - (void)applicationDidEnterBackground:(UIApplication *)application {
   [[FIRMessaging messaging] disconnect];
-  NSLog(@"Disconnected from FCM");
+  NSLog(@"Disconnected from FCM..");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

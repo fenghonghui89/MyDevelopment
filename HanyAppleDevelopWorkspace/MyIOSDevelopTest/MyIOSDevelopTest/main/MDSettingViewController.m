@@ -114,7 +114,7 @@
     }
     else//打开接收推送，系统推送开关已打开
     {
-      [[MDPushNotificationManager sharedInstance] registerLocalNotification];
+      [[MDPushNotificationManager sharedInstance] registerNotification];
     }
   }
   else//不接收推送
