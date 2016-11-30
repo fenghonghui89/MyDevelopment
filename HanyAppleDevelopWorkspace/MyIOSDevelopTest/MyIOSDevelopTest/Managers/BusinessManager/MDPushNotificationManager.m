@@ -121,7 +121,7 @@
     
   }
   
-  //注册token
+  //all ios version 注册token
   [[UIApplication sharedApplication] registerForRemoteNotifications];
   
 }

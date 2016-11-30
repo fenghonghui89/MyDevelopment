@@ -30,7 +30,7 @@
 #pragma mark - method
 
 -(NSString *)systemNotifictionSetting{
-
+  
   NSString *systemNotifictionSetting = nil;
   if ((floor)(NSFoundationVersionNumber)<=NSFoundationVersionNumber_iOS_9_x_Max) {
     systemNotifictionSetting = @"prefs:root=NOTIFICATIONS_ID&path=com.HanyAppDevPush.test";
@@ -99,10 +99,10 @@
   
   /*
    打开接收推送
-    - 检测没有打开系统推送，提示用户打开
-    - 检测已经打开系统推送，则注册通知
+   - 检测没有打开系统推送，提示用户打开
+   - 检测已经打开系统推送，则注册通知
    关闭接收推送
-    - 注销推送
+   - 注销推送
    */
   BOOL on = self.notificationSwitch.on;
   NSInteger count = [[UIApplication sharedApplication] currentUserNotificationSettings].types;
@@ -136,10 +136,10 @@
   {
     [[MDPushNotificationManager sharedInstance] cancleAllNotifications];
   }
-
   
   
-
+  
+  
 }
 
 @end

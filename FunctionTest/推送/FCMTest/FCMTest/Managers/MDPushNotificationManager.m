@@ -6,9 +6,7 @@
 //  Copyright © 2016年 hanyfeng. All rights reserved.
 //
 
-#define ULog(format,...) do{   \
-if ([MDGlobalManager sharedInstance].openLog) {NSLog((@"%s [Line %d] " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);} \
-}while(0)
+
 
 #import "MDPushNotificationManager.h"
 #import "MDGlobalManager.h"
@@ -102,7 +100,6 @@ if ([MDGlobalManager sharedInstance].openLog) {NSLog((@"%s [Line %d] " format), 
           //设置标识
           [MDGlobalManager sharedInstance].isOpenNotification = YES;
 
-          
           
           //获取当前的通知设置
           [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {

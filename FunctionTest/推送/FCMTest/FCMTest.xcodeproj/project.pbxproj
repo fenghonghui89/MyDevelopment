@@ -15,19 +15,25 @@
 		1428B9201DEBCAC600FC824E /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1428B9161DEBCAC600FC824E /* GoogleSymbolUtilities.framework */; };
 		1428B9211DEBCAC600FC824E /* FirebaseMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1428B9191DEBCAC600FC824E /* FirebaseMessaging.framework */; };
 		1428B9221DEBCAC600FC824E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1428B91A1DEBCAC600FC824E /* GoogleUtilities.framework */; };
-		14AFD3971DE41F8A0019302E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AFD3961DE41F8A0019302E /* main.m */; };
-		14AFD39A1DE41F8A0019302E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AFD3991DE41F8A0019302E /* AppDelegate.m */; };
-		14AFD39D1DE41F8A0019302E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AFD39C1DE41F8A0019302E /* ViewController.m */; };
-		14AFD3A01DE41F8A0019302E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD39E1DE41F8A0019302E /* Main.storyboard */; };
-		14AFD3A21DE41F8A0019302E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD3A11DE41F8A0019302E /* Assets.xcassets */; };
-		14AFD3A51DE41F8A0019302E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD3A31DE41F8A0019302E /* LaunchScreen.storyboard */; };
 		14AFD3F41DE433420019302E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14AFD3F31DE433420019302E /* GoogleService-Info.plist */; };
 		14AFD3FB1DE435340019302E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3C11DE42CF90019302E /* libz.tbd */; };
 		14AFD3FC1DE435A20019302E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3F91DE435250019302E /* libc++.tbd */; };
 		14AFD3FD1DE435B90019302E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3CD1DE42FE90019302E /* AddressBook.framework */; };
 		14AFD3FE1DE435C00019302E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AFD3B71DE42C720019302E /* libsqlite3.0.tbd */; };
-		14BA1C961DE83AFD00FF668A /* MDPushNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BA1C951DE83AFD00FF668A /* MDPushNotificationManager.m */; };
-		14BA1C991DE83C3000FF668A /* MDGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BA1C981DE83C3000FF668A /* MDGlobalManager.m */; };
+		14B5C9601DEEDBC000F201DF /* MDGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5C9481DEEDBC000F201DF /* MDGlobalManager.m */; };
+		14B5C9611DEEDBC000F201DF /* MDPushNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5C94A1DEEDBC000F201DF /* MDPushNotificationManager.m */; };
+		14B5C9621DEEDBC000F201DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5C94D1DEEDBC000F201DF /* AppDelegate.m */; };
+		14B5C9681DEEDBC000F201DF /* MDInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5C9581DEEDBC000F201DF /* MDInfoViewController.m */; };
+		14B5C9691DEEDBC000F201DF /* MDInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B5C9591DEEDBC000F201DF /* MDInfoViewController.xib */; };
+		14B5C96A1DEEDBC000F201DF /* MDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5C95B1DEEDBC000F201DF /* MDSettingViewController.m */; };
+		14B5C96B1DEEDBC000F201DF /* MDSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B5C95C1DEEDBC000F201DF /* MDSettingViewController.xib */; };
+		14B5C96C1DEEDBC000F201DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5C95E1DEEDBC000F201DF /* ViewController.m */; };
+		14B5C96D1DEEDBC000F201DF /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B5C95F1DEEDBC000F201DF /* ViewController.xib */; };
+		14B5C9761DEEDC4D00F201DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14B5C96F1DEEDC4D00F201DF /* Assets.xcassets */; };
+		14B5C9771DEEDC4D00F201DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B5C9701DEEDC4D00F201DF /* LaunchScreen.storyboard */; };
+		14B5C9781DEEDC4D00F201DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B5C9721DEEDC4D00F201DF /* Main.storyboard */; };
+		14B5C9791DEEDC4D00F201DF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14B5C9741DEEDC4D00F201DF /* Info.plist */; };
+		14B5C97A1DEEDC4D00F201DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B5C9751DEEDC4D00F201DF /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,15 +47,6 @@
 		1428B9191DEBCAC600FC824E /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseMessaging.framework; sourceTree = "<group>"; };
 		1428B91A1DEBCAC600FC824E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
 		14AFD3921DE41F8A0019302E /* FCMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		14AFD3961DE41F8A0019302E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		14AFD3981DE41F8A0019302E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		14AFD3991DE41F8A0019302E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		14AFD39B1DE41F8A0019302E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		14AFD39C1DE41F8A0019302E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		14AFD39F1DE41F8A0019302E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		14AFD3A11DE41F8A0019302E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14AFD3A41DE41F8A0019302E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		14AFD3A61DE41F8A0019302E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14AFD3B31DE42C640019302E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14AFD3B51DE42C6A0019302E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14AFD3B71DE42C720019302E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -68,10 +65,26 @@
 		14AFD3F31DE433420019302E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14AFD3F71DE435170019302E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		14AFD3F91DE435250019302E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		14BA1C941DE83AFD00FF668A /* MDPushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPushNotificationManager.h; sourceTree = "<group>"; };
-		14BA1C951DE83AFD00FF668A /* MDPushNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPushNotificationManager.m; sourceTree = "<group>"; };
-		14BA1C971DE83C3000FF668A /* MDGlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDGlobalManager.h; sourceTree = "<group>"; };
-		14BA1C981DE83C3000FF668A /* MDGlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDGlobalManager.m; sourceTree = "<group>"; };
+		14B5C9471DEEDBC000F201DF /* MDGlobalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDGlobalManager.h; sourceTree = "<group>"; };
+		14B5C9481DEEDBC000F201DF /* MDGlobalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDGlobalManager.m; sourceTree = "<group>"; };
+		14B5C9491DEEDBC000F201DF /* MDPushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPushNotificationManager.h; sourceTree = "<group>"; };
+		14B5C94A1DEEDBC000F201DF /* MDPushNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPushNotificationManager.m; sourceTree = "<group>"; };
+		14B5C94C1DEEDBC000F201DF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14B5C94D1DEEDBC000F201DF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14B5C9571DEEDBC000F201DF /* MDInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDInfoViewController.h; sourceTree = "<group>"; };
+		14B5C9581DEEDBC000F201DF /* MDInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDInfoViewController.m; sourceTree = "<group>"; };
+		14B5C9591DEEDBC000F201DF /* MDInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDInfoViewController.xib; sourceTree = "<group>"; };
+		14B5C95A1DEEDBC000F201DF /* MDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSettingViewController.h; sourceTree = "<group>"; };
+		14B5C95B1DEEDBC000F201DF /* MDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSettingViewController.m; sourceTree = "<group>"; };
+		14B5C95C1DEEDBC000F201DF /* MDSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSettingViewController.xib; sourceTree = "<group>"; };
+		14B5C95D1DEEDBC000F201DF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		14B5C95E1DEEDBC000F201DF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14B5C95F1DEEDBC000F201DF /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		14B5C96F1DEEDC4D00F201DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14B5C9711DEEDC4D00F201DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14B5C9731DEEDC4D00F201DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14B5C9741DEEDC4D00F201DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14B5C9751DEEDC4D00F201DF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14BA1C9A1DE8431400FF668A /* FCMTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FCMTest.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,30 +166,13 @@
 			children = (
 				1428B90F1DEBCAC600FC824E /* Firebase */,
 				14BA1C9A1DE8431400FF668A /* FCMTest.entitlements */,
-				14AFD3981DE41F8A0019302E /* AppDelegate.h */,
-				14AFD3991DE41F8A0019302E /* AppDelegate.m */,
 				14AFD3F31DE433420019302E /* GoogleService-Info.plist */,
-				14AFD39B1DE41F8A0019302E /* ViewController.h */,
-				14AFD39C1DE41F8A0019302E /* ViewController.m */,
-				14AFD39E1DE41F8A0019302E /* Main.storyboard */,
-				14BA1C971DE83C3000FF668A /* MDGlobalManager.h */,
-				14BA1C981DE83C3000FF668A /* MDGlobalManager.m */,
-				14BA1C941DE83AFD00FF668A /* MDPushNotificationManager.h */,
-				14BA1C951DE83AFD00FF668A /* MDPushNotificationManager.m */,
-				14AFD3A11DE41F8A0019302E /* Assets.xcassets */,
-				14AFD3A31DE41F8A0019302E /* LaunchScreen.storyboard */,
-				14AFD3A61DE41F8A0019302E /* Info.plist */,
-				14AFD3951DE41F8A0019302E /* Supporting Files */,
+				14B5C94B1DEEDBC000F201DF /* Root */,
+				14B5C9461DEEDBC000F201DF /* Managers */,
+				14B5C9561DEEDBC000F201DF /* Views */,
+				14B5C96E1DEEDC4D00F201DF /* SupportingFiles */,
 			);
 			path = FCMTest;
-			sourceTree = "<group>";
-		};
-		14AFD3951DE41F8A0019302E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				14AFD3961DE41F8A0019302E /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		14AFD3B21DE42C630019302E /* Frameworks */ = {
@@ -201,6 +197,54 @@
 				14AFD3B31DE42C640019302E /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14B5C9461DEEDBC000F201DF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				14B5C9471DEEDBC000F201DF /* MDGlobalManager.h */,
+				14B5C9481DEEDBC000F201DF /* MDGlobalManager.m */,
+				14B5C9491DEEDBC000F201DF /* MDPushNotificationManager.h */,
+				14B5C94A1DEEDBC000F201DF /* MDPushNotificationManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		14B5C94B1DEEDBC000F201DF /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				14B5C94C1DEEDBC000F201DF /* AppDelegate.h */,
+				14B5C94D1DEEDBC000F201DF /* AppDelegate.m */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		14B5C9561DEEDBC000F201DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				14B5C95D1DEEDBC000F201DF /* ViewController.h */,
+				14B5C95E1DEEDBC000F201DF /* ViewController.m */,
+				14B5C95F1DEEDBC000F201DF /* ViewController.xib */,
+				14B5C9571DEEDBC000F201DF /* MDInfoViewController.h */,
+				14B5C9581DEEDBC000F201DF /* MDInfoViewController.m */,
+				14B5C9591DEEDBC000F201DF /* MDInfoViewController.xib */,
+				14B5C95A1DEEDBC000F201DF /* MDSettingViewController.h */,
+				14B5C95B1DEEDBC000F201DF /* MDSettingViewController.m */,
+				14B5C95C1DEEDBC000F201DF /* MDSettingViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		14B5C96E1DEEDC4D00F201DF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				14B5C96F1DEEDC4D00F201DF /* Assets.xcassets */,
+				14B5C9701DEEDC4D00F201DF /* LaunchScreen.storyboard */,
+				14B5C9721DEEDC4D00F201DF /* Main.storyboard */,
+				14B5C9741DEEDC4D00F201DF /* Info.plist */,
+				14B5C9751DEEDC4D00F201DF /* main.m */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +310,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AFD3A51DE41F8A0019302E /* LaunchScreen.storyboard in Resources */,
+				14B5C9791DEEDC4D00F201DF /* Info.plist in Resources */,
+				14B5C9781DEEDC4D00F201DF /* Main.storyboard in Resources */,
+				14B5C96D1DEEDBC000F201DF /* ViewController.xib in Resources */,
+				14B5C96B1DEEDBC000F201DF /* MDSettingViewController.xib in Resources */,
 				14AFD3F41DE433420019302E /* GoogleService-Info.plist in Resources */,
-				14AFD3A21DE41F8A0019302E /* Assets.xcassets in Resources */,
-				14AFD3A01DE41F8A0019302E /* Main.storyboard in Resources */,
+				14B5C9771DEEDC4D00F201DF /* LaunchScreen.storyboard in Resources */,
+				14B5C9691DEEDBC000F201DF /* MDInfoViewController.xib in Resources */,
+				14B5C9761DEEDC4D00F201DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,31 +328,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AFD39D1DE41F8A0019302E /* ViewController.m in Sources */,
-				14BA1C961DE83AFD00FF668A /* MDPushNotificationManager.m in Sources */,
-				14AFD39A1DE41F8A0019302E /* AppDelegate.m in Sources */,
-				14BA1C991DE83C3000FF668A /* MDGlobalManager.m in Sources */,
-				14AFD3971DE41F8A0019302E /* main.m in Sources */,
+				14B5C96C1DEEDBC000F201DF /* ViewController.m in Sources */,
+				14B5C9601DEEDBC000F201DF /* MDGlobalManager.m in Sources */,
+				14B5C9611DEEDBC000F201DF /* MDPushNotificationManager.m in Sources */,
+				14B5C96A1DEEDBC000F201DF /* MDSettingViewController.m in Sources */,
+				14B5C9621DEEDBC000F201DF /* AppDelegate.m in Sources */,
+				14B5C97A1DEEDC4D00F201DF /* main.m in Sources */,
+				14B5C9681DEEDBC000F201DF /* MDInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		14AFD39E1DE41F8A0019302E /* Main.storyboard */ = {
+		14B5C9701DEEDC4D00F201DF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14AFD39F1DE41F8A0019302E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		14AFD3A31DE41F8A0019302E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14AFD3A41DE41F8A0019302E /* Base */,
+				14B5C9711DEEDC4D00F201DF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		14B5C9721DEEDC4D00F201DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14B5C9731DEEDC4D00F201DF /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -410,7 +460,7 @@
 					"$(PROJECT_DIR)/../../../../OSC_ThirdLibrary/Firebase/Messaging",
 				);
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = FCMTest/Info.plist;
+				INFOPLIST_FILE = FCMTest/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
@@ -432,7 +482,7 @@
 					"$(PROJECT_DIR)/../../../../OSC_ThirdLibrary/Firebase/Messaging",
 				);
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = FCMTest/Info.plist;
+				INFOPLIST_FILE = FCMTest/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";

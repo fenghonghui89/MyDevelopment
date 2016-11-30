@@ -7,7 +7,7 @@
 //
 
 #import "MDGlobalManager.h"
-
+#import "AppDelegate.h"
 @implementation MDGlobalManager
 
 @synthesize isOpenNotification = _isOpenNotification,hasFirstLaunch = _hasFirstLaunch,count = _count;
@@ -22,8 +22,44 @@
   return sharedInstance;
 }
 
+#pragma mark - other
++(UIViewController *)getPresentedViewController{
+  UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+  UIViewController *topVC = appRootVC;
+  if(topVC.presentedViewController)
+  {
+    topVC = topVC.presentedViewController;
+  }
+  
+  return topVC;
+}
 
-#pragma mark set/get
++(UIWindow *)appDelegateWindow{
+  AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  return delegate.window;
+}
+
+-(void)storeData:(NSDictionary *)data{
+  
+  NSData *storeData = [NSKeyedArchiver archivedDataWithRootObject:data];
+  [[NSUserDefaults standardUserDefaults] setObject:storeData forKey:@"storeData"];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+  
+}
+
+-(NSDictionary *)getStoreData{
+  
+  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"storeData"];
+  NSDictionary *dic = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+  return dic;
+}
+
+-(void)deleteStoreData{
+
+  [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"storeData"];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+}
+#pragma mark - set/get
 -(void)setIsOpenNotification:(BOOL)isOpenNotification{
   
   BOOL isOpenNotification_uf = [[NSUserDefaults standardUserDefaults] boolForKey:@"isOpenNotification"];
@@ -77,4 +113,6 @@
   NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:@"count"];
   return count;
 }
+
+
 @end
