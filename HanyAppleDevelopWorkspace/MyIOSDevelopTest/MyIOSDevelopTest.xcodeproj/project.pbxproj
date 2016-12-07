@@ -241,6 +241,8 @@
 		14C833971DB474A0009363F9 /* UIView+STKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C8338A1DB474A0009363F9 /* UIView+STKit.m */; };
 		14C8339A1DB47527009363F9 /* UINavigationItem+MDCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833991DB47527009363F9 /* UINavigationItem+MDCustom.m */; };
 		14C833A21DB4D933009363F9 /* MD_KeyedArchiver_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C833A11DB4D933009363F9 /* MD_KeyedArchiver_VC.xib */; };
+		14D3ADE41DF7C387001DED27 /* MD_NSException_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D3ADE21DF7C387001DED27 /* MD_NSException_VC.m */; };
+		14D3ADE51DF7C387001DED27 /* MD_NSException_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D3ADE31DF7C387001DED27 /* MD_NSException_VC.xib */; };
 		14D5AA211DBEF7CB00085365 /* MD_NSRunLoop_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5AA1F1DBEF7CB00085365 /* MD_NSRunLoop_VC.m */; };
 		14D5AA221DBEF7CB00085365 /* MD_NSRunLoop_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D5AA201DBEF7CB00085365 /* MD_NSRunLoop_VC.xib */; };
 		14D5AA271DBEF8B000085365 /* MD_CFRunLoop_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5AA251DBEF8B000085365 /* MD_CFRunLoop_VC.m */; };
@@ -809,6 +811,9 @@
 		14C833981DB47527009363F9 /* UINavigationItem+MDCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+MDCustom.h"; sourceTree = "<group>"; };
 		14C833991DB47527009363F9 /* UINavigationItem+MDCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+MDCustom.m"; sourceTree = "<group>"; };
 		14C833A11DB4D933009363F9 /* MD_KeyedArchiver_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_KeyedArchiver_VC.xib; sourceTree = "<group>"; };
+		14D3ADE11DF7C387001DED27 /* MD_NSException_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSException_VC.h; sourceTree = "<group>"; };
+		14D3ADE21DF7C387001DED27 /* MD_NSException_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSException_VC.m; sourceTree = "<group>"; };
+		14D3ADE31DF7C387001DED27 /* MD_NSException_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSException_VC.xib; sourceTree = "<group>"; };
 		14D5AA1E1DBEF7CB00085365 /* MD_NSRunLoop_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSRunLoop_VC.h; sourceTree = "<group>"; };
 		14D5AA1F1DBEF7CB00085365 /* MD_NSRunLoop_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRunLoop_VC.m; sourceTree = "<group>"; };
 		14D5AA201DBEF7CB00085365 /* MD_NSRunLoop_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSRunLoop_VC.xib; sourceTree = "<group>"; };
@@ -1844,6 +1849,16 @@
 			path = Categories_UI;
 			sourceTree = "<group>";
 		};
+		14D3ADE01DF7C369001DED27 /* NSException */ = {
+			isa = PBXGroup;
+			children = (
+				14D3ADE11DF7C387001DED27 /* MD_NSException_VC.h */,
+				14D3ADE21DF7C387001DED27 /* MD_NSException_VC.m */,
+				14D3ADE31DF7C387001DED27 /* MD_NSException_VC.xib */,
+			);
+			path = NSException;
+			sourceTree = "<group>";
+		};
 		14D5AA1D1DBEF7AF00085365 /* NSRunLoop */ = {
 			isa = PBXGroup;
 			children = (
@@ -1929,6 +1944,7 @@
 		14FAA39F1D9507C9002D81CC /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				14D3ADE01DF7C369001DED27 /* NSException */,
 				14D5AA1D1DBEF7AF00085365 /* NSRunLoop */,
 				14B16DB61D9E45FB00659FA8 /* NSRange */,
 				14FAA3A01D9507C9002D81CC /* FoundationOther */,
@@ -3836,6 +3852,7 @@
 				141503961DB623D500D1737C /* 罗丹-思想者.png in Resources */,
 				141503E21DB623D500D1737C /* tabbar_compose_icon_add@2x.png in Resources */,
 				14FAA7831D9507CB002D81CC /* MD_UIWebViewCache_VC.xib in Resources */,
+				14D3ADE51DF7C387001DED27 /* MD_NSException_VC.xib in Resources */,
 				141503A71DB623D500D1737C /* playing24@2x.png in Resources */,
 				1415038A1DB623D500D1737C /* playing_volumn_slide_foreground@2x.png in Resources */,
 				141503C11DB623D500D1737C /* playing48@2x.png in Resources */,
@@ -4062,6 +4079,7 @@
 				14FAA8ED1D9507CB002D81CC /* ZTCameraView.m in Sources */,
 				14FAA76A1D9507CA002D81CC /* MD_Socket_SendFile_TVC.m in Sources */,
 				14FAA8E81D9507CB002D81CC /* MD_UICustom_VC.m in Sources */,
+				14D3ADE41DF7C387001DED27 /* MD_NSException_VC.m in Sources */,
 				14FAA7561D9507CA002D81CC /* TouchDrawViewController.m in Sources */,
 				14C8338B1DB474A0009363F9 /* NSDate+Tpages.m in Sources */,
 				14FAA7871D9507CB002D81CC /* RNCachingURLProtocol.m in Sources */,

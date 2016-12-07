@@ -77,6 +77,14 @@
 				<array>
 					<dict>
 						<key>desc</key>
+						<string>NSException</string>
+						<key>className</key>
+						<string>MD_NSException_VC</string>
+						<key>sub</key>
+						<array/>
+					</dict>
+					<dict>
+						<key>desc</key>
 						<string>NSRunLoop</string>
 						<key>className</key>
 						<string>MD_NSRunLoop_VC</string>
