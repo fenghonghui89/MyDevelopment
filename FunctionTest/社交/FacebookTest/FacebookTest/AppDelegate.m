@@ -21,6 +21,8 @@
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
   // 在此添加任意自定义逻辑。
+  
+  NSLog(@"version:%@",[FBSDKSettings sdkVersion]);
   return YES;
 }
 
