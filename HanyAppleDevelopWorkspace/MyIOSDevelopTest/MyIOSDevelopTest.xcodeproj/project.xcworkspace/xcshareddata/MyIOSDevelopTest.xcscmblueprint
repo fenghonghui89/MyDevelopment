@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F8026FD44A51BFF048FBA4DBAFFD35CB4924B764",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1FD355C0915158FED7883892EA0EB18162414115" : 9223372036854775807,
+    "F8026FD44A51BFF048FBA4DBAFFD35CB4924B764" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8CB8F978-D942-47ED-BF93-3C1B4F002875",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1FD355C0915158FED7883892EA0EB18162414115" : "OSC_ThirdLibrary\/",
+    "F8026FD44A51BFF048FBA4DBAFFD35CB4924B764" : "MyDevelopment\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MyIOSDevelopTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HanyAppleDevelopWorkspace\/MyIOSDevelopTest\/MyIOSDevelopTest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/hanyfeng89\/OSC_ThirdLibrary.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1FD355C0915158FED7883892EA0EB18162414115"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fenghonghui89\/MyDevelopment.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F8026FD44A51BFF048FBA4DBAFFD35CB4924B764"
+    }
+  ]
+}
