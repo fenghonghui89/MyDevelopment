@@ -15,6 +15,7 @@
 <a href="#jq_result_fade">淡入淡出</a><br/>
 <a href="#jq_result_slide">滑动</a><br/>
 <a href="#jq_result_animate">动画</a>
+<a href="#jq_result_animateStop">动画或效果的停止</a>
 
 <!------------------------------------------------------------------隐藏 显示------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="jq_result_hideshow">隐藏 显示</h1>
@@ -22,17 +23,31 @@
 <hr />
 
 <script>
-    $(document).ready(function () {
-       $("p#jq_result_hideshow_p").click(function(){
-           $(this).hide(1000,function(){alert("hide..");});
-       });
-    });
+    $(document).ready(function(){
+        $("button#jq_result_hideshow_hidebtn").click(function(){
+            $("p#jq_result_hideshow_p").hide(2000,function(){alert("hide..");});
+        })
 
+        $("button#jq_result_hideshow_showbtn").click(function(){
+            $("p#jq_result_hideshow_p").show(2000,function(){alert("show..");});
+        })
+
+        $("button#jq_result_hideshow_togglebtn").click(function(){
+            $("p#jq_result_hideshow_p").toggle();
+        })
+
+        $("button#jq_result_hideshow_stop").click(function(){
+            $("p#jq_result_hideshow_p").stop();
+        })
+    })
 </script>
 
-<p id="jq_result_hideshow_p">如果您点击我，我会消失。</p>
 
-
+<button id="jq_result_hideshow_hidebtn">消失</button>
+<button id="jq_result_hideshow_showbtn">显示</button>
+<button id="jq_result_hideshow_togglebtn">toggle</button>
+<button id="jq_result_hideshow_stop">stop</button>
+<p id="jq_result_hideshow_p">我在这里~~~~~~~~~~~~~~~</p>
 <br/><br/><br/>
 
 
@@ -67,6 +82,12 @@ $(document).ready(function(){
         $("#jq_result_fade_div2").fadeTo("slow",0.4);
         $("#jq_result_fade_div3").fadeTo("slow",0.7);
     });
+
+    $("button#jq_result_fade_stop").click(function(){
+        $("#jq_result_fade_div1").stop();
+        $("#jq_result_fade_div2").stop();
+        $("#jq_result_fade_div3").stop();
+    });
 })
 
 </script>
@@ -76,6 +97,7 @@ $(document).ready(function(){
 <button id="jq_result_fade_btn2">fadeOut淡出</button>
 <button id="jq_result_fade_btn3">fadeToggle淡入淡出之间切换</button>
 <button id="jq_result_fade_btn4">fadeTo半透明</button>
+<button id="jq_result_fade_stop">stop</button>
 <br/><br/>
 <div id="jq_result_fade_div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
 <br>
@@ -93,48 +115,45 @@ $(document).ready(function(){
 
 <script>
     $(document).ready(function(){
-        $("p#jq_result_slide_slidDown").click(function(){
-            $("div#jq_result_slide_panel").slideDown("slow");
+        $("button#jq_result_slide_slidDown").click(function(){
+            $("div#jq_result_slide_panel").slideDown(2000);
         });
-    });
-    $(document).ready(function(){
-        $("p#jq_result_slide_slidUp").click(function(){
-            $("div#jq_result_slide_panel").slideUp("slow");
+
+        $("button#jq_result_slide_slidUp").click(function(){
+            $("div#jq_result_slide_panel").slideUp(2000);
         });
-    });
-    $(document).ready(function(){
-        $("p#jq_result_slide_slideToggle").click(function(){
+
+        $("button#jq_result_slide_slideToggle").click(function(){
             $("div#jq_result_slide_panel").slideToggle("slow");
         });
+
+        $("button#jq_result_slide_stop").click(function(){
+            $("div#jq_result_slide_panel").stop();
+        })
     });
 </script>
 
 <style>
-    div#jq_result_slide_panel,
-    p#jq_result_slide_slidDown,
-    p#jq_result_slide_slidUp,
-    p#jq_result_slide_slideToggle
+    div#jq_result_slide_panel
     {
         margin:0px;
         padding:5px;
         text-align:center;
         background:#e5eecc;
         border:solid 1px #c3c3c3;
-    }
-    div#jq_result_slide_panel
-    {
         height:120px;
         display:none;
     }
 </style>
+
+<button id="jq_result_slide_slidDown">向下滑动</button>
+<button id="jq_result_slide_slidUp">向上滑动</button>
+<button id="jq_result_slide_slideToggle">来回切换toggle</button>
+<button id="jq_result_slide_stop">stop</button>
 <div id="jq_result_slide_panel">
     <p>W3School - 领先的 Web 技术教程站点</p>
     <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
 </div>
-
-<p id="jq_result_slide_slidDown">向下滑动</p>
-<p id="jq_result_slide_slidUp">向上滑动</p>
-<p id="jq_result_slide_slideToggle">来回切换</p>
 <br/><br/><br/>
 
 
@@ -145,14 +164,31 @@ $(document).ready(function(){
 <hr />
 
 <script>
+$(document).ready(function(){
+    $("button#jq_result_animate_btn").click(function(){
+        var div = $("div#jq_result_animate_div");
+        div.animate({height:'300px',opacity:'0.4'},"slow");
+        div.animate({width:'300px',opacity:'0.8'},"slow");
+        div.animate({height:'100px',opacity:'0.4'},"slow");
+        div.animate({width:'100px',opacity:'0.8'},"slow");
+        div.animate({fontSize:'5em'},"slow");
+    })
 
+    $("button#jq_result_animate_stop").click(function(){
+        var div = $("div#jq_result_animate_div");
+        div.stop(true);
+    })
+
+})
 </script>
 
-<style>
-
-</style>
+<button id="jq_result_animate_btn">开始动画</button>
+<button id="jq_result_animate_stop">stop</button>
+<div style="background:greenyellow;height:100px;width:100px;position:absolute;" id="jq_result_animate_div">Hello</div>
 
 <br/><br/><br/>
+
+
 
 
 </body>
