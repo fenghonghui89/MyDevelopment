@@ -16,6 +16,9 @@
 <a href="#jq_result_slide">滑动</a><br/>
 <a href="#jq_result_animate">动画</a>
 <a href="#jq_result_animateStop">动画或效果的停止</a>
+<br/>
+<h2>jQuery HTML</h2>
+<a href="#jq_result_getContent">获取内容和属性</a>
 
 <!------------------------------------------------------------------隐藏 显示------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="jq_result_hideshow">隐藏 显示</h1>
@@ -172,6 +175,7 @@ $(document).ready(function(){
         div.animate({height:'100px',opacity:'0.4'},"slow");
         div.animate({width:'100px',opacity:'0.8'},"slow");
         div.animate({fontSize:'5em'},"slow");
+
     })
 
     $("button#jq_result_animate_stop").click(function(){
@@ -188,6 +192,65 @@ $(document).ready(function(){
 
 <br/><br/><br/>
 
+
+
+<!------------------------------------------------------------------获取内容和属性------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_result_getContent">获取内容和属性</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+$(document).ready(function(){
+    //设置或返回所选元素的文本内容
+    $("button#jq_result_getContent_text").click(function(){
+        var obj = $("p#jq_result_getContent_p");
+//        alert(obj.text());
+//        alert(obj.text());
+        obj.text("hello world..");
+        obj.text(function(i,origText){
+            return 'old text:'+origText+' new text:'+'啦啦啦~(index:'+i+')'
+        })
+    })
+
+    //设置或返回所选元素的内容（包括 HTML 标记）
+    $("button#jq_result_getContent_html").click(function(){
+        var obj = $("p#jq_result_getContent_p");
+//        alert(obj.html());
+        obj.html("<img src='../src/111111.jpg'>");
+        obj.text(function(i,origText){
+            return 'old text:'+origText+' new text:'+'<b>哈哈哈哈?~<b/>(index:'+i+')'
+        })
+    })
+
+    //设置或返回表单字段的值
+    $("button#jq_result_getContent_val").click(function(){
+        var obj = $("input#jq_result_getContent_input");
+//        alert(obj.val());
+        obj.val("改成唐老鸭了~");
+    })
+
+    //获取属性值
+    $("button#jq_result_getContent_attr").click(function(){
+        var obj = $("a#jq_result_getContent_a");
+//        alert(obj.attr('href'));
+        obj.attr({"href":"http://www.baidu.com"});
+        obj.text("www.baidu.com");
+    })
+})
+</script>
+
+<button id="jq_result_getContent_text">text</button>
+<button id="jq_result_getContent_html">html</button>
+<button id="jq_result_getContent_val">val</button>
+<button id="jq_result_getContent_attr">attr</button>
+
+<p id="jq_result_getContent_p">这是一个段落</p>
+<div>
+    <a href="http://tpages.cn" id="jq_result_getContent_a">tpages.cn</a>
+</div>
+<input type="text" id="jq_result_getContent_input" value="米老鼠">
+
+<br/><br/><br/>
 
 
 
