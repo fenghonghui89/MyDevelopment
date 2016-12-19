@@ -53,6 +53,11 @@ li>strong {
     font-weight: normal;
 }
 
+div#jq_deleteContent_div > p#jq_deleteContent_p2{
+    background-color: #cc0000;
+    font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
+}
+
 /*兄弟元素 只有紧接着的同一级元素有效果 每次匹配一个*/
 h1+p{
     border-style: dotted;

@@ -11,135 +11,136 @@
 <h1 id="root_menu"><b>目录</b></h1>
 
 <h2>jQuery效果</h2>
-<a href="#jq_result_hideshow">隐藏 显示</a><br/>
-<a href="#jq_result_fade">淡入淡出</a><br/>
-<a href="#jq_result_slide">滑动</a><br/>
-<a href="#jq_result_animate">动画</a><br/>
+<a href="#jq_hideshow">隐藏 显示</a><br/>
+<a href="#jq_fade">淡入淡出</a><br/>
+<a href="#jq_slide">滑动</a><br/>
+<a href="#jq_animate">动画</a><br/>
 <br/>
 <h2>jQuery HTML</h2>
-<a href="#jq_result_getOrSetContent">text/html/val/attr 获取/设置内容和属性</a><br/>
-<a href="#jq_result_addContent">append/prepend添加元素</a><br/>
-<a href="#jq_result_addContentAfter">after/before添加元素</a><br/>
-<a href="#jq_result_deleteContent">remove/empty删除元素</a><br/>
+<a href="#jq_getOrSetContent">text/html/val/attr 获取/设置内容和属性</a><br/>
+<a href="#jq_addContent">append/prepend添加元素</a><br/>
+<a href="#jq_addContentAfter">after/before添加元素</a><br/>
+<a href="#jq_deleteContent">remove/empty删除元素</a><br/>
+<a href="#jq_setCSS">获取并设置 CSS 类</a><br/>
 
 <!------------------------------------------------------------------隐藏 显示------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_hideshow">隐藏 显示</h1>
+<h1 class="HeaderTitle" id="jq_hideshow">隐藏 显示</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
     $(document).ready(function(){
-        $("button#jq_result_hideshow_hidebtn").click(function(){
-            $("p#jq_result_hideshow_p").hide(2000,function(){alert("hide..");});
+        $("button#jq_hideshow_hidebtn").click(function(){
+            $("p#jq_hideshow_p").hide(2000,function(){alert("hide..");});
         })
 
-        $("button#jq_result_hideshow_showbtn").click(function(){
-            $("p#jq_result_hideshow_p").show(2000,function(){alert("show..");});
+        $("button#jq_hideshow_showbtn").click(function(){
+            $("p#jq_hideshow_p").show(2000,function(){alert("show..");});
         })
 
-        $("button#jq_result_hideshow_togglebtn").click(function(){
-            $("p#jq_result_hideshow_p").toggle();
+        $("button#jq_hideshow_togglebtn").click(function(){
+            $("p#jq_hideshow_p").toggle();
         })
 
-        $("button#jq_result_hideshow_stop").click(function(){
-            $("p#jq_result_hideshow_p").stop();
+        $("button#jq_hideshow_stop").click(function(){
+            $("p#jq_hideshow_p").stop();
         })
     })
 </script>
 
 
-<button id="jq_result_hideshow_hidebtn">消失</button>
-<button id="jq_result_hideshow_showbtn">显示</button>
-<button id="jq_result_hideshow_togglebtn">toggle</button>
-<button id="jq_result_hideshow_stop">stop</button>
-<p id="jq_result_hideshow_p">我在这里~~~~~~~~~~~~~~~</p>
+<button id="jq_hideshow_hidebtn">消失</button>
+<button id="jq_hideshow_showbtn">显示</button>
+<button id="jq_hideshow_togglebtn">toggle</button>
+<button id="jq_hideshow_stop">stop</button>
+<p id="jq_hideshow_p">我在这里~~~~~~~~~~~~~~~</p>
 <br/><br/><br/>
 
 
 
 <!------------------------------------------------------------------淡入淡出------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_fade">淡入淡出</h1>
+<h1 class="HeaderTitle" id="jq_fade">淡入淡出</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
 $(document).ready(function(){
-    $("button#jq_result_fade_btn1").click(function(){
-        $("#jq_result_fade_div1").fadeIn();
-        $("#jq_result_fade_div2").fadeIn("slow");
-        $("#jq_result_fade_div3").fadeIn(2000);
+    $("button#jq_fade_btn1").click(function(){
+        $("#jq_fade_div1").fadeIn();
+        $("#jq_fade_div2").fadeIn("slow");
+        $("#jq_fade_div3").fadeIn(2000);
     });
 
-    $("button#jq_result_fade_btn2").click(function(){
-        $("#jq_result_fade_div1").fadeOut();
-        $("#jq_result_fade_div2").fadeOut("slow");
-        $("#jq_result_fade_div3").fadeOut(2000);
+    $("button#jq_fade_btn2").click(function(){
+        $("#jq_fade_div1").fadeOut();
+        $("#jq_fade_div2").fadeOut("slow");
+        $("#jq_fade_div3").fadeOut(2000);
     });
 
-    $("button#jq_result_fade_btn3").click(function(){
-        $("#jq_result_fade_div1").fadeToggle();
-        $("#jq_result_fade_div2").fadeToggle("slow");
-        $("#jq_result_fade_div3").fadeToggle(2000);
+    $("button#jq_fade_btn3").click(function(){
+        $("#jq_fade_div1").fadeToggle();
+        $("#jq_fade_div2").fadeToggle("slow");
+        $("#jq_fade_div3").fadeToggle(2000);
     });
 
-    $("button#jq_result_fade_btn4").click(function(){
-        $("#jq_result_fade_div1").fadeTo("slow",0.15);
-        $("#jq_result_fade_div2").fadeTo("slow",0.4);
-        $("#jq_result_fade_div3").fadeTo("slow",0.7);
+    $("button#jq_fade_btn4").click(function(){
+        $("#jq_fade_div1").fadeTo("slow",0.15);
+        $("#jq_fade_div2").fadeTo("slow",0.4);
+        $("#jq_fade_div3").fadeTo("slow",0.7);
     });
 
-    $("button#jq_result_fade_stop").click(function(){
-        $("#jq_result_fade_div1").stop();
-        $("#jq_result_fade_div2").stop();
-        $("#jq_result_fade_div3").stop();
+    $("button#jq_fade_stop").click(function(){
+        $("#jq_fade_div1").stop();
+        $("#jq_fade_div2").stop();
+        $("#jq_fade_div3").stop();
     });
 })
 
 </script>
 
 <p>淡入已隐藏的元素</p>
-<button id="jq_result_fade_btn1">fadeOut淡入</button>
-<button id="jq_result_fade_btn2">fadeOut淡出</button>
-<button id="jq_result_fade_btn3">fadeToggle淡入淡出之间切换</button>
-<button id="jq_result_fade_btn4">fadeTo半透明</button>
-<button id="jq_result_fade_stop">stop</button>
+<button id="jq_fade_btn1">fadeOut淡入</button>
+<button id="jq_fade_btn2">fadeOut淡出</button>
+<button id="jq_fade_btn3">fadeToggle淡入淡出之间切换</button>
+<button id="jq_fade_btn4">fadeTo半透明</button>
+<button id="jq_fade_stop">stop</button>
 <br/><br/>
-<div id="jq_result_fade_div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
+<div id="jq_fade_div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
 <br>
-<div id="jq_result_fade_div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+<div id="jq_fade_div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
 <br>
-<div id="jq_result_fade_div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+<div id="jq_fade_div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
 
 <br/><br/><br/>
 
 
 <!------------------------------------------------------------------滑动------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_slide">滑动</h1>
+<h1 class="HeaderTitle" id="jq_slide">滑动</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
     $(document).ready(function(){
-        $("button#jq_result_slide_slidDown").click(function(){
-            $("div#jq_result_slide_panel").slideDown(2000);
+        $("button#jq_slide_slidDown").click(function(){
+            $("div#jq_slide_panel").slideDown(2000);
         });
 
-        $("button#jq_result_slide_slidUp").click(function(){
-            $("div#jq_result_slide_panel").slideUp(2000);
+        $("button#jq_slide_slidUp").click(function(){
+            $("div#jq_slide_panel").slideUp(2000);
         });
 
-        $("button#jq_result_slide_slideToggle").click(function(){
-            $("div#jq_result_slide_panel").slideToggle("slow");
+        $("button#jq_slide_slideToggle").click(function(){
+            $("div#jq_slide_panel").slideToggle("slow");
         });
 
-        $("button#jq_result_slide_stop").click(function(){
-            $("div#jq_result_slide_panel").stop();
+        $("button#jq_slide_stop").click(function(){
+            $("div#jq_slide_panel").stop();
         })
     });
 </script>
 
 <style>
-    div#jq_result_slide_panel
+    div#jq_slide_panel
     {
         margin:0px;
         padding:5px;
@@ -151,11 +152,11 @@ $(document).ready(function(){
     }
 </style>
 
-<button id="jq_result_slide_slidDown">向下滑动</button>
-<button id="jq_result_slide_slidUp">向上滑动</button>
-<button id="jq_result_slide_slideToggle">来回切换toggle</button>
-<button id="jq_result_slide_stop">stop</button>
-<div id="jq_result_slide_panel">
+<button id="jq_slide_slidDown">向下滑动</button>
+<button id="jq_slide_slidUp">向上滑动</button>
+<button id="jq_slide_slideToggle">来回切换toggle</button>
+<button id="jq_slide_stop">stop</button>
+<div id="jq_slide_panel">
     <p>W3School - 领先的 Web 技术教程站点</p>
     <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
 </div>
@@ -164,14 +165,14 @@ $(document).ready(function(){
 
 
 <!------------------------------------------------------------------动画------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_animate">动画</h1>
+<h1 class="HeaderTitle" id="jq_animate">动画</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
 $(document).ready(function(){
-    $("button#jq_result_animate_btn").click(function(){
-        var div = $("div#jq_result_animate_div");
+    $("button#jq_animate_btn").click(function(){
+        var div = $("div#jq_animate_div");
         div.animate({height:'300px',opacity:'0.4'},"slow");
         div.animate({width:'300px',opacity:'0.8'},"slow");
         div.animate({height:'100px',opacity:'0.4'},"slow");
@@ -180,32 +181,32 @@ $(document).ready(function(){
 
     })
 
-    $("button#jq_result_animate_stop").click(function(){
-        var div = $("div#jq_result_animate_div");
+    $("button#jq_animate_stop").click(function(){
+        var div = $("div#jq_animate_div");
         div.stop(true);
     })
 
 })
 </script>
 
-<button id="jq_result_animate_btn">开始动画</button>
-<button id="jq_result_animate_stop">stop</button>
-<div style="background:greenyellow;height:100px;width:100px;position:absolute;" id="jq_result_animate_div">Hello</div>
+<button id="jq_animate_btn">开始动画</button>
+<button id="jq_animate_stop">stop</button>
+<div style="background:greenyellow;height:100px;width:100px;position:absolute;" id="jq_animate_div">Hello</div>
 
 <br/><br/><br/>
 
 
 
 <!------------------------------------------------------------------text/html/val/attr 获取/设置内容和属性------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_getOrSetContent">text/html/val/attr 获取/设置内容和属性</h1>
+<h1 class="HeaderTitle" id="jq_getOrSetContent">text/html/val/attr 获取/设置内容和属性</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
 $(document).ready(function(){
     //设置或返回所选元素的文本内容
-    $("button#jq_result_getContent_text").click(function(){
-        var obj = $("p#jq_result_getContent_p");
+    $("button#jq_getContent_text").click(function(){
+        var obj = $("p#jq_getContent_p");
         //获取
 //        alert(obj.text());
 
@@ -222,8 +223,8 @@ $(document).ready(function(){
     })
 
     //设置或返回所选元素的内容（包括 HTML 标记）
-    $("button#jq_result_getContent_html").click(function(){
-        var obj = $("p#jq_result_getContent_p");
+    $("button#jq_getContent_html").click(function(){
+        var obj = $("p#jq_getContent_p");
         //获取
 //        alert(obj.html());
 
@@ -240,8 +241,8 @@ $(document).ready(function(){
     })
 
     //设置或返回表单字段的值
-    $("button#jq_result_getContent_val").click(function(){
-        var obj = $("input#jq_result_getContent_input");
+    $("button#jq_getContent_val").click(function(){
+        var obj = $("input#jq_getContent_input");
         //获取
 //        alert(obj.val());
 
@@ -256,8 +257,8 @@ $(document).ready(function(){
     })
 
     //获取属性值
-    $("button#jq_result_getContent_attr").click(function(){
-        var obj = $("a#jq_result_getContent_a");
+    $("button#jq_getContent_attr").click(function(){
+        var obj = $("a#jq_getContent_a");
         //获取
 //        alert(obj.attr('href'));
 
@@ -275,22 +276,22 @@ $(document).ready(function(){
 })
 </script>
 
-<button id="jq_result_getContent_text">text</button>
-<button id="jq_result_getContent_html">html</button>
-<button id="jq_result_getContent_val">val</button>
-<button id="jq_result_getContent_attr">attr</button>
+<button id="jq_getContent_text">text</button>
+<button id="jq_getContent_html">html</button>
+<button id="jq_getContent_val">val</button>
+<button id="jq_getContent_attr">attr</button>
 
-<p id="jq_result_getContent_p">这是<b><sub>一个段落!</sub></b></p>
-<input type="text" id="jq_result_getContent_input" value="米老鼠">
+<p id="jq_getContent_p">这是<b><sub>一个段落!</sub></b></p>
+<input type="text" id="jq_getContent_input" value="米老鼠">
 <div>
-    <a href="http://tpages.cn" id="jq_result_getContent_a" title="tpages啦">tpages.cn</a>
+    <a href="http://tpages.cn" id="jq_getContent_a" title="tpages啦">tpages.cn</a>
 </div>
 
 <br/><br/><br/>
 
 
 <!------------------------------------------------------------------append/prepend添加元素------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_addContent">append/prepend添加元素</h1>
+<h1 class="HeaderTitle" id="jq_addContent">append/prepend添加元素</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
@@ -298,34 +299,34 @@ $(document).ready(function(){
 $(document).ready(function(){
 
     //在被选元素的结尾插入内容
-    $("button#jq_result_addContent_btn1").click(function(){
-        $("p#jq_result_addContent_p1").append(" <b>Appended text...</b>.")
-        $("ol#jq_result_addContent_ol").append("<li>444!!!<li/>");
+    $("button#jq_addContent_btn1").click(function(){
+        $("p#jq_addContent_p1").append(" <b>Appended text...</b>.")
+        $("ol#jq_addContent_ol").append("<li>444!!!<li/>");
     })
 
     //在被选元素的开头插入内容
-    $("button#jq_result_addContent_btn2").click(function(){
-        $("p#jq_result_addContent_p2").prepend("<b>Prepended text...</b>. ")
-        $("ol#jq_result_addContent_ol").prepend("<li>444!!!<li/>");
+    $("button#jq_addContent_btn2").click(function(){
+        $("p#jq_addContent_p2").prepend("<b>Prepended text...</b>. ")
+        $("ol#jq_addContent_ol").prepend("<li>444!!!<li/>");
     })
 
     //添加若干元素
-    $("button#jq_result_addContent_btn3").click(function(){
+    $("button#jq_addContent_btn3").click(function(){
         var txt1="<p>Text.</p>";              // 以 HTML 创建新元素
         var txt2=$("<p></p>").text("Text.");  // 以 jQuery 创建新元素
         var txt3=document.createElement("p");
         txt3.innerHTML="Text.";               // 通过 DOM 来创建文本
-        $("p#jq_result_addContent_p2").append(txt1,txt2,txt3);
+        $("p#jq_addContent_p2").append(txt1,txt2,txt3);
     })
 
 })
 </script>
-<button id="jq_result_addContent_btn1">append</button>
-<button id="jq_result_addContent_btn2">prepend</button>
-<button id="jq_result_addContent_btn3">添加若干元素</button>
-<p id="jq_result_addContent_p1">this is p1..</p>
-<p id="jq_result_addContent_p2">this is p2..</p>
-<ol id="jq_result_addContent_ol">
+<button id="jq_addContent_btn1">append</button>
+<button id="jq_addContent_btn2">prepend</button>
+<button id="jq_addContent_btn3">添加若干元素</button>
+<p id="jq_addContent_p1">this is p1..</p>
+<p id="jq_addContent_p2">this is p2..</p>
+<ol id="jq_addContent_ol">
     <li>111</li>
     <li>222</li>
     <li>333</li>
@@ -336,36 +337,36 @@ $(document).ready(function(){
 
 
 <!------------------------------------------------------------------after/before添加元素------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_addContentAfter">after/before添加元素</h1>
+<h1 class="HeaderTitle" id="jq_addContentAfter">after/before添加元素</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
 
     $(document).ready(function(){
-        $("button#jq_result_addContentAfter_btn1").click(function(){
-            $("img#jq_result_addContentAfter_img").after("<b>after</b>")
+        $("button#jq_addContentAfter_btn1").click(function(){
+            $("img#jq_addContentAfter_img").after("<b>after</b>")
         })
 
-        $("button#jq_result_addContentAfter_btn2").click(function(){
-            $("img#jq_result_addContentAfter_img").before("<b>before</b>")
+        $("button#jq_addContentAfter_btn2").click(function(){
+            $("img#jq_addContentAfter_img").before("<b>before</b>")
         })
 
-        $("button#jq_result_addContentAfter_btn3").click(function(){
+        $("button#jq_addContentAfter_btn3").click(function(){
             var txt1="<b>I </b>";                    // 以 HTML 创建元素
             var txt2=$("<i></i>").text("love ");     // 通过 jQuery 创建元素
             var txt3=document.createElement("big");  // 通过 DOM 创建元素
             txt3.innerHTML="jQuery!";
-            $("img#jq_result_addContentAfter_img").after(txt1,txt2,txt3);
+            $("img#jq_addContentAfter_img").after(txt1,txt2,txt3);
         })
     })
 </script>
 
-<button id="jq_result_addContentAfter_btn1">after</button>
-<button id="jq_result_addContentAfter_btn2">before</button>
-<button id="jq_result_addContentAfter_btn3">添加若干元素</button>
+<button id="jq_addContentAfter_btn1">after</button>
+<button id="jq_addContentAfter_btn2">before</button>
+<button id="jq_addContentAfter_btn3">添加若干元素</button>
 <div>
-    <img id="jq_result_addContentAfter_img" src="../src/111111.jpg">
+    <img id="jq_addContentAfter_img" src="../src/111111.jpg">
 </div>
 
 
@@ -374,7 +375,7 @@ $(document).ready(function(){
 
 
 <!------------------------------------------------------------------remove/empty删除元素------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_result_deleteContent">remove/empty删除元素</h1>
+<h1 class="HeaderTitle" id="jq_deleteContent">remove/empty删除元素</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
@@ -382,42 +383,96 @@ $(document).ready(function(){
     $(document).ready(function(){
 
         //删除被选元素（及其子元素）
-        $("button#jp_result_deleteContent_btn1").click(function(){
-            $("div#jq_result_deleteContent_div").remove();
+        $("button#jq_deleteContent_btn1").click(function(){
+            $("div#jq_deleteContent_div").remove();
         })
 
         //从被选元素中删除子元素
-        $("button#jp_result_deleteContent_btn2").click(function(){
-            $("div#jq_result_deleteContent_div").empty();
+        $("button#jq_deleteContent_btn2").click(function(){
+            $("div#jq_deleteContent_div").empty();
         })
 
         //过滤被删除的元素
-        $("button#jp_result_deleteContent_btn3").click(function(){
-//            $("p").remove("#jq_result_deleteContent_p2");
-            $("div#jq_result_deleteContent_div").remove("")
+        $("button#jq_deleteContent_btn3").click(function(){
+            $("p").remove("#jq_deleteContent_p2");
+//            $("div#jq_deleteContent_div").remove(">p#jq_deleteContent_p2")//无效
         })
 
     })
 </script>
 <style>
-    div#jq_result_deleteContent_div {
+    div#jq_deleteContent_div {
         background-color: #00FF00;
         height: 300px;
         width: 300px;
     }
 
-    div#jp_reuslt_deleteContent_
+    div#jq_deleteContent_div > p#jq_deleteContent_p2{
+        background-color: #cc0000;
+        font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
+    }
+
 </style>
-<button id="jp_result_deleteContent_btn1">remove</button>
-<button id="jp_result_deleteContent_btn2">empty</button>
-<button id="jp_result_deleteContent_btn3">过滤被删除的元素</button>
-<div id="jq_result_deleteContent_div">
-    <p id="jq_result_deleteContent_p1">this is content1...</p>
-    <p id="jq_result_deleteContent_p2">this is content2...</p>
-    <p id="jq_result_deleteContent_p3">this is content3...</p>
+<button id="jq_deleteContent_btn1">remove</button>
+<button id="jq_deleteContent_btn2">empty</button>
+<button id="jq_deleteContent_btn3">过滤被删除的元素</button>
+<div id="jq_deleteContent_div">
+    <p id="jq_deleteContent_p1">this is content1...</p>
+    <p id="jq_deleteContent_p2">this is content2...</p>
+    <p id="jq_deleteContent_p3">this is content3...</p>
 </div>
 
+<br/><br/><br/>
 
+
+<!------------------------------------------------------------------获取并设置 CSS 类------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_setCSS">获取并设置 CSS 类</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function(){
+        $("button#jq_setCSS_btn1").click(function(){
+            $("h1#jq_setCSS_h1,h2#jq_setCSS_h2,p#jq_setCSS_p1").addClass('blue');
+            $("p#jq_setCSS_p2").addClass('red');
+            $("div#jq_setCSS_div").addClass('important blue');
+        })
+
+        $("button#jq_setCSS_btn2").click(function(){
+            $("h1#jq_setCSS_h1,h2#jq_setCSS_h2,p#jq_setCSS_p1").removeClass('blue');
+            $("p#jq_setCSS_p2").removeClass('red');
+            $("div#jq_setCSS_div").removeClass('important blue');
+        })
+
+        $("button#jq_setCSS_btn3").click(function(){
+            $("h1#jq_setCSS_h1,h2#jq_setCSS_h2,p#jq_setCSS_p1").toggleClass('blue');
+            $("p#jq_setCSS_p2").toggleClass('red');
+            $("div#jq_setCSS_div").toggleClass('important blue');
+        })
+    })
+</script>
+<style>
+    .important{
+        font-size: xx-large;
+        font-weight: bold;
+    }
+
+    .red{
+        color: #cc0000;
+    }
+
+    .blue{
+        color: #0000FF;
+    }
+</style>
+<button id="jq_setCSS_btn1">addClass</button>
+<button id="jq_setCSS_btn2">removeClass</button>
+<button id="jq_setCSS_btn3">toggleClass</button>
+<h1 id="jq_setCSS_h1">标题 1</h1>
+<h2 id="jq_setCSS_h2">标题 2</h2>
+<p id="jq_setCSS_p1">这是一个段落。</p>
+<p id="jq_setCSS_p2">这是另一个段落。</p>
+<div id="jq_setCSS_div">这是非常重要的文本！</div>
 
 <br/><br/><br/>
 
