@@ -22,6 +22,11 @@
 <a href="#jq_addContentAfter">after/before添加元素</a><br/>
 <a href="#jq_deleteContent">remove/empty删除元素</a><br/>
 <a href="#jq_setCSS">获取并设置 CSS 类</a><br/>
+<a href="#jq_cssMethod">css()方法</a><br/>
+<a href="#jq_size">尺寸</a><br/>
+<br/>
+<h2>jQuery 遍历</h2>
+<a href="#jq_ancestors">遍历-祖先</a><br/>
 
 <!------------------------------------------------------------------隐藏 显示------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="jq_hideshow">隐藏 显示</h1>
@@ -473,6 +478,163 @@ $(document).ready(function(){
 <p id="jq_setCSS_p1">这是一个段落。</p>
 <p id="jq_setCSS_p2">这是另一个段落。</p>
 <div id="jq_setCSS_div">这是非常重要的文本！</div>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------css()方法------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_cssMethod">css()方法</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function(){
+        $("button#jq_cssMethod_btn1").click(function(){
+            alert($("p#jq_cssMethod_p1").css("background-color"))
+        })
+
+        $("button#jq_cssMethod_btn2").click(function(){
+            $("p#jq_cssMethod_p2").css("background-color","yellow")
+        })
+
+        $("button#jq_cssMethod_btn3").click(function(){
+            $("p#jq_cssMethod_p3").css({"background-color":"green","font-size":"200%"});
+        })
+    })
+</script>
+<button id="jq_cssMethod_btn1">获取css属性值</button>
+<button id="jq_cssMethod_btn2">设置css属性</button>
+<button id="jq_cssMethod_btn3">设置多个css属性</button>
+<p style="background-color:#ff0000" id="jq_cssMethod_p1">这是一个段落。</p>
+<p style="background-color:#00ff00" id="jq_cssMethod_p2">这是一个段落。</p>
+<p style="background-color:#0000ff" id="jq_cssMethod_p3">这是一个段落。</p>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------尺寸------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_size">尺寸</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function(){
+
+        /*
+        * width() 方法设置或返回元素的宽度（不包括内边距、边框或外边距）。
+         height() 方法设置或返回元素的高度（不包括内边距、边框或外边距）。
+         innerWidth() 方法返回元素的宽度（包括内边距）。
+         innerHeight() 方法返回元素的高度（包括内边距）。
+         outerWidth() 方法返回元素的宽度（包括内边距和边框）。
+         outerHeight() 方法返回元素的高度（包括内边距和边框）。
+         outerWidth(true) 方法返回元素的宽度（包括内边距、边框和外边距）。
+         outerHeight(true) 方法返回元素的高度（包括内边距、边框和外边距）。
+        * */
+        $("button#jq_size_btn1").click(function(){
+            var obj = $("div#jq_size_div");
+            var txt = "";
+            txt+="Width of div: " + obj.width() + "\n";
+            txt+="Height of div: " + obj.height() + "\n";
+            txt+="Inner width of div: " + obj.innerWidth() + "\n";
+            txt+="Inner height of div: " + obj.innerHeight() + "\n";
+            txt+="Outer width: " + obj.outerWidth() + "\n";
+            txt+="Outer height: " + obj.outerHeight() + "\n";
+            txt+="Outer width (+margin): " + obj.outerWidth(true) + "\n";//无效?
+            txt+="Outer height (+margin): " + obj.outerHeight(true) + "\n";//无效?
+            alert(txt);
+        })
+
+        $("button#jq_size_btn2").click(function(){
+            var txt="";
+            txt+="Document width/height: " + $(document).width();
+            txt+="x" + $(document).height() + "\n";
+            txt+="Window width/height: " + $(window).width();
+            txt+="x" + $(window).height();
+            alert(txt);
+        })
+
+        $("button#jq_size_btn3").click(function(){
+            $("div#jq_size_div").width(320).height(320);
+        })
+    })
+</script>
+<style>
+    div#jq_size_div{
+        background-color: aqua;
+        solid-color: red;
+        width: 300px;
+        height: 100px;
+        padding: 10px;
+        margin: 3px;
+        border: 1px;
+    }
+</style>
+<button id="jq_size_btn1">显示控件尺寸</button>
+<button id="jq_size_btn2">显示文档和窗口的尺寸</button>
+<button id="jq_size_btn3">调整尺寸</button>
+<div id="jq_size_div"></div>
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------遍历-祖先------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_ancestors">遍历-祖先</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function(){
+        $("button#jq_ancestors_btn1").click(function(){
+            $("span").parent().css({"color":"red","border":"2px solid red"});
+        })
+
+        $("button#jq_ancestors_btn2").click(function(){
+            $("span").parents().css({"color":"red","border":"2px solid red"});
+        })
+
+        $("button#jq_ancestors_btn3").click(function(){
+            $("span").parents("ul").css({"color":"red","border":"2px solid red"});
+        })
+
+        $("button#jq_ancestors_btn4").click(function(){
+            $("span").parentsUntil("div").css({"color":"red","border":"2px solid red"});
+        })
+
+        $("button#jq_ancestors_btnReturn").click(function(){
+            $("span").parents().css({"display":"block","border":"2px solid lightgrey","color":"lightgrey"});
+        })
+    })
+</script>
+<button id="jq_ancestors_btn1">parent直接父元素</button>
+<button id="jq_ancestors_btn2">parents所有祖先元素</button>
+<button id="jq_ancestors_btn3">parents过滤</button>
+<button id="jq_ancestors_btn4">parentsUntil返回介于两个给定元素之间的所有祖先元素</button>
+<button id="jq_ancestors_btnReturn">还原</button>
+
+<style>
+    .ancestors *
+    {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+<div class="ancestors">
+    <div style="width:500px;">div (曾祖父)
+        <ul>ul (祖父)
+            <li>li (直接父)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;">div (祖父)
+        <p>p (直接父)
+            <span>span</span>
+        </p>
+    </div>
+</div>
 
 <br/><br/><br/>
 
