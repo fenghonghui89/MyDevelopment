@@ -10,7 +10,7 @@
 <!------------------------------------------------------------------目录------------------------------------------------------------------>
 <h1 id="root_menu"><b>目录</b></h1>
 
-<h2>jQuery效果</h2>
+<h2>jQuery 效果</h2>
 <a href="#jq_hideshow">隐藏 显示</a><br/>
 <a href="#jq_fade">淡入淡出</a><br/>
 <a href="#jq_slide">滑动</a><br/>
@@ -26,7 +26,15 @@
 <a href="#jq_size">尺寸</a><br/>
 <br/>
 <h2>jQuery 遍历</h2>
-<a href="#jq_ancestors">遍历-祖先</a><br/>
+<a href="#jq_forin_ancestors">遍历-祖先</a><br/>
+<a href="#jq_forin_child">遍历-后代</a><br/>
+<a href="#jq_forin_sibling">遍历-同胞</a><br/>
+<a href="#jq_forin_filter">遍历-过滤</a><br/>
+<br/>
+<h2>jQuery 杂项</h2>
+<a href="#jq_noConflict">noConflict() 方法</a><br/>
+<br/>
+
 
 <!------------------------------------------------------------------隐藏 显示------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="jq_hideshow">隐藏 显示</h1>
@@ -577,65 +585,327 @@ $(document).ready(function(){
 <br/><br/><br/>
 
 <!------------------------------------------------------------------遍历-祖先------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="jq_ancestors">遍历-祖先</h1>
+<h1 class="HeaderTitle" id="jq_forin_ancestors">遍历-祖先</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
     $(document).ready(function(){
-        $("button#jq_ancestors_btn1").click(function(){
+
+        $("button#jq_forin_ancestors_btn1").click(function(){
+            //直接父元素
             $("span").parent().css({"color":"red","border":"2px solid red"});
         })
 
-        $("button#jq_ancestors_btn2").click(function(){
-            $("span").parents().css({"color":"red","border":"2px solid red"});
-        })
+        $("button#jq_forin_ancestors_btn2").click(function(){
+            //所有祖先元素
+//            $("span").parents().css({"color":"red","border":"2px solid red"});
 
-        $("button#jq_ancestors_btn3").click(function(){
+            //所有指定祖先元素
             $("span").parents("ul").css({"color":"red","border":"2px solid red"});
         })
 
-        $("button#jq_ancestors_btn4").click(function(){
+        $("button#jq_forin_ancestors_btn4").click(function(){
+            //介于两个元素的所有祖先元素
             $("span").parentsUntil("div").css({"color":"red","border":"2px solid red"});
         })
 
-        $("button#jq_ancestors_btnReturn").click(function(){
-            $("span").parents().css({"display":"block","border":"2px solid lightgrey","color":"lightgrey"});
+
+        //还原按钮
+        $("button#jq_forin_ancestors_btnReturn").click(function(){
+            $("span").parents().css({"color":"lightgrey","border":"2px solid lightgrey"});
+            $("span").css({"color":"lightgrey","border":"2px solid lightgrey"});
         })
     })
 </script>
-<button id="jq_ancestors_btn1">parent直接父元素</button>
-<button id="jq_ancestors_btn2">parents所有祖先元素</button>
-<button id="jq_ancestors_btn3">parents过滤</button>
-<button id="jq_ancestors_btn4">parentsUntil返回介于两个给定元素之间的所有祖先元素</button>
-<button id="jq_ancestors_btnReturn">还原</button>
+
+<button id="jq_forin_ancestors_btn1">parent() 方法返回被选元素的直接父元素</button><br/>
+<button id="jq_forin_ancestors_btn2">parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素</button><br/>
+<button id="jq_forin_ancestors_btn4">parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素</button><br/>
+<br/>
+<button id="jq_forin_ancestors_btnReturn">还原</button><br/>
+
 
 <style>
-    .ancestors *
+    div.jq_forin_div{
+        display: block;
+        border: 2px solid rebeccapurple;
+    }
+    div.jq_forin_div *
     {
         display: block;
         border: 2px solid lightgrey;
-        color: lightgrey;
         padding: 5px;
         margin: 15px;
     }
 </style>
-<div class="ancestors">
-    <div style="width:500px;">div (曾祖父)
+<div class="jq_forin_div">
+    <div style="width:500px;" class="jq_forin_subdiv1">div (曾祖父)
         <ul>ul (祖父)
             <li>li (直接父)
                 <span>span</span>
+                <span>span1</span>
             </li>
         </ul>
     </div>
 
-    <div style="width:500px;">div (祖父)
+    <div style="width:500px;" class="jq_forin_subdiv2">div (祖父)
         <p>p (直接父)
             <span>span</span>
+            <span>span1</span>
         </p>
     </div>
+
+    <p>同胞1</p>
+    <h2>同胞2</h2>
+    <h3 class="jq_forin_h3">同胞3</h3>
 </div>
 
+<br/><br/><br/>
+
+<!------------------------------------------------------------------遍历-后代------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_forin_child">遍历-祖先/后代/同胞</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function(){
+
+        $("button#jq_forin_child_btn1").click(function(){
+            //所有直接子元素
+            $("div.jq_forin_div").children().css({"color":"green","border":"2px solid green"})
+
+            //指定直接子元素
+//            $("div.jq_forin_div").children("div.jq_forin_subdiv1").css({"color":"green","border":"2px solid green"})
+        })
+
+
+        $("button#jq_forin_child_btn3").click(function(){
+            //所有后代元素
+//            $("div.jq_forin_div").find("*").css({"color":"green","border":"2px solid green"})
+
+            //指定所有后代元素
+            $("div.jq_forin_div").find("span").css({"color":"green","border":"2px solid green"})
+        })
+
+        //还原按钮
+        $("button#jq_forin_child_btnReturn").click(function(){
+            $("span").parents().css({"color":"lightgrey","border":"2px solid lightgrey"});
+            $("span").css({"color":"lightgrey","border":"2px solid lightgrey"});
+        })
+    })
+</script>
+
+<button id="jq_forin_child_btn1">children() 方法返回被选元素的所有直接子元素</button><br/>
+<button id="jq_forin_child_btn3">find() 方法返回被选元素的后代元素，一路向下直到最后一个后代</button><br/>
+<br/>
+<button id="jq_forin_child_btnReturn">还原</button><br/>
+
+
+<style>
+    div.jq_forin_div{
+        display: block;
+        border: 2px solid rebeccapurple;
+    }
+    div.jq_forin_div *
+    {
+        display: block;
+        border: 2px solid lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+<div class="jq_forin_div">
+    <div style="width:500px;" class="jq_forin_subdiv1">div (曾祖父)
+        <ul>ul (祖父)
+            <li>li (直接父)
+                <span>span</span>
+                <span>span1</span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;" class="jq_forin_subdiv2">div (祖父)
+        <p>p (直接父)
+            <span>span</span>
+            <span>span1</span>
+        </p>
+    </div>
+
+    <p>同胞1</p>
+    <h2>同胞2</h2>
+    <h3 class="jq_forin_h3">同胞3</h3>
+</div>
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------遍历-同胞------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_forin_sibling">遍历-同胞</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function(){
+
+
+        $("button#jq_forin_sibling_btn1").click(function(){
+            //所有同胞元素
+//            $("div.jq_forin_subdiv1").siblings().css({"color":"blue","border":"2px solid blue"})
+
+            //指定同胞元素
+            $("div.jq_forin_subdiv1").siblings('h2').css({"color":"blue","border":"2px solid blue"})
+        })
+
+        $("button#jq_forin_sibling_btn2").click(function(){
+            //下一个同胞元素
+            $("div.jq_forin_subdiv1").next().css({"color":"blue","border":"2px solid blue"})
+        })
+
+        $("button#jq_forin_sibling_btn3").click(function(){
+            //所有跟随的同胞元素
+            $("div.jq_forin_subdiv1").nextAll().css({"color":"blue","border":"2px solid blue"})
+        })
+
+        $("button#jq_forin_sibling_btn4").click(function(){
+            //介于两个元素之间的所有同胞元素
+            $("div.jq_forin_subdiv1").nextUntil('h3').css({"color":"blue","border":"2px solid blue"})
+        })
+
+        $("button#jq_forin_sibling_btn5").click(function(){
+            //上一个同胞元素,还有prevAll()/prevUntil()
+            $("h3.jq_forin_h3").prev().css({"color":"blue","border":"2px solid blue"})
+        })
+
+        //还原按钮
+        $("button#jq_forin_sibling_btnReturn").click(function(){
+            $("span").parents().css({"color":"lightgrey","border":"2px solid lightgrey"});
+            $("span").css({"color":"lightgrey","border":"2px solid lightgrey"});
+        })
+    })
+</script>
+
+<button id="jq_forin_sibling_btn1">siblings() 方法返回被选元素的所有同胞元素</button><br/>
+<button id="jq_forin_sibling_btn2">next() 方法返回被选元素的下一个同胞元素</button><br/>
+<button id="jq_forin_sibling_btn3">nextAll() 方法返回被选元素的所有跟随的同胞元素</button><br/>
+<button id="jq_forin_sibling_btn4">nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素</button><br/>
+<button id="jq_forin_sibling_btn5">prev() 方法返回被选元素的上一个同胞元素</button><br/>
+<br/>
+<button id="jq_forin_sibling_btnReturn">还原</button><br/>
+
+<style>
+    div.jq_forin_div{
+        display: block;
+        border: 2px solid rebeccapurple;
+    }
+    div.jq_forin_div *
+    {
+        display: block;
+        border: 2px solid lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+<div class="jq_forin_div">
+    <div style="width:500px;" class="jq_forin_subdiv1">div (曾祖父)
+        <ul>ul (祖父)
+            <li>li (直接父)
+                <span>span</span>
+                <span>span1</span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;" class="jq_forin_subdiv2">div (祖父)
+        <p>p (直接父)
+            <span>span</span>
+            <span>span1</span>
+        </p>
+    </div>
+
+    <p>同胞1</p>
+    <h2>同胞2</h2>
+    <h3 class="jq_forin_h3">同胞3</h3>
+</div>
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------遍历-过滤------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_forin_filter">遍历-过滤</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    $(document).ready(function(){
+        $("button#jq_forin_filter_btn1").click(function(){
+            $("div#jq_forin_filter_div p").first().css("background-color","yellow");
+        })
+
+        $("button#jq_forin_filter_btn2").click(function(){
+            $("div#jq_forin_filter_div p").last().css("background-color","yellow");
+        })
+
+        $("button#jq_forin_filter_btn3").click(function(){
+            $("p.jq_forin_filter_p").eq(0).css("background-color","yellow");
+        })
+
+        $("button#jq_forin_filter_btn4").click(function(){
+            $("p").filter(".jq_forin_filter_p").css("background-color","yellow");
+        })
+
+        $("button#jq_forin_filter_btn5").click(function(){
+            jQuery("p").not(".jq_forin_filter_p").css("background-color","yellow");
+        })
+    })
+</script>
+<button id="jq_forin_filter_btn1">first() 方法返回被选元素的首个元素</button><br/>
+<button id="jq_forin_filter_btn2">last() 方法返回被选元素的最后一个元素</button><br/>
+<button id="jq_forin_filter_btn3">eq() 方法返回被选元素中带有指定索引号的元素</button><br/>
+<button id="jq_forin_filter_btn4">filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。</button><br/>
+<button id="jq_forin_filter_btn5">not() 方法返回不匹配标准的所有元素</button><br/>
+<div id="jq_forin_filter_div">
+    <h1>欢迎来到我的主页</h1>
+    <p class="jq_forin_filter_p">我是唐老鸭。</p>
+    <p class="jq_forin_filter_p">我住在 Duckburg。</p>
+    <p class="jq_forin_filter_p">我爱 Duckburg。</p>
+    <p class="jq_forin_filter_p">我最好的朋友是 Mickey。</p>
+    <p>我最好的朋友是 Mickey。</p>
+    <p>我最好的朋友是 Mickey。</p>
+</div>
+<br/><br/><br/>
+
+<!------------------------------------------------------------------noConflict() 方法------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_noConflict">noConflict() 方法</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+//    //释放对$标识符的控制
+//    $.noConflict();
+//    jQuery(document).ready(function(){
+//        jQuery("button").click(function(){
+//            jQuery("p#jq_noConflict_p").text("jQuery仍然运行!");
+//        });
+//    })
+
+//    //创建自己的简写
+//    var jp = $.noConflict();
+//    jp(document).ready(function(){
+//        jp("button").click(function(){
+//            jp("p#jq_noConflict_p").text("jQuery仍然运行!");
+//        });
+//    })
+
+    //外部释放 内部继续使用
+    $.noConflict();
+    jQuery(document).ready(function($){
+        $("button").click(function(){
+            $("p#jq_noConflict_p").text("jQuery 仍在运行！");
+        });
+    });
+</script>
+<button id="jq_noConflict_btn1">noConflict() 方法会释放会 $ 标识符的控制，这样其他脚本就可以使用它了</button><br/>
+<p id="jq_noConflict_p">这是一个段落..</p>
 <br/><br/><br/>
 
 

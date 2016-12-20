@@ -3,7 +3,9 @@
 /*背景色 内边距*/
 body {
     background-color: darkkhaki;
-    padding:100px;
+    padding:10px 10px 10px 10px;
+    margin: 5px;
+    border: 2px lightblue dashed;
 }
 
 
