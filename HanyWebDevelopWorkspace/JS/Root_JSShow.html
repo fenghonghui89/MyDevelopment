@@ -10,23 +10,23 @@
 <!------------------------------------------------------------------目录------------------------------------------------------------------>
 <h1 id="root_menu"><b>目录</b></h1>
 
-<h2>js 基础</h2>
+<h2>JS 基础</h2>
 <a href="#js_base_operator">js 运算符</a><br/>
 <a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
 <a href="#js_base_err">js 异常捕获</a><br/>
 <a href="#js_base_checkForm">js 表单验证</a><br/>
 <br />
 
-<h2>js html dom</h2>
-<a href="#js_html_dom">js html dom</a><br/>
-<a href="#js_event_eg">js 事件例子</a><br/>
-<a href="#js_event_window">js window事件</a><br/>
-<a href="#js_event_form">js form事件</a><br/>
-<a href="#js_event_mouse">js 鼠标事件</a><br/>
-<a href="#js_dot_add">js 节点</a><br/>
-<a href="#html_dom_node">html dom 属性:nodeName nodeType</a><br/>
+<h2>JS HTML DOM</h2>
+<a href="#js_htmldom_parama">DOM 属性:不同节点的nodeName nodeValue nodeType</a><br/>
+<a href="#js_htmldom_nav">DOM 导航:节点列表 childNodes firstChild lastChild</a><br/>
+<a href="#js_htmldom_html">JS HTML DOM:改变HTML</a><br/>
+<a href="#js_htmldom_css">JS HTML DOM:改变CSS</a><br/>
+<a href="#js_htmldom_event">JS HTML DOM:事件</a><br/>
+<a href="#js_dot_add">JS HTML DOM:节点的增删改查</a><br/>
+<br/>
 
-<h2>js 对象</h2>
+<h2>JS 对象</h2>
 <a href="#js_obj_newObj">js 对象</a><br/>
 <a href="#js_obj_num">js 数字</a><br/>
 <a href="#js_obj_str">js 字符串</a><br/>
@@ -35,8 +35,9 @@
 <a href="#js_boolObj">js 逻辑对象bool</a><br/>
 <a href="#js_math">js 常见的算数任务</a><br/>
 <a href="#js_RegExp">js 正则表达式</a><br/>
+<br/>
 
-<h2>js window</h2>
+<h2>JS window</h2>
 <a href="#js_window">js window</a><br/>
 <a href="#js_screen">js screen</a><br/>
 <a href="#js_location">js location</a><br/>
@@ -44,9 +45,11 @@
 <a href="#js_navigator">js navigator</a><br/>
 <a href="#js_Timing">js timing</a><br/>
 <a href="#js_cookie">js cookie</a><br/>
+<br/>
 
 <h2>json</h2>
 <a href="#js_json">json</a>
+<br/>
 
 <!------------------------------------------------------------------js 运算符------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_base_operator">js 运算符</h1>
@@ -278,58 +281,223 @@
 
 <br/><br/><br/>
 
-
-
-<!------------------------------------------------------------------js html dom------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_html_dom">js html dom</h1>
+<!------------------------------------------------------------------DOM 属性:不同节点的nodeName nodeValue nodeType------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_htmldom_parama">DOM 属性:不同节点的nodeName nodeValue nodeType</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
-    function dot_test(){
 
-        var x  = document.getElementById('jsdom_dv1');
-        var list = x.getElementsByTagName('p')
-        alert("length:"+list.length+' tag:'+list[0].childNodes[0].nodeValue);
-        alert("length:"+list.length+' tag:'+list[0].firstChild.nodeValue);
-        alert("length:"+list.length+' tag:'+list[0].innerHTML);
+    /*
+     *
+     文档节点
+     nodeName 始终是 #document
+     nodeValue 是 undefined 或 null
+     nodeType是9
+
+     元素节点
+     nodeName 与标签名相同
+     nodeValue 是 undefined 或 null
+     nodeType是1
+
+     属性节点
+     nodeName 与属性名相同
+     nodeValue 是属性值
+     nodeType是2
+
+     文本节点
+     nodeName 始终是 #text
+     nodeValue 是文本本身
+     nodeType是3
+     父节点一般是<p>之类的元素节点
+
+     * */
+    function html_dom_nodeName(){
+
+        //文档节点
+        console.log(
+                "文档节点:"+
+                document+" "+
+                document.nodeName+" "+
+                document.nodeValue+" "+
+                document.nodeType
+        );//#document null 9
+
+        //元素节点
+        var x = document.getElementById("intro");
+        console.log(
+                "元素节点: "+
+                x+" "+
+                x.nodeName+" "+
+                x.nodeValue+" "+
+                x.nodeType+'\n'
+        );//P null 1
+
+        //属性节点
+        var attributeNode = document.getElementById("intro").getAttribute('id');
+        console.log(
+                "属性节点:"+
+                attributeNode+" "+
+                attributeNode.nodeName+" "+
+                attributeNode.nodeValue+" "+
+                attributeNode.nodeType
+        );//intro undefined undefined undefined
+
+        //文本节点
+        var textNode = document.getElementById("intro").firstChild;
+        console.log(
+                "文本节点:"+
+                textNode+" "+
+                textNode.nodeName+" "+
+                textNode.nodeValue+" "+
+                textNode.nodeType
+        );//#text Hello World! 3
+
+
+
     }
 </script>
 
+<p id="intro" style="text-align: left;color: #0000FF" >Hello World!</p>
+<button type="button" onclick="html_dom_nodeName()">html dom nodeName</button>
+
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------DOM 导航:节点列表 childNodes firstChild lastChild------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_htmldom_nav">DOM 导航:节点列表 childNodes firstChild lastChild</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function jsdom_nav_test(){
+
+        //访问全部文档
+        document.documentElement
+        document.body
+
+    }
+
+    function dot_test(){
+
+        /*
+        * 节点列表 - 节点列表长度
+        * childNodes firstChild lastChild
+        *
+        * */
+        //通过id/签名等查找html元素
+        //文本节点的父节点是 <p> 节点
+        var x  = document.getElementById('jsdom_dv1');
+        var list = x.getElementsByTagName('p')
+        alert(
+                "length:"+list.length+' tag:'+list[0].childNodes[0].nodeValue+'\n'+
+                "length:"+list.length+' tag:'+list[0].firstChild.nodeValue+'\n'+
+                "length:"+list.length+' tag:'+list[0].innerHTML
+        );
+
+
+        list[0].childNodes[0].nodeValue = 'change111~';
+        list[1].firstChild.nodeValue = 'change222~';
+        list[2].innerHTML = 'change333~';
+    }
+</script>
+<p>* JS HTML DOM</p>
 <div id="jsdom_dv1">
-    <p id="jsdom_dv1_p1">1~1~</p>
-    <p id="jsdom_dv1_p2">2~2~</p>
+    <p id="jsdom_dv1_p1">11~</p>
+    <p id="jsdom_dv1_p2">22~</p>
+    <p id="jsdom_dv1_p3">33~</p>
 </div>
 <button type="button" onclick="dot_test()">test</button>
 
 <br/><br/><br/>
 
-<!------------------------------------------------------------------js 事件例子------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_event_eg">js 事件例子</h1>
+<!------------------------------------------------------------------JS HTML DOM:改变HTML------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_htmldom_html">JS HTML DOM:改变HTML</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<!--例子1-->
-<p onclick="this.innerHTML='thanks!'">eg1:tap it!</p>
-
-<!--例子2-->
 <script>
-    function changetext(id)
-    {
-        id.innerHTML="谢谢!";
+
+    function jsdom_write(){
+
+        //改变html输出流
+        //绝不要使用在文档加载之后使用 document.write()。这会覆盖该文档
+        document.write(Date());
+        document.write("<p>This is a paragraph</p>"+"<br>");
+        document.write("Hello " + "World!"+"<br>");//折行
     }
+
+
 </script>
-<p onclick="changetext(this)">eg2:tap it!</p>
+
 
 <br/><br/><br/>
 
 
-<!------------------------------------------------------------------js window事件------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_event_window">js window事件</h1>
+<!------------------------------------------------------------------JS HTML DOM:改变CSS------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_htmldom_css">JS HTML DOM:改变CSS</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
+
+    //改变属性
+    function jsdom_test3(){
+
+        document.body.style.backgroundColor='lavender'
+        document.getElementById('').style.visibility = true;//显示元素是否可见
+        document.getElementById('').style.color = 'blue'
+        document.getElementById('').src = '1111.jpg';
+        document.getElementById('').setAttribute('name','value')
+        document.getElementById('').removeAttribute('name')
+        document.getElementById('').getAttribute('style')//text-align: left;color: #0000FF
+        document.getElementById('').attributes.getNamedItem('style').nodeValue//text-align: left;color: #0000FF
+    }
+
+
+
+</script>
+
+
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------JS HTML DOM:事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_htmldom_event">JS HTML DOM:事件</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+     *
+     * 事件
+     *
+     * 当用户进入或离开页面时，会触发 onload 和 onunload 事件。
+     * onload 事件可用于检查访客的浏览器类型和版本，以便基于这些信息来加载不同版本的网页。
+     * onload 和 onunload 事件可用于处理 cookies。
+     * <body onload="checkCookies()">
+     * <body onunload="checkCookies()">
+     *
+     * onchange 事件常用于输入字段的验证。
+     * <input type="text" id="fname" onchange="upperCase()">
+     *
+     * onmouseover 和 onmouseout 事件可用于在鼠标指针移动到或离开元素时触发函数。
+     *
+     * onmousedown、onmouseup 以及 onclick 事件是鼠标点击的全部过程。
+     * 首先当某个鼠标按钮被点击时，触发 onmousedown 事件，然后，当鼠标按钮被松开时，会触发 onmouseup 事件，最后，当鼠标点击完成时，触发 onclick 事件。
+     *
+     *
+     *
+     * */
+
+    /*
+    * 事件例子
+    * */
+    function changetext(id) {
+        id.innerHTML="谢谢!";
+    }
 
     /*
      * windonw事件 - 针对 window 对象触发的事件（应用到 <body> 标签）
@@ -347,42 +515,19 @@
             alert("未启用 cookie")
         }
     }
-</script>
-<p>window事件一般放body 这里只是为了体现效果</p>
-<button type="button" onclick="checkCookies()">检查浏览器是否支持cookie</button>
-<br/><br/><br/>
 
 
-
-<!------------------------------------------------------------------js form事件------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_event_form">js form事件</h1>
-<a href="#root_menu">回到目录</a>
-<hr />
-
-<script>
     /*
      * form事件 - 由 HTML 表单内的动作触发的事件（应用到几乎所有 HTML 元素，但最常用在 form 元素中）
      * eg. <input type="text" id="fname" onchange="....">
      * onchange onselect..
      * */
-    function myFunction()
-    {
+    function myFunction() {
         var x=document.getElementById("fname");
         x.value = x.value.toUpperCase();
     }
-</script>
-请输入英文字符,当您离开输入字段时,会触发将输入文本转换为大写的函数：<input type="text" id="fname" onchange="myFunction()">
-
-<br/><br/><br/>
 
 
-
-<!------------------------------------------------------------------js 鼠标事件------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_event_mouse">js 鼠标事件</h1>
-<a href="#root_menu">回到目录</a>
-<hr />
-
-<script>
     /*
      * 鼠标事件 - 由鼠标或类似用户动作触发的事件
      * eg. <div onclick="...">
@@ -413,6 +558,25 @@
         obj.innerHTML = "你已经点击了,请放开鼠标";
     }
 </script>
+
+<p>*事件例子</p>
+<p onclick="this.innerHTML='thanks!'">eg1:tap it!</p>
+<p onclick="changetext(this)">eg2:tap it!</p>
+<p id="js_htmldom_event_p">eg3:tap it!</p>
+<script>
+    //必须写在后面,写在前面无法注入,因为元素还没生成
+    document.getElementById('js_htmldom_event_p').onclick = function(){
+        alert('eg3!');
+    }
+</script>
+
+<p>* window事件 一般放body 这里只是为了体现效果</p>
+<button type="button" onclick="checkCookies()">检查浏览器是否支持cookie</button>
+
+<p>* form事件</p>
+请输入英文字符,当您离开输入字段时,会触发将输入文本转换为大写的函数：<input type="text" id="fname" onchange="myFunction()">
+
+<p>* 鼠标事件</p>
 <div onmouseover="mOver(this)"
      onmouseout="mOut(this)"
      onclick="mClick(this)"
@@ -421,23 +585,32 @@
      style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;">
     把鼠标移到上面
 </div>
-
 <br/><br/><br/>
 
 
-<!------------------------------------------------------------------js 节点------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_dot_add">js 节点</h1>
+<!------------------------------------------------------------------JS HTML DOM:节点的增删改查------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_dot_add">JS HTML DOM:节点的增删改查</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
 <script>
     function addDot(){
+
+        //自定义标签
+//        document.createElement(["myhero"])
+
         var para = document.createElement("p");
         var node = document.createTextNode("这是新节点");
         para.appendChild(node);
 
         var parent = document.getElementById("dotdiv1");
-        parent.appendChild(para);
+
+        //加在最后
+//        parent.appendChild(para);
+
+        //加在某个子元素之前
+        var child = document.getElementById("js_dot_add_p");
+        parent.insertBefore(para,child);
     }
 
     function delDot(){
@@ -451,93 +624,37 @@
         child.parentNode.removeChild(child);
     }
 
+    function replaceDot(){
+        var refNode = document.getElementById('p3');
+
+        var myNewNode = document.createElement('p');
+        var txtNode = document.createTextNode('这又是一个新节点');
+        myNewNode.appendChild(txtNode);
+
+        refNode.parentNode.replaceChild(myNewNode,refNode);
+
+    }
+
 </script>
 
-<p>添加节点</p>
+<p>* 添加节点</p>
 <div id="dotdiv1">
-    <p>这是节点1</p>
+    <p id="js_dot_add_p">这是节点1</p>
 </div>
 <button type="button" onclick="addDot()">添加节点</button>
 
-<p>删除节点</p>
+<p>* 删除节点</p>
 <div id="dotdiv2">
     <p id="p1">这是一个段落。</p>
     <p id="p2">这是另一个段落。</p>
 </div>
 <button type="button" onclick="delDot()">删除节点</button>
 
-
-
-<br/><br/><br/>
-
-
-
-<!------------------------------------------------------------------html dom 属性:nodeName nodeType------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="html_dom_node">html dom 属性:nodeName nodeType</h1>
-<a href="#root_menu">回到目录</a>
-<hr />
-
-<script>
-    /*
-    *
-     文档节点
-     nodeName 始终是 #document
-     nodeValue 是 undefined 或 null
-     type是9
-
-     元素节点
-     nodeName 与标签名相同
-     nodeValue 是 undefined 或 null
-     type是1
-
-     属性节点
-     nodeName 与属性名相同
-     nodeValue 是属性值
-     type是2
-
-     文本节点
-     nodeName 始终是 #text
-     nodeValue 是文本本身
-     type是3
-
-     * */
-    function html_dom_nodeName(){
-
-        //文档节点
-        console.log("文档节点:"+document.nodeName+" "+
-                document.nodeValue+" "+
-                document.nodeType);//#document null 9
-
-        //元素节点
-        var x = document.getElementById("intro");
-        console.log("元素节点:"+x.nodeName+" "+
-                x.nodeValue+" "+
-                x.nodeType+'\n');//P null 1
-
-        //属性节点
-        var attributeNode = document.getElementById("intro").getAttribute('id');
-        console.log("属性节点:"+attributeNode+" "+attributeNode.nodeName+" "+
-                attributeNode.nodeValue+" "+
-                attributeNode.nodeType);//intro undefined undefined undefined
-
-        //文本节点
-        var textNode = document.getElementById("intro").firstChild;
-        console.log("文本节点:"+textNode.nodeName+" "+
-                textNode.nodeValue+" "+
-                textNode.nodeType);//#text Hello World! 3
-
-
-
-    }
-</script>
-
-<p id="intro" style="text-align: left;color: #0000FF" >Hello World!</p>
-<button type="button" onclick="html_dom_nodeName()">html dom nodeName</button>
+<p>* 替换节点</p>
+<p id="p3">这是旧的节点</p>
+<button type="button" onclick="replaceDot()">替换节点</button>
 
 <br/><br/><br/>
-
-
-
 
 
 <!------------------------------------------------------------------js 对象------------------------------------------------------------------>
@@ -752,7 +869,17 @@
 
 <script>
 
-    //字符串对象
+    /*
+    *var a= "person";//类型为string的变量
+     var b= String("person");//类型为string的变量
+     var c= new String("person");//类型为object的变量
+    * 以上三种方式定义的变量，在JavaScript字符串方法的使用上并没有区别
+    * 不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用
+    * 一般没有必要创建string对象。除了在变量类型上有区别外，使用上并没有别的区别
+    *
+    * */
+
+    //字符串
     function str_obj(){
         var txt = "hello world~";
         alert(txt.length+" "+txt.toUpperCase());
