@@ -93,6 +93,8 @@ function var_declare(){
 }
 
 
+
+
 /*
  * 把值赋给未声明的变量,则该变量变成全局变量
  * */
@@ -103,6 +105,24 @@ function var_gloable(){
 
 
 
+/*
+* var声明会提升至他所有作用域的最顶处
+* */
+var aa = "you";
 
+function testtt(){
+    console.log(aa);//undefined
+    var aa = "fuck";
+    console.log(aa);//fuck
+}
 
+//相当于下面
+var aa = "you";
+
+function testtt(){
+    var aa;
+    console.log(aa);
+    aa = "fuck";
+    console.log(aa);
+}
 

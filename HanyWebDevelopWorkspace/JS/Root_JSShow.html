@@ -384,10 +384,10 @@
         /*
         * 节点列表 - 节点列表长度
         * childNodes firstChild lastChild
+        * innerHTML 属性设置或返回表格行的开始和结束标签之间的 HTML
         *
+        * 文本节点的父节点是 <p> 节点
         * */
-        //通过id/签名等查找html元素
-        //文本节点的父节点是 <p> 节点
         var x  = document.getElementById('jsdom_dv1');
         var list = x.getElementsByTagName('p')
         alert(
@@ -422,15 +422,14 @@
     function jsdom_write(){
 
         //改变html输出流
-        //绝不要使用在文档加载之后使用 document.write()。这会覆盖该文档
+        //绝不要在文档加载之后再使用 document.write()。这会覆盖整个文档
         document.write(Date());
         document.write("<p>This is a paragraph</p>"+"<br>");
         document.write("Hello " + "World!"+"<br>");//折行
     }
 
-
 </script>
-
+<button type="button" onclick="jsdom_write()">document write</button>
 
 <br/><br/><br/>
 
