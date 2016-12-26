@@ -12,6 +12,7 @@
 <!------------------------------------------------------------------目录------------------------------------------------------------------>
 <h1 id="root_menu"><b>目录</b></h1>
 <a href="#XML_DOM">xml解析</a><br/>
+<a href="#XML_HTTP_Request">http request</a><br/>
 <a href="#XML_App">xml 应用程序</a><br/>
 <br />
 
@@ -70,15 +71,38 @@
 <hr/>
 
 <script>
-    // 检查是否支持 XMLHttpRequest对象
-    if(window.XMLHttpRequest){
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        myXmlHttp = new XMLHttpRequest()
-    }else {
-        // code for IE6, IE5
-        myXmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+    function xmlHttpRequest(){
+        var myXmlHttp;
+        // 检查是否支持 XMLHttpRequest对象
+        if(window.XMLHttpRequest){
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            myXmlHttp = new XMLHttpRequest()
+        }else {
+            // code for IE6, IE5
+            myXmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        myXmlHttp.onreadystatechange = function(){
+            if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
+                var txt = JSON.stringify(myXmlHttp.responseText)
+                document.getElementById("XML_HTTP_Request_div").innerHTML = txt;
+            }else {
+                alert(myXmlHttp.readyState+" "+myXmlHttp.status);
+            }
+        }
+
+        //不能在a站点html请求b站点的数据,会有跨域问题,但可以在a站点的服务器请求
+//        var url = "http://op.juhe.cn/onebox/basketball/nba?key=c4cfea79413a43647da53efc0b992270&&dtype=json"
+        var url = 'MyServer.php?a=get_users&uid=10001'
+        myXmlHttp.open("GET",url,false);
+        myXmlHttp.send();
     }
+
 </script>
+
+<button id="XML_HTTP_Request_btn" onclick="xmlHttpRequest()">button</button>
+<div id="XML_HTTP_Request_div">txt..</div>
 
 <br /><br /><br />
 
