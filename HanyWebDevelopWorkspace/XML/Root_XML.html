@@ -13,7 +13,7 @@
 <h1 id="root_menu"><b>目录</b></h1>
 <a href="#XML_DOM">xml解析</a><br/>
 <a href="#XML_HTTP_Request">http request</a><br/>
-<a href="#XML_App">xml 应用程序</a><br/>
+<a href="#XML_excample1">例子1:xml解析</a><br/>
 <br />
 
 
@@ -72,8 +72,10 @@
 
 <script>
 
-    function xmlHttpRequest(){
+    function xmlHttpRequest_GET(){
+
         var myXmlHttp;
+
         // 检查是否支持 XMLHttpRequest对象
         if(window.XMLHttpRequest){
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -83,31 +85,69 @@
             myXmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
 
+        //每当 readyState 属性改变时，就会调用该函数,onreadystatechange 事件被触发 5 次（0 - 4），对应着 readyState 的每个变化
         myXmlHttp.onreadystatechange = function(){
             if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
-                var txt = JSON.stringify(myXmlHttp.responseText)
+                var txt = 'GET:<br/>';
+                txt += myXmlHttp.responseText+'<br/><br/>'
+                txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
+                txt += myXmlHttp.getResponseHeader('Content-Type')
                 document.getElementById("XML_HTTP_Request_div").innerHTML = txt;
-            }else {
-                alert(myXmlHttp.readyState+" "+myXmlHttp.status);
             }
         }
 
         //不能在a站点html请求b站点的数据,会有跨域问题,但可以在a站点的服务器请求
 //        var url = "http://op.juhe.cn/onebox/basketball/nba?key=c4cfea79413a43647da53efc0b992270&&dtype=json"
-        var url = 'MyServer.php?a=get_users&uid=10001'
-        myXmlHttp.open("GET",url,false);
+        var url = 'MyServer.php?a=get_users&uid=10001&t='+Math.random();//添加唯一id,防止拿到的是缓存结果
+        myXmlHttp.open("GET",url,true);//当您使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send() 语句后面即可
         myXmlHttp.send();
+    }
+
+
+    function xmlHttpRequest_POST(){
+
+        var myXmlHttp;
+
+        if(window.XMLHttpRequest){
+            myXmlHttp = new XMLHttpRequest()
+        }else {
+            myXmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        myXmlHttp.onreadystatechange = function(){
+            if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
+                var txt = 'POST:<br/>';
+                txt += myXmlHttp.responseText+'<br/><br/>'
+                txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
+                txt += myXmlHttp.getResponseHeader('Content-Type')
+                document.getElementById("XML_HTTP_Request_div").innerHTML = txt;
+            }
+        }
+
+        //普通post
+        var url = 'MyServer.php?a=get_users&uid=10001&t='+Math.random();
+        myXmlHttp.open("POST",url,true);
+        myXmlHttp.send();
+
+        //表单方式post
+//        var url = 'MyServer.php'
+//        myXmlHttp.open("POST",url,true);
+//        myXmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");//头名称,值
+//        myXmlHttp.send("a=get_users&uid=10001&t="+Math.random());
+//        myXmlHttp.setRequestHeader('Content-type','application/json');
+//        myXmlHttp.send({'a':'get_users','uid':10001,'t':Math.random()});
     }
 
 </script>
 
-<button id="XML_HTTP_Request_btn" onclick="xmlHttpRequest()">button</button>
+<button onclick="xmlHttpRequest_GET()">GET</button>
+<button onclick="xmlHttpRequest_POST()">POST</button>
 <div id="XML_HTTP_Request_div">txt..</div>
 
 <br /><br /><br />
 
-<!------------------------------------------------------------------xml 应用程序------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="XML_App">http request</h1>
+<!------------------------------------------------------------------例子1:xml解析------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="XML_excample1">例子1:xml解析</h1>
 <a href="#root_menu">回到目录</a>
 <hr/>
 
@@ -116,15 +156,13 @@
     //请求数据
     if (window.XMLHttpRequest)
     {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
     else
     {
-        // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.open("GET","cd.xml",false);//请求类型 url 异步ture或同步false
+    xmlhttp.open("GET","cd.xml",false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
     x = xmlDoc.getElementsByTagName("CD");
@@ -164,5 +202,42 @@
         document.write("</table>");
 
 </script>
+
+<br /><br /><br />
+
+
+<!------------------------------------------------------------------例子2:名字建议------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="XML_excample2">例子2:名字建议</h1>
+<a href="#root_menu">回到目录</a>
+<hr/>
+
+<script>
+    function showHint(str){
+        if (str.length == 0){
+            document.getElementById('XML_excample2_span').innerHTML = ''
+            return;
+        }
+
+        var xmlhttp
+        if (window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+        }else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function(){
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                document.getElementById('XML_excample2_span').innerHTML = xmlhttp.responseText
+            }
+        }
+        var url = 'MyServer1.php';
+        xmlhttp.open('GET',url,true);
+        xmlhttp.send();
+    }
+</script>
+First Name:<input type="text" id="XML_excample2_input" onkeyup="showHint(this.value)">
+<p>Suggestions:<span id="XML_excample2_span"></span></p>
+<br/><br/><br/>
+
 </body>
 </html>

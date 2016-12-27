@@ -5,10 +5,36 @@
  * Date: 2016/12/26
  * Time: 15:48
  */
+//header('Content-Type: application/json');
 
 $output = array();
-$a = @$_GET['a'] ? $_GET['a'] : '';
-$uid = @$_GET['uid'] ? $_GET['uid'] : 0;
+
+//获取来自url的参数
+if ($_GET['a'])
+{
+    $a = $_GET['a'];
+}
+elseif ($_POST['a'])
+{
+    $a = $_POST['a'];
+}
+else
+{
+    $a = '';
+}
+
+if ($_GET['uid'])
+{
+    $uid = $_GET['uid'];
+}
+elseif ($_POST['uid'])
+{
+    $uid = $_POST['uid'];
+}
+else
+{
+    $uid = 0;
+}
 
 if (empty($a))
 {
