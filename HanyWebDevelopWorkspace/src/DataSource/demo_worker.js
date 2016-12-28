@@ -2,6 +2,7 @@
  * Created by hanyfeng on 16/8/29.
  */
 
+//    html - html5 - web worker
 var i=0;
 
 function timedCount()

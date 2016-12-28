@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery演示页面</title>
-    <link type="text/css" href="../MainCSS.css" rel="stylesheet">
-    <script src="../src/jquery-3.1.1.js"></script>
+    <link type="text/css" href="../src/MainFiles/MainCSS.css" rel="stylesheet">
+    <script src="../src/Frameworks/jquery-3.1.1.js"></script>
 </head>
 <body>
 <!------------------------------------------------------------------目录------------------------------------------------------------------>
@@ -30,6 +30,10 @@
 <a href="#jq_forin_child">遍历-后代</a><br/>
 <a href="#jq_forin_sibling">遍历-同胞</a><br/>
 <a href="#jq_forin_filter">遍历-过滤</a><br/>
+<br/>
+<h2>jQuery AJAX</h2>
+<a href="#jq_ajax_load">ajax load</a><br/>
+<a href="#jq_ajax_getpost">ajax get/post</a><br/>
 <br/>
 <h2>jQuery 杂项</h2>
 <a href="#jq_noConflict">noConflict() 方法</a><br/>
@@ -379,7 +383,7 @@ $(document).ready(function(){
 <button id="jq_addContentAfter_btn2">before</button>
 <button id="jq_addContentAfter_btn3">添加若干元素</button>
 <div>
-    <img id="jq_addContentAfter_img" src="../src/111111.jpg">
+    <img id="jq_addContentAfter_img" src="../src/Media/111111.jpg">
 </div>
 
 
@@ -873,6 +877,65 @@ $(document).ready(function(){
 </div>
 <br/><br/><br/>
 
+<!------------------------------------------------------------------ajax load------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_ajax_load">ajax load</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<script>
+function ajax_load(){
+    /*
+    * 可以在后面接jquery选择器 加载指定的内容
+    * ../src/DataSource/content.txt
+    * ../src/DataSource/content.txt #p1
+    * */
+    $('div#jq_ajax_load_div').load('../src/DataSource/content.txt #p1',function(responseTxt,statusTxt,xhr){
+        if (statusTxt == 'success'){
+            alert('外部内容加载成功')
+        }
+        if (statusTxt == 'error'){
+            alert(xhr.status+" "+xhr.statusText)
+        }
+
+    })
+}
+</script>
+<button onclick="ajax_load()">ajax load</button>
+<div id="jq_ajax_load_div"></div>
+<br/><br/><br/>
+
+<!------------------------------------------------------------------ajax get/post------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="jq_ajax_getpost">ajax get/post</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<script>
+
+    function ajax_get(){
+        var url = '../src/DataSource/MyServer.php?a=get_users&uid=10001&t='+Math.random()
+        $.get(url,function(data,status){
+            var str = "data:"+data+" <br/>status:"+status
+            $("div#jq_ajax_getpost_div").html(str);
+        })
+    }
+
+    function  ajax_post(){
+        var url = '../src/DataSource/MyServer.php'
+        var params = {
+            a:'get_users',
+            uid:10001,
+            t:Math.random()
+        }
+        $.post(url,params,function(data,status){
+            var str = "data:"+data+" <br/>status:"+status
+            $("div#jq_ajax_getpost_div").html(str);
+        })
+    }
+
+</script>
+<button onclick="ajax_get()">get加载</button>
+<button onclick="ajax_post()">post加载</button>
+<div id="jq_ajax_getpost_div">在这里显示信息</div>
+<br/><br/><br/>
+
 <!------------------------------------------------------------------noConflict() 方法------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="jq_noConflict">noConflict() 方法</h1>
 <a href="#root_menu">回到目录</a>
@@ -897,12 +960,12 @@ $(document).ready(function(){
 //    })
 
     //外部释放 内部继续使用
-    $.noConflict();
-    jQuery(document).ready(function($){
-        $("button").click(function(){
-            $("p#jq_noConflict_p").text("jQuery 仍在运行！");
-        });
-    });
+//    $.noConflict();
+//    jQuery(document).ready(function($){
+//        $("button#jq_noConflict_btn1").click(function(){
+//            $("p#jq_noConflict_p").text("jQuery 仍在运行！");
+//        });
+//    });
 </script>
 <button id="jq_noConflict_btn1">noConflict() 方法会释放会 $ 标识符的控制，这样其他脚本就可以使用它了</button><br/>
 <p id="jq_noConflict_p">这是一个段落..</p>

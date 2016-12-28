@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>HTML演示页面</title>
-    <link href="../MainCSS.css" type="text/css" rel="stylesheet" />
+    <link href="../src/MainFiles/MainCSS.css" type="text/css" rel="stylesheet" />
 
     <!--
     meta元数据
@@ -198,7 +198,7 @@ width height 尺寸
 <img src="http://o9ivu69va.bkt.clouddn.com/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.png" width="104" height="142" alt="无这张图"/><br/>
 
 <p>
-    文字文字<img src="../src/111111.jpg" alt="无这张图..." align="middle"/>文字文字
+    文字文字<img src="../src/Media/111111.jpg" alt="无这张图..." align="middle"/>文字文字
 </p>
 <br/>
 
@@ -206,7 +206,7 @@ width height 尺寸
 把图像转换为图像映射
 -->
 <a href="http://www.baidu.com">
-    <img src="../src/111111.jpg" ismap/>
+    <img src="../src/Media/111111.jpg" ismap/>
 </a>
 <br /><br /><br />
 
@@ -508,7 +508,7 @@ width height 尺寸
 <table class="lamp">
     <tr>
         <th>
-            <img src="../src/111111.jpg" alt="Note" style="height:32px;width:32px">
+            <img src="../src/Media/111111.jpg" alt="Note" style="height:32px;width:32px">
         </th>
         <td>
             The table element was not designed to be a layout tool.
@@ -768,7 +768,7 @@ textarea:hahahahahahahahahhahahahah
 </nav>
 
 <figure>
-    <img src="../src/111111.jpg" alt="The Pulpit Rock" width="304" height="228">
+    <img src="../src/Media/111111.jpg" alt="The Pulpit Rock" width="304" height="228">
     <figcaption>Fig1. - The Pulpit Pock, Norway.</figcaption>
 </figure>
 
@@ -794,7 +794,7 @@ textarea:hahahahahahahahahhahahahah
     <button onclick="makeSmall()">小</button>
     <br />
     <video id="video1" width="420" style="margin-top:15px;" controls="controls">
-        <source src="../src/testmv.mp4" type="video/mp4">
+        <source src="../src/Media/testmv.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
 </div>
@@ -802,7 +802,7 @@ textarea:hahahahahahahahahhahahahah
 
 <!--音频-->
 <audio controls="controls">
-    <source src="../src/testmp3.mp3" type="audio/mp3">
+    <source src="../src/Media/testmp3.mp3" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
 
@@ -874,7 +874,7 @@ textarea:hahahahahahahahahhahahahah
 <div>
     <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     <br />
-    <img id="dragImg" src="../src/111111.jpg" draggable="true" ondragstart="drag(event)" />
+    <img id="dragImg" src="../src/Media/111111.jpg" draggable="true" ondragstart="drag(event)" />
     <div class = "divclear"></div>
 </div>
 
@@ -883,7 +883,7 @@ textarea:hahahahahahahahahhahahahah
 <p>来回拖放</p>
 <div>
     <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img src="../src/111111.jpg" draggable="true" ondragstart="drag(event)" id="dragImg1" />
+        <img src="../src/Media/111111.jpg" draggable="true" ondragstart="drag(event)" id="dragImg1" />
     </div>
     <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     <div class="divclear"></div>
@@ -1038,7 +1038,7 @@ textarea:hahahahahahahahahhahahahah
         {
             if(typeof(w)=="undefined")//检测是否存在worker对象
             {
-                w = new Worker("demo_worker.js");
+                w = new Worker("../src/DataSource/demo_worker.js");
             }
 
             //添加事件监听
@@ -1077,10 +1077,9 @@ textarea:hahahahahahahahahhahahahah
     function fun_serverSend(){
         if(typeof(EventSource)!=="undefined")
         {
-            var source = new EventSource("demo_see.php");
-            source.onmessage = function(event)
-            {
-                document.getElementById("server_send_result").innerHTML+=event.data + "<br />";
+            var source = new EventSource("../src/DataSource/demo_see.php");
+            source.onmessage = function(event) {
+                document.getElementById("server_send_result").innerHTML += event.data + "<br />";
             };
         }
         else

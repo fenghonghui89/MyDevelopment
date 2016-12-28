@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>XML演示页面</title>
-    <link href="../MainCSS.css" type="text/css" rel="stylesheet">
+    <title>XML and AJAX 演示页面</title>
+    <link href="../src/MainFiles/MainCSS.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -14,6 +14,8 @@
 <a href="#XML_DOM">xml解析</a><br/>
 <a href="#XML_HTTP_Request">http request</a><br/>
 <a href="#XML_excample1">例子1:xml解析</a><br/>
+<a href="#XML_excample2">例子2:名字建议</a><br/>
+<a href="#XML_excample3">例子3:输出用户信息</a><br/>
 <br />
 
 
@@ -27,7 +29,39 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<script>
 
+    function parseXML(){
+        <!--自定义xml-->
+        txt = "<note>";
+        txt = txt+"<to>George</to>";
+        txt = txt+"<from>John</from>";
+        txt = txt+"<heading>Reminder</heading>";
+        txt = txt+"<body>Don't forget the meeting!</body>";
+        txt = txt+"</note>";
+
+        <!--创建xml解析器-->
+        if (window.DOMParser)
+        {
+            parser = new DOMParser();
+            xmlDoc = parser.parseFromString(txt,"text/xml");
+        }
+        else // Internet Explorer
+        {
+            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDoc.async = "false";
+            xmlDoc.loadXML(txt);
+        }
+
+        <!--更新页面-->
+        document.getElementById("to").innerHTML = xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+        document.getElementById("from").innerHTML = xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+        document.getElementById("message").innerHTML = xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+    }
+
+</script>
+
+<button onclick="parseXML()">解析xml</button>
 <h1>W3School.com.cn Internal Note</h1>
 <p>
     <b>To:</b> <span id="to"></span><br />
@@ -35,33 +69,6 @@
     <b>Message:</b> <span id="message"></span>
 </p>
 
-<script>
-    <!--自定义xml-->
-    txt = "<note>";
-    txt = txt+"<to>George</to>";
-    txt = txt+"<from>John</from>";
-    txt = txt+"<heading>Reminder</heading>";
-    txt = txt+"<body>Don't forget the meeting!</body>";
-    txt = txt+"</note>";
-
-    <!--创建xml解析器-->
-    if (window.DOMParser)
-    {
-        parser = new DOMParser();
-        xmlDoc = parser.parseFromString(txt,"text/xml");
-    }
-    else // Internet Explorer
-    {
-        xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-        xmlDoc.async = "false";
-        xmlDoc.loadXML(txt);
-    }
-
-    <!--更新页面-->
-    document.getElementById("to").innerHTML = xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
-    document.getElementById("from").innerHTML = xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
-    document.getElementById("message").innerHTML = xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
-</script>
 <br /><br /><br />
 
 
@@ -98,7 +105,7 @@
 
         //不能在a站点html请求b站点的数据,会有跨域问题,但可以在a站点的服务器请求
 //        var url = "http://op.juhe.cn/onebox/basketball/nba?key=c4cfea79413a43647da53efc0b992270&&dtype=json"
-        var url = 'MyServer.php?a=get_users&uid=10001&t='+Math.random();//添加唯一id,防止拿到的是缓存结果
+        var url = '../src/DataSource/MyServer.php?a=get_users&uid=10001&t='+Math.random();//添加唯一id,防止拿到的是缓存结果
         myXmlHttp.open("GET",url,true);//当您使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send() 语句后面即可
         myXmlHttp.send();
     }
@@ -125,7 +132,7 @@
         }
 
         //普通post
-        var url = 'MyServer.php?a=get_users&uid=10001&t='+Math.random();
+        var url = '../src/DataSource/MyServer.php?a=get_users&uid=10001&t='+Math.random();
         myXmlHttp.open("POST",url,true);
         myXmlHttp.send();
 
@@ -162,7 +169,7 @@
     {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.open("GET","cd.xml",false);
+    xmlhttp.open("GET","../src/DataSource/cd.xml",false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
     x = xmlDoc.getElementsByTagName("CD");
@@ -230,7 +237,7 @@
                 document.getElementById('XML_excample2_span').innerHTML = xmlhttp.responseText
             }
         }
-        var url = 'MyServer1.php';
+        var url = '../src/DataSource/MyServer1.php?q='+str;
         xmlhttp.open('GET',url,true);
         xmlhttp.send();
     }
@@ -239,5 +246,46 @@ First Name:<input type="text" id="XML_excample2_input" onkeyup="showHint(this.va
 <p>Suggestions:<span id="XML_excample2_span"></span></p>
 <br/><br/><br/>
 
+<!------------------------------------------------------------------例子3:输出用户信息------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="XML_excample3">例子3:输出用户信息</h1>
+<a href="#root_menu">回到目录</a>
+<hr/>
+<script>
+    function showCustomerInfo(str){
+        if (str.length == 0){
+            document.getElementById('XML_excample3_div').innerHTML = '';
+            return;
+        }
+
+        var xmlhttp
+        if (window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+        }else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange = function(){
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                document.getElementById('XML_excample3_div').innerHTML = xmlhttp.responseText
+            }
+        }
+        var url = '../src/DataSource/MyServer2.php'
+        url = url+'?q='+str
+        url = url+'&sid='+Math.random();
+        xmlhttp.open('GET',url,true);
+        xmlhttp.send();
+    }
+</script>
+请选择一个客户:
+<select name="customers" onchange="showCustomerInfo(this.value)" style="font-family:Verdana, Arial, Helvetica, sans-serif;">
+    <option value="APPLE">Apple Computer, Inc.</option>
+    <option value="BAIDU ">BAIDU, Inc</option>
+    <option value="Canon">Canon USA, Inc.</option>
+    <option value="Google">Google, Inc.</option>
+    <option value="Nokia">Nokia Corporation</option>
+    <option value="SONY">Sony Corporation of America</option>
+</select>
+<div id="XML_excample3_div">客户信息在这里显示..</div>
+<br/><br/><br/>
 </body>
 </html>

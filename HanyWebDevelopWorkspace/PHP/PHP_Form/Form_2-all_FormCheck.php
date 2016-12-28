@@ -3,7 +3,7 @@
 <header>
     <meta charset="UTF-8">
     <title>php - 表单</title>
-    <link href="../../MainCSS.css" type="text/css" rel="stylesheet">
+    <link href="../../src/MainFiles/MainCSS.css" type="text/css" rel="stylesheet">
 </header>
 
 

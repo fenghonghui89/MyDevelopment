@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS演示页面</title>
-    <link href="../MainCSS.css" type="text/css" rel="stylesheet">
+    <link href="../src/MainFiles/MainCSS.css" type="text/css" rel="stylesheet">
 </head>
 
 
@@ -230,28 +230,28 @@
 <div class="bigimgbox">
     <div class="imgbox">
         <a target="_blank" href="/i/tulip_ballade.jpg">
-            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+            <img src="../src/Media/111111.jpg" alt="Ballade" width="160" height="160">
         </a>
         <div class="desc">在此处添加对图像的描述</div>
     </div>
 
     <div class="imgbox">
         <a target="_blank" href="/i/tulip_flaming_club.jpg">
-            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+            <img src="../src/Media/111111.jpg" alt="Ballade" width="160" height="160">
         </a>
         <div class="desc">在此处添加对图像的描述</div>
     </div>
 
     <div class="imgbox">
         <a target="_blank" href="/i/tulip_fringed_family.jpg">
-            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+            <img src="../src/Media/111111.jpg" alt="Ballade" width="160" height="160">
         </a>
         <div class="desc">在此处添加对图像的描述</div>
     </div>
 
     <div class="imgbox">
         <a target="_blank" href="/i/tulip_peach_blossom.jpg">
-            <img src="../src/111111.jpg" alt="Ballade" width="160" height="160">
+            <img src="../src/Media/111111.jpg" alt="Ballade" width="160" height="160">
         </a>
         <div class="desc">在此处添加对图像的描述</div>
     </div>
@@ -281,7 +281,7 @@
     }
 </style>
 
-<img src="../src/111111.jpg" class="CssOpacityImg1">
+<img src="../src/Media/111111.jpg" class="CssOpacityImg1">
 
 <br />
 
@@ -291,7 +291,7 @@
     {
         width: 400px;
         height: 266px;
-        background: url('../src/111111.jpg') repeat;
+        background: url('../src/Media/111111.jpg') repeat;
         border: 1px solid black;
     }
 
@@ -392,18 +392,18 @@
     }
     #round
     {
-        -moz-border-image:url("../src/border.png") 30 30 round;	/* Old Firefox */
-        -webkit-border-image:url("../src/border.png") 30 30 round;	/* Safari and Chrome */
-        -o-border-image:url("../src/border.png") 30 30 round;		/* Opera */
-        border-image:url("../src/border.png") 30 30 round;
+        -moz-border-image:url("../src/Media/border.png") 30 30 round;	/* Old Firefox */
+        -webkit-border-image:url("../src/Media/border.png") 30 30 round;	/* Safari and Chrome */
+        -o-border-image:url("../src/Media/border.png") 30 30 round;		/* Opera */
+        border-image:url("../src/Media/border.png") 30 30 round;
     }
 
     #stretch
     {
-        -moz-border-image:url("../src/border.png") 30 30 stretch;	/* Old Firefox */
-        -webkit-border-image:url("../src/border.png") 30 30 stretch;	/* Safari and Chrome */
-        -o-border-image:url("../src/border.png") 30 30 stretch;	/* Opera */
-        border-image:url("../src/border.png") 30 30 stretch;
+        -moz-border-image:url("../src/Media/border.png") 30 30 stretch;	/* Old Firefox */
+        -webkit-border-image:url("../src/Media/border.png") 30 30 stretch;	/* Safari and Chrome */
+        -o-border-image:url("../src/Media/border.png") 30 30 stretch;	/* Opera */
+        border-image:url("../src/Media/border.png") 30 30 stretch;
     }
 </style>
 
@@ -423,7 +423,7 @@
 <style>
     /*background-size*/
     #Css3Bg1{
-        background:url("../src/bg_flower.gif");
+        background:url("../src/Media/bg_flower.gif");
         background-size:35% 100%;
         -moz-background-size:35% 100%; /* 老版本的 Firefox */
         background-repeat:no-repeat;
@@ -437,7 +437,7 @@
         padding: 10px;
         width: 500px;
         height: 500px;
-        background: url("../src/bg_flower.gif");
+        background: url("../src/Media/bg_flower.gif");
         background-origin: content-box;
         background-repeat: no-repeat;
         background-color: #00FF00;
@@ -447,7 +447,7 @@
     #Css3Bg3{
         width: 500px;
         height: 500px;
-        background: url("../src/bg_flower.gif"),url("../src/bg_flower_2.gif");
+        background: url("../src/Media/bg_flower.gif"),url("../src/Media/bg_flower_2.gif");
         background-color: #00FF00;
     }
 </style>
@@ -529,16 +529,16 @@
     @font-face
     {
         font-family: myFirstFont;
-        src: url('../src/Sansation_Light.ttf')
-        ,url('../src/Sansation_Light.eot'); /* IE9+ */
+        src: url('../src/Media/Sansation_Light.ttf')
+        ,url('../src/Media/Sansation_Light.eot'); /* IE9+ */
     }
 
     /*必须为粗体文本添加另一个包含描述符的 @font-face：*/
     @font-face
     {
         font-family: myFirstFont;
-        src: url('../src/Sansation_Bold.ttf')
-        ,url('../src/Sansation_Bold.eot'); /* IE9+ */
+        src: url('../src/Media/Sansation_Bold.ttf')
+        ,url('../src/Media/Sansation_Bold.eot'); /* IE9+ */
         font-weight:bold;
     }
 

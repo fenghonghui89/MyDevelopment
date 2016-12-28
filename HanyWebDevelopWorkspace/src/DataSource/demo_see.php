@@ -1,4 +1,9 @@
 <?php
+
+//html - html - 服务器发送事件
+
+
+
 header('Content-Type: text/event-stream');//把报头 "Content-Type" 设置为 "text/event-stream
 header('Cache-Control: no-cache');//规定不对页面进行缓存
 
