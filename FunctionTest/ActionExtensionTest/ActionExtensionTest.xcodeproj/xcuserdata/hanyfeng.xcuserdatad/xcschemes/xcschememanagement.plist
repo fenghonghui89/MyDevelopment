@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ActionExtensionTest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>MyShareActionExt.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>MyShareActionExt1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1437D6C11DCADA9800D96DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1437D6E01DCAE43400D96DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1437D6F41DCAE4F900D96DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1437D7071DCAE58200D96DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1437D7191DCAEC6200D96DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1437D7401DCB196B00D96DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1437D7531DCB27DC00D96DCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
