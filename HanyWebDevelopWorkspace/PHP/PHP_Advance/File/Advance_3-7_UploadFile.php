@@ -11,7 +11,7 @@
 <body>
 
 <?php
-/*
+/**
 
 全局数组 $_FILES
 第一个参数是表单的 input name，第二个下标可以是 "name", "type", "size", "tmp_name" 或 "error"

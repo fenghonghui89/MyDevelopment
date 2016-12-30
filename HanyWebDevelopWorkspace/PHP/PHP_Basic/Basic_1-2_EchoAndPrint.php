@@ -8,13 +8,12 @@
 //1-2 echo与print
 
 
-/*
-echo 和 print 之间的差异：
-* echo - 能够输出一个以上的字符串
-* print - 只能输出一个字符串，并始终返回 1
- */
-
-
+/**
+ * echo 和 print 之间的差异：
+ * echo - 能够输出一个以上的字符串
+ * print - 只能输出一个字符串，并始终返回 1
+ *
+*/
 
 //    kl_EchoAndPrint_echo_string();//echo显示字符串
 //    kl_EchoAndPrint_echo_variable();//echo显示变量

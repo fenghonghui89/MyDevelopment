@@ -14,7 +14,7 @@
 
 <?php
 
-/*
+/**
 
 mail(to,subject,message,headers,parameters)
 to 	必需。规定 email 接收者。

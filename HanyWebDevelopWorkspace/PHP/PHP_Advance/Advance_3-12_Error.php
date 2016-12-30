@@ -24,7 +24,7 @@ else
 
 
 #创建自定义错误处理器
-/*
+/**
 该函数必须有能力处理至少两个参数 (error level 和 error message)，但是可以接受最多五个参数
 error_function(error_level,error_message,error_file,error_line,error_context)
 

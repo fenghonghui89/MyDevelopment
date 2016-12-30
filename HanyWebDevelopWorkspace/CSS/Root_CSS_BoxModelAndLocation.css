@@ -5,7 +5,10 @@
 @charset "UTF-8";
 
 
-/*内边距padding 外边距margin
+
+/*
+内边距padding 外边距margin
+
 上右下左
 */
 h1 {padding: 10px;}
@@ -22,7 +25,9 @@ h1 {
 
 
 
-/*边框
+/*
+边框
+
 上右下左 颜色同理
 默认为none
 */
@@ -40,7 +45,9 @@ p {border-width: 10px 10px 10px 10px}
 
 
 
-/*display属性
+/*
+display属性
+
 block 变成块级属性
 inline 变成行内属性
 */

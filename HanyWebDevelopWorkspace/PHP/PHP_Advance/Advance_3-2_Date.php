@@ -7,7 +7,7 @@
  */
 //3-2 日期
 
-/*
+/**
 
 date(format,timestamp)
 format 	必需。规定时间戳的格式。

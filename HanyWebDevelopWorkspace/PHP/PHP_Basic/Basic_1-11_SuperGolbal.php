@@ -8,23 +8,21 @@
 //1-11 超全局变量
 
 
-/*
- PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。在函数或方法中无需执行 global $variable; 就可以访问它们。
-
-这些超全局变量是：
-
-    $GLOBALS
-    $_SERVER
-    $_REQUEST
-    $_POST
-    $_GET
-    $_FILES
-    $_ENV
-    $_COOKIE
-    $_SESSION
-
- * */
-
+/**
+ * PHP 中的许多预定义变量都是“超全局的”，这意味着它们在一个脚本的全部作用域中都可用。在函数或方法中无需执行 global $variable; 就可以访问它们。
+ * 这些超全局变量是：
+$GLOBALS
+$_SERVER
+$_REQUEST
+$_POST
+$_GET
+$_FILES
+$_ENV
+$_COOKIE
+$_SESSION
+ *
+ *
+*/
 
 //    kl_superGlobals_globals_result();//$GLOBALS — 引用全局作用域中可用的全部变量
     kl_superGlobals_server();//$_SERVER 保存关于报头、路径和脚本位置的信息
