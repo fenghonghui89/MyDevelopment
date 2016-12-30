@@ -10,6 +10,9 @@
  要添加LibOneAll.a
  要加OneAllResources.bundle，否则用OneAll页面会崩
  把OneAll.xcodeproj加到OneAllDemo下，添加bundle就不会在左边目录树生成文件引用，看上去更干净
+ 
+ urlscheme加fbauth才能跳到app
+ 其他看fb接入教程和oneall github接入教程
  */
 
 #import "AppDelegate.h"
