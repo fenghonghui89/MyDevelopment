@@ -67,7 +67,7 @@ function ts_basicType_tuple(){
 
     x = ['hello',0]
     //x = [10,'hello']//error
-    //alert(x);//hello,0
+    alert(x);//hello,0
 
     x[3] = 'world'// OK, 字符串可以赋值给(string | number)类型
     alert(x);//hello,0,,world
@@ -167,8 +167,8 @@ function nullfun(){
      * 鼓励尽可能地使用--strictNullChecks
      * */
     // 不能分配值给以下类型变量
-    //let u: undefined = undefined;
-    //let n: null = null;
+    let u: undefined = undefined;
+    let n: null = null;
 
 
 }
@@ -219,11 +219,11 @@ function infiniteLoop(): never {
 
 function typeCheck(){
 
-    //<> 形式
+    // //<> 形式
     let someValue: any = "this is a string";
     let strLength: number = (<string>someValue).length;
 
-    //as 形式
-    let someValue: any = "this is a string";
-    let strLength: number = (someValue as string).length;
+    // //as 形式
+    let someValue1: any = "this is a string";
+    let strLength1: number = (someValue as string).length;
 }
