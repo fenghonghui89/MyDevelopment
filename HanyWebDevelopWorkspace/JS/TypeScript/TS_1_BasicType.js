@@ -40,7 +40,7 @@ function ts_basicType_tuple() {
     var x;
     x = ['hello', 0];
     //x = [10,'hello']//error
-    //alert(x);//hello,0
+    alert(x); //hello,0
     x[3] = 'world'; // OK, 字符串可以赋值给(string | number)类型
     alert(x); //hello,0,,world
     //x[6] = true; // Error, 布尔不是(string | number)类型
@@ -98,8 +98,8 @@ function nullfun() {
      * 鼓励尽可能地使用--strictNullChecks
      * */
     // 不能分配值给以下类型变量
-    //let u: undefined = undefined;
-    //let n: null = null;
+    var u = undefined;
+    var n = null = null;
 }
 /**
  *
@@ -132,11 +132,11 @@ function infiniteLoop() {
  * 类型断言
  * */
 function typeCheck() {
-    //<> 形式
+    // //<> 形式
     var someValue = "this is a string";
     var strLength = someValue.length;
-    //as 形式
-    var someValue = "this is a string";
-    var strLength = someValue.length;
+    // //as 形式
+    var someValue1 = "this is a string";
+    var strLength1 = someValue.length;
 }
 //# sourceMappingURL=TS_1_BasicType.js.map
