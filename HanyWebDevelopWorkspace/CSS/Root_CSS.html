@@ -17,7 +17,8 @@
 <br />
 
 <h2>CSS</h2>
-<a href="#CssBlock">框模型 定位</a><br />
+<a href="#CssBlock">框模型</a><br/>
+<a href="#CssPosition">定位</a><br />
 <a href="#CssCursor">鼠标样式</a><br />
 <a href="#CssNavi">导航栏</a><br />
 <a href="#CssImgLibrary">图库</a><br />
@@ -36,46 +37,232 @@
 <a href="#Css3Column">CSS3 多列</a><br/>
 <a href="#Css3UserScreen">CSS3 用户界面</a><br/>
 
-<!------------------------------------------------------------------框模型 定位------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CssBlock">框模型 定位</h1>
+<!------------------------------------------------------------------框模型:边框 背景 外边距 内边距------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CssBlock">框模型:边框 背景 外边距 内边距</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<style type="text/css">
+<pre>
+    笔记:
+    内边距的边缘是边框。边框绘制在“元素的背景之上”
+    *背景=内容+内边距+边框
+    内边距、边框和外边距都是可选的，默认值是零
+    外边距默认是透明的，因此不会遮挡其后的任何元素.
+    外边距可以是负值，而且在很多情况下都要使用负值的外边距
+
+    内边距padding 外边距margin 上右下左
+    边框 上右下左 颜色同理 默认为none
+
+
+    外边距合并(具体看w3cschool)
+    指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
+    合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+</pre>
+
+<pre>
+    例子:
+    左右外边距50 虚线边框2 内边距10
+</pre>
+<style>
     div#CssBlock_div{
-        position: relative;
-        background-color: #0000FF;
-        opacity: 0.5;
-        height: 300px;
-    }
-
-    button.CssBlock_btn{
-        margin: 0px;
-        padding: 0px;
-        width: 33%;
-        height: 50px;
-        background-color: #00FF00;
-    }
-
-    /*safari下position: absolute无效,未解决..*/
-    img#CssBlock_img{
-        position: absolute;
-        background-color: #cc0000;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
+        background-color: red;
+        border: 2px lightblue dashed;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding: 10px;
         height: 100px;
     }
 </style>
-
 <div id="CssBlock_div">
-    <button type="button" class="CssBlock_btn" >login</button>
-    <button type="button" class="CssBlock_btn" >login</button>
-    <button type="button" class="CssBlock_btn" >login</button>
-    <button type="button" class="CssBlock_btn" >login</button>
-    <img src="" alt="no img" id="CssBlock_img">
+    <img src="" alt="no img" style="background-color: #0000FF;width: 50px;height: 50px">
 </div>
 
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------定位------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CssPosition">定位</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<!--<style type="text/css">-->
+    <!--div#CssBlock_div{-->
+        <!--position: relative;-->
+        <!--background-color: #0000FF;-->
+        <!--opacity: 0.5;-->
+        <!--height: 300px;-->
+    <!--}-->
+
+    <!--button.CssBlock_btn{-->
+        <!--margin: 0px;-->
+        <!--padding: 0px;-->
+        <!--width: 33%;-->
+        <!--height: 50px;-->
+        <!--background-color: #00FF00;-->
+    <!--}-->
+
+    <!--/*safari下position: absolute无效,未解决..*/-->
+    <!--img#CssBlock_img{-->
+        <!--position: relative;-->
+        <!--top: 50px;-->
+        <!--left: 50px;-->
+        <!--background-color: #cc0000;-->
+        <!--width: 100px;-->
+        <!--height: 100px;-->
+    <!--}-->
+    <!--img#CssBlock_img1{-->
+        <!--/*position: relative;*/-->
+        <!--/*top: 50px;*/-->
+        <!--/*left: 50px;*/-->
+        <!--background-color: #cc0000;-->
+        <!--width: 100px;-->
+        <!--height: 100px;-->
+    <!--}-->
+<!--</style>-->
+
+<!--<div id="CssBlock_div">-->
+    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
+    <!--<img src="" alt="no img" id="CssBlock_img">-->
+    <!--<img src="" alt="no img1" id="CssBlock_img1">-->
+<!--</div>-->
+
+
+<pre>
+    例子:
+    无论父元素怎么改变大小,子元素距离父元素四边距离均为10
+    子元素内边距10
+    所以计算子元素的长宽时要减去40px=(10内边距+10偏移)*2
+    设置边框后会偏移,未解决...
+</pre>
+<style>
+    div#CssPosition_eq1_div1{
+        background-color: #0000FF;
+        height: 400px;
+    }
+
+    div#CssPosition_eq1_div2{
+        background-color: #00FF00;
+        /*border: 2px red dashed;*/
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        padding: 10px;
+
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+</style>
+<div id="CssPosition_eq1_div1">
+    <div id="CssPosition_eq1_div2">
+        <img src="" alt="no img" style="background-color:#99bbbb;width: 50px;height: 50px">
+    </div>
+</div>
+
+
+
+<pre>
+    相对定位 relative
+    相对于自身原始位置 所占原来空间仍然存在 后续元素不能占据
+</pre>
+<style type="text/css">
+    div#CssPosition_relative_div1{
+        background-color: #0000FF;
+        height: 200px;
+    }
+    img#CssPosition_relative_img,img#CssPosition_relative_img1{
+        background-color: #cc0000;
+        width: 100px;
+        height: 100px;
+    }
+    img#CssPosition_relative_img{
+        position: relative;
+        top: 50px;
+        left: 50px;
+    }
+</style>
+<div id="CssPosition_relative_div1">
+    <img src="" alt="000" id="CssPosition_relative_img">
+    <img src="" alt="1111" id="CssPosition_relative_img1">
+</div>
+
+
+
+
+<pre>
+    绝对定位 absolute
+    相对于第一个不为static的父元素 会被从正常流中删除 并且能够交叠元素 不占空间 后续元素可以占据
+</pre>
+<style type="text/css">
+    div#CssPosition_absolute_div1{
+        background-color: #0000FF;
+        height: 200px;
+    }
+    div#CssPosition_absolute_div2{
+        background-color: #00FF00;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+
+    img#CssPosition_absolute_img1,img#CssPosition_absolute_img2{
+        background-color: #cc0000;
+        width: 100px;
+        height: 100px;
+    }
+    img#CssPosition_absolute_img1{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+</style>
+<div id="CssPosition_absolute_div1">
+    <div id="CssPosition_absolute_div2">
+        <img src="" alt="22222" id="CssPosition_absolute_img1">
+        <img src="" alt="33333" id="CssPosition_absolute_img2">
+    </div>
+</div>
+
+
+<pre>
+    fixed 绝对定位 相对于浏览器窗口进行定位 受四边距离限制
+</pre>
+<style>
+    div#CssPosition_fixed_div1{
+        background-color: red;
+        opacity: 0.5;
+        width: 100px;
+        height: 100px;
+
+        position: fixed;
+        top:10px;
+        left: 10px;
+    }
+</style>
+<div id="CssPosition_fixed_div1">position: fixed</div>
+
+<style>
+    div#CssPosition_zindex_div1{
+        background-color: greenyellow;
+        width: auto;
+        height: auto;
+        position: relative;
+    }
+    img#CssPosition_zindex_img{
+        z-index: -1;
+        position: absolute;
+    }
+</style>
+<div id="CssPosition_zindex_div1">
+    <h1>这是一个标题</h1>
+    <img src="../src/Media/111111.jpg" id="CssPosition_zindex_img">
+    <p>ppppppppppppppp</p>
+</div>
 <br /><br /><br />
 
 
@@ -146,6 +333,7 @@
     <li><a href="#" class="CssNavi1">About</a></li>
 </ul>
 <br />
+
 <!--水平导航栏-->
 <style>
     ul.CssNavi2
@@ -193,7 +381,6 @@
 <style>
     div.bigimgbox{
         background-color: #0000FF;
-        opacity: 1;
     }
     div.imgbox
     {
@@ -789,9 +976,11 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<!--
+resize
+可以用鼠标自由控制尺寸
+-->
 <style>
-
-    /*resize*/
     div#Css3UserScreen1
     {
         border:2px solid;
@@ -800,9 +989,17 @@
         resize:both;/*是否可由用户对元素的尺寸进行调整*/
         overflow:auto;
     }
+</style>
+<div id="Css3UserScreen1">resize 属性规定是否可由用户调整元素尺寸。</div><br/>
 
 
-    /*box-sizing*/
+<!--
+box-sizing
+以确切的方式定义适应某个区域的具体内容
+如果不指定,则默认一行内尽量输出
+如果指定且配合width/float,则按照样式排列
+-->
+<style>
     div#Css3UserScreen_container
     {
         width:30em;
@@ -813,36 +1010,41 @@
         box-sizing:border-box;
         -moz-box-sizing:border-box; /* Firefox */
         -webkit-box-sizing:border-box; /* Safari */
-        width:35%;
+        width:33.33%;
         border:1em solid red;
         float:left;
     }
     div#Css3UserScreen_clear{
         clear: both;
     }
-
-    /*outline*/
-    div#Css3UserScreen3
-    {
-        margin:20px;
-        width:150px;
-        padding:10px;
-        height:70px;
-        border:2px solid black;
-        outline:2px solid red;
-        outline-offset:15px;
-    }
 </style>
-
-<div id="Css3UserScreen1">resize 属性规定是否可由用户调整元素尺寸。</div><br/>
-
 <div id="Css3UserScreen_container">
     <div class="Css3UserScreen_box">这个 div 占据左半部分。</div>
     <div class="Css3UserScreen_box">这个 div 占据右半部分。</div>
     <div id="Css3UserScreen_clear"></div>
 </div><br/>
 
+
+<!--
+outline
+边框外的轮廓,跟边框不同,不占用空间,可能是非矩形
+-->
+<style>
+    div#Css3UserScreen3
+    {
+        margin:20px;
+        padding:10px;
+        width:150px;
+        height:70px;
+        border:2px solid black;
+        outline:2px solid red;
+        outline-offset:15px;
+    }
+</style>
 <div id="Css3UserScreen3">这个 div 在边框边缘之外 15 像素处有一个轮廓。</div>
+
+
+
 <br/><br/><br/>
 
 </body>
