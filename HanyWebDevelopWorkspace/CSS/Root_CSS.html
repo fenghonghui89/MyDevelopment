@@ -15,7 +15,8 @@
 <!------------------------------------------------------------------目录------------------------------------------------------------------>
 <h1 id="root_menu"><b>目录</b></h1>
 <br />
-
+<a href="../Root.html">返回到根目录</a><br/>
+<br/>
 <h2>CSS</h2>
 <a href="#CssBlock">框模型</a><br/>
 <a href="#CssPosition">定位</a><br />
@@ -53,7 +54,6 @@
     内边距padding 外边距margin 上右下左
     边框 上右下左 颜色同理 默认为none
 
-
     外边距合并(具体看w3cschool)
     指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
     合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
@@ -85,65 +85,63 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<!--<style type="text/css">-->
-    <!--div#CssBlock_div{-->
-        <!--position: relative;-->
-        <!--background-color: #0000FF;-->
-        <!--opacity: 0.5;-->
-        <!--height: 300px;-->
-    <!--}-->
-
-    <!--button.CssBlock_btn{-->
-        <!--margin: 0px;-->
-        <!--padding: 0px;-->
-        <!--width: 33%;-->
-        <!--height: 50px;-->
-        <!--background-color: #00FF00;-->
-    <!--}-->
-
-    <!--/*safari下position: absolute无效,未解决..*/-->
-    <!--img#CssBlock_img{-->
-        <!--position: relative;-->
-        <!--top: 50px;-->
-        <!--left: 50px;-->
-        <!--background-color: #cc0000;-->
-        <!--width: 100px;-->
-        <!--height: 100px;-->
-    <!--}-->
-    <!--img#CssBlock_img1{-->
-        <!--/*position: relative;*/-->
-        <!--/*top: 50px;*/-->
-        <!--/*left: 50px;*/-->
-        <!--background-color: #cc0000;-->
-        <!--width: 100px;-->
-        <!--height: 100px;-->
-    <!--}-->
-<!--</style>-->
-
-<!--<div id="CssBlock_div">-->
-    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
-    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
-    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
-    <!--&lt;!&ndash;<button type="button" class="CssBlock_btn" >login</button>&ndash;&gt;-->
-    <!--<img src="" alt="no img" id="CssBlock_img">-->
-    <!--<img src="" alt="no img1" id="CssBlock_img1">-->
-<!--</div>-->
 
 
 <pre>
-    例子:
+    例子1:
+    父div根据子元素自适应高度
+</pre>
+<style>
+    /*最底层父元素*/
+    div#CssPosition_eq1_div1{
+        background-color: #99bbbb;
+        position: relative;
+    }
+
+    /*高度显示条*/
+    div#CssPosition_eq1_div2{
+        background-color: orange;
+        position: absolute;
+        height: 100%;
+        width: 20px;
+        right: 10px;
+    }
+
+    /*上层元素*/
+    div#CssPosition_eq1_div3{
+        background-color: #66ff66;
+        position: relative;
+        opacity: 0.7;
+    }
+</style>
+<div id="CssPosition_eq1_div1">
+    <div id="CssPosition_eq1_div2">
+        <span style="color: red">最底层父元素高度显示条</span>
+    </div>
+    <div id="CssPosition_eq1_div3">
+        <h1>这是h1...这是h1...这是h1...</h1>
+        <img src="../src/Media/111111.jpg" alt="no img..">
+        <p>pppppppppppppppp</p>
+        <p>pppppppppppppppp</p>
+        <p>pppppppppppppppp</p>
+    </div>
+</div>
+<hr class="SectionHr">
+
+<pre>
+    例子2:
     无论父元素怎么改变大小,子元素距离父元素四边距离均为10
     子元素内边距10
     所以计算子元素的长宽时要减去40px=(10内边距+10偏移)*2
     设置边框后会偏移,未解决...
 </pre>
 <style>
-    div#CssPosition_eq1_div1{
+    div#CssPosition_eq2_div1{
         background-color: #0000FF;
         height: 400px;
     }
 
-    div#CssPosition_eq1_div2{
+    div#CssPosition_eq2_div2{
         background-color: #00FF00;
         /*border: 2px red dashed;*/
         width: calc(100% - 40px);
@@ -155,13 +153,30 @@
         left: 10px;
     }
 </style>
-<div id="CssPosition_eq1_div1">
-    <div id="CssPosition_eq1_div2">
+<div id="CssPosition_eq2_div1">
+    <div id="CssPosition_eq2_div2">
         <img src="" alt="no img" style="background-color:#99bbbb;width: 50px;height: 50px">
     </div>
 </div>
+<hr class="SectionHr">
 
-
+<pre>
+    例子3:
+    解除注释 刷新可见
+</pre>
+<style>
+    div#CssPosition_eq3_div1{
+        background-color: red;
+        opacity: 0.3;
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+    }
+</style>
+<!--<div id="CssPosition_eq3_div1"></div>-->
+<hr class="SectionHr">
 
 <pre>
     相对定位 relative
@@ -187,13 +202,14 @@
     <img src="" alt="000" id="CssPosition_relative_img">
     <img src="" alt="1111" id="CssPosition_relative_img1">
 </div>
-
+<hr class="SectionHr">
 
 
 
 <pre>
     绝对定位 absolute
-    相对于第一个不为static的父元素 会被从正常流中删除 并且能够交叠元素 不占空间 后续元素可以占据
+    绝对定位的元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块
+    会从正常流中删除 并且能够交叠元素 不占空间 后续元素可以占据
 </pre>
 <style type="text/css">
     div#CssPosition_absolute_div1{
@@ -223,14 +239,16 @@
 </style>
 <div id="CssPosition_absolute_div1">
     <div id="CssPosition_absolute_div2">
-        <img src="" alt="22222" id="CssPosition_absolute_img1">
-        <img src="" alt="33333" id="CssPosition_absolute_img2">
+        <img src="" alt="11111" id="CssPosition_absolute_img1">
+        <img src="" alt="22222" id="CssPosition_absolute_img2">
     </div>
 </div>
-
+<hr class="SectionHr">
 
 <pre>
-    fixed 绝对定位 相对于浏览器窗口进行定位 受四边距离限制
+    fixed 绝对定位
+    看浏览器左上角红色正方形
+    相对于浏览器窗口进行定位 受四边距离限制
 </pre>
 <style>
     div#CssPosition_fixed_div1{
@@ -245,24 +263,65 @@
     }
 </style>
 <div id="CssPosition_fixed_div1">position: fixed</div>
+<hr class="SectionHr">
 
+<pre>
+    zindex 堆叠顺序
+    Z-index 仅能在定位元素上有效 即必须设置position
+    默认为auto 堆叠顺序与父元素相等
+    该属性设置一个定位元素沿 z 轴的位置，z 轴定义为垂直延伸到显示区的轴。
+    如果为正数，则离用户更近，为负数则表示离用户更远
+</pre>
 <style>
     div#CssPosition_zindex_div1{
-        background-color: greenyellow;
-        width: auto;
-        height: auto;
+        z-index: 0;
+        background-color: indianred;
         position: relative;
     }
     img#CssPosition_zindex_img{
         z-index: -1;
-        position: absolute;
+        position: relative;
+        top: -50px;
+        left: 10px;
     }
 </style>
 <div id="CssPosition_zindex_div1">
-    <h1>这是一个标题</h1>
+    <h1>这是一个标题这是一个标题这是一个标题这是一个标题</h1>
     <img src="../src/Media/111111.jpg" id="CssPosition_zindex_img">
-    <p>ppppppppppppppp</p>
+    <p>ppppppppppppppppppppppppppppppppppppppppppppp</p>
 </div>
+<hr class="SectionHr">
+
+
+
+<pre>
+    display属性
+
+    block 变成块级属性
+    inline 变成行内属性
+</pre>
+<hr class="SectionHr">
+
+
+
+<pre>
+    浮动float clear:
+    详看网上资料和例子
+
+    float例子:
+    html-html-块元素div 内联元素span 类 布局
+    html-html5-拖放
+    css-css-导航栏
+    css-css-图库
+    css-css3-css3用户界面
+
+    clear例子:
+    html-html-块元素div 内联元素span 类 布局
+    html-html5-拖放
+    css-css-图库
+    css-css3-css3用户界面
+</pre>
+
 <br /><br /><br />
 
 

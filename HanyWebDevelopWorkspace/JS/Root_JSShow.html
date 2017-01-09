@@ -9,7 +9,8 @@
 
 <!------------------------------------------------------------------目录------------------------------------------------------------------>
 <h1 id="root_menu"><b>目录</b></h1>
-
+<a href="../Root.html">返回到根目录</a><br/>
+<br/>
 <h2>JS 基础</h2>
 <a href="#js_base_operator">js 运算符</a><br/>
 <a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
@@ -38,8 +39,7 @@
 <br/>
 
 <h2>JS window</h2>
-<a href="#js_window">js window</a><br/>
-<a href="#js_screen">js screen</a><br/>
+<a href="#js_window">js window / screen</a><br/>
 <a href="#js_location">js location</a><br/>
 <a href="#js_history">js history</a><br/>
 <a href="#js_navigator">js navigator</a><br/>
@@ -1102,56 +1102,83 @@
 
 
 
-<!------------------------------------------------------------------js window------------------------------------------------------------------>
+<!------------------------------------------------------------------js window / screen------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_window">js window</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre>
+    例如:
+    显示器:23.5英寸 1920*1080
+    没有设置body的外边距内边距
+
+    Window 对象表示浏览器中打开的窗口
+    Screen 对象包含有关客户端显示屏幕的信息
+
+    window.innerWidth 1920
+    window.innerHeight 1019
+    浏览器内容窗口的当前宽高
+    宽度-包含竖滚动条
+    高度-只有当前可见网页部分,不包含需要滚动才显示的部分
+
+    document.documentElement.clientWidth 1905
+    document.documentElement.clientHeight 1019
+    浏览器内容窗口的当前宽高
+    宽度-不包含竖滚动条
+    高度-只有当前可见网页部分,不包含需要滚动才显示的部分
+
+    document.body.clientWidth 1885
+    document.body.clientHeight 8408
+    body当前宽高
+    宽度-内容+内边距
+    高度-包含需要滚动才能显示的部分
+
+    window.screenLeft:0
+    window.screenTop:23
+    整个浏览器相对于屏幕左上角的偏移
+
+    screen.width 1920
+    screen.height 1080
+    显示屏的总宽高
+
+    screen.availWidth 1920
+    screen.availHeight 1053
+    显示屏的宽高，以像素计，减去界面特性，比如窗口任务栏
+</pre>
 <script>
     //浏览器尺寸
     function window_size(){
-        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        alert("w:"+w+" h:"+h);
+        alert(
+                "window.innerWidth:"+window.innerWidth+'\n'+
+                "window.innerHeight:"+window.innerHeight+'\n'+
+                "document.documentElement.clientWidth:"+document.documentElement.clientWidth+'\n'+
+                "document.documentElement.clientHeight:"+document.documentElement.clientHeight+'\n'+
+                "document.body.clientWidth:"+document.body.clientWidth+'\n'+
+                "document.body.clientHeight:"+document.body.clientHeight+'\n'+
+                "window.screenLeft:"+window.screenLeft+'\n'+
+                "window.screenTop:"+window.screenTop+'\n'+
+                "screen.width:"+screen.width+'\n'+//可以不使用window前缀:window.screen.availWidth
+                "screen.height:"+screen.height+'\n'+
+                "screen.availWidth:"+screen.availWidth+'\n'+
+                "screen.availHeight:"+screen.availHeight
+        );
     }
 
+
     //其他方法
-    var win;
+    var win
     function window_method(){
-        var win;
         win = window.open("http://www.baidu.com")
 //        win = window.location.assign("http://www.baidu.com");
     }
 
     function window_method1(){
-        window.close();
+        win.close();
     }
 </script>
-<button type="button" onclick="window_size()">浏览器尺寸</button>
-<button type="button" onclick="window_method()">其他方法</button>
-<button type="button" onclick="window_method1()">test</button>
-<br/><br/><br/>
-
-
-
-
-<!------------------------------------------------------------------js screen------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_screen">js screen</h1>
-<a href="#root_menu">回到目录</a>
-<hr />
-
-<script>
-
-    //window.screen 对象在编写时可以不使用 window 这个前缀
-    function screen_test(){
-        var w = screen.availWidth;//window.screen.availWidth
-        var h = screen.availHeight;
-        alert("可用尺寸w:"+w+" h:"+h);
-    }
-
-</script>
-<button type="button" onclick="screen_test()">screen</button>
-
+<button type="button" onclick="window_size()">各种浏览器尺寸</button><br/>
+<button type="button" onclick="window_method()">其他方法</button><br/>
+<button type="button" onclick="window_method1()">其他方法1</button><br/>
 <br/><br/><br/>
 
 
@@ -1160,6 +1187,14 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre>
+    输出:
+    hostname:localhost
+    pathname:/HanyHTMLLanguageDemo/JS/Root_JSShow.html
+    port:63342
+    protocol:http:
+    href:http://localhost:63342/HanyHTMLLanguageDemo/JS/Root_JSShow.html#js_location
+</pre>
 <script>
 
     //输出
@@ -1171,13 +1206,6 @@
         result += "protocol:"+location.protocol+"\n";
         result += "href:"+location.href+"\n";
         alert(result);
-        /*
-        * hostname:localhost
-         pathname:/HanyHTMLLanguageDemo/JS/Root_JSShow.html
-         port:63342
-         protocol:http:
-         href:http://localhost:63342/HanyHTMLLanguageDemo/JS/Root_JSShow.html#js_location
-        * */
     }
 
     //跳转
@@ -1221,9 +1249,18 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<script>
+<pre>
+    window.navigator 对象包含有关访问者浏览器的信息
 
-    //window.navigator 对象包含有关访问者浏览器的信息
+    Browser CodeName:Mozilla
+    Browser Name:Netscape
+    Browser Version:5.0 (Macintosh)
+    Cookies Enabled:true
+    Platform:MacIntel
+    User-agent header:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:47.0) Gecko/20100101 Firefox/47.0
+    User-agent language:undefined
+</pre>
+<script>
     function navigator_info(){
         var result = "Browser CodeName:"+navigator.appCodeName+"\n";
         result += "Browser Name:"+navigator.appName+"\n";
@@ -1233,15 +1270,6 @@
         result += "User-agent header:"+ navigator.userAgent+"\n";
         result += "User-agent language:"+ navigator.systemLanguage+"\n";
         alert(result);
-        /*
-        * Browser CodeName:Mozilla
-         Browser Name:Netscape
-         Browser Version:5.0 (Macintosh)
-         Cookies Enabled:true
-         Platform:MacIntel
-         User-agent header:Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:47.0) Gecko/20100101 Firefox/47.0
-         User-agent language:undefined
-        * */
     }
 
 
@@ -1404,8 +1432,7 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<script>
-    /*
+<pre>
     * JSON：JavaScript 对象表示法
     * JSON 是存储和交换文本信息的语法。类似 XML。
     * JSON 文本格式在语法上与创建 JavaScript 对象的代码相同。
@@ -1415,9 +1442,8 @@
     *
     * json - 一种语法,"key":"value" value可以是null
     * json对象 - {"key":"value",...} (包含多个键值对,与firstName = "John";lastName = "Doe";等价)
-    * */
-
-
+</pre>
+<script>
     //json对象 json字符串 json对象数组
     function jsonObj(){
 
