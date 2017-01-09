@@ -87,8 +87,8 @@
 
 
 
-<pre>
-    例子1:
+<pre class="MyPre">
+    * 例子1:
     父div根据子元素自适应高度
 </pre>
 <style>
@@ -126,10 +126,10 @@
         <p>pppppppppppppppp</p>
     </div>
 </div>
-<hr class="SectionHr">
 
-<pre>
-    例子2:
+
+<pre class="MyPre">
+    * 例子2:
     无论父元素怎么改变大小,子元素距离父元素四边距离均为10
     子元素内边距10
     所以计算子元素的长宽时要减去40px=(10内边距+10偏移)*2
@@ -158,10 +158,10 @@
         <img src="" alt="no img" style="background-color:#99bbbb;width: 50px;height: 50px">
     </div>
 </div>
-<hr class="SectionHr">
 
-<pre>
-    例子3:
+
+<pre class="MyPre">
+    * 例子3:
     解除注释 刷新可见
 </pre>
 <style>
@@ -176,10 +176,10 @@
     }
 </style>
 <!--<div id="CssPosition_eq3_div1"></div>-->
-<hr class="SectionHr">
 
-<pre>
-    相对定位 relative
+
+<pre class="MyPre">
+    * 相对定位 relative
     相对于自身原始位置 所占原来空间仍然存在 后续元素不能占据
 </pre>
 <style type="text/css">
@@ -202,12 +202,12 @@
     <img src="" alt="000" id="CssPosition_relative_img">
     <img src="" alt="1111" id="CssPosition_relative_img1">
 </div>
-<hr class="SectionHr">
 
 
 
-<pre>
-    绝对定位 absolute
+
+<pre class="MyPre">
+    * 绝对定位 absolute
     绝对定位的元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块
     会从正常流中删除 并且能够交叠元素 不占空间 后续元素可以占据
 </pre>
@@ -243,10 +243,10 @@
         <img src="" alt="22222" id="CssPosition_absolute_img2">
     </div>
 </div>
-<hr class="SectionHr">
 
-<pre>
-    fixed 绝对定位
+
+<pre class="MyPre">
+    * fixed 绝对定位
     看浏览器左上角红色正方形
     相对于浏览器窗口进行定位 受四边距离限制
 </pre>
@@ -263,10 +263,10 @@
     }
 </style>
 <div id="CssPosition_fixed_div1">position: fixed</div>
-<hr class="SectionHr">
 
-<pre>
-    zindex 堆叠顺序
+
+<pre class="MyPre">
+    * zindex 堆叠顺序
     Z-index 仅能在定位元素上有效 即必须设置position
     默认为auto 堆叠顺序与父元素相等
     该属性设置一个定位元素沿 z 轴的位置，z 轴定义为垂直延伸到显示区的轴。
@@ -290,23 +290,124 @@
     <img src="../src/Media/111111.jpg" id="CssPosition_zindex_img">
     <p>ppppppppppppppppppppppppppppppppppppppppppppp</p>
 </div>
-<hr class="SectionHr">
 
 
+
+
+<pre class="MyPre">
+    * display属性
+</pre>
 
 <pre>
-    display属性
-
     block 变成块级属性
+</pre>
+<span>span1111111</span>
+<span style="display: block">span2222222</span>
+<span>span3333333</span>
+
+<pre>
     inline 变成行内属性
 </pre>
-<hr class="SectionHr">
-
-
+<span>span1111111</span>
+<div style="display: inline">div2</div>
+<span>span2222222</span>
 
 <pre>
-    浮动float clear:
-    详看网上资料和例子
+    例子
+</pre>
+<style>
+    a.CssPosition_display_a{
+        color: #0000FF;
+        background-color: wheat;
+    }
+    div#CssPosition_display_div00{
+        width: 100%;
+        height: 20px;
+        text-align: center;
+        background-color: #99bbbb;
+    }
+</style>
+<div id="CssPosition_display_div00">
+    <a href="http://www.baidu.com" class="CssPosition_display_a">1111111111111111111111111111</a>
+    <a href="http://www.baidu.com" class="CssPosition_display_a">2222222222222222222222222222</a>
+    <a href="http://www.baidu.com" class="CssPosition_display_a">3333333333333333333333333333</a>
+    <a href="http://www.baidu.com" class="CssPosition_display_a">1111111111111111111111111111</a>
+    <a href="http://www.baidu.com" class="CssPosition_display_a">2222222222222222222222222222</a>
+    <a href="http://www.baidu.com" class="CssPosition_display_a">3333333333333333333333333333</a>
+</div>
+<br/><br/>
+
+<pre>
+   inline-block
+</pre>
+<style>
+    div#CssPosition_display_div0{
+        background-color: greenyellow;
+        padding: 5px;
+    }
+    div#CssPosition_display_div1,div#CssPosition_display_div2,div#CssPosition_display_div3{
+        display: inline-block;
+        width: 100%;
+    }
+    div#CssPosition_display_div1{
+        background-color: rosybrown;
+    }
+    div#CssPosition_display_div2{
+        background-color: deepskyblue;
+        margin-top: 5px;
+    }
+    div#CssPosition_display_div3{
+        background-color: yellow;
+        margin-top: 5px;
+    }
+    button.CssPosition_display_btn{
+        width: 33.333%;
+        height: 30px;
+        box-sizing: border-box;
+        float: left;
+    }
+</style>
+<div id="CssPosition_display_div0">
+    <div id="CssPosition_display_div1">
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+    </div>
+    <div id="CssPosition_display_div2">
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+    </div>
+    <div id="CssPosition_display_div3">
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+        <button class="CssPosition_display_btn">btn</button>
+    </div>
+</div>
+
+
+<pre class="MyPre">
+    * 浮动float clear:
+    float会脱离文档流,进行左右浮动，紧贴着父元素(默认为body文本区域)的左右边框
+    参考资料:http://www.cnblogs.com/polk6/p/3142187.html
 
     float例子:
     html-html-块元素div 内联元素span 类 布局
@@ -1035,29 +1136,30 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<!--
-resize
+<pre class="MyPre">
+    * resize
 可以用鼠标自由控制尺寸
--->
+</pre>
 <style>
     div#Css3UserScreen1
     {
         border:2px solid;
         padding:10px 40px;
         width:300px;
-        resize:both;/*是否可由用户对元素的尺寸进行调整*/
+        resize:both;
         overflow:auto;
     }
 </style>
 <div id="Css3UserScreen1">resize 属性规定是否可由用户调整元素尺寸。</div><br/>
 
 
-<!--
-box-sizing
+
+<pre class="MyPre">
+   * box-sizing
 以确切的方式定义适应某个区域的具体内容
 如果不指定,则默认一行内尽量输出
 如果指定且配合width/float,则按照样式排列
--->
+</pre>
 <style>
     div#Css3UserScreen_container
     {
@@ -1084,10 +1186,11 @@ box-sizing
 </div><br/>
 
 
-<!--
-outline
+
+<pre class="MyPre">
+    * outline
 边框外的轮廓,跟边框不同,不占用空间,可能是非矩形
--->
+</pre>
 <style>
     div#Css3UserScreen3
     {
