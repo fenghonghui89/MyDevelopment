@@ -3,6 +3,6 @@
  */
 
 /**
- * Root_JSShow.html -> JS HTML DOM:改变HTML用
+ * JS HTML DOM:改变HTML
  * */
 document.write("<script src='Test_tool.js'></script>")
