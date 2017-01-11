@@ -14,16 +14,16 @@ PHP 创建 "cd_catalog.xml" 文件的 XML DOM 对象
 输出 album 的信息，并发送到 "txtHint" 占位符
 */
 
-$q=$_GET["q"];
+$q = $_GET["q"];
 
 $xmlDoc = new DOMDocument();
 $xmlDoc->load("XML_cdCatalog.xml");
 
-$x=$xmlDoc->getElementsByTagName('ARTIST');
+$x = $xmlDoc->getElementsByTagName('ARTIST');
 
 for ($i=0; $i<=$x->length-1; $i++)
 {
-//Process only element nodes
+    //Process only element nodes
     if ($x->item($i)->nodeType==1)
     {
         if ($x->item($i)->childNodes->item(0)->nodeValue == $q)
@@ -33,11 +33,11 @@ for ($i=0; $i<=$x->length-1; $i++)
     }
 }
 
-$cd=($y->childNodes);
+$cd = ($y->childNodes);
 
 for ($i=0;$i<$cd->length;$i++)
 {
-//Process only element nodes
+    //Process only element nodes
     if ($cd->item($i)->nodeType==1)
     {
         echo($cd->item($i)->nodeName);

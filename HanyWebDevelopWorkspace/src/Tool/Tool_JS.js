@@ -1,11 +1,9 @@
-/**
- * Created by hanyfeng on 2016/12/28.
- */
 
-function tool_GetXmlHttpObject(){
+var obj_tool = {};
+
+obj_tool.getXmlHttpObject = function(){
 
     var xmlHttp = null
-
     try
     {
         // code for IE7+, Firefox, Chrome, Opera, Safari

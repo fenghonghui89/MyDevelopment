@@ -40,7 +40,7 @@ $a[]="Wenche";
 $a[]="Vicky";
 
 //获得来自 URL 的 q 参数
-$q=$_GET["q"];
+$q = $_GET["q"];
 
 //如果 q 大于 0，则查找数组中的所有提示
 if (strlen($q) > 0)
