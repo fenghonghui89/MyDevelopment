@@ -15,7 +15,7 @@
 <a href="../Root.html">返回到根目录</a><br/>
 <br/>
 <a href="#XML_DOM">xml解析</a><br/>
-<a href="#XML_HTTP_Request">http request</a><br/>
+<a href="#XML_HTTP_Request">http request get/post</a><br/>
 <a href="#XML_excample1">例子1:解析外部xml文件</a><br/>
 <a href="#XML_excample2">例子2:名字建议</a><br/>
 <a href="#XML_excample3">例子3:输出用户信息 后端未完成</a><br/>
@@ -76,21 +76,22 @@
 <br /><br /><br />
 
 
-<!------------------------------------------------------------------http request------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="XML_HTTP_Request">http request</h1>
+<!------------------------------------------------------------------http request get/post------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="XML_HTTP_Request">http request get/post</h1>
 <a href="#root_menu">回到目录</a>
 <hr/>
 
 
 <script>
 
+    /**
+     * get
+     * */
     function xmlHttpRequest_GET(){
 
         var myXmlHttp = obj_tool.getXmlHttpObject()
 
-        /**
-         * 每当 readyState 属性改变时，就会触发onreadystatechange事件,会被触发 5 次（0 - 4），对应着 readyState 的每个变化
-         * */
+        //每当 readyState 属性改变时，就会触发onreadystatechange事件,会被触发 5 次（0 - 4），对应着 readyState 的每个变化
         myXmlHttp.onreadystatechange = function(){
             if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
                 var txt = 'GET:<br/>';
@@ -102,19 +103,23 @@
         }
 
 
-        /***
-         * 不能在a站点html请求b站点的数据,会有跨域问题,但可以在a站点的服务器请求
-         * url后面添加唯一id,防止拿到的是缓存结果
-         * 当open()使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send() 语句后面即可
-         * */
+        /*
+        *
+        * 不能在a站点html请求b站点的数据,会有跨域问题,但可以在a站点的服务器请求
+        * url后面添加唯一id,防止拿到的是缓存结果
+        * 当open()使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send() 语句后面即可
+        *
+        * */
 //        var url = "http://op.juhe.cn/onebox/basketball/nba?key=c4cfea79413a43647da53efc0b992270&&dtype=json"
         var url = '../src/DataSource/PHP_MyServer.php?a=get_users&uid=10001&t='+Math.random();
         myXmlHttp.open("GET",url,true);
         myXmlHttp.send();
     }
 
-
-    function xmlHttpRequest_POST(){
+    /**
+     * 普通post
+     * */
+    function xmlHttpRequest_POST_Simple(){
 
         var myXmlHttp = obj_tool.getXmlHttpObject()
 
@@ -128,24 +133,38 @@
             }
         }
 
-        //普通post
-        var url = '../src/DataSource/PHP_MyServer.php?a=get_users&uid=10001&t='+Math.random();
+        var url = '../src/DataSource/PHP_MyServer.php?a=get_users&uid=10003&t='+Math.random();
         myXmlHttp.open("POST",url,true);
         myXmlHttp.send();
+    }
 
-        //表单方式post
-//        var url = 'PHP_MyServer.php'
-//        myXmlHttp.open("POST",url,true);
-//        myXmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");//头名称,值
-//        myXmlHttp.send("a=get_users&uid=10001&t="+Math.random());
-//        myXmlHttp.setRequestHeader('Content-type','application/json');
-//        myXmlHttp.send({'a':'get_users','uid':10001,'t':Math.random()});
+    /**
+     * 表单方式post
+     * */
+    function xmlHttpRequest_POST_Form(){
+        var myXmlHttp = obj_tool.getXmlHttpObject()
+
+        myXmlHttp.onreadystatechange = function(){
+            if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
+                var txt = 'POST:<br/>';
+                txt += myXmlHttp.responseText+'<br/><br/>'
+                txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
+                txt += myXmlHttp.getResponseHeader('Content-Type')
+                document.getElementById("XML_HTTP_Request_div").innerHTML = txt;
+            }
+        }
+
+        var url = '../src/DataSource/PHP_MyServer.php'
+        myXmlHttp.open("POST",url,true);
+        myXmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=utf-8");
+        myXmlHttp.send("a=get_users&uid=10003&t="+Math.random());
     }
 
 </script>
 
 <button onclick="xmlHttpRequest_GET()">GET</button>
-<button onclick="xmlHttpRequest_POST()">POST</button>
+<button onclick="xmlHttpRequest_POST_Simple()">POST - simple</button>
+<button onclick="xmlHttpRequest_POST_Form()">POST - form</button>
 <div id="XML_HTTP_Request_div">txt..</div>
 
 <br /><br /><br />

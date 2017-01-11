@@ -1,11 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: hanyfeng
- * Date: 2016/12/26
- * Time: 15:48
  *
- * JS - Root_XMLAndAJAX.html - http request
+ * JS - Root_XMLAndAJAX.html - http request get/post
  * JS - Root_JQuery.html - jQuery AJAX - ajax get/post
  *
  */
