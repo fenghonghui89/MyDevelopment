@@ -1,9 +1,9 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: hanyfeng
- * Date: 2016/12/28
- * Time: 17:24
+ *
+ * JS - Root_XMLAndAJAX.html - 例子4:输出cd信息
+ *
  */
 
 /*
@@ -17,7 +17,7 @@ PHP 创建 "cd_catalog.xml" 文件的 XML DOM 对象
 $q=$_GET["q"];
 
 $xmlDoc = new DOMDocument();
-$xmlDoc->load("cd_catalog.xml");
+$xmlDoc->load("XML_cdCatalog.xml");
 
 $x=$xmlDoc->getElementsByTagName('ARTIST');
 

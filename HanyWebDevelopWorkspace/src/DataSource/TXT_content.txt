@@ -1,2 +1,4 @@
+
 <h2>jQuery and AJAX is FUN!!!</h2>
+<p>用处:JS - Root_JQuery.html - jQuery AJAX - ajax load</p>
 <p id="p1">This is some text in a paragraph.</p>

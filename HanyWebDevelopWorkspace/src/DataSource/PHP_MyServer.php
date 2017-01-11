@@ -4,6 +4,10 @@
  * User: hanyfeng
  * Date: 2016/12/26
  * Time: 15:48
+ *
+ * JS - Root_XMLAndAJAX.html - http request
+ * JS - Root_JQuery.html - jQuery AJAX - ajax get/post
+ *
  */
 //header('Content-Type: application/json');
 

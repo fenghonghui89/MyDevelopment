@@ -1,10 +1,11 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: hanyfeng
- * Date: 2016/12/28
- * Time: 10:31
+ *
+ * JS - Root_XMLAndAJAX.html - 例子3:输出用户信息
+ *
  */
+
 $q=$_GET["q"];
 
 $con = mysql_connect('localhost', 'peter', 'abc123');

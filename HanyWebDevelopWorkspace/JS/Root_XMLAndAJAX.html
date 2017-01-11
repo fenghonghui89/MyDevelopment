@@ -16,7 +16,7 @@
 <br/>
 <a href="#XML_DOM">xml解析</a><br/>
 <a href="#XML_HTTP_Request">http request</a><br/>
-<a href="#XML_excample1">例子1:xml解析</a><br/>
+<a href="#XML_excample1">例子1:解析外部xml文件</a><br/>
 <a href="#XML_excample2">例子2:名字建议</a><br/>
 <a href="#XML_excample3">例子3:输出用户信息 后端未完成</a><br/>
 <a href="#XML_excample4">例子4:输出cd信息 后端未完成</a><br/>
@@ -102,7 +102,7 @@
         //添加唯一id,防止拿到的是缓存结果
         //当您使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send() 语句后面即可
 //        var url = "http://op.juhe.cn/onebox/basketball/nba?key=c4cfea79413a43647da53efc0b992270&&dtype=json"
-        var url = '../src/DataSource/MyServer.php?a=get_users&uid=10001&t='+Math.random();
+        var url = '../src/DataSource/PHP_MyServer.php?a=get_users&uid=10001&t='+Math.random();
         myXmlHttp.open("GET",url,true);//
         myXmlHttp.send();
     }
@@ -123,12 +123,12 @@
         }
 
         //普通post
-        var url = '../src/DataSource/MyServer.php?a=get_users&uid=10001&t='+Math.random();
+        var url = '../src/DataSource/PHP_MyServer.php?a=get_users&uid=10001&t='+Math.random();
         myXmlHttp.open("POST",url,true);
         myXmlHttp.send();
 
         //表单方式post
-//        var url = 'MyServer.php'
+//        var url = 'PHP_MyServer.php'
 //        myXmlHttp.open("POST",url,true);
 //        myXmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");//头名称,值
 //        myXmlHttp.send("a=get_users&uid=10001&t="+Math.random());
@@ -144,15 +144,15 @@
 
 <br /><br /><br />
 
-<!------------------------------------------------------------------例子1:xml解析------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="XML_excample1">例子1:xml解析</h1>
+<!------------------------------------------------------------------例子1:解析外部xml文件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="XML_excample1">例子1:解析外部xml文件</h1>
 <a href="#root_menu">回到目录</a>
 <hr/>
 
 <script type="text/javascript">
 
     xmlhttp = tool_GetXmlHttpObject()
-    xmlhttp.open("GET","../src/DataSource/cd_catalog.xml",false);
+    xmlhttp.open("GET","../src/DataSource/XML_cdCatalog.xml",false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
     x = xmlDoc.getElementsByTagName("CD");
@@ -214,7 +214,7 @@
                 document.getElementById('XML_excample2_span').innerHTML = xmlhttp.responseText
             }
         }
-        var url = '../src/DataSource/MyServer1.php?q='+str;
+        var url = '../src/DataSource/PHP_MyServer1.php?q='+str;
         xmlhttp.open('GET',url,true);
         xmlhttp.send();
     }
@@ -240,7 +240,7 @@ First Name:<input type="text" id="XML_excample2_input" onkeyup="showHint(this.va
                 document.getElementById('XML_excample3_div').innerHTML = xmlhttp.responseText
             }
         }
-        var url = '../src/DataSource/MyServer2.php'
+        var url = '../src/DataSource/PHP_MyServer2.php'
         url = url+'?q='+str
         url = url+'&sid='+Math.random();
         xmlhttp.open('GET',url,true);
@@ -273,7 +273,7 @@ First Name:<input type="text" id="XML_excample2_input" onkeyup="showHint(this.va
             }
         }
 
-        var url="../src/DataSource/MyServer3.php"
+        var url="../src/DataSource/PHP_MyServer3.php"
         url=url+"?q="+str
         url=url+"&sid="+Math.random()
         xmlHttp.open("GET",url,true)

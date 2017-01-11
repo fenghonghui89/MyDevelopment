@@ -1,13 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hanyfeng
- * Date: 16/7/28
- * Time: 13:00
- */
 
 
-/*基础教程*/
+
+/*php基础教程*/
 /**
  *
  * 1-1 常量
@@ -26,7 +21,7 @@
 
 
 
-/*表单*/
+/*php表单*/
 /**
  * 2-1 php 表单处理
  * 2-2 php 表单验证
@@ -36,7 +31,7 @@
  *
  * */
 
-/*高级教程*/
+/*php高级教程*/
 /**
  *
  * 3-1 多维数组
@@ -57,6 +52,14 @@
  * */
 
 
+/*php XML*/
+/**
+ *
+ * xml Expat parser
+ * xml DOM parser
+ * xml SimpleXML parser
+ *
+*/
 
 
 

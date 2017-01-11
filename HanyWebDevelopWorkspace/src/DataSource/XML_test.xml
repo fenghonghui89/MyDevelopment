@@ -1,0 +1,13 @@
+
+
+<!--
+PHP - PHP_XML - XML_ExpatParser.php
+PHP - PHP_XML - XML_DOMParser.php
+PHP - PHP_XML - XML_SimpleXML.php
+-->
+<note>
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
+</note>

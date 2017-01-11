@@ -889,7 +889,7 @@ function ajax_load(){
     * ../src/DataSource/content.txt
     * ../src/DataSource/content.txt #p1
     * */
-    $('div#jq_ajax_load_div').load('../src/DataSource/content.txt #p1',function(responseTxt,statusTxt,xhr){
+    $('div#jq_ajax_load_div').load('../src/DataSource/TXT_content.txt #p1',function(responseTxt,statusTxt,xhr){
         if (statusTxt == 'success'){
             alert('外部内容加载成功')
         }
@@ -919,7 +919,7 @@ function ajax_load(){
     }
 
     function  ajax_post(){
-        var url = '../src/DataSource/MyServer.php'
+        var url = '../src/DataSource/PHP_MyServer.php'
         var params = {
             a:'get_users',
             uid:10001,

@@ -1,4 +1,8 @@
-<!-- Edited with XML Spy v2007 (http://www.altova.com) -->
+
+<!--
+JS - Root_XMLAndAJAX.html - 例子1:解析外部xml文件
+src - DataSource - MyServer3
+-->
 <CATALOG>
     <CD>
         <TITLE>Empire Burlesque</TITLE>

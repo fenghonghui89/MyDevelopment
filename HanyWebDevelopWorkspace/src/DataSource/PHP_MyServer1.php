@@ -1,5 +1,12 @@
 <?php
 
+
+/**
+ *
+ * JS - Root_XMLAndAJAX.html - 例子2:名字建议
+ *
+*/
+
 // 用名字来填充数组
 $a[]="Anna";
 $a[]="Brittany";

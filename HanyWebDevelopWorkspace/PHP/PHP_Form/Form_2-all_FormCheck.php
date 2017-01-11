@@ -23,7 +23,7 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<form method="post" action="PHP_FormProcess.php">
+<form method="post" action="../../src/DataSource/PHP_FormProcess.php">
     your name:<input type="text" name="name" value="hany"/><br/>
     you email:<input type="text" name="email" value="112233@qq.com"/><br/>
     <input type="submit" value="submit"/>

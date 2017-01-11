@@ -1152,7 +1152,7 @@ datalist:
         {
             if(typeof(w)=="undefined")//检测是否存在worker对象
             {
-                w = new Worker("../src/DataSource/demo_worker.js");
+                w = new Worker("../src/DataSource/JS_webWorker.js");
             }
 
             //添加事件监听
@@ -1191,7 +1191,7 @@ datalist:
     function fun_serverSend(){
         if(typeof(EventSource)!=="undefined")
         {
-            var source = new EventSource("../src/DataSource/demo_see.php");
+            var source = new EventSource("../src/DataSource/PHP_timeShow.php");
             source.onmessage = function(event) {
                 document.getElementById("server_send_result").innerHTML += event.data + "<br />";
             };
