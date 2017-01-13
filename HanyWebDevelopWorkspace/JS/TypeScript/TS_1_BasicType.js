@@ -1,9 +1,6 @@
 /**
  * Created by hanyfeng on 2016/12/29.
  */
-
-
-
 /**
 *
 * 基本类型
@@ -26,8 +23,6 @@ function ts_basicType() {
     sentence = "Hello, my name is " + name + ".\n\n" + "I'll be " + (age + 1) + " years old next month !";
     alert(sentence);
 }
-
-
 /**
 *
 * 数组
@@ -38,8 +33,6 @@ function ts_basicType_array() {
     //数组泛型
     var list1 = [1, 2, 3];
 }
-
-
 /**
 * 元组
 * */
@@ -52,8 +45,6 @@ function ts_basicType_tuple() {
     alert(x); //hello,0,,world
     //x[6] = true; // Error, 布尔不是(string | number)类型
 }
-
-
 /**
 * 枚举
 * */
@@ -68,8 +59,6 @@ function ts_basicType_enum() {
     var name = Color[2];
     alert(name); //Green
 }
-
-
 /**
  *
  * any任意值
@@ -90,8 +79,6 @@ function ts_basicType_any() {
     var list = [1, 'sss', true];
     list[1] = 100;
 }
-
-
 /**
  *
  * 空值
@@ -140,8 +127,6 @@ function infiniteLoop() {
     while (true) {
     }
 }
-
-
 /**
  *
  * 类型断言

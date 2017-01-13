@@ -14,6 +14,7 @@
 <h2>JS 基础</h2>
 <a href="#js_base_var">js 字面量(常量) 变量</a><br/>
 <a href="#js_base_type">js 变量类型</a><br/>
+<a href="#js_base_typeChange">js 类型转换</a><br/>
 <a href="#js_base_operator">js 运算符</a><br/>
 <a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
 <a href="#js_base_err">js 异常捕获</a><br/>
@@ -133,29 +134,72 @@
 
 
     /**
-     * var声明会提升至他所有作用域的最顶处
+     * 变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部
+     * 只有声明的变量会提升，初始化的不会
+     * var x; //声明
+     * var x = 5;//初始化
      * */
-    var aa = "you";
 
+    //声明的会提升
+    function var_varUp(){
+        x = 5; // 变量 x 设置为 5
+        elem = document.getElementById("demo"); // 查找元素
+        elem.innerHTML = x;                     // 在元素中显示 5
+        var x; // 声明 x
+
+        //上下结果一样
+
+        var x; // 声明 x
+        x = 5; // 变量 x 设置为 5
+        elem = document.getElementById("demo"); // 查找元素
+        elem.innerHTML = x;                     // 在元素中显示 5
+    }
+
+    //初始化的不会提升
+    function var_varUp1(){
+        var x = 5; // 初始化 x
+        elem = document.getElementById("demo"); // 查找元素
+        elem.innerHTML = x + " " + y;           // 显示 5 和 undefined
+        var y = 7; // 初始化 y
+
+        //上下结果一样
+
+        var x = 5; // 初始化 x
+        var y;     // 声明 y
+        elem = document.getElementById("demo"); // 查找元素
+        elem.innerHTML = x + " " + y;           // 显示 5 和 undefined
+        y = 7;    // 设置 y 为 7
+    }
+
+
+    //情况1
+    var aa0 = 'you'
+    function var_var0(){
+        alert(aa);//you
+    }
+
+    //情况2
+    var aa = "you";
     function var_var1(){
         alert(aa);//undefined
         var aa = "fuck";
         alert(aa);//fuck
     }
 
-    //相当于下面
+    //情况3 相当于情况2
     var bb = "you";
-
     function var_var2(){
         var bb;
-        alert(bb);
+        alert(bb);//undefined
         bb = "fuck";
-        alert(bb);
+        alert(bb);//fuck
     }
 
 
 
+
 </script>
+<p id="js_base_var_p">这是一个p标签</p>
 <button onclick="var_float()">数字</button><br/>
 <button onclick="var_array()">数组</button><br/>
 <button onclick="var_null()">undefined null</button><br/>
@@ -214,6 +258,103 @@
 <button onclick="var_constructor()">constructor属性返回变量的构造函数</button><br/>
 
 <br/><br/><br/>
+
+
+<!------------------------------------------------------------------js 类型转换------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_base_typeChange">js 运算符</h1>
+<a href="#root_menu">回到目录</a>
+<script>
+
+    /**
+     * 将其他类型转为字符串
+     * */
+    function test_typeChange_0(){
+
+        //全局方法 String() 可以将其他类型转换为字符串。
+        String(x)         // 将变量 x 转换为字符串并返回
+        String(123)       // 将数字 123 转换为字符串并返回
+        String(100 + 23)  // 将数字表达式转换为字符串并返回
+
+        String(false)        // 返回 "false"
+        String(true)         // 返回 "true"
+
+        String(Date())      // 返回 Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)
+
+
+
+        //Number 方法 toString() 也是有同样的效果。
+        x.toString()
+        (123).toString()
+        (100 + 23).toString()
+
+
+        //Boolean 方法 toString() 也有相同的效果。
+        false.toString()     // 返回 "false"
+        true.toString()      // 返回 "true"
+
+
+        //Date 方法 toString() 也有相同的效果。
+        Date().toString()   // 返回 Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)
+
+
+        //当你尝试输出一个对象或一个变量时 JavaScript 会自动调用变量的 toString() 方法
+        document.getElementById("demo").innerHTML = myVar;
+        // if myVar = {name:"Fjohn"}  // toString 转换为 "[object Object]"
+        // if myVar = [1,2,3,4]       // toString 转换为 "1,2,3,4"
+        // if myVar = new Date()      // toString 转换为 "Fri Jul 18 2014 09:08:55 GMT+0200"
+        // if myVar = 123             // toString 转换为 "123"
+        // if myVar = true            // toString 转换为 "true"
+        // if myVar = false           // toString 转换为 "false"
+    }
+
+
+    /**
+     * 将其他类型转换为数字
+     * */
+    function test_typeChange_1(){
+
+        //全局方法 Number() 可以将字符串转换为数字
+        Number("3.14")    // 返回 3.14
+        Number(" ")       // 返回 0
+        Number("")        // 返回 0
+        Number("99 88")   // 返回 NaN
+
+        Number(false)     // 返回 0
+        Number(true)      // 返回 1
+
+        d = new Date();
+        Number(d)          // 返回 1404568027739
+
+        d = new Date();
+        d.getTime()        // 返回 1404568027739
+
+
+        //Operator + 可用于将变量转换为数字
+        var y = "5";      // y 是一个字符串
+        var x = + y;      // x 是一个数字
+
+
+        //如果变量不能转换，它仍然会是一个数字，但值为 NaN (不是一个数字):
+        var y = "John";   // y 是一个字符串
+        var x = + y;      // x 是一个数字 (NaN)
+    }
+
+
+    /**
+     * 自动转换类型
+     * */
+    function test_typeChange_2(){
+
+        //当 JavaScript 尝试操作一个 "错误" 的数据类型时，会自动转换为 "正确" 的数据类型。
+        5 + null    // 返回 5         null 转换为 0
+        "5" + null  // 返回"5null"   null 转换为 "null"
+        "5" + 1     // 返回 "51"      1 转换为 "1"
+        "5" - 1     // 返回 4         "5" 转换为 5
+    }
+</script>
+<br/><br/><br/>
+<hr />
+
 <!------------------------------------------------------------------js 运算符------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_base_operator">js 运算符</h1>
 <a href="#root_menu">回到目录</a>
@@ -382,7 +523,26 @@
 <hr />
 
 <script>
-    //try catch throw
+
+    /**
+     * 例子
+     * */
+    function error_example(){
+        var txt="";
+        try {
+            adddlert("Welcome guest!");
+        } catch(err) {
+            txt="本页有一个错误。\n\n";
+            txt+="错误描述：" + err.message + "\n\n";
+            txt+="点击确定继续。\n\n";
+            alert(txt);
+        }
+    }
+
+
+    /**
+     * throw 创建或抛出异常 异常可以是 JavaScript 字符串、数字、逻辑值或对象
+     * */
     function error_try(){
         try{
             var x = document.getElementById('error_try').value;
@@ -1213,8 +1373,22 @@
 <script>
 
 
+    /**
+     *
+     * 语法
+     * /正则表达式主体/修饰符(可选)
+     *
+     * 例子:var patt = /runoob/i
+     * 解析:/runoob/i  是一个正则表达式。
+     runoob  是一个正则表达式主体 (用于检索)。
+     i  是一个修饰符 (搜索不区分大小写)。
+     *
+     * 参考:http://www.runoob.com/js/js-regexp.html
+     * */
 
-    //test() 方法检索字符串中的指定值。返回值是 true 或 false。
+    /**
+     * test() 方法检索字符串中的指定值。返回值是 true 或 false。
+     * */
     function regExp_test(){
         var reg = new RegExp('e');
         var result = reg.test("the one");
@@ -1223,7 +1397,9 @@
 
 
 
-    //exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+    /**
+     * exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+     * */
     function regExp_exec(){
         var reg = new RegExp('e');
         var result = reg.exec("the one");
@@ -1232,13 +1408,12 @@
 
 
 
-    /*
-    *您可以向 RegExp 对象添加第二个参数，以设定检索。例如，如果需要找到所有某个字符的所有存在，则可以使用 "g" 参数 ("global")。
-    * 在使用 "g" 参数时，exec() 的工作原理如下：
-    *
+    /**
+     * 您可以向 RegExp 对象添加第二个参数，以设定检索。
+     * 例如，如果需要找到所有某个字符的所有存在，则可以使用 "g" 参数 ("global")。
+     在使用 "g" 参数时，exec() 的工作原理如下：
      找到第一个 "e"，并存储其位置
      如果再次运行 exec()，则从存储的位置开始检索，并找到下一个 "e"，并存储其位置
-
      * */
     function  regExp_exec1(){
         var  reg = new RegExp('e','g');
@@ -1254,10 +1429,36 @@
     }
 
 
+    /**
+     * search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。
+     * */
+    function regExp_search(){
+        var str = "Visit Runoob!";
+        var n = str.search(/Runoob/i);//6
+
+        //search 方法可使用字符串作为参数。字符串参数会转换为正则表达式
+        n = str.search("Runoob");//6
+    }
+
+
+    /**
+     * replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串
+     * */
+    function regExp_replace(){
+        var str = '请访问 Microsoft!';
+        var txt = str.replace(/microsoft/i,"Runoob");//请访问 Runoob!
+
+        //replace() 方法将接收字符串作为参数
+        txt = str.replace("Microsoft","Runoob");
+    }
+
+    /**
+     * test
+     * */
     function regExp_test(){
         var str = 'Is this all there is?';
-        var pattl = /[a-h]/g;
-        var reg = new RegExp("[^a-h]",'g');
+        var pattl = /[a-h]/g;//h,a,h,e,e
+        var reg = new RegExp("[^a-h]",'g');//I,s, ,t,i,s, ,l,l, ,t,r, ,i,s,?
         alert(str.match(reg));
     }
 
