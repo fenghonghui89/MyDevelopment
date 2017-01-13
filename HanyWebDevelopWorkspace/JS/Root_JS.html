@@ -12,6 +12,8 @@
 <a href="../Root.html">返回到根目录</a><br/>
 <br/>
 <h2>JS 基础</h2>
+<a href="#js_base_var">js 字面量(常量) 变量</a><br/>
+<a href="#js_base_type">js 变量类型</a><br/>
 <a href="#js_base_operator">js 运算符</a><br/>
 <a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
 <a href="#js_base_err">js 异常捕获</a><br/>
@@ -51,6 +53,167 @@
 <a href="#js_json">json</a>
 <br/>
 
+<!------------------------------------------------------------------js 字面量(常量) 变量------------------------------------------------------------------>
+
+<h1 class="HeaderTitle" id="js_base_var">js 字面量(常量) 变量</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<pre>
+    JavaScript 是脚本语言。浏览器会在读取代码时，逐行地执行脚本代码。而对于传统编程来说，会在执行前对所有代码进行编译。
+
+    在 JavaScript 中有 5 种不同的数据类型：
+        string
+        number
+        boolean
+        object
+        function
+    3 种对象类型：
+        Object
+        Date
+        Array
+    2 个不包含任何值的数据类型：
+        null
+        undefined
+</pre>
+<script>
+    /**
+     * 数字类型
+     * js只有一种数据类型,数字可以带小数点，也可以不带
+     * */
+    function var_float(){
+        var x1 = 36.00;
+        var x2 = 36;
+        var y = 123e5;
+        var z = 123e-5;
+        alert(x1+" "+x2+" "+y+" "+z);
+    }
+
+
+    /**
+     * 数组
+     * */
+    function var_array(){
+
+        var cars = new Array();
+        cars[0] = "Audi";
+        cars[1] = "BMW";
+        cars[2] = "Volvo";
+
+
+        var result = "",i;
+        for (i=0;i<cars.length;i++)
+        {
+            result = result+cars[i]+" ";
+        }
+        alert(result);
+    }
+
+    /**
+     *
+     * null 在 JavaScript 中 null 表示 "什么都没有"。
+     * Undefined 在 JavaScript 中, undefined 是一个没有设置值的变量。
+     *
+     * 任何变量都可以通过设置值为 undefined 来清空。 类型为 undefined.
+     *
+     * */
+    function var_null(){
+
+        var person1;
+        var car = "Volvo";
+        alert(person1+" "+car+" ");
+
+        var car = null
+        alert(car);
+
+        typeof undefined             // undefined
+        typeof null                  // object
+        null === undefined           // false
+        null == undefined            // true
+    }
+
+
+    /**
+     * var声明会提升至他所有作用域的最顶处
+     * */
+    var aa = "you";
+
+    function var_var1(){
+        alert(aa);//undefined
+        var aa = "fuck";
+        alert(aa);//fuck
+    }
+
+    //相当于下面
+    var bb = "you";
+
+    function var_var2(){
+        var bb;
+        alert(bb);
+        bb = "fuck";
+        alert(bb);
+    }
+
+
+
+</script>
+<button onclick="var_float()">数字</button><br/>
+<button onclick="var_array()">数组</button><br/>
+<button onclick="var_null()">undefined null</button><br/>
+<button onclick="var_var1()">var作用域1</button><br/>
+<button onclick="var_var2()">var作用域2</button><br/>
+
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------js 变量类型------------------------------------------------------------------>
+
+<h1 class="HeaderTitle" id="js_base_type">js 变量类型</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<script>
+    /**
+     * typeof
+     * */
+    function var_typeof(){
+        typeof "John"                 // 返回 string
+        typeof 3.14                   // 返回 number
+        typeof NaN                    // 返回 number
+        typeof false                  // 返回 boolean
+        typeof [1,2,3,4]              // 返回 object
+        typeof {name:'John', age:34}  // 返回 object
+        typeof new Date()             // 返回 object
+        typeof function () {}         // 返回 function
+        typeof myCar                  // 返回 undefined (如果 myCar 没有声明)
+        typeof null                   // 返回 object
+    }
+
+    /**
+     * constructor 属性返回所有 JavaScript 变量的构造函数
+     * */
+    function var_constructor(){
+        "John".constructor                 // 返回函数 String()  { [native code] }
+        (3.14).constructor                 // 返回函数 Number()  { [native code] }
+        false.constructor                  // 返回函数 Boolean() { [native code] }
+                [1,2,3,4].constructor              // 返回函数 Array()   { [native code] }
+        {name:'John', age:34}.constructor  // 返回函数 Object()  { [native code] }
+        new Date().constructor             // 返回函数 Date()    { [native code] }
+        function aaa(){}.constructor         // 返回函数 Function(){ [native code] }
+    }
+
+    //你可以使用 constructor 属性来查看是对象是否为数组 (包含字符串 "Array"):
+    function isArray(myArray) {
+        return myArray.constructor.toString().indexOf("Array") > -1;
+    }
+
+    //你可以使用 constructor 属性来查看是对象是否为日期 (包含字符串 "Date"):
+    function isDate(myDate) {
+        return myDate.constructor.toString().indexOf("Date") > -1;
+    }
+</script>
+<button onclick="var_typeof()">typeof返回变量类型</button><br/>
+<button onclick="var_constructor()">constructor属性返回变量的构造函数</button><br/>
+
+<br/><br/><br/>
 <!------------------------------------------------------------------js 运算符------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_base_operator">js 运算符</h1>
 <a href="#root_menu">回到目录</a>
@@ -668,13 +831,15 @@
 
 <script>
 
-    /*
-    * JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...
+
+    /**
+     * JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...
      JavaScript 提供多个内建对象，比如 String、Date、Array 等等。
      JavaScript 是面向对象的语言，但 JavaScript 不使用类。
      在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。
      JavaScript 基于 prototype，而不是基于类的。
-    * */
+     * */
+
 
     //举例:js字符串对象
     function obj_string(){
@@ -707,14 +872,15 @@
     //创建js对象方法2 - json对象
     function obj_newObj1(){
         var person1 = {
-            fullname:"Bill",
+            firstName:"Bill",
+            lastName:"Gate",
             theAge:"12",
             eatFood:function(food){
                 alert("eating "+food);
             }
         };
 
-        alert(person1.fullname+" "+person1.theAge);
+        alert(person1.firstName+" "+person1['lastName']+" "+person1.theAge);
         person1.eatFood("Orange");
     }
 
@@ -873,20 +1039,20 @@
 
 <script>
 
-    /*
-    *var a= "person";//类型为string的变量
+    /**
+     *
+     * var a= "person";//类型为string的变量
      var b= String("person");//类型为string的变量
      var c= new String("person");//类型为object的变量
-    * 以上三种方式定义的变量，在JavaScript字符串方法的使用上并没有区别
-    * 不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用
-    * 一般没有必要创建string对象。除了在变量类型上有区别外，使用上并没有别的区别
-    *
-    * */
-
+     * 以上三种方式定义的变量，在JavaScript字符串方法的使用上并没有区别
+     * 不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用
+     * 一般没有必要创建string对象。除了在变量类型上有区别外，使用上并没有别的区别
+     *
+     * */
     //字符串
     function str_obj(){
         var txt = "hello world~";
-        alert(txt.length+" "+txt.toUpperCase());
+        console.log(txt.length+" "+txt.toUpperCase()+" "+txt[6]);//12 HELLO WORLD w
     }
 
     //match 查找字符串中的特定字符串
@@ -896,7 +1062,7 @@
     }
 
 </script>
-<button type="button" onclick="str_match()">字符串对象</button>
+<button type="button" onclick="str_obj()">字符串对象</button>
 <br/><br/><br/>
 
 
@@ -1324,7 +1490,7 @@
 
     //计时
     var timing;
-    var count=0;
+    var count = 0;
     function timing_start(){
 
         document.getElementById('timing_p').innerHTML = count;
@@ -1335,8 +1501,8 @@
     }
 
     function timing_stop(){
-        clearTimeout(timing)
 
+        clearTimeout(timing);
         document.getElementById('timing_startBtn').removeAttribute('disabled');
     }
 
@@ -1344,13 +1510,13 @@
     function startTime() {
 
         var today = new Date()
-        var h=today.getHours()
-        var m=today.getMinutes()
-        var s=today.getSeconds()
+        var h = today.getHours()
+        var m = today.getMinutes()
+        var s = today.getSeconds()
 
         //add a zero in front of numbers<10
-        m=checkTime(m)
-        s=checkTime(s)
+        m = checkTime(m)
+        s = checkTime(s)
         document.getElementById('timing_date').innerHTML= h+":"+m+":"+s
         setTimeout('startTime()',500)
     }
