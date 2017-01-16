@@ -120,10 +120,10 @@ htmlspecialchars() 函数把特殊字符转换为 HTML 实体。这意味着 < �
 -->
 <p><span class="error">* 必需的字段</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    姓名：<input type="text" name="name" required="required" placeholder="please input name!">
+    姓名：<input type="text" name="name" placeholder="please input name!">
     <span class="error">* <?php echo $nameErr;?></span>
     <br><br>
-    电邮：<input type="text" name="email" required="required" placeholder="please input email!">
+    电邮：<input type="text" name="email" placeholder="please input email!">
     <span class="error">* <?php echo $emailErr;?></span>
     <br><br>
     网址：<input type="text" name="website">

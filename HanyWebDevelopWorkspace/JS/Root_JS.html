@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>JS演示页面</title>
     <link href="../src/MainFiles/MainCSS.css" type="text/css" rel="stylesheet">
+    <script src="../src/Frameworks/jquery-3.1.1.js"></script>
 </head>
 <body>
 
@@ -12,13 +13,15 @@
 <a href="../Root.html">返回到根目录</a><br/>
 <br/>
 <h2>JS 基础</h2>
-<a href="#js_base_var">js 字面量(常量) 变量</a><br/>
-<a href="#js_base_type">js 变量类型</a><br/>
+<a href="#js_base_var">js 字面量(常量) 变量 变量提升</a><br/>
+<a href="#js_base_type">js 变量类型 typeof constructor</a><br/>
 <a href="#js_base_typeChange">js 类型转换</a><br/>
 <a href="#js_base_operator">js 运算符</a><br/>
 <a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
 <a href="#js_base_err">js 异常捕获</a><br/>
 <a href="#js_base_checkForm">js 表单验证</a><br/>
+<a href="#js_useStrict">js 严格模式</a><br/>
+<a href="#js_blockzone">js 程序块作用域</a><br/>
 <br />
 
 <h2>JS HTML DOM</h2>
@@ -54,84 +57,13 @@
 <a href="#js_json">json</a>
 <br/>
 
-<!------------------------------------------------------------------js 字面量(常量) 变量------------------------------------------------------------------>
+<!------------------------------------------------------------------js 字面量(常量) 变量 变量提升------------------------------------------------------------------>
 
-<h1 class="HeaderTitle" id="js_base_var">js 字面量(常量) 变量</h1>
+<h1 class="HeaderTitle" id="js_base_var">js 字面量(常量) 变量 变量提升</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
-<pre>
-    JavaScript 是脚本语言。浏览器会在读取代码时，逐行地执行脚本代码。而对于传统编程来说，会在执行前对所有代码进行编译。
 
-    在 JavaScript 中有 5 种不同的数据类型：
-        string
-        number
-        boolean
-        object
-        function
-    3 种对象类型：
-        Object
-        Date
-        Array
-    2 个不包含任何值的数据类型：
-        null
-        undefined
-</pre>
 <script>
-    /**
-     * 数字类型
-     * js只有一种数据类型,数字可以带小数点，也可以不带
-     * */
-    function var_float(){
-        var x1 = 36.00;
-        var x2 = 36;
-        var y = 123e5;
-        var z = 123e-5;
-        alert(x1+" "+x2+" "+y+" "+z);
-    }
-
-
-    /**
-     * 数组
-     * */
-    function var_array(){
-
-        var cars = new Array();
-        cars[0] = "Audi";
-        cars[1] = "BMW";
-        cars[2] = "Volvo";
-
-
-        var result = "",i;
-        for (i=0;i<cars.length;i++)
-        {
-            result = result+cars[i]+" ";
-        }
-        alert(result);
-    }
-
-    /**
-     *
-     * null 在 JavaScript 中 null 表示 "什么都没有"。
-     * Undefined 在 JavaScript 中, undefined 是一个没有设置值的变量。
-     *
-     * 任何变量都可以通过设置值为 undefined 来清空。 类型为 undefined.
-     *
-     * */
-    function var_null(){
-
-        var person1;
-        var car = "Volvo";
-        alert(person1+" "+car+" ");
-
-        var car = null
-        alert(car);
-
-        typeof undefined             // undefined
-        typeof null                  // object
-        null === undefined           // false
-        null == undefined            // true
-    }
-
 
     /**
      * 变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部
@@ -162,7 +94,8 @@
         elem.innerHTML = x + " " + y;           // 显示 5 和 undefined
         var y = 7; // 初始化 y
 
-        //上下结果一样
+        //因为变量声明 (var y) 提升了，但是初始化(y = 7) 并不会提升，所以 y 变量是一个未定义的变量。
+        //上下是一样的
 
         var x = 5; // 初始化 x
         var y;     // 声明 y
@@ -199,22 +132,115 @@
 
 
 </script>
-<p id="js_base_var_p">这是一个p标签</p>
-<button onclick="var_float()">数字</button><br/>
-<button onclick="var_array()">数组</button><br/>
-<button onclick="var_null()">undefined null</button><br/>
+
 <button onclick="var_var1()">var作用域1</button><br/>
 <button onclick="var_var2()">var作用域2</button><br/>
 
 
 <br/><br/><br/>
 
-<!------------------------------------------------------------------js 变量类型------------------------------------------------------------------>
+<!------------------------------------------------------------------js 变量类型 typeof constructor------------------------------------------------------------------>
 
-<h1 class="HeaderTitle" id="js_base_type">js 变量类型</h1>
+<h1 class="HeaderTitle" id="js_base_type">js 变量类型 typeof constructor</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
+
+<pre class="MyPre">
+    JavaScript 是脚本语言。浏览器会在读取代码时，逐行地执行脚本代码。而对于传统编程来说，会在执行前对所有代码进行编译。
+
+    在 JavaScript 中有 5 种不同的数据类型：
+        string
+        number
+        boolean
+        object
+        function
+    3 种对象类型：
+        Object
+        Date
+        Array
+    2 个不包含任何值的数据类型：
+        null
+        undefined
+</pre>
+
 <script>
+    /**
+     * 数字类型
+     * js只有一种数据类型,数字可以带小数点，也可以不带
+     * */
+    function var_float(){
+
+        var x1 = 36.00;
+        var x2 = 36;
+        var y = 123e5;
+        var z = 123e-5;
+        alert(x1+" "+x2+" "+y+" "+z);
+
+
+        /*
+         * JavaScript 中的所有数据都是以 64 位浮点型数据(float) 来存储
+         * 所有的编程语言，包括 JavaScript，对浮点型数据的精确度都很难确定
+         * 解决以上问题，可以用整数的乘除法来解决
+         * */
+        var x = 0.1;
+        var y = 0.2;
+        var z = x + y;//no 0.3..
+        z = (x * 10 + y * 10) / 10;//is 0.3..
+        if (z == 0.3){
+            alert("is 0.3..")
+        }else {
+            alert("no 0.3...")
+        }
+    }
+
+
+    /**
+     * 数组
+     * */
+    function var_array(){
+
+        var cars = new Array();
+        cars[0] = "Audi";
+        cars[1] = "BMW";
+        cars[2] = "Volvo";
+
+
+        var result = "",i;
+        for (i=0;i<cars.length;i++)
+        {
+            result = result+cars[i]+" ";
+        }
+        alert(result);
+    }
+
+    /**
+     *
+     undefined 是一个没有设置值的变量.
+     任何变量都可以通过设置值为 undefined 来清空。 类型为 undefined.
+     在 JavaScript 中, null 用于对象, undefined 用于变量，属性和方法。
+     对象只有被定义才有可能为 null，否则为 undefined
+     *
+     * */
+    function var_null(){
+
+        var person1;
+        var car = "Volvo";
+        alert(person1+" "+car+" ");
+
+        var car = null
+        alert(car);
+
+        typeof undefined             // undefined
+        typeof null                  // object
+        null === undefined           // false
+        null == undefined            // true
+
+
+        //需要先使用 typeof 来检测对象是否已定义
+        if (myObj !== null && typeof myObj !== "undefined"){}//错误
+        if (typeof myObj !== "undefined" && myObj !== null){}//正确
+    }
+
     /**
      * typeof
      * */
@@ -254,6 +280,9 @@
         return myDate.constructor.toString().indexOf("Date") > -1;
     }
 </script>
+<button onclick="var_float()">数字</button><br/>
+<button onclick="var_array()">数组</button><br/>
+<button onclick="var_null()">undefined null</button><br/>
 <button onclick="var_typeof()">typeof返回变量类型</button><br/>
 <button onclick="var_constructor()">constructor属性返回变量的构造函数</button><br/>
 
@@ -568,6 +597,28 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+
+<pre class="MyPre">
+    * 验证用户名
+</pre>
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == null || x == "") {
+            alert("需要输入名字。");
+            return false;
+        }
+    }
+</script>
+<form name="myForm" action="../src/DataSource/PHP_MyServerTest.php" method="post" onsubmit="return validateForm()">
+    名字: <input type="text" name="fname">
+    <input type="submit" value="提交">
+</form>
+
+
+<pre class="MyPre">
+    * 验证邮箱
+</pre>
 <script>
     function validate_require(field,alerttxt){
         with (field){
@@ -576,9 +627,7 @@
             if (value==null||value=="") {alert(alerttxt);return false}
 
 
-            /*
-             * 输入的数据必须包含 @ 符号和点号(.)。同时，@ 不可以是邮件地址的首字符，并且 @ 之后需有至少一个点号
-             * */
+            //输入的数据必须包含 @ 符号和点号(.)。同时，@ 不可以是邮件地址的首字符，并且 @ 之后需有至少一个点号
             apos=value.indexOf("@");
             dotpos=value.lastIndexOf(".");
             if (apos<1||dotpos-apos<2) {alert(alerttxt);return false}
@@ -597,11 +646,69 @@
     }
 </script>
 
-<form action="http://www.baidu.com" onsubmit="return validate_form(this)" method="post">
+<form action="../src/DataSource/PHP_MyServerTest.php" onsubmit="return validate_form(this)" method="post">
     Email:<input type="text" name="email" size="30">
     <input type="submit" value="提交">
 </form>
 
+
+
+<pre class="MyPre">
+    * checkValidity
+</pre>
+<script>
+    function checkForm_checkValidity() {
+        var inpObj = document.getElementById("js_base_checkForm_number1");
+        if (inpObj.checkValidity() == false) {
+            document.getElementById("js_base_checkForm_p").innerHTML = inpObj.validationMessage;
+        } else {
+            document.getElementById("js_base_checkForm_p").innerHTML = "输入正确";
+        }
+    }
+</script>
+
+<p>输入数字并点击验证按钮:</p>
+<input id="js_base_checkForm_number1" type="number" min="100" max="300" required="required">
+<button onclick="checkForm_checkValidity()">验证</button>
+<p>如果输入的数字小于 100 或大于300，会提示错误信息。</p>
+<p id="js_base_checkForm_p"></p>
+
+
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------严格模式------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_useStrict">严格模式</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    "use strict"//开启严格模式
+    xxxy = 3;
+</script>
+
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------程序块作用域------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_blockzone">程序块作用域</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    function blockzone(){
+        for (var i = 0;i<10;i++){
+
+        }
+        alert(i);//10
+    }
+
+    function blockzone1(){
+        alert('i:'+i);//Can't find variable: i
+    }
+</script>
+<button onclick="blockzone()">click</button>
+<button onclick="blockzone1()">click1</button>
 <br/><br/><br/>
 
 <!------------------------------------------------------------------DOM 属性:不同节点的nodeName nodeValue nodeType------------------------------------------------------------------>
