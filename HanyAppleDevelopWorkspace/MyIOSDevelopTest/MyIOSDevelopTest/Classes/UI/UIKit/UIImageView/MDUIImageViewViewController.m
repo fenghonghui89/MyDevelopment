@@ -25,7 +25,7 @@
 #pragma mark 全屏缩放
 -(void)ivtest1
 {
-    UIImage *image = [UIImage imageNamed:@"IMG_0309.jpg"];
+    UIImage *image = [UIImage imageNamed:@"imG_0309.jpg"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [self.view addSubview:imageView];
     

@@ -23,6 +23,10 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    * 会跳转到新的页面
+</pre>
+
 <form method="post" action="../../src/DataSource/PHP_FormProcess.php">
     your name:<input type="text" name="name" value="hany"/><br/>
     you email:<input type="text" name="email" value="112233@qq.com"/><br/>

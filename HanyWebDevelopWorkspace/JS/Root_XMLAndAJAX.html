@@ -125,7 +125,7 @@
 
         myXmlHttp.onreadystatechange = function(){
             if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
-                var txt = 'POST:<br/>';
+                var txt = '普通post:<br/>';
                 txt += myXmlHttp.responseText+'<br/><br/>'
                 txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
                 txt += myXmlHttp.getResponseHeader('Content-Type')
@@ -139,14 +139,14 @@
     }
 
     /**
-     * 表单方式post
+     * 设置请求头post
      * */
-    function xmlHttpRequest_POST_Form(){
+    function xmlHttpRequest_POST_RequestHeader(){
         var myXmlHttp = obj_tool.getXmlHttpObject()
 
         myXmlHttp.onreadystatechange = function(){
             if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
-                var txt = 'POST:<br/>';
+                var txt = '设置请求头post:<br/>';
                 txt += myXmlHttp.responseText+'<br/><br/>'
                 txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
                 txt += myXmlHttp.getResponseHeader('Content-Type')
@@ -160,11 +160,89 @@
         myXmlHttp.send("a=get_users&uid=10003&t="+Math.random());
     }
 
+    /**
+     * FormData post
+     * */
+    function xmlHttpRequest_POST_FormData(){
+        var myXmlHttp = obj_tool.getXmlHttpObject()
+
+        myXmlHttp.onreadystatechange = function(){
+            if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
+                var txt = 'form data post:<br/>';
+                txt += myXmlHttp.responseText+'<br/><br/>'
+                txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
+                txt += myXmlHttp.getResponseHeader('Content-Type')
+                document.getElementById("XML_HTTP_Request_div").innerHTML = txt;
+            }
+        }
+
+        var formData = new FormData();
+        formData.append('a','get_users');
+        formData.append('uid','10003');
+        formData.append('t',Math.random());
+
+        var url = '../src/DataSource/PHP_MyServer.php'
+        myXmlHttp.open("POST",url,true);
+        myXmlHttp.send(formData);
+    }
+
+    /**
+     * 页面form+FormData post
+     * */
+    function xmlHttpRequest_POST_upload(){
+
+        var myXmlHttp = obj_tool.getXmlHttpObject()
+        myXmlHttp.onreadystatechange = function(){
+            if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
+                var txt = 'upload post:<br/>';
+                txt += myXmlHttp.responseText+'<br/><br/>'
+                txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
+                txt += myXmlHttp.getResponseHeader('Content-Type')
+                document.getElementById("XML_HTTP_Request_div").innerHTML = txt;
+            }
+        }
+
+        //以下3种都可以
+//        var formElement = document.forms.namedItem("XML_HTTP_Request_FormName");
+//        var formElement = document.forms.namedItem("XML_HTTP_Request_FormId");
+        var formElement = document.querySelector('form#XML_HTTP_Request_FormId');
+        var formData = new FormData(formElement);
+        formData.append('t',Math.random());
+
+        var url = '../src/DataSource/PHP_MyServer.php'
+        myXmlHttp.open("POST",url,true);
+        myXmlHttp.send(formData);
+    }
+
+    function validateForm() {
+        var x = document.forms["XML_HTTP_Request_FormName"]["a"].value;
+        if (x == null || x == "") {
+            alert("需要输入a...");
+            return false;
+        }
+    }
+
 </script>
 
-<button onclick="xmlHttpRequest_GET()">GET</button>
-<button onclick="xmlHttpRequest_POST_Simple()">POST - simple</button>
-<button onclick="xmlHttpRequest_POST_Form()">POST - form</button>
+<button onclick="xmlHttpRequest_GET()">GET</button><br/>
+<button onclick="xmlHttpRequest_POST_Simple()">POST - simple</button><br/>
+<button onclick="xmlHttpRequest_POST_RequestHeader()">POST - 设置请求头post</button><br/>
+<button onclick="xmlHttpRequest_POST_FormData()">POST - FormData post</button><br/>
+
+<pre class="MyPre">
+    * 页面form+FormData post
+</pre>
+<form enctype="multipart/form-data" method="post"
+      name="XML_HTTP_Request_FormName"
+      id="XML_HTTP_Request_FormId"
+>
+    a:<input type="text" name="a" value="get_users"><br/>
+    uid:<input type="text" name="uid" value="10003"><br/>
+    <input type="button" value="页面form+FormData post" onclick="xmlHttpRequest_POST_upload()">
+</form>
+
+
+<br/><br/>
 <div id="XML_HTTP_Request_div">txt..</div>
 
 <br /><br /><br />

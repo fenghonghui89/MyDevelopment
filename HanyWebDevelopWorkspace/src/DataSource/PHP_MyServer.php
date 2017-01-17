@@ -23,6 +23,8 @@ else
     $a = '';
 }
 
+
+
 if ($_GET['uid'])
 {
     $uid = $_GET['uid'];
@@ -36,7 +38,9 @@ else
     $uid = 0;
 }
 
-if (empty($a))
+
+
+if (empty($a) || empty($uid))
 {
     $output = array('data'=>NULL, 'info'=>'坑爹啊!', 'code'=>-201);
     exit(json_encode($output));
@@ -129,4 +133,7 @@ elseif ($a == 'get_games_result')
 elseif ($a == 'upload_avatars')
 {
     die('您正在调 upload_avatars 接口!');
+}else
+{
+    die('你正在调用其他接口!');
 }

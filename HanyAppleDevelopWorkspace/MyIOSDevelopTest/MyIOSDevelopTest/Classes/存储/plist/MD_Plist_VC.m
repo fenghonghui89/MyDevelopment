@@ -18,7 +18,7 @@
   
   [super viewDidLoad];
   
-  [self test_read];
+  [self test];
 }
 
 #pragma mark - base
