@@ -17,12 +17,19 @@
 <a href="#js_base_type">js 变量类型 typeof constructor</a><br/>
 <a href="#js_base_typeChange">js 类型转换</a><br/>
 <a href="#js_base_operator">js 运算符</a><br/>
-<a href="#js_base_fun">js 标签与循环 函数参数默认值</a><br/>
 <a href="#js_base_err">js 异常捕获</a><br/>
 <a href="#js_base_checkForm">js 表单数据submit前本地验证</a><br/>
 <a href="#js_useStrict">js 严格模式</a><br/>
 <a href="#js_blockzone">js 程序块作用域</a><br/>
+<a href="#js_void0">javascript:void(0)</a><br/>
 <br />
+
+<h2>JS 函数</h2>
+<a href="#js_fun_label">标签与循环</a><br/>
+<a href="#js_fun_defaultValue">函数参数默认值</a><br/>
+<a href="#js_fun_base">Arguments对象 函数.toString() 自调用函数</a><br/>
+<a href="#js_fun_use">函数调用</a><br/>
+<br/>
 
 <h2>JS HTML DOM</h2>
 <a href="#js_htmldom_parama">DOM 属性:不同节点的nodeName nodeValue nodeType</a><br/>
@@ -63,14 +70,16 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<script>
+<pre class="MyPre">
 
-    /**
-     * 变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部
-     * 只有声明的变量会提升，初始化的不会
-     * var x; //声明
-     * var x = 5;//初始化
-     * */
+    变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部
+    只有声明的变量会提升，初始化的不会
+    var x; //声明
+    var x = 5;//初始化
+
+    变量声明是如果不使用 var 关键字，那么它就是一个全局变量，即便它在函数内定义。
+</pre>
+<script>
 
     //声明的会提升
     function var_varUp(){
@@ -419,132 +428,6 @@
 <br/><br/><br/>
 
 
-<!------------------------------------------------------------------js 标签与循环 函数参数默认值------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="js_base_fun">js 标签与循环 函数参数默认值</h1>
-<a href="#root_menu">回到目录</a>
-<hr />
-
-<script>
-
-    /*
-     * /标签 / for in 循环
-     * 注意for in 循环写法
-     * */
-    function func_label(){
-        var cars = ['BYD','QQ',"BMW",'Jeep','Audio','现代','长安','路虎'];
-
-        var result = "";
-        list:{
-            var x;
-            for(x in cars){
-                if (cars[x] == 'BMW') continue;
-                if (cars[x] == '长安') break list;
-                result = result+cars[x]+" ";
-            }
-        }
-
-        alert(result);
-    }
-
-    /*
-    * 函数参数默认值1 arguments
-    * function func_parama(a,b)
-    * function func_parama()
-    * */
-    function func_p1(){
-        alert(
-                func_parama1()+" "+
-                func_parama1(10)+" "+
-                func_parama1(10,20)+" "+
-                func_parama1(null,20)
-        );//3 12 30 21
-    }
-
-    function func_parama1(a,b){
-        var a = arguments[0]?arguments[0]:1;
-        var b = arguments[1]?arguments[1]:2;
-        return a+b;
-    }
-
-    /*
-    * 函数参数默认值2 ||运算符
-    *
-    * */
-    function func_p2(){
-        alert(
-                func_parama2()+" "+
-                func_parama2(10)+" "+
-                func_parama2(10,20)+" "+
-                func_parama2(null,20)
-        );//3 12 30 21
-    }
-
-    function func_parama2(a,b){
-
-        var a = a||1;
-        var b = b||2;
-
-        //相当于
-//        var a,b;
-//        if (!a){
-//            a = 1;
-//        }
-//        if (!b){
-//            b = 2;
-//        }
-
-        return a+b;
-    }
-
-
-    /*
-     * 函数参数默认值3
-     * 这种方法适合用于参数较多的情况，使用了Jquery的扩展 要先加载jquery
-     * */
-    function func_p3(){
-
-        var json = {
-            name:'HanyFeng',
-            phone:'100866',
-            sex:'女'
-        };
-        func_parama3(json);//输出：姓名：小红，性别：女，年龄：30，电话：100866，QQ：100866。
-    }
-
-    function func_parama3(settings){
-
-        var defaultSetting={
-            name:'小红',
-            age:'30',
-            sex:'女',
-            phone:'100866',
-            QQ:'100866',
-            birthday:'1949.10.01'
-        };
-        $.extend(defaultSetting,settings);
-        var message='姓名：'+defaultSetting.name
-                +'，性别：'+defaultSetting.sex
-                +'，年龄：'+defaultSetting.age
-                +'，电话：'+defaultSetting.phone
-                +'，QQ：'+defaultSetting.QQ
-                +'，生日：'+defaultSetting.birthday
-                +'。';
-        alert(message);
-
-    }
-
-</script>
-
-<!--加载jquery库-->
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-
-<button type="submit" onclick="func_label()">标签 / for in 循环</button>
-<button type="submit" onclick="func_p1()">函数参数默认值1 arguments</button>
-<button type="submit" onclick="func_p2()">函数参数默认值2 ||运算符</button>
-<button type="submit" onclick="func_p3()">函数参数默认值3 jquery扩展</button>
-<br/><br/><br/>
-
-
 
 <!------------------------------------------------------------------js 异常捕获------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="js_base_err">js 异常捕获</h1>
@@ -654,9 +537,12 @@
 
 
 <pre class="MyPre">
-    * checkValidity
+    * checkValidity validationMessage validity
 </pre>
 <script>
+    /**
+     * checkValidity() validationMessage
+     * */
     function checkForm_checkValidity() {
         var inpObj = document.getElementById("js_base_checkForm_number1");
         if (inpObj.checkValidity() == false) {
@@ -664,6 +550,29 @@
         } else {
             document.getElementById("js_base_checkForm_p").innerHTML = "输入正确";
         }
+    }
+
+    /**
+     * validity
+     * */
+    function checkForm_checkValidity1() {
+        var txt = "";
+        var inpObj = document.getElementById("js_base_checkForm_number1");
+        if(!isNumeric(inpObj.value)) {
+            txt = "你输入的不是数字";
+        } else if (inpObj.validity.rangeUnderflow) {
+            txt = "输入的值太小了";
+        } else if(inpObj.validity.rangeOverflow){
+            txt = '输入的值太大了';
+        }else {
+            txt = "输入正确";
+        }
+        document.getElementById("js_base_checkForm_p").innerHTML = txt;
+    }
+
+    // 判断输入是否为数字
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
     }
 </script>
 
@@ -683,8 +592,8 @@
 <hr />
 
 <script>
-    "use strict"//开启严格模式
-    xxxy = 3;
+//    "use strict"//开启严格模式
+    js_useStrict_var = 3;
 </script>
 
 <br/><br/><br/>
@@ -709,6 +618,231 @@
 </script>
 <button onclick="blockzone()">click</button>
 <button onclick="blockzone1()">click1</button>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------javascript:void(0)------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_void0">javascript:void(0)</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+    /**
+     * void(0)指定要计算一个表达式但是不返回值
+     * */
+    function js_void0_getValue(){
+        var a,b,c;
+        a = void ( b = 5, c = 7 );
+        alert('a = ' + a + ' b = ' + b +' c = ' + c );//a = undefined b = 5 c = 7
+    }
+</script>
+
+<button onclick="js_void0_getValue()">test</button><br/>
+<a href="javascript:void(alert('Warning!!!'))">死链接</a><br/>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------标签与循环------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_fun_label">标签与循环</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /*
+     * /标签 / for in 循环
+     * 注意for in 循环写法
+     * */
+    function func_label(){
+        var cars = ['BYD','QQ',"BMW",'Jeep','Audio','现代','长安','路虎'];
+
+        var result = "";
+        list:{
+            var x;
+            for(x in cars){
+                if (cars[x] == 'BMW') continue;
+                if (cars[x] == '长安') break list;
+                result = result+cars[x]+" ";
+            }
+        }
+
+        alert(result);
+    }
+
+
+</script>
+
+<button type="submit" onclick="func_label()">标签 / for in 循环</button>
+
+<br/><br/><br/>
+
+<!------------------------------------------------------------------JS函数参数默认值------------------------------------------------------------------>
+
+<h1 class="HeaderTitle" id="js_fun_defaultValue">函数参数默认值</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    /**
+     函数参数默认值1 arguments
+     * function func_parama(a,b)
+     * function func_parama()
+     * */
+    function func_p1(){
+        alert(
+                func_parama1()+" "+
+                func_parama1(10)+" "+
+                func_parama1(10,20)+" "+
+                func_parama1(null,20)
+        );//3 12 30 21
+    }
+
+    function func_parama1(a,b){
+        var a = arguments[0]?arguments[0]:1;
+        var b = arguments[1]?arguments[1]:2;
+        return a+b;
+    }
+
+
+    /**
+     * 函数参数默认值2 ||运算符
+     * */
+    function func_p2(){
+        alert(
+                func_parama2()+" "+
+                func_parama2(10)+" "+
+                func_parama2(10,20)+" "+
+                func_parama2(null,20)
+        );//3 12 30 21
+    }
+
+    function func_parama2(a,b){
+
+        var a = a||1;
+        var b = b||2;
+
+        //相当于
+//        var a,b;
+//        if (!a){
+//            a = 1;
+//        }
+//        if (!b){
+//            b = 2;
+//        }
+
+        return a+b;
+    }
+
+
+
+    /**
+     * 函数参数默认值3
+     * 这种方法适合用于参数较多的情况，使用了Jquery的扩展 要先加载jquery
+     * */
+    function func_p3(){
+
+        var json = {
+            name:'HanyFeng',
+            phone:'100866',
+            sex:'女'
+        };
+        func_parama3(json);//输出：姓名：小红，性别：女，年龄：30，电话：100866，QQ：100866。
+    }
+
+    function func_parama3(settings){
+
+        var defaultSetting={
+            name:'小红',
+            age:'30',
+            sex:'女',
+            phone:'100866',
+            QQ:'100866',
+            birthday:'1949.10.01'
+        };
+        $.extend(defaultSetting,settings);
+        var message='姓名：'+defaultSetting.name
+                +'，性别：'+defaultSetting.sex
+                +'，年龄：'+defaultSetting.age
+                +'，电话：'+defaultSetting.phone
+                +'，QQ：'+defaultSetting.QQ
+                +'，生日：'+defaultSetting.birthday
+                +'。';
+        alert(message);
+
+    }
+</script>
+<button type="submit" onclick="func_p1()">函数参数默认值1 arguments</button>
+<button type="submit" onclick="func_p2()">函数参数默认值2 ||运算符</button>
+<button type="submit" onclick="func_p3()">函数参数默认值3 jquery扩展</button>
+<br/><br/><br/>
+
+<!------------------------------------------------------------------Arguments对象 函数.toString() 自调用函数------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_fun_base">Arguments对象 函数.toString() 自调用函数</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<script>
+
+    function js_fun_base(a,b,c){
+        alert("参数个数:"+arguments.length+" 第一个参数:"+arguments[0]);
+    }
+
+    function js_fun_base1(){
+       var txt = js_fun_base.toString();
+        alert('函数:\n'+txt);
+    }
+
+</script>
+
+<button onclick="js_fun_base(4,3)">参数个数</button><br/>
+<button onclick="js_fun_base1()">将函数作为一个字符串返回</button><br/>
+
+<p id="js_fun_base_p">自调用函数</p>
+<script>
+    (function(){
+        document.getElementById("js_fun_base_p").innerHTML = '运行自调用函数...';
+    })();
+</script>
+<br/><br/><br/>
+
+
+<!------------------------------------------------------------------函数调用------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="js_fun_use">函数调用</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+<pre class="MyPre">
+    * 笔记
+    一个普通函数不属于任何对象。但是在 JavaScript 中它始终是默认的全局对象。
+    在 HTML 中默认的全局对象是 HTML 页面本身，所以函数是属于 HTML 页面。
+    在浏览器中的页面对象是浏览器窗口(window 对象)。以上函数会自动变为 window 对象的函数。
+    myFunction() 和 window.myFunction() 是一样的
+
+    this默认返回[object Window],如果是某个对象的函数,则返回[object Object](所有者对象)
+
+    在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法
+    call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身
+</pre>
+<script>
+    function js_fun_use_this(){
+        alert(this);//[object Window],如果是某个对象的
+    }
+
+
+    function js_fun_use_fun_root(){
+
+//        js_fun_use_fun.call(this,10,2)
+
+        var array = [10,3]
+        js_fun_use_fun.apply(this,array);
+    }
+
+    function js_fun_use_fun(a,b){
+        alert("valeu:"+a * b);
+    }
+</script>
+<button onclick="js_fun_use_this()">this对象</button><br/>
+<button onclick="js_fun_use_fun_root()">函数的函数</button><br/>
 <br/><br/><br/>
 
 <!------------------------------------------------------------------DOM 属性:不同节点的nodeName nodeValue nodeType------------------------------------------------------------------>
@@ -1096,31 +1230,24 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+   * 笔记
+    JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...
+    JavaScript 提供多个内建对象，比如 String、Date、Array 等等。
+    JavaScript 是面向对象的语言，但 JavaScript 不使用类。
+    在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。
+    JavaScript 基于 prototype，而不是基于类的。
+
+    创建js对象的方法:
+    new Object()
+    json对象
+    使用对象构造器new对应对象
+    使用函数返回一个json对象
+</pre>
 <script>
-
-
     /**
-     * JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...
-     JavaScript 提供多个内建对象，比如 String、Date、Array 等等。
-     JavaScript 是面向对象的语言，但 JavaScript 不使用类。
-     在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。
-     JavaScript 基于 prototype，而不是基于类的。
-     * */
-
-
-    //举例:js字符串对象
-    function obj_string(){
-
-        var txt = "sample txt";
-        txt.length = 5;
-        txt.indexOf();
-        txt.search();
-
-        var txt1 = txt.toUpperCase();
-        alert(txt1);
-    }
-
-    //创建js对象方法1 - new Object()
+     * 创建js对象方法1 - new Object()
+     **/
     function obj_newObj(){
 
         var person = new Object();
@@ -1132,11 +1259,16 @@
             alert(person.firstname+" eat "+food);
         }
 
-        alert(person.firstname+" is "+person.age+" years old.")
-        person.eatFood("Pig");
+        alert(person.firstname+" is "+person.age+" years old.")//Bill is 56 years old.
+        person.eatFood("Pig");//Bill eat Pig
     }
 
-    //创建js对象方法2 - json对象
+
+
+
+    /**
+     * 创建js对象方法2 - json对象
+     * */
     function obj_newObj1(){
         var person1 = {
             firstName:"Bill",
@@ -1147,17 +1279,22 @@
             }
         };
 
-        alert(person1.firstName+" "+person1['lastName']+" "+person1.theAge);
-        person1.eatFood("Orange");
+        alert(person1.firstName+" "+person1['lastName']+" "+person1.theAge);//Bill Gate 12
+        person1.eatFood("Orange");//eating Orange
     }
 
-    //创建js对象方法3 - 使用对象构造器
+
+
+
+    /**
+     * 创建js对象方法3 - 使用对象构造器
+     * */
     function obj_newObj2(){
 
-        var human = new human1("Bill","12");
-
-        alert(human.humanName+" "+human.humanAge);
-        human.eatFood("dog");
+        var human = new human1("Bill",12);
+        human.changeAge();
+        alert(human.humanName+" "+human.humanAge);//Bill 12
+        human.eatFood("dog");//you are eating dog
 
     }
 
@@ -1165,12 +1302,24 @@
 
         this.humanName = humanName;
         this.humanAge = humanAge;
+
         this.eatFood = function(food){
             alert("you are eating "+food);
         }
+
+        this.changeAge = function(){
+            this.humanAge = 99;
+        }
+        this.father = function(){
+            return 'father..'
+        }
     }
 
-    //创建js对象方法4 - 使用对象构造器返回一个json对象
+
+
+    /**
+     * 创建js对象方法4 - 使用函数返回一个json对象
+     * */
     function  obj_newObj3(){
 
         var human = huamanConfig({
@@ -1178,14 +1327,15 @@
             age:"13"
         });
 
-        alert(human.name+" "+human.age+" "+human.sex);
-        human.eatFood("apple");
+        alert(human.name+" "+human.age+" "+human.sex);//Tom 13 boy
+        human.eatFood("apple");//I am eating apple
     }
 
     function huamanConfig(options){
 
+        //默认值
         var huamanConfig = {
-            name:"default name",
+            name:"Tom",
             age:"12",
             sex:"girl",
             eatFood:function(food){
@@ -1193,10 +1343,12 @@
             }
         };
 
+        //默认返回默认值
         if (!options || typeof options !== "object") {
             return huamanConfig;
         }
 
+        //赋值给属性
         for (var i in options) {
             if (huamanConfig.hasOwnProperty(i)) {
                 huamanConfig[i] = options[i];
@@ -1206,65 +1358,31 @@
         return huamanConfig;
     }
 
-    //对象方法
-    function obj_func(){
-
-        var dog = new bigdog("Hany",12,"boy");
-        dog.changeSex("girl");
-        dog.dogEat("Apple");
-
-        alert(dog.dogName+"'s friend is "+dog.dogFriend());
-    }
-
-    function bigdog(dogName,dogAge,dogSex){
-
-        this.dogName = dogName;
-        this.dogAge = dogAge;
-        this.dogSex = dogSex;
-
-        //带参数方法
-//        this.changeSex = changeSex;
-//        function changeSex(sex){
-//            this.dogSex = sex;
-//        }
-        this.changeSex = function(sex){
-            this.dogSex = sex;
-        }
-
-        this.dogEat = function(food){
-            alert(this.dogName+" "+this.dogAge+" "+this.dogSex+" eat "+food);
-        }
-
-        //带返回值
-        this.dogFriend = function(){
-            return "cat";
-        }
-
-    }
 
 
 
-    //遍历对象
+    /**
+     * 遍历对象
+     * */
     function obj_forin(){
-        var dog = new bigdog("Lala",13,"boy");
+        var dog = new human1("Lala",13);
 
         var x;
         var txt="";
         for (x in dog){
-            txt = txt+" "+dog[x];
+            txt = txt+"\n"+dog[x];
         }
 
-        alert(txt);
+        alert(txt);//Lala 13 function(food).. functiong().. functiong()..
     }
 
 </script>
-<button type="button" onclick="obj_string()">字符串对象</button>
-<button type="button" onclick="obj_newObj()">创建js对象1 - new Object()</button>
-<button type="button" onclick="obj_newObj1()">创建js对象2 - json对象</button>
-<button type="button" onclick="obj_newObj2()">创建js对象方法3 - 使用对象构造器</button>
-<button type="button" onclick="obj_newObj3()">创建js对象方法4 - 使用对象构造器返回一个json对象</button>
-<button type="button" onclick="obj_func()">对象方法</button>
-<button type="button" onclick="obj_forin()">遍历对象</button>
+<button type="button" onclick="obj_newObj()">创建js对象1 - new Object()</button><br/>
+<button type="button" onclick="obj_newObj1()">创建js对象2 - json对象</button><br/>
+<button type="button" onclick="obj_newObj2()">创建js对象方法3 - 使用对象构造器</button><br/>
+<button type="button" onclick="obj_newObj3()">创建js对象方法4 - 使用对象构造器返回一个json对象</button><br/>
+
+<button type="button" onclick="obj_forin()">遍历对象</button><br/>
 <br/><br/><br/>
 
 
@@ -1304,18 +1422,17 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    * 笔记
+    var a= "person";//类型为string的变量
+    var b= String("person");//类型为string的变量
+    var c= new String("person");//类型为object的变量
+    以上三种方式定义的变量，在JavaScript字符串方法的使用上并没有区别
+    不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用
+    一般没有必要创建string对象。除了在变量类型上有区别外，使用上并没有别的区别
+</pre>
 <script>
 
-    /**
-     *
-     * var a= "person";//类型为string的变量
-     var b= String("person");//类型为string的变量
-     var c= new String("person");//类型为object的变量
-     * 以上三种方式定义的变量，在JavaScript字符串方法的使用上并没有区别
-     * 不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用
-     * 一般没有必要创建string对象。除了在变量类型上有区别外，使用上并没有别的区别
-     *
-     * */
     //字符串
     function str_obj(){
         var txt = "hello world~";
@@ -1922,7 +2039,10 @@
     * json对象 - {"key":"value",...} (包含多个键值对,与firstName = "John";lastName = "Doe";等价)
 </pre>
 <script>
-    //json对象 json字符串 json对象数组
+
+    /**
+     * json对象 json字符串 json对象数组
+     * */
     function jsonObj(){
 
         //json对象
@@ -1950,7 +2070,10 @@
 
     }
 
-    //字符串->json对象
+
+    /**
+     * 字符串->json对象
+     * */
     function jsonParser(){
 
         var jsonObj = '{"students" : [' +
@@ -1965,7 +2088,9 @@
         document.getElementById('jparser').innerHTML = obj['students'][1]['jsAge'];
     }
 
-    //json对象->字符串
+    /**
+     * json对象->字符串
+     * */
     function  jsonStr(){
 
         var JSONObject = {
