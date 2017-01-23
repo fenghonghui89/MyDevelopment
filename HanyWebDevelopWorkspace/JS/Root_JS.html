@@ -58,8 +58,10 @@
 <a href="#js_location">js location</a><br/>
 <a href="#js_history">js history</a><br/>
 <a href="#js_navigator">js navigator</a><br/>
+<a href="#js_popupAlert">js 提示框</a><br/>
 <a href="#js_Timing">js timing</a><br/>
 <a href="#js_cookie">js cookie</a><br/>
+
 <br/>
 
 <h2>json</h2>
@@ -73,7 +75,6 @@
 <hr />
 
 <pre class="MyPre">
-
     变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部
     只有声明的变量会提升，初始化的不会
     var x; //声明
@@ -948,7 +949,7 @@
 //            return this.count += 1;
         }
 
-        return js_fun_block_f2;
+        return js_fun_block_f2;//注意最后没有()
 
     }());
 
@@ -1473,7 +1474,7 @@
     JavaScript 基于 prototype，而不是基于类的。
 
     创建js对象的方法:
-    定义并创建对象的实例: new Object() / 对象字面量
+    定义并创建对象的实例: new Object() / 对象字面量(类似json)
     使用构造函数来定义对象，然后创建新的对象实例: new 构造函数 / 传对象做参数
 </pre>
 <script>
@@ -1626,27 +1627,98 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
-<script>
-
-    /*
-    * JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。
-     JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。
+<pre class="MyPre">
+    JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。
+    JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。
      整数（不使用小数点或指数计数法）最多为 15 位。
      小数的最大位数是 17，但是浮点运算并不总是 100% 准确
      如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0x，则解释为十六进制数。
-    * */
+
+    整数（不使用小数点或指数计数法）最多为 15 位。
+    小数的最大位数是 17，但是浮点运算并不总是 100% 准确
+</pre>
+<script>
+
+    /**
+     * js数字
+     * */
     function obj_num(){
-        var pi=3.14;    // 使用小数点
-        var x=34;       // 不使用小数点
-        var y=123e5;    // 12300000
-        var z=123e-5;   // 0.00123
-        var sum=0.2+0.1;
-        var e=0377;
-        var st=0xFF;
+        var pi = 3.14;    // 使用小数点
+        var x = 34;       // 不使用小数点
+        var y = 123e5;    // 12300000
+        var z = 123e-5;   // 0.00123
+        var sum = 0.2+0.1;
+        var e = 0377;
+        var st = 0xFF;
         alert(pi+" "+x+" "+y+" "+z+" "+sum+" "+e+" "+st);
     }
+
+
+    /**
+     * toString 输出16进制、8进制、2进制
+     * */
+    function obj_num1(){
+        var myNumber=128;
+        myNumber.toString(16);   // 返回 80
+        myNumber.toString(8);    // 返回 200
+        myNumber.toString(2);    // 返回 10000000
+    }
+
+
+    /**
+     * 无穷大 无穷大是一个数字
+     * */
+    function obj_num_Infinity(){
+        myNumber=2;
+        while (myNumber!=Infinity){
+            myNumber=myNumber*myNumber;
+            document.write(myNumber +'<BR>');
+        }
+
+        //除以0也产生了无限
+//        var x = 2/0;
+//        var y = -2/0;
+//        document.write(x + "<br>");
+//        document.write(y + "<br>");
+    }
+
+
+    /**
+     * NaN非数字值
+     * */
+    function obj_num_nan(){
+
+        var x = 1000 / "Apple";
+        isNaN(x); // 返回 true
+        var y = 100 / "1000";
+        isNaN(y); // 返回 false
+
+        var x = 1000 / 0;
+        isNaN(x); // 返回 false
+    }
+
+
+    /**
+     * 数字可以是数字或者对象
+     * */
+    function obj_num_objnum(){
+
+        var x = 123;
+        var y = new Number(123);
+        typeof(x) // 返回 Number
+        typeof(y) // 返回 Object
+
+        var xx = 123;
+        var yy = new Number(123);
+        (xx === yy) // 为 false，因为 x 是一个数字，y 是一个对象
+    }
+
 </script>
-<button type="button" onclick="obj_num()">输出各种数值</button>
+<button type="button" onclick="obj_num()">输出各种数值</button><br/>
+<button type="button" onclick="obj_num1()">toString 输出16进制、8进制、2进制</button><br/>
+<button type="button" onclick="obj_num_Infinity()">无穷大 无穷大是一个数字</button><br/>
+<button type="button" onclick="obj_num_nan()">NaN非数字值</button><br/>
+<button type="button" onclick="obj_num_objnum()">数字可以是数字或者对象</button><br/>
 <br/><br/><br/>
 
 
@@ -1668,17 +1740,47 @@
 </pre>
 <script>
 
-    //字符串
+
     function str_obj(){
+
         var txt = "hello world~";
-        console.log(txt.length+" "+txt.toUpperCase()+" "+txt[6]);//12 HELLO WORLD w
+        var n,m;
+
+        //字符串长度
+        n = txt.length;
+        console.log(n);//12
+
+        //大小写转换
+        n = txt.toUpperCase();
+        console.log(n);//HELLO WORLD
+
+        //索引
+        n = txt[6];
+        console.log(n);//2
+
+        //使用 indexOf() 来定位字符串中某一个指定的字符首次出现的位置
+        //如果没找到对应的字符函数返回-1
+        //lastIndexOf() 方法在字符串末尾开始查找字符串出现的位置
+        n = txt.indexOf('l')
+        console.log(n);//2
+
+        //match 查找字符串中的特定字符串
+        n = txt.match('world')
+        m = txt.match('mm')
+        console.log(n+" "+m);//world null
+
+        //字符串替换
+        n = txt.replace('hello','fuck');
+        console.log(n);//fuck world
+
+        //字符串转为数组
+        txt="a,b,c,d,e"
+        n = txt.split(',')//使用逗号分隔
+        console.log(n);//["a", "b", "c", "d", "e"]
+
     }
 
-    //match 查找字符串中的特定字符串
-    function str_match(){
-        var str = "hello world";
-        alert(str.match('world')+" "+str.match('mm'));//world null
-    }
+
 
 </script>
 <button type="button" onclick="str_obj()">字符串对象</button>
@@ -1690,6 +1792,13 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    4种初始化方式
+    new Date() // 当前日期和时间
+    new Date(milliseconds) //返回从 1970 年 1 月 1 日至今的毫秒数
+    new Date(dateString)
+    new Date(year, month, day, hours, minutes, seconds, milliseconds)
+</pre>
 <script>
 
     function datefun(){
@@ -1711,6 +1820,8 @@
         myDate.setDate(myDate.getDate()+5);
         console.log(myDate)//2007-09-05T09:50:04.432Z
 
+        myDate = Date.now()
+        console.log(myDate);//18231485143458369
     }
 
     function dateCompare(){
@@ -1729,8 +1840,8 @@
         }
     }
 </script>
-<button type="button" onclick="datefun()">操作日期</button>
-<button type="button" onclick="dateCompare()">比较日期</button>
+<button type="button" onclick="datefun()">操作日期</button><br/>
+<button type="button" onclick="dateCompare()">比较日期</button><br/>
 <br/><br/><br/>
 
 
@@ -1743,23 +1854,41 @@
 <script>
     function arrCreate(){
         var arr1 = new Array();
-        arr1[0] = "1";
-        arr1[1] = "2";
-        arr1[2] = "3";
+        arr1 = new Array(3);
+        arr1 = new Array("1","2","3");
+        arr1 = ['1','2','3']
 
-        var arr2 = new Array(3);
-        arr2[0] = "1";
-        arr2[1] = "2";
-        arr2[2] = "3";
+        var v = arr1[0];
+        arr1[0] = 'fuck'
+        console.log(v+" "+arr1);
 
-        var arr3 = new Array("1","2","3");
-        arr3[4] = 5;
-        arr3[0] = 11;
-        alert(arr3);
+    }
+
+    function arrfun(){
+        var arr = ['1','2','3'];
+        var l = arr.length;
+        console.log(l);//3
+
+        l = arr.indexOf('2');
+        console.log(l);//1
+    }
+
+    function arr_myFun(){
+        var arr = ['aa','bb','cc']
+        arr.myUcase();
+        console.log(arr);
+    }
+
+    Array.prototype.myUcase = function(){
+        for (i=0;i<this.length;i++){
+            this[i] = this[i].toUpperCase();
+        }
     }
 
 </script>
-<button type="button" onclick="arrCreate()">创建数组</button>
+<button type="button" onclick="arrCreate()">创建 修改</button><br/>
+<button type="button" onclick="arrfun()">属性 方法</button><br/>
+<button type="button" onclick="arr_myFun()">创建新方法</button><br/>
 <br/><br/><br/>
 
 
@@ -1804,17 +1933,21 @@
     function mathfun(){
 
         //四舍五入
-        var value = Math.round(0.60);
-        value = Math.round(0.50);
-        value = Math.round(0.49);
-        value = Math.round(-4.40);
-        value = Math.round(-4.60);
+        var value = Math.round(0.60);//1
+        value = Math.round(0.50);//1
+        value = Math.round(0.49);//0
+        value = Math.round(-4.40);//-4
+        value = Math.round(-4.60);//-5
 
         value = Math.random();//随机值
         value = Math.max(1,2,3);//最大值
         value = Math.min(11,22,33);//最小值
 
-        alert(value);
+        value = Math.PI;//19473.141592653589793
+        value = Math.sqrt(16);//4
+        value = Math.floor(10.1)//10
+
+        console.log(value);
     }
 
 </script>
@@ -1829,21 +1962,18 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    语法
+    /正则表达式主体/修饰符(可选)
+
+    例子:var patt = /runoob/i
+    解析:/runoob/i  是一个正则表达式。
+    runoob  是一个正则表达式主体 (用于检索)。
+    i  是一个修饰符 (搜索不区分大小写)。
+
+    参考:http://www.runoob.com/js/js-regexp.html
+</pre>
 <script>
-
-
-    /**
-     *
-     * 语法
-     * /正则表达式主体/修饰符(可选)
-     *
-     * 例子:var patt = /runoob/i
-     * 解析:/runoob/i  是一个正则表达式。
-     runoob  是一个正则表达式主体 (用于检索)。
-     i  是一个修饰符 (搜索不区分大小写)。
-     *
-     * 参考:http://www.runoob.com/js/js-regexp.html
-     * */
 
     /**
      * test() 方法检索字符串中的指定值。返回值是 true 或 false。
@@ -1974,6 +2104,10 @@
     screen.availWidth 1920
     screen.availHeight 1053
     显示屏的宽高，以像素计，减去界面特性，比如窗口任务栏
+
+
+
+    document 也是 window 对象的属性之一
 </pre>
 <script>
     //浏览器尺寸
@@ -2038,8 +2172,8 @@
         alert(result);
     }
 
-    //跳转
-    function  location1(){
+    //加载新的文档
+    function location1(){
         location.assign("http://tpages.cn");
     }
 
@@ -2128,6 +2262,7 @@
     }
 
 
+    //提示框
     function popupAlert_prompt(){
         var result = prompt("请输入你的名字","Hany");
         if(result !="" && result != null){
@@ -2146,9 +2281,39 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    * setInterval clearInterval
+</pre>
+<p id="js_Timing_p">时间显示</p>
 <script>
 
-    //计时
+    var timer_interval
+    function js_Timing_startInterval(){
+        timer_interval = setInterval(js_Timing_showTime,500)
+    }
+
+    function js_Timing_showTime(){
+
+        var d = new Date()
+        var t = d.toLocaleTimeString()
+        document.getElementById("js_Timing_p").innerHTML = t;
+    }
+
+
+    function js_Timing_stopInterval(){
+        clearInterval(timer_interval)
+    }
+
+
+</script>
+<button onclick="js_Timing_startInterval()">开始</button>
+<button onclick="js_Timing_stopInterval()">停止</button>
+
+
+<pre class="MyPre">
+    * 计时
+</pre>
+<script>
     var timing;
     var count = 0;
     function timing_start(){
@@ -2165,9 +2330,22 @@
         clearTimeout(timing);
         document.getElementById('timing_startBtn').removeAttribute('disabled');
     }
+</script>
+<p id="timing_p">计时</p>
+<button type="button" onclick="timing_start()" id="timing_startBtn">开始</button>
+<button type="button" onclick="timing_stop()">停止</button>
 
-    //显示当前时间
-    function startTime() {
+
+<pre class="MyPre">
+    * setTimeout clearTimeout
+</pre>
+<script>
+    var timer_timeout;
+    function startTime_timeout(){
+        timer_timeout = setTimeout('showTime_timeout()',500)
+    }
+
+    function showTime_timeout() {
 
         var today = new Date()
         var h = today.getHours()
@@ -2178,7 +2356,8 @@
         m = checkTime(m)
         s = checkTime(s)
         document.getElementById('timing_date').innerHTML= h+":"+m+":"+s
-        setTimeout('startTime()',500)
+
+        timer_timeout = setTimeout('showTime_timeout()',500)
     }
 
     function checkTime(i){
@@ -2187,12 +2366,14 @@
         }
         return i
     }
+
+    function stopTimeout(){
+        clearTimeout(timer_timeout);
+    }
 </script>
-<p id="timing_p">计时</p>
-<button type="button" onclick="timing_start()" id="timing_startBtn">开始</button>
-<button type="button" onclick="timing_stop()">停止</button>
 <p id="timing_date">date</p>
-<button type="button" onclick="startTime()">显示时间</button>
+<button type="button" onclick="startTime_timeout()">显示时间</button>
+<button type="button" onclick="stopTimeout()">停止时间</button>
 <br/><br/><br/>
 
 
@@ -2201,59 +2382,80 @@
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    Cookie 是一些数据, 存储于你电脑上的文本文件中
+    当浏览器从服务器上请求 web 页面时， 属于该页面的 cookie 会被添加到该请求中。服务端通过这种方式来获取用户的信息。
+
+    document.cookie 属性看起来像一个普通的文本字符串，其实它不是。
+    即使您在 document.cookie 中写入一个完整的 cookie 字符串, 当您重新读取该 cookie 信息时，cookie 信息是以名/值对的形式展示的。
+    document.cookie 将以字符串的方式返回所有的 cookie，类型格式： cookie1=value; cookie2=value; cookie3=value;
+</pre>
 <script>
 
-    function getCookie(c_name)
+    function setCookie(cname,cvalue,exdays)
     {
-        console.log("get cookie:"+document.cookie);
+        var d = new Date();
+        d.setTime(d.getTime()+(exdays*24*60*60*1000));
 
-        if (document.cookie.length>0)//检查 document.cookie 对象中是否存有 cookie
-        {
-            var c_start = document.cookie.indexOf(c_name + "=")//0 or -1
-            if (c_start != -1)//检查我们指定的 cookie 是否已储存
-            {
-                c_start = c_start + c_name.length + 1
-                var c_end = document.cookie.indexOf(";",c_start)//0 or -1
-                if (c_end == -1) c_end = document.cookie.length
-                return document.cookie.substring(c_start,c_end)
-            }
-        }
-        return ""
+        var expires = "expires="+d.toGMTString();
+
+        var txt = cname + "=" + cvalue + "; " + expires;
+        document.cookie = txt;
+
+        console.log('set cookie:'+txt);
     }
 
-    //cookie名称 值 过期天数
-    function setCookie(c_name,value,expiredays)
+    function getCookie(cname)
     {
-        var exdate = new Date()
-        exdate.setDate(exdate.getDate()+expiredays)
-        var dayvalue = expiredays == null?"":"expires="+exdate.toGMTString();
-        console.log("day:"+dayvalue);
+        var name = cname + "=";
+        var ca = document.cookie.split(';');//以;分隔字符串
+        for(var i=0; i<ca.length; i++)
+        {
+            var c = ca[i].trim();//去除前后空格
 
-        var namevalue = c_name+"="+value;
-        console.log("name:"+namevalue);
-
-        document.cookie = namevalue+";"+dayvalue;
-        console.log("set cookie:"+document.cookie);
+            //判断是否有设置 o or -1
+            if (c.indexOf(name)==0)
+            {
+                var txt = c.substring(name.length,c.length)
+                console.log('get cookie:'+c)
+                return txt;
+            }
+        }
+        return "";
     }
 
     function checkCookie()
     {
-        var username = getCookie('username')
-        if (username != null && username != "")
+        var username = getCookie("username");
+        if (username!="")
         {
-            alert('Welcome again '+username+'!')
+            alert("Welcome again " + username);
         }
         else
         {
-            username = prompt('Please enter your name:',"")
-            if (username != null && username != "")
+            username = prompt("Please enter your name:","");
+            if (username!="" && username!=null)
             {
-                setCookie('username',username,365)
+                setCookie("username",username,365);
             }
         }
     }
+
+    function deleteCookie(){
+
+        var storage_username = getCookie('username')
+        var nameValue = 'username='+storage_username;
+        var timevalue = 'expires='+'Thu, 01 Jan 1970 00:00:00 GMT'
+        document.cookie = nameValue+';'+timevalue;
+    }
+
+    function showCookie(){
+        console.log('cookies:'+document.cookie);
+    }
 </script>
-<button type="button" onclick="checkCookie()">读取cookie</button>
+<button type="button" onclick="showCookie()">显示cookie</button><br/>
+<button type="button" onclick="checkCookie()">读取cookie</button><br/>
+<button type="button" onclick="deleteCookie()">删除cookie</button><br/>
 <br/><br/><br/>
 
 
