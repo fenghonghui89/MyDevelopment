@@ -115,13 +115,13 @@ function test_input($data) {
 
 ?>
 
-<!--
-$_SERVER["PHP_SELF"] 是一种超全局变量，它返回当前执行脚本的文件名。
-因此，$_SERVER["PHP_SELF"] 将表单数据发送到页面本身，而不是跳转到另一张页面。这样，用户就能够在表单页面获得错误提示信息。
+<pre class="MyPre">
+    $_SERVER["PHP_SELF"] 是一种超全局变量，它返回当前执行脚本的文件名。
+    因此，$_SERVER["PHP_SELF"] 将表单数据发送到页面本身，而不是跳转到另一张页面。这样，用户就能够在表单页面获得错误提示信息。
 
-htmlspecialchars() 函数把特殊字符转换为 HTML 实体。这意味着 < 和 > 之类的 HTML 字符会被替换为 &lt; 和 &gt; 。
-这样可防止攻击者通过在表单中注入 HTML 或 JavaScript 代码（跨站点脚本攻击）对代码进行利用
--->
+    htmlspecialchars() 函数把特殊字符转换为 HTML 实体。这意味着 < 和 > 之类的 HTML 字符会被替换为 &lt; 和 &gt; 。
+    这样可防止攻击者通过在表单中注入 HTML 或 JavaScript 代码（跨站点脚本攻击）对代码进行利用
+</pre>
 <p><span class="error">* 必需的字段</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     姓名：<input type="text" name="name" placeholder="please input name!">

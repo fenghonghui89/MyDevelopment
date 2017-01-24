@@ -42,6 +42,8 @@
 <a href="#root_form">表单form</a><br />
 <a href="#root_formElement">各种基础控件元素</a><br />
 <a href="#root_color">HTML 颜色 颜色名 颜色值</a><br/>
+<a href="#root_fontfont">字符实体</a><br/>
+<a href="#root_url">URL 编码</a><br/>
 <br />
 
 
@@ -50,10 +52,10 @@
 <a href="#root_newLabel">HTML5 新增标签</a><br />
 <a href="#root_media">多媒体</a><br />
 <a href="#root_drag">拖放</a><br />
-<a href="#root_location">定位</a><br />
+<a href="#root_location">地理定位</a><br />
 <a href="#root_webstorage">web存储</a><br />
 <a href="#root_webWorker">web worker</a><br />
-<a href="#root_serverSend">服务器发送事件</a><br />
+<a href="#root_serverSend">SSE 服务器发送事件</a><br />
 
 
 <!------------------------------------------------------------------标题------------------------------------------------------------------>
@@ -615,11 +617,11 @@ width height 尺寸
 
 
 <pre class="MyPre">
-    * form / 最重要的表单元素input
-action - action 属性定义在提交表单时执行的动作。向服务器提交表单的通常做法是使用提交按钮。
-method - method 属性规定在提交表单时所用的 HTTP 方法（GET 或 POST）
-name - 如果要正确地被提交，每个输入字段必须设置一个 name 属性,name相当于变量名。
-当您使用 GET 时，表单数据在页面地址栏中是可见的：action_page.php?firstname=Mickey&lastname=Mouse
+    action - action 属性定义在提交表单时执行的动作。向服务器提交表单的通常做法是使用提交按钮。
+    method - method 属性规定在提交表单时所用的 HTTP 方法（GET 或 POST）
+
+    name - 如果要正确地被提交，每个输入字段必须设置一个 name 属性,name相当于变量名。
+    当您使用 GET 时，表单数据在页面地址栏中是可见的：action_page.php?firstname=Mickey&lastname=Mouse
 </pre>
 <form action="Form1.html"
       method="get"
@@ -801,6 +803,41 @@ datalist:
     141个颜色名称是在HTML和CSS颜色规范定义的（17标准颜色，再加124）
 </pre>
 <br/><br/><br/>
+
+<!------------------------------------------------------------------HTML 字符实体------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_fontfont">HTML 字符实体</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<pre class="MyPre">
+    如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。如需显示小于号，我们必须这样写：&lt; 或 &#60;
+    &nbsp;或者&#160; - 半角的不断行的空白格
+    &ensp; - 半角的空格
+    &emsp;  - 全角的空格
+    %20用于url
+</pre>
+<br/><br/><br/>
+
+<!------------------------------------------------------------------HTML URL------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_url">HTML URL</h1>
+<a href="#root_menu">回到目录</a>
+<hr />
+
+<pre class="MyPre">
+    URL 编码
+    URL 只能使用 ASCII 字符集来通过因特网进行发送。
+    由于 URL 常常会包含 ASCII 集合之外的字符，URL 必须转换为有效的 ASCII 格式。
+    URL 编码使用 "%" 其后跟随两位的十六进制数来替换非 ASCII 字符。
+    URL 不能包含空格。URL 编码通常使用 + 来替换空格。
+
+    scheme - 定义因特网服务的类型。最常见的类型是 http
+    host - 定义域主机（http 的默认主机是 www）
+    domain - 定义因特网域名，比如 runoob.com
+    :port - 定义主机上的端口号（http 的默认端口号是 80）
+    path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。
+</pre>
+<br/><br/><br/>
+
 
 <!------------------------------------------------------------------HTML5 自定义标签------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="root_customLabel">HTML5 自定义标签</h1>
@@ -1024,19 +1061,19 @@ datalist:
 
 
 
-<!------------------------------------------------------------------定位------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="root_location">定位</h1>
+<!------------------------------------------------------------------地理定位------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_location">地理定位</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
-<!--
+
+<pre class="MyPre">
     检测是否支持地理定位
     如果支持，则运行 getCurrentPosition() 方法。如果不支持，则向用户显示一段消息。
     如果getCurrentPosition()运行成功，则向参数showPosition中规定的函数返回一个coordinates对象
     showPosition() 函数获得并显示经度和纬度
--->
 
-<!--因为无法连接 所以先注释 否则网页会一直处于连接状态-->
-<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+    因为无法连接 所以先注释 否则网页会一直处于连接状态
+</pre>
 <script>
     var x=document.getElementById("root_location_demo");
     function getLocation()
@@ -1099,25 +1136,27 @@ datalist:
 <a href="#root_menu">回到目录</a>
 <hr />
 
-
-<script>
-
-    /*
-    * 之前，这些都是由 cookie 完成的。但是 cookie 不适合大量数据的存储，因为它们由每个对服务器的请求来传递，这使得 cookie 速度很慢而且效率也不高。
+<pre class="MyPre">
+    之前，这些都是由 cookie 完成的。但是 cookie 不适合大量数据的存储，因为它们由每个对服务器的请求来传递，这使得 cookie 速度很慢而且效率也不高。
      在 HTML5 中，数据不是由每个服务器请求传递的，而是只有在请求时使用数据。它使在不影响网站性能的情况下存储大量数据成为可能。
      对于不同的网站，数据存储于不同的区域，并且一个网站只能访问其自身的数据。
      HTML5 使用 JavaScript 来存储和访问数据
-    * */
+
+    保存数据/读取数据/删除个人数据/删除所有数据/得到某个索引的key
+    http://www.runoob.com/html/html5-webstorage.html
+</pre>
+<script>
+
 
     //localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。
     function fun_h5_wb_local(){
         if (localStorage.pagecount)
         {
-            localStorage.pagecount=Number(localStorage.pagecount) +1;
+            localStorage.pagecount = Number(localStorage.pagecount) +1;
         }
         else
         {
-            localStorage.pagecount=1;
+            localStorage.pagecount = 1;
         }
 
         document.getElementById('h5_ws_local').innerHTML = "Visits "+ localStorage.pagecount + " time(s)."
@@ -1153,14 +1192,15 @@ datalist:
 <a href="#root_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。
+    web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行。
+
+    由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
+     window 对象 document 对象 parent 对象
+</pre>
 <script>
 
-    /*
-    * 由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
-     window 对象
-     document 对象
-     parent 对象
-    * */
     var w;
 
     function startWorker()
@@ -1199,8 +1239,8 @@ datalist:
 
 
 
-<!------------------------------------------------------------------服务器发送事件------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="root_serverSend">服务器发送事件</h1>
+<!------------------------------------------------------------------SSE 服务器发送事件------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="root_serverSend">SSE 服务器发送事件</h1>
 <a href="#root_menu">回到目录</a>
 <hr />
 
