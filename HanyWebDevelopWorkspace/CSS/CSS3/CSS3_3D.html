@@ -19,19 +19,122 @@
 
 
 <style>
-    #CSS33D1 {
+    div#CSS33D1:active {
+
         margin: 30px;
         width: 200px;
         height: 100px;
         background-color: yellow;
 
-        transform:rotateX(120deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
-        -webkit-transform:rotateX(120deg); /* Safari and Chrome */
-        -moz-transform:rotateX(120deg); /* Firefox */
+        animation-name:CSS3_3D;
+        animation-duration:5s;
+        animation-timing-function:linear;
+        animation-delay:0s;
+        animation-iteration-count:infinite;/*播放次数*/
+        animation-direction:alternate;/*是否在下一周期逆向地播放*/
+        animation-play-state:running;/*是否正在运行或暂停*/
+        /* Firefox: */
+        -moz-animation-name:CSS3_3D;
+        -moz-animation-duration:5s;
+        -moz-animation-timing-function:linear;
+        -moz-animation-delay:0s;
+        -moz-animation-iteration-count:infinite;
+        -moz-animation-direction:alternate;
+        -moz-animation-play-state:running;
+        /* Safari and Chrome: */
+        -webkit-animation-name:CSS3_3D;
+        -webkit-animation-duration:5s;
+        -webkit-animation-timing-function:linear;
+        -webkit-animation-delay:0s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-play-state:running;
+        /* Opera: */
+        -o-animation-name:CSS3_3D;
+        -o-animation-duration:5s;
+        -o-animation-timing-function:linear;
+        -o-animation-delay:0s;
+        -o-animation-iteration-count:infinite;
+        -o-animation-direction:alternate;
+        -o-animation-play-state:running;
+    }
 
-        transform:rotateY(130deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
-        -webkit-transform:rotateY(130deg); /* Safari and Chrome */
-        -moz-transform:rotateY(130deg); /* Firefox */
+    @keyframes CSS3_3D {
+        0%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(0deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateX(0deg); /* Safari and Chrome */
+            -moz-transform:rotateX(0deg); /* Firefox */
+
+            transform:rotateY(0deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateY(0deg); /* Safari and Chrome */
+            -moz-transform:rotateY(0deg); /* Firefox */
+        }
+
+        25%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(50deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateX(50deg); /* Safari and Chrome */
+            -moz-transform:rotateX(50deg); /* Firefox */
+
+            transform:rotateY(60deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateY(60deg); /* Safari and Chrome */
+            -moz-transform:rotateY(60deg); /* Firefox */
+        }
+
+        50%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(70deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateX(70deg); /* Safari and Chrome */
+            -moz-transform:rotateX(70deg); /* Firefox */
+
+            transform:rotateY(80deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateY(80deg); /* Safari and Chrome */
+            -moz-transform:rotateY(80deg); /* Firefox */
+        }
+
+        75%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(100deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateX(100deg); /* Safari and Chrome */
+            -moz-transform:rotateX(100deg); /* Firefox */
+
+            transform:rotateY(100deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateY(100deg); /* Safari and Chrome */
+            -moz-transform:rotateY(100deg); /* Firefox */
+        }
+
+        100%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(120deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateX(120deg); /* Safari and Chrome */
+            -moz-transform:rotateX(120deg); /* Firefox */
+
+            transform:rotateY(130deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            -webkit-transform:rotateY(130deg); /* Safari and Chrome */
+            -moz-transform:rotateY(130deg); /* Firefox */
+        }
+
     }
 </style>
 
