@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 web worker</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!----------------------------------------------------------HTML5 web worker-------------------------------------------------------------------------->
+<h1 id="HTML5_WebWorker_menu">HTML5 web worker</h1>
+<a href="../Root_HTML.html">回到HTML根目录</a><br/>
+<br/>
+
+<!-------------------------------------------------------------HTML5 web worker----------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="HTML5_WebWorker_1">HTML5 web worker</h1>
+<a href="#HTML5_WebWorker_menu">回到目录</a>
+<hr />
+
+<pre class="MyPre">
+    当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。
+    web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行。
+
+    由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
+     window 对象 document 对象 parent 对象
+</pre>
+<script>
+
+    var w;
+
+    function startWorker()
+    {
+        if(typeof(Worker)!=="undefined")//检测浏览器是否支持web worker
+        {
+            if(typeof(w)=="undefined")//检测是否存在worker对象
+            {
+                w = new Worker("../../src/DataSource/JS_webWorker.js");
+            }
+
+            //添加事件监听
+            w.onmessage = function (event) {
+                document.getElementById("web_worker_result").innerHTML = event.data;
+            };
+        }
+        else
+        {
+            document.getElementById("web_worker_result").innerHTML="Sorry, your browser does not support Web Workers...";
+        }
+    }
+
+    function stopWorker()
+    {
+        w.terminate();
+    }
+</script>
+
+<p>计数: <output id="web_worker_result"></output></p>
+<button onclick="startWorker()">开始 Worker</button>
+<button onclick="stopWorker()">停止 Worker</button>
+
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

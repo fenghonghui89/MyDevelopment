@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 表单form</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!------------------------------------------------------------------HTML 表单form------------------------------------------------------------------>
+<h1 id="HTML_Form_menu">HTML 表单form</h1>
+<a href="../Root_HTML.html">回到HTML根目录</a><br/>
+<br/>
+
+<!--------------------------------------------------------------------HTML 表单form---------------------------------------------------------------->
+<h1 class="HeaderTitle" id="HTML_Form_1">HTML 表单form</h1>
+<a href="#HTML_Form_menu">回到目录</a>
+<hr />
+
+
+
+<pre class="MyPre">
+    action - action 属性定义在提交表单时执行的动作。向服务器提交表单的通常做法是使用提交按钮。
+    method - method 属性规定在提交表单时所用的 HTTP 方法（GET 或 POST）
+
+    name - 如果要正确地被提交，每个输入字段必须设置一个 name 属性,name相当于变量名。
+    当您使用 GET 时，表单数据在页面地址栏中是可见的：action_page.php?firstname=Mickey&lastname=Mouse
+</pre>
+<form action="Form1.html"
+      method="get"
+      accept-charset="utf-8"
+      enctype="application/x-www-form-urlencoded"
+>
+
+</form>
+
+
+<pre class="MyPre">
+    * 用表单发送电子邮件
+</pre>
+<form action="MAILTO:someone@w3school.com.cn" method="post" enctype="text/plain">
+    <h3>发邮件</h3><br />
+    姓名:<input type="text" name="name" value="name" size="20"/>
+    电邮:<input type="text" name="mail" value="mail" size="20"/>
+    内容<input type="text" name="comment" value="comment" size="20"/>
+    <br/>
+    <input type="submit" value="发送" />
+    <input type="reset" value="重置" />
+</form>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

@@ -17,8 +17,13 @@
 <a href="#CSS3_Background_menu">回到目录</a>
 <hr />
 
+
+
+<pre class="MyPre">
+    * background-size
+    background-size指定背景图像的大小。CSS3以前，背景图像大小由图像的实际大小决定。
+</pre>
 <style>
-    /*background-size*/
     #Css3Bg1{
         background:url("../../src/Media/bg_flower.gif");
         background-size:35% 100%;
@@ -27,29 +32,7 @@
         width: 500px;
         background-color: orange;/*放最后 否则无法显示??*/
     }
-
-    /*background-origin*/
-    #Css3Bg2{
-        margin: 10px;
-        padding: 10px;
-        width: 500px;
-        height: 500px;
-        background: url("../../src/Media/bg_flower.gif");
-        background-origin: content-box;
-        background-repeat: no-repeat;
-        background-color: #00FF00;
-    }
-
-    /*多重背景*/
-    #Css3Bg3{
-        width: 500px;
-        height: 500px;
-        background: url("../../src/Media/bg_flower.gif"),url("../../src/Media/bg_flower_2.gif");
-        background-color: #00FF00;
-    }
 </style>
-
-<!--background-size-->
 <div id="Css3Bg1">
     <p>这是一个段落。</p>
     <p>这是一个段落。</p>
@@ -63,7 +46,25 @@
 </div>
 <br>
 
-<!--background-origin-->
+
+
+<pre class="MyPre">
+    * background-origin
+    background-Origin属性指定了背景图像的位置区域。
+    content-box, padding-box,和 border-box区域内可以放置背景图像。
+</pre>
+<style>
+    #Css3Bg2{
+        margin: 10px;
+        padding: 10px;
+        width: 500px;
+        height: 500px;
+        background: url("../../src/Media/bg_flower.gif");
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-color: #00FF00;
+    }
+</style>
 <div id="Css3Bg2">
     <p>这是一个段落。</p>
     <p>这是一个段落。</p>
@@ -77,7 +78,19 @@
 </div>
 <br />
 
-<!--多重背景-->
+
+
+<pre class="MyPre">
+    * 多重背景
+</pre>
+<style>
+    #Css3Bg3{
+        width: 500px;
+        height: 500px;
+        background: url("../../src/Media/bg_flower.gif"),url("../../src/Media/bg_flower_2.gif");
+        background-color: #00FF00;
+    }
+</style>
 <div id="Css3Bg3">
     <p>这是一个段落。</p>
     <p>这是一个段落。</p>
@@ -90,6 +103,23 @@
     <p>这是一个段落。</p>
 </div>
 
+
+<pre class="MyPre">
+    * background-clip
+    背景剪裁属性是从指定位置开始绘制
+</pre>
+<style>
+    div#CSS3_Background_1_div{
+        padding: 10px;
+        border: 10px dotted black;
+        background-color: yellow;
+        background-clip: content-box;
+    }
+</style>
+<div id="CSS3_Background_1_div">
+    <h2>Lorem Ipsum Dolor</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
 
 <br/><br/><br/>
 

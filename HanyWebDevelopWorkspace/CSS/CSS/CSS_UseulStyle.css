@@ -53,16 +53,17 @@ p {
 
 
 
-/*字体
-    通用字体系列 - 拥有相似外观的字体系统组合（比如 "Serif" 或 "Monospace"）
-    特定字体系列 - 具体的字体系列（比如 "Times" 或 "Courier"）
+/*
+字体
+通用字体系列 - 拥有相似外观的字体系统组合（比如 "Serif" 或 "Monospace"）
+特定字体系列 - 具体的字体系列（比如 "Times" 或 "Courier"）
 
-    除了各种特定的字体系列外，CSS 定义了 5 种通用字体系列：
-    Serif 字体
-    Sans-serif 字体
-    Monospace 字体
-    Cursive 字体
-    Fantasy 字体
+除了各种特定的字体系列外，CSS 定义了 5 种通用字体系列：
+Serif 字体
+Sans-serif 字体
+Monospace 字体
+Cursive 字体
+Fantasy 字体
 
 font-family:字体
 font-style:斜体还是倾斜 通常情况下，italic 和 oblique 文本在 web 浏览器中看上去完全一样
@@ -93,10 +94,11 @@ a{
 
 
 
-/*链接
+/*
+链接
 当为链接的不同状态设置样式时，请按照以下次序规则：
-    a:hover 必须位于 a:link 和 a:visited 之后
-    a:active 必须位于 a:hover 之后
+a:hover 必须位于 a:link 和 a:visited 之后
+a:active 必须位于 a:hover 之后
 
 text-decoration:none 去掉样式 -> 去掉下划线
 */
@@ -111,7 +113,8 @@ a:active {color:#0000FF;text-decoration:none;}	/* 正在被点击的链接 */
 
 
 
-/*列表
+/*
+列表
 list-style-type:常规标志类型
 list-style-image:用图像做标志
 list-style:整合各种属性list-style 的值可以按任何顺序列出，而且这些值都可以忽略。只要提供了一个值，其它的就会填入其默认值
@@ -127,7 +130,8 @@ li {list-style : url(example.gif) square inside}
 
 
 
-/*表格
+/*
+表格
 border 边框
 border-collapse 都设置边框的话,是否折叠边框
 vertical-align 垂直对齐
@@ -144,7 +148,9 @@ table,tr,th,td{
 }
 
 
-/*轮廓*/
+/*
+轮廓
+*/
 p{
     outline: red solid thin;
     outline-style:solid;

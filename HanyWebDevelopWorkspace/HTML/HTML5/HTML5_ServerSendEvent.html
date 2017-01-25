@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 SSE 服务器发送事件</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!----------------------------------------------------------HTML5 SSE 服务器发送事件-------------------------------------------------------------------------->
+<h1 id="HTML5_ServerSendEvent_menu">HTML5 SSE 服务器发送事件</h1>
+<a href="../Root_HTML.html">回到HTML根目录</a><br/>
+<br/>
+
+<!-------------------------------------------------------------HTML5 SSE 服务器发送事件----------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="HTML5_ServerSendEvent_1">HTML5 SSE 服务器发送事件</h1>
+<a href="#HTML5_ServerSendEvent_menu">回到目录</a>
+<hr />
+
+
+<script>
+    function fun_serverSend(){
+        if(typeof(EventSource)!=="undefined")
+        {
+            var source = new EventSource("../../src/DataSource/PHP_timeShow.php");
+            source.onmessage = function(event) {
+                document.getElementById("server_send_result").innerHTML += event.data + "<br />";
+            };
+        }
+        else
+        {
+            document.getElementById("server_send_result").innerHTML="Sorry, your browser does not support server-sent events...";
+        }
+    }
+</script>
+
+<div id="server_send_result" style="color: black"></div>
+<button type="button" onclick="fun_serverSend()">服务器发送事件</button>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

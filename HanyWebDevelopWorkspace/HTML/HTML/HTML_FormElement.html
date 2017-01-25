@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 各种基础控件元素</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!---------------------------------------------------------------HTML 各种基础控件元素--------------------------------------------------------------------->
+<h1 id="HTML_FormElement_menu">HTML 各种基础控件元素</h1>
+<a href="../Root_HTML.html">回到HTML根目录</a><br/>
+<br/>
+
+<!----------------------------------------------------------------HTML 各种基础控件元素-------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="HTML_FormElement_1">HTML 各种基础控件元素</h1>
+<a href="#HTML_FormElement_menu">回到目录</a>
+<hr />
+
+
+<pre class="MyPre">-----------------input-----------------</pre>
+<pre class="MyPre">
+    * input类属性
+    required 如果表单字段的值为空, required 属性会阻止表单提交
+</pre>
+<pre class="MyPre">
+    * 文本域 密码 提交按钮
+</pre>
+text/password/submit:<br />
+FirstName:<input type="text" name="firstName" value="你的名称"/><br />
+Password:<input type="password" name="lastName" value="你的密码"/><br />
+<input type="submit" value="提交啦" />
+
+
+<pre class="MyPre">
+    * label radio单选框
+    for {elementID}：关联对应的控件id；当点击此label标签时，绑定id的控件会获取焦点
+</pre>
+radio:<br/>
+<label for="id_root_formElement_male">Male</label>
+<input type="radio" name="sex" value="male" id="id_root_formElement_male"/>male
+<br/>
+<label for="id_root_formElement_female">Female</label>
+<input type="radio" name="sex" value="female" id="id_root_formElement_female"/>female
+
+
+<pre class="MyPre">
+    * 复选框
+</pre>
+checkbox:
+<input type="checkbox" name="car" />car
+<input type="checkbox" name="bike" />bile
+
+
+<pre class="MyPre">
+    * 按钮
+</pre>
+button:<input type="button" value="点击我!" onclick="alert('Hello~')"/>
+
+
+
+<pre class="MyPre">
+    * number range color datetime url datalist
+</pre>
+number:<input type="number" min="1" max="5" value="hhh" /><br/>
+range:<input type="range" name="points" min="0" max="10" /><br/>
+color:<input type="color" name="favcolor" /><br/>
+range:<input type="range" name="points" min="0" max="10" /><br/>
+color:<input type="color" name="favcolor" /><br/>
+Birthday (date and time):<input type="datetime" name="bdaytime" /><br/>
+
+Add your homepage:
+<input type="url" name="homepage" />
+<input type="submit" />
+<br/>
+
+datalist:
+<input id="myCar" list="cars" />
+<datalist id="cars">
+    <option value="BMW">
+    <option value="Ford">
+    <option value="Volvo">
+</datalist>
+<br/>
+
+<pre class="MyPre">-----------------other-----------------</pre>
+
+<pre class="MyPre">
+    * 按钮
+</pre>
+<script>
+    function button_test(){
+        console.log("哈哈哈");
+    }
+</script>
+<button type="reset" onclick="button_test()">reset</button>
+<button type="submit" onclick="button_test()">submit</button>
+<button type="button" onclick="button_test()">button</button>
+<button type="button" onclick="button_test()" disabled>被禁用的按钮</button>
+
+<pre class="MyPre">
+    * select下拉列表
+</pre>
+<select name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat" selected>Fiat</option>
+    <option value="audi">Audi</option>
+</select>
+<input type="submit">
+
+<pre class="MyPre">
+    * 多行文本域 textarea
+</pre>
+<textarea rows="10" cols="30">textarea:hahahahahahahahahhahahahah
+    textarea:hahahahahahahahahhahahahah
+</textarea>
+
+
+<pre class="MyPre">
+    * fieldset legend
+</pre>
+<fieldset>
+    <legend>健康信息</legend>
+    身高:<input type="text" name="height" value="12">
+    体重:<input type="text" name="weight" value="13">
+</fieldset>
+<br/>
+
+<pre class="MyPre">
+    * kbd键盘输入元素
+</pre>
+<style>
+    kbd{
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -o-border-radius: 4px;
+        -khtml-border-radius: 4px;
+        border: 1px solid #aaaaaa;
+        border-style: outset;
+        background: #fafafa;
+        padding: 0px 3px 1px 3px;
+        margin: 0px 0px 0px 0px;
+        vertical-align: baseline;
+        line-height: 1.8em;
+        white-space:nowrap;
+    }
+</style>
+<p>快捷键:</p>
+<p>复制:<kbd>ctrl</kbd>+<kbd>c</kbd></p>
+<p>粘贴:<kbd>ctrl</kbd>+<kbd>v</kbd></p>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

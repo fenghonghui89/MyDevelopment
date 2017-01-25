@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 渐变</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!----------------------------------------------------------CSS3 渐变-------------------------------------------------------------------------->
+<h1 id="CSS3_Gradients_menu">CSS3 渐变</h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+<pre class="Note">
+    * 笔记
+    线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向
+    径向渐变（Radial Gradients）- 由它们的中心定义
+</pre>
+
+<!-------------------------------------------------------------CSS3 渐变----------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Gradients_1">CSS3 渐变</h1>
+<a href="#CSS3_Gradients_menu">回到目录</a>
+<hr />
+
+
+
+<style>
+    div#CSS3_Gradients_1_div1{
+
+        /*右下角*/
+        height: 200px;
+        background: -webkit-linear-gradient(left top, red , blue); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(bottom right, red, blue); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(bottom right, red, blue); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to bottom right, red , blue); /* 标准的语法（必须放在最后） */
+
+        /*使用角度*/
+        background: -webkit-linear-gradient(180deg, red, blue); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(180deg, red, blue); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(180deg, red, blue); /* Firefox 3.6 - 15 */
+        background: linear-gradient(180deg, red, blue); /* 标准的语法（必须放在最后） */
+
+        /*多种颜色*/
+        background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* 标准的语法（必须放在最后） */
+
+        /*透明度*/
+        background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,1)); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right, rgba(255,0,0,0), rgba(255,0,0,1)); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right, rgba(255,0,0,0), rgba(255,0,0,1)); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /* 标准的语法（必须放在最后） */
+
+        /*重复的线性渐变*/
+        background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%); /* Safari 5.1 - 6.0 */
+        background: -o-repeating-linear-gradient(red, yellow 10%, green 20%); /* Opera 11.1 - 12.0 */
+        background: -moz-repeating-linear-gradient(red, yellow 10%, green 20%); /* Firefox 3.6 - 15 */
+        background: repeating-linear-gradient(red, yellow 10%, green 20%); /* 标准的语法（必须放在最后） */
+    }
+</style>
+<div id="CSS3_Gradients_1_div1"></div>
+
+
+<pre class="MyPre">
+    * 径向渐变（Radial Gradients）- 由它们的中心定义
+    background: radial-gradient(center, shape size, start-color, ..., last-color);
+    shape 参数定义了形状。它可以是值 circle 或 ellipse。其中，circle 表示圆形，ellipse 表示椭圆形。默认值是 ellipse。
+</pre>
+<style>
+    div#CSS3_Gradients_1_div2{
+
+        height: 150px;
+        width: 200px;
+
+        /*颜色结点均匀分布的径向渐变*/
+        background: -webkit-radial-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+        background: -o-radial-gradient(red, green, blue); /* Opera 11.6 - 12.0 */
+        background: -moz-radial-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+        background: radial-gradient(red, green, blue); /* 标准的语法（必须放在最后） */
+
+        /*颜色结点不均匀分布的径向渐变*/
+        background: -webkit-radial-gradient(red 5%, green 15%, blue 60%); /* Safari 5.1 - 6.0 */
+        background: -o-radial-gradient(red 5%, green 15%, blue 60%); /* Opera 11.6 - 12.0 */
+        background: -moz-radial-gradient(red 5%, green 15%, blue 60%); /* Firefox 3.6 - 15 */
+        background: radial-gradient(red 5%, green 15%, blue 60%); /* 标准的语法（必须放在最后） */
+
+        /*形状为圆形的径向渐变*/
+        background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari 5.1 - 6.0 */
+        background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 - 12.0 */
+        background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 - 15 */
+        background: radial-gradient(circle, red, yellow, green); /* 标准的语法（必须放在最后） */
+
+        /*不同尺寸大小关键字的使用*/
+        background: -webkit-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* Safari 5.1 - 6.0 */
+        background: -o-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* Opera 11.6 - 12.0 */
+        background: -moz-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* Firefox 3.6 - 15 */
+        background: radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* 标准的语法（必须放在最后） */
+
+        /*repeating-radial-gradient() 函数用于重复径向渐变*/
+        background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%); /* Safari 5.1 - 6.0 */
+        background: -o-repeating-radial-gradient(red, yellow 10%, green 15%); /* Opera 11.6 - 12.0 */
+        background: -moz-repeating-radial-gradient(red, yellow 10%, green 15%); /* Firefox 3.6 - 15 */
+        background: repeating-radial-gradient(red, yellow 10%, green 15%); /* 标准的语法（必须放在最后） */
+    }
+</style>
+<div id="CSS3_Gradients_1_div2"></div>
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

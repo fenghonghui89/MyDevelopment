@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 表格</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!----------------------------------------------------------------HTML 表格-------------------------------------------------------------------->
+<h1 id="HTML_Table_menu">HTML 表格</h1>
+<a href="../Root_HTML.html">回到HTML根目录</a><br/>
+<br/>
+
+<!----------------------------------------------------------------HTML 表格-------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="HTML_Table_1">HTML 表格</h1>
+<a href="#HTML_Table_menu">回到目录</a>
+<hr />
+
+
+<pre class="MyPre">
+    * 表头可以水平也可以垂直
+</pre>
+<table border="10">
+    <tr>
+        <th>&nbsp;</th><!--空格占位符-->
+        <th>表头</th>
+        <th>表头1</th>
+        <th>表头2</th>
+    </tr>
+    <tr>
+        <th>行1</th>
+        <td align="center">11</td>
+        <td bgcolor="#ffe4c4" align="center">12</td>
+        <td align="center">13</td>
+    </tr>
+    <tr>
+        <th>行2</th>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <th>行3</th>
+        <td>31</td>
+        <td>32</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<br/>
+
+
+
+<pre class="MyPre">
+    * 横跨两行或者两列的表头
+</pre>
+<table border="1" cellpadding="5" cellspacing="5" bgcolor="#7fffd4">
+    <tr>
+        <th>&nbsp;</th>
+        <th colspan="2">h1</th>
+        <th>h2</th>
+    </tr>
+    <tr>
+        <th>c1</th>
+        <td>d1-1-1</td>
+        <td>d1-1-2</td>
+        <td>d1-2</td>
+    </tr>
+    <tr>
+        <th rowspan="2">c2</th>
+        <td>d2-1-1</td>
+        <td>d2-1-2</td>
+        <td>d2-2</td>
+    </tr>
+    <tr>
+        <td>d3-1-1</td>
+        <td>d3-1-2</td>
+        <td>d3-2</td>
+    </tr>
+</table>
+<br/>
+
+
+
+
+
+<pre class="MyPre">
+    * frame属性
+</pre>
+<table frame="below">
+    <tr>
+        <th>h1</th>
+        <th>h2</th>
+    </tr>
+    <tr>
+        <td>d1</td>
+        <td>d2</td>
+    </tr>
+</table>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 拖放</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!----------------------------------------------------------HTML5 拖放-------------------------------------------------------------------------->
+<h1 id="HTML5_Drag_menu">HTML5 拖放</h1>
+<a href="../Root_HTML.html">回到HTML根目录</a><br/>
+<br/>
+
+<!-------------------------------------------------------------HTML5 拖放----------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="HTML5_Drag_1">HTML5 拖放</h1>
+<a href="#HTML5_Drag_menu">回到目录</a>
+<hr />
+
+<style>
+    div.dragDiv {width:220px;height:220px;padding:10px;border:1px solid #aaaaaa;float: left}
+    div.divclear {clear: both}
+</style>
+
+<script>
+
+    //默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+
+    //设置被拖数据的数据类型和值
+    function drag(ev)
+    {
+        ev.dataTransfer.setData("Text",ev.target.id);
+    }
+
+
+    function drop(ev)
+    {
+        ev.preventDefault();//调用 preventDefault() 来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+
+        var data = ev.dataTransfer.getData("Text");//通过 dataTransfer.getData("Text") 方法获得被拖的数据
+        ev.target.appendChild(document.getElementById(data));//把被拖元素追加到放置元素（目标元素）中
+    }
+</script>
+
+<!--拖放-->
+<p>请把图片拖放到矩形中：</p>
+<div>
+    <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <img id="dragImg" src="../../src/Media/111111.jpg" draggable="true" ondragstart="drag(event)" />
+    <div class = "divclear"></div>
+</div>
+
+
+<!--来回拖放-->
+<p>来回拖放</p>
+<div>
+    <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="../../src/Media/111111.jpg" draggable="true" ondragstart="drag(event)" id="dragImg1" />
+    </div>
+    <div class="dragDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="divclear"></div>
+</div>
+
+
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

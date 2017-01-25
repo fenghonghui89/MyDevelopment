@@ -23,3 +23,8 @@ pre.MyPre{
     color: darkorchid;
     font-size: small;
 }
+
+pre.Note{
+    color: black;
+    font-size: small;
+}
