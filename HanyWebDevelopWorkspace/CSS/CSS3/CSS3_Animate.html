@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 动画</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!---------------------------------------------------------------CSS3 动画--------------------------------------------------------------------->
+<h1 id="CSS3_Animate_menu">CSS3 动画</h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+<!-----------------------------------------------------------------CSS3 动画------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Animate_1">CSS3 动画</h1>
+<a href="#CSS3_Animate_menu">回到目录</a>
+<hr />
+
+
+<style>
+    div#Css3Animate1 {
+        width:100px;
+        height:100px;
+        background:yellow;
+    }
+
+    /*点击方块后不能放开鼠标 放开就会复原*/
+    div#Css3Animate1:active{
+        position:relative;
+        animation-name:myfirst;
+        animation-duration:5s;
+        animation-timing-function:linear;
+        animation-delay:0s;
+        animation-iteration-count:infinite;/*播放次数*/
+        animation-direction:alternate;/*是否在下一周期逆向地播放*/
+        animation-play-state:running;/*是否正在运行或暂停*/
+        /* Firefox: */
+        -moz-animation-name:myfirst;
+        -moz-animation-duration:5s;
+        -moz-animation-timing-function:linear;
+        -moz-animation-delay:0s;
+        -moz-animation-iteration-count:infinite;
+        -moz-animation-direction:alternate;
+        -moz-animation-play-state:running;
+        /* Safari and Chrome: */
+        -webkit-animation-name:myfirst;
+        -webkit-animation-duration:5s;
+        -webkit-animation-timing-function:linear;
+        -webkit-animation-delay:0s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-play-state:running;
+        /* Opera: */
+        -o-animation-name:myfirst;
+        -o-animation-duration:5s;
+        -o-animation-timing-function:linear;
+        -o-animation-delay:0s;
+        -o-animation-iteration-count:infinite;
+        -o-animation-direction:alternate;
+        -o-animation-play-state:running;
+    }
+
+    @keyframes myfirst
+    {
+        0%   {background:red; left:0px; top:0px;}
+        25%  {background:yellow; left:200px; top:0px;}
+        50%  {background:blue; left:200px; top:200px;}
+        75%  {background:green; left:0px; top:200px;}
+        100% {background:red; left:0px; top:0px;}
+    }
+
+    @-moz-keyframes myfirst /* Firefox */
+    {
+        0%   {background:red; left:0px; top:0px;}
+        25%  {background:yellow; left:200px; top:0px;}
+        50%  {background:blue; left:200px; top:200px;}
+        75%  {background:green; left:0px; top:200px;}
+        100% {background:red; left:0px; top:0px;}
+    }
+
+</style>
+
+<p>点击方块后不能放开鼠标 放开就会复原</p>
+<div style="width: 500px;height: 500px;background-color: lavender">
+    <div id="Css3Animate1">Hello World</div><br/>
+</div>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

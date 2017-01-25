@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 媒体类型</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!-------------------------------------------------------------CSS 媒体类型----------------------------------------------------------------------->
+<h1 id="CSS_MediaType_menu"></h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+<!-----------------------------------------------------------------媒体类型------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_MediaType_1">媒体类型</h1>
+<a href="#CSS_MediaType_menu">回到目录</a>
+<hr />
+
+<style>
+    @media screen /*用于电脑显示器*/
+    {
+        p.CssMediaType1 {font-family:verdana,sans-serif; font-size:20px}
+    }
+
+    @media print /*用于打印机*/
+    {
+        p.CssMediaType1 {font-family:times,serif; font-size:10px}
+    }
+
+    @media screen,print
+    {
+        p.CssMediaType1 {font-weight:bold;color: #0000FF}
+    }
+</style>
+
+<p class="CssMediaType1">显示了适用于电脑显示器的样式:This is some text that is placed in the transparent box.</p>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

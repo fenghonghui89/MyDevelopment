@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 字体</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!-------------------------------------------------------------CSS3 字体----------------------------------------------------------------------->
+<h1 id="CSS3_Font_menu">CSS3 字体</h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+<!---------------------------------------------------------------CSS3 字体--------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Font_1">CSS3 字体</h1>
+<a href="#CSS3_Font_menu">回到目录</a>
+<hr />
+
+
+<style>
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url('../../src/Media/Sansation_Light.ttf')
+        ,url('../../src/Media/Sansation_Light.eot'); /* IE9+ */
+    }
+
+    /*必须为粗体文本添加另一个包含描述符的 @font-face：*/
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url('../../src/Media/Sansation_Bold.ttf')
+        ,url('../../src/Media/Sansation_Bold.eot'); /* IE9+ */
+        font-weight:bold;
+    }
+
+    #CSS3Font1
+    {
+        font-family:myFirstFont;
+    }
+</style>
+
+<p id="CSS3Font1">With CSS3, websites can <b>finally</b> use fonts other than the pre-selected "web-safe" fonts.</p>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

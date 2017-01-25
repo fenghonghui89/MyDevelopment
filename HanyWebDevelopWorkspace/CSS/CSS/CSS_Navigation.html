@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 导航栏</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!----------------------------------------------------------------CSS 导航栏-------------------------------------------------------------------->
+<h1 id="CSS_Navigation_menu"></h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+
+<!----------------------------------------------------------------导航栏-------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_Navigation_1">导航栏</h1>
+<a href="#CSS_Navigation_menu">回到目录</a>
+<hr />
+
+<!--垂直导航栏-->
+<style>
+    ul.CssNavi1
+    {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+    }
+    a.CssNavi1:link,a.CssNavi1:visited
+    {
+        display:block;/*使点击区域增大 可设置大小*/
+        font-weight:bold;
+        color:#FFFFFF;
+        background-color:#bebebe;
+        width:120px;
+        text-align:center;
+        padding:4px;
+        text-decoration:none;
+        text-transform:uppercase;
+    }
+    a.CssNavi1:hover,a.CssNavi1:active
+    {
+        background-color:#cc0000;
+    }
+</style>
+
+<ul class="CssNavi1">
+    <li><a href="#" class="CssNavi1">Home</a></li>
+    <li><a href="#" class="CssNavi1">News</a></li>
+    <li><a href="#" class="CssNavi1">Contact</a></li>
+    <li><a href="#" class="CssNavi1">About</a></li>
+</ul>
+<br />
+
+<!--水平导航栏-->
+<style>
+    ul.CssNavi2
+    {
+        float:left;
+        width:100%;
+        padding:0;
+        margin:0;
+        list-style-type:none;
+    }
+    a.CssNavi2
+    {
+        float:left;
+        width:7em;
+        text-decoration:none;
+        color:white;
+        background-color:purple;
+        padding:0.2em 0.6em;
+        border-right:1px solid white;
+    }
+    a.CssNavi2:hover {background-color:#ff3300}
+
+    /*水平方法 2选1*/
+    /*li.CssNavi2 {float: left}*/
+    li.CssNavi2 {display: inline}
+</style>
+
+<ul class="CssNavi2">
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link one</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link two</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link three</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">Link four</a></li>
+</ul>
+
+
+<br/><br/><br/>
+</body>
+</html>

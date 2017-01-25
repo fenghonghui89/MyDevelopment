@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 背景</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!-------------------------------------------------------------------CSS3 背景----------------------------------------------------------------->
+<h1 id="CSS3_Background_menu">CSS3 背景</h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+<!------------------------------------------------------------------------CSS3 背景------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS3_Background_1">CSS3 背景</h1>
+<a href="#CSS3_Background_menu">回到目录</a>
+<hr />
+
+<style>
+    /*background-size*/
+    #Css3Bg1{
+        background:url("../../src/Media/bg_flower.gif");
+        background-size:35% 100%;
+        -moz-background-size:35% 100%; /* 老版本的 Firefox */
+        background-repeat:no-repeat;
+        width: 500px;
+        background-color: orange;/*放最后 否则无法显示??*/
+    }
+
+    /*background-origin*/
+    #Css3Bg2{
+        margin: 10px;
+        padding: 10px;
+        width: 500px;
+        height: 500px;
+        background: url("../../src/Media/bg_flower.gif");
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-color: #00FF00;
+    }
+
+    /*多重背景*/
+    #Css3Bg3{
+        width: 500px;
+        height: 500px;
+        background: url("../../src/Media/bg_flower.gif"),url("../../src/Media/bg_flower_2.gif");
+        background-color: #00FF00;
+    }
+</style>
+
+<!--background-size-->
+<div id="Css3Bg1">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br>
+
+<!--background-origin-->
+<div id="Css3Bg2">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+<br />
+
+<!--多重背景-->
+<div id="Css3Bg3">
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+    <p>这是一个段落。</p>
+</div>
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>

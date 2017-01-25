@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 过渡</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!-------------------------------------------------------------------CSS3 过渡----------------------------------------------------------------->
+<h1 id="CSS3_Transition_menu">CSS3 过渡</h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+<!-------------------------------------------------------------------CSS3 过渡----------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Transition_1">CSS3 过渡</h1>
+<a href="#CSS3_Transition_menu">回到目录</a>
+<hr />
+
+<style>
+    div#Css3Transition1 {
+        width:100px;
+        height:100px;
+        background:yellow;
+
+        transition:width 2s, height 2s;
+        -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+        -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+        -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+    }
+
+    div#Css3Transition1:hover{
+        width:200px;
+        height:200px;
+        transform:rotate(180deg);
+        -moz-transform:rotate(180deg); /* Firefox 4 */
+        -webkit-transform:rotate(180deg); /* Safari and Chrome */
+        -o-transform:rotate(180deg); /* Opera */
+    }
+</style>
+
+<div id="Css3Transition1">Hello World</div><br/>
+
+
+
+<br/><br/><br/>
+
+
+
+
+</body>
+</html>
