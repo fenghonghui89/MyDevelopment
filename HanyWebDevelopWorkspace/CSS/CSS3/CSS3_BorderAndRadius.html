@@ -2,24 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSS3 边框</title>
+    <title>CSS3 边框/圆角</title>
     <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
 </head>
 <body>
 
-<!---------------------------------------------------------------------CSS3 边框--------------------------------------------------------------->
-<h1 id="CSS3_Border_menu">CSS3 边框</h1>
+<!---------------------------------------------------------------------CSS3 边框/圆角--------------------------------------------------------------->
+<h1 id="CSS3_BorderAndRadius_menu">CSS3 边框/圆角</h1>
 <a href="../Root_CSS.html">回到CSS根目录</a><br/>
 <br/>
 
-<!-------------------------------------------------------------------CSS3 边框----------------------------------------------------------------->
-<h1 class="HeaderTitle" id="CSS3_Border_1">边框</h1>
-<a href="#CSS3_Border_menu">回到目录</a>
+<!-------------------------------------------------------------------CSS3 边框/圆角----------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_BorderAndRadius_1">CSS3 边框/圆角</h1>
+<a href="#CSS3_BorderAndRadius_menu">回到目录</a>
 <hr />
 
+
+<pre class="MyPre">
+    * 边框圆角 边框阴影
+</pre>
 <style>
 
-    /*边框圆角 边框阴影*/
     div.Css3Border1{
         text-align:center;
         border:2px solid #a1a1a1;
@@ -28,7 +31,7 @@
         width:350px;
 
         /*圆角*/
-        border-radius:25px;
+        border-radius:15px 50px 30px 5px;
         -moz-border-radius:25px; /* 老的 Firefox */
 
         /*阴影*/
@@ -36,9 +39,15 @@
         -moz-box-shadow: 10px 10px 5px #888888; /* 老的 Firefox */
 
     }
+</style>
+<div class="Css3Border1">border-radius 属性允许您向元素添加圆角。</div><br />
 
 
-    /*边框图片*/
+<pre class="MyPre">
+    * 边框图片
+</pre>
+<style>
+
     #round,#stretch{
         border:15px solid transparent;
         width:300px;
@@ -60,8 +69,6 @@
         border-image:url("../../src/Media/border.png") 30 30 stretch;
     }
 </style>
-
-<div class="Css3Border1">border-radius 属性允许您向元素添加圆角。</div><br />
 <div id="round">在这里，图片铺满整个边框。</div><br />
 <div id="stretch">在这里，图片被拉伸以填充该区域。</div>
 
