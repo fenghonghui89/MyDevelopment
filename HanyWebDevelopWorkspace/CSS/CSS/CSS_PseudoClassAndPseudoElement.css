@@ -10,6 +10,8 @@
 a伪类
 在CSS定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。
 在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。
+active 鼠标按住
+hover 鼠标移到上面
 */
 
 a:link {color: #FF0000}

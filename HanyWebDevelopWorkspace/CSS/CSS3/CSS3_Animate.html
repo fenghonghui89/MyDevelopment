@@ -20,7 +20,7 @@
 <pre class="MyPre">
     * 笔记
     @keyframes规则 - 指定一个CSS样式和动画将逐步从目前的样式更改为新的样式。
-    css动画 - 注意: 您必须定义动画的名称和动画的持续时间。如果省略的持续时间，动画将无法运行，因为默认值是0。
+    css动画 - 注意: 您必须定义动画的名称和动画的持续时间。如果省略持续时间，动画将无法运行，因为默认值是0。
 </pre>
 
 <style>
@@ -40,6 +40,7 @@
         animation-iteration-count:infinite;/*播放次数*/
         animation-direction:alternate;/*是否在下一周期逆向地播放*/
         animation-play-state:running;/*是否正在运行或暂停*/
+
         /* Firefox: */
         -moz-animation-name:myfirst;
         -moz-animation-duration:5s;
@@ -48,6 +49,7 @@
         -moz-animation-iteration-count:infinite;
         -moz-animation-direction:alternate;
         -moz-animation-play-state:running;
+
         /* Safari and Chrome: */
         -webkit-animation-name:myfirst;
         -webkit-animation-duration:5s;
@@ -56,6 +58,7 @@
         -webkit-animation-iteration-count:infinite;
         -webkit-animation-direction:alternate;
         -webkit-animation-play-state:running;
+
         /* Opera: */
         -o-animation-name:myfirst;
         -o-animation-duration:5s;
@@ -79,6 +82,15 @@
     }
 
     @-moz-keyframes myfirst /* Firefox */
+    {
+        0%   {background:red; left:0px; top:0px;}
+        25%  {background:yellow; left:200px; top:0px;}
+        50%  {background:blue; left:200px; top:200px;}
+        75%  {background:green; left:0px; top:200px;}
+        100% {background:red; left:0px; top:0px;}
+    }
+
+    @-webkit-keyframes myfirst /* Safari 与 Chrome */
     {
         0%   {background:red; left:0px; top:0px;}
         25%  {background:yellow; left:200px; top:0px;}

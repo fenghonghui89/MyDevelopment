@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>CSS 框模型 定位 布局 堆叠 浮动 display</title>
     <link href="../../src/MainFiles/MainCSS.css" type="text/css" rel="stylesheet">
+    <script src="../../src/Frameworks/jquery-3.1.1.js"></script>
 </head>
 <body>
 
-<!------------------------------------------------------------------CSS 框模型 定位 布局 堆叠 浮动 display------------------------------------------------------------------>
+<!------------------------------------------------------------------目录------------------------------------------------------------------>
 <h1 id="CSS_Box_menu">CSS 框模型 定位 布局 堆叠 浮动 display</h1>
 <a href="../Root_CSS.html">回到CSS根目录</a><br/>
 <br/>
@@ -15,6 +16,7 @@
 <a href="#CSS_Box_eq2">例子2 无论父元素怎么改变大小,子元素距离父元素四边距离均为10</a><br/>
 <a href="#CSS_Box_eq3">例子3 div大小为屏幕大小减去边距,类似背景</a><br/>
 <a href="#CSS_Box_eq4">例子4 outline/border/padding/margin</a><br/>
+<a href="#CSS_Box_eq5">例子5 position定位</a><br/>
 <br/>
 <a href="#CSS_Box_div">框模型:边框 背景 外边距 内边距</a><br/>
 <a href="#CSS_Box_relative">相对定位 relative</a><br/>
@@ -29,8 +31,11 @@
 
 <pre class="MyPre">
     * 笔记
-    默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute
-    Static - HTML元素的默认值，即没有定位，元素出现在正常的流中。静态定位的元素不会受到top, bottom, left, right影响。
+    默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。
+    如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute
+
+    Static - HTML元素的默认值，即没有定位，元素出现在正常的流中。
+    静态定位的元素不会受到top, bottom, left, right影响。
 </pre>
 
 
@@ -146,26 +151,29 @@
 <hr />
 
 <pre class="MyPre">
-    例子没有引入margin,因为很难解决
+    例子没有引入大于0的margin,因为很难解决
 </pre>
 <style>
 
     div#divbig{
-        background-color: yellowgreen;
+        position: relative;
+        background-color: green;
+        width: 100%;
         height: 500px;
     }
 
     div#div10{
-        position: relative;
-        top:20px;
+        position: absolute;
+        top: 20px;
         left: 20px;
-        right: 10px;
-        bottom: 10px;
+        right: 20px;
+        bottom: 20px;
         padding: 10px;
-        width: calc(100% - 80px);
-        height: calc(100% - 80px);
+        margin: 0px;
+        width: calc(100% - 80px);/*(padding10+border10+left20)*2 不算outline*/
+        height: calc(100% - 80px);/*(padding10+border10+top20)*2 不算outline*/
         background-color: indianred;
-        border: 10px solid deepskyblue;
+        border: 10px dashed deepskyblue;
         outline: 10px solid purple;
 
 
@@ -174,15 +182,86 @@
     div#divs{
         background-color:wheat;
     }
+    div#divs1{
+        position: absolute;
+        background-color:wheat;
+        bottom: 10px;
+        left: 10px;
+    }
 </style>
 <div id="divbig">
     <div id="div10">
         <div id="divs">111111</div>
+        <div id="divs1">222222</div>
     </div>
 </div>
 
 <br/><br/><br/>
 
+<!------------------------------------------------------------------例子5 position定位------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS_Box_eq5">例子5 position定位</h1>
+<a href="#CSS_Box_menu">回到目录</a>
+<hr />
+
+<style>
+    div#CSS_Box_eq5_div1{
+        position: relative;
+        background-color: #00FF00;
+        width: 100%;
+        height: 500px;
+
+    }
+
+    div#CSS_Box_eq5_div_lt{
+        background-color:rosybrown;
+        position: absolute;
+        top:0;
+        left: 0;
+        text-align: center;
+        font-size: 18px;
+    }
+    div#CSS_Box_eq5_div_rt{
+        background-color:rosybrown;
+        position: absolute;
+        top:0;
+        right: 0;
+        text-align: center;
+        font-size: 18px;
+    }
+    div#CSS_Box_eq5_div_lb{
+        background-color:rosybrown;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        font-size: 18px;
+    }
+    div#CSS_Box_eq5_div_rb{
+        background-color:rosybrown;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        font-size: 18px;
+    }
+    div#CSS_Box_eq5_div_c{
+        background-color:rosybrown;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        text-align: center;
+        font-size: 18px;
+    }
+</style>
+<div id="CSS_Box_eq5_div1">
+    <div id="CSS_Box_eq5_div_lt">左上</div>
+    <div id="CSS_Box_eq5_div_rt">右上</div>
+    <div id="CSS_Box_eq5_div_lb">左下</div>
+    <div id="CSS_Box_eq5_div_rb">右下</div>
+    <div id="CSS_Box_eq5_div_c">居中</div>
+</div>
+
+<br/><br/><br/>
 <!------------------------------------------------------------------框模型:边框 背景 外边距 内边距------------------------------------------------------------------>
 <h1 class="HeaderTitle" id="CSS_Box_div">框模型:边框 背景 外边距 内边距</h1>
 <a href="#CSS_Box_menu">回到目录</a>
@@ -316,7 +395,7 @@
     相对于浏览器窗口进行定位 受四边距离限制
 </pre>
 <style>
-    div#CssPosition_fixed_div1{
+    .Class_CSS_Box_fixed{
         background-color: red;
         opacity: 0.5;
         width: 100px;
@@ -326,9 +405,34 @@
         top:10px;
         left: 10px;
     }
-</style>
-<div id="CssPosition_fixed_div1">position: fixed</div>
 
+</style>
+<script>
+    $(document).ready(function(){
+
+        //添加元素
+        $("button#CSS_Box_fixed_btn1").click(function(){
+
+            if ($("div#CssPosition_fixed_div1").length > 0)
+            {
+                alert('已经存在')
+                return;
+            }
+            else
+            {
+                $(document.body).append("<div id='CssPosition_fixed_div1'>position: fixed</div>");
+                $("div#CssPosition_fixed_div1").addClass("Class_CSS_Box_fixed");
+            }
+        })
+
+        //删除元素
+        $("button#CSS_Box_fixed_btn2").click(function(){
+            $("div#CssPosition_fixed_div1").remove();
+        })
+    })
+</script>
+<button id="CSS_Box_fixed_btn1">add element</button><br/>
+<button id="CSS_Box_fixed_btn2">remove element</button><br/>
 <br/><br/><br/>
 
 

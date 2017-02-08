@@ -17,40 +17,52 @@
 <a href="#CSS3_3D_menu">回到目录</a>
 <hr />
 
-
+<pre class="MyPre">
+    * 笔记
+    跟2D转换类似,都是设置transform属性,只是传值不一样
+    rotateX 元素围绕其 X 轴以给定的度数进行旋转
+    rotateY 元素围绕其 Y 轴以给定的度数进行旋转
+</pre>
 <style>
-    div#CSS33D1:active {
+    div#CSS3_3D_1_div {
 
         margin: 30px;
         width: 200px;
         height: 100px;
         background-color: yellow;
 
-        animation-name:CSS3_3D;
+
+    }
+
+    div#CSS3_3D_1_div:active{
+        animation-name:CSS3_3D_Animate0;/*绑定动画*/
         animation-duration:5s;
         animation-timing-function:linear;
         animation-delay:0s;
         animation-iteration-count:infinite;/*播放次数*/
         animation-direction:alternate;/*是否在下一周期逆向地播放*/
         animation-play-state:running;/*是否正在运行或暂停*/
+
         /* Firefox: */
-        -moz-animation-name:CSS3_3D;
+        -moz-animation-name:CSS3_3D_Animate0;
         -moz-animation-duration:5s;
         -moz-animation-timing-function:linear;
         -moz-animation-delay:0s;
         -moz-animation-iteration-count:infinite;
         -moz-animation-direction:alternate;
         -moz-animation-play-state:running;
+
         /* Safari and Chrome: */
-        -webkit-animation-name:CSS3_3D;
+        -webkit-animation-name:CSS3_3D_Animate0;
         -webkit-animation-duration:5s;
         -webkit-animation-timing-function:linear;
         -webkit-animation-delay:0s;
         -webkit-animation-iteration-count:infinite;
         -webkit-animation-direction:alternate;
         -webkit-animation-play-state:running;
+
         /* Opera: */
-        -o-animation-name:CSS3_3D;
+        -o-animation-name:CSS3_3D_Animate0;
         -o-animation-duration:5s;
         -o-animation-timing-function:linear;
         -o-animation-delay:0s;
@@ -59,18 +71,83 @@
         -o-animation-play-state:running;
     }
 
-    @keyframes CSS3_3D {
+</style>
+
+<!--围绕x轴旋转-->
+<style>
+    @keyframes CSS3_3D_Animate0 {
         0%   {
             margin: 30px;
             width: 200px;
             height: 100px;
             background-color: yellow;
 
-            transform:rotateX(0deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
+            transform:rotateX(0deg);
             -webkit-transform:rotateX(0deg); /* Safari and Chrome */
             -moz-transform:rotateX(0deg); /* Firefox */
+        }
 
-            transform:rotateY(0deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+        25%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(50deg);
+            -webkit-transform:rotateX(50deg); /* Safari and Chrome */
+            -moz-transform:rotateX(50deg); /* Firefox */
+
+        }
+
+        50%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(70deg);
+            -webkit-transform:rotateX(70deg); /* Safari and Chrome */
+            -moz-transform:rotateX(70deg); /* Firefox */
+        }
+
+        75%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(100deg);
+            -webkit-transform:rotateX(100deg); /* Safari and Chrome */
+            -moz-transform:rotateX(100deg); /* Firefox */
+
+        }
+
+        100%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateX(120deg);
+            -webkit-transform:rotateX(120deg); /* Safari and Chrome */
+            -moz-transform:rotateX(120deg); /* Firefox */
+
+        }
+
+    }
+</style>
+
+
+<!--围绕y轴旋转-->
+<style>
+    @keyframes CSS3_3D_Animate1 {
+        0%   {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+
+            transform:rotateY(0deg);
             -webkit-transform:rotateY(0deg); /* Safari and Chrome */
             -moz-transform:rotateY(0deg); /* Firefox */
         }
@@ -81,11 +158,7 @@
             height: 100px;
             background-color: yellow;
 
-            transform:rotateX(50deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
-            -webkit-transform:rotateX(50deg); /* Safari and Chrome */
-            -moz-transform:rotateX(50deg); /* Firefox */
-
-            transform:rotateY(60deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            transform:rotateY(60deg);
             -webkit-transform:rotateY(60deg); /* Safari and Chrome */
             -moz-transform:rotateY(60deg); /* Firefox */
         }
@@ -96,11 +169,7 @@
             height: 100px;
             background-color: yellow;
 
-            transform:rotateX(70deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
-            -webkit-transform:rotateX(70deg); /* Safari and Chrome */
-            -moz-transform:rotateX(70deg); /* Firefox */
-
-            transform:rotateY(80deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            transform:rotateY(80deg);
             -webkit-transform:rotateY(80deg); /* Safari and Chrome */
             -moz-transform:rotateY(80deg); /* Firefox */
         }
@@ -111,11 +180,7 @@
             height: 100px;
             background-color: yellow;
 
-            transform:rotateX(100deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
-            -webkit-transform:rotateX(100deg); /* Safari and Chrome */
-            -moz-transform:rotateX(100deg); /* Firefox */
-
-            transform:rotateY(100deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            transform:rotateY(100deg);
             -webkit-transform:rotateY(100deg); /* Safari and Chrome */
             -moz-transform:rotateY(100deg); /* Firefox */
         }
@@ -126,11 +191,7 @@
             height: 100px;
             background-color: yellow;
 
-            transform:rotateX(120deg);/*元素围绕其 X 轴以给定的度数进行旋转*/
-            -webkit-transform:rotateX(120deg); /* Safari and Chrome */
-            -moz-transform:rotateX(120deg); /* Firefox */
-
-            transform:rotateY(130deg);/*元素围绕其 Y 轴以给定的度数进行旋转*/
+            transform:rotateY(130deg);
             -webkit-transform:rotateY(130deg); /* Safari and Chrome */
             -moz-transform:rotateY(130deg); /* Firefox */
         }
@@ -138,9 +199,10 @@
     }
 </style>
 
-<div id="CSS33D1">Hello World</div><br/>
+<div id="CSS3_3D_1_div">按住我开始看3d转换动画</div><br/>
 
 
+<a href="#CSS3_3D_1">回到顶部</a>
 <br/><br/><br/>
 
 

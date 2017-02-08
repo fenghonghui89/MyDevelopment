@@ -17,13 +17,21 @@
 <a href="#CSS3_Transition_menu">回到目录</a>
 <hr />
 
+<pre class="MyPre">
+    * 笔记
+    transition - 简写属性,等于下面四个加起来
+    transition-property
+    transition-duration
+    transition-timing-function
+    transition-delay
+</pre>
 <style>
     div#Css3Transition1 {
         width:100px;
         height:100px;
         background:yellow;
 
-        transition:width 2s, height 2s;
+        transition:width 2s, height 2s, transform 2s;
         -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
         -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
         -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
@@ -39,7 +47,7 @@
     }
 </style>
 
-<div id="Css3Transition1">Hello World</div><br/>
+<div id="Css3Transition1">把鼠标移过来</div><br/>
 
 
 
