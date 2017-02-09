@@ -22,35 +22,43 @@
     div.bigimgbox{
         background-color: #0000FF;
         width: 100%;
-        padding: 0;
-        margin: 0;
-        height: auto;
+        /*height: auto;*/
     }
     div.imgbox
     {
         background-color: rosybrown;
-        border:100px solid black;
+        border:10px solid black;
         float:left;
         box-sizing: border-box;
-        padding: 5px;
+        padding: 0px;
         width: 33.333%;
     }
     div.imgbox img
     {
-        max-width: 100%;
-        height: auto;
+        width: 100%;
     }
 
     div.desc
     {
         background-color: yellow;
         text-align:center;
-        padding: 15px;
     }
     div.clear{
         clear: both;
         content: "";
         display: table;
+    }
+
+    @media screen and (max-width: 700px){
+        div.imgbox{
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 500px){
+        div.imgbox{
+            width: 100%;
+        }
     }
 </style>
 
