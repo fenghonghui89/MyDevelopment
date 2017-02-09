@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
+  
   //向微信注册wxd930ea5d5a258f4f  com.tpages.wxpay.test
 //  [WXApi registerApp:@"wxb4ba3c02aa476ea1" withDescription:@"demo 2.0"];
   [WXApi registerApp:@"wxa9cec0d7b7d9d1f1" withDescription:@"demo 2.0"];
