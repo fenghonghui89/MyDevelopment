@@ -5,6 +5,13 @@
  * JS - Root_JQuery.html - jQuery AJAX - ajax get/post
  *
  */
+
+/*
+ *
+ * 默认是text/html; charset=UTF-8
+ * 客户端也要设置对应的Content-Type
+ *
+ * */
 //header('Content-Type: application/json');
 
 $output = array();

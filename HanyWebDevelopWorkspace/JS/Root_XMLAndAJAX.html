@@ -139,14 +139,14 @@
     }
 
     /**
-     * 设置请求头post
+     * 设置请求头 + send参数字符串
      * */
     function xmlHttpRequest_POST_RequestHeader(){
         var myXmlHttp = obj_tool.getXmlHttpObject()
 
         myXmlHttp.onreadystatechange = function(){
             if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
-                var txt = '设置请求头post:<br/>';
+                var txt = '设置请求头 + send参数字符串:<br/>';
                 txt += myXmlHttp.responseText+'<br/><br/>'
                 txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
                 txt += myXmlHttp.getResponseHeader('Content-Type')
@@ -156,19 +156,20 @@
 
         var url = '../src/DataSource/PHP_MyServer.php'
         myXmlHttp.open("POST",url,true);
+//        myXmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=utf-8");
         myXmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=utf-8");
         myXmlHttp.send("a=get_users&uid=10003&t="+Math.random());
     }
 
     /**
-     * FormData post
+     * set FormData + send FormData
      * */
     function xmlHttpRequest_POST_FormData(){
         var myXmlHttp = obj_tool.getXmlHttpObject()
 
         myXmlHttp.onreadystatechange = function(){
             if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
-                var txt = 'form data post:<br/>';
+                var txt = 'set FormData + send FormData:<br/>';
                 txt += myXmlHttp.responseText+'<br/><br/>'
                 txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
                 txt += myXmlHttp.getResponseHeader('Content-Type')
@@ -187,14 +188,14 @@
     }
 
     /**
-     * 页面form+FormData post
+     * set FormData from 页面form元素 + send FormData
      * */
     function xmlHttpRequest_POST_upload(){
 
         var myXmlHttp = obj_tool.getXmlHttpObject()
         myXmlHttp.onreadystatechange = function(){
             if (myXmlHttp.readyState == 4 && myXmlHttp.status == 200){
-                var txt = 'upload post:<br/>';
+                var txt = 'set FormData from 页面form元素 + send FormData:<br/>';
                 txt += myXmlHttp.responseText+'<br/><br/>'
                 txt += myXmlHttp.getAllResponseHeaders()+'<br/><br/>'
                 txt += myXmlHttp.getResponseHeader('Content-Type')
@@ -225,12 +226,12 @@
 </script>
 
 <button onclick="xmlHttpRequest_GET()">GET</button><br/>
-<button onclick="xmlHttpRequest_POST_Simple()">POST - simple</button><br/>
-<button onclick="xmlHttpRequest_POST_RequestHeader()">POST - 设置请求头post</button><br/>
-<button onclick="xmlHttpRequest_POST_FormData()">POST - FormData post</button><br/>
+<button onclick="xmlHttpRequest_POST_Simple()">POST - 普通post</button><br/>
+<button onclick="xmlHttpRequest_POST_RequestHeader()">POST - 设置请求头 + send参数字符串</button><br/>
+<button onclick="xmlHttpRequest_POST_FormData()">POST - set FormData + send FormData</button><br/>
 
 <pre class="MyPre">
-    * 页面form+FormData post
+    * set FormData from 页面form元素 + send FormData
 </pre>
 <form enctype="multipart/form-data" method="post"
       name="XML_HTTP_Request_FormName"
@@ -238,7 +239,7 @@
 >
     a:<input type="text" name="a" value="get_users"><br/>
     uid:<input type="text" name="uid" value="10003"><br/>
-    <input type="button" value="页面form+FormData post" onclick="xmlHttpRequest_POST_upload()">
+    <input type="button" value="POST - set FormData from 页面form元素 + send FormData" onclick="xmlHttpRequest_POST_upload()">
 </form>
 
 

@@ -29,7 +29,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self af_post_json];
+  [self af_post_myself];
 }
 
 #pragma mark - ********** customize method **********
@@ -144,6 +144,40 @@
       }else{
         NSArray *arr = [[data objectForKey:@"result"] objectForKey:@"data"];
         DRLog(@"post arr count..%lu",(unsigned long)arr.count);
+      }
+    }
+  }];
+  [task resume];
+}
+
+//自己搭建php服务器
+-(void)af_post_myself{
+  
+  NSString *bodyString = @"a=get_users&uid=10001";
+  [bodyString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+  NSData *bodyData = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+  
+  NSURL *url = [NSURL URLWithString:@"http://192.168.3.169/PHP_MyServer.php"];
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+  [request setHTTPMethod:@"POST"];
+  [request setHTTPBody:bodyData];
+  
+  NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
+  AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:conf];
+  AFHTTPResponseSerializer *respon = [AFHTTPResponseSerializer serializer];
+  respon.acceptableContentTypes = [NSSet setWithObject:@"application/json"];//php服务器默认是text/xml，要用application/json的话服务端要修改header('Content-Type: application/json');
+  manager.responseSerializer = respon;
+  
+  NSURLSessionTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+    if (error) {
+      DRLog(@"error response..:%@",[error localizedDescription]);
+    }else{
+      NSError *dataError = nil;
+      NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
+      if (dataError) {
+        DRLog(@"dateError response..:%@",response);
+      }else{
+        DRLog(@"success data:%@",data);
       }
     }
   }];
