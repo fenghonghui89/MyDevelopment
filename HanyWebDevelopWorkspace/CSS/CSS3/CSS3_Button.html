@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 按钮</title>
+    <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
+</head>
+<body>
+
+<!---------------------------------------------------------------目录--------------------------------------------------------------------->
+<h1 id="CSS3_Button_menu">目录</h1>
+<a href="../Root_CSS.html">回到CSS根目录</a><br/>
+<br/>
+
+<!-------------------------------------------------------------------CSS3 按钮----------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Button_1">CSS3 按钮</h1>
+<a href="#CSS3_Button_menu">回到目录</a>
+<hr />
+
+<style>
+    button#button_CSS3_Button_1{
+
+        display: inline-block;
+        border-radius: 4px;
+        background-color: red;
+        color: greenyellow;
+        font-size: 28px;
+        width: 200px;
+        border: none;
+        text-align: center;
+        transition: all 0.5s;
+        cursor: alias;
+        padding: 20px;
+    }
+
+    button#button_CSS3_Button_1 span{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    button#button_CSS3_Button_1 span:after{
+        content: '»';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+
+    }
+
+    button#button_CSS3_Button_1:hover span{
+        padding-right: 25px;
+    }
+
+    button#button_CSS3_Button_1:hover span:after{
+        opacity: 1;
+        right: 0
+    }
+
+
+
+
+</style>
+
+<button id="button_CSS3_Button_1">
+    <span>hello</span>
+</button>
+
+<br/><a href="#CSS3_Button_1">回到顶部</a><br/>
+<br/><br/><br/>
+
+</body>
+</html>
