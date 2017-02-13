@@ -19,9 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
   //向微信注册wxd930ea5d5a258f4f  com.tpages.wxpay.test
-//  [WXApi registerApp:@"wxb4ba3c02aa476ea1" withDescription:@"demo 2.0"];
-  [WXApi registerApp:@"wxa9cec0d7b7d9d1f1" withDescription:@"demo 2.0"];
-//  [WXApi registerApp:@"wxa9cec0d7b7d9d1f1"];
+//  [WXApi registerApp:@"wxb4ba3c02aa476ea1" withDescription:@"demo 2.0"];//旧api
+//  [WXApi registerApp:@"wxa9cec0d7b7d9d1f1" withDescription:@"demo 2.0"];
+  
+  [WXApi registerApp:@"wxa9cec0d7b7d9d1f1"];
   
   NSLog(@"wx sdk version :%@",[WXApi getApiVersion]);
   NSLog(@"wx support openapi:%d",[WXApi isWXAppSupportApi]);

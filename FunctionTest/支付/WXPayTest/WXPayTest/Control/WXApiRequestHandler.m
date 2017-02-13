@@ -217,7 +217,7 @@
                       Description:(NSString *)description
                         tousrname:(NSString *)tousrname
                            ExtMsg:(NSString *)extMsg {
-    [WXApi registerApp:appID withDescription:description];
+//    [WXApi registerApp:appID withDescription:description];
     JumpToBizWebviewReq *req = [[JumpToBizWebviewReq alloc]init];
     req.tousrname = tousrname;
     req.extMsg = extMsg;
