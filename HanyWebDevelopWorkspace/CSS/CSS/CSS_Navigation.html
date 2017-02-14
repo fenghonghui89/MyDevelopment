@@ -11,14 +11,14 @@
 <h1 id="CSS_Navigation_menu"></h1>
 <a href="../Root_CSS.html">回到CSS根目录</a><br/>
 <br/>
+<a href="#CSS_Navigation_1">CSS 垂直导航栏</a><br/>
+<a href="#CSS_Navigation_2">CSS 水平导航栏</a><br/>
 
-
-<!----------------------------------------------------------------CSS 导航栏-------------------------------------------------------------------->
-<h1 class="HeaderTitle" id="CSS_Navigation_1">CSS 导航栏</h1>
+<!----------------------------------------------------------------CSS 垂直导航栏-------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_Navigation_1">CSS 垂直导航栏</h1>
 <a href="#CSS_Navigation_menu">回到目录</a>
 <hr />
 
-<!--垂直导航栏-->
 <style>
     ul.CssNavi1
     {
@@ -50,9 +50,20 @@
     <li><a href="#" class="CssNavi1">Contact</a></li>
     <li><a href="#" class="CssNavi1">About</a></li>
 </ul>
-<br />
 
-<!--水平导航栏-->
+
+<br/><a href="#CSS_Navigation_1">回到顶部</a><br/>
+<br/><br/><br/>
+
+
+
+<!----------------------------------------------------------------CSS 水平导航栏-------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_Navigation_2">CSS 水平导航栏</h1>
+<a href="#CSS_Navigation_menu">回到目录</a>
+<hr />
+<pre class="MyPre">
+    * 水平导航
+</pre>
 <style>
     ul.CssNavi2
     {
@@ -85,8 +96,118 @@
     <li class="CssNavi2"><a href="#" class="CssNavi2">Link three</a></li>
     <li class="CssNavi2"><a href="#" class="CssNavi2">Link four</a></li>
 </ul>
+<br/>
+
+<pre class="MyPre">
+    * 分页导航
+</pre>
+<style>
+    ul.ul_CssNavi3{
+        display: inline-block;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    ul.ul_CssNavi3 li{
+        display: inline;
+    }
+
+    ul.ul_CssNavi3 li a{
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #dddddd;
+        margin: 0px 4px;
+        font-size: 22px;
+    }
+
+    /*第一个与最后一个li*/
+    ul.ul_CssNavi3:first-child{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 
 
+    ul.ul_CssNavi3:last-child{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    /*鼠标在上面的a*/
+    ul.ul_CssNavi3 li a:hover:not(.a_active_CssNavi3){
+        background-color: #dddddd;
+    }
+
+    /*当前页面的a*/
+    ul.ul_CssNavi3 li a.a_active_CssNavi3{
+        background-color: green;
+        color: white;
+        border: 1px solid green;
+    }
+
+    /*无效 因为float: left影响?*/
+    ul.ul_CssNavi3 li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+
+</style>
+<ul class="ul_CssNavi3">
+    <li><a href="#">«</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#" class="a_active_CssNavi3">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">»</a></li>
+</ul>
+
+
+<pre class="MyPre">
+    * 面包屑导航
+</pre>
+<style>
+    ul.ul1_CssNavi3 {
+        padding: 8px 16px;
+        /*list-style: none;*/
+        display: inline-block;
+        background-color: #eee;
+    }
+    ul.ul1_CssNavi3 li {
+        display: inline;
+    }
+
+    /*兄弟元素*/
+    ul.ul1_CssNavi3 li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+    ul.ul1_CssNavi3 li a {
+        color: green;
+        /*float: left;*/
+    }
+
+</style>
+<ul class="ul1_CssNavi3">
+    <li><a href="#">«</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">»</a></li>
+</ul>
+
+
+<br/><a href="#CSS_Navigation_2">回到顶部</a><br/>
 <br/><br/><br/>
+
+
+
 </body>
 </html>

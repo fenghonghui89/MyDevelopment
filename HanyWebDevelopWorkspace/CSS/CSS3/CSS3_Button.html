@@ -11,13 +11,17 @@
 <h1 id="CSS3_Button_menu">目录</h1>
 <a href="../Root_CSS.html">回到CSS根目录</a><br/>
 <br/>
+<a href="#CSS3_Button_1">按钮动画</a><br/>
+<a href="#CSS3_Button_2">按钮组</a><br/>
+<a href="#CSS3_Button_3">其他效果</a><br/>
 
-<!-------------------------------------------------------------------CSS3 按钮----------------------------------------------------------------->
-<h1 class="HeaderTitle" id="CSS3_Button_1">CSS3 按钮</h1>
+<!-------------------------------------------------------------------按钮动画----------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Button_1">按钮动画</h1>
 <a href="#CSS3_Button_menu">回到目录</a>
 <hr />
 
 <style>
+    /*按钮*/
     button#button_CSS3_Button_1{
 
         display: inline-block;
@@ -33,6 +37,7 @@
         padding: 20px;
     }
 
+    /*按钮里面默认的粗体文字*/
     button#button_CSS3_Button_1 span{
         cursor: pointer;
         display: inline-block;
@@ -40,6 +45,8 @@
         transition: 0.5s;
     }
 
+
+    /*正文后面的文字,默认隐藏*/
     button#button_CSS3_Button_1 span:after{
         content: '»';
         position: absolute;
@@ -50,13 +57,15 @@
 
     }
 
+    /*鼠标在上面时,按钮里面的粗体文字*/
     button#button_CSS3_Button_1:hover span{
         padding-right: 25px;
     }
 
+    /*鼠标在上面时 显示隐藏的文字*/
     button#button_CSS3_Button_1:hover span:after{
         opacity: 1;
-        right: 0
+        right: 0;
     }
 
 
@@ -69,6 +78,120 @@
 </button>
 
 <br/><a href="#CSS3_Button_1">回到顶部</a><br/>
+<br/><br/><br/>
+
+
+<!-------------------------------------------------------------------按钮组----------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Button_2">按钮组</h1>
+<a href="#CSS3_Button_menu">回到目录</a>
+<hr />
+
+<style>
+    button.button_CSS3_Button_2{
+        background-color: #4CAF50;
+        border: 1px solid green;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+    }
+
+    button.button_CSS3_Button_2:hover{
+        background-color: #3e8e41;
+    }
+</style>
+<button class="button_CSS3_Button_2">111</button>
+<button class="button_CSS3_Button_2">111</button>
+<button class="button_CSS3_Button_2">111</button>
+<button class="button_CSS3_Button_2">111</button>
+<div style="clear: both"></div>
+
+
+<br/><a href="#CSS3_Button_2">回到顶部</a><br/>
+<br/><br/><br/>
+
+
+<!-------------------------------------------------------------------其他效果----------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_Button_3">其他效果</h1>
+<a href="#CSS3_Button_menu">回到目录</a>
+<hr />
+
+<pre class="MyPre">
+    * 波纹效果
+</pre>
+<style>
+    button.button_CSS3_Button_3 {
+        position: relative;
+        background-color: #4CAF50;
+        border: none;
+        font-size: 28px;
+        color: #FFFFFF;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    button.button_CSS3_Button_3:after {
+        content: "";
+        background: #90EE90;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px!important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+    }
+
+    button.button_CSS3_Button_3:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+    }
+</style>
+<button class="button_CSS3_Button_3">1111</button>
+
+<pre class="MyPre">
+    * 按压效果
+</pre>
+<style>
+    button.button1_CSS3_Button_3 {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    button.button1_CSS3_Button_3:hover {background-color: #3e8e41}
+
+    button.button1_CSS3_Button_3:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
+<button class="button1_CSS3_Button_3">1111</button>
+
+<br/><a href="#CSS3_Button_3">回到顶部</a><br/>
 <br/><br/><br/>
 
 </body>

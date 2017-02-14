@@ -7,20 +7,22 @@
 </head>
 <body>
 
-<!-------------------------------------------------------------------CSS3 用户界面----------------------------------------------------------------->
+<!-------------------------------------------------------------------CSS3 resize / box-sizing / outline outline-offset----------------------------------------------------------------->
 <h1 id="CSS3_UserScreen_menu">CSS3 用户界面</h1>
 <a href="../Root_CSS.html">回到CSS根目录</a><br/>
 <br/>
+<a href="#CSS3_UserScreen_1">resize</a><br/>
+<a href="#CSS3_UserScreen_2">box-sizing</a><br/>
+<a href="#CSS3_UserScreen_3">outline outline-offset</a><br/>
 
-<!------------------------------------------------------------------CSS3 用户界面------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CSS3_UserScreen_1">CSS3 用户界面</h1>
+<!------------------------------------------------------------------resize------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS3_UserScreen_1">resize</h1>
 <a href="#CSS3_UserScreen_menu">回到目录</a>
 <hr />
 
-
 <pre class="MyPre">
     * resize
-可以用鼠标自由控制尺寸
+    可以用鼠标自由控制尺寸
 </pre>
 <style>
     div#Css3UserScreen1
@@ -35,12 +37,24 @@
 <div id="Css3UserScreen1">resize 属性规定是否可由用户调整元素尺寸。</div><br/>
 
 
+<br/><a href="#CSS3_UserScreen_1">回到顶部</a><br/>
+<br/><br/><br/>
+
+<!--------------------------------------------------------------------box-sizing---------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_UserScreen_2">box-sizing</h1>
+<a href="#CSS3_UserScreen_menu">回到目录</a>
+<hr />
 
 <pre class="MyPre">
    * box-sizing
-以确切的方式定义适应某个区域的具体内容
-如果不指定,则默认一行内尽量输出
-如果指定且配合width/float,则按照样式排列
+    以确切的方式定义适应某个区域的具体内容
+    如果不指定,则默认一行内尽量输出
+    如果指定且配合width/float,则按照样式排列
+
+    默认情况下，元素的宽度与高度计算方式如下：
+    width(宽) + padding(内边距) + border(边框) = 元素实际宽度
+    height(高) + padding(内边距) + border(边框) = 元素实际高度
+    设置box-sizing后,则 padding(内边距) 和 border(边框) 也包含在 width 和 height 中
 </pre>
 <style>
     div#Css3UserScreen_container
@@ -53,6 +67,7 @@
         box-sizing:border-box;
         -moz-box-sizing:border-box; /* Firefox */
         -webkit-box-sizing:border-box; /* Safari */
+
         width:33.33%;
         border:1em solid red;
         float:left;
@@ -67,11 +82,17 @@
     <div id="Css3UserScreen_clear"></div>
 </div><br/>
 
+<br/><a href="#CSS3_UserScreen_2">回到顶部</a><br/>
+<br/><br/><br/>
 
+<!--------------------------------------------------------------------outline outline-offset---------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS3_UserScreen_3">outline outline-offset</h1>
+<a href="#CSS3_UserScreen_menu">回到目录</a>
+<hr />
 
 <pre class="MyPre">
     * outline outline-offset
-边框外的轮廓,跟边框不同,不占用空间,可能是非矩形
+    边框外的轮廓,跟边框不同,不占用空间,可能是非矩形
 </pre>
 <style>
     div#Css3UserScreen3
@@ -89,11 +110,8 @@
 
 
 
-
+<br/><a href="#CSS3_UserScreen_3">回到顶部</a><br/>
 <br/><br/><br/>
-
-
-
 
 </body>
 </html>
