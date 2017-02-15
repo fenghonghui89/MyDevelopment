@@ -10,30 +10,42 @@
 
 
 <style>
-    .button {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
+    .bgDiv{
+        background-color: red;
+        padding: 10px;
+    }
+    .contentDiv{
+        position: relative;
+        background-color: green;
+        box-sizing: border-box;
+        width: 100%;
+        height: 500px;
+    }
+    .contentImg1,.contentImg2{
+        background-color: cornflowerblue;
+        box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
     }
 
-    .disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
+    .contentImg1{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .contentImg2{
+
     }
 </style>
 
-<h2>禁用按钮</h2>
-<p>我们可以使用 opacity 属性为按钮添加透明度 (看起来类似 "disabled" 属性效果)。</p>
-
-<button class="button">正常按钮</button>
-<button class="button disabled">禁用按钮</button>
+<div class="bgDiv">
+    <div class="contentDiv">
+        <img src="" alt="xxxxx" class="contentImg1">
+        <img src="" alt="22222" class="contentImg2">
+    </div>
+</div>
 
 
 </body>

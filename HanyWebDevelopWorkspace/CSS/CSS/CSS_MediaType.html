@@ -50,14 +50,20 @@
     not only all
 </pre>
 <style>
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 500px) and (max-width: 1000px){
         p.CssMediaType2 {
             background-color: lightgreen;
         }
     }
+
+    @media screen and (min-width: 1001px){
+        p.CssMediaType2{
+            background-color: indianred;
+        }
+    }
 </style>
 
-<p class="CssMediaType2">显示了适用于电脑显示器的样式:This is some text that is placed in the transparent box.</p>
+<p class="CssMediaType2">当浏览器宽度处于500px~1000px的区间,会变色</p>
 
 <br/><a href="#CSS_MediaType_2">回到顶部</a><br/>
 <br/><br/><br/>

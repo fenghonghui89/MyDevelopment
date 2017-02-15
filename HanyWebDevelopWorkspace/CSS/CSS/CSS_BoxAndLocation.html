@@ -12,13 +12,12 @@
 <h1 id="CSS_Box_menu">CSS 框模型 定位 布局 堆叠 浮动 display</h1>
 <a href="../Root_CSS.html">回到CSS根目录</a><br/>
 <br/>
-<a href="#CSS_Box_eq1">例子1 父div根据子元素自适应高度</a><br/>
-<a href="#CSS_Box_eq2">例子2 无论父元素怎么改变大小,子元素距离父元素四边距离均为10</a><br/>
-<a href="#CSS_Box_eq3">例子3 div大小为屏幕大小减去边距,类似背景</a><br/>
-<a href="#CSS_Box_eq4">例子4 outline/border/padding/margin</a><br/>
-<a href="#CSS_Box_eq5">例子5 position定位</a><br/>
+<a href="#CSS_Box_eq1">例子 父div根据子元素自适应高度</a><br/>
+<a href="#CSS_Box_eq2">例子 无论父元素怎么改变大小,子元素距离父元素四边距离均为10</a><br/>
+<a href="#CSS_Box_eq3">例子 div大小为屏幕大小减去边距,类似背景</a><br/>
+<a href="#CSS_Box_eq5">例子 position定位</a><br/>
 <br/>
-<a href="#CSS_Box_div">框模型:边框 背景 外边距 内边距</a><br/>
+<a href="#CSS_Box_div">框模型:背景/outline/border/padding/margin</a><br/>
 <a href="#CSS_Box_relative">相对定位 relative</a><br/>
 <a href="#CSS_Box_absolute">绝对定位 absolute</a><br/>
 <a href="#CSS_Box_fixed">绝对定位 fixed</a><br/>
@@ -39,14 +38,14 @@
 </pre>
 
 
-<!------------------------------------------------------------------例子1 父div根据子元素自适应高度------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CSS_Box_eq1">例子1 父div根据子元素自适应高度</h1>
+<!------------------------------------------------------------------例子 父div根据子元素自适应高度------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS_Box_eq1">例子 父div根据子元素自适应高度</h1>
 <a href="#CSS_Box_menu">回到目录</a>
 <hr />
 
 
 <style>
-    /*最底层父元素*/
+    /*最底层父div*/
     div#CssPosition_eq1_div1{
         background-color: #99bbbb;
         position: relative;
@@ -55,13 +54,14 @@
     /*高度显示条*/
     div#CssPosition_eq1_div2{
         background-color: orange;
+        color: red;
         position: absolute;
         height: 100%;
         width: 20px;
         right: 10px;
     }
 
-    /*上层元素*/
+    /*上层元素div*/
     div#CssPosition_eq1_div3{
         background-color: #66ff66;
         position: relative;
@@ -70,7 +70,7 @@
 </style>
 <div id="CssPosition_eq1_div1">
     <div id="CssPosition_eq1_div2">
-        <span style="color: red">最底层父元素高度显示条</span>
+        最底层父元素高度显示条
     </div>
     <div id="CssPosition_eq1_div3">
         <h1>这是h1...这是h1...这是h1...</h1>
@@ -86,8 +86,8 @@
 <br/><br/><br/>
 
 
-<!------------------------------------------------------------------例子2 无论父元素怎么改变大小,子元素距离父元素四边距离均为10------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CSS_Box_eq2">例子2 无论父元素怎么改变大小,子元素距离父元素四边距离均为10</h1>
+<!------------------------------------------------------------------例子 无论父元素怎么改变大小,子元素距离父元素四边距离均为10------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS_Box_eq2">例子 无论父元素怎么改变大小,子元素距离父元素四边距离均为10</h1>
 <a href="#CSS_Box_menu">回到目录</a>
 <hr />
 
@@ -96,22 +96,37 @@
     所以计算子元素的长宽时要减去40px=(10内边距+10偏移)*2
     设置边框后会偏移,未解决...
 </pre>
+<!--<style>-->
+    <!--div#CssPosition_eq2_div1{-->
+        <!--background-color: #0000FF;-->
+        <!--height: 400px;-->
+    <!--}-->
+
+    <!--div#CssPosition_eq2_div2{-->
+        <!--background-color: #00FF00;-->
+        <!--/*border: 2px red dashed;*/-->
+        <!--width: calc(100% - 40px);-->
+        <!--height: calc(100% - 40px);-->
+        <!--padding: 10px;-->
+
+        <!--position: relative;-->
+        <!--top: 10px;-->
+        <!--left: 10px;-->
+    <!--}-->
+<!--</style>-->
+
 <style>
     div#CssPosition_eq2_div1{
         background-color: #0000FF;
-        height: 400px;
-    }
-
-    div#CssPosition_eq2_div2{
-        background-color: #00FF00;
-        /*border: 2px red dashed;*/
-        width: calc(100% - 40px);
-        height: calc(100% - 40px);
+        height: 200px;
         padding: 10px;
-
-        position: relative;
-        top: 10px;
-        left: 10px;
+    }
+    div#CssPosition_eq2_div2{
+        background-color: #90EE90;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
     }
 </style>
 <div id="CssPosition_eq2_div1">
@@ -122,8 +137,8 @@
 
 <br/><br/><br/>
 
-<!------------------------------------------------------------------例子3 div大小为屏幕大小减去边距,类似背景------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CSS_Box_eq3">例子3 div大小为屏幕大小减去边距,类似背景</h1>
+<!------------------------------------------------------------------例子 div大小为屏幕大小减去边距,类似背景------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS_Box_eq3">例子 div大小为屏幕大小减去边距,类似背景</h1>
 <a href="#CSS_Box_menu">回到目录</a>
 <hr />
 
@@ -145,67 +160,10 @@
 
 <br/><br/><br/>
 
-<!------------------------------------------------------------------例子4 outline/border/padding/margin ------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CSS_Box_eq4">例子4 outline/border/padding/margin</h1>
-<a href="#CSS_Box_menu">回到目录</a>
-<hr />
-
-<pre class="MyPre">
-    传参组合:
-    上 右 下 左
-    上 右左 下
-    上下 右左
-    四边
-
-    例子没有引入大于0的margin,因为很难解决
-</pre>
-<style>
-
-    div#divbig{
-        position: relative;
-        background-color: green;
-        width: 100%;
-        height: 500px;
-    }
-
-    div#div10{
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        padding: 10px;
-        margin: 0px;
-        width: calc(100% - 80px);/*(padding10+border10+left20)*2 不算outline*/
-        height: calc(100% - 80px);/*(padding10+border10+top20)*2 不算outline*/
-        background-color: indianred;
-        border: 10px dashed deepskyblue;
-        outline: 10px solid purple;
 
 
-    }
-
-    div#divs{
-        background-color:wheat;
-    }
-    div#divs1{
-        position: absolute;
-        background-color:wheat;
-        bottom: 10px;
-        left: 10px;
-    }
-</style>
-<div id="divbig">
-    <div id="div10">
-        <div id="divs">111111</div>
-        <div id="divs1">222222</div>
-    </div>
-</div>
-
-<br/><br/><br/>
-
-<!------------------------------------------------------------------例子5 position定位------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CSS_Box_eq5">例子5 position定位</h1>
+<!------------------------------------------------------------------例子 position定位------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS_Box_eq5">例子 position定位</h1>
 <a href="#CSS_Box_menu">回到目录</a>
 <hr />
 
@@ -268,12 +226,12 @@
 </div>
 
 <br/><br/><br/>
-<!------------------------------------------------------------------框模型:边框 背景 外边距 内边距------------------------------------------------------------------>
-<h1 class="HeaderTitle" id="CSS_Box_div">框模型:边框 背景 外边距 内边距</h1>
+<!------------------------------------------------------------------框模型:背景/outline/border/padding/margin------------------------------------------------------------------>
+<h1 class="HeaderTitle" id="CSS_Box_div">框模型:背景/outline/border/padding/margin</h1>
 <a href="#CSS_Box_menu">回到目录</a>
 <hr />
 
-<pre>
+<pre class="MyPre">
     * 笔记:
 
     背景颜色只包含内边距,不包含边框,边框如果是虚线则边框背景色也是跟元素背景色一样
@@ -281,31 +239,93 @@
     内边距、边框和外边距都是可选的，默认值是零
     外边距默认是透明的，因此不会遮挡其后的任何元素.
     外边距可以是负值，而且在很多情况下都要使用负值的外边距
+    传参组合:
+    上 右 下 左
+    上 右左 下
+    上下 右左
+    四边
 
-    内边距padding 外边距margin 上右下左
-    边框 上右下左 颜色同理 默认为none
 
     外边距合并(具体看w3cschool)
     指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
     合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+
+
+    例子没有引入大于0的margin,因为很难解决
 </pre>
 
-<pre>
-    例子:
-    左右外边距50 虚线边框2 内边距10
-</pre>
+<!--<style>-->
+
+    <!--div#divbig{-->
+        <!--position: relative;-->
+        <!--background-color: green;-->
+        <!--width: 100%;-->
+        <!--height: 500px;-->
+    <!--}-->
+
+    <!--div#div10{-->
+        <!--position: absolute;-->
+        <!--top: 20px;-->
+        <!--left: 20px;-->
+        <!--right: 20px;-->
+        <!--bottom: 20px;-->
+        <!--padding: 10px;-->
+        <!--margin: 0px;-->
+        <!--width: calc(100% - 80px);/*(padding10+border10+left20)*2 不算outline*/-->
+        <!--height: calc(100% - 80px);/*(padding10+border10+top20)*2 不算outline*/-->
+        <!--background-color: indianred;-->
+        <!--border: 10px dashed deepskyblue;-->
+        <!--outline: 10px solid purple;-->
+
+
+    <!--}-->
+
+    <!--div#divs{-->
+        <!--background-color:wheat;-->
+    <!--}-->
+    <!--div#divs1{-->
+        <!--position: absolute;-->
+        <!--background-color:wheat;-->
+        <!--bottom: 10px;-->
+        <!--left: 10px;-->
+    <!--}-->
+<!--</style>-->
+
 <style>
-    div#CssBlock_div{
-        background-color: red;
-        border: 2px lightblue dashed;
-        margin-left: 50px;
-        margin-right: 50px;
+    div#divbig{
+        background-color: green;
+        height: 500px;
+        padding: 20px;
+    }
+
+    div#div10{
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
         padding: 10px;
-        height: 100px;
+
+        background-color: indianred;
+        border: 10px solid deepskyblue;
+        outline: 10px solid purple;
+    }
+
+    div#divs{
+        background-color: wheat;
+    }
+
+    div#divs1{
+        background-color: wheat;
+        position: absolute;
+        bottom: 10px;
+        left:10px;
     }
 </style>
-<div id="CssBlock_div">
-    <img src="" alt="no img" style="background-color: #0000FF;width: 50px;height: 50px">
+<div id="divbig">
+    <div id="div10">
+        <div id="divs">111111</div>
+        <div id="divs1">222222</div>
+    </div>
 </div>
 
 
@@ -337,7 +357,7 @@
     }
 </style>
 <div id="CssPosition_relative_div1">
-    <img src="" alt="000" id="CssPosition_relative_img">
+    <img src="" alt="relative" id="CssPosition_relative_img">
     <img src="" alt="1111" id="CssPosition_relative_img1">
 </div>
 
@@ -381,7 +401,7 @@
 </style>
 <div id="CssPosition_absolute_div1">
     <div id="CssPosition_absolute_div2">
-        <img src="" alt="11111" id="CssPosition_absolute_img1">
+        <img src="" alt="absolute" id="CssPosition_absolute_img1">
         <img src="" alt="22222" id="CssPosition_absolute_img2">
     </div>
 </div>
