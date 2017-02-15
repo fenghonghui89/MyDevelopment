@@ -7,12 +7,16 @@
 </head>
 <body>
 
-<!----------------------------------------------------------------CSS 导航栏-------------------------------------------------------------------->
-<h1 id="CSS_Navigation_menu"></h1>
+<!----------------------------------------------------------------目录-------------------------------------------------------------------->
+<h1 id="CSS_Navigation_menu">目录</h1>
 <a href="../Root_CSS.html">回到CSS根目录</a><br/>
 <br/>
 <a href="#CSS_Navigation_1">CSS 垂直导航栏</a><br/>
 <a href="#CSS_Navigation_2">CSS 水平导航栏</a><br/>
+<br/>
+<a href="#CSS_DownList_1">CSS 下拉菜单1</a><br/>
+<br/>
+<a href="#CSS_Navigation_eg1">例子:可下拉水平导航条</a><br/>
 
 <!----------------------------------------------------------------CSS 垂直导航栏-------------------------------------------------------------------->
 <h1 class="HeaderTitle" id="CSS_Navigation_1">CSS 垂直导航栏</h1>
@@ -122,14 +126,14 @@
         font-size: 22px;
     }
 
-    /*第一个与最后一个li*/
-    ul.ul_CssNavi3:first-child{
+    /*第一个与最后一个li的a*/
+    ul.ul_CssNavi3 li:first-child a{
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
     }
 
 
-    ul.ul_CssNavi3:last-child{
+    ul.ul_CssNavi3 li:last-child a{
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
     }
@@ -207,6 +211,97 @@
 <br/><a href="#CSS_Navigation_2">回到顶部</a><br/>
 <br/><br/><br/>
 
+<!-------------------------------------------------------------下拉菜单1----------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_DownList_1">下拉菜单1</h1>
+<a href="#CSS_Navigation_menu">回到目录</a>
+<hr />
+
+<style>
+
+    div.dropdownDiv_1 {
+        position: relative;
+        display: inline-block;
+    }
+    button.btn_1,button.btn_2{
+        background-color: greenyellow;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button.btn_2{
+        height: 100px;
+    }
+
+    div.dropdownContentDiv_1,div.dropdownContentDiv1_1 {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    }
+
+    /*右菜单*/
+    div.dropdownContentDiv1_1 {
+        right: 0px;
+    }
+
+    div.dropdownContentDiv_1 a,div.dropdownContentDiv1_1 a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+
+    div.dropdownDiv_1:hover div.dropdownContentDiv_1,
+    div.dropdownDiv_1:hover div.dropdownContentDiv1_1{
+        display: block;
+    }
+    div.dropdownDiv_1:hover button.btn_1,
+    div.dropdownDiv_1:hover button.btn_2{
+        background-color: green;
+    }
+    a.a_1:hover{
+        background-color: #f1f1f1;
+    }
+
+</style>
+
+<div class="dropdownDiv_1">
+    <button class="btn_1">左菜单</button>
+    <div class="dropdownContentDiv_1">
+        <a class="a_1">菜鸟教程1</a>
+        <a class="a_1">菜鸟教程2</a>
+        <a class="a_1">菜鸟教程3</a>
+        <a class="a_1">菜鸟教程4</a>
+    </div>
+</div>
+
+<div class="dropdownDiv_1">
+    <button class="btn_2">右菜单</button>
+    <div class="dropdownContentDiv1_1">
+        <a class="a_1">菜鸟教程1</a>
+        <a class="a_1">菜鸟教程2</a>
+        <a class="a_1">菜鸟教程3</a>
+        <a class="a_1">菜鸟教程4</a>
+    </div>
+</div>
+
+
+<br/><a href="#CSS_DownList_1">回到顶部</a><br/>
+<br/><br/><br/>
+
+
+<!-------------------------------------------------------------例子:可下拉水平导航条----------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_Navigation_eg1">例子:可下拉水平导航条</h1>
+<a href="#CSS_Navigation_menu">回到目录</a>
+<hr />
 
 
 </body>

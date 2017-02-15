@@ -64,7 +64,6 @@
     /*上层元素div*/
     div#CssPosition_eq1_div3{
         background-color: #66ff66;
-        position: relative;
         opacity: 0.7;
     }
 </style>
@@ -357,8 +356,8 @@
     }
 </style>
 <div id="CssPosition_relative_div1">
-    <img src="" alt="relative" id="CssPosition_relative_img">
-    <img src="" alt="1111" id="CssPosition_relative_img1">
+    <img src="" alt="111111:relative" id="CssPosition_relative_img">
+    <img src="" alt="222222" id="CssPosition_relative_img1">
 </div>
 
 <br/><br/><br/>
@@ -377,15 +376,14 @@
     div#CssPosition_absolute_div1{
         background-color: #0000FF;
         height: 200px;
+        padding: 10px;
     }
     div#CssPosition_absolute_div2{
         background-color: #00FF00;
-        width: calc(100% - 20px);
-        height: calc(100% - 20px);
+        width: 100%;
+        height: 100%;
 
         position: relative;
-        top: 10px;
-        left: 10px;
     }
 
     img#CssPosition_absolute_img1,img#CssPosition_absolute_img2{
@@ -401,7 +399,7 @@
 </style>
 <div id="CssPosition_absolute_div1">
     <div id="CssPosition_absolute_div2">
-        <img src="" alt="absolute" id="CssPosition_absolute_img1">
+        <img src="" alt="11111:absolute" id="CssPosition_absolute_img1">
         <img src="" alt="22222" id="CssPosition_absolute_img2">
     </div>
 </div>
@@ -507,116 +505,104 @@
 
 
 <pre class="MyPre">
-    * display属性
+    * 笔记
     display:none可以隐藏某个元素，且隐藏的元素不会占用任何空间。
     visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间.
 </pre>
 
-<pre>
-    block 变成块级属性
+<pre class="Note">
+    * block 变成块级属性
 </pre>
 <span>span1111111</span>
 <span style="display: block">span2222222</span>
 <span>span3333333</span>
 
-<pre>
-    inline 变成行内属性
+<pre class="Note">
+    * inline 变成行内属性
 </pre>
 <span>span1111111</span>
 <div style="display: inline">div2</div>
 <span>span2222222</span>
 
-<pre>
-    例子
+<pre class="Note">
+    * inline-block
+    例子:css-下拉菜单
 </pre>
-<style>
-    a.CssPosition_display_a{
-        color: #0000FF;
-        background-color: wheat;
-    }
-    div#CssPosition_display_div00{
-        width: 100%;
-        height: 20px;
-        text-align: center;
-        background-color: #99bbbb;
-    }
-</style>
-<div id="CssPosition_display_div00">
-    <a href="http://www.baidu.com" class="CssPosition_display_a">1111111111111111111111111111</a>
-    <a href="http://www.baidu.com" class="CssPosition_display_a">2222222222222222222222222222</a>
-    <a href="http://www.baidu.com" class="CssPosition_display_a">3333333333333333333333333333</a>
-    <a href="http://www.baidu.com" class="CssPosition_display_a">1111111111111111111111111111</a>
-    <a href="http://www.baidu.com" class="CssPosition_display_a">2222222222222222222222222222</a>
-    <a href="http://www.baidu.com" class="CssPosition_display_a">3333333333333333333333333333</a>
-</div>
-<br/><br/>
 
-<pre>
-   inline-block
+<pre class="Note">
+    * flex 详情查看css3-弹性盒子
 </pre>
 <style>
-    div#CssPosition_display_div0{
-        background-color: greenyellow;
+    div#bgDiv_CSS_Box_display_flex{
+        background-color: purple;
         padding: 5px;
     }
-    div#CssPosition_display_div1,div#CssPosition_display_div2,div#CssPosition_display_div3{
-        display: inline-block;
-        width: 100%;
-    }
-    div#CssPosition_display_div1{
-        background-color: rosybrown;
-    }
-    div#CssPosition_display_div2{
-        background-color: deepskyblue;
-        margin-top: 5px;
-    }
-    div#CssPosition_display_div3{
-        background-color: yellow;
-        margin-top: 5px;
-    }
-    button.CssPosition_display_btn{
-        width: 33.333%;
-        height: 30px;
+
+    div#contentDiv1_CSS_Box_display_flex{background-color: deepskyblue;}
+    div#contentDiv2_CSS_Box_display_flex{background-color: indianred;margin-top: 5px}
+    div#contentDiv3_CSS_Box_display_flex{background-color: greenyellow;margin-top: 5px}
+
+    div#contentDiv1_CSS_Box_display_flex,div#contentDiv2_CSS_Box_display_flex,div#contentDiv3_CSS_Box_display_flex{
         box-sizing: border-box;
-        float: left;
+        width: 100%;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-between;
+
     }
+
+    button.btn_CSS_Box_display_flex{
+        box-sizing: border-box;
+        width: 33.33%;
+        height: 30px;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        opacity: 0.7;
+    }
+
 </style>
-<div id="CssPosition_display_div0">
-    <div id="CssPosition_display_div1">
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
+
+<div id="bgDiv_CSS_Box_display_flex">
+    <div id="contentDiv1_CSS_Box_display_flex">
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
+        <button class="btn_CSS_Box_display_flex">btn1</button>
     </div>
-    <div id="CssPosition_display_div2">
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
+    <div id="contentDiv2_CSS_Box_display_flex">
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
+        <button class="btn_CSS_Box_display_flex">btn2</button>
     </div>
-    <div id="CssPosition_display_div3">
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
-        <button class="CssPosition_display_btn">btn</button>
+    <div id="contentDiv3_CSS_Box_display_flex">
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
+        <button class="btn_CSS_Box_display_flex">btn3</button>
     </div>
 </div>
 
+<br/><a href="#CSS_Box_display">回到顶部</a><br/>
 <br/><br/><br/>
 
 <!------------------------------------------------------------------float clear------------------------------------------------------------------>
