@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSS 导航栏</title>
+    <title>CSS 导航栏 下拉菜单 分页</title>
     <link rel="stylesheet" type="text/css" href="../../src/MainFiles/MainCSS.css">
 </head>
 <body>
@@ -13,6 +13,8 @@
 <br/>
 <a href="#CSS_Navigation_1">CSS 垂直导航栏</a><br/>
 <a href="#CSS_Navigation_2">CSS 水平导航栏</a><br/>
+<a href="#CSS_Navigation_3">CSS 分页导航</a><br/>
+<a href="#CSS_Navigation_4">CSS 面包屑导航</a><br/>
 <br/>
 <a href="#CSS_DownList_1">CSS 下拉菜单1</a><br/>
 <br/>
@@ -26,7 +28,7 @@
 <style>
     ul.CssNavi1
     {
-        list-style-type:none;
+        list-style-type:none;/*让整体变为可点击链接区域（不只是文本），它允许我们指定宽度*/
         margin:0;
         padding:0;
     }
@@ -65,42 +67,127 @@
 <h1 class="HeaderTitle" id="CSS_Navigation_2">CSS 水平导航栏</h1>
 <a href="#CSS_Navigation_menu">回到目录</a>
 <hr />
+
+
 <pre class="MyPre">
     * 水平导航
 </pre>
 <style>
     ul.CssNavi2
     {
-        float:left;
-        width:100%;
-        padding:0;
-        margin:0;
-        list-style-type:none;
+        /*width: 100%;*/
+        list-style-type: none;/*不显示开头的圆点*/
+        padding: 0;
+        margin: 0;
+        background-color: #4CAF50;
+        display: inline-block;
     }
+
     a.CssNavi2
     {
-        float:left;
-        width:7em;
-        text-decoration:none;
-        color:white;
-        background-color:purple;
+        text-decoration: none;
+        color:black;
+        background-color:white;
         padding:0.2em 0.6em;
-        border-right:1px solid white;
-    }
-    a.CssNavi2:hover {background-color:#ff3300}
+        /*border-top: 5px solid blue;*/
+        /*border-bottom: 5px solid yellow;*/
+        font-size: 30px;
 
-    /*水平方法 2选1*/
-    /*li.CssNavi2 {float: left}*/
-    li.CssNavi2 {display: inline}
+        /*display: inline-block;*/
+        float: left;
+        /*opacity: 0.5;*/
+    }
+
+    a.CssNavi2:hover {
+        background-color:#ff3300
+    }
+
+    li.CssNavi2{
+        text-decoration: none;
+        color:black;
+        background-color:white;
+        padding:0.2em 0.6em;
+        border-top: 5px solid white;
+        border-bottom: 5px solid white;
+        font-size: 30px;
+
+        width: 70%;
+        /*display: inline;*/
+        /*display: inline-block;*/
+        /*float: left;*/
+        opacity: 0.5;
+    }
+
+
+    /*设置水平*/
+    /*第一步*/
+    /*ul.CssNavi2{*/
+        /*display: inline-block;*/
+    /*}*/
+
+    /*第二步 2选1即可 都不选则为垂直导航栏*/
+
+
+    /*li.CssNavi2{*/
+        /*display: inline-block;*/
+    /*}*/
+
+
+    /*方法1*/
+    /*li.CssNavi2 {*/
+        /*display: inline;*/
+    /*}*/
+    /*a.CssNavi2{*/
+        /*!*防止a高度超出ul 无法消除间距 并且可设置宽度*!*/
+        /*display: inline-block;*/
+        /*width: 150px;*/
+    /*}*/
+
+    /*方法2*/
+    /*li.CssNavi2 {*/
+        /*float: left;*/
+    /*}*/
+    /*a.CssNavi2{*/
+        /*!*防止a高度超出ul 消除间距 并且可设置宽度*!*/
+        /*display: inline-block;*/
+
+        /*width: 150px;*/
+    /*}*/
+
+    /*方法3:最佳*/
+    /*a.CssNavi2{*/
+        /*float: left;*/
+        /*width: 150px;*/
+    /*}*/
 </style>
 
+<!--<ul class="CssNavi2">-->
+    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">Link one</a></li><li class="CssNavi2"><a href="#" class="CssNavi2">Link two</a></li><li class="CssNavi2"><a href="#" class="CssNavi2">Link three Link three</a></li><li class="CssNavi2"><a href="#" class="CssNavi2">Link four</a></li>-->
+<!--</ul>-->
+
+<!--<ul class="CssNavi2">-->
+    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">111111111111</a></li>-->
+    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">22222222</a></li>-->
+    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">333333</a></li>-->
+    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">4444</a></li>-->
+<!--</ul>-->
+
 <ul class="CssNavi2">
-    <li class="CssNavi2"><a href="#" class="CssNavi2">Link one</a></li>
-    <li class="CssNavi2"><a href="#" class="CssNavi2">Link two</a></li>
-    <li class="CssNavi2"><a href="#" class="CssNavi2">Link three</a></li>
-    <li class="CssNavi2"><a href="#" class="CssNavi2">Link four</a></li>
+    <li class="CssNavi2">11111111111111111111</li>
+    <li class="CssNavi2">222222222</li>
+    <li class="CssNavi2">333333</li>
+    <li class="CssNavi2">4444</li>
 </ul>
-<br/>
+
+
+
+<br/><a href="#CSS_Navigation_2">回到顶部</a><br/>
+<br/><br/><br/>
+
+<!----------------------------------------------------------------CSS 分页导航-------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_Navigation_3">CSS 分页导航</h1>
+<a href="#CSS_Navigation_menu">回到目录</a>
+<hr />
 
 <pre class="MyPre">
     * 分页导航
@@ -108,8 +195,12 @@
 <style>
     ul.ul_CssNavi3{
         display: inline-block;
-        padding: 0px;
-        margin: 0px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #4CAF50;
+
+        /*width: 50%;*/
     }
 
     ul.ul_CssNavi3 li{
@@ -126,7 +217,7 @@
         font-size: 22px;
     }
 
-    /*第一个与最后一个li的a*/
+    /*第一个与最后一个li的a的 圆角*/
     ul.ul_CssNavi3 li:first-child a{
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -151,11 +242,11 @@
     }
 
     /*无效 因为float: left影响?*/
-    ul.ul_CssNavi3 li+li:before {
-        padding: 8px;
-        color: black;
-        content: "/\00a0";
-    }
+    /*ul.ul_CssNavi3 li+li:before {*/
+        /*padding: 8px;*/
+        /*color: black;*/
+        /*content: "/\00a0";*/
+    /*}*/
 
 </style>
 <ul class="ul_CssNavi3">
@@ -168,7 +259,16 @@
     <li><a href="#">6</a></li>
     <li><a href="#">»</a></li>
 </ul>
+<div style="clear: both"></div>
 
+
+<br/><a href="#CSS_Navigation_3">回到顶部</a><br/>
+<br/><br/><br/>
+
+<!----------------------------------------------------------------CSS 面包屑导航-------------------------------------------------------------------->
+<h1 class="HeaderTitle" id="CSS_Navigation_4">CSS 面包屑导航</h1>
+<a href="#CSS_Navigation_menu">回到目录</a>
+<hr />
 
 <pre class="MyPre">
     * 面包屑导航
@@ -208,7 +308,7 @@
 </ul>
 
 
-<br/><a href="#CSS_Navigation_2">回到顶部</a><br/>
+<br/><a href="#CSS_Navigation_4">回到顶部</a><br/>
 <br/><br/><br/>
 
 <!-------------------------------------------------------------下拉菜单1----------------------------------------------------------------------->
@@ -302,6 +402,50 @@
 <h1 class="HeaderTitle" id="CSS_Navigation_eg1">例子:可下拉水平导航条</h1>
 <a href="#CSS_Navigation_menu">回到目录</a>
 <hr />
+
+<style>
+    ul.ul_eg1{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #4CAF50;
+    }
+
+    ul.ul_eg1 li{
+        display: inline;
+    }
+
+
+    a.a_eg1{
+        background-color: greenyellow;
+        color: black;
+        margin: 0;
+        text-align: center;
+        font-size: 30px;
+        padding: 5px 10px;
+        float: left;
+
+    }
+
+
+
+</style>
+
+<ul class="ul_eg1">
+    <li><a class="a_eg1">主页</a></li>
+    <li><a class="a_eg1">新闻</a></li>
+    <li><a class="a_eg1">下拉菜单</a></li>
+    <!--<div class="dropdownDiv_eg1">-->
+        <!--<button class="dropdownBtn_eg1">下拉菜单</button>-->
+        <!--<div class="contentDiv_eg1">-->
+            <!--<a class="content-a_eg1">aaa</a>-->
+            <!--<a class="content-a_eg1">bbb</a>-->
+            <!--<a class="content-a_eg1">ccc</a>-->
+        <!--</div>-->
+    <!--</div>-->
+</ul>
+
+
 
 
 
