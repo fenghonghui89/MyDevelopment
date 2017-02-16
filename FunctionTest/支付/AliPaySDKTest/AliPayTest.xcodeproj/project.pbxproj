@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1476A44D1DAF8DD700F46BEC /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1476A4471DAF8DD700F46BEC /* AlipaySDK.bundle */; };
-		1476A44E1DAF8DD700F46BEC /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1476A4481DAF8DD700F46BEC /* AlipaySDK.framework */; };
-		1476A44F1DAF8DD700F46BEC /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1476A4491DAF8DD700F46BEC /* libcrypto.a */; };
-		1476A4501DAF8DD700F46BEC /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1476A44A1DAF8DD700F46BEC /* libssl.a */; };
 		1476A4511DAF8DD800F46BEC /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1476A44C1DAF8DD700F46BEC /* Order.m */; };
 		1476A4751DAF8E3C00F46BEC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1476A4541DAF8E3C00F46BEC /* AFHTTPSessionManager.m */; };
 		1476A4761DAF8E3C00F46BEC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1476A4571DAF8E3C00F46BEC /* AFNetworkReachabilityManager.m */; };
@@ -35,6 +31,10 @@
 		147E14BD1D6D4C93004C176A /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 147E14B31D6D4C93004C176A /* openssl_wrapper.m */; };
 		147E14BE1D6D4C93004C176A /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 147E14B51D6D4C93004C176A /* RSADataSigner.m */; };
 		147E14BF1D6D4C93004C176A /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 147E14B71D6D4C93004C176A /* RSADataVerifier.m */; };
+		149DCB681E55481600024C86 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 149DCB641E55481600024C86 /* AlipaySDK.bundle */; };
+		149DCB691E55481600024C86 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149DCB651E55481600024C86 /* AlipaySDK.framework */; };
+		149DCB6A1E55481600024C86 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 149DCB661E55481600024C86 /* libcrypto.a */; };
+		149DCB6B1E55481600024C86 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 149DCB671E55481600024C86 /* libssl.a */; };
 		14A3B41B1C3B7ABB0036EFE3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3B41A1C3B7ABB0036EFE3 /* libc++.tbd */; };
 		14A3B41D1C3B7AC20036EFE3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3B41C1C3B7AC20036EFE3 /* libz.tbd */; };
 		14A3B41F1C3B7AC90036EFE3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3B41E1C3B7AC90036EFE3 /* SystemConfiguration.framework */; };
@@ -56,10 +56,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1476A4471DAF8DD700F46BEC /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		1476A4481DAF8DD700F46BEC /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		1476A4491DAF8DD700F46BEC /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		1476A44A1DAF8DD700F46BEC /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		1476A44B1DAF8DD700F46BEC /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		1476A44C1DAF8DD700F46BEC /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		1476A4531DAF8E3C00F46BEC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -187,6 +183,10 @@
 		147E14B51D6D4C93004C176A /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		147E14B61D6D4C93004C176A /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		147E14B71D6D4C93004C176A /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		149DCB641E55481600024C86 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		149DCB651E55481600024C86 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		149DCB661E55481600024C86 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		149DCB671E55481600024C86 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		14A3B3FC1C3B79E40036EFE3 /* AliPayTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AliPayTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A3B41A1C3B7ABB0036EFE3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		14A3B41C1C3B7AC20036EFE3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -217,16 +217,16 @@
 			files = (
 				14A3B42F1C3B7B040036EFE3 /* CoreMotion.framework in Frameworks */,
 				14A3B42D1C3B7AFD0036EFE3 /* CFNetwork.framework in Frameworks */,
-				1476A4501DAF8DD700F46BEC /* libssl.a in Frameworks */,
+				149DCB6B1E55481600024C86 /* libssl.a in Frameworks */,
 				14A3B42B1C3B7AF50036EFE3 /* Foundation.framework in Frameworks */,
 				14A3B4291C3B7AEF0036EFE3 /* UIKit.framework in Frameworks */,
 				14A3B4271C3B7AE80036EFE3 /* CoreGraphics.framework in Frameworks */,
-				1476A44E1DAF8DD700F46BEC /* AlipaySDK.framework in Frameworks */,
+				149DCB691E55481600024C86 /* AlipaySDK.framework in Frameworks */,
 				14A3B4251C3B7AE10036EFE3 /* CoreText.framework in Frameworks */,
 				14A3B4231C3B7AD90036EFE3 /* QuartzCore.framework in Frameworks */,
 				14A3B4211C3B7AD20036EFE3 /* CoreTelephony.framework in Frameworks */,
 				14A3B41F1C3B7AC90036EFE3 /* SystemConfiguration.framework in Frameworks */,
-				1476A44F1DAF8DD700F46BEC /* libcrypto.a in Frameworks */,
+				149DCB6A1E55481600024C86 /* libcrypto.a in Frameworks */,
 				14A3B41D1C3B7AC20036EFE3 /* libz.tbd in Frameworks */,
 				14A3B41B1C3B7ABB0036EFE3 /* libc++.tbd in Frameworks */,
 			);
@@ -247,10 +247,10 @@
 		1476A4461DAF8DD700F46BEC /* AliPaySDK */ = {
 			isa = PBXGroup;
 			children = (
-				1476A4471DAF8DD700F46BEC /* AlipaySDK.bundle */,
-				1476A4481DAF8DD700F46BEC /* AlipaySDK.framework */,
-				1476A4491DAF8DD700F46BEC /* libcrypto.a */,
-				1476A44A1DAF8DD700F46BEC /* libssl.a */,
+				149DCB641E55481600024C86 /* AlipaySDK.bundle */,
+				149DCB651E55481600024C86 /* AlipaySDK.framework */,
+				149DCB661E55481600024C86 /* libcrypto.a */,
+				149DCB671E55481600024C86 /* libssl.a */,
 				1476A44B1DAF8DD700F46BEC /* Order.h */,
 				1476A44C1DAF8DD700F46BEC /* Order.m */,
 			);
@@ -541,7 +541,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1476A44D1DAF8DD700F46BEC /* AlipaySDK.bundle in Resources */,
+				149DCB681E55481600024C86 /* AlipaySDK.bundle in Resources */,
 				14F895371D6B095300022215 /* Main.storyboard in Resources */,
 				14F895381D6B095300022215 /* Info.plist in Resources */,
 				14F895361D6B095300022215 /* LaunchScreen.storyboard in Resources */,

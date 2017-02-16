@@ -7,13 +7,11 @@
 //
 
 /*
- *-ObjC
- *openssl util为demo自带客户端rsa签名用工具（报错not found就到相应文件导入founcation），如果服务端做签名则可以不导入
- *待签名字符串的参数要带双引号 sign要urlencode 私钥要是pkcs8格式
- *openssl和Util文件夹内的文件 要放在外层 不能放在AliPaySDK文件夹内 否则会报找不到文件错误 原因未知
- *添加-ObjC
+ openssl util为demo自带客户端rsa签名用工具（报错not found就到相应文件导入founcation），如果服务端做签名则可以不导入
+ 待签名字符串的参数要带双引号 sign要urlencode 私钥要是pkcs8格式
+ openssl和Util文件夹内的文件 要放在外层 不能放在AliPaySDK文件夹内 否则会报找不到文件错误 原因未知
+ 添加-ObjC
  */
-
 #import "AppDelegate.h"
 #import <AlipaySDK/AlipaySDK.h>
 @interface AppDelegate ()
@@ -25,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-//  NSLog(@"version:%@",[[AlipaySDK defaultService] currentVersion]);
+  NSLog(@"version:%@",[[AlipaySDK defaultService] currentVersion]);
   return YES;
 }
 
