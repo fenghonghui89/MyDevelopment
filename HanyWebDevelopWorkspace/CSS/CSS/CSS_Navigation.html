@@ -71,15 +71,43 @@
 
 <pre class="MyPre">
     * 水平导航
+
+    注意：
+
+    ul li
+    垂直排列时
+        * 内容高度：不会超出ul高度
+        * 总高度：无论li有无突出部分（如border或padding），总体高度都不会超出ul高度
+        * 宽度：ul li都是块元素，所以默认是浏览器宽度，可设置宽度;如果ul设置inline-block，则宽度自动根据li的内容而定，但可手动设置宽度
+        * 间距：li之间没有间距
+    水平排列时
+        * 水平排列方法：li设置inline inline-block float其中之一
+        * 高度：li设置inline，突出部分会超出ul高度；li设置inline-block，则不会；li设置float，ul消失，除非ul设置inline-block
+        * 宽度：ul默认是浏览器宽度，可设置宽度，如果ul设置inline-block，则宽度自动根据li的内容总和而定，但可手动设置宽度；li宽度根据内容而定
+        * 间距：如果li的代码是不同一行的，则显示上li与li之间有间隔，这是因为li之间的回车换行符所致，解决办法是把li代码写在同一行或者采取不正常换行（参考http://www.cnblogs.com/dll-ft/p/5875489.html）
+
+
+
+    ul li a
+    垂直排列时
+        * 高度：如果a元素设置了突出部分，则下面a的突出部分会遮盖上面a，且总体高度会超出ul高度。解决办法是li设置border（虽然a的突出部分会遮盖li的border），或者a设置inline-block。
+        * 宽度：ul ul都是块元素，所以默认是浏览器宽度，可设置宽度；a是内联元素，所以宽度根据内容改变
+        * 间距：没有li之间、a之间的间距；a之间可能会有上面说的遮盖
+    水平排列时
+        * 高度：
+        * 宽度：
+        * 间距：
 </pre>
 <style>
     ul.CssNavi2
     {
-        /*width: 100%;*/
+
         list-style-type: none;/*不显示开头的圆点*/
         padding: 0;
         margin: 0;
         background-color: #4CAF50;
+
+        /*width: 50%;*/
         display: inline-block;
     }
 
@@ -103,15 +131,18 @@
     }
 
     li.CssNavi2{
-        text-decoration: none;
+
+
         color:black;
         background-color:white;
         padding:0.2em 0.6em;
-        border-top: 5px solid white;
-        border-bottom: 5px solid white;
+        border-top: 5px solid yellow;
+        border-bottom: 5px solid black;
+        border-left: 5px solid yellow;
+        border-right: 5px solid black;
         font-size: 30px;
 
-        width: 70%;
+
         /*display: inline;*/
         /*display: inline-block;*/
         /*float: left;*/
@@ -178,7 +209,7 @@
     <li class="CssNavi2">333333</li>
     <li class="CssNavi2">4444</li>
 </ul>
-
+<button>1111111</button>
 
 
 <br/><a href="#CSS_Navigation_2">回到顶部</a><br/>

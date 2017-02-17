@@ -58,6 +58,7 @@
 
 #ifndef HEADER_RSA_H
 #define HEADER_RSA_H
+
 #include <openssl/asn1.h>
 
 #ifndef OPENSSL_NO_BIO
