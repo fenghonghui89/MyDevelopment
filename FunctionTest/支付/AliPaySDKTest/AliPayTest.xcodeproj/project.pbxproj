@@ -31,6 +31,7 @@
 		1482F3D21E56B85C00A4EC38 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1482F3CB1E56B85C00A4EC38 /* openssl_wrapper.m */; };
 		1482F3D31E56B85C00A4EC38 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1482F3CD1E56B85C00A4EC38 /* RSADataSigner.m */; };
 		1482F3D41E56B85C00A4EC38 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 1482F3CF1E56B85C00A4EC38 /* RSADataVerifier.m */; };
+		1482F3D71E56B9F200A4EC38 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 1482F3D61E56B9F200A4EC38 /* Order.m */; };
 		14A3B41B1C3B7ABB0036EFE3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3B41A1C3B7ABB0036EFE3 /* libc++.tbd */; };
 		14A3B41D1C3B7AC20036EFE3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3B41C1C3B7AC20036EFE3 /* libz.tbd */; };
 		14A3B41F1C3B7AC90036EFE3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3B41E1C3B7AC90036EFE3 /* SystemConfiguration.framework */; };
@@ -176,6 +177,8 @@
 		1482F3CD1E56B85C00A4EC38 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		1482F3CE1E56B85C00A4EC38 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		1482F3CF1E56B85C00A4EC38 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		1482F3D51E56B9F200A4EC38 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		1482F3D61E56B9F200A4EC38 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		14A3B3FC1C3B79E40036EFE3 /* AliPayTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AliPayTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A3B41A1C3B7ABB0036EFE3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		14A3B41C1C3B7AC20036EFE3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -285,6 +288,8 @@
 		1482F2521E56B54A00A4EC38 /* AliPaySDK */ = {
 			isa = PBXGroup;
 			children = (
+				1482F3D51E56B9F200A4EC38 /* Order.h */,
+				1482F3D61E56B9F200A4EC38 /* Order.m */,
 				1482F2531E56B54A00A4EC38 /* AlipaySDK.bundle */,
 				1482F2541E56B54A00A4EC38 /* AlipaySDK.framework */,
 				1482F2561E56B54A00A4EC38 /* libcrypto.a */,
@@ -546,6 +551,7 @@
 				1476A47D1DAF8E3C00F46BEC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				14F895331D6B095300022215 /* AppDelegate.m in Sources */,
 				1476A47F1DAF8E3C00F46BEC /* UIButton+AFNetworking.m in Sources */,
+				1482F3D71E56B9F200A4EC38 /* Order.m in Sources */,
 				1482F3D31E56B85C00A4EC38 /* RSADataSigner.m in Sources */,
 				14F895341D6B095300022215 /* ViewController.m in Sources */,
 				1482F3D41E56B85C00A4EC38 /* RSADataVerifier.m in Sources */,
