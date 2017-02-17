@@ -18,8 +18,8 @@
 
 @implementation MD_AFNetwork_VC
 
-#pragma mark - ********** override **********
-#pragma mark - < view lifecycle >
+#pragma mark - < override >
+#pragma mark - * view lifecycle
 - (void)viewDidLoad {
   
   [super viewDidLoad];
@@ -29,11 +29,10 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self af_post_myself];
 }
 
-#pragma mark - ********** customize method **********
-#pragma mark - get
+#pragma mark - < customize method >
+#pragma mark - * get
 //http://www.webxml.com.cn 国内航班 - 全国城市
 -(void)af_get_allCity{
 
@@ -49,7 +48,7 @@
     if (error) {
       NSLog(@"error response:%@",response);
     }else{
-      //原来的xml
+      //原始xml
       NSLog(@"success response:\n%@\n httpHeaderFields:\n%@\n",response,request.allHTTPHeaderFields);
       
       NSString *xmlStr = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
@@ -114,7 +113,7 @@
 
 }
 
-#pragma mark - post
+#pragma mark - * post
 //聚合数据 - 天气预报 - post
 -(void)af_post_json{
   
@@ -184,7 +183,7 @@
   [task resume];
 }
 
-#pragma mark - Reachability
+#pragma mark - * Reachability
 -(void)af_Reachability{
 
   AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
@@ -195,7 +194,7 @@
 
 }
 
-#pragma mark - manager
+#pragma mark - * manager
 -(void)af_manager_uca{
   
   //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -217,7 +216,7 @@
   [[DGCPostManager share] getPostsBySince:0 before:0 per_page:0 site:0 location:0 place:0 type:0 user:0 userinfo:delegateInfo delegate:self];
 }
 
-#pragma mark - upload
+#pragma mark - * upload
 -(void)af_uploadImg_90days{
   
 //  UIImage *img = [UIImage imageNamed:@"000.jpg"];
@@ -241,8 +240,21 @@
 //  [[NSOperationQueue mainQueue] addOperations:@[operation] waitUntilFinished:NO];
 }
 
+#pragma mark - < action >
+- (IBAction)btnTap:(id)sender {
+  [self af_post_myself];
+}
 
-#pragma mark - ********** callback **********
+- (IBAction)btn1Tap:(id)sender {
+  [self af_get_json];
+}
+
+- (IBAction)btn2Tap:(id)sender {
+  [self af_post_json];
+}
+
+
+#pragma mark - < callback >
 -(void)DGCLogin:(DGCUserManager *)userServices isSuccess:(BOOL)isSuccess data:(DGCUserInfo *)data errorCode:(DGCRequestErrorCode)code msg:(NSString *)msg userInfo:(NSDictionary *)userInfo{
   
   if (isSuccess) {
