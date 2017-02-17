@@ -145,7 +145,7 @@
   // NOTE: 如果加签成功，则继续执行支付
   if (signedString != nil) {
     //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
-    NSString *appScheme = @"alisdkdemo";
+//    NSString *appScheme = @"alisdkdemo";
     
     // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
     NSString *orderString = [NSString stringWithFormat:@"%@&sign=%@",
