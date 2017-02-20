@@ -34,7 +34,6 @@
 -(void)viewDidAppear:(BOOL)animated{
   
   [super viewDidAppear:animated];
-  [self test_map];
 }
 
 #pragma mark - < method >
@@ -44,13 +43,18 @@
 }
 
 
--(void)test_map{
-
+-(NSInteger)test0{
+  return 100;
 }
+
+-(NSInteger)test1{
+  return 100;
+}
+
 #pragma mark - < action >
 - (IBAction)btnTap:(id)sender {
   
-  UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[] applicationActivities:@[]];
+
 }
 
 @end

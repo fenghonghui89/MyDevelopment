@@ -9,5 +9,5 @@
 #import "MDBaseViewController.h"
 
 @interface MD_FreeTest_VC : MDBaseViewController
-
+-(NSInteger)test1;
 @end

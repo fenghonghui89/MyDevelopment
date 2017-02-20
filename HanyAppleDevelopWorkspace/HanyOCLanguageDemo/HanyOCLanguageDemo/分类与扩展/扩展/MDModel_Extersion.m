@@ -8,12 +8,19 @@
 
 #import "MDModel_Extersion.h"
 
+
+
+
 @interface MDModel_Extersion ()
 
 @property(nonatomic,assign)int age1;
--(void)methodExtension;//扩展方法1
+-(void)methodExtension;//扩展方法
 
 @end
+
+
+
+
 
 
 @implementation MDModel_Extersion

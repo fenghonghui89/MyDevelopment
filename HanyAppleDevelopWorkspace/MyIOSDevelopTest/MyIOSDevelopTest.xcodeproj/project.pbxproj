@@ -224,6 +224,9 @@
 		1481FEC81DE688E1001B5FD2 /* MDPushNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1481FEC71DE688E1001B5FD2 /* MDPushNotificationManager.m */; };
 		1481FECC1DE6A064001B5FD2 /* MDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1481FECA1DE6A064001B5FD2 /* MDSettingViewController.m */; };
 		1481FECD1DE6A064001B5FD2 /* MDSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1481FECB1DE6A064001B5FD2 /* MDSettingViewController.xib */; };
+		148B29101E5A89740096408E /* MDAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148B290F1E5A89740096408E /* MDAlertController.m */; };
+		148B29431E5A9D2A0096408E /* Test_UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 148B29421E5A9D2A0096408E /* Test_UnitTest.m */; };
+		148B29451E5A9E1F0096408E /* Test_FreeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 148B29441E5A9E1F0096408E /* Test_FreeTest.m */; };
 		14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A727631CAB760100DC7BC0 /* libxml2.tbd */; };
 		14B16DBC1D9E474600659FA8 /* MD_NSRange_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */; };
 		14C8338B1DB474A0009363F9 /* NSDate+Tpages.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833711DB474A0009363F9 /* NSDate+Tpages.m */; };
@@ -249,7 +252,6 @@
 		14D5AA281DBEF8B000085365 /* MD_CFRunLoop_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D5AA261DBEF8B000085365 /* MD_CFRunLoop_VC.xib */; };
 		14DE61CF1DE5A0AA001A9968 /* MyString.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DE61CE1DE5A0AA001A9968 /* MyString.m */; };
 		14DE61D21DE5A443001A9968 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DE61D11DE5A443001A9968 /* NSObject+Swizzle.m */; };
-		14F1967F1E57121600211A01 /* MyIOSDevelopTest_UnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F1967E1E57121600211A01 /* MyIOSDevelopTest_UnitTests.m */; };
 		14F1F2131D1140F30059EDC1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1F2121D1140F30059EDC1 /* libresolv.tbd */; };
 		14FAA7331D9507CA002D81CC /* MDNSArrayNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3A91D9507C9002D81CC /* MDNSArrayNormalViewController.m */; };
 		14FAA7351D9507CA002D81CC /* MDNArrayAdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA3AE1D9507C9002D81CC /* MDNArrayAdvancedViewController.m */; };
@@ -788,6 +790,10 @@
 		1481FEC91DE6A064001B5FD2 /* MDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSettingViewController.h; sourceTree = "<group>"; };
 		1481FECA1DE6A064001B5FD2 /* MDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSettingViewController.m; sourceTree = "<group>"; };
 		1481FECB1DE6A064001B5FD2 /* MDSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSettingViewController.xib; sourceTree = "<group>"; };
+		148B290E1E5A89740096408E /* MDAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAlertController.h; sourceTree = "<group>"; };
+		148B290F1E5A89740096408E /* MDAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAlertController.m; sourceTree = "<group>"; };
+		148B29421E5A9D2A0096408E /* Test_UnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_UnitTest.m; sourceTree = "<group>"; };
+		148B29441E5A9E1F0096408E /* Test_FreeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_FreeTest.m; sourceTree = "<group>"; };
 		14A727631CAB760100DC7BC0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		14B16DBA1D9E474600659FA8 /* MD_NSRange_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSRange_VC.h; sourceTree = "<group>"; };
 		14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRange_VC.m; sourceTree = "<group>"; };
@@ -836,7 +842,6 @@
 		14DE61D01DE5A443001A9968 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
 		14DE61D11DE5A443001A9968 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
 		14F1967C1E57121600211A01 /* MyIOSDevelopTest-UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyIOSDevelopTest-UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14F1967E1E57121600211A01 /* MyIOSDevelopTest_UnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyIOSDevelopTest_UnitTests.m; sourceTree = "<group>"; };
 		14F196801E57121600211A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F1F2121D1140F30059EDC1 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		14FAA39E1D9507C9002D81CC /* CFBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBase.h; sourceTree = "<group>"; };
@@ -1905,7 +1910,8 @@
 		14F1967D1E57121600211A01 /* MyIOSDevelopTest-UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				14F1967E1E57121600211A01 /* MyIOSDevelopTest_UnitTests.m */,
+				148B29441E5A9E1F0096408E /* Test_FreeTest.m */,
+				148B29421E5A9D2A0096408E /* Test_UnitTest.m */,
 				14F196801E57121600211A01 /* Info.plist */,
 			);
 			path = "MyIOSDevelopTest-UnitTests";
@@ -3575,6 +3581,8 @@
 		14FAA7111D9507CA002D81CC /* UICustom */ = {
 			isa = PBXGroup;
 			children = (
+				148B290E1E5A89740096408E /* MDAlertController.h */,
+				148B290F1E5A89740096408E /* MDAlertController.m */,
 				14FAA7121D9507CA002D81CC /* MD_UICustom_VC.h */,
 				14FAA7131D9507CA002D81CC /* MD_UICustom_VC.m */,
 				14FAA7141D9507CA002D81CC /* MDCircularSlider.h */,
@@ -3666,7 +3674,7 @@
 					};
 					14F1967B1E57121600211A01 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 147DB17D1A8C7FA600F38EA4;
 					};
 				};
@@ -4149,6 +4157,7 @@
 				14FAA8AC1D9507CB002D81CC /* DGCDelegateInfo.m in Sources */,
 				140CAAA61DACA8EF009EE8A7 /* MASConstraint.m in Sources */,
 				14FAA7AB1D9507CB002D81CC /* MDUIScrollView2ViewController.m in Sources */,
+				148B29101E5A89740096408E /* MDAlertController.m in Sources */,
 				14FAA7811D9507CB002D81CC /* CustomURLCache.m in Sources */,
 				14FAA7BD1D9507CB002D81CC /* MDModal1ViewController.m in Sources */,
 				14FAA7D51D9507CB002D81CC /* MD_Touch_CustomView1.m in Sources */,
@@ -4210,7 +4219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F1967F1E57121600211A01 /* MyIOSDevelopTest_UnitTests.m in Sources */,
+				148B29451E5A9E1F0096408E /* Test_FreeTest.m in Sources */,
+				148B29431E5A9D2A0096408E /* Test_UnitTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4404,7 +4414,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "MyIOSDevelopTest-UnitTests/Info.plist";
@@ -4412,6 +4425,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HanyAppDev.MyIOSDevelopTest-UnitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyIOSDevelopTest.app/MyIOSDevelopTest";
 			};
 			name = Debug;
@@ -4424,14 +4438,17 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "MyIOSDevelopTest-UnitTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HanyAppDev.MyIOSDevelopTest-UnitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyIOSDevelopTest.app/MyIOSDevelopTest";
 			};
 			name = Release;
@@ -4464,6 +4481,7 @@
 				14F196841E57121600211A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

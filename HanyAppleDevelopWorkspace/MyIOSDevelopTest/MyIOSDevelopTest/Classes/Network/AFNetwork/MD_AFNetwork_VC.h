@@ -9,5 +9,6 @@
 #import "MDBaseViewController.h"
 
 @interface MD_AFNetwork_VC : MDBaseViewController
-
+-(void)af_get_json;
+-(void)af_post_json;
 @end

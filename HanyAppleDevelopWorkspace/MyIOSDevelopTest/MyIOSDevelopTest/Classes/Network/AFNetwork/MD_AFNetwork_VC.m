@@ -11,6 +11,7 @@
 #import "DGCUserManager.h"
 #import "DGCPostManager.h"
 #import "MDRootDefine.h"
+#import "MDAlertController.h"
 
 @interface MD_AFNetwork_VC()<DGCUserManagerDelegate,DGCPostManagerDelegate>
 
@@ -68,7 +69,10 @@
           GDataXMLElement *enCityName = [[city elementsForName:@"enCityName"] lastObject];
           GDataXMLElement *cnCityName = [[city elementsForName:@"cnCityName"] lastObject];
           GDataXMLElement *Abbreviation = [[city elementsForName:@"Abbreviation"] lastObject];
-          NSLog(@"%@ %@ %@",enCityName.stringValue,cnCityName.stringValue,Abbreviation.stringValue);
+          
+          NSString *result = [NSString stringWithFormat:@"%@ %@ %@",enCityName.stringValue,cnCityName.stringValue,Abbreviation.stringValue];
+          MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:result];
+          [self.navigationController pushViewController:ac animated:nil];
         }
       }
     }
@@ -96,16 +100,24 @@
   
   NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
     if (error) {
-      NSLog(@"error response:%@",response);
+      DRLog(@"error response:%@",[error localizedDescription]);
+      MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[error localizedDescription]];
+      [self.navigationController pushViewController:ac animated:nil];
     }else{
       NSError *dataError = nil;
       NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
       if (dataError) {
-        DRLog(@"dateError response..:%@",response);
+        DRLog(@"dateError response..:%@",[dataError localizedDescription]);
+        MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[dataError localizedDescription]];
+        [self.navigationController pushViewController:ac animated:nil];
       }else{
         
         NSArray *arr = [[data objectForKey:@"result"] objectForKey:@"data"];
+        NSString *result = [NSString stringWithFormat:@"get arr count..%lu",(unsigned long)arr.count];
         DRLog(@"get arr count..%lu",(unsigned long)arr.count);
+        
+        MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:result];
+        [self.navigationController pushViewController:ac animated:nil];
       }
     }
   }];
@@ -134,15 +146,23 @@
   
   NSURLSessionTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
     if (error) {
-      DRLog(@"error response..:%@",respon);
+      DRLog(@"error response:%@",[error localizedDescription]);
+      MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[error localizedDescription]];
+      [self.navigationController pushViewController:ac animated:nil];
     }else{
       NSError *dataError = nil;
       NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
       if (dataError) {
-        DRLog(@"dateError response..:%@",response);
+        DRLog(@"dateError response..:%@",[dataError localizedDescription]);
+        MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[dataError localizedDescription]];
+        [self.navigationController pushViewController:ac animated:nil];
       }else{
         NSArray *arr = [[data objectForKey:@"result"] objectForKey:@"data"];
+        NSString *result = [NSString stringWithFormat:@"post arr count..%lu",(unsigned long)arr.count];
         DRLog(@"post arr count..%lu",(unsigned long)arr.count);
+        
+        MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:result];
+        [self.navigationController pushViewController:ac animated:nil];
       }
     }
   }];
@@ -169,14 +189,20 @@
   
   NSURLSessionTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
     if (error) {
-      DRLog(@"error response..:%@",[error localizedDescription]);
+      DRLog(@"error response:%@",[error localizedDescription]);
+      MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[error localizedDescription]];
+      [self.navigationController pushViewController:ac animated:nil];
     }else{
       NSError *dataError = nil;
       NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
       if (dataError) {
-        DRLog(@"dateError response..:%@",response);
+        DRLog(@"dateError response..:%@",[dataError localizedDescription]);
+        MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[dataError localizedDescription]];
+        [self.navigationController pushViewController:ac animated:nil];
       }else{
         DRLog(@"success data:%@",data);
+        MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[data description]];
+        [self.navigationController pushViewController:ac animated:nil];
       }
     }
   }];
@@ -188,7 +214,10 @@
 
   AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
   [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-    NSLog(@"me - network change status:%ld",(long)status);
+    DRLog(@"me - network change status:%ld",(long)status);
+    NSString *result = [NSString stringWithFormat:@"me - network change status:%ld",(long)status];
+    MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:result];
+    [self.navigationController pushViewController:ac animated:nil];
   }];
   [manager startMonitoring];
 
