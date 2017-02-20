@@ -1,6 +1,10 @@
 *.mp3
 *.mp4
 *.pdf
-*.xcuserstate
-workspace.xml
+
+
 FunctionTest/社交/TwitterTest/Pods
+
+
+
+*.xcuserdatad
