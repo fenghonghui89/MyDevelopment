@@ -8,3 +8,4 @@ FunctionTest/社交/TwitterTest/Pods
 
 
 *.xcuserdatad
+.DS_Store
