@@ -4,7 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/9/21.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
-//
+//特定用途的宏
 
 #ifndef MDSpecialDefine_h
 #define MDSpecialDefine_h
