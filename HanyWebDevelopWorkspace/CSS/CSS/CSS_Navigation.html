@@ -78,7 +78,7 @@
     垂直排列时
         * 内容高度：不会超出ul高度
         * 总高度：无论li有无突出部分（如border或padding），总体高度都不会超出ul高度
-        * 宽度：ul li都是块元素，所以默认是浏览器宽度，可设置宽度;如果ul设置inline-block，则宽度自动根据li的内容而定，但可手动设置宽度
+        * 宽度：ul li都是块元素，所以默认是浏览器宽度，可设置宽度;如果ul设置inline-block，则宽度自动根据最多内容的li而定，但可手动设置宽度
         * 间距：li之间没有间距
     水平排列时
         * 水平排列方法：li设置inline inline-block float其中之一
@@ -108,7 +108,26 @@
         background-color: #4CAF50;
 
         /*width: 50%;*/
-        display: inline-block;
+        /*display: inline-block;*/
+    }
+
+    li.CssNavi2{
+
+
+        color:black;
+        background-color:white;
+        padding:0.2em 0.6em;
+        border-top: 5px solid yellow;
+        border-bottom: 5px solid black;
+        border-left: 5px solid yellow;
+        border-right: 5px solid black;
+        font-size: 30px;
+
+
+        display: inline;
+        /*display: inline-block;*/
+        /*float: left;*/
+        /*opacity: 0.5;*/
     }
 
     a.CssNavi2
@@ -130,24 +149,7 @@
         background-color:#ff3300
     }
 
-    li.CssNavi2{
 
-
-        color:black;
-        background-color:white;
-        padding:0.2em 0.6em;
-        border-top: 5px solid yellow;
-        border-bottom: 5px solid black;
-        border-left: 5px solid yellow;
-        border-right: 5px solid black;
-        font-size: 30px;
-
-
-        /*display: inline;*/
-        /*display: inline-block;*/
-        /*float: left;*/
-        opacity: 0.5;
-    }
 
 
     /*设置水平*/
@@ -209,6 +211,7 @@
     <li class="CssNavi2">333333</li>
     <li class="CssNavi2">4444</li>
 </ul>
+
 <button>1111111</button>
 
 
