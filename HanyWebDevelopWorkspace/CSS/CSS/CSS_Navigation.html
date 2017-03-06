@@ -76,17 +76,14 @@
 
     ul li
     垂直排列时
-        * 内容高度：不会超出ul高度
         * 总高度：无论li有无突出部分（如border或padding），总体高度都不会超出ul高度
         * 宽度：ul li都是块元素，所以默认是浏览器宽度，可设置宽度;如果ul设置inline-block，则宽度自动根据最多内容的li而定，但可手动设置宽度
         * 间距：li之间没有间距
     水平排列时
         * 水平排列方法：li设置inline inline-block float其中之一
-        * 高度：li设置inline，突出部分会超出ul高度；li设置inline-block，则不会；li设置float，ul消失，除非ul设置inline-block
+        * 高度：li设置inline，突出部分会超出ul高度；li设置inline-block，则不会；li设置float，ul消失，除非ul也设置inline-block
         * 宽度：ul默认是浏览器宽度，可设置宽度，如果ul设置inline-block，则宽度自动根据li的内容总和而定，但可手动设置宽度；li宽度根据内容而定
-        * 间距：如果li的代码是不同一行的，则显示上li与li之间有间隔，这是因为li之间的回车换行符所致，解决办法是把li代码写在同一行或者采取不正常换行（参考http://www.cnblogs.com/dll-ft/p/5875489.html）
-
-
+        * 间距：如果li的代码是不同一行的，则显示上li与li之间有间隔，这是因为li之间的回车换行符所致，解决办法是把li代码写在同一行或者采取不正常换行（参考http://www.cnblogs.com/dll-ft/p/5875489.html），或者li设置为float
 
     ul li a
     垂直排列时
@@ -94,26 +91,19 @@
         * 宽度：ul ul都是块元素，所以默认是浏览器宽度，可设置宽度；a是内联元素，所以宽度根据内容改变
         * 间距：没有li之间、a之间的间距；a之间可能会有上面说的遮盖
     水平排列时
-        * 高度：
-        * 宽度：
-        * 间距：
+        * 水平排列方法：li设置inline inline-block float其中之一，inline不推荐，ul会突出一部分
 </pre>
 <style>
     ul.CssNavi2
     {
-
         list-style-type: none;/*不显示开头的圆点*/
         padding: 0;
         margin: 0;
         background-color: #4CAF50;
-
-        /*width: 50%;*/
-        /*display: inline-block;*/
     }
 
-    li.CssNavi2{
-
-
+    li.CssNavi2
+    {
         color:black;
         background-color:white;
         padding:0.2em 0.6em;
@@ -122,96 +112,58 @@
         border-left: 5px solid yellow;
         border-right: 5px solid black;
         font-size: 30px;
-
-
-        display: inline;
-        /*display: inline-block;*/
-        /*float: left;*/
-        /*opacity: 0.5;*/
+        opacity: 0.5;
     }
 
     a.CssNavi2
     {
         text-decoration: none;
-        color:black;
-        background-color:white;
-        padding:0.2em 0.6em;
-        /*border-top: 5px solid blue;*/
-        /*border-bottom: 5px solid yellow;*/
         font-size: 30px;
 
-        /*display: inline-block;*/
-        float: left;
-        /*opacity: 0.5;*/
+        color:black;
+        background-color:palevioletred;
+        padding:0.2em 0.6em;
+        border-top: 5px solid blue;
+        border-bottom: 5px solid orange;
+
+        display: inline-block;/*防止a高度超出ul 消除间距 并且可设置宽度*/
+        width: 150px;
     }
 
     a.CssNavi2:hover {
-        background-color:#ff3300
+        background-color:#ff3300;
     }
 
 
-
-
     /*设置水平*/
-    /*第一步*/
-    /*ul.CssNavi2{*/
-        /*display: inline-block;*/
-    /*}*/
-
-    /*第二步 2选1即可 都不选则为垂直导航栏*/
-
-
-    /*li.CssNavi2{*/
-        /*display: inline-block;*/
-    /*}*/
-
-
-    /*方法1*/
-    /*li.CssNavi2 {*/
+    ul.CssNavi2{
+        display: inline-block;/*li设置float之后 防止ul消失*/
+    }
+    li.CssNavi2{
         /*display: inline;*/
-    /*}*/
-    /*a.CssNavi2{*/
-        /*!*防止a高度超出ul 无法消除间距 并且可设置宽度*!*/
         /*display: inline-block;*/
-        /*width: 150px;*/
-    /*}*/
+        float: left;
+    }
 
-    /*方法2*/
-    /*li.CssNavi2 {*/
-        /*float: left;*/
-    /*}*/
-    /*a.CssNavi2{*/
-        /*!*防止a高度超出ul 消除间距 并且可设置宽度*!*/
-        /*display: inline-block;*/
-
-        /*width: 150px;*/
-    /*}*/
-
-    /*方法3:最佳*/
-    /*a.CssNavi2{*/
-        /*float: left;*/
-        /*width: 150px;*/
-    /*}*/
 </style>
 
-<!--<ul class="CssNavi2">-->
-    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">Link one</a></li><li class="CssNavi2"><a href="#" class="CssNavi2">Link two</a></li><li class="CssNavi2"><a href="#" class="CssNavi2">Link three Link three</a></li><li class="CssNavi2"><a href="#" class="CssNavi2">Link four</a></li>-->
-<!--</ul>-->
 
 <!--<ul class="CssNavi2">-->
-    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">111111111111</a></li>-->
-    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">22222222</a></li>-->
-    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">333333</a></li>-->
-    <!--<li class="CssNavi2"><a href="#" class="CssNavi2">4444</a></li>-->
+    <!--<li class="CssNavi2">111111111111</a></li>-->
+    <!--<li class="CssNavi2">22222222</a></li>-->
+    <!--<li class="CssNavi2">333333</a></li>-->
+    <!--<li class="CssNavi2">4444</a></li>-->
 <!--</ul>-->
 
 <ul class="CssNavi2">
-    <li class="CssNavi2">11111111111111111111</li>
-    <li class="CssNavi2">222222222</li>
-    <li class="CssNavi2">333333</li>
-    <li class="CssNavi2">4444</li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">111111111111</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">22222222</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">333333</a></li>
+    <li class="CssNavi2"><a href="#" class="CssNavi2">4444</a></li>
 </ul>
+<div style="clear: both"></div>
 
+<br/>
 <button>1111111</button>
 
 
@@ -228,27 +180,24 @@
 </pre>
 <style>
     ul.ul_CssNavi3{
-        display: inline-block;
-        list-style-type: none;
+        list-style-type: none;/*不显示开头的圆点*/
         padding: 0;
         margin: 0;
         background-color: #4CAF50;
-
-        /*width: 50%;*/
-    }
-
-    ul.ul_CssNavi3 li{
-        display: inline;
     }
 
     ul.ul_CssNavi3 li a{
-        color: black;
-        float: left;
-        padding: 8px 16px;
+
         text-decoration: none;
-        border: 1px solid #dddddd;
-        margin: 0px 4px;
         font-size: 22px;
+
+        color: black;
+        background-color: cornflowerblue;
+        padding: 8px 16px;
+        border: 1px solid #dddddd;
+
+        margin: 0px 4px;
+        display: inline-block;/*防止a高度超出ul 消除间距 并且可设置宽度*/
     }
 
     /*第一个与最后一个li的a的 圆角*/
@@ -256,7 +205,6 @@
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
     }
-
 
     ul.ul_CssNavi3 li:last-child a{
         border-top-right-radius: 5px;
@@ -268,19 +216,29 @@
         background-color: #dddddd;
     }
 
-    /*当前页面的a*/
+    /*当前页面对应的a*/
     ul.ul_CssNavi3 li a.a_active_CssNavi3{
-        background-color: green;
+        background-color: red;
         color: white;
         border: 1px solid green;
     }
 
-    /*无效 因为float: left影响?*/
-    /*ul.ul_CssNavi3 li+li:before {*/
-        /*padding: 8px;*/
-        /*color: black;*/
-        /*content: "/\00a0";*/
-    /*}*/
+    /*设置兄弟元素之前加斜杠*/
+    ul.ul_CssNavi3 li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+
+    /*设置水平*/
+    ul.ul_CssNavi3{
+        display: inline-block;/*li设置float之后 防止ul消失*/
+    }
+
+    ul.ul_CssNavi3 li{
+        /*display: inline-block;*/
+        float: left;
+    }
 
 </style>
 <ul class="ul_CssNavi3">
@@ -308,29 +266,36 @@
     * 面包屑导航
 </pre>
 <style>
-    ul.ul1_CssNavi3 {
+    ul.ul_CssNavi4 {
+
+        list-style: none;
         padding: 8px 16px;
-        /*list-style: none;*/
-        display: inline-block;
+        margin: 0px;
         background-color: #eee;
     }
-    ul.ul1_CssNavi3 li {
-        display: inline;
-    }
 
-    /*兄弟元素*/
-    ul.ul1_CssNavi3 li+li:before {
+
+    /*设置兄弟元素之前加斜杠*/
+    ul.ul_CssNavi4 li+li:before {
         padding: 8px;
         color: black;
         content: "/\00a0";
     }
-    ul.ul1_CssNavi3 li a {
+    ul.ul_CssNavi4 li a {
         color: green;
-        /*float: left;*/
     }
 
+    /*设置水平*/
+    ul.ul_CssNavi4{
+        display: inline-block;/*li设置float之后 防止ul消失*/
+    }
+    ul.ul_CssNavi4 li {
+        float: left;
+    }
+
+
 </style>
-<ul class="ul1_CssNavi3">
+<ul class="ul_CssNavi4">
     <li><a href="#">«</a></li>
     <li><a href="#">1</a></li>
     <li><a href="#">2</a></li>
@@ -340,7 +305,7 @@
     <li><a href="#">6</a></li>
     <li><a href="#">»</a></li>
 </ul>
-
+<div style="clear: both"></div>
 
 <br/><a href="#CSS_Navigation_4">回到顶部</a><br/>
 <br/><br/><br/>
@@ -352,10 +317,13 @@
 
 <style>
 
+
+
     div.dropdownDiv_1 {
         position: relative;
         display: inline-block;
     }
+
     button.btn_1,button.btn_2{
         background-color: greenyellow;
         color: white;
@@ -379,7 +347,6 @@
 
     }
 
-    /*右菜单*/
     div.dropdownContentDiv1_1 {
         right: 0px;
     }
@@ -445,11 +412,6 @@
         background-color: #4CAF50;
     }
 
-    ul.ul_eg1 li{
-        display: inline;
-    }
-
-
     a.a_eg1{
         background-color: greenyellow;
         color: black;
@@ -457,10 +419,47 @@
         text-align: center;
         font-size: 30px;
         padding: 5px 10px;
-        float: left;
-
     }
 
+    a.a_eg1:hover{
+        background-color: red;
+    }
+
+
+    /*设置水平*/
+    ul.ul_eg1{
+       display: inline-block;
+    }
+    ul.ul_eg1 li{
+        float: left;
+    }
+
+
+
+
+    /*下拉菜单*/
+    div.bigDiv_eg1{
+        display: inline-block;
+        position: relative;
+    }
+    div.contentDiv_eg1{
+        position: absolute;
+        right: 0px;
+        display: none;
+        background-color: #4CAF50;
+    }
+
+    button.btn_eg1{
+        background-color: #4CAF50;
+        border: 1px solid black;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    button.btn_eg1:hover div.contentDiv_eg1{
+        display: block;
+    }
 
 
 </style>
@@ -468,17 +467,21 @@
 <ul class="ul_eg1">
     <li><a class="a_eg1">主页</a></li>
     <li><a class="a_eg1">新闻</a></li>
-    <li><a class="a_eg1">下拉菜单</a></li>
-    <!--<div class="dropdownDiv_eg1">-->
-        <!--<button class="dropdownBtn_eg1">下拉菜单</button>-->
-        <!--<div class="contentDiv_eg1">-->
-            <!--<a class="content-a_eg1">aaa</a>-->
-            <!--<a class="content-a_eg1">bbb</a>-->
-            <!--<a class="content-a_eg1">ccc</a>-->
+    <li>
+        <button class="btn_eg1">下拉菜单</button>
+        <!--<div class="bigDiv_eg1">-->
+            <!---->
+            <!--<div class="contentDiv_eg1">-->
+                <!--<a class="content-a_eg1">aaa</a>-->
+                <!--<a class="content-a_eg1">bbb</a>-->
+                <!--<a class="content-a_eg1">ccc</a>-->
+            <!--</div>-->
         <!--</div>-->
-    <!--</div>-->
-</ul>
+        <!--<a class="downA_eg1">下拉菜单</a>-->
 
+    </li>
+</ul>
+<div style="clear: both"></div>
 
 
 
