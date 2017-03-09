@@ -11,7 +11,11 @@
 #import "MDNavigationController.h"
 #import "MDRootDefine.h"
 #import "MDGlobalManager.h"
+
 #import "MDPushNotificationManager.h"
+#import "MDPushNotificationManager+RequestAuthorization.h"
+#import "MDPushNotificationManager+RemoteNotification.h"
+#import "MDPushNotificationManager+LocalNotification.h"
 #import <stdio.h>
 @import UserNotifications;
 
@@ -81,7 +85,7 @@
     - 不允许，系统推送不打开，服务器不发送推送，本地作标识
    */
   if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
-    [[MDPushNotificationManager sharedInstance] registerNotification];
+    [[MDPushNotificationManager sharedInstance] start];
   }
   
   //修改标识
@@ -91,8 +95,6 @@
   }else{
     ULog(@"不是第一次运行，初始化完成");
   }
-
-  //
   
   return YES;
 }
@@ -144,14 +146,14 @@
 }
 
 
-#pragma mark * 推送（ios9 or earlier）
-//推送授权
+#pragma mark * 推送
+#pragma mark -- [8,9] 推送授权
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
   
   [[MDPushNotificationManager sharedInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
-//远程推送
+#pragma mark -- [8,~] 远程推送
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
   
   [[MDPushNotificationManager sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
@@ -169,7 +171,7 @@
   [[MDPushNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
-//本地推送
+#pragma mark -- [8,9] 本地推送
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
   
   [[MDPushNotificationManager sharedInstance] application:application didReceiveLocalNotification:notification];

@@ -129,7 +129,7 @@
     }
     else
     {
-      [[MDPushNotificationManager sharedInstance] registerNotification];
+      [[MDPushNotificationManager sharedInstance] start];
     }
   }
   else
