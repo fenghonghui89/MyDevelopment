@@ -15,7 +15,13 @@
 #import "MDModel_Category.h"
 
 @interface MDModel_Category (MyCategory)
+
+//添加属性
 @property(nonatomic,copy)NSString *city;
+
+//添加方法
 -(void)sayGoodBye;
+
+//访问原始类的私有属性或方法
 -(void)introduce;
 @end
