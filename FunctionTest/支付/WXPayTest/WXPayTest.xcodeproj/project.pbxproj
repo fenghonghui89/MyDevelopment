@@ -272,7 +272,8 @@
 				TargetAttributes = {
 					149DF6291C2A61C4005A9A9A = {
 						CreatedOnToolsVersion = 7.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = P26LLV25DX;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -442,8 +443,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P26LLV25DX;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../OSC_ThirdLibrary/WeChatSDK";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -452,9 +454,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../OSC_ThirdLibrary/WeChatSDK";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.wxpaytest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XiangRongDevExtend.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HanyAppDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
@@ -464,8 +466,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P26LLV25DX;
 				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../OSC_ThirdLibrary/WeChatSDK";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -474,9 +477,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../OSC_ThirdLibrary/WeChatSDK";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.wxpaytest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XiangRongDevExtend.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HanyAppDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
