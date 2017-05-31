@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'PPAppPlatformKit' target in the 'PPAppPlatformKit' project
-//
-
-//#ifdef __OBJC__
-//    #import <uif
-//#endif
