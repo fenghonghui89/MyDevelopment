@@ -29,7 +29,7 @@
   id tmp = [data objectForKey:key];
 
   if (tmp == nil || tmp == NULL || [tmp isEqual:[NSNull null]]) {
-    return .0;
+    return 0;
   }else{
     return [tmp floatValue];
   }

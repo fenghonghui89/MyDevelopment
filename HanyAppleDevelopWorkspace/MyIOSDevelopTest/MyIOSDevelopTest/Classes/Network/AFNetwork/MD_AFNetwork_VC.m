@@ -144,7 +144,7 @@
   respon.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
   manager.responseSerializer = respon;
   
-  NSURLSessionTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+  NSURLSessionDataTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
     if (error) {
       DRLog(@"error response:%@",[error localizedDescription]);
       MDAlertController *ac = [MDAlertController alertDefaultControllerWithMessage:[error localizedDescription]];
