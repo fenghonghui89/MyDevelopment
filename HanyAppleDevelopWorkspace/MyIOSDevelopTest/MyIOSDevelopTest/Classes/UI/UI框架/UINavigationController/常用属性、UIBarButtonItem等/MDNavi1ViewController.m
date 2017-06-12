@@ -60,7 +60,6 @@
   
   UIBarButtonItem* b1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(add:)];
   UIBarButtonItem* b2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:nil action:nil];
-  
   self.navigationItem.rightBarButtonItems = @[b1,b2];
 }
 
@@ -148,6 +147,21 @@
   [naviImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 2, 10)
                             resizingMode:UIImageResizingModeStretch];
   [self.navigationController.navigationBar setBackgroundImage:resizedNaviImage forBarMetrics:UIBarMetricsDefault];
+}
+
+#pragma mark 自定义navigationBar
+-(void)tap5{
+
+    UINavigationBar *nb = [[UINavigationBar alloc] init];
+    [nb setBackgroundImage:[UIImage imageNamed:@"navibg.png"] forBarPosition:UIBarPositionTopAttached barMetrics:UIBarMetricsDefault];
+    [self.view addSubview:nb];
+    
+    UINavigationItem *itemView = [[UINavigationItem alloc] init];
+    
+    UIView *titleBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenW*0.33, 44)];
+    itemView.titleView = titleBgView;
+    
+    [nb pushNavigationItem:itemView animated:NO];
 }
 
 @end
