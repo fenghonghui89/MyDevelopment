@@ -10,7 +10,7 @@
 #import "MDRootDefine.h"
 #import "YYModel.h"
 
-// Model:
+#pragma mark - ******************* User *******************
 @interface User : NSObject
 @property UInt64 uid;
 @property NSString *name;
@@ -21,7 +21,7 @@
 }
 @end
 
-// Model:
+#pragma mark - ******************* Author （Model 包含其他 Model） *******************
 @interface Author : NSObject
 @property NSString *name;
 @property NSInteger age;
@@ -39,7 +39,7 @@
 }
 @end
 
-// Model:
+#pragma mark - ******************* Book （属性与json key不同 / json与model互转） *******************
 @interface Book : NSObject
 @property NSString *name;
 @property NSInteger page;

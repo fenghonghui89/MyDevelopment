@@ -22,7 +22,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self dateZoneNow];
+    [self getNowDateFromatAnDate:[NSDate date]];
 }
 #pragma mark - 时间创建
 -(void)dateNormal
