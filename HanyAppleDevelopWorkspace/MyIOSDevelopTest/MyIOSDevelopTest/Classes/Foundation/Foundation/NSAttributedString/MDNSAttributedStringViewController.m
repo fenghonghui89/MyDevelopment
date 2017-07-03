@@ -25,17 +25,18 @@
     
 
     //设置字体和行距
-    UIFont *fontBold = [UIFont fontWithName:@"Helvetica" size:14];
     UIFont *fontNormal = [UIFont systemFontOfSize:15];
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    
+    NSMutableParagraphStyle*style = [[NSMutableParagraphStyle alloc] init];
     style.lineSpacing = 2;
+    
     NSDictionary *dicsum2 = [NSDictionary dictionaryWithObjectsAndKeys:fontNormal,NSFontAttributeName,style,NSParagraphStyleAttributeName, nil];
     
-    CGRect rect = [str1 boundingRectWithSize:CGSizeMake(300, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dicsum2 context:nil];
-    
     NSMutableAttributedString *astr = [[NSMutableAttributedString alloc] initWithString:str1];
-    [astr addAttributes:dicsum2 range:NSMakeRange(0, str1.length)];//对全部文本设置
-//    [astr addAttribute:<#(NSString *)#> value:<#(id)#> range:<#(NSRange)#>];//对部分文本设置
+    [astr addAttributes:dicsum2 range:NSMakeRange(0, str1.length)];
+    
+    
+    CGRect rect = [str1 boundingRectWithSize:CGSizeMake(300, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dicsum2 context:nil];
     
     
     UILabel *label = [UILabel new];
