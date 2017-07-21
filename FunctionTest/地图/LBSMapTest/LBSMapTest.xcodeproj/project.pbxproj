@@ -234,8 +234,8 @@
 				TargetAttributes = {
 					14758C001C9FF75B00303FA8 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = UT3AAGTGVE;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = ZU3PU58KKD;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -404,15 +404,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
-				DEVELOPMENT_TEAM = UT3AAGTGVE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../../../OSC_ThirdLibrary/LBS";
 				INFOPLIST_FILE = LBSMapTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.LBSMapTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidev.lbsmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1cf31c47-2d4d-473a-8a97-8c5624f9ff49";
-				PROVISIONING_PROFILE_SPECIFIER = HanyAppDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -421,15 +422,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = UT3AAGTGVE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../../../OSC_ThirdLibrary/LBS";
 				INFOPLIST_FILE = LBSMapTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.LBSMapTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidev.lbsmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1cf31c47-2d4d-473a-8a97-8c5624f9ff49";
-				PROVISIONING_PROFILE_SPECIFIER = HanyAppDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

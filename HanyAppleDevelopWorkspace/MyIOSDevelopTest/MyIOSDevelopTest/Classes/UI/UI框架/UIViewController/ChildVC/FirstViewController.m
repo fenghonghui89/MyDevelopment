@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.view setFrame:CGRectMake(0, 200, 320, 280)];
+//    [self.view setFrame:CGRectMake(0, 200, 320, 280)];
 }
 
 - (void)didReceiveMemoryWarning

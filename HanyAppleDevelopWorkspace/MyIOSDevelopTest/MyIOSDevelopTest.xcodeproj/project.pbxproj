@@ -3093,12 +3093,12 @@
 		14FAA5321D9507CA002D81CC /* ChildVC */ = {
 			isa = PBXGroup;
 			children = (
-				14FAA5331D9507CA002D81CC /* FirstViewController.h */,
-				14FAA5341D9507CA002D81CC /* FirstViewController.m */,
-				14FAA5351D9507CA002D81CC /* FirstViewController.xib */,
 				14FAA5361D9507CA002D81CC /* MDMainViewController.h */,
 				14FAA5371D9507CA002D81CC /* MDMainViewController.m */,
 				14FAA5381D9507CA002D81CC /* MDMainViewController.xib */,
+				14FAA5331D9507CA002D81CC /* FirstViewController.h */,
+				14FAA5341D9507CA002D81CC /* FirstViewController.m */,
+				14FAA5351D9507CA002D81CC /* FirstViewController.xib */,
 				14FAA5391D9507CA002D81CC /* SecondViewController.h */,
 				14FAA53A1D9507CA002D81CC /* SecondViewController.m */,
 				14FAA53B1D9507CA002D81CC /* SecondViewController.xib */,
