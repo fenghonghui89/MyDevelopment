@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "UMSocial.h"
-#import "UMSocialQQHandler.h"
-#import "UMSocialWechatHandler.h"
+
 #import "UMShareManager.h"
 @interface AppDelegate ()
 
@@ -28,7 +26,7 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-  BOOL result = [[UMShareManager share] handleOpenURL:url];
+  BOOL result = [[UMShareManager share] application:application handleOpenURL:url ];
   if (result == FALSE) {
 //    //如果极简 SDK 不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给 SDK
 //    if ([url.host isEqualToString:@"safepay"]) {
@@ -60,7 +58,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-  BOOL result = [[UMShareManager share] handleOpenURL:url];
+  BOOL result = [[UMShareManager share] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
   if (result == FALSE) {
     //    //如果极简 SDK 不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给 SDK
     //    if ([url.host isEqualToString:@"safepay"]) {

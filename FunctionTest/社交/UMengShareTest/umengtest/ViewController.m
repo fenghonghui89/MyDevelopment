@@ -60,6 +60,7 @@
 //                       shareImage:[UIImage imageNamed:@"UMS_douban_icon.png"]];
   
   [[UMShareManager share] share:self title:@"zheshi title" shareText:@"zheshi text" shareImage:nil url:nil];
+//    [[UMShareManager share] shareWebPageToPlatformType:UMSocialPlatformType_WechatSession controller:self];
 }
 
 /**

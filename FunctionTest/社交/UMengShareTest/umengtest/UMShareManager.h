@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UShareUI.h>
 
 typedef NS_ENUM(NSInteger,LoginType){
     LoginTypeWeChat = 0,
@@ -17,7 +19,10 @@ typedef NS_ENUM(NSInteger,LoginType){
 @interface UMShareManager : NSObject
 +(UMShareManager *)share;
 -(void)startUMShare;
--(BOOL)handleOpenURL:(NSURL *)url;
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation;
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url;
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options;
+
 -(void)wechatLogin:(UIViewController *)viewController;
 -(void)weiboLogin:(UIViewController *)viewController;
 -(void)qqlogin:(UIViewController *)viewController;
@@ -31,4 +36,6 @@ typedef NS_ENUM(NSInteger,LoginType){
    shareText:(NSString *)shareText
   shareImage:(UIImage *)shareImage
          url:(NSString *)urlstring;
+
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType controller:(UIViewController *)controller;
 @end
