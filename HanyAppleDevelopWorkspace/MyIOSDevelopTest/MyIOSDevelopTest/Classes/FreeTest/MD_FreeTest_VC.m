@@ -16,6 +16,8 @@
 @interface MD_FreeTest_VC ()
 
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UILabel *titlelabel;
+@property (weak, nonatomic) IBOutlet UITextField *testfield;
 
 
 @end
@@ -25,15 +27,34 @@
 
 #pragma mark - < vc lifecycle >
 - (void)viewDidLoad {
-  
-  [super viewDidLoad];
-
-  
+    
+    [super viewDidLoad];
+    
+    NSDictionary *headers = @{ @"cache-control": @"no-cache",
+                               @"postman-token": @"ff9f44b2-4eb8-aabf-b0eb-837f08abf1d4" };
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://app.3hmlg.com/common/getServerTime.action"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"error..%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                    }
+                                                }];
+    [dataTask resume];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-  
-  [super viewDidAppear:animated];
+    
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - < method >
@@ -71,21 +92,21 @@
 }
 
 -(void)customInitUI{
-  
+    
 }
 
 
 -(NSInteger)test0{
-  return 100;
+    return 100;
 }
 
 -(NSInteger)test1{
-  return 100;
+    return 100;
 }
 
 #pragma mark - < action >
 - (IBAction)btnTap:(id)sender {
-  
+    
     UIImage *img = [[UIImage alloc] init];
     img = [self text:@"xxx" addToView:img];
     

@@ -3681,7 +3681,7 @@
 				TargetAttributes = {
 					147DB17D1A8C7FA600F38EA4 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = P26LLV25DX;
+						DevelopmentTeam = ZU3PU58KKD;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -4382,7 +4382,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyIOSDevelopTest/MyIOSDevelopTest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = P26LLV25DX;
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4392,7 +4392,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.XiangRongDevExtend.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidevextend.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4407,7 +4407,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyIOSDevelopTest/MyIOSDevelopTest.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = P26LLV25DX;
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4416,7 +4416,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.XiangRongDevExtend.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidevextend.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
