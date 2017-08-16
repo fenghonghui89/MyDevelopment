@@ -117,5 +117,44 @@
   
 }
 
+#pragma mark * 先请求接口a 接口a返回后再请求接口b
+-(void)group3{
+//    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+//    dispatch_group_t group = dispatch_group_create();
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    
+//    dispatch_group_async(group, queue, ^{
+//        [XTJMBProgressHUD showHUDToView:XTJ_KEY_WINDOW];
+//        [NSThread sleepForTimeInterval:3];
+//        dispatch_semaphore_signal(sema);
+//    });
+//    
+//    dispatch_group_notify(group, queue, ^{
+//        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+//        
+//        [XTJMBProgressHUD hideHUDForView:XTJ_KEY_WINDOW];
+//        BOOL isSuccess = YES;
+//        if (isSuccess) {
+//            
+//            //存储数据
+//            XTJMemberModel *member = [XTJGlobalManager sharedInstance].currentUser;
+//            member.memberSex = sex;
+//            [[XTJMemberStoreManager shareInstance] changeEntityWithMemberId:member.memberId newModel:member];
+//            
+//            //通知刷新
+//            [[NSNotificationCenter defaultCenter] postNotifacation:@""];
+//            
+//            self.sex = sex;
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.navigationController popViewControllerAnimated:YES];
+//            });
+//            
+//        }else{
+//            
+//        }
+//    });
+
+}
 
 @end

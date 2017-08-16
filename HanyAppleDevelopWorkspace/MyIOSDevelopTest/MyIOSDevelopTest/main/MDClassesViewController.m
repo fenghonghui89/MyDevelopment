@@ -45,6 +45,10 @@
 {
   return UIInterfaceOrientationMaskPortrait;
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 #pragma mark customInit
 -(void)customInitUI
 {

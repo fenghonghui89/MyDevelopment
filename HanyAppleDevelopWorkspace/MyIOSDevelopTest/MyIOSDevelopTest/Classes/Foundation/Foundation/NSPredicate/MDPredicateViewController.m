@@ -46,6 +46,11 @@
   }
 }
 
-
+//正则表达式判断
+-(BOOL)test0{
+    NSString *ipRegex = @"(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])";
+    NSPredicate *ipTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",ipRegex];
+    return [ipTest evaluateWithObject:self];
+}
 
 @end
