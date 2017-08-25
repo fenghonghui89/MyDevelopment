@@ -222,6 +222,10 @@ static NSString * const cellId = @"cell";
 #pragma mark - < action > -
 -(void)rightBarButtonItemTap{
   self.bb = !self.bb;
+//    self.tableView.editing = !self.tableView.editing;
+    
+    //开启左边编辑 右边移动
+    [self.tableView setEditing:!self.tableView.editing animated:YES];
 }
 #pragma mark - < callback > -
 #pragma mark UITableView
@@ -250,7 +254,7 @@ static NSString * const cellId = @"cell";
 ////      NSLog(@"无缓存，还没停止或者手指还没离开屏幕，不操作");
 //    }
 
-    [self startDownloadImage:imageItem indexPath:indexPath];
+//    [self startDownloadImage:imageItem indexPath:indexPath];
     
   }else{
     NSLog(@"有缓存");
@@ -263,20 +267,102 @@ static NSString * const cellId = @"cell";
 #pragma mark UIScrollView
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //  NSLog(@"~scrollViewDidScroll");
-  [self updataUI];
+//  [self updataUI];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
   if (!decelerate) {
-    NSLog(@"~scrollViewDidEndDragging静止情况下手指离开屏幕");
+//    NSLog(@"~scrollViewDidEndDragging静止情况下手指离开屏幕");
 //    [self loadImagesForOnscreenRows];
   }
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-  NSLog(@"~scrollViewDidEndDecelerating手指离开后减速到0");
+//  NSLog(@"~scrollViewDidEndDecelerating手指离开后减速到0");
 //  [self loadImagesForOnscreenRows];
 }
+
+#pragma mark - < 设置是否能编辑 默认可以 会首先返回 >
+/*
+ 与editingStyleForRowAtIndexPath commitEditingStyle moveRowAtIndexPath 联动
+ */
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+#pragma mark - < 左边编辑状态 >
+//默认不写该方法是删除
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+//
+////    return UITableViewCellEditingStyleDelete;//删除
+////    return UITableViewCellEditingStyleInsert;//添加
+//    return UITableViewCellEditingStyleDelete|UITableViewCellEditingStyleInsert;//多选
+//}
+
+////决定编辑状态下的Cell是否需要缩进
+//-(BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    return YES;
+//}
+//
+
+//删除数据源和改列表数据要在下面的commitEditingStyle写
+
+
+#pragma mark - < 右边移动位置 >
+//-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+//
+//}
+
+#pragma mark - < 左滑删除 >
+
+//编辑模式与单个左滑编辑下 删除或新增所做的动作 开启单个左滑删除
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 从数据源中删除
+    [_data removeObjectAtIndex:indexPath.row];
+    // 从列表中删除
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+}
+
+
+//单个左滑动出现的文字
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return @"删除~!";
+}
+
+//左滑动多个按钮 比上面的优先 ios8新增
+-(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除~" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"点击了删除");
+    }];
+    deleteRowAction.backgroundColor = [UIColor purpleColor];
+   
+    
+    // 添加一个修改按钮
+    UITableViewRowAction *moreRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"修改~" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"点击了修改");
+    }];
+    
+    //背景特效
+    moreRowAction.backgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    
+    
+    /*
+     最先放入数组的按钮显示在最右侧，最后放入的显示在最左侧
+     如果我们自己设定了一个或多个按钮，系统自带的删除按钮就消失了
+     */
+    return @[deleteRowAction,moreRowAction];
+}
+
+
+
+#pragma mark - < 数据与ui更新 >
+//看http://www.jianshu.com/p/f65ca53fc9ba
+
+
 
 
 @end
