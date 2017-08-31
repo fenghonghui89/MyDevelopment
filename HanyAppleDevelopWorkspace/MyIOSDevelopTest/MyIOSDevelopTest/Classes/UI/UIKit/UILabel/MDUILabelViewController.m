@@ -19,7 +19,7 @@
   [super viewDidLoad];
   
 
-  [self labeltest];
+  [self labelTest3];
 }
 
 -(void)labeltest
@@ -94,4 +94,55 @@
   
   return CGSizeZero;
 }
+
+-(void)labelTest3{
+
+    NSString *str1 = @"$ 测试测试测试测试测试测试测              试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试             测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n测试测试测试测试测试测试测试\n结束";
+    
+    
+    //设置字体和行距
+    UIFont *fontNormal = [UIFont systemFontOfSize:15];
+    
+    NSMutableParagraphStyle*style = [[NSMutableParagraphStyle alloc] init];
+    style.lineSpacing = 2;
+    style.paragraphSpacing = 30;
+    
+    NSDictionary *dicsum2 = [NSDictionary dictionaryWithObjectsAndKeys:fontNormal,NSFontAttributeName,style,NSParagraphStyleAttributeName, nil];
+    
+    NSMutableAttributedString *astr = [[NSMutableAttributedString alloc] initWithString:str1];
+    [astr addAttributes:dicsum2 range:NSMakeRange(0, str1.length)];
+    [astr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:22] range:NSMakeRange(0, 1)];
+    [astr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(2, str1.length-2)];
+
+    
+    MDXXCustomLabel *titleLabel    = [[MDXXCustomLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.f, 24.0f)];
+    titleLabel.backgroundColor = [UIColor redColor];
+    titleLabel.textColor       = [UIColor blackColor];
+    titleLabel.font            = [UIFont systemFontOfSize:12.0f];
+    titleLabel.textInsets      = UIEdgeInsetsMake(0.f, 15.f, 0.f, 0.f); // 设置左内边距
+    titleLabel.attributedText = astr;
+    [self.view addSubview:titleLabel];
+}
+@end
+
+@implementation MDXXCustomLabel
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _textInsets = UIEdgeInsetsZero;
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        _textInsets = UIEdgeInsetsZero;
+    }
+    return self;
+}
+
+- (void)drawTextInRect:(CGRect)rect {
+    [super drawTextInRect:UIEdgeInsetsInsetRect(rect, _textInsets)];
+}
+
 @end
