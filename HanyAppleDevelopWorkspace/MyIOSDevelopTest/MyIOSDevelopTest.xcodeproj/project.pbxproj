@@ -229,6 +229,11 @@
 		148B29431E5A9D2A0096408E /* Test_UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 148B29421E5A9D2A0096408E /* Test_UnitTest.m */; };
 		148B29451E5A9E1F0096408E /* Test_FreeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 148B29441E5A9E1F0096408E /* Test_FreeTest.m */; };
 		14A727641CAB760100DC7BC0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A727631CAB760100DC7BC0 /* libxml2.tbd */; };
+		14AA41B11F6B8A4A0048C6B5 /* XTJDaugrtClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA41AC1F6B8A4A0048C6B5 /* XTJDaugrtClass.m */; };
+		14AA41B21F6B8A4A0048C6B5 /* XTJSonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA41AE1F6B8A4A0048C6B5 /* XTJSonClass.m */; };
+		14AA41B31F6B8A4A0048C6B5 /* XTJSuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA41B01F6B8A4A0048C6B5 /* XTJSuperClass.m */; };
+		14AA41B71F6B8A9C0048C6B5 /* MDModelCopyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AA41B51F6B8A9C0048C6B5 /* MDModelCopyVC.m */; };
+		14AA41B81F6B8A9C0048C6B5 /* MDModelCopyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AA41B61F6B8A9C0048C6B5 /* MDModelCopyVC.xib */; };
 		14B16DBC1D9E474600659FA8 /* MD_NSRange_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */; };
 		14C8338B1DB474A0009363F9 /* NSDate+Tpages.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833711DB474A0009363F9 /* NSDate+Tpages.m */; };
 		14C8338C1DB474A0009363F9 /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833731DB474A0009363F9 /* NSIndexSet+Convenience.m */; };
@@ -800,6 +805,15 @@
 		148B29421E5A9D2A0096408E /* Test_UnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_UnitTest.m; sourceTree = "<group>"; };
 		148B29441E5A9E1F0096408E /* Test_FreeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_FreeTest.m; sourceTree = "<group>"; };
 		14A727631CAB760100DC7BC0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		14AA41AB1F6B8A4A0048C6B5 /* XTJDaugrtClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJDaugrtClass.h; sourceTree = "<group>"; };
+		14AA41AC1F6B8A4A0048C6B5 /* XTJDaugrtClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJDaugrtClass.m; sourceTree = "<group>"; };
+		14AA41AD1F6B8A4A0048C6B5 /* XTJSonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJSonClass.h; sourceTree = "<group>"; };
+		14AA41AE1F6B8A4A0048C6B5 /* XTJSonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJSonClass.m; sourceTree = "<group>"; };
+		14AA41AF1F6B8A4A0048C6B5 /* XTJSuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJSuperClass.h; sourceTree = "<group>"; };
+		14AA41B01F6B8A4A0048C6B5 /* XTJSuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJSuperClass.m; sourceTree = "<group>"; };
+		14AA41B41F6B8A9C0048C6B5 /* MDModelCopyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDModelCopyVC.h; sourceTree = "<group>"; };
+		14AA41B51F6B8A9C0048C6B5 /* MDModelCopyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModelCopyVC.m; sourceTree = "<group>"; };
+		14AA41B61F6B8A9C0048C6B5 /* MDModelCopyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDModelCopyVC.xib; sourceTree = "<group>"; };
 		14B16DBA1D9E474600659FA8 /* MD_NSRange_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSRange_VC.h; sourceTree = "<group>"; };
 		14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRange_VC.m; sourceTree = "<group>"; };
 		14B16DBD1D9E4B9100659FA8 /* NSRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSRange.h; sourceTree = "<group>"; };
@@ -1525,6 +1539,7 @@
 		140D50E41DB9D6DE00E5D717 /* OtherTest */ = {
 			isa = PBXGroup;
 			children = (
+				14AA41AA1F6B89DA0048C6B5 /* 对象复制 */,
 				140D50E51DB9D6DE00E5D717 /* 模型转换 */,
 			);
 			path = OtherTest;
@@ -1837,6 +1852,22 @@
 				14FBF9651C27B4F700CC0A55 /* Photos.framework */,
 			);
 			name = SystemLibraries;
+			sourceTree = "<group>";
+		};
+		14AA41AA1F6B89DA0048C6B5 /* 对象复制 */ = {
+			isa = PBXGroup;
+			children = (
+				14AA41B41F6B8A9C0048C6B5 /* MDModelCopyVC.h */,
+				14AA41B51F6B8A9C0048C6B5 /* MDModelCopyVC.m */,
+				14AA41B61F6B8A9C0048C6B5 /* MDModelCopyVC.xib */,
+				14AA41AB1F6B8A4A0048C6B5 /* XTJDaugrtClass.h */,
+				14AA41AC1F6B8A4A0048C6B5 /* XTJDaugrtClass.m */,
+				14AA41AD1F6B8A4A0048C6B5 /* XTJSonClass.h */,
+				14AA41AE1F6B8A4A0048C6B5 /* XTJSonClass.m */,
+				14AA41AF1F6B8A4A0048C6B5 /* XTJSuperClass.h */,
+				14AA41B01F6B8A4A0048C6B5 /* XTJSuperClass.m */,
+			);
+			path = "对象复制";
 			sourceTree = "<group>";
 		};
 		14B16DB61D9E45FB00659FA8 /* NSRange */ = {
@@ -3797,6 +3828,7 @@
 				1415037E1DB623D500D1737C /* big.jpg in Resources */,
 				141503BA1DB623D500D1737C /* playing41@2x.png in Resources */,
 				14FAA7EC1D9507CB002D81CC /* MD_MediaPlayer_VC.xib in Resources */,
+				14AA41B81F6B8A9C0048C6B5 /* MDModelCopyVC.xib in Resources */,
 				14FAA8A71D9507CB002D81CC /* MDClassesTableViewCell.xib in Resources */,
 				14FAA76B1D9507CB002D81CC /* MD_Socket_SendFile_TVC.xib in Resources */,
 				145ECB2E1DC99B60008D729F /* ZS_76x76.png in Resources */,
@@ -4023,6 +4055,7 @@
 				14FAA7701D9507CB002D81CC /* MD_Socket_UDP_VC.m in Sources */,
 				14FAA7F31D9507CB002D81CC /* MD_NSThread_VC.m in Sources */,
 				14C833921DB474A0009363F9 /* CIImage+Convenience.m in Sources */,
+				14AA41B11F6B8A4A0048C6B5 /* XTJDaugrtClass.m in Sources */,
 				14FAA7D01D9507CB002D81CC /* MD_Responder_VC.m in Sources */,
 				14FAA7A21D9507CB002D81CC /* MDPage1ViewController.m in Sources */,
 				14FAA7DC1D9507CB002D81CC /* MD_AVCamera_VC.m in Sources */,
@@ -4168,6 +4201,7 @@
 				14D3ADE41DF7C387001DED27 /* MD_NSException_VC.m in Sources */,
 				14FAA7561D9507CA002D81CC /* TouchDrawViewController.m in Sources */,
 				14C8338B1DB474A0009363F9 /* NSDate+Tpages.m in Sources */,
+				14AA41B71F6B8A9C0048C6B5 /* MDModelCopyVC.m in Sources */,
 				14FAA7871D9507CB002D81CC /* RNCachingURLProtocol.m in Sources */,
 				14FAA8AC1D9507CB002D81CC /* DGCDelegateInfo.m in Sources */,
 				140CAAA61DACA8EF009EE8A7 /* MASConstraint.m in Sources */,
@@ -4210,6 +4244,7 @@
 				14FAA7E01D9507CB002D81CC /* MD_PhotoLibrary_CollectionViewCell.m in Sources */,
 				14FAA8031D9507CB002D81CC /* MDKVO_View.m in Sources */,
 				1415042A1DB62FF100D1737C /* DGCPlaceInfo.m in Sources */,
+				14AA41B21F6B8A4A0048C6B5 /* XTJSonClass.m in Sources */,
 				1415042B1DB62FF100D1737C /* DGCPostInfo.m in Sources */,
 				14FAA7AC1D9507CB002D81CC /* MDUIScrollView3ViewController.m in Sources */,
 				14FAA7861D9507CB002D81CC /* MD_RNCURLCache_VC.m in Sources */,
@@ -4228,6 +4263,7 @@
 				14FAA7501D9507CA002D81CC /* MD_NSTimer_VC1.m in Sources */,
 				14FAA74F1D9507CA002D81CC /* MD_NSTimer_VC3.m in Sources */,
 				14FAA76C1D9507CB002D81CC /* MD_Socket_SendFile_VC.m in Sources */,
+				14AA41B31F6B8A4A0048C6B5 /* XTJSuperClass.m in Sources */,
 				14FAA7C31D9507CB002D81CC /* MDModalViewController.m in Sources */,
 				1437D7361DCAF3AE00D96DCF /* MD_UIActivityVC_VC.m in Sources */,
 			);

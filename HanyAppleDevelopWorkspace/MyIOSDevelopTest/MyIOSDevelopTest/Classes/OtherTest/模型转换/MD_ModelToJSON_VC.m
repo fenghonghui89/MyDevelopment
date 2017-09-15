@@ -11,22 +11,26 @@
 #import "YYModel.h"
 
 #pragma mark - ******************* User *******************
-@interface User : NSObject
-@property UInt64 uid;
-@property NSString *name;
+@interface User : NSObject<NSCopying>
+@property(nonatomic,assign) UInt64 uid;
+@property(nonatomic,copy) NSString *name;
 @end
 @implementation User
 -(NSString *)description{
   return [NSString stringWithFormat:@"user..%llu %@",self.uid,self.name];
 }
+-(id)copyWithZone:(NSZone *)zone{
+
+    return [self copyWithZone:zone];
+}
 @end
 
 #pragma mark - ******************* Author （Model 包含其他 Model） *******************
-@interface Author : NSObject
-@property NSString *name;
-@property NSInteger age;
-@property NSDate *birthday;
-@property NSArray *users;
+@interface Author : NSObject<NSCopying>
+@property(nonatomic,copy) NSString *name;
+@property(nonatomic,assign) NSInteger age;
+@property(nonatomic,strong) NSDate *birthday;
+@property(nonatomic,strong) NSArray *users;
 @end
 @implementation Author
 
@@ -37,16 +41,23 @@
 -(NSString *)description{
   return [NSString stringWithFormat:@"author..name:%@ \n age:%ld \n birthday:%@ \n users:%@",self.name,(long)self.age,self.birthday,self.users];
 }
+
+-(id)copyWithZone:(NSZone *)zone{
+    
+    Author *author = [[Author allocWithZone:zone] init];
+    author.users = [[NSArray alloc] initWithArray:self.users copyItems:YES];
+    return [self copyWithZone:zone];
+}
 @end
 
 #pragma mark - ******************* Book （属性与json key不同 / json与model互转） *******************
-@interface Book : NSObject
-@property NSString *name;
-@property NSInteger page;
-@property NSString *desc;
-@property NSString *bookID;
-@property Author *author;
-@property NSDate *createdAt;
+@interface Book : NSObject<NSCopying>
+@property(nonatomic,copy) NSString *name;
+@property(nonatomic,assign) NSInteger page;
+@property(nonatomic,copy) NSString *desc;
+@property(nonatomic,copy) NSString *bookID;
+@property(nonatomic,strong) Author *author;
+@property(nonatomic,strong) NSDate *createdAt;
 @end
 @implementation Book
 -(NSString *)description{
@@ -90,6 +101,13 @@
     return YES;
   }
   
+}
+
+-(id)copyWithZone:(NSZone *)zone{
+    
+    Book *book = [[Book allocWithZone:zone] init];
+    book.author = [self.author copy];
+    return book;
 }
 @end
 
