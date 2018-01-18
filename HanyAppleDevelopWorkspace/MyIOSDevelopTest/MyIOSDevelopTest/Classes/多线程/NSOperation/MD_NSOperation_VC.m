@@ -26,7 +26,7 @@
 -(void)viewDidAppear:(BOOL)animated{
 
   [super viewDidAppear:animated];
-  [self test_NSOperationQueue];
+  [self test_syncLock];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -214,7 +214,11 @@
 -(void)test_wait{
 
   NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+      
     NSLog(@"1 op");
+      dispatch_async(dispatch_get_global_queue(0, 0), ^{
+          sleep(5);
+      });
   }];
   [op1 setCompletionBlock:^{
     NSLog(@"1 finish");
@@ -357,6 +361,58 @@
   self.queue = queue;
 }
 
+#pragma mark - test:多个请求同步执行
+-(void)test_syncLock{
+    
+    NSLock *lock1 = [NSLock new];
+    NSLock *lock2 = [NSLock new];
+    NSLock *lock3 = [NSLock new];
+    
+    NSBlockOperation *checkIsFlashSale = [NSBlockOperation blockOperationWithBlock:^{
+        NSArray *locks = @[lock1];
+        for (NSLock *lock in locks) {
+            [lock lock];
+        }
+        NSLog(@"checkIsFlashSale start..");
+        sleep(3);
+        NSLog(@"checkIsFlashSale finish..");
+        for (NSLock *lock in locks) {
+            [lock unlock];
+        }
+    }];
+    
+    NSBlockOperation *goodsDetailData= [NSBlockOperation blockOperationWithBlock:^{
+        NSArray *locks = @[lock1,lock2];
+        for (NSLock *lock in locks) {
+            [lock lock];
+        }
+        NSLog(@"goodsDetailData start..");
+        sleep(3);
+        NSLog(@"goodsDetailData finish..");
+        for (NSLock *lock in locks) {
+            [lock unlock];
+        }
+    }];
+    
+    NSBlockOperation *goodsReview= [NSBlockOperation blockOperationWithBlock:^{
+        NSArray *locks = @[lock1,lock2,lock3];
+        for (NSLock *lock in locks) {
+            [lock lock];
+        }
+        NSLog(@"goodsReview start..");
+        sleep(3);
+        NSLog(@"goodsReview finish..");
+        for (NSLock *lock in locks) {
+            [lock unlock];
+        }
+    }];
+
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperations:@[checkIsFlashSale,goodsDetailData,goodsReview] waitUntilFinished:NO];
+    
+    [queue waitUntilAllOperationsAreFinished];//阻塞当前线程，等待queue的所有操作执行完毕
+    NSLog(@"主线程");
+}
 #pragma mark - < action > -
 
 - (IBAction)btn1Tap:(id)sender {
