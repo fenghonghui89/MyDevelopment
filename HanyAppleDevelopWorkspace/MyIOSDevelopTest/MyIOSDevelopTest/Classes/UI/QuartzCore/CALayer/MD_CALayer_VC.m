@@ -35,4 +35,48 @@
     maskLayer.path = maskPath.CGPath;
     self.view.layer.mask = maskLayer;
 }
+
+//二维码扫描-使响应区域透明
+-(void)test2{
+    
+//    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+//    CGMutablePathRef path = CGPathCreateMutable();
+//
+//    CGFloat x = 0;
+//    CGFloat y = 0;
+//    CGFloat w = 0;
+//    CGFloat h = 0;
+//
+//    // Left side of the ratio view
+//    x = 0;
+//    y = 0;
+//    w = self.maskView.x;
+//    h = self.bgView.height;
+//    CGPathAddRect(path, nil, CGRectMake(x,y,w,h));
+//
+//    // Right side of the ratio view
+//    x = self.maskView.x + self.maskView.width;
+//    y = 0;
+//    w = self.bgView.width - x;
+//    h = self.bgView.height;
+//    CGPathAddRect(path, nil, CGRectMake(x,y,w,h));
+//
+//    // Top side of the ratio view
+//    x = 0;
+//    y = 0;
+//    w = self.bgView.width;
+//    h = self.maskView.y;
+//    CGPathAddRect(path, nil, CGRectMake(x,y,w,h));
+//
+//    // Bottom side of the ratio view
+//    x = 0;
+//    y = self.maskView.y + self.maskView.height;
+//    w = self.bgView.width;
+//    h = self.bgView.height - y;
+//    CGPathAddRect(path, nil, CGRectMake(x,y,w,h));
+//
+//    maskLayer.path = path;
+//    self.overLayerView.layer.mask = maskLayer;
+//    CGPathRelease(path);
+}
 @end

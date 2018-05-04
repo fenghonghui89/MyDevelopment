@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SceneKitTest/SceneKitTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_0/Test_SceneKit_0.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_1_Text/Test_SceneKit_1_Text.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_2_SCNView/Test_SceneKit_2_SCNView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_3_SCNScene/Test_SceneKit_3_SCNScene.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_4_SCNNode/Test_SceneKit_4_SCNNode.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_5_SCNLight/Test_SceneKit_5_SCNLight.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_6_SCNCamera/Test_SceneKit_6_SCNCamera.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_7_SCNAction/Test_SceneKit_7_SCNAction.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_8_SCNGeometry/Test_SceneKit_8_SCNGeometry.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_9_PhysicsBody/Test_SceneKit_9_PhysicsBody.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_10_PhysicsWorld/Test_SceneKit_10_PhysicsWorld.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_13_ParticleSystem/Test_SceneKit_13_ParticleSystem.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_14_PhysicsBehavior/Test_SceneKit_14_PhysicsBehavior.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_15_SkeletonAnimate/Test_SceneKit_15_SkeletonAnimate.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_17_SCNViewClass/Test_SceneKit_17_SCNViewClass.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_18_Camera/Test_SceneKit_18_Camera.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_19_SCNIKConstraint/Test_SceneKit_19_SCNIKConstraint.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_20_Strength/Test_SceneKit_20_Strength.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_me1_SceneChange/Test_SceneKit_me1_SceneChange.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_21_SceneChange/Test_SceneKit_21_SceneChange.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_22_SCNTransaction/Test_SceneKit_22_SCNTransaction.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_23_Shadow/Test_SceneKit_23_Shadow.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_26_HitTest/Test_SceneKit_26_HitTest.xcodeproj">
+   </FileRef>
+</Workspace>

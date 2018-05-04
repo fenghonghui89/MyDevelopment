@@ -1,0 +1,10 @@
+
+target 'SkyFighting' do
+
+pod "SVProgressHUD"
+pod "pop"
+pod "IQKeyboardManager"
+pod "LazyTableView"
+pod "RunTrace"
+
+end

@@ -213,6 +213,8 @@
 		1415042A1DB62FF100D1737C /* DGCPlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141504231DB62FF100D1737C /* DGCPlaceInfo.m */; };
 		1415042B1DB62FF100D1737C /* DGCPostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141504251DB62FF100D1737C /* DGCPostInfo.m */; };
 		1415042C1DB62FF100D1737C /* DGCUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141504271DB62FF100D1737C /* DGCUserInfo.m */; };
+		1429B50D205BDDC8007F3E1A /* MDCAAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1429B50B205BDDC8007F3E1A /* MDCAAnimation.m */; };
+		1429B50E205BDDC8007F3E1A /* MDCAAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1429B50C205BDDC8007F3E1A /* MDCAAnimation.xib */; };
 		1437D7361DCAF3AE00D96DCF /* MD_UIActivityVC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437D7341DCAF3AE00D96DCF /* MD_UIActivityVC_VC.m */; };
 		1437D7371DCAF3AE00D96DCF /* MD_UIActivityVC_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1437D7351DCAF3AE00D96DCF /* MD_UIActivityVC_VC.xib */; };
 		1437D73B1DCAF3F200D96DCF /* MD_UIActivityVC_VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437D7391DCAF3F200D96DCF /* MD_UIActivityVC_VC1.m */; };
@@ -782,6 +784,9 @@
 		141504251DB62FF100D1737C /* DGCPostInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCPostInfo.m; sourceTree = "<group>"; };
 		141504261DB62FF100D1737C /* DGCUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCUserInfo.h; sourceTree = "<group>"; };
 		141504271DB62FF100D1737C /* DGCUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCUserInfo.m; sourceTree = "<group>"; };
+		1429B50A205BDDC8007F3E1A /* MDCAAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCAAnimation.h; sourceTree = "<group>"; };
+		1429B50B205BDDC8007F3E1A /* MDCAAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDCAAnimation.m; sourceTree = "<group>"; };
+		1429B50C205BDDC8007F3E1A /* MDCAAnimation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MDCAAnimation.xib; sourceTree = "<group>"; };
 		1437D7331DCAF3AE00D96DCF /* MD_UIActivityVC_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIActivityVC_VC.h; sourceTree = "<group>"; };
 		1437D7341DCAF3AE00D96DCF /* MD_UIActivityVC_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIActivityVC_VC.m; sourceTree = "<group>"; };
 		1437D7351DCAF3AE00D96DCF /* MD_UIActivityVC_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_UIActivityVC_VC.xib; sourceTree = "<group>"; };
@@ -1799,6 +1804,16 @@
 			path = DGCModel;
 			sourceTree = "<group>";
 		};
+		1429B509205BDD8C007F3E1A /* CAAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				1429B50A205BDDC8007F3E1A /* MDCAAnimation.h */,
+				1429B50B205BDDC8007F3E1A /* MDCAAnimation.m */,
+				1429B50C205BDDC8007F3E1A /* MDCAAnimation.xib */,
+			);
+			path = CAAnimation;
+			sourceTree = "<group>";
+		};
 		145ECB1A1DC98CA2008D729F /* UIActivityViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2718,6 +2733,7 @@
 		14FAA48F1D9507CA002D81CC /* QuartzCore */ = {
 			isa = PBXGroup;
 			children = (
+				1429B509205BDD8C007F3E1A /* CAAnimation */,
 				14B1328E20045F0B009F5A36 /* CALayer */,
 				14FAA4901D9507CA002D81CC /* CATransform3D */,
 			);
@@ -3801,6 +3817,7 @@
 				141503DE1DB623D500D1737C /* navigationbar_pop_highlighted@2x.png in Resources */,
 				141503B21DB623D500D1737C /* playing34@2x.png in Resources */,
 				141503B91DB623D500D1737C /* playing40@2x.png in Resources */,
+				1429B50E205BDDC8007F3E1A /* MDCAAnimation.xib in Resources */,
 				141503881DB623D500D1737C /* Lion.jpg in Resources */,
 				141503721DB623D500D1737C /* Icon-Small@3x.png in Resources */,
 				14FAA7E11D9507CB002D81CC /* MD_PhotoLibrary_CollectionViewCell.xib in Resources */,
@@ -4132,6 +4149,7 @@
 				14FAA77E1D9507CB002D81CC /* MD_XML_GDataXMLNode_VC.m in Sources */,
 				14FAA7541D9507CA002D81CC /* Line.m in Sources */,
 				14FAA7B21D9507CB002D81CC /* MD_TableView_VC.m in Sources */,
+				1429B50D205BDDC8007F3E1A /* MDCAAnimation.m in Sources */,
 				140CAAAE1DACA8EF009EE8A7 /* ViewController+MASAdditions.m in Sources */,
 				14FAA73F1D9507CA002D81CC /* MD_NSError_VC.m in Sources */,
 				14FAA7C71D9507CB002D81CC /* FirstViewController.m in Sources */,

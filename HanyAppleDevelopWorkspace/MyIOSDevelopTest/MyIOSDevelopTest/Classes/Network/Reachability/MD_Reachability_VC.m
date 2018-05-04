@@ -29,7 +29,7 @@
 -(void)test{
   
   //host
-  Reachability * hostreach = [Reachability reachabilityWithHostname:@"www.baidu.com"];
+    Reachability * hostreach = [Reachability reachabilityWithHostname:@"http://www.3hmlg.com"];
   
   hostreach.reachableBlock = ^(Reachability * reachability)
   {
