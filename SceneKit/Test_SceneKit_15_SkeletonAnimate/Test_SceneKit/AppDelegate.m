@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "ViewController15.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +20,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ViewController *vc = [[ViewController alloc] init];
-    vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    ViewController15 *vc = [[ViewController15 alloc] init];
+    vc = [[ViewController15 alloc] initWithNibName:@"ViewController15" bundle:nil];
     
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];

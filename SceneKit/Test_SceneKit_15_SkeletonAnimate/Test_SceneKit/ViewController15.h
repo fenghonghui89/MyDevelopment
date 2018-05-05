@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ViewController15
 //  TestProjectWithOCNoSB
 //
 //  Created by hanyfeng on 2018/1/18.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController15 : UIViewController
 
 
 @end
