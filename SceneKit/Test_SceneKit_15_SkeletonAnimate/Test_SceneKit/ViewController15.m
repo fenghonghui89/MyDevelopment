@@ -77,47 +77,22 @@ SCNPhysicsContactDelegate,SSZipArchiveDelegate
     [self.view sendSubviewToBack:scnView];
     _scnView = scnView;
 
-    //本地模型1 已经优化or未优化都可以 用SCNScene
-//    SCNScene *scenetmp = [SCNScene sceneNamed:@"skinning.dae"];
-//    NSArray *nodes = scenetmp.rootNode.childNodes;
-//    NSLog(@"count..%lu",(unsigned long)nodes.count);
-//    SCNNode *personNode = [scenetmp.rootNode childNodeWithName:@"avatar_attach" recursively:YES];
-//    personNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
-//    [scene.rootNode addChildNode:personNode];
-    
-    
-    //本地模型2 已经优化or未优化都可以 用SCNSceneSource
+    //模型
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"skinning-t" withExtension:@"dae"];
+    url = [[NSBundle mainBundle] URLForResource:@"XTJMaterial" withExtension:@"bundle"];
+    url = [url URLByAppendingPathComponent:@"3d/skinning-t/skinning-t.dae"];
     SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
     SCNScene *scenetmp = [sceneSource sceneWithOptions:nil error:nil];
     NSArray *nodes = scenetmp.rootNode.childNodes;
     NSLog(@"count..%lu",(unsigned long)nodes.count);
     SCNNode *personNode = [scenetmp.rootNode childNodeWithName:@"avatar_attach" recursively:YES];
     personNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
-    [scene.rootNode addChildNode:personNode];
-//    [scene.rootNode addChildNode:scenetmp.rootNode];//或者直接添加rootNode
-
-    
-    //网上模型 必须已经优化
-//    NSURL *url = [self downloadFilePath2];
-//    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-//    NSError *error = nil;
-//    if (error) {
-//        NSLog(@"error:%@",error.localizedDescription);
-//    }
-//    NSArray *nodes = [sceneSource identifiersOfEntriesWithClass:[SCNNode class]];
-//    NSLog(@"count..%lu",(unsigned long)nodes.count);
-//
-//    //找模型并加入
-//    SCNNode *personNode = [sceneSource entryWithIdentifier:@"avatarRoot" withClass:[SCNNode class]];
-//    personNode = [sceneSource sceneWithOptions:nil error:nil].rootNode;//或者直接找文件的根节点
-//
-//    personNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
 //    [scene.rootNode addChildNode:personNode];
-    
+    [scene.rootNode addChildNode:scenetmp.rootNode];//或者直接添加rootNode
+
     //获取模型包含的动画组
     NSArray *animationIDs =  [sceneSource identifiersOfEntriesWithClass:[CAAnimation class]];
-    
+
     //把每个动画帧放入一个大数组中
     NSUInteger animationCount = [animationIDs count];
     NSMutableArray *longAnimations = [[NSMutableArray alloc] initWithCapacity:animationCount];
@@ -135,11 +110,11 @@ SCNPhysicsContactDelegate,SSZipArchiveDelegate
     CAAnimationGroup *longAnimationsGroup = [[CAAnimationGroup alloc] init];
     longAnimationsGroup.animations = longAnimations;
     longAnimationsGroup.duration = maxDuration;
-    
+
     //截取我们要的动画阶段比如20~24秒
     CAAnimationGroup *idleAnimationGroup = [longAnimationsGroup copy];
     idleAnimationGroup.timeOffset = 20;//6.45833333333333
-    
+
     //创建一个重复执行这个动画的动画组
     CAAnimationGroup *lastAnimationGroup;
     lastAnimationGroup = [CAAnimationGroup animation];
@@ -147,7 +122,7 @@ SCNPhysicsContactDelegate,SSZipArchiveDelegate
     lastAnimationGroup.duration = 24.71-20;
     lastAnimationGroup.repeatCount = 10000;
     lastAnimationGroup.autoreverses = YES;
-    
+
     //把动画组添加到模型节点
     [personNode addAnimation:lastAnimationGroup forKey:@"animation"];
 
@@ -161,7 +136,7 @@ SCNPhysicsContactDelegate,SSZipArchiveDelegate
 //    SCNNode *boxNode = [SCNNode nodeWithGeometry:box];
 //    [scene.rootNode addChildNode:boxNode];
     
-    
+
     scnView.scene = scene;
 }
 

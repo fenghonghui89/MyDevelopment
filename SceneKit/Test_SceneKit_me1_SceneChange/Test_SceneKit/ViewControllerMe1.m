@@ -69,22 +69,25 @@ SSZipArchiveDelegate
 
 }
 
-
+/*
+ 加载本地模型：
+ 项目文件夹/art.scnassets内模型
+ 项目文件夹/dae 但如果模型没有优化，如果cameraNode没有设置pointOfView则视角会错误
+ 项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型 然后用SCNSceneSource读取
+ 
+ 加载网上模型：
+ 通过SCNScene读取下载的模型
+ 把下载的文件移动到main bundle 只有模拟器成功
+ 通过SCNSceneSource读取下载的模型 测试通过
+ 
+ 总结:
+ 1.本地模型，不管在哪，都可以用[SCNScene sceneNamed:]或者SCNSceneSource读取，
+ 如果是放在xxx.bundle里面，则模型要经过优化，否则无法读取
+ 2.网上模型，都要经过优化，只能通过SCNSceneSource读取
+ 3.用SCNSceneSource读取，可以获取更多信息，注意url必须是fileURL
+ 4.最后才scnView.scene = scene;，则视角能最大限度保证正常，因为此时pointOfView必定有值
+ */
 -(void)setupScnview{
-    
-    /*
-     加载本地模型：
-     项目文件夹/art.scnassets内模型
-     项目文件夹/dae 但如果模型没有优化，如果cameraNode没有设置pointOfView则视角会错误
-     项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型 然后用SCNSceneSource读取
-     
-     加载网上模型：
-     通过SCNScene读取下载的模型
-     把下载的文件移动到main bundle 只有模拟器成功
-     通过SCNSceneSource读取下载的模型 测试通过
-     
-     最后才scnView.scene = scene;，则视角能最大限度保证正常，因为此时pointOfView必定有值
-     */
     
     //读取1 项目文件夹/art.scnassets内模型
 //    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/my3dmodel1/file.dae"];
