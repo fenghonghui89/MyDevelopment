@@ -10,10 +10,8 @@
 #import <SceneKit/SceneKit.h>
 #import "XTJRootDefine.h"
 @interface ViewController0 ()
-{
-    SCNView *_scnView;
-}
-
+@property(nonatomic,strong)SCNScene *scene;
+@property(nonatomic,strong)SCNView *scnView;
 @end
 
 @implementation ViewController0
@@ -29,23 +27,41 @@
     [self setupScnview];
 }
 
+#pragma mark - < method >
 -(void)setupScnview{
     
-    
+    //scene
     SCNScene *scene = [SCNScene scene];
+    self.scene = scene;
+
+    //camera
+    SCNCamera *camera = [SCNCamera camera];
+    camera.automaticallyAdjustsZRange = YES;
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJMaterial" ofType:@"bundle"];
-    filePath = [filePath stringByAppendingPathComponent:@"3d/my3dmodel1/file.dae"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        NSLog(@"文件存在");
-    }else{
-        NSLog(@"文件不存在");
-    }
-    NSURL *url = [NSURL fileURLWithPath:filePath];
-    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-    [scene.rootNode addChildNode:modelNode];
+    SCNNode *cameraNode = [SCNNode node];
+    cameraNode.camera = camera;
+    cameraNode.position = SCNVector3Make(0, 100, 50);
+    cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
+    [scene.rootNode addChildNode:cameraNode];
     
+    //light
+    SCNLight *ambientlight = [SCNLight light];
+    ambientlight.type = SCNLightTypeAmbient;
+    ambientlight.color = [UIColor grayColor];
+    SCNNode *ambientlightNode = [SCNNode node];
+    ambientlightNode.light = ambientlight;
+    [scene.rootNode addChildNode:ambientlightNode];
+    
+    //floor
+    SCNFloor *floor = [SCNFloor floor];
+    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
+    
+    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
+    floorNode.position = SCNVector3Make(0, 0, 0);
+    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
+    [scene.rootNode addChildNode:floorNode];
+    
+    //scnview
     SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
     scnView.center = self.view.center;
     scnView.scene = scene;
@@ -56,31 +72,16 @@
     scnView.preferredFramesPerSecond = 60;//帧率
     [self.view addSubview:scnView];
     [self.view sendSubviewToBack:scnView];
-    _scnView = scnView;
+    self.scnView = scnView;
+}
+
+-(void)geo{
     
-    //light
-    SCNLight *ambientlight = [SCNLight light];
-    ambientlight.type = SCNLightTypeAmbient;
-    ambientlight.color = [UIColor grayColor];
-    SCNNode *ambientlightNode = [SCNNode node];
-    ambientlightNode.light = ambientlight;
-    [scnView.scene.rootNode addChildNode:ambientlightNode];
-    
-    
-    //floor
-    SCNFloor *floor = [SCNFloor floor];
-    floor.firstMaterial.diffuse.contents = ImageFile(@"image/春夏布料");
-    floor.width = 100;
-    floor.length = 100;
-    
-    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
-    floorNode.position = SCNVector3Make(0, 0, 0);
-    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
-    [scnView.scene.rootNode addChildNode:floorNode];
     
 }
 
 
+#pragma mark - < action >
 - (IBAction)tap:(id)sender {
     
 }

@@ -59,9 +59,6 @@
       location = "group:Test_SceneKit_20_Strength/Test_SceneKit_20_Strength.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Test_SceneKit_me1_SceneChange/Test_SceneKit_me1_SceneChange.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Test_SceneKit_21_SceneChange/Test_SceneKit_21_SceneChange.xcodeproj">
    </FileRef>
    <FileRef
@@ -74,6 +71,15 @@
       location = "group:Test_SceneKit_26_HitTest/Test_SceneKit_26_HitTest.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Test_SceneKit_me1_SceneChange/Test_SceneKit_me1_SceneChange.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Test_SceneKit_me2_Material/Test_SceneKit_me2_Material.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_me3_CustomGeometry/Test_SceneKit_me3_CustomGeometry.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_me4_Map/Test_SceneKit_me4_Map.xcodeproj">
    </FileRef>
 </Workspace>

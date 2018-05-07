@@ -1,17 +1,17 @@
 //
-//  ViewControllerMe2
+//  ViewControllerMe3
 //  TestProjectWithOCNoSB
 //
 //  Created by hanyfeng on 2018/1/18.
 //  Copyright © 2018年 hanyfeng. All rights reserved.
-//
+//自定义几何体
 
-#import "ViewControllerMe2.h"
+#import "ViewControllerMe3.h"
 #import <SceneKit/SceneKit.h>
 #import "XTJRootDefine.h"
 #import "SSZipArchive.h"
 #import "XTJCoreNetworkManager.h"
-@interface ViewControllerMe2 ()
+@interface ViewControllerMe3 ()
 <
 SCNSceneRendererDelegate,SCNSceneExportDelegate,
 SSZipArchiveDelegate
@@ -21,7 +21,7 @@ SSZipArchiveDelegate
 @property(nonatomic,strong)SCNNode *node;
 @end
 
-@implementation ViewControllerMe2
+@implementation ViewControllerMe3
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +32,7 @@ SSZipArchiveDelegate
 
 
 
-#pragma mark - < method >
+#pragma mark - method
 -(void)showLog:(NSString *)path{
 
     NSFileManager *fm = [NSFileManager defaultManager];
@@ -93,13 +93,14 @@ SSZipArchiveDelegate
 //    [scene.rootNode addChildNode:floorNode];
     
     //box
-    SCNSphere *box = [SCNSphere sphereWithRadius:10];
-    box.name = @"盒子";
+//    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+//    box.name = @"盒子";
+//    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
     SCNNode *boxNode = [SCNNode node];
-    boxNode.geometry = box;
+    boxNode.geometry = [self plane1:CGPointMake(10, 10)];
     boxNode.position = SCNVector3Make(0, 50, 0);
     [scene.rootNode addChildNode:boxNode];
-    [self setupMaterial1:box];
+//    [self setupMaterial1:box];
     
     //scnview
     SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
@@ -123,45 +124,120 @@ SSZipArchiveDelegate
     scnView.gestureRecognizers = gestureRecognizers;
 }
 
-#pragma mark - 材质
-//材质-颜色值
--(void)setupMaterial:(SCNGeometry *)geometry{
+#pragma mark - 自定义几何体
+//http://www.gltech.win/%E5%AD%A6%E4%B9%A0scenekit%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/2017/12/01/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%A0%E4%BD%95%E4%BD%93.html
 
-    SCNMaterial *material = [SCNMaterial material];
-    material.lightingModelName = SCNLightingModelBlinn;//光照模型类型 Lambert、Blinn(Lambert基础上加高光)
-    material.diffuse.contents = [UIColor redColor];//材质的本色
-    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];//环境光
-    material.specular.contents = [UIColor whiteColor];//高光的颜色
-    material.shininess = 1.0;//高光 0~1越大越光滑
+//三角形序列方式
+-(SCNGeometry *)plane:(CGPoint)size{
+
+    NSInteger count = 6;
+    //顶点数据
+    SCNVector3 vertices[] = {
+        //第一个三角形
+        SCNVector3Make(-0.5*size.x, 0.5*size.y, 0),//A
+        SCNVector3Make(-0.5*size.x, -0.5*size.y, 0),//B
+        SCNVector3Make(0.5*size.x, -0.5*size.y, 0),//C
+        //第二个三角形
+        SCNVector3Make(-0.5*size.x, 0.5*size.y, 0),//A
+        SCNVector3Make(0.5*size.x, -0.5*size.y, 0),//C
+        SCNVector3Make(0.5*size.x, 0.5*size.y, 0)//D
+    };
+    SCNGeometrySource *vertexSource = [SCNGeometrySource geometrySourceWithVertices:vertices count:count];
     
-    //由于PBR光照模型中ambient和diffuse是锁定的，所以需要把locksAmbientWithDiffuse设置为false，否则ambient只能和diffuse取相同的值。
-    material.locksAmbientWithDiffuse = NO;
+    //uv数据(纹理)
+    CGPoint uvs[] = {
+        CGPointMake(0, 1),
+        CGPointMake(0, 0),
+        CGPointMake(1, 0),
+        CGPointMake(0, 1),
+        CGPointMake(1, 0),
+        CGPointMake(1, 1)
+    };
+    SCNGeometrySource *uvSource = [SCNGeometrySource geometrySourceWithTextureCoordinates:uvs count:count];
     
-    geometry.materials = @[material];
+    //法线数据
+    SCNVector3 normals[] = {
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1)
+    };
+    SCNGeometrySource *normalSource = [SCNGeometrySource geometrySourceWithNormals:normals count:count];
+    
+    //从顶点里面取第0到5个组成三角形列表，让系统渲染
+    UInt32 indices[] = {0,1,2,3,4,5};
+    NSData *data = [NSData dataWithBytes:indices length:sizeof(UInt32)*6.0];
+    
+    SCNGeometryPrimitiveType type = SCNGeometryPrimitiveTypeTriangles;//三角形序列
+    
+    SCNGeometryElement *element = [SCNGeometryElement geometryElementWithData:data
+                                                                primitiveType:type
+                                                               primitiveCount:2
+                                                                bytesPerIndex:sizeof(UInt32)];
+    
+    SCNGeometry *geometry = [SCNGeometry geometryWithSources:@[vertexSource,uvSource,normalSource]
+                                                    elements:@[element]];
+    
+    return geometry;
 }
 
-//材质-贴图
--(void)setupMaterial1:(SCNGeometry *)geometry{
+//三角带模式
+-(SCNGeometry *)plane1:(CGPoint)size{
     
-    SCNMaterial *material = [SCNMaterial material];
+    NSInteger count = 4;
     
-    material.lightingModelName = SCNLightingModelBlinn;//光照模型类型 Lambert、Blinn(Lambert基础上加高光)
+    //顶点数据
+    SCNVector3 vertices[] = {
+        SCNVector3Make(-0.5*size.x, 0.5*size.y, 0),//A
+        SCNVector3Make(-0.5*size.x, -0.5*size.y, 0),//B
+        SCNVector3Make(0.5*size.x, -0.5*size.y, 0),//C
+        SCNVector3Make(0.5*size.x, 0.5*size.y, 0)//D
+    };
+    SCNGeometrySource *vertexSource = [SCNGeometrySource geometrySourceWithVertices:vertices count:count];
     
-//    material.diffuse.contents = [UIColor redColor];//材质的本色
-    material.diffuse.contents = ImageFile(@"image/earth");//材质的贴图
+    //uv数据(纹理)
+    CGPoint uvs[] = {
+        CGPointMake(0, 1),
+        CGPointMake(0, 0),
+        CGPointMake(1, 0),
+        CGPointMake(1, 1)
+    };
+    SCNGeometrySource *uvSource = [SCNGeometrySource geometrySourceWithTextureCoordinates:uvs count:count];
     
-    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];//环境光
+    //法线数据
+    SCNVector3 normals[] = {
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1),
+        SCNVector3Make(0,0,1)
+    };
+    SCNGeometrySource *normalSource = [SCNGeometrySource geometrySourceWithNormals:normals count:count];
     
-    material.specular.contents = [UIColor whiteColor];//高光的颜色
-//    material.specular.contents = ImageFile(@"image/earth_specular");//高光的区域
     
-    material.shininess = 1.0;//高光 0~1越大越光滑
+    UInt32 indices[] = {1,2,0,3};//必须是1203
+    NSData *data = [NSData dataWithBytes:indices length:sizeof(UInt32)*4.0];
     
-    //由于PBR光照模型中ambient和diffuse是锁定的，所以需要把locksAmbientWithDiffuse设置为false，否则ambient只能和diffuse取相同的值。
-    material.locksAmbientWithDiffuse = NO;
+    SCNGeometryPrimitiveType type = SCNGeometryPrimitiveTypeTriangleStrip;//三角带
     
-    geometry.materials = @[material];
+    SCNGeometryElement *element = [SCNGeometryElement geometryElementWithData:data
+                                                                primitiveType:type
+                                                               primitiveCount:2
+                                                                bytesPerIndex:sizeof(UInt32)];
+    
+    SCNGeometry *geometry = [SCNGeometry geometryWithSources:@[vertexSource,uvSource,normalSource]
+                                                    elements:@[element]];
+    
+    return geometry;
 }
+
+//自定义正方体 todo
+-(void)cube:(SCNVector3)size{
+    
+}
+
+
 
 #pragma mark - < action >
 - (IBAction)tap:(id)sender {

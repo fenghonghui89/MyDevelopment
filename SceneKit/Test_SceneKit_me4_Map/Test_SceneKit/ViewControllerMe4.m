@@ -1,17 +1,17 @@
 //
-//  ViewControllerMe2
+//  ViewControllerMe4
 //  TestProjectWithOCNoSB
 //
 //  Created by hanyfeng on 2018/1/18.
 //  Copyright © 2018年 hanyfeng. All rights reserved.
 //
 
-#import "ViewControllerMe2.h"
+#import "ViewControllerMe4.h"
 #import <SceneKit/SceneKit.h>
 #import "XTJRootDefine.h"
 #import "SSZipArchive.h"
 #import "XTJCoreNetworkManager.h"
-@interface ViewControllerMe2 ()
+@interface ViewControllerMe4 ()
 <
 SCNSceneRendererDelegate,SCNSceneExportDelegate,
 SSZipArchiveDelegate
@@ -21,7 +21,7 @@ SSZipArchiveDelegate
 @property(nonatomic,strong)SCNNode *node;
 @end
 
-@implementation ViewControllerMe2
+@implementation ViewControllerMe4
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +32,7 @@ SSZipArchiveDelegate
 
 
 
-#pragma mark - < method >
+#pragma mark - method
 -(void)showLog:(NSString *)path{
 
     NSFileManager *fm = [NSFileManager defaultManager];
@@ -60,8 +60,8 @@ SSZipArchiveDelegate
     
     SCNNode *cameraNode = [SCNNode node];
     cameraNode.camera = camera;
-    cameraNode.position = SCNVector3Make(0, 100, 50);
-    cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
+    cameraNode.position = SCNVector3Make(0, 0, 50);
+//    cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
     [scene.rootNode addChildNode:cameraNode];
     
     //light
@@ -71,13 +71,13 @@ SSZipArchiveDelegate
     ambientlightNode.light = ambientlight;
     [scene.rootNode addChildNode:ambientlightNode];
     
-    SCNLight *omnilight = [SCNLight light];
-    omnilight.type = SCNLightTypeOmni;
-    omnilight.color = [UIColor whiteColor];
-    SCNNode *omnilightNode = [SCNNode node];
-    omnilightNode.light = omnilight;
-    omnilightNode.position = SCNVector3Make(0, 100, 50);
-    [scene.rootNode addChildNode:omnilightNode];
+//    SCNLight *omnilight = [SCNLight light];
+//    omnilight.type = SCNLightTypeOmni;
+//    omnilight.color = [UIColor whiteColor];
+//    SCNNode *omnilightNode = [SCNNode node];
+//    omnilightNode.light = omnilight;
+//    omnilightNode.position = SCNVector3Make(0, 100, 50);
+//    [scene.rootNode addChildNode:omnilightNode];
 
     
     //floor
@@ -93,11 +93,11 @@ SSZipArchiveDelegate
 //    [scene.rootNode addChildNode:floorNode];
     
     //box
-    SCNSphere *box = [SCNSphere sphereWithRadius:10];
+    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
     box.name = @"盒子";
     SCNNode *boxNode = [SCNNode node];
     boxNode.geometry = box;
-    boxNode.position = SCNVector3Make(0, 50, 0);
+    boxNode.position = SCNVector3Make(0, 0, 0);
     [scene.rootNode addChildNode:boxNode];
     [self setupMaterial1:box];
     
@@ -123,44 +123,37 @@ SSZipArchiveDelegate
     scnView.gestureRecognizers = gestureRecognizers;
 }
 
-#pragma mark - 材质
-//材质-颜色值
--(void)setupMaterial:(SCNGeometry *)geometry{
-
-    SCNMaterial *material = [SCNMaterial material];
-    material.lightingModelName = SCNLightingModelBlinn;//光照模型类型 Lambert、Blinn(Lambert基础上加高光)
-    material.diffuse.contents = [UIColor redColor];//材质的本色
-    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];//环境光
-    material.specular.contents = [UIColor whiteColor];//高光的颜色
-    material.shininess = 1.0;//高光 0~1越大越光滑
-    
-    //由于PBR光照模型中ambient和diffuse是锁定的，所以需要把locksAmbientWithDiffuse设置为false，否则ambient只能和diffuse取相同的值。
-    material.locksAmbientWithDiffuse = NO;
-    
-    geometry.materials = @[material];
-}
+#pragma mark - 贴图
 
 //材质-贴图
 -(void)setupMaterial1:(SCNGeometry *)geometry{
     
+    SCNMaterial *m1 = [self createMaterial:ImageFile(@"image/春夏布料")];
+    SCNMaterial *m2 = [self createMaterial:ImageFile(@"image/功能性布料")];
+    SCNMaterial *m3 = [self createMaterial:ImageFile(@"image/婚庆布料")];
+    SCNMaterial *m4 = [self createMaterial:ImageFile(@"image/家居布料")];
+    SCNMaterial *m5 = [self createMaterial:ImageFile(@"image/棉类布料")];
+    SCNMaterial *m6 = [self createMaterial:ImageFile(@"image/女装布料")];
+    
+    geometry.materials = @[m1,m2,m3,m4,m5,m6];
+}
+
+-(SCNMaterial *)createMaterial:(UIImage *)image{
+    
     SCNMaterial *material = [SCNMaterial material];
     
     material.lightingModelName = SCNLightingModelBlinn;//光照模型类型 Lambert、Blinn(Lambert基础上加高光)
+
+    material.diffuse.contents = image;//材质的贴图
     
-//    material.diffuse.contents = [UIColor redColor];//材质的本色
-    material.diffuse.contents = ImageFile(@"image/earth");//材质的贴图
-    
-    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];//环境光
-    
-    material.specular.contents = [UIColor whiteColor];//高光的颜色
-//    material.specular.contents = ImageFile(@"image/earth_specular");//高光的区域
-    
-    material.shininess = 1.0;//高光 0~1越大越光滑
+//    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];//环境光
+//    
+//    material.shininess = 1.0;//高光 0~1越大越光滑
     
     //由于PBR光照模型中ambient和diffuse是锁定的，所以需要把locksAmbientWithDiffuse设置为false，否则ambient只能和diffuse取相同的值。
     material.locksAmbientWithDiffuse = NO;
     
-    geometry.materials = @[material];
+    return material;
 }
 
 #pragma mark - < action >
