@@ -15,17 +15,6 @@
 		143C24292089998500543BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C24202089998500543BBA /* AppDelegate.m */; };
 		1453CEAA2099B37C00E50066 /* AAPLGameControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453CEA62099B37C00E50066 /* AAPLGameControls.m */; };
 		1453CEBB2099C01D00E50066 /* game.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEAD2099C01D00E50066 /* game.scnassets */; };
-		1453CEBC2099C01D00E50066 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEAF2099C01D00E50066 /* confetti.png */; };
-		1453CEBD2099C01D00E50066 /* collect.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB02099C01D00E50066 /* collect.scnp */; };
-		1453CEBE2099C01D00E50066 /* glow01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB12099C01D00E50066 /* glow01.png */; };
-		1453CEBF2099C01D00E50066 /* confetti.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB22099C01D00E50066 /* confetti.scnp */; };
-		1453CEC02099C01D00E50066 /* MaxIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB42099C01D00E50066 /* MaxIcon.png */; };
-		1453CEC12099C01D00E50066 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB52099C01D00E50066 /* dpad.png */; };
-		1453CEC22099C01D00E50066 /* FlowerFull.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB62099C01D00E50066 /* FlowerFull.png */; };
-		1453CEC32099C01D00E50066 /* ItemsPearl.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB72099C01D00E50066 /* ItemsPearl.png */; };
-		1453CEC42099C01D00E50066 /* congratulations.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB82099C01D00E50066 /* congratulations.png */; };
-		1453CEC52099C01D00E50066 /* FlowerEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEB92099C01D00E50066 /* FlowerEmpty.png */; };
-		1453CEC62099C01D00E50066 /* congratulations_pandaMax.png in Resources */ = {isa = PBXBuildFile; fileRef = 1453CEBA2099C01D00E50066 /* congratulations_pandaMax.png */; };
 		14770AA4208DC0EB00726420 /* ViewController18.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14770AA3208DC0EB00726420 /* ViewController18.xib */; };
 		14DCFC83209C39C50097D6A9 /* XTJCoreNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DCFC42209C39C50097D6A9 /* XTJCoreNetworkManager.m */; };
 		14DCFC84209C39C50097D6A9 /* XTJTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DCFC47209C39C50097D6A9 /* XTJTool.m */; };
@@ -69,17 +58,6 @@
 		1453CEA22099B37C00E50066 /* AAPLGameViewControllerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLGameViewControllerPrivate.h; sourceTree = "<group>"; };
 		1453CEA62099B37C00E50066 /* AAPLGameControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLGameControls.m; sourceTree = "<group>"; };
 		1453CEAD2099C01D00E50066 /* game.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = game.scnassets; sourceTree = "<group>"; };
-		1453CEAF2099C01D00E50066 /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
-		1453CEB02099C01D00E50066 /* collect.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = collect.scnp; sourceTree = "<group>"; };
-		1453CEB12099C01D00E50066 /* glow01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glow01.png; sourceTree = "<group>"; };
-		1453CEB22099C01D00E50066 /* confetti.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = confetti.scnp; sourceTree = "<group>"; };
-		1453CEB42099C01D00E50066 /* MaxIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MaxIcon.png; sourceTree = "<group>"; };
-		1453CEB52099C01D00E50066 /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
-		1453CEB62099C01D00E50066 /* FlowerFull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlowerFull.png; sourceTree = "<group>"; };
-		1453CEB72099C01D00E50066 /* ItemsPearl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemsPearl.png; sourceTree = "<group>"; };
-		1453CEB82099C01D00E50066 /* congratulations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = congratulations.png; sourceTree = "<group>"; };
-		1453CEB92099C01D00E50066 /* FlowerEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlowerEmpty.png; sourceTree = "<group>"; };
-		1453CEBA2099C01D00E50066 /* congratulations_pandaMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = congratulations_pandaMax.png; sourceTree = "<group>"; };
 		145D3EFC201031B6000AC3CD /* Test_SceneKit_18_Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_SceneKit_18_Camera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14770AA3208DC0EB00726420 /* ViewController18.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController18.xib; sourceTree = "<group>"; };
 		14DCFC41209C39C50097D6A9 /* XTJCoreNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJCoreNetworkManager.h; sourceTree = "<group>"; };
@@ -200,35 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				1453CEAD2099C01D00E50066 /* game.scnassets */,
-				1453CEAE2099C01D00E50066 /* Particle systems */,
-				1453CEB32099C01D00E50066 /* Overlays */,
 			);
 			path = "Game assets";
-			sourceTree = "<group>";
-		};
-		1453CEAE2099C01D00E50066 /* Particle systems */ = {
-			isa = PBXGroup;
-			children = (
-				1453CEAF2099C01D00E50066 /* confetti.png */,
-				1453CEB02099C01D00E50066 /* collect.scnp */,
-				1453CEB12099C01D00E50066 /* glow01.png */,
-				1453CEB22099C01D00E50066 /* confetti.scnp */,
-			);
-			path = "Particle systems";
-			sourceTree = "<group>";
-		};
-		1453CEB32099C01D00E50066 /* Overlays */ = {
-			isa = PBXGroup;
-			children = (
-				1453CEB42099C01D00E50066 /* MaxIcon.png */,
-				1453CEB52099C01D00E50066 /* dpad.png */,
-				1453CEB62099C01D00E50066 /* FlowerFull.png */,
-				1453CEB72099C01D00E50066 /* ItemsPearl.png */,
-				1453CEB82099C01D00E50066 /* congratulations.png */,
-				1453CEB92099C01D00E50066 /* FlowerEmpty.png */,
-				1453CEBA2099C01D00E50066 /* congratulations_pandaMax.png */,
-			);
-			path = Overlays;
 			sourceTree = "<group>";
 		};
 		145D3EF3201031B6000AC3CD = {
@@ -436,23 +387,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1453CEC52099C01D00E50066 /* FlowerEmpty.png in Resources */,
 				143C24252089998500543BBA /* LaunchScreen.storyboard in Resources */,
-				1453CEC42099C01D00E50066 /* congratulations.png in Resources */,
-				1453CEBC2099C01D00E50066 /* confetti.png in Resources */,
 				14DCFC9C209C39C50097D6A9 /* XTJMaterial.bundle in Resources */,
-				1453CEC62099C01D00E50066 /* congratulations_pandaMax.png in Resources */,
 				143C24242089998500543BBA /* Assets.xcassets in Resources */,
-				1453CEC02099C01D00E50066 /* MaxIcon.png in Resources */,
-				1453CEBD2099C01D00E50066 /* collect.scnp in Resources */,
 				14770AA4208DC0EB00726420 /* ViewController18.xib in Resources */,
-				1453CEBE2099C01D00E50066 /* glow01.png in Resources */,
-				1453CEC22099C01D00E50066 /* FlowerFull.png in Resources */,
-				1453CEC12099C01D00E50066 /* dpad.png in Resources */,
 				143C24262089998500543BBA /* Main.storyboard in Resources */,
-				1453CEC32099C01D00E50066 /* ItemsPearl.png in Resources */,
 				1453CEBB2099C01D00E50066 /* game.scnassets in Resources */,
-				1453CEBF2099C01D00E50066 /* confetti.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

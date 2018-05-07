@@ -73,4 +73,7 @@
    <FileRef
       location = "group:Test_SceneKit_26_HitTest/Test_SceneKit_26_HitTest.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_me2_Material/Test_SceneKit_me2_Material.xcodeproj">
+   </FileRef>
 </Workspace>

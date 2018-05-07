@@ -70,6 +70,7 @@ SSZipArchiveDelegate
 }
 
 /*
+ MARK:
  加载本地模型：
  项目文件夹/art.scnassets内模型
  项目文件夹/dae 但如果模型没有优化，如果cameraNode没有设置pointOfView则视角会错误

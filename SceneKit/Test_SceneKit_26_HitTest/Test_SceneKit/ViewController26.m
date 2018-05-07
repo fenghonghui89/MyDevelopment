@@ -4,7 +4,7 @@
 //
 //  Created by hanyfeng on 2018/1/18.
 //  Copyright © 2018年 hanyfeng. All rights reserved.
-// 阴影的使用
+// 获取点击的节点
 
 @import SpriteKit;
 
@@ -85,6 +85,7 @@ SSZipArchiveDelegate
     floor.length = 0;
     
     SCNNode *floorNode = [SCNNode node];
+    floorNode.name = @"地板";
     floorNode.geometry = floor;
     [scene.rootNode addChildNode:floorNode];
     
@@ -92,6 +93,7 @@ SSZipArchiveDelegate
     SCNBox *box = [SCNBox boxWithWidth:100 height:100 length:100 chamferRadius:0];
     box.firstMaterial.diffuse.contents = ImageFile(@"image/春夏布料");
     SCNNode *boxNode = [SCNNode node];
+    boxNode.name = @"盒子";
     boxNode.geometry = box;
     boxNode.position = SCNVector3Make(0, 50, 0);
     [scene.rootNode addChildNode:boxNode];
@@ -134,17 +136,22 @@ SSZipArchiveDelegate
         SCNHitTestResult *result = [hitResults objectAtIndex:0];
         
         //SCNHitTestResult参数
-        SCNNode *node = result.node;
-        NSInteger geoIndex = result.geometryIndex;
-        NSInteger faceIndex = result.faceIndex;
-        SCNVector3 localCoordinates = result.localCoordinates;
-        SCNVector3 worldCoordinates = result.worldCoordinates;
+        SCNNode *node = result.node;//点击到的节点
+        NSLog(@"节点名字:%@",node.name);
+        NSInteger geoIndex = result.geometryIndex;//几何体索引
+        NSLog(@"几何体索引..%ld",(long)geoIndex);
+        NSInteger faceIndex = result.faceIndex;//面的索引
+        NSLog(@"面的索引..%ld",(long)faceIndex);
+        SCNVector3 localCoordinates = result.localCoordinates;//本地坐标系统
+        SCNVector3 worldCoordinates = result.worldCoordinates;//世界坐标系统
 //        SCNNode *boneNode = result.boneNode;//骨骼
-        CGPoint textureCoordinates = [result textureCoordinatesWithMappingChannel:0];
+        CGPoint textureCoordinates = [result textureCoordinatesWithMappingChannel:0];//纹理
+        
         
         // get its material
-        SCNMaterial *material = result.node.geometry.firstMaterial;
+        SCNMaterial *material = result.node.geometry.firstMaterial;//材质
         
+        //高亮点击的部分
         // highlight it
         [SCNTransaction begin];
         [SCNTransaction setAnimationDuration:0.5];
