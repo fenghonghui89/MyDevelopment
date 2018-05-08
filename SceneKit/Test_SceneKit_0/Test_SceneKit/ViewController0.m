@@ -32,34 +32,38 @@
     
     //scene
     SCNScene *scene = [SCNScene scene];
+    scene.background.contents = ImageFile(@"image/skybox01_cube");
     self.scene = scene;
 
-    //camera
-    SCNCamera *camera = [SCNCamera camera];
-    camera.automaticallyAdjustsZRange = YES;
+//    //camera
+//    SCNCamera *camera = [SCNCamera camera];
+//    camera.automaticallyAdjustsZRange = YES;
+//
+//    SCNNode *cameraNode = [SCNNode node];
+//    cameraNode.camera = camera;
+//    cameraNode.position = SCNVector3Make(0, 100, 50);
+//    cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
+//    [scene.rootNode addChildNode:cameraNode];
+//
+//    //light
+//    SCNLight *ambientlight = [SCNLight light];
+//    ambientlight.type = SCNLightTypeAmbient;
+//    ambientlight.color = [UIColor grayColor];
+//    SCNNode *ambientlightNode = [SCNNode node];
+//    ambientlightNode.light = ambientlight;
+//    [scene.rootNode addChildNode:ambientlightNode];
+//
+//    //floor
+//    SCNFloor *floor = [SCNFloor floor];
+//    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
+//    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
+//    floorNode.position = SCNVector3Make(0, 0, 0);
+//    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
+//    [scene.rootNode addChildNode:floorNode];
     
-    SCNNode *cameraNode = [SCNNode node];
-    cameraNode.camera = camera;
-    cameraNode.position = SCNVector3Make(0, 100, 50);
-    cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
-    [scene.rootNode addChildNode:cameraNode];
-    
-    //light
-    SCNLight *ambientlight = [SCNLight light];
-    ambientlight.type = SCNLightTypeAmbient;
-    ambientlight.color = [UIColor grayColor];
-    SCNNode *ambientlightNode = [SCNNode node];
-    ambientlightNode.light = ambientlight;
-    [scene.rootNode addChildNode:ambientlightNode];
-    
-    //floor
-    SCNFloor *floor = [SCNFloor floor];
-    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
-    
-    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
-    floorNode.position = SCNVector3Make(0, 0, 0);
-    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
-    [scene.rootNode addChildNode:floorNode];
+    //model
+    SCNScene *scene_model = [SCNScene sceneNamed:@"SceneKit Scene.scn"];
+    [scene.rootNode addChildNode:scene_model.rootNode];
     
     //scnview
     SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
@@ -75,10 +79,6 @@
     self.scnView = scnView;
 }
 
--(void)geo{
-    
-    
-}
 
 
 #pragma mark - < action >

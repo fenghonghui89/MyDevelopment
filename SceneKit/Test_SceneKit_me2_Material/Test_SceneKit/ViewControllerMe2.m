@@ -147,15 +147,74 @@ SSZipArchiveDelegate
     
     material.lightingModelName = SCNLightingModelBlinn;//光照模型类型 Lambert、Blinn(Lambert基础上加高光)
     
+    /*
+     颜色贴图 漫反射贴图
+     给几何体一个基本的颜色纹理,不考虑灯光和特效
+     */
 //    material.diffuse.contents = [UIColor redColor];//材质的本色
     material.diffuse.contents = ImageFile(@"image/earth");//材质的贴图
     
-    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];//环境光
+    /*
+     环境光贴图
+     */
+    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];
     
+    /*
+     法线贴图
+     形成表面崎岖不平的灯光效果
+     */
+    material.normal.contents = ImageFile(@"image/earth_NRM");
+    
+    /*
+     镜面贴图 高光贴图
+     */
     material.specular.contents = [UIColor whiteColor];//高光的颜色
-//    material.specular.contents = ImageFile(@"image/earth_specular");//高光的区域
+//    material.specular.contents = ImageFile(@"image/earth_specular");//设置高光的区域
     
-    material.shininess = 1.0;//高光 0~1越大越光滑
+    //光滑度 0~1越大越光滑
+    material.shininess = 1.0;
+    
+    /*
+     反射贴图
+     以黑白图片精确定义了材质每个像素的反光程度.就是周围环境的光线在物体表面映射出的图像(实际就是天空盒子图像在物体表面的反光).
+     */
+    material.reflective.contents = @[ImageFile(@"image/cube-1"),
+                                     ImageFile(@"image/cube-2"),
+                                     ImageFile(@"image/cube-3"),
+                                     ImageFile(@"image/cube-4"),
+                                     ImageFile(@"image/cube-5"),
+                                     ImageFile(@"image/cube-6")];
+    
+    //菲涅尔系数，影响反射效果
+    material.fresnelExponent = 1.7;
+    
+    /*
+     AO贴图 环境光闭塞贴图
+     只有当场景中有ambient light环境光时才有作用,精确定义了每个像素在环境光作用下的被照亮程度.也就是让几何体的黑色部分不被环境光照亮而变浅.
+     */
+    material.ambientOcclusion.contents = nil;
+    
+    /*
+     Emission map(发光贴图):在没有光线时,如果物体表面有荧光涂料,就会发光.发光贴图可以用来模拟这种物体.彩色贴图中,黑色不发光,亮色发光强,暗色发光弱.
+     需要注意的是 在Scene Kit中Emission map(发光贴图)并不真正发光,只是模拟发光效果而已.就是说不能照亮其他物体,不能产生阴影.这点与其他3D创作工具不同.
+     */
+    material.emission.contents = nil;
+    
+    /*
+     Multiply map(乘法贴图,正片叠底贴图):会影响其他所有效果.一般用来给最后的效果调整色彩或者亮度
+     */
+    material.multiply.contents = nil;
+    
+    /*
+     Transparency map(透明贴图):黑色部分不透明,白色透明. 注意:球体内部需要开启double-sided mode才能看到
+     */
+    material.transparent.contents = nil;
+    
+    /*
+     Metalness and Roughness maps(光泽度和粗糙度贴图):Xcode8引入的新特性,Physically Based Rendering (PBR)灯光模型可以使用Metalness和Roughness贴图.
+     */
+    material.metalness.contents = nil;
+    material.roughness.contents = nil;
     
     //由于PBR光照模型中ambient和diffuse是锁定的，所以需要把locksAmbientWithDiffuse设置为false，否则ambient只能和diffuse取相同的值。
     material.locksAmbientWithDiffuse = NO;

@@ -13,12 +13,14 @@
 <
 SCNSceneRendererDelegate
 >
+@property(nonatomic,strong)SCNScene *scene;
 @property(nonatomic,strong)SCNView *scnView;
 @property(nonatomic,strong)SCNIKConstraint *ikConstraint;
 @end
 
 @implementation ViewController19
 
+#pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,31 +32,12 @@ SCNSceneRendererDelegate
     [self setupScnview];
 }
 
+#pragma mark - method
 -(void)setupScnview{
     
     SCNScene *scene = [SCNScene scene];
     scene.physicsWorld.gravity = SCNVector3Make(0, 90, 0);//添加一个重力，让其方向朝上
-    
-    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
-    scnView.center = self.view.center;
-    scnView.scene = scene;
-    scnView.backgroundColor = [UIColor blackColor];
-    scnView.allowsCameraControl = YES;
-    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
-    scnView.showsStatistics = YES;
-    scnView.preferredFramesPerSecond = 60;//帧率
-    [self.view addSubview:scnView];
-    [self.view sendSubviewToBack:scnView];
-    self.scnView = scnView;
-    
-    //camera
-    SCNCamera *camera = [SCNCamera camera];
-    camera.automaticallyAdjustsZRange = YES;
-    
-    SCNNode *cameraNode = [SCNNode node];
-    cameraNode.camera = camera;
-    cameraNode.position = SCNVector3Make(0, 0, 1000);
-    [scene.rootNode addChildNode:cameraNode];
+    self.scene = scene;
     
     //light
     SCNLight *ambientlight = [SCNLight light];
@@ -62,7 +45,7 @@ SCNSceneRendererDelegate
     ambientlight.color = [UIColor grayColor];
     SCNNode *ambientlightNode = [SCNNode node];
     ambientlightNode.light = ambientlight;
-    [scnView.scene.rootNode addChildNode:ambientlightNode];
+    [scene.rootNode addChildNode:ambientlightNode];
     
     //点光源
     SCNLight *omniLight = [SCNLight light];
@@ -85,7 +68,7 @@ SCNSceneRendererDelegate
     SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
     floorNode.position = SCNVector3Make(0, 0, 0);
     floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
-    [scnView.scene.rootNode addChildNode:floorNode];
+    [scene.rootNode addChildNode:floorNode];
     
     //手掌
     SCNNode *handNode = [SCNNode node];
@@ -125,7 +108,7 @@ SCNSceneRendererDelegate
     
 
     //添加到场景中
-    [scnView.scene.rootNode addChildNode:controlNode];
+    [scene.rootNode addChildNode:controlNode];
 //    scnView.delegate = self;
 
 
@@ -140,10 +123,7 @@ SCNSceneRendererDelegate
     handNode.constraints = @[ikContrait];
     self.ikConstraint = ikContrait;
     
-    //SCNLookAtConstraint，锁定某一个node，然后给camera添加约束
-    SCNLookAtConstraint *lockAtContrait = [SCNLookAtConstraint lookAtConstraintWithTarget:handNode];
-    lockAtContrait.gimbalLockEnabled = YES;//照相机视野保持在水平面上，即沿着y轴跟随目标节点
-    cameraNode.constraints = @[lockAtContrait];
+    [self setupLookNC:handNode];
 
     //SCNTransformConstraint
     SCNTransformConstraint *transformConstraint = [SCNTransformConstraint transformConstraintInWorldSpace:YES
@@ -156,12 +136,52 @@ SCNSceneRendererDelegate
                                                                                                 }];
 //    handNode.constraints = @[ikContrait,transformConstraint];
     
+    
+    //scnView
+    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
+    scnView.center = self.view.center;
+    scnView.scene = scene;
+    scnView.backgroundColor = [UIColor blackColor];
+    scnView.allowsCameraControl = YES;
+    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
+    scnView.showsStatistics = YES;
+    scnView.preferredFramesPerSecond = 60;//帧率
+    [self.view addSubview:scnView];
+    [self.view sendSubviewToBack:scnView];
+    self.scnView = scnView;
+    
     //添加手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandler)];
     [scnView addGestureRecognizer:tap];
-    
 }
 
+//SCNLookAtConstraint
+-(void)setupLookNC:(SCNNode *)handNode{
+    
+    SCNCamera *camera = [SCNCamera camera];
+    camera.automaticallyAdjustsZRange = YES;
+    
+    SCNNode *cameraNode = [SCNNode node];
+    cameraNode.camera = camera;
+    cameraNode.position = SCNVector3Make(0, 0, 1000);
+    [self.scene.rootNode addChildNode:cameraNode];
+    
+    //SCNLookAtConstraint，锁定某一个node，然后给camera添加约束
+    SCNLookAtConstraint *lockAtContrait = [SCNLookAtConstraint lookAtConstraintWithTarget:handNode];
+    
+    /*
+     万向节锁 照相机视野保持在水平面上，即沿着y轴跟随目标节点
+     
+     当使用SCNLookAtConstraint时,Scene Kit不管被朝向的对象如何移动,旋转都会让相机对着他.但是有些时候会转到一些奇怪的角度,导致相机发生向左或向右的倾斜,对于灯光是没问题的,但相机就不可以,我们总是希望相机保持水平方向.
+     因此用到万向节锁
+
+     */
+    lockAtContrait.gimbalLockEnabled = YES;
+    
+    cameraNode.constraints = @[lockAtContrait];
+}
+
+#pragma mark - action
 -(void)tapHandler{
     [self createNodeToScene:self.scnView.scene addConstraint:self.ikConstraint];
 }

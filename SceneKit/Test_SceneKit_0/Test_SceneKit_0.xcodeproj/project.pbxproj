@@ -41,6 +41,7 @@
 		143C24282089998500543BBA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 143C241F2089998500543BBA /* Info.plist */; };
 		143C24292089998500543BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C24202089998500543BBA /* AppDelegate.m */; };
 		14770AA4208DC0EB00726420 /* ViewController0.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14770AA3208DC0EB00726420 /* ViewController0.xib */; };
+		14C9BF8020A17B52002DE2CC /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 14C9BF7F20A17B52002DE2CC /* SceneKit Scene.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		143C24212089998500543BBA /* ViewController0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController0.h; sourceTree = "<group>"; };
 		145D3EFC201031B6000AC3CD /* Test_SceneKit_0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_SceneKit_0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14770AA3208DC0EB00726420 /* ViewController0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController0.xib; sourceTree = "<group>"; };
+		14C9BF7F20A17B52002DE2CC /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 				140A371620A0053800B484A7 /* CommonFiles */,
 				143C24152089998500543BBA /* AppDelegate.h */,
 				143C24202089998500543BBA /* AppDelegate.m */,
+				14C9BF7F20A17B52002DE2CC /* SceneKit Scene.scn */,
 				143C24212089998500543BBA /* ViewController0.h */,
 				143C24172089998500543BBA /* ViewController0.m */,
 				14770AA3208DC0EB00726420 /* ViewController0.xib */,
@@ -363,6 +366,7 @@
 				140A377320A0053900B484A7 /* XTJMaterial.bundle in Resources */,
 				143C24242089998500543BBA /* Assets.xcassets in Resources */,
 				143C24282089998500543BBA /* Info.plist in Resources */,
+				14C9BF8020A17B52002DE2CC /* SceneKit Scene.scn in Resources */,
 				14770AA4208DC0EB00726420 /* ViewController0.xib in Resources */,
 				143C24262089998500543BBA /* Main.storyboard in Resources */,
 			);

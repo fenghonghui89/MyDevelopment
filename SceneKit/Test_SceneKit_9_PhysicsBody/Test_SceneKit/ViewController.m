@@ -22,33 +22,21 @@
 
 @implementation ViewController
 
+#pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self setupScnview];
 }
 
+#pragma mark - method
 -(void)setupScnview{
     
     SCNScene *scene = [SCNScene sceneNamed:@"art-o.scnassets/ship.scn"];
     scene = [SCNScene scene];
-    
-    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
-    scnView.center = self.view.center;
-    
-    scnView.backgroundColor = [UIColor blackColor];
-    scnView.allowsCameraControl = YES;
-    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
-    scnView.showsStatistics = YES;
-    scnView.preferredFramesPerSecond = 60;//帧率
-    [self.view addSubview:scnView];
-    [self.view sendSubviewToBack:scnView];
-    _scnView = scnView;
     
     //camera
     SCNCamera *camera = [SCNCamera camera];
@@ -81,6 +69,9 @@
     [scene.rootNode addChildNode:floorNode];
     
     //几何体
+    /*
+     当需要物理引擎来控制节点的移动和旋转时,应设置为dynamic.如果不需要移动,但仍能参与物理模拟,应设置为static.如果你既想控制某些节点的移动和旋转,同时仍能参与物理模拟,应设置为kinematic.
+     */
     CGFloat height = 10;
     CGFloat y = height*0.5;
     SCNCylinder *cylinder = [SCNCylinder cylinderWithRadius:1 height:height];
@@ -114,6 +105,18 @@
 
     scnView.scene = scene;
     NSLog(@"%@",scnView.pointOfView);
+    
+    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
+    scnView.center = self.view.center;
+    
+    scnView.backgroundColor = [UIColor blackColor];
+    scnView.allowsCameraControl = YES;
+    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
+    scnView.showsStatistics = YES;
+    scnView.preferredFramesPerSecond = 60;//帧率
+    [self.view addSubview:scnView];
+    [self.view sendSubviewToBack:scnView];
+    _scnView = scnView;
     
     // add a tap gesture recognizer
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
