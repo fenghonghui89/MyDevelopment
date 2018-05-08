@@ -11,6 +11,7 @@
 #import "XTJRootDefine.h"
 #import "SSZipArchive.h"
 #import "XTJCoreNetworkManager.h"
+#import "Cube.h"
 @interface ViewControllerMe3 ()
 <
 SCNSceneRendererDelegate,SCNSceneExportDelegate,
@@ -97,7 +98,8 @@ SSZipArchiveDelegate
 //    box.name = @"盒子";
 //    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
     SCNNode *boxNode = [SCNNode node];
-    boxNode.geometry = [self plane1:CGPointMake(10, 10)];
+//    boxNode.geometry = [self plane:CGPointMake(10, 10)];
+    boxNode.geometry = [Cube cubeWithSize:SCNVector3Make(10, 10, 10)];
     boxNode.position = SCNVector3Make(0, 50, 0);
     [scene.rootNode addChildNode:boxNode];
 //    [self setupMaterial1:box];
@@ -168,7 +170,7 @@ SSZipArchiveDelegate
     
     //从顶点里面取第0到5个组成三角形列表，让系统渲染
     UInt32 indices[] = {0,1,2,3,4,5};
-    NSData *data = [NSData dataWithBytes:indices length:sizeof(UInt32)*6.0];
+    NSData *data = [NSData dataWithBytes:indices length:sizeof(UInt32)*6.0];//4*6
     
     SCNGeometryPrimitiveType type = SCNGeometryPrimitiveTypeTriangles;//三角形序列
     
@@ -177,7 +179,7 @@ SSZipArchiveDelegate
                                                                primitiveCount:2
                                                                 bytesPerIndex:sizeof(UInt32)];
     
-    SCNGeometry *geometry = [SCNGeometry geometryWithSources:@[vertexSource,uvSource,normalSource]
+    SCNGeometry *geometry = [SCNGeometry geometryWithSources:@[normalSource,uvSource,vertexSource]
                                                     elements:@[element]];
     
     return geometry;
@@ -217,7 +219,7 @@ SSZipArchiveDelegate
     
     
     UInt32 indices[] = {1,2,0,3};//必须是1203
-    NSData *data = [NSData dataWithBytes:indices length:sizeof(UInt32)*4.0];
+    NSData *data = [NSData dataWithBytes:indices length:sizeof(UInt32)*4.0];//4*4
     
     SCNGeometryPrimitiveType type = SCNGeometryPrimitiveTypeTriangleStrip;//三角带
     
@@ -231,12 +233,6 @@ SSZipArchiveDelegate
     
     return geometry;
 }
-
-//自定义正方体 todo
--(void)cube:(SCNVector3)size{
-    
-}
-
 
 
 #pragma mark - < action >
