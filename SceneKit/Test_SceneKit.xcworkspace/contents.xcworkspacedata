@@ -82,4 +82,7 @@
    <FileRef
       location = "group:Test_SceneKit_me4_Map/Test_SceneKit_me4_Map.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_me5_Audio/Test_SceneKit_me5_Audio.xcodeproj">
+   </FileRef>
 </Workspace>
