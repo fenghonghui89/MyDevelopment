@@ -40,6 +40,7 @@
 		143C24272089998500543BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C241E2089998500543BBA /* main.m */; };
 		143C24292089998500543BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C24202089998500543BBA /* AppDelegate.m */; };
 		14770AA4208DC0EB00726420 /* ViewControllerMe4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14770AA3208DC0EB00726420 /* ViewControllerMe4.xib */; };
+		14C9BF7E20A170E2002DE2CC /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C9BF7D20A170E2002DE2CC /* Cube.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,8 @@
 		143C24212089998500543BBA /* ViewControllerMe4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMe4.h; sourceTree = "<group>"; };
 		145D3EFC201031B6000AC3CD /* Test_SceneKit_me4_Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_SceneKit_me4_Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14770AA3208DC0EB00726420 /* ViewControllerMe4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewControllerMe4.xib; sourceTree = "<group>"; };
+		14C9BF7C20A170E2002DE2CC /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
+		14C9BF7D20A170E2002DE2CC /* Cube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cube.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 		140A36B8209FF5B200B484A7 /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				14C9BF7C20A170E2002DE2CC /* Cube.h */,
+				14C9BF7D20A170E2002DE2CC /* Cube.m */,
 				140A36B9209FF5B200B484A7 /* NetworkManager */,
 				140A36BD209FF5B200B484A7 /* Util */,
 				140A36EB209FF5B200B484A7 /* ThirdParty */,
@@ -402,6 +407,7 @@
 				143C24232089998500543BBA /* ViewControllerMe4.m in Sources */,
 				140A3710209FF5B200B484A7 /* AFHTTPSessionManager.m in Sources */,
 				140A3701209FF5B200B484A7 /* ioapi.c in Sources */,
+				14C9BF7E20A170E2002DE2CC /* Cube.m in Sources */,
 				140A36FC209FF5B200B484A7 /* XTJCoreNetworkManager.m in Sources */,
 				140A3713209FF5B200B484A7 /* AFNetworkReachabilityManager.m in Sources */,
 				140A3712209FF5B200B484A7 /* AFURLRequestSerialization.m in Sources */,

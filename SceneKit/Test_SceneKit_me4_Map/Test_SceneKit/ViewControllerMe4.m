@@ -11,6 +11,7 @@
 #import "XTJRootDefine.h"
 #import "SSZipArchive.h"
 #import "XTJCoreNetworkManager.h"
+#import "Cube.h"
 @interface ViewControllerMe4 ()
 <
 SCNSceneRendererDelegate,SCNSceneExportDelegate,
@@ -93,7 +94,8 @@ SSZipArchiveDelegate
 //    [scene.rootNode addChildNode:floorNode];
     
     //box
-    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+//    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+    Cube *box = [Cube cubeWithSize:SCNVector3Make(10, 10, 10)];
     box.name = @"盒子";
     SCNNode *boxNode = [SCNNode node];
     boxNode.geometry = box;
@@ -128,33 +130,33 @@ SSZipArchiveDelegate
 //材质-贴图
 -(void)setupMaterial1:(SCNGeometry *)geometry{
     
-    SCNMaterial *m1 = [self createMaterial:ImageFile(@"image/春夏布料")];
-    SCNMaterial *m2 = [self createMaterial:ImageFile(@"image/功能性布料")];
-    SCNMaterial *m3 = [self createMaterial:ImageFile(@"image/婚庆布料")];
-    SCNMaterial *m4 = [self createMaterial:ImageFile(@"image/家居布料")];
-    SCNMaterial *m5 = [self createMaterial:ImageFile(@"image/棉类布料")];
-    SCNMaterial *m6 = [self createMaterial:ImageFile(@"image/女装布料")];
-    
-    geometry.materials = @[m1,m2,m3,m4,m5,m6];
+    NSArray *images = @[ImageFile(@"image/春夏布料"),ImageFile(@"image/功能性布料"),ImageFile(@"image/婚庆布料"),ImageFile(@"image/家居布料"),ImageFile(@"image/棉类布料"),ImageFile(@"image/女装布料")];
+    NSMutableArray *materials = [NSMutableArray array];
+    for (int i=0; i<images.count; i++) {
+        SCNMaterial *material = [SCNMaterial material];
+        material.lightingModelName = SCNLightingModelBlinn;//光照模型类型 Lambert、Blinn(Lambert基础上加高光)
+        material.diffuse.contents = images[i];//材质的贴图
+        material.locksAmbientWithDiffuse = NO;
+        
+        //u轴上的重复模式
+        material.diffuse.wrapS = SCNWrapModeRepeat;
+        
+        //v轴上的重复模式
+        material.diffuse.wrapT = SCNWrapModeRepeat;
+        
+        if (@available(iOS 11.0,*)) {
+            //放大时的采样算法 默认lines
+            material.diffuse.magnificationFilter = SCNFillModeLines;
+            
+            //缩小时的采样算法 默认lines
+            material.diffuse.minificationFilter = SCNFillModeFill;
+        }
+        
+        [materials addObject:material];
+    }
+    geometry.materials = materials;
 }
 
--(SCNMaterial *)createMaterial:(UIImage *)image{
-    
-    SCNMaterial *material = [SCNMaterial material];
-    
-    material.lightingModelName = SCNLightingModelBlinn;//光照模型类型 Lambert、Blinn(Lambert基础上加高光)
-
-    material.diffuse.contents = image;//材质的贴图
-    
-//    material.ambient.contents = [[UIColor alloc] initWithWhite:0.1 alpha:1];//环境光
-//    
-//    material.shininess = 1.0;//高光 0~1越大越光滑
-    
-    //由于PBR光照模型中ambient和diffuse是锁定的，所以需要把locksAmbientWithDiffuse设置为false，否则ambient只能和diffuse取相同的值。
-    material.locksAmbientWithDiffuse = NO;
-    
-    return material;
-}
 
 #pragma mark - < action >
 - (IBAction)tap:(id)sender {
