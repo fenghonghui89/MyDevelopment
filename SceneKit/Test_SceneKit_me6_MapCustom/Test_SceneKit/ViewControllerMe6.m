@@ -30,6 +30,13 @@ SCNSceneRendererDelegate
                                                      downloadFilePath:nil
                                                         localFilePath:@"3d/飞龙dae/file.dae"
                                                             modelName:nil];
+    
+    downloadInfoDic = [XTJ3DInfoModel infoWithIsLocal:NO
+                                                  url:@"http://o9ivu69va.bkt.clouddn.com/art-o.zip"
+                                     downloadFilePath:@"art-o/file.dae"
+                                        localFilePath:@"3d/飞龙dae/file.dae"
+                                            modelName:@"SubDragonLE_Shape"];
+
 
     [XTJ3DManager sharedInstance].downloadInfoDic = downloadInfoDic;
     
@@ -41,30 +48,41 @@ SCNSceneRendererDelegate
 }
 
 #pragma mark - action
-- (IBAction)tap:(id)sender {
+- (IBAction)tap:(UIButton *)sender {
+    [sender setTitle:@"下载" forState:UIControlStateNormal];
     
     [[XTJ3DManager sharedInstance] downloadFile];
 }
 
-- (IBAction)tap1:(id)sender {
-    
+- (IBAction)tap1:(UIButton *)sender {
+    [sender setTitle:@"加载" forState:UIControlStateNormal];
     [[XTJ3DManager sharedInstance] loadModelUseSCNSceneSource:self.scene];
 }
 
-- (IBAction)tap2:(id)sender {
+- (IBAction)tap2:(UIButton *)sender {
+    [sender setTitle:@"清空doc" forState:UIControlStateNormal];
+    
     [[XTJ3DManager sharedInstance] removeDocFile];
 }
 
-- (IBAction)tap3:(id)sender {
+- (IBAction)tap3:(UIButton *)sender {
+    [sender setTitle:@"reset" forState:UIControlStateNormal];
+    
     [self.scnView removeFromSuperview];
     self.scnView = nil;
     
     [self setupScnview];
 }
 
-- (IBAction)tap4:(id)sender {
-//    [[XTJ3DManager sharedInstance] showDocFiles];
+- (IBAction)tap4:(UIButton *)sender {
+    [sender setTitle:@"换材质" forState:UIControlStateNormal];
     [self fineMaterial];
+}
+
+- (IBAction)tap5:(UIButton *)sender {
+    [sender setTitle:@"show log" forState:UIControlStateNormal];
+    
+    [[XTJ3DManager sharedInstance] showDocFiles];
 }
 
 #pragma mark - method
@@ -139,6 +157,7 @@ SCNSceneRendererDelegate
     scnView.scene = scene;
 }
 
+#pragma mark - 换材质
 -(void)fineMaterial{
     
     SCNNode *model = [self.scene.rootNode childNodeWithName:@"SubDragonLE_Shape" recursively:YES];
@@ -155,8 +174,6 @@ SCNSceneRendererDelegate
 -(void)changeMaterial:(SCNMaterial *)material{
     
     material.diffuse.contents = ImageFile(@"image/earth");
-    material.specular.contents = [UIColor whiteColor];
-    material.normal.contents = ImageFile(@"image/earth_NRM");
 }
 
 #pragma mark - < SCNSceneRendererDelegate >

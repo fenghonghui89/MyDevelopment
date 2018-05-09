@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,59 +21,72 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-Of-evp">
-                    <rect key="frame" x="100" y="120" width="32" height="30"/>
-                    <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="tap0"/>
-                    <connections>
-                        <action selector="tap:" destination="-1" eventType="touchUpInside" id="JkF-Ez-hnA"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqb-40-8Zj">
-                    <rect key="frame" x="100" y="207" width="30" height="30"/>
-                    <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="tap1"/>
-                    <connections>
-                        <action selector="tap1:" destination="-1" eventType="touchUpInside" id="YjX-Ti-aCx"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-dF-olX">
-                    <rect key="frame" x="97" y="271" width="31" height="30"/>
-                    <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="tap2"/>
-                    <connections>
-                        <action selector="tap2:" destination="-1" eventType="touchUpInside" id="MNL-kp-ivm"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2o-Mt-x42">
-                    <rect key="frame" x="103" y="331" width="32" height="30"/>
-                    <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="tap3"/>
-                    <connections>
-                        <action selector="tap3:" destination="-1" eventType="touchUpInside" id="bRH-Bc-Ehx"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fua-jZ-bSI">
-                    <rect key="frame" x="98" y="405" width="32" height="30"/>
-                    <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="tap4"/>
-                    <connections>
-                        <action selector="tap4:" destination="-1" eventType="touchUpInside" id="bLU-ec-ksO"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-Xb-LNT">
+                    <rect key="frame" x="0.0" y="120" width="75" height="447"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFi-TV-iEh">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="66"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="download"/>
+                            <connections>
+                                <action selector="tap:" destination="-1" eventType="touchUpInside" id="79e-XG-FjT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b8-t9-aXx">
+                            <rect key="frame" x="0.0" y="76" width="75" height="66.5"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="load model"/>
+                            <connections>
+                                <action selector="tap1:" destination="-1" eventType="touchUpInside" id="ei8-PM-v9X"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoI-En-uIn">
+                            <rect key="frame" x="0.0" y="152.5" width="75" height="66"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="delete doc"/>
+                            <connections>
+                                <action selector="tap2:" destination="-1" eventType="touchUpInside" id="d7k-fi-DXP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUP-zD-33k">
+                            <rect key="frame" x="0.0" y="228.5" width="75" height="66"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="reset view"/>
+                            <connections>
+                                <action selector="tap3:" destination="-1" eventType="touchUpInside" id="fvL-d3-vIt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-qH-lhq">
+                            <rect key="frame" x="0.0" y="304.5" width="75" height="66.5"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="change skin"/>
+                            <connections>
+                                <action selector="tap4:" destination="-1" eventType="touchUpInside" id="LfU-XE-sII"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPz-In-nAV">
+                            <rect key="frame" x="0.0" y="381" width="75" height="66"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="show log"/>
+                            <connections>
+                                <action selector="tap5:" destination="-1" eventType="touchUpInside" id="0Cv-DC-fMX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="W2o-Mt-x42" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="103" id="6Wt-Wd-tph"/>
-                <constraint firstItem="fua-jZ-bSI" firstAttribute="top" secondItem="W2o-Mt-x42" secondAttribute="bottom" constant="44" id="6pZ-h3-8ok"/>
-                <constraint firstItem="7DL-dF-olX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="97" id="Gqk-GU-Ah3"/>
-                <constraint firstItem="vqb-40-8Zj" firstAttribute="top" secondItem="cY4-Of-evp" secondAttribute="bottom" constant="57" id="QCp-Xb-ejH"/>
-                <constraint firstItem="fua-jZ-bSI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="98" id="U8S-u1-HlY"/>
-                <constraint firstItem="cY4-Of-evp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="Ugb-5N-bQN"/>
-                <constraint firstItem="7DL-dF-olX" firstAttribute="top" secondItem="vqb-40-8Zj" secondAttribute="bottom" constant="34" id="VIe-CW-7Wd"/>
-                <constraint firstItem="vqb-40-8Zj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="mat-DS-LP1"/>
-                <constraint firstItem="W2o-Mt-x42" firstAttribute="top" secondItem="7DL-dF-olX" secondAttribute="bottom" constant="30" id="pUa-vi-0t4"/>
-                <constraint firstItem="cY4-Of-evp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="vqh-u6-vb4"/>
+                <constraint firstItem="vWa-Xb-LNT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.2" id="BQT-aa-wut"/>
+                <constraint firstItem="vWa-Xb-LNT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="F9C-dD-jUn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vWa-Xb-LNT" secondAttribute="bottom" constant="100" id="VLp-Da-j92"/>
+                <constraint firstItem="vWa-Xb-LNT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="qCv-JF-qu5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
