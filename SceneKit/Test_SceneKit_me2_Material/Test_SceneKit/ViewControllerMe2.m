@@ -162,6 +162,7 @@ SSZipArchiveDelegate
     /*
      法线贴图
      形成表面崎岖不平的灯光效果
+     有点光源的情况下才有效果？
      */
     material.normal.contents = ImageFile(@"image/earth_NRM");
     
@@ -178,15 +179,15 @@ SSZipArchiveDelegate
      反射贴图
      以黑白图片精确定义了材质每个像素的反光程度.就是周围环境的光线在物体表面映射出的图像(实际就是天空盒子图像在物体表面的反光).
      */
-    material.reflective.contents = @[ImageFile(@"image/cube-1"),
-                                     ImageFile(@"image/cube-2"),
-                                     ImageFile(@"image/cube-3"),
-                                     ImageFile(@"image/cube-4"),
-                                     ImageFile(@"image/cube-5"),
-                                     ImageFile(@"image/cube-6")];
-    
-    //菲涅尔系数，影响反射效果
-    material.fresnelExponent = 1.7;
+//    material.reflective.contents = @[ImageFile(@"image/cube-1"),
+//                                     ImageFile(@"image/cube-2"),
+//                                     ImageFile(@"image/cube-3"),
+//                                     ImageFile(@"image/cube-4"),
+//                                     ImageFile(@"image/cube-5"),
+//                                     ImageFile(@"image/cube-6")];
+//
+//    //菲涅尔系数，影响反射效果
+//    material.fresnelExponent = 1.7;
     
     /*
      AO贴图 环境光闭塞贴图

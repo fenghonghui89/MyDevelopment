@@ -32,7 +32,7 @@
 		140A377020A0053900B484A7 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A375320A0053900B484A7 /* AFURLRequestSerialization.m */; };
 		140A377120A0053900B484A7 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A375520A0053900B484A7 /* AFNetworkReachabilityManager.m */; };
 		140A377220A0053900B484A7 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A375620A0053900B484A7 /* AFSecurityPolicy.m */; };
-		140A377320A0053900B484A7 /* XTJMaterial.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 140A375920A0053900B484A7 /* XTJMaterial.bundle */; };
+		1439723920A2FDAC009E4F93 /* XTJResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1439723820A2FDAC009E4F93 /* XTJResource.bundle */; };
 		143C24232089998500543BBA /* ViewController0.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C24172089998500543BBA /* ViewController0.m */; };
 		143C24242089998500543BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 143C24192089998500543BBA /* Assets.xcassets */; };
 		143C24252089998500543BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143C241A2089998500543BBA /* LaunchScreen.storyboard */; };
@@ -103,7 +103,7 @@
 		140A375520A0053900B484A7 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		140A375620A0053900B484A7 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		140A375720A0053900B484A7 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		140A375920A0053900B484A7 /* XTJMaterial.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTJMaterial.bundle; sourceTree = "<group>"; };
+		1439723820A2FDAC009E4F93 /* XTJResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTJResource.bundle; sourceTree = "<group>"; };
 		143C24152089998500543BBA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		143C24172089998500543BBA /* ViewController0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController0.m; sourceTree = "<group>"; };
 		143C24192089998500543BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		140A375820A0053900B484A7 /* 素材 */ = {
 			isa = PBXGroup;
 			children = (
-				140A375920A0053900B484A7 /* XTJMaterial.bundle */,
+				1439723820A2FDAC009E4F93 /* XTJResource.bundle */,
 			);
 			name = "素材";
 			path = "../../../../素材";
@@ -363,9 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				143C24252089998500543BBA /* LaunchScreen.storyboard in Resources */,
-				140A377320A0053900B484A7 /* XTJMaterial.bundle in Resources */,
 				143C24242089998500543BBA /* Assets.xcassets in Resources */,
 				143C24282089998500543BBA /* Info.plist in Resources */,
+				1439723920A2FDAC009E4F93 /* XTJResource.bundle in Resources */,
 				14C9BF8020A17B52002DE2CC /* SceneKit Scene.scn in Resources */,
 				14770AA4208DC0EB00726420 /* ViewController0.xib in Resources */,
 				143C24262089998500543BBA /* Main.storyboard in Resources */,
