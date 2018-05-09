@@ -4,7 +4,7 @@
 //
 //  Created by hanyfeng on 2018/1/18.
 //  Copyright © 2018年 hanyfeng. All rights reserved.
-//
+// 贴图
 
 #import "ViewControllerMe4.h"
 #import <SceneKit/SceneKit.h>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		140163672091DED40011D518 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 140163662091DED40011D518 /* art.scnassets */; };
+		143971CC20A2DD78009E4F93 /* XTJ3DManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 143971CB20A2DD78009E4F93 /* XTJ3DManager.m */; };
+		143971CF20A2E587009E4F93 /* XTJ3DInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 143971CE20A2E587009E4F93 /* XTJ3DInfoModel.m */; };
 		143C24232089998500543BBA /* ViewControllerMe1.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C24172089998500543BBA /* ViewControllerMe1.m */; };
 		143C24242089998500543BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 143C24192089998500543BBA /* Assets.xcassets */; };
 		143C24252089998500543BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143C241A2089998500543BBA /* LaunchScreen.storyboard */; };
@@ -46,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		140163662091DED40011D518 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		143971CA20A2DD78009E4F93 /* XTJ3DManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTJ3DManager.h; sourceTree = "<group>"; };
+		143971CB20A2DD78009E4F93 /* XTJ3DManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTJ3DManager.m; sourceTree = "<group>"; };
+		143971CD20A2E587009E4F93 /* XTJ3DInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTJ3DInfoModel.h; sourceTree = "<group>"; };
+		143971CE20A2E587009E4F93 /* XTJ3DInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTJ3DInfoModel.m; sourceTree = "<group>"; };
 		1439CD752092CC5A0089E5D1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		143C24152089998500543BBA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		143C24172089998500543BBA /* ViewControllerMe1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerMe1.m; sourceTree = "<group>"; };
@@ -132,6 +138,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		143971C920A2DD3B009E4F93 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				143971CA20A2DD78009E4F93 /* XTJ3DManager.h */,
+				143971CB20A2DD78009E4F93 /* XTJ3DManager.m */,
+				143971CD20A2E587009E4F93 /* XTJ3DInfoModel.h */,
+				143971CE20A2E587009E4F93 /* XTJ3DInfoModel.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		1439CD742092CC5A0089E5D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +207,7 @@
 			children = (
 				14975F0320A1A5E60012AE0B /* Cube.h */,
 				14975F0420A1A5E60012AE0B /* Cube.m */,
+				143971C920A2DD3B009E4F93 /* Manager */,
 				14975ED120A1A5E60012AE0B /* NetworkManager */,
 				14975ED520A1A5E60012AE0B /* Util */,
 				14975F0520A1A5E60012AE0B /* ThirdParty */,
@@ -399,6 +417,7 @@
 				14975F2320A1A5E60012AE0B /* sha1.c in Sources */,
 				14975F2420A1A5E60012AE0B /* aes_ni.c in Sources */,
 				14975F1820A1A5E60012AE0B /* crypt.c in Sources */,
+				143971CF20A2E587009E4F93 /* XTJ3DInfoModel.m in Sources */,
 				14975F1A20A1A5E60012AE0B /* zip.c in Sources */,
 				14975F1D20A1A5E60012AE0B /* ioapi_mem.c in Sources */,
 				14975F1920A1A5E60012AE0B /* unzip.c in Sources */,
@@ -417,6 +436,7 @@
 				14975F1620A1A5E60012AE0B /* XTJCoreNetworkManager.m in Sources */,
 				14975F2720A1A5E60012AE0B /* aestab.c in Sources */,
 				14975F2620A1A5E60012AE0B /* pwd2key.c in Sources */,
+				143971CC20A2DD78009E4F93 /* XTJ3DManager.m in Sources */,
 				14975F1F20A1A5E60012AE0B /* aeskey.c in Sources */,
 				14975F2120A1A5E60012AE0B /* aescrypt.c in Sources */,
 				14975F2A20A1A5E60012AE0B /* AFURLResponseSerialization.m in Sources */,
