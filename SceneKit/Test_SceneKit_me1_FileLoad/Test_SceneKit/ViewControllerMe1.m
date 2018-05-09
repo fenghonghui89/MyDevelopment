@@ -20,6 +20,7 @@ SSZipArchiveDelegate
 >
 @property(nonatomic,strong)SCNScene *scene;
 @property(nonatomic,strong)SCNView *scnView;
+@property(nonatomic,strong)NSDictionary *downloadInfoDic;
 @end
 
 @implementation ViewControllerMe1
@@ -29,39 +30,67 @@ SSZipArchiveDelegate
     
     NSString *doucumentsPath = [XTJTool doucumentsPath];
     NSLog(@"doucumentsPath path...%@",doucumentsPath);
+    
+    /*
+     是否本地文件
+     下载地址
+     下载解压后的文件路径
+     本地文件路径
+     模型名
+     */
+    //obj
+    self.downloadInfoDic = @{
+                             @"isLocal":@(YES),
+                             @"url":@"http://o9ivu69va.bkt.clouddn.com/obj.zip",
+                             @"downloadFilePath":@"obj/file.obj",
+                             @"localFilePath":@"3d/飞龙obj/file.obj",
+                             @"modelName":@"SubDragonLE_Shape"
+                             };
+    
+    //dae
+//    self.downloadInfoDic = @{
+//                             @"isLocal":@(YES),
+//                             @"url":@"http://o9ivu69va.bkt.clouddn.com/art-o.zip",
+//                             @"downloadFilePath":@"art-o/file.dae",
+//                             @"localFilePath":@"3d/飞龙dae/file.dae",
+//                             @"modelName":@"SubDragonLE_Shape"
+//                             };
 }
 
 #pragma mark - < action >
 - (IBAction)tap:(id)sender {
     
-    [self downloadFile2];
+    NSString *url = self.downloadInfoDic[@"url"];
+    [self downloadFile:url];
 }
 
 - (IBAction)tap1:(id)sender {
-    
-    NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentPath = [documentDirectory lastObject];
-    NSString *filePath = [documentPath stringByAppendingPathComponent:@"art-o"];
-    
-    [self showLog:filePath];
-}
-
-- (IBAction)tap2:(id)sender {
-    
     [self setupScnview];
 }
 
+- (IBAction)tap2:(id)sender {
+    [self removeDocFile];
+}
+
 - (IBAction)tap3:(id)sender {
-    [self saveFile];
+    [self.scnView removeFromSuperview];
+    self.scnView = nil;
+}
+
+- (IBAction)tap4:(id)sender {
+    [self showLog];
 }
 
 #pragma mark -  method
--(void)showLog:(NSString *)path{
+-(void)showLog{
 
+    NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = [documentDirectory lastObject];
+    
     NSFileManager *fm = [NSFileManager defaultManager];
     
     NSError *error = nil;
-    NSArray *files = [fm contentsOfDirectoryAtPath:path error:&error];
+    NSArray *files = [fm contentsOfDirectoryAtPath:documentPath error:&error];
     if (error) {
         NSLog(@"error..%@",error.localizedDescription);
     }else{
@@ -72,25 +101,29 @@ SSZipArchiveDelegate
 
 }
 
-/*
- MARK:
- 加载本地模型：
- 项目文件夹/art.scnassets内模型
- 项目文件夹/dae 但如果模型没有优化，如果cameraNode没有设置pointOfView则视角会错误
- 项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型 然后用SCNSceneSource读取
- 
- 加载网上模型：
- 通过SCNScene读取下载的模型
- 把下载的文件移动到main bundle 只有模拟器成功
- 通过SCNSceneSource读取下载的模型 测试通过
- 
- 总结:
- 1.本地模型，不管在哪，都可以用[SCNScene sceneNamed:]或者SCNSceneSource读取，
- 如果是放在xxx.bundle里面，则模型要经过优化，否则无法读取
- 2.网上模型，都要经过优化，只能通过SCNSceneSource读取
- 3.用SCNSceneSource读取，可以获取更多信息，注意url必须是fileURL
- 4.最后才scnView.scene = scene;，则视角能最大限度保证正常，因为此时pointOfView必定有值
- */
+-(void)removeDocFile{
+    NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = [documentDirectory lastObject];
+    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSError *error = nil;
+    NSArray *files = [fm contentsOfDirectoryAtPath:documentPath error:&error];
+    if (error) {
+        NSLog(@"error..%@",error.localizedDescription);
+    }else{
+        for (NSString *fileName in files) {
+            NSString *filePath = [documentPath stringByAppendingPathComponent:fileName];
+            NSError *error = nil;
+            [fm removeItemAtPath:filePath error:&error];
+            if (error) {
+                NSLog(@"删除error..%@",error.localizedDescription);
+            }else{
+                NSLog(@"删除成功..%@",fileName);
+            }
+        }
+    }
+}
+
 -(void)setupScnview{
     
     //读取1 项目文件夹/art.scnassets内模型
@@ -134,13 +167,13 @@ SSZipArchiveDelegate
     [scene.rootNode addChildNode:floorNode];
     
     //box
-//    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
-//    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
-//    SCNNode *boxNode = [SCNNode node];
-//    boxNode.geometry = box;
-//    boxNode.position = SCNVector3Make(0, 5, 0);
-//    boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
-//    [scene.rootNode addChildNode:boxNode];
+    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
+    SCNNode *boxNode = [SCNNode node];
+    boxNode.geometry = box;
+    boxNode.position = SCNVector3Make(0, 0, 20);
+    boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
+    [scene.rootNode addChildNode:boxNode];
     
     //scnview
     SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
@@ -157,69 +190,92 @@ SSZipArchiveDelegate
     scnView.scene = scene;
 }
 
+/*
+ MARK:
+ 加载本地模型：
+ 项目文件夹/art.scnassets内模型
+ 项目文件夹/dae 但如果模型没有优化，如果cameraNode没有设置pointOfView则视角会错误
+ 项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型 然后用SCNSceneSource读取
+ 
+ 加载网上模型：
+ 把下载的文件移动到main bundle 只有模拟器成功 真机ios10解压失败找不到文件  ios11移动失败couldn’t be copied because you don’t have permission to access “art.scnassets”
+
+
+ 总结:
+ 1.本地模型，不管在哪，都可以用[SCNScene sceneNamed:]或者SCNSceneSource读取，
+ 如果是放在xxx.bundle里面，则模型要经过优化，否则无法读取
+ 2.网上模型，都要经过优化，只能通过SCNSceneSource读取
+ 3.用SCNSceneSource读取，可以获取更多信息，注意url必须是fileURL
+ 4.最后才scnView.scene = scene;，则视角能最大限度保证正常，因为此时pointOfView必定有值
+ */
 -(void)loadModel{
     
-//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
-//    filePath = [filePath stringByAppendingPathComponent:@"3d/my3dmodel1/file.dae"];
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-//        NSLog(@"文件存在");
-//    }else{
-//        NSLog(@"文件不存在");
-//    }
-//    NSURL *url = [NSURL fileURLWithPath:filePath];
-//    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-//    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-//    [self.scene.rootNode addChildNode:modelNode];
+    //url
+    NSURL *fileURL = nil;
+    BOOL isLocal = [self.downloadInfoDic[@"isLocal"] boolValue];
+    if (isLocal) {
+        //本地文件
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
+        NSString *file = self.downloadInfoDic[@"localFilePath"];
+        filePath = [filePath stringByAppendingPathComponent:file];
+        fileURL = [NSURL fileURLWithPath:filePath];
+    }else{
+        //网络文件
+        NSString *file = self.downloadInfoDic[@"downloadFilePath"];
+        fileURL = [self downloadFilePath:file];
+    }
     
-    //读取4 通过SCNScene读取下载的模型
-    //    NSURL *url = [self downloadFilePath2];
-    //    NSError *error = nil;
-    //    SCNScene *scene = [SCNScene sceneWithURL:url options:nil error:&error];
-    //    if (error) {
-    //        NSLog(@"load error...%@",error.localizedDescription);
-    //    }else{
-    //        NSLog(@"load success..");
-    //    }
-    
-    //读取5 把下载的文件移动到main bundle 只有模拟器成功
-    //    SCNScene *scene = [SCNScene scene];
-    //    NSURL *url = [self downloadFilePath1];
-    //    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-    //    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-    //    [scene.rootNode addChildNode:modelNode];
-    
-    //读取6 通过SCNSceneSource读取下载的模型 测试通过
-    //    SCNScene *scene = [SCNScene scene];
-    //    NSURL *url = [self downloadFilePath2];
-    //    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-    //    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-    //    [scene.rootNode addChildNode:modelNode];
-    
-    //Model I/O
-    //    NSURL *fileURL = [self downloadFilePath3];
-    //    MDLAsset *asset = [[MDLAsset alloc] initWithURL:fileURL];
-    //    MDLObject *mesh = [asset objectAtIndex:0];
-    //    SCNNode *model = [SCNNode nodeWithMDLObject:mesh];
-    //    model.scale = SCNVector3Make(0.01, 0.01, 0.01);
-    //    model.position = SCNVector3Make(0, 0, 0);
-    //    [scene.rootNode addChildNode:model];
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
-    filePath = [filePath stringByAppendingPathComponent:@"3d/飞龙/file.obj"];
-    NSURL *url = [NSURL fileURLWithPath:filePath];
-    MDLAsset *asset = [[MDLAsset alloc] initWithURL:url];
+    /*
+     Model I/O
+     不能读取dae文件，报错DAE file has no contents
+     obj模型会偏暗
+     obj模型可能会过大，要注意缩小，scale参数值越小，比例越小
+     */
+    MDLAsset *asset = [[MDLAsset alloc] initWithURL:fileURL];
+    NSLog(@"asset count...%lu",(unsigned long)asset.count);
     MDLMesh *mesh = nil;
-    if ([[asset objectAtIndex:0] isKindOfClass:[MDLMesh class]]) {
+    MDLObject *obj = [asset objectAtIndex:0];
+    if ([obj isKindOfClass:[MDLMesh class]]) {
         mesh = (MDLMesh *)[asset objectAtIndex:0];
+    }else{
+        NSLog(@"文件错误,return..");
+        return;
     }
     SCNNode *model = [SCNNode nodeWithMDLObject:mesh];
     model.scale = SCNVector3Make(0.01, 0.01, 0.01);
     model.position = SCNVector3Make(0, 0, 0);
     [self.scene.rootNode addChildNode:model];
     
+    /*
+     SCNSceneSource
+     可读取obj和dae模型
+     obj模型会偏暗，dae不会
+     obj模型可能会过大，要注意缩小，scale参数值越小，比例越小；dae模型，scale可能是反过来的，scale参数值越小，比例越大
+     */
+    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:fileURL options:nil];
+    
+    SCNScene *scenetmp = [sceneSource sceneWithOptions:nil error:nil];
+    NSArray *nodes = scenetmp.rootNode.childNodes;
+    NSString *modelName = self.downloadInfoDic[@"modelName"];
+    NSLog(@"count..%lu",(unsigned long)nodes.count);
+    
+    //SCNSceneSource -> node 无法找到本地或网络的obj模型
+//    SCNNode *modelNode = [sceneSource entryWithIdentifier:modelName withClass:[SCNNode class]];
+//    [self.scene.rootNode addChildNode:modelNode];
+    
+    //SCNSceneSource -> scene -> node
+//    SCNNode *modelNode = [scenetmp.rootNode childNodeWithName:modelName recursively:YES];
+//    modelNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
+//    [self.scene.rootNode addChildNode:modelNode];
+
+    //或者直接添加rootNode
+    SCNNode *modelNode = [scenetmp.rootNode childNodeWithName:modelName recursively:YES];
+    modelNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
+    [self.scene.rootNode addChildNode:scenetmp.rootNode];
+
 }
 
-#pragma mark - < 上传 >
+#pragma mark - 上传
 //进度：保存成scn文件
 
 //模拟保存
@@ -325,116 +381,28 @@ SSZipArchiveDelegate
     }
 }
 
-#pragma mark - < 加载下载的模型1 把下载的文件移动到main bundle >
-//模拟器可以 真机ios10解压失败找不到文件  ios11移动失败couldn’t be copied because you don’t have permission to access “art.scnassets”
-
-//模拟下载
--(void)downloadFile1{
+#pragma mark -  下载/解压
+-(void)downloadFile:(NSString *)url{
+    
+    //eg. url = http://o9ivu69va.bkt.clouddn.com/art-o.zip
     
     XTJBlockWeak(self);
     XTJCoreNetworkManager *af = [XTJCoreNetworkManager sharedInstance];
-    [af downloadFileWithURL:@"http://o9ivu69va.bkt.clouddn.com/art-o.zip"
+    [af downloadFileWithURL:url
           completionHandler:^(BOOL isSuccess, id respon, NSError *error) {
               if (isSuccess) {
                   NSString *path = respon;
                   NSLog(@"下载成功。。文件保存的路径。。%@",path);
-                  [weak_self moveDownloadFile1:path];
+                  
+                  //移动
+                  [weak_self moveDownloadFile:path];
               }else{
                   NSLog(@"下载失败。。%@",error.localizedDescription);
               }
           }];
 }
 
--(void)moveDownloadFile1:(NSString *)sourcePath{
-    
-    NSFileManager *fm = [NSFileManager defaultManager];
-    
-    //mainbundle/art.scnassets/file_download.zip
-    NSString *path = [[NSBundle mainBundle] bundlePath];
-    path = [path stringByAppendingPathComponent:@"art.scnassets"];
-    path = [path stringByAppendingPathComponent:@"file_download.zip"];
-    
-    NSError *error = nil;
-    [fm copyItemAtPath:sourcePath toPath:path error:&error];
-    if (error) {
-        NSLog(@"移动下载文件到doc失败。。。%@",error.localizedDescription);
-    }else{
-        NSLog(@"移动下载文件到doc成功...%@",path);
-    }
-    
-    //解压
-    [self unZipFile1];
-    
-}
-
-//解压
--(void)unZipFile1{
-    NSFileManager *fm = [NSFileManager defaultManager];
-    
-    //mainbundle/file_download.zip
-    NSString *path_source = [[NSBundle mainBundle] bundlePath];
-    path_source = [path_source stringByAppendingPathComponent:@"art.scnassets"];
-    NSString *path_target = [path_source stringByAppendingPathComponent:@"file_download.zip"];
-    
-    if ([fm fileExistsAtPath:path_target]) {
-        NSLog(@"有下载的文件，尝试解压。。");
-    }else{
-        NSLog(@"没有下载的文件，不压缩，退出。。");
-        return;
-    }
-    
-    //解压缩的目标文件地址
-    BOOL result = [SSZipArchive unzipFileAtPath:path_target toDestination:path_source delegate:self];
-    if (result) {
-        NSLog(@"解压成功。。%@",path_target);
-    }else{
-        NSLog(@"解压失败。。。%@",path_target);
-    }
-}
-
-//下载文件的地址
--(NSURL *)downloadFilePath1{
-    
-    //mainbundle/art.scnassets/art-o/file.dae
-    NSString *filePath = [[NSBundle mainBundle] bundlePath];
-    filePath = [filePath stringByAppendingPathComponent:@"art.scnassets/art-o/file.dae"];
-    
-    NSFileManager *fm = [NSFileManager defaultManager];
-    if ([fm fileExistsAtPath:filePath]) {
-        NSLog(@"已下载文件的地址...%@",filePath);
-        NSURL *url = [NSURL fileURLWithPath:filePath];
-        return url;
-    }else{
-        NSLog(@"没有已下载的文件..");
-        return nil;
-    }
-    
-    
-    //    NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-    //    documentsDirectoryURL = [documentsDirectoryURL URLByAppendingPathComponent:@"art-o.scnassets/file.dae"];
-    //    NSLog(@"已下载文件的地址...%@",documentsDirectoryURL);
-    //    return documentsDirectoryURL;
-}
-
-#pragma mark - < 加载下载的模型2 通过SCNSceneSource读取下载的模型 >
-//模拟下载
--(void)downloadFile2{
-    
-    XTJBlockWeak(self);
-    XTJCoreNetworkManager *af = [XTJCoreNetworkManager sharedInstance];
-    [af downloadFileWithURL:@"http://o9ivu69va.bkt.clouddn.com/art-o.zip"
-          completionHandler:^(BOOL isSuccess, id respon, NSError *error) {
-              if (isSuccess) {
-                  NSString *path = respon;
-                  NSLog(@"下载成功。。文件保存的路径。。%@",path);
-                  [weak_self moveDownloadFile2:path];
-              }else{
-                  NSLog(@"下载失败。。%@",error.localizedDescription);
-              }
-          }];
-}
-
--(void)moveDownloadFile2:(NSString *)sourcePath{
+-(void)moveDownloadFile:(NSString *)sourcePath{
     
     NSFileManager *fm = [NSFileManager defaultManager];
     
@@ -443,6 +411,10 @@ SSZipArchiveDelegate
     NSString *documentPath = [documentDirectory lastObject];
     NSString *path = [documentPath stringByAppendingPathComponent:@"file_download.zip"];
     
+    //main bundle
+//    NSString *path = [[NSBundle mainBundle] bundlePath];
+    
+    //copy
     NSError *error = nil;
     [fm copyItemAtPath:sourcePath toPath:path error:&error];
     if (error) {
@@ -451,83 +423,36 @@ SSZipArchiveDelegate
         NSLog(@"移动下载文件到doc成功...");
     }
     
-    //解压
-    [self unZipFile2];
-    
-}
-
-//解压
--(void)unZipFile2{
-    NSFileManager *fm = [NSFileManager defaultManager];
-    
-    //doc/file_download.zip
-    NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path_source = [documentDirectory lastObject];
-    NSString *path_target = [path_source stringByAppendingPathComponent:@"file_download.zip"];
-    
-    if ([fm fileExistsAtPath:path_target]) {
-        NSLog(@"有下载的文件，尝试解压。。");
-    }else{
-        NSLog(@"没有下载的文件，退出。。");
-        return;
-    }
-    
-    //解压缩的目标文件地址
-    BOOL result = [SSZipArchive unzipFileAtPath:path_target toDestination:path_source delegate:self];
+    //unzip
+    BOOL result = [SSZipArchive unzipFileAtPath:path toDestination:documentPath delegate:self];
     if (result) {
-        NSLog(@"解压成功。。%@",path_target);
+        NSLog(@"解压成功。。%@",path);
     }else{
         NSLog(@"解压失败。。。");
     }
+    
 }
 
 //下载文件的地址
--(NSURL *)downloadFilePath2{
+-(NSURL *)downloadFilePath:(NSString *)file{
     
-    //doc/art-o/file.dae
     NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath = [documentDirectory lastObject];
-    NSString *filePath = [documentPath stringByAppendingPathComponent:@"art-o/file.dae"];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:file];
     
     NSFileManager *fm = [NSFileManager defaultManager];
     if ([fm fileExistsAtPath:filePath]) {
-        NSLog(@"已下载文件的地址...%@",filePath);
+        NSLog(@"找到已下载文件...%@",filePath);
         NSURL *url = [NSURL fileURLWithPath:filePath];
         return url;
     }else{
-        NSLog(@"没有已下载的文件..");
+        NSLog(@"没有已下载文件..%@",filePath);
         return nil;
     }
     
     
     //    NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-    //    documentsDirectoryURL = [documentsDirectoryURL URLByAppendingPathComponent:@"art-o.scnassets/file.dae"];
-    //    NSLog(@"已下载文件的地址...%@",documentsDirectoryURL);
-    //    return documentsDirectoryURL;
-}
-
-#pragma mark - < 加载下载的模型2 用Model I/O >
-//下载文件的地址
--(NSURL *)downloadFilePath3{
-    
-    //doc/art-o/file.dae
-    NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentPath = [documentDirectory lastObject];
-    NSString *filePath = [documentPath stringByAppendingPathComponent:@"art-o/file.obj"];
-    
-    NSFileManager *fm = [NSFileManager defaultManager];
-    if ([fm fileExistsAtPath:filePath]) {
-        NSLog(@"已下载文件的地址...%@",filePath);
-        NSURL *url = [NSURL fileURLWithPath:filePath];
-        return url;
-    }else{
-        NSLog(@"没有已下载的文件..");
-        return nil;
-    }
-    
-    
-    //    NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-    //    documentsDirectoryURL = [documentsDirectoryURL URLByAppendingPathComponent:@"art-o.scnassets/file.dae"];
+    //    documentsDirectoryURL = [documentsDirectoryURL URLByAppendingPathComponent:file];
     //    NSLog(@"已下载文件的地址...%@",documentsDirectoryURL);
     //    return documentsDirectoryURL;
 }
