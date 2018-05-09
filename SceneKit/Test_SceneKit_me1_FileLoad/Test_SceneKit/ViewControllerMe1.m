@@ -7,15 +7,18 @@
 //
 
 #import "ViewControllerMe1.h"
-#import <SceneKit/SceneKit.h>
 #import "XTJRootDefine.h"
 #import "SSZipArchive.h"
 #import "XTJCoreNetworkManager.h"
+@import ModelIO;
+@import SceneKit;
+@import SceneKit.ModelIO;
 @interface ViewControllerMe1 ()
 <
 SCNSceneRendererDelegate,SCNSceneExportDelegate,
 SSZipArchiveDelegate
 >
+@property(nonatomic,strong)SCNScene *scene;
 @property(nonatomic,strong)SCNView *scnView;
 @end
 
@@ -52,7 +55,7 @@ SSZipArchiveDelegate
     [self saveFile];
 }
 
-#pragma mark - < method >
+#pragma mark -  method
 -(void)showLog:(NSString *)path{
 
     NSFileManager *fm = [NSFileManager defaultManager];
@@ -98,64 +101,19 @@ SSZipArchiveDelegate
     
     //读取3 项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型 然后用SCNSceneSource读取
     SCNScene *scene = [SCNScene scene];
+    self.scene = scene;
+    
+    //模型
+    [self loadModel];
 
-    //scnview
-    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
-    scnView.center = self.view.center;
-    scnView.backgroundColor = [UIColor blackColor];
-    scnView.allowsCameraControl = YES;
-    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
-    scnView.showsStatistics = YES;
-    scnView.preferredFramesPerSecond = 60;//帧率
-    [self.view addSubview:scnView];
-    [self.view sendSubviewToBack:scnView];
-    self.scnView = scnView;
-    
-    scnView.scene = scene;
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJMaterial" ofType:@"bundle"];
-    filePath = [filePath stringByAppendingPathComponent:@"3d/my3dmodel1/file.dae"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        NSLog(@"文件存在");
-    }else{
-        NSLog(@"文件不存在");
-    }
-    NSURL *url = [NSURL fileURLWithPath:filePath];
-    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-    [scene.rootNode addChildNode:modelNode];
-    
-    //读取4 通过SCNScene读取下载的模型
-//    NSURL *url = [self downloadFilePath2];
-//    NSError *error = nil;
-//    SCNScene *scene = [SCNScene sceneWithURL:url options:nil error:&error];
-//    if (error) {
-//        NSLog(@"load error...%@",error.localizedDescription);
-//    }else{
-//        NSLog(@"load success..");
-//    }
-    
-    //读取5 把下载的文件移动到main bundle 只有模拟器成功
-//    SCNScene *scene = [SCNScene scene];
-//    NSURL *url = [self downloadFilePath1];
-//    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-//    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-//    [scene.rootNode addChildNode:modelNode];
-
-    //读取6 通过SCNSceneSource读取下载的模型 测试通过
-//    SCNScene *scene = [SCNScene scene];
-//    NSURL *url = [self downloadFilePath2];
-//    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-//    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-//    [scene.rootNode addChildNode:modelNode];
-    
     //camera
     SCNCamera *camera = [SCNCamera camera];
     camera.automaticallyAdjustsZRange = YES;
     
     SCNNode *cameraNode = [SCNNode node];
     cameraNode.camera = camera;
-    cameraNode.position = SCNVector3Make(0, 10, 50);
+    cameraNode.position = SCNVector3Make(0, 100, 100);
+    cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
     [scene.rootNode addChildNode:cameraNode];
     
     //light
@@ -169,8 +127,6 @@ SSZipArchiveDelegate
     //floor
     SCNFloor *floor = [SCNFloor floor];
     floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
-    floor.width = 1000;
-    floor.length = 1000;
     
     SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
     floorNode.position = SCNVector3Make(0, 0, 0);
@@ -185,6 +141,81 @@ SSZipArchiveDelegate
 //    boxNode.position = SCNVector3Make(0, 5, 0);
 //    boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
 //    [scene.rootNode addChildNode:boxNode];
+    
+    //scnview
+    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
+    scnView.center = self.view.center;
+    scnView.backgroundColor = [UIColor blackColor];
+    scnView.allowsCameraControl = YES;
+    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
+    scnView.showsStatistics = YES;
+    scnView.preferredFramesPerSecond = 60;//帧率
+    [self.view addSubview:scnView];
+    [self.view sendSubviewToBack:scnView];
+    self.scnView = scnView;
+    
+    scnView.scene = scene;
+}
+
+-(void)loadModel{
+    
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
+//    filePath = [filePath stringByAppendingPathComponent:@"3d/my3dmodel1/file.dae"];
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+//        NSLog(@"文件存在");
+//    }else{
+//        NSLog(@"文件不存在");
+//    }
+//    NSURL *url = [NSURL fileURLWithPath:filePath];
+//    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
+//    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
+//    [self.scene.rootNode addChildNode:modelNode];
+    
+    //读取4 通过SCNScene读取下载的模型
+    //    NSURL *url = [self downloadFilePath2];
+    //    NSError *error = nil;
+    //    SCNScene *scene = [SCNScene sceneWithURL:url options:nil error:&error];
+    //    if (error) {
+    //        NSLog(@"load error...%@",error.localizedDescription);
+    //    }else{
+    //        NSLog(@"load success..");
+    //    }
+    
+    //读取5 把下载的文件移动到main bundle 只有模拟器成功
+    //    SCNScene *scene = [SCNScene scene];
+    //    NSURL *url = [self downloadFilePath1];
+    //    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
+    //    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
+    //    [scene.rootNode addChildNode:modelNode];
+    
+    //读取6 通过SCNSceneSource读取下载的模型 测试通过
+    //    SCNScene *scene = [SCNScene scene];
+    //    NSURL *url = [self downloadFilePath2];
+    //    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
+    //    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
+    //    [scene.rootNode addChildNode:modelNode];
+    
+    //Model I/O
+    //    NSURL *fileURL = [self downloadFilePath3];
+    //    MDLAsset *asset = [[MDLAsset alloc] initWithURL:fileURL];
+    //    MDLObject *mesh = [asset objectAtIndex:0];
+    //    SCNNode *model = [SCNNode nodeWithMDLObject:mesh];
+    //    model.scale = SCNVector3Make(0.01, 0.01, 0.01);
+    //    model.position = SCNVector3Make(0, 0, 0);
+    //    [scene.rootNode addChildNode:model];
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
+    filePath = [filePath stringByAppendingPathComponent:@"3d/飞龙/file.obj"];
+    NSURL *url = [NSURL fileURLWithPath:filePath];
+    MDLAsset *asset = [[MDLAsset alloc] initWithURL:url];
+    MDLMesh *mesh = nil;
+    if ([[asset objectAtIndex:0] isKindOfClass:[MDLMesh class]]) {
+        mesh = (MDLMesh *)[asset objectAtIndex:0];
+    }
+    SCNNode *model = [SCNNode nodeWithMDLObject:mesh];
+    model.scale = SCNVector3Make(0.01, 0.01, 0.01);
+    model.position = SCNVector3Make(0, 0, 0);
+    [self.scene.rootNode addChildNode:model];
     
 }
 
@@ -475,6 +506,31 @@ SSZipArchiveDelegate
     //    return documentsDirectoryURL;
 }
 
+#pragma mark - < 加载下载的模型2 用Model I/O >
+//下载文件的地址
+-(NSURL *)downloadFilePath3{
+    
+    //doc/art-o/file.dae
+    NSArray *documentDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = [documentDirectory lastObject];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:@"art-o/file.obj"];
+    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if ([fm fileExistsAtPath:filePath]) {
+        NSLog(@"已下载文件的地址...%@",filePath);
+        NSURL *url = [NSURL fileURLWithPath:filePath];
+        return url;
+    }else{
+        NSLog(@"没有已下载的文件..");
+        return nil;
+    }
+    
+    
+    //    NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+    //    documentsDirectoryURL = [documentsDirectoryURL URLByAppendingPathComponent:@"art-o.scnassets/file.dae"];
+    //    NSLog(@"已下载文件的地址...%@",documentsDirectoryURL);
+    //    return documentsDirectoryURL;
+}
 
 #pragma mark - < SSZipArchiveDelegate >
 - (void)zipArchiveWillUnzipArchiveAtPath:(NSString *)path zipInfo:(unz_global_info)zipInfo{

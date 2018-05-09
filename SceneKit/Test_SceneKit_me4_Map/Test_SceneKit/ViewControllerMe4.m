@@ -130,7 +130,13 @@ SSZipArchiveDelegate
 //材质-贴图
 -(void)setupMaterial1:(SCNGeometry *)geometry{
     
-    NSArray *images = @[ImageFile(@"image/春夏布料"),ImageFile(@"image/功能性布料"),ImageFile(@"image/婚庆布料"),ImageFile(@"image/家居布料"),ImageFile(@"image/棉类布料"),ImageFile(@"image/女装布料")];
+    NSArray *images = @[ImageFile(@"image/春夏布料"),
+                        ImageFile(@"image/功能性布料"),
+                        ImageFile(@"image/婚庆布料"),
+                        ImageFile(@"image/家居布料"),
+                        ImageFile(@"image/棉类布料"),
+                        ImageFile(@"image/女装布料")];
+    
     NSMutableArray *materials = [NSMutableArray array];
     for (int i=0; i<images.count; i++) {
         SCNMaterial *material = [SCNMaterial material];
