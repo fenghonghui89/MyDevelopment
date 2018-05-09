@@ -39,22 +39,22 @@ SSZipArchiveDelegate
      模型名
      */
     //obj
-    self.downloadInfoDic = @{
-                             @"isLocal":@(YES),
-                             @"url":@"http://o9ivu69va.bkt.clouddn.com/obj.zip",
-                             @"downloadFilePath":@"obj/file.obj",
-                             @"localFilePath":@"3d/飞龙obj/file.obj",
-                             @"modelName":@"SubDragonLE_Shape"
-                             };
-    
-    //dae
 //    self.downloadInfoDic = @{
-//                             @"isLocal":@(YES),
-//                             @"url":@"http://o9ivu69va.bkt.clouddn.com/art-o.zip",
-//                             @"downloadFilePath":@"art-o/file.dae",
-//                             @"localFilePath":@"3d/飞龙dae/file.dae",
+//                             @"isLocal":@(NO),
+//                             @"url":@"http://o9ivu69va.bkt.clouddn.com/obj.zip",
+//                             @"downloadFilePath":@"obj/file.obj",
+//                             @"localFilePath":@"3d/飞龙obj/file.obj",
 //                             @"modelName":@"SubDragonLE_Shape"
 //                             };
+    
+    //dae
+    self.downloadInfoDic = @{
+                             @"isLocal":@(NO),
+                             @"url":@"http://o9ivu69va.bkt.clouddn.com/art-o.zip",
+                             @"downloadFilePath":@"art-o/file.dae",
+                             @"localFilePath":@"3d/飞龙dae/file.dae",
+                             @"modelName":@"SubDragonLE_Shape"
+                             };
 }
 
 #pragma mark - < action >
@@ -124,6 +124,7 @@ SSZipArchiveDelegate
     }
 }
 
+
 -(void)setupScnview{
     
     //读取1 项目文件夹/art.scnassets内模型
@@ -171,7 +172,7 @@ SSZipArchiveDelegate
     box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
     SCNNode *boxNode = [SCNNode node];
     boxNode.geometry = box;
-    boxNode.position = SCNVector3Make(0, 0, 20);
+    boxNode.position = SCNVector3Make(0, 0, 30);
     boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
     [scene.rootNode addChildNode:boxNode];
     
@@ -190,12 +191,13 @@ SSZipArchiveDelegate
     scnView.scene = scene;
 }
 
+#pragma mark - load model
 /*
  MARK:
  加载本地模型：
  项目文件夹/art.scnassets内模型
  项目文件夹/dae 但如果模型没有优化，如果cameraNode没有设置pointOfView则视角会错误
- 项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型 然后用SCNSceneSource读取
+ 项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型
  
  加载网上模型：
  把下载的文件移动到main bundle 只有模拟器成功 真机ios10解压失败找不到文件  ios11移动失败couldn’t be copied because you don’t have permission to access “art.scnassets”
@@ -225,33 +227,58 @@ SSZipArchiveDelegate
         fileURL = [self downloadFilePath:file];
     }
     
-    /*
-     Model I/O
-     不能读取dae文件，报错DAE file has no contents
-     obj模型会偏暗
-     obj模型可能会过大，要注意缩小，scale参数值越小，比例越小
-     */
+//    [self loadModelUseModelIO:fileURL];
+    [self loadModelUseSCNSceneSource:fileURL];
+}
+
+/*
+ Model I/O
+ 不能读取dae文件，报错DAE file has no contents
+ obj模型会偏暗
+ obj模型可能会过大，要注意缩小，scale参数值越小，比例越小
+ */
+-(void)loadModelUseModelIO:(NSURL *)fileURL{
+    
     MDLAsset *asset = [[MDLAsset alloc] initWithURL:fileURL];
     NSLog(@"asset count...%lu",(unsigned long)asset.count);
-    MDLMesh *mesh = nil;
-    MDLObject *obj = [asset objectAtIndex:0];
-    if ([obj isKindOfClass:[MDLMesh class]]) {
-        mesh = (MDLMesh *)[asset objectAtIndex:0];
-    }else{
-        NSLog(@"文件错误,return..");
-        return;
+    for (MDLObject *obj in asset) {
+        
+        //判断是不是MDLMesh类型
+        MDLMesh *mesh = nil;
+        if ([obj isKindOfClass:[MDLMesh class]]) {
+            mesh = (MDLMesh *)[asset objectAtIndex:0];
+        }else{
+            NSLog(@"文件错误,return..");
+            return;
+        }
+        
+        //提取模型
+        SCNNode *modelNode = [SCNNode nodeWithMDLObject:mesh];
+        NSLog(@"model name..%@",modelNode.name);
+        
+        //模型可能过大，要缩小
+        modelNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
+        
+        //如果是obj模型，可能偏暗，则修改光照模型
+        NSArray *ms = modelNode.geometry.materials;
+        for (SCNMaterial *material in ms) {
+            NSLog(@"material name..%@",material.name);
+            material.lightingModelName = SCNLightingModelBlinn;
+        }
+        
+        //加入到scenen
+        [self.scene.rootNode addChildNode:modelNode];
     }
-    SCNNode *model = [SCNNode nodeWithMDLObject:mesh];
-    model.scale = SCNVector3Make(0.01, 0.01, 0.01);
-    model.position = SCNVector3Make(0, 0, 0);
-    [self.scene.rootNode addChildNode:model];
+}
+
+/*
+ SCNSceneSource
+ 可读取obj和dae模型
+ obj模型会偏暗，dae不会
+ obj模型可能会过大，要注意缩小，scale参数值越小，比例越小；dae模型，scale可能是反过来的，scale参数值越小，比例越大
+ */
+-(void)loadModelUseSCNSceneSource:(NSURL *)fileURL{
     
-    /*
-     SCNSceneSource
-     可读取obj和dae模型
-     obj模型会偏暗，dae不会
-     obj模型可能会过大，要注意缩小，scale参数值越小，比例越小；dae模型，scale可能是反过来的，scale参数值越小，比例越大
-     */
     SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:fileURL options:nil];
     
     SCNScene *scenetmp = [sceneSource sceneWithOptions:nil error:nil];
@@ -259,20 +286,33 @@ SSZipArchiveDelegate
     NSString *modelName = self.downloadInfoDic[@"modelName"];
     NSLog(@"count..%lu",(unsigned long)nodes.count);
     
-    //SCNSceneSource -> node 无法找到本地或网络的obj模型
+    //方法1.无法找到本地或网络的obj模型
 //    SCNNode *modelNode = [sceneSource entryWithIdentifier:modelName withClass:[SCNNode class]];
 //    [self.scene.rootNode addChildNode:modelNode];
     
-    //SCNSceneSource -> scene -> node
+    //方法2.可以
 //    SCNNode *modelNode = [scenetmp.rootNode childNodeWithName:modelName recursively:YES];
 //    modelNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
 //    [self.scene.rootNode addChildNode:modelNode];
-
-    //或者直接添加rootNode
-    SCNNode *modelNode = [scenetmp.rootNode childNodeWithName:modelName recursively:YES];
-    modelNode.scale = SCNVector3Make(0.01, 0.01, 0.01);
-    [self.scene.rootNode addChildNode:scenetmp.rootNode];
-
+    
+    //方法3.不能直接把rootNode挪到另外的scene(会报警告)，所以把rootNode.childNodes遍历加入
+    for (SCNNode *node in scenetmp.rootNode.childNodes) {
+        
+        NSLog(@"model name..%@",node.name);
+        
+        //调整模型尺寸
+        node.scale = SCNVector3Make(0.01, 0.01, 0.01);
+        
+        //如果是obj模型，可能偏暗，则修改光照模型
+        NSArray *ms = node.geometry.materials;
+        for (SCNMaterial *material in ms) {
+            NSLog(@"material name..%@",material.name);
+            material.lightingModelName = SCNLightingModelBlinn;
+        }
+        
+        //加入到scenen
+        [self.scene.rootNode addChildNode:node];
+    }
 }
 
 #pragma mark - 上传
