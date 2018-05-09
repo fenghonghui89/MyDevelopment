@@ -14,19 +14,6 @@
 		143C24262089998500543BBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 143C241C2089998500543BBA /* Main.storyboard */; };
 		143C24272089998500543BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C241E2089998500543BBA /* main.m */; };
 		143C24292089998500543BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C24202089998500543BBA /* AppDelegate.m */; };
-		144909FC209AAF9A00906918 /* SMPL_Head_Bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F0209AAF9900906918 /* SMPL_Head_Bump.jpg */; };
-		144909FD209AAF9A00906918 /* SMPL_Body_Specular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F1209AAF9900906918 /* SMPL_Body_Specular.jpg */; };
-		144909FE209AAF9A00906918 /* SMPL_Eye_Specular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F2209AAF9900906918 /* SMPL_Eye_Specular.jpg */; };
-		144909FF209AAF9A00906918 /* SMPL_Wings_Bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F3209AAF9900906918 /* SMPL_Wings_Bump.jpg */; };
-		14490A00209AAF9A00906918 /* SMPL_Eye_Color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F4209AAF9900906918 /* SMPL_Eye_Color.jpg */; };
-		14490A01209AAF9A00906918 /* SMPL_Head_Color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F5209AAF9900906918 /* SMPL_Head_Color.jpg */; };
-		14490A02209AAF9A00906918 /* SMPL_Body_Bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F6209AAF9900906918 /* SMPL_Body_Bump.jpg */; };
-		14490A03209AAF9A00906918 /* SMPL_Head_Specular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F7209AAF9900906918 /* SMPL_Head_Specular.jpg */; };
-		14490A04209AAF9A00906918 /* SMPL_Body_Color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F8209AAF9900906918 /* SMPL_Body_Color.jpg */; };
-		14490A05209AAF9A00906918 /* SMPL_Wings_Specular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909F9209AAF9900906918 /* SMPL_Wings_Specular.jpg */; };
-		14490A06209AAF9A00906918 /* SMPL_Wings_Color.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 144909FA209AAF9900906918 /* SMPL_Wings_Color.jpg */; };
-		14490A07209AAF9A00906918 /* file.dae in Resources */ = {isa = PBXBuildFile; fileRef = 144909FB209AAF9900906918 /* file.dae */; };
-		14490A0B209AB10A00906918 /* untitled.dae in Resources */ = {isa = PBXBuildFile; fileRef = 14490A0A209AB10900906918 /* untitled.dae */; };
 		14770AA4208DC0EB00726420 /* ViewControllerMe1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14770AA3208DC0EB00726420 /* ViewControllerMe1.xib */; };
 		14975F1620A1A5E60012AE0B /* XTJCoreNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14975ED320A1A5E60012AE0B /* XTJCoreNetworkManager.m */; };
 		14975F1720A1A5E60012AE0B /* XTJTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14975ED820A1A5E60012AE0B /* XTJTool.m */; };
@@ -69,19 +56,6 @@
 		143C241F2089998500543BBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		143C24202089998500543BBA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		143C24212089998500543BBA /* ViewControllerMe1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMe1.h; sourceTree = "<group>"; };
-		144909F0209AAF9900906918 /* SMPL_Head_Bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Head_Bump.jpg; sourceTree = "<group>"; };
-		144909F1209AAF9900906918 /* SMPL_Body_Specular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Body_Specular.jpg; sourceTree = "<group>"; };
-		144909F2209AAF9900906918 /* SMPL_Eye_Specular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Eye_Specular.jpg; sourceTree = "<group>"; };
-		144909F3209AAF9900906918 /* SMPL_Wings_Bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Wings_Bump.jpg; sourceTree = "<group>"; };
-		144909F4209AAF9900906918 /* SMPL_Eye_Color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Eye_Color.jpg; sourceTree = "<group>"; };
-		144909F5209AAF9900906918 /* SMPL_Head_Color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Head_Color.jpg; sourceTree = "<group>"; };
-		144909F6209AAF9900906918 /* SMPL_Body_Bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Body_Bump.jpg; sourceTree = "<group>"; };
-		144909F7209AAF9900906918 /* SMPL_Head_Specular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Head_Specular.jpg; sourceTree = "<group>"; };
-		144909F8209AAF9900906918 /* SMPL_Body_Color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Body_Color.jpg; sourceTree = "<group>"; };
-		144909F9209AAF9900906918 /* SMPL_Wings_Specular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Wings_Specular.jpg; sourceTree = "<group>"; };
-		144909FA209AAF9900906918 /* SMPL_Wings_Color.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SMPL_Wings_Color.jpg; sourceTree = "<group>"; };
-		144909FB209AAF9900906918 /* file.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = file.dae; sourceTree = "<group>"; };
-		14490A0A209AB10900906918 /* untitled.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = untitled.dae; sourceTree = "<group>"; };
 		145D3EFC201031B6000AC3CD /* Test_SceneKit_me1_FileLoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_SceneKit_me1_FileLoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14770AA3208DC0EB00726420 /* ViewControllerMe1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewControllerMe1.xib; sourceTree = "<group>"; };
 		14975ED220A1A5E60012AE0B /* XTJCoreNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJCoreNetworkManager.h; sourceTree = "<group>"; };
@@ -173,7 +147,6 @@
 				14975ED020A1A5E60012AE0B /* CommonFiles */,
 				143C24152089998500543BBA /* AppDelegate.h */,
 				143C24202089998500543BBA /* AppDelegate.m */,
-				144909EF209AAF9900906918 /* my3dmodel1 */,
 				140163662091DED40011D518 /* art.scnassets */,
 				143C24212089998500543BBA /* ViewControllerMe1.h */,
 				143C24172089998500543BBA /* ViewControllerMe1.m */,
@@ -193,26 +166,6 @@
 				143C241F2089998500543BBA /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		144909EF209AAF9900906918 /* my3dmodel1 */ = {
-			isa = PBXGroup;
-			children = (
-				144909F0209AAF9900906918 /* SMPL_Head_Bump.jpg */,
-				144909F1209AAF9900906918 /* SMPL_Body_Specular.jpg */,
-				144909F2209AAF9900906918 /* SMPL_Eye_Specular.jpg */,
-				144909F3209AAF9900906918 /* SMPL_Wings_Bump.jpg */,
-				144909F4209AAF9900906918 /* SMPL_Eye_Color.jpg */,
-				144909F5209AAF9900906918 /* SMPL_Head_Color.jpg */,
-				144909F6209AAF9900906918 /* SMPL_Body_Bump.jpg */,
-				144909F7209AAF9900906918 /* SMPL_Head_Specular.jpg */,
-				144909F8209AAF9900906918 /* SMPL_Body_Color.jpg */,
-				144909F9209AAF9900906918 /* SMPL_Wings_Specular.jpg */,
-				144909FA209AAF9900906918 /* SMPL_Wings_Color.jpg */,
-				14490A0A209AB10900906918 /* untitled.dae */,
-				144909FB209AAF9900906918 /* file.dae */,
-			);
-			path = my3dmodel1;
 			sourceTree = "<group>";
 		};
 		145D3EF3201031B6000AC3CD = {
@@ -423,24 +376,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14490A06209AAF9A00906918 /* SMPL_Wings_Color.jpg in Resources */,
 				143C24252089998500543BBA /* LaunchScreen.storyboard in Resources */,
-				14490A00209AAF9A00906918 /* SMPL_Eye_Color.jpg in Resources */,
 				143C24242089998500543BBA /* Assets.xcassets in Resources */,
-				144909FF209AAF9A00906918 /* SMPL_Wings_Bump.jpg in Resources */,
 				140163672091DED40011D518 /* art.scnassets in Resources */,
-				14490A02209AAF9A00906918 /* SMPL_Body_Bump.jpg in Resources */,
 				14975F3020A1A5E60012AE0B /* XTJResource.bundle in Resources */,
-				144909FE209AAF9A00906918 /* SMPL_Eye_Specular.jpg in Resources */,
-				14490A05209AAF9A00906918 /* SMPL_Wings_Specular.jpg in Resources */,
-				144909FC209AAF9A00906918 /* SMPL_Head_Bump.jpg in Resources */,
-				14490A04209AAF9A00906918 /* SMPL_Body_Color.jpg in Resources */,
-				14490A0B209AB10A00906918 /* untitled.dae in Resources */,
-				144909FD209AAF9A00906918 /* SMPL_Body_Specular.jpg in Resources */,
-				14490A07209AAF9A00906918 /* file.dae in Resources */,
-				14490A01209AAF9A00906918 /* SMPL_Head_Color.jpg in Resources */,
 				14770AA4208DC0EB00726420 /* ViewControllerMe1.xib in Resources */,
-				14490A03209AAF9A00906918 /* SMPL_Head_Specular.jpg in Resources */,
 				143C24262089998500543BBA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

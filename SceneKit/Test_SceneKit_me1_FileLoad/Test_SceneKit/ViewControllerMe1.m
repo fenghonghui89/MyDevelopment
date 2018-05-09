@@ -48,11 +48,20 @@ SSZipArchiveDelegate
 //                             };
     
     //dae
+//    self.downloadInfoDic = @{
+//                             @"isLocal":@(NO),
+//                             @"url":@"http://o9ivu69va.bkt.clouddn.com/art-o.zip",
+//                             @"downloadFilePath":@"art-o/file.dae",
+//                             @"localFilePath":@"3d/飞龙dae/file.dae",
+//                             @"modelName":@"SubDragonLE_Shape"
+//                             };
+    
+    //本地.scnassets
     self.downloadInfoDic = @{
-                             @"isLocal":@(NO),
+                             @"isLocal":@(YES),
                              @"url":@"http://o9ivu69va.bkt.clouddn.com/art-o.zip",
                              @"downloadFilePath":@"art-o/file.dae",
-                             @"localFilePath":@"3d/飞龙dae/file.dae",
+                             @"localFilePath":@"飞龙obj/file.obj",
                              @"modelName":@"SubDragonLE_Shape"
                              };
 }
@@ -216,11 +225,17 @@ SSZipArchiveDelegate
     NSURL *fileURL = nil;
     BOOL isLocal = [self.downloadInfoDic[@"isLocal"] boolValue];
     if (isLocal) {
-        //本地文件
+        //bundle
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
         NSString *file = self.downloadInfoDic[@"localFilePath"];
         filePath = [filePath stringByAppendingPathComponent:file];
         fileURL = [NSURL fileURLWithPath:filePath];
+        
+        //scnassets 效果一样
+//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"art" ofType:@"scnassets"];
+//        NSString *file = self.downloadInfoDic[@"localFilePath"];
+//        filePath = [filePath stringByAppendingPathComponent:file];
+//        fileURL = [NSURL fileURLWithPath:filePath];
     }else{
         //网络文件
         NSString *file = self.downloadInfoDic[@"downloadFilePath"];
