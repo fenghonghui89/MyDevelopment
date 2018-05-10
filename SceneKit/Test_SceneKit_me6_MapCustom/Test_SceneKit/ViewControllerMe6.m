@@ -9,6 +9,7 @@
 #import "ViewControllerMe6.h"
 #import "XTJRootDefine.h"
 #import "XTJ3DManager.h"
+#import "XTJDownloadManager.h"
 @interface ViewControllerMe6 ()
 <
 SCNSceneRendererDelegate
@@ -25,21 +26,6 @@ SCNSceneRendererDelegate
     NSString *doucumentsPath = [XTJTool doucumentsPath];
     NSLog(@"doucumentsPath path...%@",doucumentsPath);
     
-    XTJ3DInfoModel *downloadInfoDic = [XTJ3DInfoModel infoWithIsLocal:YES
-                                                                  url:nil
-                                                     downloadFilePath:nil
-                                                        localFilePath:@"3d/飞龙dae/file.dae"
-                                                            modelName:nil];
-    
-    downloadInfoDic = [XTJ3DInfoModel infoWithIsLocal:NO
-                                                  url:@"http://o9ivu69va.bkt.clouddn.com/art-o.zip"
-                                     downloadFilePath:@"art-o/file.dae"
-                                        localFilePath:@"3d/飞龙dae/file.dae"
-                                            modelName:@"SubDragonLE_Shape"];
-
-
-    [XTJ3DManager sharedInstance].downloadInfoDic = downloadInfoDic;
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -51,12 +37,42 @@ SCNSceneRendererDelegate
 - (IBAction)tap:(UIButton *)sender {
     [sender setTitle:@"下载" forState:UIControlStateNormal];
     
-    [[XTJ3DManager sharedInstance] downloadFile];
+    [[XTJDownloadManager sharedInstance] downloadFile:@"http://o9ivu69va.bkt.clouddn.com/dargon_obj.zip"
+                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
+                                        
+                                    }];
 }
 
 - (IBAction)tap1:(UIButton *)sender {
     [sender setTitle:@"加载" forState:UIControlStateNormal];
-    [[XTJ3DManager sharedInstance] loadModelUseSCNSceneSource:self.scene];
+    
+//    //download
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene
+//                                    isLoacal:NO
+//                                    filePath:@"dargon_obj/file.obj"
+//                                       sacle:SCNVector3Make(0.01, 0.01, 0.01)
+//                                    position:SCNVector3Make(0, 0, 0)];
+    
+    //model1
+    [[XTJ3DManager sharedInstance] loadModel:self.scene
+                                    isLoacal:YES
+                                    filePath:@"3d/dargon_obj/file.obj"
+                                       sacle:SCNVector3Make(0.01, 0.01, 0.01)
+                                    position:SCNVector3Make(0, 0, 0)];
+
+    //model2
+    [[XTJ3DManager sharedInstance] loadModel:self.scene
+                                    isLoacal:YES
+                                    filePath:@"3d/man_obj/file.obj"
+                                       sacle:SCNVector3Make(0.1, 0.1, 0.1)
+                                    position:SCNVector3Make(25, 0, 0)];
+
+    //model3
+    [[XTJ3DManager sharedInstance] loadModel:self.scene
+                                    isLoacal:YES
+                                    filePath:@"3d/xianjian_obj/file.obj"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    position:SCNVector3Make(-25, 0, 0)];
 }
 
 - (IBAction)tap2:(UIButton *)sender {
@@ -76,25 +92,26 @@ SCNSceneRendererDelegate
 
 - (IBAction)tap4:(UIButton *)sender {
     [sender setTitle:@"换材质" forState:UIControlStateNormal];
-    [self fineMaterial];
+
+    [[XTJ3DManager sharedInstance] changeMaterial:self.scene
+                                      targetModel:@"SubDragonLE_Shape"
+                                   targetMaterial:@"3_WingsTop"
+                                           change:ImageFile(@"image/earth")];
 }
 
 - (IBAction)tap5:(UIButton *)sender {
     [sender setTitle:@"show log" forState:UIControlStateNormal];
     
     [[XTJ3DManager sharedInstance] showDocFiles];
+    
+    for (SCNNode *node in self.scene.rootNode.childNodes) {
+        NSLog(@"scene node..%@",node.name);
+    }
 }
 
 #pragma mark - method
 -(void)setupScnview{
     
-    //读取1 项目文件夹/art.scnassets内模型
-//    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/my3dmodel1/file.dae"];
-    
-    //读取2 项目文件夹/dae 但如果模型没有优化，如果cameraNode没有设置pointOfView则视角会错误
-//    SCNScene *scene = [SCNScene sceneNamed:@"untitled.dae"];
-    
-    //读取3 项目文件夹/xxx.bundle内模型 必须是经过xcode优化过的模型 然后用SCNSceneSource读取
     SCNScene *scene = [SCNScene scene];
     self.scene = scene;
 
@@ -103,6 +120,7 @@ SCNSceneRendererDelegate
     camera.automaticallyAdjustsZRange = YES;
     
     SCNNode *cameraNode = [SCNNode node];
+    cameraNode.name = @"cameraNode";
     cameraNode.camera = camera;
     cameraNode.position = SCNVector3Make(0, 100, 100);
     cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
@@ -113,6 +131,7 @@ SCNSceneRendererDelegate
     ambientlight.type = SCNLightTypeAmbient;
     ambientlight.color = [UIColor grayColor];
     SCNNode *ambientlightNode = [SCNNode node];
+    ambientlightNode.name = @"ambientlightNode";
     ambientlightNode.light = ambientlight;
     [scene.rootNode addChildNode:ambientlightNode];
     
@@ -120,6 +139,7 @@ SCNSceneRendererDelegate
     omnilight.type = SCNLightTypeOmni;
     omnilight.color = [UIColor whiteColor];
     SCNNode *omnilightNode = [SCNNode node];
+    omnilightNode.name = @"omnilightNode";
     omnilightNode.light = omnilight;
     omnilightNode.position = SCNVector3Make(0, 100, 100);
     [scene.rootNode addChildNode:omnilightNode];
@@ -127,8 +147,8 @@ SCNSceneRendererDelegate
     //floor
     SCNFloor *floor = [SCNFloor floor];
     floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
-    
     SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
+    floorNode.name = @"floorNode";
     floorNode.position = SCNVector3Make(0, 0, 0);
     floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
     [scene.rootNode addChildNode:floorNode];
@@ -137,6 +157,7 @@ SCNSceneRendererDelegate
     SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
     box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
     SCNNode *boxNode = [SCNNode node];
+    boxNode.name = @"boxNode";
     boxNode.geometry = box;
     boxNode.position = SCNVector3Make(0, 0, 30);
     boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
@@ -157,24 +178,6 @@ SCNSceneRendererDelegate
     scnView.scene = scene;
 }
 
-#pragma mark - 换材质
--(void)fineMaterial{
-    
-    SCNNode *model = [self.scene.rootNode childNodeWithName:@"SubDragonLE_Shape" recursively:YES];
-    
-    for (SCNMaterial *material in model.geometry.materials) {
-        NSLog(@"material..%@",material.name);
-        if ([material.name isEqualToString:@"__WingsTop"]) {
-            [self changeMaterial:material];
-            return;
-        }
-    }
-}
-
--(void)changeMaterial:(SCNMaterial *)material{
-    
-    material.diffuse.contents = ImageFile(@"image/earth");
-}
 
 #pragma mark - < SCNSceneRendererDelegate >
 
