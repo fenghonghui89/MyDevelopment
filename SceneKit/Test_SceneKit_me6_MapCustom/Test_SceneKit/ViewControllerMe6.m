@@ -93,7 +93,7 @@ SCNSceneRendererDelegate
 - (IBAction)tap4:(UIButton *)sender {
     [sender setTitle:@"换材质" forState:UIControlStateNormal];
 
-    [[XTJ3DManager sharedInstance] changeMaterial:self.scene
+    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
                                       targetModel:@"SubDragonLE_Shape"
                                    targetMaterial:@"3_WingsTop"
                                            change:ImageFile(@"image/earth")];

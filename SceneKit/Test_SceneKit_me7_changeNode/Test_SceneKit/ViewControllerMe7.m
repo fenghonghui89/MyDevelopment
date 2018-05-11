@@ -46,6 +46,13 @@ SCNSceneRendererDelegate
 - (IBAction)tap1:(UIButton *)sender {
     [sender setTitle:@"加载" forState:UIControlStateNormal];
     
+    //bgNode
+    SCNNode *bgNode = [SCNNode node];
+    bgNode.name = @"bg";
+    [self.scene.rootNode addChildNode:bgNode];
+    
+    SCNNode *parentNode = bgNode;
+    
 //    //download
 //    [[XTJ3DManager sharedInstance] loadModel:self.scene
 //                                    isLoacal:NO
@@ -54,21 +61,21 @@ SCNSceneRendererDelegate
 //                                    position:SCNVector3Make(0, 0, 0)];
     
     //model1
-    [[XTJ3DManager sharedInstance] loadModel:self.scene
+    [[XTJ3DManager sharedInstance] loadModel:parentNode
                                     isLoacal:YES
                                     filePath:@"3d/dargon_obj/file.obj"
                                        sacle:SCNVector3Make(0.01, 0.01, 0.01)
                                     position:SCNVector3Make(0, 0, 0)];
 
     //model2
-    [[XTJ3DManager sharedInstance] loadModel:self.scene
+    [[XTJ3DManager sharedInstance] loadModel:parentNode
                                     isLoacal:YES
                                     filePath:@"3d/man_obj/file.obj"
                                        sacle:SCNVector3Make(0.1, 0.1, 0.1)
                                     position:SCNVector3Make(25, 0, 0)];
 
     //model3
-    [[XTJ3DManager sharedInstance] loadModel:self.scene
+    [[XTJ3DManager sharedInstance] loadModel:parentNode
                                     isLoacal:YES
                                     filePath:@"3d/xianjian_obj/file.obj"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
@@ -91,9 +98,9 @@ SCNSceneRendererDelegate
 }
 
 - (IBAction)tap4:(UIButton *)sender {
-    [sender setTitle:@"换材质" forState:UIControlStateNormal];
+    [sender setTitle:@"换模型" forState:UIControlStateNormal];
 
-    [self.scene.rootNode addChildNode:nil];
+    [self changeModel];
 }
 
 - (IBAction)tap5:(UIButton *)sender {
@@ -175,6 +182,18 @@ SCNSceneRendererDelegate
     scnView.scene = scene;
 }
 
+#pragma mark - 换模型
+-(void)changeModel{
+    
+    SCNNode *currentNode = [self.scene.rootNode childNodeWithName:@"obj______" recursively:YES];
+    
+    SCNScene *sceneTmp = [SCNScene sceneNamed:@"XTJResource.bundle/3d/ship_scn/ship.scn"];
+    SCNNode *changeNode = [sceneTmp.rootNode childNodeWithName:@"ship" recursively:YES];
+    changeNode.scale = SCNVector3Make(1, 1, 1);
+    changeNode.position = currentNode.position;//把坐标设置为要被替换的node的坐标
+    
+    [currentNode.parentNode replaceChildNode:currentNode with:changeNode];
+}
 
 #pragma mark - < SCNSceneRendererDelegate >
 
