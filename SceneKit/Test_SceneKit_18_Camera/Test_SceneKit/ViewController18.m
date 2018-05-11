@@ -17,9 +17,11 @@
 XTJTouchViewDelegate
 >
 @property(nonatomic,strong)SCNScene *scene;
-@property(nonatomic,strong)SCNNode *camera;
+@property(nonatomic,strong)SCNNode *cameraNode;
 @property(nonatomic,strong)SCNNode *camera1;
 @property(nonatomic,strong)SCNNode *camera2;
+
+@property(nonatomic,strong)SCNCamera *camera;
 @end
 
 @implementation ViewController18
@@ -31,7 +33,7 @@ XTJTouchViewDelegate
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self setupScene];
+    
 }
 
 #pragma mark - method
@@ -58,13 +60,14 @@ XTJTouchViewDelegate
     SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
     [scene.rootNode addChildNode:modelNode];
     
-    //设置camera
-    [self setupCamera];
+    
     
     //添加额外的camera 未调通
 //    [self addOtherCamera];
     
     [self loadModel];
+    
+    [self setupCamera];
 
     //SCNView
     SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
@@ -75,7 +78,6 @@ XTJTouchViewDelegate
     scnView.showsStatistics = YES;
     scnView.preferredFramesPerSecond = 60;//帧率
     [self.view addSubview:scnView];
-    [self.view sendSubviewToBack:scnView];
     self.gameView = scnView;
     
     //touch view
@@ -83,6 +85,10 @@ XTJTouchViewDelegate
     touchView.userInteractionEnabled = YES;
     touchView.delegate = self;
     [self.view addSubview:touchView];
+    
+    [self.view sendSubviewToBack:touchView];
+    [self.view sendSubviewToBack:scnView];
+    
 }
 
 -(void)loadModel{
@@ -102,7 +108,7 @@ XTJTouchViewDelegate
     cameraNode.camera = camera;
     cameraNode.position = SCNVector3Make(0, 10, 50);
     [self.gameView.scene.rootNode addChildNode:cameraNode];
-    self.camera = cameraNode;
+    self.cameraNode = cameraNode;
     
     //其他视角 camear
     self.camera1 = [SCNNode node];
@@ -175,11 +181,15 @@ XTJTouchViewDelegate
     
     //新建一个camera 代替系统默认的 也可以
     SCNCamera *camera = [SCNCamera camera];
+    camera.xFov = 45;
+    camera.yFov = 45;
     SCNNode *cameraNode = [SCNNode node];
     cameraNode.camera = camera;
     cameraNode.eulerAngles = SCNVector3Zero;
     cameraNode.position = SCNVector3Make(0.0, 0.0, DISTANCE);
     self.gameView.pointOfView = cameraNode;
+    self.cameraNode = cameraNode;
+    self.camera = camera;
 
     _cameraXHandle = [[SCNNode alloc] init];
     _cameraXHandle.rotation = SCNVector4Make(1.0, 0.0, 0.0, -M_PI_4 * 0.125);
@@ -193,22 +203,30 @@ XTJTouchViewDelegate
     [self.scene.rootNode addChildNode:_cameraYHandle];
 }
 
+-(void)pinchStartWithXFov:(void (^)(CGFloat))xFovBlock yFov:(void (^)(CGFloat))yFovBlock{
+    xFovBlock(self.camera.xFov);
+    yFovBlock(self.camera.yFov);
+}
 
+-(void)pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov{
+    
+    self.camera.xFov = xFov;
+    self.camera.yFov = yFov;
+}
 #pragma mark - action
 - (IBAction)tap:(id)sender {
     
-    _gameView.pointOfView = self.camera;
-    
-    SCNAction *move = [SCNAction moveTo:SCNVector3Make(0, 10, 50) duration:1];
-    [self.camera runAction:move];
+    [self setupScene];
 }
 
 - (IBAction)tap1:(id)sender {
     
-    _gameView.pointOfView = self.camera1;
+//    _gameView.pointOfView = self.camera1;
+//
+//    SCNAction *move = [SCNAction moveTo:SCNVector3Make(0, 30, 50) duration:1];
+//    [self.camera1 runAction:move];
     
-    SCNAction *move = [SCNAction moveTo:SCNVector3Make(0, 30, 50) duration:1];
-    [self.camera1 runAction:move];
+    NSLog(@"....%f %f %f %f",self.camera.xFov,self.camera.yFov,self.camera.zNear,self.camera.zFar);
 }
 - (IBAction)tap2:(id)sender {
     

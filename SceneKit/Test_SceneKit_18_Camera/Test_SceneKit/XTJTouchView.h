@@ -10,6 +10,8 @@
 
 @protocol XTJTouchViewDelegate
 -(void)panCamera:(CGPoint)direction;
+-(void)pinchStartWithXFov:(void(^)(CGFloat xFov))xFovBlock yFov:(void(^)(CGFloat yFov))yFovBlock;
+-(void)pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov;
 @end
 @interface XTJTouchView : UIView
 {
