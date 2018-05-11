@@ -4,9 +4,7 @@
 
 */
 
-@import simd;
 @import SceneKit;
-@import GameController;
 
 #import "ViewController18.h"
 
@@ -14,7 +12,6 @@
     // Nodes to manipulate the camera
     SCNNode *_cameraYHandle;
     SCNNode *_cameraXHandle;
-    
     
     UITouch *_panningTouch;
 }

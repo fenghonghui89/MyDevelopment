@@ -9,8 +9,14 @@
 #import "ViewController18.h"
 #import "XTJRootDefine.h"
 #import "AAPLGameViewControllerPrivate.h"
+#import "XTJ3DManager.h"
+#import "XTJTouchView.h"
 
 @interface ViewController18 ()
+<
+XTJTouchViewDelegate
+>
+@property(nonatomic,strong)SCNScene *scene;
 @property(nonatomic,strong)SCNNode *camera;
 @property(nonatomic,strong)SCNNode *camera1;
 @property(nonatomic,strong)SCNNode *camera2;
@@ -28,23 +34,13 @@
     [self setupScene];
 }
 
-
+#pragma mark - method
 -(void)setupScene{
     
     //scene 场景
-    SCNScene *scene = [SCNScene sceneNamed:@"game.scnassets/level.scn"];
-    
-    //SCNView
-    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
-    scnView.center = self.view.center;
-    scnView.scene = scene;
-    scnView.backgroundColor = [UIColor blackColor];
-    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
-    scnView.showsStatistics = YES;
-    scnView.preferredFramesPerSecond = 60;//帧率
-    [self.view addSubview:scnView];
-    [self.view sendSubviewToBack:scnView];
-    _gameView = scnView;
+    SCNScene *scene = [SCNScene scene];
+    scene.background.contents = ImageFile(@"image/skybox01_cube");
+    self.scene = scene;
     
     //light
     SCNLight *ambientlight = [SCNLight light];
@@ -55,7 +51,7 @@
     [scene.rootNode addChildNode:ambientlightNode];
     
     //模型
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJMaterial" ofType:@"bundle"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
     filePath = [filePath stringByAppendingPathComponent:@"3d/my3dmodel1/file.dae"];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
@@ -67,10 +63,36 @@
     
     //添加额外的camera 未调通
 //    [self addOtherCamera];
+    
+    [self loadModel];
 
+    //SCNView
+    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
+    scnView.center = self.view.center;
+    scnView.scene = scene;
+    scnView.backgroundColor = [UIColor blackColor];
+    scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
+    scnView.showsStatistics = YES;
+    scnView.preferredFramesPerSecond = 60;//帧率
+    [self.view addSubview:scnView];
+    [self.view sendSubviewToBack:scnView];
+    self.gameView = scnView;
+    
+    //touch view
+    XTJTouchView *touchView = [[XTJTouchView alloc] initWithFrame:self.view.bounds];
+    touchView.userInteractionEnabled = YES;
+    touchView.delegate = self;
+    [self.view addSubview:touchView];
 }
 
+-(void)loadModel{
 
+    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+                                    isLoacal:YES
+                                    filePath:@"3d/game_scn/level.scn"
+                                       sacle:SCNVector3Zero
+                                    position:SCNVector3Zero];
+}
 
 -(void)addOtherCamera{
     
@@ -168,10 +190,11 @@
     _cameraYHandle.rotation = SCNVector4Make(0.0, 1.0, 0.0, M_PI_2 + M_PI_4 * 3.0);
     [_cameraYHandle addChildNode:_cameraXHandle];
 
-    [self.gameView.scene.rootNode addChildNode:_cameraYHandle];
+    [self.scene.rootNode addChildNode:_cameraYHandle];
 }
 
-#pragma mark - < action >
+
+#pragma mark - action
 - (IBAction)tap:(id)sender {
     
     _gameView.pointOfView = self.camera;
