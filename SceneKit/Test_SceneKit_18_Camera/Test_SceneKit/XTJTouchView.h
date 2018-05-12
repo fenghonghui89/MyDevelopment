@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class XTJTouchView;
 @protocol XTJTouchViewDelegate
--(void)panCamera:(CGPoint)direction;
--(void)pinchStartWithXFov:(void(^)(CGFloat xFov))xFovBlock yFov:(void(^)(CGFloat yFov))yFovBlock;
--(void)pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov;
+-(void)touchViewHasDoubleTap:(XTJTouchView *)touchView;
+-(void)touchViewHasPan:(XTJTouchView *)touchView direction:(CGPoint)direction;
+-(void)touchView:(XTJTouchView *)touchView pinchStartWithXFov:(void(^)(CGFloat xFov))xFovBlock yFov:(void(^)(CGFloat yFov))yFovBlock;
+-(void)touchView:(XTJTouchView *)touchView pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov;
 @end
 @interface XTJTouchView : UIView
 {

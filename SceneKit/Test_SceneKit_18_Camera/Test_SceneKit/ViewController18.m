@@ -67,7 +67,7 @@ XTJTouchViewDelegate
     
     [self loadModel];
     
-    [self setupCamera];
+    [self setupCamera1];
 
     //SCNView
     SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
@@ -93,10 +93,36 @@ XTJTouchViewDelegate
 
 -(void)loadModel{
 
+
+
+    //floor
+    SCNFloor *floor = [SCNFloor floor];
+    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
+    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
+    floorNode.name = @"floorNode";
+    floorNode.position = SCNVector3Make(0, 0, 0);
+    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
+    [self.scene.rootNode addChildNode:floorNode];
+
+//    SCNBox *box = [SCNBox boxWithWidth:1 height:1 length:1 chamferRadius:0];
+//    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
+//    SCNNode *boxNode = [SCNNode node];
+//    boxNode.name = @"boxNode";
+//    boxNode.geometry = box;
+//    boxNode.position = SCNVector3Make(0, 0, 0);
+//    boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
+//    [self.scene.rootNode addChildNode:boxNode];
+//
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/game_scn/level.scn"
+//                                       sacle:SCNVector3Zero
+//                                    position:SCNVector3Zero];
+    
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
                                     isLoacal:YES
-                                    filePath:@"3d/game_scn/level.scn"
-                                       sacle:SCNVector3Zero
+                                    filePath:@"3d/xianjian_obj/file.obj"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Zero];
 }
 
@@ -129,40 +155,6 @@ XTJTouchViewDelegate
 
 #pragma mark - Managing the Camera
 
-- (void)panCamera:(CGPoint)direction {
-
-    direction.y *= -1.0;
-
-    static const CGFloat F = 0.005;
-
-    // Make sure the camera handles are correctly reset (because automatic camera animations may have put the "rotation" in a weird state.
-    [SCNTransaction begin];
-    [SCNTransaction setAnimationDuration:0.0];
-
-    [_cameraYHandle removeAllActions];
-    [_cameraXHandle removeAllActions];
-
-    if (_cameraYHandle.rotation.y < 0) {
-        _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, -_cameraYHandle.rotation.w);
-    }
-
-    if (_cameraXHandle.rotation.x < 0) {
-        _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, -_cameraXHandle.rotation.w);
-    }
-
-    [SCNTransaction commit];
-
-    // Update the camera position with some inertia. 必须
-    [SCNTransaction begin];
-    [SCNTransaction setAnimationDuration:0.5];
-    [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
-
-    _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, _cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
-    _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, (MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F))));
-
-    [SCNTransaction commit];
-}
-
 - (void)setupCamera {
     static CGFloat const ALTITUDE = 1.0;
     static CGFloat const DISTANCE = 10.0;
@@ -177,7 +169,6 @@ XTJTouchViewDelegate
 //    SCNNode *pov = self.gameView.pointOfView;
 //    pov.eulerAngles = SCNVector3Zero;
 //    pov.position = SCNVector3Make(0.0, 0.0, DISTANCE);
-    
     
     //新建一个camera 代替系统默认的 也可以
     SCNCamera *camera = [SCNCamera camera];
@@ -196,22 +187,88 @@ XTJTouchViewDelegate
     [_cameraXHandle addChildNode:cameraNode];
 
     _cameraYHandle = [[SCNNode alloc] init];
-    _cameraYHandle.position = SCNVector3Make(0.0, ALTITUDE, 0.0);
+    _cameraYHandle.position = SCNVector3Make(0, ALTITUDE, 0);
     _cameraYHandle.rotation = SCNVector4Make(0.0, 1.0, 0.0, M_PI_2 + M_PI_4 * 3.0);
     [_cameraYHandle addChildNode:_cameraXHandle];
 
     [self.scene.rootNode addChildNode:_cameraYHandle];
 }
 
--(void)pinchStartWithXFov:(void (^)(CGFloat))xFovBlock yFov:(void (^)(CGFloat))yFovBlock{
+- (void)setupCamera1 {
+    
+    SCNCamera *camera = [SCNCamera camera];
+    camera.xFov = 45;
+    camera.yFov = 45;
+    camera.zFar = 1000;
+    camera.zNear = 1;
+    SCNNode *cameraNode = [SCNNode node];
+    cameraNode.camera = camera;
+    cameraNode.eulerAngles = SCNVector3Zero;
+    cameraNode.position = SCNVector3Make(0, 0, 50);
+    self.gameView.pointOfView = cameraNode;
+    self.cameraNode = cameraNode;
+    self.camera = camera;
+    
+    _cameraXHandle = [[SCNNode alloc] init];
+//    _cameraXHandle.rotation = SCNVector4Make(1.0, 0.0, 0.0, -M_PI_4);
+    [_cameraXHandle addChildNode:cameraNode];
+    
+    _cameraYHandle = [[SCNNode alloc] init];
+    _cameraYHandle.position = SCNVector3Make(0, 10, 0);
+//    _cameraYHandle.rotation = SCNVector4Make(0.0, 1.0, 0.0, M_PI_2 + M_PI_4 * 3.0);
+    [_cameraYHandle addChildNode:_cameraXHandle];
+    
+    [self.scene.rootNode addChildNode:_cameraYHandle];
+}
+
+#pragma mark - XTJTouchViewDelegate
+-(void)touchViewHasPan:(XTJTouchView *)touchView direction:(CGPoint)direction{
+    
+    direction.y *= -1.0;
+    
+    static const CGFloat F = 0.005;
+    
+    // Make sure the camera handles are correctly reset (because automatic camera animations may have put the "rotation" in a weird state.
+    [SCNTransaction begin];
+    [SCNTransaction setAnimationDuration:0.0];
+    
+    [_cameraYHandle removeAllActions];
+    [_cameraXHandle removeAllActions];
+    
+    if (_cameraYHandle.rotation.y < 0) {
+        _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, -_cameraYHandle.rotation.w);
+    }
+    
+    if (_cameraXHandle.rotation.x < 0) {
+        _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, -_cameraXHandle.rotation.w);
+    }
+    
+    [SCNTransaction commit];
+    
+    // Update the camera position with some inertia. 必须
+    [SCNTransaction begin];
+    [SCNTransaction setAnimationDuration:0.5];
+    [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    
+    _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, _cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
+    _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, (MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F))));
+    
+    [SCNTransaction commit];
+}
+
+-(void)touchView:(XTJTouchView *)touchView pinchStartWithXFov:(void (^)(CGFloat))xFovBlock yFov:(void (^)(CGFloat))yFovBlock{
     xFovBlock(self.camera.xFov);
     yFovBlock(self.camera.yFov);
 }
 
--(void)pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov{
-    
+-(void)touchView:(XTJTouchView *)touchView pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov{
     self.camera.xFov = xFov;
     self.camera.yFov = yFov;
+}
+
+-(void)touchViewHasDoubleTap:(XTJTouchView *)touchView{
+    [_cameraYHandle removeFromParentNode];
+    [self setupCamera1];
 }
 #pragma mark - action
 - (IBAction)tap:(id)sender {
