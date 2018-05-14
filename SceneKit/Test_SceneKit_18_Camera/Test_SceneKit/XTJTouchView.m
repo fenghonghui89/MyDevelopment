@@ -24,26 +24,75 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        //缩放
         UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
         [self addGestureRecognizer:pinch];
         
+        //双击恢复
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         tap.numberOfTapsRequired = 2;
         [self addGestureRecognizer:tap];
         
-//        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-//        [self addGestureRecognizer:pan];
+        //平移引起旋转
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        [self addGestureRecognizer:pan];
+        
+//        UIPanGestureRecognizer *movePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(movePan:)];
+//        movePan.minimumNumberOfTouches = 2;
+//        movePan.maximumNumberOfTouches = 2;
+//        [self addGestureRecognizer:movePan];
+//
+//        [movePan requireGestureRecognizerToFail:pinch];
     }
     return self;
 }
 
-#pragma mark - 平移
+#pragma mark - 平移引起旋转
 -(void)pan:(UIPanGestureRecognizer *)panGestur{
     
+    switch (panGestur.state) {
+        case UIGestureRecognizerStateChanged:
+        {
+            //1.相对于刚点击时的点的坐标
+            CGPoint delta = [panGestur translationInView:self];
+
+            //2.回调
+            [self.delegate touchViewHasPan:self direction:delta];
+
+            //3.清空位移量（因为默认是相对于最初始位置时的数值，会不断叠加）
+            [panGestur setTranslation:CGPointZero inView:self];
+        }
+            break;
+
+        default:
+            break;
+    }
+}
+
+#pragma mark - 平移
+-(void)movePan:(UIPanGestureRecognizer *)panGestur{
+    switch (panGestur.state) {
+        case UIGestureRecognizerStateChanged:
+        {
+            //拖动
+            //1.相对于刚点击时的点的坐标
+            CGPoint delta = [panGestur translationInView:self];
+            
+            [self.delegate touchViewHasMove:self direction:delta];
+            
+            //3.清空位移量（因为默认是相对于最初始位置时的数值，会不断叠加）
+            [panGestur setTranslation:CGPointZero inView:self];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - 双击恢复
 -(void)tap:(UITapGestureRecognizer *)tapGestur{
+    self.xFov = 0;
+    self.yFov = 0;
     [self.delegate touchViewHasDoubleTap:self];
 }
 
@@ -99,9 +148,9 @@
             if (yFov_final>ScaleMax) {
                 yFov_final = ScaleMax;
             }
-            NSLog(@"x:%.2f->%.2f y:%.2f->%.2f scale:%.2f %.2f",self.xFov,xFov_final,self.yFov,yFov_final,pinchGestur.scale,scale);
+//            NSLog(@"x:%.2f->%.2f y:%.2f->%.2f scale:%.2f %.2f",self.xFov,xFov_final,self.yFov,yFov_final,pinchGestur.scale,scale);
 
-            [self.delegate touchView:self pinchMoveXFov:xFov_final yFov:yFov_final];
+            [self.delegate touchView:self pinchingWithXFov:xFov_final yFov:yFov_final];
         }
             break;
         default:
@@ -111,43 +160,44 @@
     }
 }
 
-#pragma mark - Touch Events
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (_panningTouch == nil) {
-        _panningTouch = [touches anyObject];
-    }
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    if (_panningTouch) {
-        CGPoint p0 = [_panningTouch previousLocationInView:self];
-        CGPoint p1 = [_panningTouch locationInView:self];
-        
-        //x的差值正常 y的差值正负相反
-        CGPoint displacement = CGPointMake(p1.x - p0.x, p1.y - p0.y);
-        [self.delegate touchViewHasPan:self direction:displacement];
-    }
-    
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self commonTouchesEnded:touches withEvent:event];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self commonTouchesEnded:touches withEvent:event];
-}
-
-#pragma mark - < private >
-- (void)commonTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (_panningTouch) {
-        if ([touches containsObject:_panningTouch]) {
-            _panningTouch = nil;
-        }
-    }
-    
-}
+//#pragma mark - Touch Events
+//
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    if (_panningTouch == nil) {
+//        _panningTouch = [touches anyObject];
+//    }
+//}
+//
+//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//
+//    if (_panningTouch) {
+//        CGPoint p0 = [_panningTouch previousLocationInView:self];
+//        CGPoint p1 = [_panningTouch locationInView:self];
+//
+//        //x的差值正常 y的差值正负相反
+//        CGPoint displacement = CGPointMake(p1.x - p0.x, p1.y - p0.y);
+//        [self.delegate touchViewHasPan:self direction:displacement];
+//    }
+//
+//}
+//
+//- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+//    [self commonTouchesEnded:touches withEvent:event];
+//}
+//
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    [self commonTouchesEnded:touches withEvent:event];
+//}
+//
+//#pragma mark - < private >
+//- (void)commonTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    if (_panningTouch) {
+//        if ([touches containsObject:_panningTouch]) {
+//            _panningTouch = nil;
+//        }
+//    }
+//
+//}
 
 @end

@@ -16,7 +16,7 @@
     UITouch *_panningTouch;
 }
 
-- (void)panCamera:(CGPoint)direction;
+//- (void)panCamera:(CGPoint)direction;
 
 @end
 

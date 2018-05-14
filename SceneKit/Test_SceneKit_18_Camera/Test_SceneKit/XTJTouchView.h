@@ -12,8 +12,9 @@
 @protocol XTJTouchViewDelegate
 -(void)touchViewHasDoubleTap:(XTJTouchView *)touchView;
 -(void)touchViewHasPan:(XTJTouchView *)touchView direction:(CGPoint)direction;
+-(void)touchViewHasMove:(XTJTouchView *)touchView direction:(CGPoint)direction;
 -(void)touchView:(XTJTouchView *)touchView pinchStartWithXFov:(void(^)(CGFloat xFov))xFovBlock yFov:(void(^)(CGFloat yFov))yFovBlock;
--(void)touchView:(XTJTouchView *)touchView pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov;
+-(void)touchView:(XTJTouchView *)touchView pinchingWithXFov:(CGFloat)xFov yFov:(CGFloat)yFov;
 @end
 @interface XTJTouchView : UIView
 {

@@ -112,6 +112,7 @@ XTJTouchViewDelegate
 //    boxNode.position = SCNVector3Make(0, 0, 0);
 //    boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
 //    [self.scene.rootNode addChildNode:boxNode];
+//    
 //
 //    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
 //                                    isLoacal:YES
@@ -235,12 +236,12 @@ XTJTouchViewDelegate
     [_cameraYHandle removeAllActions];
     [_cameraXHandle removeAllActions];
     
-    if (_cameraYHandle.rotation.y < 0) {
-        _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, -_cameraYHandle.rotation.w);
-    }
-    
     if (_cameraXHandle.rotation.x < 0) {
         _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, -_cameraXHandle.rotation.w);
+    }
+    
+    if (_cameraYHandle.rotation.y < 0) {
+        _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, -_cameraYHandle.rotation.w);
     }
     
     [SCNTransaction commit];
@@ -250,8 +251,22 @@ XTJTouchViewDelegate
     [SCNTransaction setAnimationDuration:0.5];
     [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
     
-    _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, _cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
     _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, (MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F))));
+    _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, _cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
+    
+    [SCNTransaction commit];
+}
+
+-(void)touchViewHasMove:(XTJTouchView *)touchView direction:(CGPoint)direction{
+    
+    [SCNTransaction begin];
+    [SCNTransaction setAnimationDuration:0.0];
+    [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    
+    CGFloat x = _cameraYHandle.position.x+direction.x;
+    CGFloat y = _cameraYHandle.position.y-direction.y;
+    CGFloat z = _cameraYHandle.position.z;
+    _cameraYHandle.position = SCNVector3Make(x, y, z);
     
     [SCNTransaction commit];
 }
@@ -261,14 +276,34 @@ XTJTouchViewDelegate
     yFovBlock(self.camera.yFov);
 }
 
--(void)touchView:(XTJTouchView *)touchView pinchMoveXFov:(CGFloat)xFov yFov:(CGFloat)yFov{
+-(void)touchView:(XTJTouchView *)touchView pinchingWithXFov:(CGFloat)xFov yFov:(CGFloat)yFov{
     self.camera.xFov = xFov;
     self.camera.yFov = yFov;
 }
 
 -(void)touchViewHasDoubleTap:(XTJTouchView *)touchView{
-    [_cameraYHandle removeFromParentNode];
-    [self setupCamera1];
+//    [_cameraYHandle removeFromParentNode];
+//    [self setupCamera1];
+//
+//    [SCNTransaction begin];
+//    [SCNTransaction setAnimationDuration:0.5];
+//    [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+//
+//    self.camera.xFov = 45;
+//    self.camera.yFov = 45;
+//
+//    [SCNTransaction commit];
+    
+    [SCNTransaction begin];
+    [SCNTransaction setAnimationDuration:0.5];
+    [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    
+    self.camera.xFov = 45;
+    self.camera.yFov = 45;
+    _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, 0);
+    _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, 0);
+    
+    [SCNTransaction commit];
 }
 #pragma mark - action
 - (IBAction)tap:(id)sender {
