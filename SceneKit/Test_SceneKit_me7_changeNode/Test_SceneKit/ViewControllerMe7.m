@@ -46,40 +46,7 @@ SCNSceneRendererDelegate
 - (IBAction)tap1:(UIButton *)sender {
     [sender setTitle:@"加载" forState:UIControlStateNormal];
     
-    //bgNode
-    SCNNode *bgNode = [SCNNode node];
-    bgNode.name = @"bg";
-    [self.scene.rootNode addChildNode:bgNode];
-    
-    SCNNode *parentNode = bgNode;
-    
-//    //download
-//    [[XTJ3DManager sharedInstance] loadModel:self.scene
-//                                    isLoacal:NO
-//                                    filePath:@"dargon_obj/file.obj"
-//                                       sacle:SCNVector3Make(0.01, 0.01, 0.01)
-//                                    position:SCNVector3Make(0, 0, 0)];
-    
-    //model1
-    [[XTJ3DManager sharedInstance] loadModel:parentNode
-                                    isLoacal:YES
-                                    filePath:@"3d/dargon_obj/file.obj"
-                                       sacle:SCNVector3Make(0.01, 0.01, 0.01)
-                                    position:SCNVector3Make(0, 0, 0)];
-
-    //model2
-    [[XTJ3DManager sharedInstance] loadModel:parentNode
-                                    isLoacal:YES
-                                    filePath:@"3d/man_obj/file.obj"
-                                       sacle:SCNVector3Make(0.1, 0.1, 0.1)
-                                    position:SCNVector3Make(25, 0, 0)];
-
-    //model3
-    [[XTJ3DManager sharedInstance] loadModel:parentNode
-                                    isLoacal:YES
-                                    filePath:@"3d/xianjian_obj/file.obj"
-                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
-                                    position:SCNVector3Make(-25, 0, 0)];
+    [self loadModel];
 }
 
 - (IBAction)tap2:(UIButton *)sender {
@@ -106,11 +73,13 @@ SCNSceneRendererDelegate
 - (IBAction)tap5:(UIButton *)sender {
     [sender setTitle:@"show log" forState:UIControlStateNormal];
     
-    [[XTJ3DManager sharedInstance] showDocFiles];
+//    [[XTJ3DManager sharedInstance] showDocFiles];
+//
+//    for (SCNNode *node in self.scene.rootNode.childNodes) {
+//        NSLog(@"scene node..%@",node.name);
+//    }
     
-    for (SCNNode *node in self.scene.rootNode.childNodes) {
-        NSLog(@"scene node..%@",node.name);
-    }
+    [self changeMap];
 }
 
 #pragma mark - method
@@ -128,6 +97,7 @@ SCNSceneRendererDelegate
     cameraNode.camera = camera;
     cameraNode.position = SCNVector3Make(0, 100, 100);
     cameraNode.rotation = SCNVector4Make(1, 0, 0, -M_PI_4);
+//    cameraNode.position = SCNVector3Make(0, 0, 10);
     [scene.rootNode addChildNode:cameraNode];
     
     //light
@@ -158,14 +128,14 @@ SCNSceneRendererDelegate
     [scene.rootNode addChildNode:floorNode];
     
     //box
-    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
-    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
-    SCNNode *boxNode = [SCNNode node];
-    boxNode.name = @"boxNode";
-    boxNode.geometry = box;
-    boxNode.position = SCNVector3Make(0, 0, 30);
-    boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
-    [scene.rootNode addChildNode:boxNode];
+//    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+//    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
+//    SCNNode *boxNode = [SCNNode node];
+//    boxNode.name = @"boxNode";
+//    boxNode.geometry = box;
+//    boxNode.position = SCNVector3Make(0, 0, 30);
+//    boxNode.physicsBody = [SCNPhysicsBody dynamicBody];
+//    [scene.rootNode addChildNode:boxNode];
     
     //scnview
     SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
@@ -182,17 +152,90 @@ SCNSceneRendererDelegate
     scnView.scene = scene;
 }
 
-#pragma mark - 换模型
+#pragma mark - 模型
+-(void)loadModel{
+    //bgNode
+//    SCNNode *bgNode = [SCNNode node];
+//    bgNode.name = @"bg";
+//    [self.scene.rootNode addChildNode:bgNode];
+//
+//    SCNNode *parentNode = bgNode;
+    
+//    //download
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/dargon_obj/file.obj"
+//                                       sacle:SCNVector3Make(0.01, 0.01, 0.01)
+//                                    position:SCNVector3Make(0, 0, 0)];
+    
+//    //model1
+//    [[XTJ3DManager sharedInstance] loadModel:parentNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/dargon_obj/file.obj"
+//                                       sacle:SCNVector3Make(0.01, 0.01, 0.01)
+//                                    position:SCNVector3Make(0, 0, 0)];
+//
+//    //model2
+//    [[XTJ3DManager sharedInstance] loadModel:parentNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/man_obj/file.obj"
+//                                       sacle:SCNVector3Make(0.1, 0.1, 0.1)
+//                                    position:SCNVector3Make(25, 0, 0)];
+//
+//    //model3
+//    [[XTJ3DManager sharedInstance] loadModel:parentNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/xianjian_obj/file.obj"
+//                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+//                                    position:SCNVector3Make(-25, 0, 0)];
+    
+//    //场景
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/game_scn/level.scn"
+//                                       sacle:SCNVector3Zero
+//                                    position:SCNVector3Zero];
+    
+    //人物
+    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+                                    isLoacal:YES
+                                    filePath:@"3d/CEISHI/yifu_1.obj"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    position:SCNVector3Make(0, 0, 0)];
+    
+    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+                                    isLoacal:YES
+                                    filePath:@"3d/CEISHI/Man.obj"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    position:SCNVector3Make(0, 0, 0)];
+}
+
 -(void)changeModel{
     
-    SCNNode *currentNode = [self.scene.rootNode childNodeWithName:@"obj______" recursively:YES];
+//    SCNNode *currentNode = [self.scene.rootNode childNodeWithName:@"obj______" recursively:YES];
+//
+//    SCNScene *sceneTmp = [SCNScene sceneNamed:@"XTJResource.bundle/3d/ship_scn/ship.scn"];
+//    SCNNode *changeNode = [sceneTmp.rootNode childNodeWithName:@"ship" recursively:YES];
+//    changeNode.scale = SCNVector3Make(1, 1, 1);
+//    changeNode.position = currentNode.position;//把坐标设置为要被替换的node的坐标
+//
+//    [currentNode.parentNode replaceChildNode:currentNode with:changeNode];
+    
+    SCNNode *currentNode = [self.scene.rootNode childNodeWithName:@"bloc07_ramp" recursively:YES];
     
     SCNScene *sceneTmp = [SCNScene sceneNamed:@"XTJResource.bundle/3d/ship_scn/ship.scn"];
     SCNNode *changeNode = [sceneTmp.rootNode childNodeWithName:@"ship" recursively:YES];
-    changeNode.scale = SCNVector3Make(1, 1, 1);
-    changeNode.position = currentNode.position;//把坐标设置为要被替换的node的坐标
+    changeNode.scale = SCNVector3Make(0.5, 0.5, 0.5);
+//    changeNode.position = currentNode.position;//把坐标设置为要被替换的node的坐标
     
     [currentNode.parentNode replaceChildNode:currentNode with:changeNode];
+}
+
+-(void)changeMap{
+    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
+                                      targetModel:@"Top_SweatShirt01_Big_F_LOD0"
+                                   targetMaterial:@"07___Default"
+                                           change:ImageFile(@"image/earth")];
 }
 
 #pragma mark - < SCNSceneRendererDelegate >

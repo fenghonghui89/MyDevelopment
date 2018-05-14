@@ -53,12 +53,12 @@ XTJTouchViewDelegate
     [scene.rootNode addChildNode:ambientlightNode];
     
     //模型
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
-    filePath = [filePath stringByAppendingPathComponent:@"3d/my3dmodel1/file.dae"];
-    NSURL *url = [NSURL fileURLWithPath:filePath];
-    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
-    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
-    [scene.rootNode addChildNode:modelNode];
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"XTJResource" ofType:@"bundle"];
+//    filePath = [filePath stringByAppendingPathComponent:@"3d/my3dmodel1/file.dae"];
+//    NSURL *url = [NSURL fileURLWithPath:filePath];
+//    SCNSceneSource *sceneSource = [SCNSceneSource sceneSourceWithURL:url options:nil];
+//    SCNNode *modelNode = [sceneSource entryWithIdentifier:@"SubDragonLE_Shape" withClass:[SCNNode class]];
+//    [scene.rootNode addChildNode:modelNode];
     
     
     
@@ -96,14 +96,14 @@ XTJTouchViewDelegate
 
 
     //floor
-    SCNFloor *floor = [SCNFloor floor];
-    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
-    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
-    floorNode.name = @"floorNode";
-    floorNode.position = SCNVector3Make(0, 0, 0);
-    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
-    [self.scene.rootNode addChildNode:floorNode];
-
+//    SCNFloor *floor = [SCNFloor floor];
+//    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
+//    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
+//    floorNode.name = @"floorNode";
+//    floorNode.position = SCNVector3Make(0, 0, 0);
+//    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
+//    [self.scene.rootNode addChildNode:floorNode];
+//
 //    SCNBox *box = [SCNBox boxWithWidth:1 height:1 length:1 chamferRadius:0];
 //    box.firstMaterial.diffuse.contents = ImageFile(@"image/婚庆布料");
 //    SCNNode *boxNode = [SCNNode node];
@@ -114,17 +114,17 @@ XTJTouchViewDelegate
 //    [self.scene.rootNode addChildNode:boxNode];
 //    
 //
-//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-//                                    isLoacal:YES
-//                                    filePath:@"3d/game_scn/level.scn"
-//                                       sacle:SCNVector3Zero
-//                                    position:SCNVector3Zero];
-    
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
                                     isLoacal:YES
-                                    filePath:@"3d/xianjian_obj/file.obj"
-                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    filePath:@"3d/game_scn/level.scn"
+                                       sacle:SCNVector3Zero
                                     position:SCNVector3Zero];
+    
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/xianjian_obj/file.obj"
+//                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+//                                    position:SCNVector3Zero];
 }
 
 -(void)addOtherCamera{
