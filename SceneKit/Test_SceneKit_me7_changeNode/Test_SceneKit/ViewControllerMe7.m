@@ -212,19 +212,10 @@ SCNSceneRendererDelegate
 
 -(void)changeModel{
     
-//    SCNNode *currentNode = [self.scene.rootNode childNodeWithName:@"obj______" recursively:YES];
-//
-//    SCNScene *sceneTmp = [SCNScene sceneNamed:@"XTJResource.bundle/3d/ship_scn/ship.scn"];
-//    SCNNode *changeNode = [sceneTmp.rootNode childNodeWithName:@"ship" recursively:YES];
-//    changeNode.scale = SCNVector3Make(1, 1, 1);
-//    changeNode.position = currentNode.position;//把坐标设置为要被替换的node的坐标
-//
-//    [currentNode.parentNode replaceChildNode:currentNode with:changeNode];
+    SCNNode *currentNode = [self.scene.rootNode childNodeWithName:@"Top_SweatShirt01_Big_F_LOD0" recursively:YES];
     
-    SCNNode *currentNode = [self.scene.rootNode childNodeWithName:@"bloc07_ramp" recursively:YES];
-    
-    SCNScene *sceneTmp = [SCNScene sceneNamed:@"XTJResource.bundle/3d/ship_scn/ship.scn"];
-    SCNNode *changeNode = [sceneTmp.rootNode childNodeWithName:@"ship" recursively:YES];
+    SCNScene *sceneTmp = [SCNScene sceneNamed:@"XTJResource.bundle/3d/CEISHI/YIFU-2.obj"];
+    SCNNode *changeNode = [sceneTmp.rootNode childNodeWithName:@"Top_SweatShirt01_Big_M_LOD0" recursively:YES];
     changeNode.scale = SCNVector3Make(0.5, 0.5, 0.5);
 //    changeNode.position = currentNode.position;//把坐标设置为要被替换的node的坐标
     
@@ -233,7 +224,7 @@ SCNSceneRendererDelegate
 
 -(void)changeMap{
     [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
-                                      targetModel:@"Top_SweatShirt01_Big_F_LOD0"
+                                      targetModel:@"Top_SweatShirt01_Big_M_LOD0"
                                    targetMaterial:@"07___Default"
                                            change:ImageFile(@"image/earth")];
 }
