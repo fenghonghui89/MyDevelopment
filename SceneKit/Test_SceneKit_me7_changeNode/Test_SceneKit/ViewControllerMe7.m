@@ -118,14 +118,14 @@ SCNSceneRendererDelegate
     omnilightNode.position = SCNVector3Make(0, 100, 100);
     [scene.rootNode addChildNode:omnilightNode];
     
-    //floor
-    SCNFloor *floor = [SCNFloor floor];
-    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
-    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
-    floorNode.name = @"floorNode";
-    floorNode.position = SCNVector3Make(0, 0, 0);
-    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
-    [scene.rootNode addChildNode:floorNode];
+//    //floor
+//    SCNFloor *floor = [SCNFloor floor];
+//    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
+//    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
+//    floorNode.name = @"floorNode";
+//    floorNode.position = SCNVector3Make(0, 0, 0);
+//    floorNode.physicsBody = [SCNPhysicsBody staticBody];//静态身体
+//    [scene.rootNode addChildNode:floorNode];
     
     //box
 //    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
@@ -197,17 +197,26 @@ SCNSceneRendererDelegate
 //                                    position:SCNVector3Zero];
     
     //人物
-    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-                                    isLoacal:YES
-                                    filePath:@"3d/CEISHI/yifu_1.obj"
-                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
-                                    position:SCNVector3Make(0, 0, 0)];
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/CEISHI/yifu_1.obj"
+//                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+//                                    position:SCNVector3Make(0, 0, 0)];
+
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/CEISHI/Man.obj"
+//                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+//                                    position:SCNVector3Make(0, 0, 0)];
     
+    //裤子
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
                                     isLoacal:YES
-                                    filePath:@"3d/CEISHI/Man.obj"
+                                    filePath:@"3d/kuzi/kuzi.obj"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)];
+
+
 }
 
 -(void)changeModel{
@@ -223,10 +232,15 @@ SCNSceneRendererDelegate
 }
 
 -(void)changeMap{
+//    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
+//                                      targetModel:@"Top_SweatShirt01_Big_M_LOD0"
+//                                   targetMaterial:@"07___Default"
+//                                           change:ImageFile(@"image/earth")];
+    
     [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
-                                      targetModel:@"Top_SweatShirt01_Big_M_LOD0"
+                                      targetModel:@"Mentor_Street_Upper_Part"
                                    targetMaterial:@"07___Default"
-                                           change:ImageFile(@"image/earth")];
+                                           change:ImageFile(@"3d/kuzi/SMPL_Wings_color2.tga")];
 }
 
 #pragma mark - < SCNSceneRendererDelegate >
