@@ -37,7 +37,12 @@ SCNSceneRendererDelegate
 - (IBAction)tap:(UIButton *)sender {
     [sender setTitle:@"下载" forState:UIControlStateNormal];
     
-    [[XTJDownloadManager sharedInstance] downloadFile:@"http://o9ivu69va.bkt.clouddn.com/dargon_obj.zip"
+//    [[XTJDownloadManager sharedInstance] downloadFile:@"http://o9ivu69va.bkt.clouddn.com/dargon_obj.zip"
+//                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
+//
+//                                    }];
+    
+    [[XTJDownloadManager sharedInstance] downloadFile:@"http://3hmlg.oss-cn-shenzhen.aliyuncs.com/test.pptx"
                                     completionHandler:^(BOOL isSuccess, NSString *errMsg) {
                                         
                                     }];
@@ -46,7 +51,7 @@ SCNSceneRendererDelegate
 - (IBAction)tap1:(UIButton *)sender {
     [sender setTitle:@"加载" forState:UIControlStateNormal];
     
-    [self loadModel];
+//    [self loadModel];
 }
 
 - (IBAction)tap2:(UIButton *)sender {
@@ -118,7 +123,7 @@ SCNSceneRendererDelegate
     omnilightNode.position = SCNVector3Make(0, 100, 100);
     [scene.rootNode addChildNode:omnilightNode];
     
-//    //floor
+    //floor
 //    SCNFloor *floor = [SCNFloor floor];
 //    floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
 //    SCNNode *floorNode = [SCNNode nodeWithGeometry:floor];
@@ -212,7 +217,7 @@ SCNSceneRendererDelegate
     //裤子
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
                                     isLoacal:YES
-                                    filePath:@"3d/kuzi/kuzi.obj"
+                                    filePath:@"3d/ren_man/ren_man.OBJ"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)];
 
