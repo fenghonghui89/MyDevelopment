@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,29 +20,71 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-Of-evp">
-                    <rect key="frame" x="100" y="120" width="46" height="30"/>
-                    <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="tap:" destination="-1" eventType="touchUpInside" id="8N2-Yy-n10"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqb-40-8Zj">
-                    <rect key="frame" x="100" y="207" width="46" height="30"/>
-                    <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="tap1:" destination="-1" eventType="touchUpInside" id="Yp2-As-fnx"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DyP-Dk-0RE">
+                    <rect key="frame" x="0.0" y="70" width="68" height="547"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTu-6U-acK">
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="83"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="download"/>
+                            <connections>
+                                <action selector="tap:" destination="-1" eventType="touchUpInside" id="meg-qo-h3a"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-Xl-CkJ">
+                            <rect key="frame" x="0.0" y="93" width="68" height="82.5"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="load model"/>
+                            <connections>
+                                <action selector="tap1:" destination="-1" eventType="touchUpInside" id="vw6-Tf-nog"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shh-bW-eUJ">
+                            <rect key="frame" x="0.0" y="185.5" width="68" height="83"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="delete doc"/>
+                            <connections>
+                                <action selector="tap2:" destination="-1" eventType="touchUpInside" id="DbE-uF-Gfd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaB-j5-dOb">
+                            <rect key="frame" x="0.0" y="278.5" width="68" height="83"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="reset view"/>
+                            <connections>
+                                <action selector="tap3:" destination="-1" eventType="touchUpInside" id="5Ed-3c-RMB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfo-F4-UBg">
+                            <rect key="frame" x="0.0" y="371.5" width="68" height="82.5"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="change skin"/>
+                            <connections>
+                                <action selector="tap4:" destination="-1" eventType="touchUpInside" id="bWM-Vv-8Qo"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srb-OZ-aWK">
+                            <rect key="frame" x="0.0" y="464" width="68" height="83"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="show log"/>
+                            <connections>
+                                <action selector="tap5:" destination="-1" eventType="touchUpInside" id="CaL-HB-le6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vqb-40-8Zj" firstAttribute="top" secondItem="cY4-Of-evp" secondAttribute="bottom" constant="57" id="QCp-Xb-ejH"/>
-                <constraint firstItem="cY4-Of-evp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="Ugb-5N-bQN"/>
-                <constraint firstItem="vqb-40-8Zj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="mat-DS-LP1"/>
-                <constraint firstItem="cY4-Of-evp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="vqh-u6-vb4"/>
+                <constraint firstItem="DyP-Dk-0RE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KZc-lf-xUA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DyP-Dk-0RE" secondAttribute="bottom" constant="50" id="WhC-3U-n0A"/>
+                <constraint firstItem="DyP-Dk-0RE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="eAE-Xc-iQQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

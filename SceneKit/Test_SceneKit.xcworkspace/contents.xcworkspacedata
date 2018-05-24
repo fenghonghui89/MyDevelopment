@@ -5,9 +5,6 @@
       location = "group:SceneKitTest/SceneKitTest.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Test_SceneKit_0/Test_SceneKit_0.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Test_SceneKit_1_Text/Test_SceneKit_1_Text.xcodeproj">
    </FileRef>
    <FileRef
@@ -90,5 +87,8 @@
    </FileRef>
    <FileRef
       location = "group:Test_SceneKit_me7_changeNode/Test_SceneKit_me7_changeNode.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Test_SceneKit_0/Test_SceneKit_0.xcodeproj">
    </FileRef>
 </Workspace>

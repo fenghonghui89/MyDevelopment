@@ -46,7 +46,7 @@
 		1482BBC120A565A000CBD2AD /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1482BBA220A565A000CBD2AD /* AFNetworkReachabilityManager.m */; };
 		1482BBC220A565A000CBD2AD /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1482BBA320A565A000CBD2AD /* AFSecurityPolicy.m */; };
 		1482BBC420A567EC00CBD2AD /* game.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1482BBC320A567EC00CBD2AD /* game.scnassets */; };
-		14DCFC9F209C3B150097D6A9 /* XTJTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DCFC9E209C3B150097D6A9 /* XTJTouchView.m */; };
+		14BE6BB620B6611D00FB8680 /* XTJTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BE6BB520B6611D00FB8680 /* XTJTouchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,8 +131,8 @@
 		1482BBA320A565A000CBD2AD /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		1482BBA420A565A000CBD2AD /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		1482BBC320A567EC00CBD2AD /* game.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = game.scnassets; sourceTree = "<group>"; };
-		14DCFC9D209C3B150097D6A9 /* XTJTouchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTJTouchView.h; sourceTree = "<group>"; };
-		14DCFC9E209C3B150097D6A9 /* XTJTouchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTJTouchView.m; sourceTree = "<group>"; };
+		14BE6BB420B6611D00FB8680 /* XTJTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJTouchView.h; sourceTree = "<group>"; };
+		14BE6BB520B6611D00FB8680 /* XTJTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJTouchView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +156,6 @@
 				143C24212089998500543BBA /* ViewController18.h */,
 				143C24172089998500543BBA /* ViewController18.m */,
 				14770AA3208DC0EB00726420 /* ViewController18.xib */,
-				14DCFC9D209C3B150097D6A9 /* XTJTouchView.h */,
-				14DCFC9E209C3B150097D6A9 /* XTJTouchView.m */,
 				1453CE9F2099B37C00E50066 /* Common */,
 				143C24182089998500543BBA /* Supporting Files */,
 			);
@@ -214,6 +212,8 @@
 		1482BB5A20A565A000CBD2AD /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				14BE6BB420B6611D00FB8680 /* XTJTouchView.h */,
+				14BE6BB520B6611D00FB8680 /* XTJTouchView.m */,
 				1482BB5B20A565A000CBD2AD /* NetworkManager */,
 				1482BB5F20A565A000CBD2AD /* Util */,
 				1482BB8D20A565A000CBD2AD /* Cube.h */,
@@ -426,8 +426,8 @@
 				1482BBB420A565A000CBD2AD /* aes_ni.c in Sources */,
 				1482BBB020A565A000CBD2AD /* hmac.c in Sources */,
 				1482BBA920A565A000CBD2AD /* unzip.c in Sources */,
+				14BE6BB620B6611D00FB8680 /* XTJTouchView.m in Sources */,
 				1482BBAE20A565A000CBD2AD /* minishared.c in Sources */,
-				14DCFC9F209C3B150097D6A9 /* XTJTouchView.m in Sources */,
 				143C24272089998500543BBA /* main.m in Sources */,
 				1482BBAD20A565A000CBD2AD /* ioapi_mem.c in Sources */,
 				1482BBAA20A565A000CBD2AD /* zip.c in Sources */,
