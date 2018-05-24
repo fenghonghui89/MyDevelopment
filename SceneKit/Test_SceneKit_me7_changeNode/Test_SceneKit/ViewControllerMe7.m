@@ -37,21 +37,21 @@ SCNSceneRendererDelegate
 - (IBAction)tap:(UIButton *)sender {
     [sender setTitle:@"下载" forState:UIControlStateNormal];
     
-//    [[XTJDownloadManager sharedInstance] downloadFile:@"http://o9ivu69va.bkt.clouddn.com/dargon_obj.zip"
+    [[XTJDownloadManager sharedInstance] downloadFile:@"http://o9ivu69va.bkt.clouddn.com/dargon_obj.zip"
+                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
+
+                                    }];
+    
+//    [[XTJDownloadManager sharedInstance] downloadFile:@"http://3hmlg.oss-cn-shenzhen.aliyuncs.com/test.pptx"
 //                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
 //
 //                                    }];
-    
-    [[XTJDownloadManager sharedInstance] downloadFile:@"http://3hmlg.oss-cn-shenzhen.aliyuncs.com/test.pptx"
-                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
-                                        
-                                    }];
 }
 
 - (IBAction)tap1:(UIButton *)sender {
     [sender setTitle:@"加载" forState:UIControlStateNormal];
     
-//    [self loadModel];
+    [self loadModel];
 }
 
 - (IBAction)tap2:(UIButton *)sender {
@@ -114,14 +114,33 @@ SCNSceneRendererDelegate
     ambientlightNode.light = ambientlight;
     [scene.rootNode addChildNode:ambientlightNode];
     
-    SCNLight *omnilight = [SCNLight light];
-    omnilight.type = SCNLightTypeOmni;
-    omnilight.color = [UIColor whiteColor];
-    SCNNode *omnilightNode = [SCNNode node];
-    omnilightNode.name = @"omnilightNode";
-    omnilightNode.light = omnilight;
-    omnilightNode.position = SCNVector3Make(0, 100, 100);
-    [scene.rootNode addChildNode:omnilightNode];
+//    SCNLight *omnilight = [SCNLight light];
+//    omnilight.type = SCNLightTypeOmni;
+//    omnilight.color = [UIColor whiteColor];
+//    SCNNode *omnilightNode = [SCNNode node];
+//    omnilightNode.name = @"omnilightNode";
+//    omnilightNode.light = omnilight;
+//    omnilightNode.position = SCNVector3Make(0, 100, 100);
+//    [scene.rootNode addChildNode:omnilightNode];
+    
+//    SCNLight *omnilight1 = [SCNLight light];
+//    omnilight1.type = SCNLightTypeOmni;
+//    omnilight1.color = [UIColor whiteColor];
+//    SCNNode *omnilightNode1 = [SCNNode node];
+//    omnilightNode1.name = @"omnilightNode";
+//    omnilightNode1.light = omnilight1;
+//    omnilightNode1.position = SCNVector3Make(0, 100, -100);
+//    [scene.rootNode addChildNode:omnilightNode1];
+    
+ 
+    SCNLight *omnilight3 = [SCNLight light];
+    omnilight3.type = SCNLightTypeOmni;
+    omnilight3.color = [UIColor whiteColor];
+    SCNNode *omnilightNode3 = [SCNNode node];
+    omnilightNode3.name = @"omnilightNode";
+    omnilightNode3.light = omnilight3;
+    omnilightNode3.position = SCNVector3Make(100, 100, 0);
+    [scene.rootNode addChildNode:omnilightNode3];
     
     //floor
 //    SCNFloor *floor = [SCNFloor floor];
@@ -217,7 +236,7 @@ SCNSceneRendererDelegate
     //裤子
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
                                     isLoacal:YES
-                                    filePath:@"3d/ren_man/ren_man.OBJ"
+                                    filePath:@"3d/man/man.obj"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)];
 
