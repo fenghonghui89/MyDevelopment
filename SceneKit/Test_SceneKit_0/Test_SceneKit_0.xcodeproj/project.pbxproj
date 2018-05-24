@@ -312,10 +312,10 @@
 			isa = PBXGroup;
 			children = (
 				14BE6C6020B6639A00FB8680 /* XTJDownloadManager.m */,
-				14BE6C6120B6639A00FB8680 /* XTJ3DInfoModel.h */,
-				14BE6C6220B6639A00FB8680 /* XTJ3DManager.h */,
 				14BE6C6320B6639A00FB8680 /* XTJDownloadManager.h */,
+				14BE6C6120B6639A00FB8680 /* XTJ3DInfoModel.h */,
 				14BE6C6420B6639A00FB8680 /* XTJ3DInfoModel.m */,
+				14BE6C6220B6639A00FB8680 /* XTJ3DManager.h */,
 				14BE6C6520B6639A00FB8680 /* XTJ3DManager.m */,
 			);
 			path = Manager;

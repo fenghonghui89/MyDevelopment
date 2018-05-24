@@ -98,10 +98,6 @@ XTJTouchViewDelegate
     
 }
 
-
-
-
-
 -(void)setupLight{
     
     SCNLight *ambientlight = [SCNLight light];
@@ -118,7 +114,7 @@ XTJTouchViewDelegate
     SCNNode *omnilightNode = [SCNNode node];
     omnilightNode.name = @"omnilightNode";
     omnilightNode.light = omnilight;
-    omnilightNode.position = SCNVector3Make(0, 100, 100);
+    omnilightNode.position = SCNVector3Make(0, 100, 500);
     [self.scene.rootNode addChildNode:omnilightNode];
 }
 
@@ -224,7 +220,8 @@ XTJTouchViewDelegate
     
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
                                     isLoacal:YES
-                                    filePath:@"3d/fffff/man.obj"
+                                    fileName:@"man.obj"
+                                     dicPath:@"3d/fffff"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)];
     
