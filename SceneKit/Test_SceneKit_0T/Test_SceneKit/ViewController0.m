@@ -534,7 +534,7 @@ XTJTouchViewDelegate
     
     [SCNTransaction commit];
     
-    NSLog(@"平移引起旋转..%f %f",x_rotation,y_rotation);
+//    NSLog(@"平移引起旋转..%f %f",x_rotation,y_rotation);
 }
 
 //平移

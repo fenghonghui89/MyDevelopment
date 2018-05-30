@@ -15,8 +15,6 @@
 		143C24292089998500543BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 143C24202089998500543BBA /* AppDelegate.m */; };
 		1453CEAA2099B37C00E50066 /* AAPLGameControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453CEA62099B37C00E50066 /* AAPLGameControls.m */; };
 		14770AA4208DC0EB00726420 /* ViewController0.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14770AA3208DC0EB00726420 /* ViewController0.xib */; };
-		149A67CD20BE35EB001852E3 /* game.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 149A677E20BE35EB001852E3 /* game.scnassets */; };
-		149A67CE20BE35EB001852E3 /* XTJResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 149A677F20BE35EB001852E3 /* XTJResource.bundle */; };
 		149A67CF20BE35EB001852E3 /* XTJTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A678120BE35EB001852E3 /* XTJTouchView.m */; };
 		149A67D020BE35EB001852E3 /* XTJCoreNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A678420BE35EB001852E3 /* XTJCoreNetworkManager.m */; };
 		149A67D120BE35EB001852E3 /* XTJTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A678920BE35EB001852E3 /* XTJTool.m */; };
@@ -47,6 +45,8 @@
 		149A67EA20BE35EB001852E3 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67C820BE35EB001852E3 /* AFURLRequestSerialization.m */; };
 		149A67EB20BE35EB001852E3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67CA20BE35EB001852E3 /* AFNetworkReachabilityManager.m */; };
 		149A67EC20BE35EB001852E3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67CB20BE35EB001852E3 /* AFSecurityPolicy.m */; };
+		149A67F020BEA6E1001852E3 /* game.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 149A67EE20BEA6E1001852E3 /* game.scnassets */; };
+		149A67F120BEA6E1001852E3 /* XTJResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 149A67EF20BEA6E1001852E3 /* XTJResource.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +63,6 @@
 		1453CEA62099B37C00E50066 /* AAPLGameControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLGameControls.m; sourceTree = "<group>"; };
 		145D3EFC201031B6000AC3CD /* Test_SceneKit_0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_SceneKit_0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14770AA3208DC0EB00726420 /* ViewController0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController0.xib; sourceTree = "<group>"; };
-		149A677E20BE35EB001852E3 /* game.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = game.scnassets; sourceTree = "<group>"; };
-		149A677F20BE35EB001852E3 /* XTJResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTJResource.bundle; sourceTree = "<group>"; };
 		149A678120BE35EB001852E3 /* XTJTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJTouchView.m; sourceTree = "<group>"; };
 		149A678320BE35EB001852E3 /* XTJCoreNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJCoreNetworkManager.h; sourceTree = "<group>"; };
 		149A678420BE35EB001852E3 /* XTJCoreNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJCoreNetworkManager.m; sourceTree = "<group>"; };
@@ -133,6 +131,8 @@
 		149A67CA20BE35EB001852E3 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		149A67CB20BE35EB001852E3 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		149A67CC20BE35EB001852E3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		149A67EE20BEA6E1001852E3 /* game.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = game.scnassets; sourceTree = "<group>"; };
+		149A67EF20BEA6E1001852E3 /* XTJResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTJResource.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +149,8 @@
 		143C24142089998500543BBA /* Test_SceneKit */ = {
 			isa = PBXGroup;
 			children = (
+				149A67ED20BEA6E1001852E3 /* Resource */,
 				149A678020BE35EB001852E3 /* CommonFiles */,
-				149A677D20BE35EB001852E3 /* Resource */,
 				143C24152089998500543BBA /* AppDelegate.h */,
 				143C24202089998500543BBA /* AppDelegate.m */,
 				143C24212089998500543BBA /* ViewController0.h */,
@@ -197,16 +197,6 @@
 				145D3EFC201031B6000AC3CD /* Test_SceneKit_0.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		149A677D20BE35EB001852E3 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				149A677E20BE35EB001852E3 /* game.scnassets */,
-				149A677F20BE35EB001852E3 /* XTJResource.bundle */,
-			);
-			name = Resource;
-			path = ../../../../OSC_CommonFile/Resource;
 			sourceTree = "<group>";
 		};
 		149A678020BE35EB001852E3 /* CommonFiles */ = {
@@ -349,6 +339,16 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		149A67ED20BEA6E1001852E3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				149A67EE20BEA6E1001852E3 /* game.scnassets */,
+				149A67EF20BEA6E1001852E3 /* XTJResource.bundle */,
+			);
+			name = Resource;
+			path = ../../../../OSC_CommonFiles/Resource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,10 +409,10 @@
 			files = (
 				143C24252089998500543BBA /* LaunchScreen.storyboard in Resources */,
 				143C24242089998500543BBA /* Assets.xcassets in Resources */,
-				149A67CE20BE35EB001852E3 /* XTJResource.bundle in Resources */,
+				149A67F120BEA6E1001852E3 /* XTJResource.bundle in Resources */,
 				14770AA4208DC0EB00726420 /* ViewController0.xib in Resources */,
 				143C24262089998500543BBA /* Main.storyboard in Resources */,
-				149A67CD20BE35EB001852E3 /* game.scnassets in Resources */,
+				149A67F020BEA6E1001852E3 /* game.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
