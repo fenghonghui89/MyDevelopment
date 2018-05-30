@@ -128,18 +128,18 @@ XTJTouchViewDelegate
     scnView.backgroundColor = [UIColor blackColor];
     scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
     scnView.showsStatistics = YES;
-//    scnView.allowsCameraControl = YES;
+    scnView.allowsCameraControl = YES;
     scnView.preferredFramesPerSecond = 60;//帧率
     [self.view addSubview:scnView];
     self.gameView = scnView;
     
     //touch view
-    XTJTouchView *touchView = [[XTJTouchView alloc] initWithFrame:self.view.bounds];
-    touchView.userInteractionEnabled = YES;
-    touchView.delegate = self;
-    [self.view addSubview:touchView];
-
-    [self.view sendSubviewToBack:touchView];
+//    XTJTouchView *touchView = [[XTJTouchView alloc] initWithFrame:self.view.bounds];
+//    touchView.userInteractionEnabled = YES;
+//    touchView.delegate = self;
+//    [self.view addSubview:touchView];
+//
+//    [self.view sendSubviewToBack:touchView];
     [self.view sendSubviewToBack:scnView];
     
 }
@@ -504,7 +504,7 @@ XTJTouchViewDelegate
     
     [SCNTransaction commit];
     
-    NSLog(@"平移引起旋转..%f %f",(MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F))),_cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
+//    NSLog(@"平移引起旋转..%f %f",(MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F))),_cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
 }
 
 //平移
@@ -514,9 +514,11 @@ XTJTouchViewDelegate
     [SCNTransaction setAnimationDuration:0.0];
     [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
     
+    CGFloat y = (self.camera.xFov/ScaleMax)*direction.y;
+//    NSLog(@"y...%f",y);
 //    CGFloat x = _cameraYHandle.position.x+direction.x;
     CGFloat x = _cameraXHandle.position.x;
-    CGFloat y = _cameraYHandle.position.y-direction.y;
+    y = _cameraYHandle.position.y + y;
     CGFloat z = _cameraYHandle.position.z;
     _cameraYHandle.position = SCNVector3Make(x, y, z);
     
@@ -531,7 +533,7 @@ XTJTouchViewDelegate
 
 //缩放中
 -(void)touchView:(XTJTouchView *)touchView pinchingWithXFov:(CGFloat)xFov yFov:(CGFloat)yFov{
-    NSLog(@"缩放中..%f %f",xFov,yFov);
+//    NSLog(@"缩放中..%f %f",xFov,yFov);
     self.camera.xFov = xFov;
     self.camera.yFov = yFov;
 }
