@@ -60,17 +60,29 @@ XTJTouchViewDelegate
 
 -(void)customInitData{
     
+    //实际
     camera_xFov = 52.5;
     camera_yFov = 52.5;
     cameraNode_position = SCNVector3Make(0, 50, 100);
     cameraNode_rotation = SCNVector4Zero;
     cameraXHandle_position = SCNVector3Zero;
-    cameraXHandle_rotation = SCNVector4Make(1, 0, 0, -0.1);
+    cameraXHandle_rotation = SCNVector4Make(1, 0, 0, -0.08);
     cameraYHandle_position = SCNVector3Zero;
-    cameraYHandle_rotation = SCNVector4Make(0, 1, 0, 6.75);
+    cameraYHandle_rotation = SCNVector4Make(0, 1, 0, 6.85);
     
+    //测试 正对
 //    camera_xFov = 53;
 //    camera_yFov = 53;
+//    cameraNode_position = SCNVector3Make(0, 50, 100);
+//    cameraNode_rotation = SCNVector4Zero;
+//    cameraXHandle_position = SCNVector3Zero;
+//    cameraXHandle_rotation = SCNVector4Zero;
+//    cameraYHandle_position = SCNVector3Zero;
+//    cameraYHandle_rotation = SCNVector4Zero;
+    
+    //实际
+//    camera_xFov = 52.5;
+//    camera_yFov = 52.5;
 //    cameraNode_position = SCNVector3Make(0, 50, 100);
 //    cameraNode_rotation = SCNVector4Zero;
 //    cameraXHandle_position = SCNVector3Zero;
@@ -128,18 +140,18 @@ XTJTouchViewDelegate
     scnView.backgroundColor = [UIColor blackColor];
     scnView.antialiasingMode = SCNAntialiasingModeMultisampling4X;//开启抗锯齿
     scnView.showsStatistics = YES;
-    scnView.allowsCameraControl = YES;
+//    scnView.allowsCameraControl = YES;
     scnView.preferredFramesPerSecond = 60;//帧率
     [self.view addSubview:scnView];
     self.gameView = scnView;
     
     //touch view
-//    XTJTouchView *touchView = [[XTJTouchView alloc] initWithFrame:self.view.bounds];
-//    touchView.userInteractionEnabled = YES;
-//    touchView.delegate = self;
-//    [self.view addSubview:touchView];
-//
-//    [self.view sendSubviewToBack:touchView];
+    XTJTouchView *touchView = [[XTJTouchView alloc] initWithFrame:self.view.bounds];
+    touchView.userInteractionEnabled = YES;
+    touchView.delegate = self;
+    [self.view addSubview:touchView];
+
+    [self.view sendSubviewToBack:touchView];
     [self.view sendSubviewToBack:scnView];
     
 }
@@ -177,6 +189,7 @@ XTJTouchViewDelegate
 }
 
 -(void)shadowLight{
+    
     //圆锥体做灯罩
     SCNCone *cone = [SCNCone coneWithTopRadius:1 bottomRadius:25 height:50];
     cone.radialSegmentCount = 10;
@@ -473,8 +486,11 @@ XTJTouchViewDelegate
 //平移引起旋转
 -(void)touchViewHasPan:(XTJTouchView *)touchView direction:(CGPoint)direction{
     
+    /*
+     上滑 坐标系中y变负 但摄像机应该仰视 所以变为正 -> 角度改变量为正
+     下滑 坐标系中y变正 但摄像机应该俯视 所以变为负 -> 角度改变量为负
+     */
     direction.y *= -1.0;
-    
     static const CGFloat F = 0.005;
     
     // Make sure the camera handles are correctly reset (because automatic camera animations may have put the "rotation" in a weird state.
@@ -487,7 +503,7 @@ XTJTouchViewDelegate
     if (_cameraXHandle.rotation.x < 0) {
         _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, -_cameraXHandle.rotation.w);
     }
-    
+
     if (_cameraYHandle.rotation.y < 0) {
         _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, -_cameraYHandle.rotation.w);
     }
@@ -499,12 +515,26 @@ XTJTouchViewDelegate
     [SCNTransaction setAnimationDuration:0.5];
     [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
     
-    _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, (MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F))));
-    _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, _cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
+    //影响沿x轴上下旋转
+    //-1.0 0.45
+    CGFloat x_rotation = _cameraXHandle.rotation.w + direction.y * F;
+    if (x_rotation<-1.0) {
+        x_rotation = -1.0;
+    }else if(x_rotation>0.20){
+        x_rotation = 0.20;
+    }
+//    x_rotation = MIN(0.13, _cameraXHandle.rotation.w + direction.y * F);
+//    x_rotation = MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F));
+    _cameraXHandle.rotation = SCNVector4Make(1, 0, 0, x_rotation);
+    
+    //影响沿y轴左右旋转 改变量为x轴的改变量 因为视角跟值的改变是相反的所以为负
+//    CGFloat y_rotation = _cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F);
+    CGFloat y_rotation = (_cameraYHandle.rotation.w - direction.x * F);
+    _cameraYHandle.rotation = SCNVector4Make(0, 1, 0, y_rotation);
     
     [SCNTransaction commit];
     
-//    NSLog(@"平移引起旋转..%f %f",(MAX(-M_PI_2, MIN(0.13, _cameraXHandle.rotation.w + direction.y * F))),_cameraYHandle.rotation.y * (_cameraYHandle.rotation.w - direction.x * F));
+    NSLog(@"平移引起旋转..%f %f",x_rotation,y_rotation);
 }
 
 //平移
@@ -514,12 +544,21 @@ XTJTouchViewDelegate
     [SCNTransaction setAnimationDuration:0.0];
     [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
     
-    CGFloat y = (self.camera.xFov/ScaleMax)*direction.y;
-//    NSLog(@"y...%f",y);
 //    CGFloat x = _cameraYHandle.position.x+direction.x;
     CGFloat x = _cameraXHandle.position.x;
+    
+    //-26.0 28
+    CGFloat y = direction.y*0.05;
     y = _cameraYHandle.position.y + y;
+    if (y<-26.0) {
+        y = -26.0;
+    }else if(y>28){
+        y = 28.0;
+    }
+//    NSLog(@"y...%f",y);
+    
     CGFloat z = _cameraYHandle.position.z;
+    
     _cameraYHandle.position = SCNVector3Make(x, y, z);
     
     [SCNTransaction commit];
@@ -540,11 +579,11 @@ XTJTouchViewDelegate
 
 //双击恢复
 -(void)touchViewHasDoubleTap:(XTJTouchView *)touchView{
-
-
+    
+    NSLog(@"双击恢复。。");
     
     [SCNTransaction begin];
-    [SCNTransaction setAnimationDuration:0.5];
+    [SCNTransaction setAnimationDuration:0];
     [SCNTransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
     
     self.camera.xFov = camera_xFov;
@@ -592,7 +631,11 @@ XTJTouchViewDelegate
 //
 //    SCNAction *move = [SCNAction moveTo:SCNVector3Make(0, 50, 50) duration:1];
 //    [self.camera2 runAction:move];
-    
+    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+                                     dicPath:@"3d/shirt_noPic"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    position:SCNVector3Make(0, 0, 0)
+                               lightingModel:SCNLightingModelLambert];
 }
 
 - (IBAction)tap3:(id)sender {

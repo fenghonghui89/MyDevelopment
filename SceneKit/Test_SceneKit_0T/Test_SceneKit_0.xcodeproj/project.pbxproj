@@ -212,13 +212,13 @@
 		149A678020BE35EB001852E3 /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				149A67BC20BE35EB001852E3 /* XTJTouchView.h */,
 				149A678120BE35EB001852E3 /* XTJTouchView.m */,
+				149A67B420BE35EB001852E3 /* Cube.h */,
+				149A67BD20BE35EB001852E3 /* Cube.m */,
 				149A678220BE35EB001852E3 /* NetworkManager */,
 				149A678620BE35EB001852E3 /* Util */,
-				149A67B420BE35EB001852E3 /* Cube.h */,
 				149A67B520BE35EB001852E3 /* Manager */,
-				149A67BC20BE35EB001852E3 /* XTJTouchView.h */,
-				149A67BD20BE35EB001852E3 /* Cube.m */,
 				149A67BE20BE35EB001852E3 /* ThirdParty */,
 			);
 			name = CommonFiles;
@@ -311,12 +311,12 @@
 		149A67B520BE35EB001852E3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				149A67B620BE35EB001852E3 /* XTJDownloadManager.m */,
 				149A67B720BE35EB001852E3 /* XTJ3DInfoModel.h */,
-				149A67B820BE35EB001852E3 /* XTJ3DManager.h */,
-				149A67B920BE35EB001852E3 /* XTJDownloadManager.h */,
 				149A67BA20BE35EB001852E3 /* XTJ3DInfoModel.m */,
+				149A67B820BE35EB001852E3 /* XTJ3DManager.h */,
 				149A67BB20BE35EB001852E3 /* XTJ3DManager.m */,
+				149A67B920BE35EB001852E3 /* XTJDownloadManager.h */,
+				149A67B620BE35EB001852E3 /* XTJDownloadManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
