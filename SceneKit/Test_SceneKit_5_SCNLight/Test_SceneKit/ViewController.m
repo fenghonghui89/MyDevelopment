@@ -94,31 +94,31 @@
     
     //平行光
     //有方向 没有位置 不衰减
-//    SCNLight *light = [SCNLight light];
-//    light.type = SCNLightTypeDirectional;
-//    light.color = [UIColor yellowColor];
-//
-//    SCNNode *lightNode = [SCNNode node];
-//    lightNode.light = light;
-//    lightNode.position = SCNVector3Make(1000, 1000, 1000);//改光源位置不会有变化
-//    lightNode.rotation = SCNVector4Make(1, 0, 0, -M_PI/2.0);//改照射方向会有变化
-//
-//    [scene.rootNode addChildNode:lightNode];
-    
-    //聚焦光源 具体使用看23-阴影的使用
-    //有方向 有位置 有照射区域 可以衰减
     SCNLight *light = [SCNLight light];
-    light.type = SCNLightTypeSpot;
+    light.type = SCNLightTypeDirectional;
     light.color = [UIColor yellowColor];
-    light.castsShadow = YES;//捕捉阴影
-    light.zFar = 10;//设置它最远能照射到的地方为10 即只能照到球体
-    light.spotOuterAngle = 2;//光发射角度
 
     SCNNode *lightNode = [SCNNode node];
     lightNode.light = light;
-    lightNode.position = SCNVector3Make(0, 0, -9);
+    lightNode.position = SCNVector3Make(1000, 1000, 1000);//改光源位置不会有变化
+    lightNode.rotation = SCNVector4Make(1, 0, 0, 15);//改照射方向会有变化
 
     [scene.rootNode addChildNode:lightNode];
+    
+    //聚焦光源 具体使用看23-阴影的使用
+    //有方向 有位置 有照射区域 可以衰减
+//    SCNLight *light = [SCNLight light];
+//    light.type = SCNLightTypeSpot;
+//    light.color = [UIColor yellowColor];
+//    light.castsShadow = YES;//捕捉阴影
+//    light.zFar = 10;//设置它最远能照射到的地方为10 即只能照到球体
+//    light.spotOuterAngle = 2;//光发射角度
+//
+//    SCNNode *lightNode = [SCNNode node];
+//    lightNode.light = light;
+//    lightNode.position = SCNVector3Make(0, 0, -9);
+//
+//    [scene.rootNode addChildNode:lightNode];
 }
 
 - (IBAction)tap:(id)sender {

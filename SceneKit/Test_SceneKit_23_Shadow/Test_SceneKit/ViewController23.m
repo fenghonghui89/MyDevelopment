@@ -81,7 +81,7 @@ SSZipArchiveDelegate
     SCNFloor *floor = [SCNFloor floor];
     floor.reflectivity = 0;
     floor.firstMaterial.diffuse.contents = ImageFile(@"image/素材1");
-    floor.firstMaterial.diffuse.contents = [UIColor grayColor];
+//    floor.firstMaterial.diffuse.contents = [UIColor grayColor];
     floor.width = 0;
     floor.length = 0;
     
