@@ -16,6 +16,15 @@
 <
 XTJTouchViewDelegate
 >
+
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+@property (weak, nonatomic) IBOutlet UIButton *btn4;
+@property (weak, nonatomic) IBOutlet UIButton *btn5;
+
+
 @property(nonatomic,strong)SCNScene *scene;
 @property(nonatomic,strong)SCNNode *cameraNode;
 @property(nonatomic,strong)SCNNode *camera1;

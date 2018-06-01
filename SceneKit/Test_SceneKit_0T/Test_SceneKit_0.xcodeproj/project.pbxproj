@@ -45,7 +45,6 @@
 		149A67EA20BE35EB001852E3 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67C820BE35EB001852E3 /* AFURLRequestSerialization.m */; };
 		149A67EB20BE35EB001852E3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67CA20BE35EB001852E3 /* AFNetworkReachabilityManager.m */; };
 		149A67EC20BE35EB001852E3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67CB20BE35EB001852E3 /* AFSecurityPolicy.m */; };
-		149A67F020BEA6E1001852E3 /* game.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 149A67EE20BEA6E1001852E3 /* game.scnassets */; };
 		149A67F120BEA6E1001852E3 /* XTJResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 149A67EF20BEA6E1001852E3 /* XTJResource.bundle */; };
 /* End PBXBuildFile section */
 
@@ -131,7 +130,6 @@
 		149A67CA20BE35EB001852E3 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		149A67CB20BE35EB001852E3 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		149A67CC20BE35EB001852E3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		149A67EE20BEA6E1001852E3 /* game.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = game.scnassets; sourceTree = "<group>"; };
 		149A67EF20BEA6E1001852E3 /* XTJResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTJResource.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -342,7 +340,6 @@
 		149A67ED20BEA6E1001852E3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				149A67EE20BEA6E1001852E3 /* game.scnassets */,
 				149A67EF20BEA6E1001852E3 /* XTJResource.bundle */,
 			);
 			name = Resource;
@@ -412,7 +409,6 @@
 				149A67F120BEA6E1001852E3 /* XTJResource.bundle in Resources */,
 				14770AA4208DC0EB00726420 /* ViewController0.xib in Resources */,
 				143C24262089998500543BBA /* Main.storyboard in Resources */,
-				149A67F020BEA6E1001852E3 /* game.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,6 +28,13 @@ XTJTouchViewDelegate
     SCNVector3 cameraYHandle_position;
     SCNVector4 cameraYHandle_rotation;
 }
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+@property (weak, nonatomic) IBOutlet UIButton *btn4;
+@property (weak, nonatomic) IBOutlet UIButton *btn5;
+
 @property(nonatomic,strong)SCNScene *scene;
 @property(nonatomic,strong)SCNNode *cameraNode;
 @property(nonatomic,strong)SCNNode *camera1;
@@ -54,6 +61,14 @@ XTJTouchViewDelegate
 
 #pragma mark - init
 -(void)customInit{
+    
+    [self.btn setTitle:@"人体" forState:UIControlStateNormal];
+    [self.btn1 setTitle:@"上衣" forState:UIControlStateNormal];
+    [self.btn2 setTitle:@"短裤" forState:UIControlStateNormal];
+    [self.btn3 setTitle:@"长裤" forState:UIControlStateNormal];
+    [self.btn4 setTitle:@"重置" forState:UIControlStateNormal];
+    [self.btn5 setTitle:@"换面料" forState:UIControlStateNormal];
+    
     [self customInitData];
     [self setupScene];
 }
@@ -618,12 +633,15 @@ XTJTouchViewDelegate
 //    NSLog(@"....%f %f %f %f",self.camera.xFov,self.camera.yFov,self.camera.zNear,self.camera.zFar);
     
 //    [self loadModel];
+    
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
                                      dicPath:@"3d/shirt"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)
                                lightingModel:SCNLightingModelLambert];
 
+    
+    
 }
 - (IBAction)tap2:(id)sender {
     
@@ -631,29 +649,60 @@ XTJTouchViewDelegate
 //
 //    SCNAction *move = [SCNAction moveTo:SCNVector3Make(0, 50, 50) duration:1];
 //    [self.camera2 runAction:move];
+
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                     dicPath:@"3d/trousers"
+//                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+//                                    position:SCNVector3Make(0, 0, 0)
+//                               lightingModel:SCNLightingModelLambert];
+    
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-                                     dicPath:@"3d/shirt_noPic"
+                                     dicPath:@"3d/tietu"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)
                                lightingModel:SCNLightingModelLambert];
 }
 
 - (IBAction)tap3:(id)sender {
-    [self.gameView removeFromSuperview];
-    [self customInit];
+    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+                                     dicPath:@"3d/kuzi_tietu"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    position:SCNVector3Make(0, 0, 0)
+                               lightingModel:SCNLightingModelLambert];
 }
 
 - (IBAction)tap4:(id)sender {
     
-    NSArray *names = self.scene.rootNode.childNodes;
-    for (SCNNode *node in names) {
-        NSLog(@"name...%@",node.name);
-    }
+//    NSArray *names = self.scene.rootNode.childNodes;
+//    for (SCNNode *node in names) {
+//        NSLog(@"name...%@",node.name);
+//    }
+    
+    [self.gameView removeFromSuperview];
+    [self customInit];
 }
 
 - (IBAction)tap5:(id)sender {
     
-    [self assistantLight];
+    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
+                                      targetModel:@"shit_Longshirt"
+                                   targetMaterial:@"Longshirt"
+                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
+    
+    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
+                                      targetModel:@"LongShirt_Longshirt"
+                                   targetMaterial:@"Longshirt"
+                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
+    
+    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
+                                      targetModel:@"Collar_y_Longshirt"
+                                   targetMaterial:@"Longshirt"
+                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
+    
+    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
+                                      targetModel:@"Collar_Longshirt"
+                                   targetMaterial:@"Longshirt"
+                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
 }
 
 

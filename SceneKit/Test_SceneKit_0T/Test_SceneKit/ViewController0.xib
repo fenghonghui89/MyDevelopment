@@ -12,6 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController0">
             <connections>
+                <outlet property="btn" destination="cTu-6U-acK" id="FRJ-zQ-OFF"/>
+                <outlet property="btn1" destination="vGd-Xl-CkJ" id="HU8-N2-TXH"/>
+                <outlet property="btn2" destination="Shh-bW-eUJ" id="heS-nb-DO5"/>
+                <outlet property="btn3" destination="qaB-j5-dOb" id="nWR-Js-uWA"/>
+                <outlet property="btn4" destination="jfo-F4-UBg" id="nVm-BZ-bPf"/>
+                <outlet property="btn5" destination="Srb-OZ-aWK" id="Upt-bd-ult"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Upr-cu-NLc"/>
             </connections>
         </placeholder>
