@@ -34,6 +34,8 @@ XTJTouchViewDelegate
 @property (weak, nonatomic) IBOutlet UIButton *btn3;
 @property (weak, nonatomic) IBOutlet UIButton *btn4;
 @property (weak, nonatomic) IBOutlet UIButton *btn5;
+@property (weak, nonatomic) IBOutlet UIButton *btn6;
+@property (weak, nonatomic) IBOutlet UIButton *btn7;
 
 @property(nonatomic,strong)SCNScene *scene;
 @property(nonatomic,strong)SCNNode *cameraNode;
@@ -63,11 +65,14 @@ XTJTouchViewDelegate
 -(void)customInit{
     
     [self.btn setTitle:@"人体" forState:UIControlStateNormal];
-    [self.btn1 setTitle:@"上衣" forState:UIControlStateNormal];
-    [self.btn2 setTitle:@"短裤" forState:UIControlStateNormal];
-    [self.btn3 setTitle:@"长裤" forState:UIControlStateNormal];
-    [self.btn4 setTitle:@"重置" forState:UIControlStateNormal];
-    [self.btn5 setTitle:@"换面料" forState:UIControlStateNormal];
+    [self.btn1 setTitle:@"长袖" forState:UIControlStateNormal];
+    [self.btn2 setTitle:@"短袖" forState:UIControlStateNormal];
+    [self.btn3 setTitle:@"短裤" forState:UIControlStateNormal];
+    [self.btn4 setTitle:@"长裤" forState:UIControlStateNormal];
+    [self.btn5 setTitle:@"鞋子" forState:UIControlStateNormal];
+    [self.btn6 setTitle:@"换面料" forState:UIControlStateNormal];
+    [self.btn7 setTitle:@"重置" forState:UIControlStateNormal];
+    
     
     [self customInitData];
     [self setupScene];
@@ -616,7 +621,7 @@ XTJTouchViewDelegate
 - (IBAction)tap:(id)sender {
     
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-                                     dicPath:@"3d/man"
+                                     dicPath:@"3d/Project/man"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)
                                lightingModel:SCNLightingModelBlinn];
@@ -635,7 +640,7 @@ XTJTouchViewDelegate
 //    [self loadModel];
     
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-                                     dicPath:@"3d/shirt"
+                                     dicPath:@"3d/Project/shirtLong"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)
                                lightingModel:SCNLightingModelLambert];
@@ -657,7 +662,7 @@ XTJTouchViewDelegate
 //                               lightingModel:SCNLightingModelLambert];
     
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-                                     dicPath:@"3d/tietu"
+                                     dicPath:@"3d/Project/shirtShort"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)
                                lightingModel:SCNLightingModelLambert];
@@ -665,7 +670,7 @@ XTJTouchViewDelegate
 
 - (IBAction)tap3:(id)sender {
     [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-                                     dicPath:@"3d/kuzi_tietu"
+                                     dicPath:@"3d/Project/shorts"
                                        sacle:SCNVector3Make(0.5, 0.5, 0.5)
                                     position:SCNVector3Make(0, 0, 0)
                                lightingModel:SCNLightingModelLambert];
@@ -673,36 +678,50 @@ XTJTouchViewDelegate
 
 - (IBAction)tap4:(id)sender {
     
-//    NSArray *names = self.scene.rootNode.childNodes;
-//    for (SCNNode *node in names) {
-//        NSLog(@"name...%@",node.name);
-//    }
+    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+                                     dicPath:@"3d/Project/trousers"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    position:SCNVector3Make(0, 0, 0)
+                               lightingModel:SCNLightingModelLambert];
     
-    [self.gameView removeFromSuperview];
-    [self customInit];
 }
 
 - (IBAction)tap5:(id)sender {
+    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+                                     dicPath:@"3d/Project/shose"
+                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+                                    position:SCNVector3Make(0, 0, 0)
+                               lightingModel:SCNLightingModelLambert];
+    
+}
+
+- (IBAction)tap6:(id)sender {
+    
     
     [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
                                       targetModel:@"shit_Longshirt"
                                    targetMaterial:@"Longshirt"
-                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
+                                           change:ImageFile3d(@"3d/Project/shirt/map_Kd_Longshirt_diffuse.tga")];
     
     [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
                                       targetModel:@"LongShirt_Longshirt"
                                    targetMaterial:@"Longshirt"
-                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
+                                           change:ImageFile3d(@"3d/Project/shirt/map_Kd_Longshirt_diffuse.tga")];
     
     [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
                                       targetModel:@"Collar_y_Longshirt"
                                    targetMaterial:@"Longshirt"
-                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
+                                           change:ImageFile3d(@"3d/Project/shirt/map_Kd_Longshirt_diffuse.tga")];
     
     [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
                                       targetModel:@"Collar_Longshirt"
                                    targetMaterial:@"Longshirt"
-                                           change:ImageFile(@"3d/shirt/map_Kd_Longshirt_diffuse.tga")];
+                                           change:ImageFile3d(@"3d/Project/shirt/map_Kd_Longshirt_diffuse.tga")];
+}
+
+- (IBAction)tap7:(id)sender {
+    [self.gameView removeFromSuperview];
+    [self customInit];
 }
 
 

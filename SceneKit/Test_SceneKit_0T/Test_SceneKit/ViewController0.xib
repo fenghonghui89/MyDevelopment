@@ -18,6 +18,8 @@
                 <outlet property="btn3" destination="qaB-j5-dOb" id="nWR-Js-uWA"/>
                 <outlet property="btn4" destination="jfo-F4-UBg" id="nVm-BZ-bPf"/>
                 <outlet property="btn5" destination="Srb-OZ-aWK" id="Upt-bd-ult"/>
+                <outlet property="btn6" destination="VVk-oZ-hdn" id="5aJ-wT-p2J"/>
+                <outlet property="btn7" destination="k45-o5-SpV" id="wbb-v8-uGa"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Upr-cu-NLc"/>
             </connections>
         </placeholder>
@@ -30,7 +32,7 @@
                     <rect key="frame" x="0.0" y="70" width="68" height="547"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTu-6U-acK">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="83"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="59.5"/>
                             <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="download"/>
@@ -39,7 +41,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-Xl-CkJ">
-                            <rect key="frame" x="0.0" y="93" width="68" height="82.5"/>
+                            <rect key="frame" x="0.0" y="69.5" width="68" height="60"/>
                             <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="load model"/>
@@ -48,7 +50,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shh-bW-eUJ">
-                            <rect key="frame" x="0.0" y="185.5" width="68" height="83"/>
+                            <rect key="frame" x="0.0" y="139.5" width="68" height="59.5"/>
                             <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="delete doc"/>
@@ -57,7 +59,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaB-j5-dOb">
-                            <rect key="frame" x="0.0" y="278.5" width="68" height="83"/>
+                            <rect key="frame" x="0.0" y="209" width="68" height="59.5"/>
                             <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="reset view"/>
@@ -66,7 +68,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfo-F4-UBg">
-                            <rect key="frame" x="0.0" y="371.5" width="68" height="82.5"/>
+                            <rect key="frame" x="0.0" y="278.5" width="68" height="59.5"/>
                             <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="change skin"/>
@@ -75,12 +77,33 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srb-OZ-aWK">
-                            <rect key="frame" x="0.0" y="464" width="68" height="83"/>
+                            <rect key="frame" x="0.0" y="348" width="68" height="60"/>
                             <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="show log"/>
                             <connections>
                                 <action selector="tap5:" destination="-1" eventType="touchUpInside" id="CaL-HB-le6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVk-oZ-hdn">
+                            <rect key="frame" x="0.0" y="418" width="68" height="59.5"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="show log"/>
+                            <connections>
+                                <action selector="tap5:" destination="-1" eventType="touchUpInside" id="JZ1-Ct-eyV"/>
+                                <action selector="tap6:" destination="-1" eventType="touchUpInside" id="oMF-9R-nUE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k45-o5-SpV">
+                            <rect key="frame" x="0.0" y="487.5" width="68" height="59.5"/>
+                            <color key="backgroundColor" red="0.259614171" green="1" blue="0.28822886089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="show log"/>
+                            <connections>
+                                <action selector="tap5:" destination="-1" eventType="touchUpInside" id="e21-5g-VSU"/>
+                                <action selector="tap6:" destination="-1" eventType="touchUpInside" id="kk5-0x-r8R"/>
+                                <action selector="tap7:" destination="-1" eventType="touchUpInside" id="Bz2-P1-wfe"/>
                             </connections>
                         </button>
                     </subviews>

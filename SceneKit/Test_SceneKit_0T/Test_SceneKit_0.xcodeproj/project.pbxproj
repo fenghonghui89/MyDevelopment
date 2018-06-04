@@ -45,7 +45,8 @@
 		149A67EA20BE35EB001852E3 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67C820BE35EB001852E3 /* AFURLRequestSerialization.m */; };
 		149A67EB20BE35EB001852E3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67CA20BE35EB001852E3 /* AFNetworkReachabilityManager.m */; };
 		149A67EC20BE35EB001852E3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 149A67CB20BE35EB001852E3 /* AFSecurityPolicy.m */; };
-		149A67F120BEA6E1001852E3 /* XTJResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 149A67EF20BEA6E1001852E3 /* XTJResource.bundle */; };
+		14D3B8C020C2492D002E4C95 /* BJResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14D3B8BE20C2492D002E4C95 /* BJResource.bundle */; };
+		14D3B8C120C2492D002E4C95 /* BJBigFiles.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14D3B8BF20C2492D002E4C95 /* BJBigFiles.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,7 +131,8 @@
 		149A67CA20BE35EB001852E3 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		149A67CB20BE35EB001852E3 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		149A67CC20BE35EB001852E3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		149A67EF20BEA6E1001852E3 /* XTJResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTJResource.bundle; sourceTree = "<group>"; };
+		14D3B8BE20C2492D002E4C95 /* BJResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BJResource.bundle; sourceTree = "<group>"; };
+		14D3B8BF20C2492D002E4C95 /* BJBigFiles.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BJBigFiles.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,8 +230,8 @@
 			children = (
 				149A678720BE35EB001852E3 /* XTJRootDefine.h */,
 				149A678820BE35EB001852E3 /* XTJToolConfig.h */,
-				149A678920BE35EB001852E3 /* XTJTool.m */,
 				149A678A20BE35EB001852E3 /* XTJTool.h */,
+				149A678920BE35EB001852E3 /* XTJTool.m */,
 				149A678B20BE35EB001852E3 /* SSZipArchive */,
 			);
 			path = Util;
@@ -340,7 +342,8 @@
 		149A67ED20BEA6E1001852E3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				149A67EF20BEA6E1001852E3 /* XTJResource.bundle */,
+				14D3B8BF20C2492D002E4C95 /* BJBigFiles.bundle */,
+				14D3B8BE20C2492D002E4C95 /* BJResource.bundle */,
 			);
 			name = Resource;
 			path = ../../../../OSC_CommonFiles/Resource;
@@ -405,8 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				143C24252089998500543BBA /* LaunchScreen.storyboard in Resources */,
+				14D3B8C020C2492D002E4C95 /* BJResource.bundle in Resources */,
+				14D3B8C120C2492D002E4C95 /* BJBigFiles.bundle in Resources */,
 				143C24242089998500543BBA /* Assets.xcassets in Resources */,
-				149A67F120BEA6E1001852E3 /* XTJResource.bundle in Resources */,
 				14770AA4208DC0EB00726420 /* ViewController0.xib in Resources */,
 				143C24262089998500543BBA /* Main.storyboard in Resources */,
 			);
