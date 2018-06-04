@@ -8,8 +8,7 @@
 
 #import "ViewControllerMe7.h"
 #import "XTJRootDefine.h"
-#import "XTJ3DManager.h"
-#import "XTJDownloadManager.h"
+#import "BJ3DManager.h"
 @interface ViewControllerMe7 ()
 <
 SCNSceneRendererDelegate
@@ -37,10 +36,10 @@ SCNSceneRendererDelegate
 - (IBAction)tap:(UIButton *)sender {
     [sender setTitle:@"下载" forState:UIControlStateNormal];
     
-    [[XTJDownloadManager sharedInstance] downloadFile:@"http://o9ivu69va.bkt.clouddn.com/dargon_obj.zip"
-                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
-
-                                    }];
+//    [[XTJDownloadManager sharedInstance] downloadFile:@"http://o9ivu69va.bkt.clouddn.com/dargon_obj.zip"
+//                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
+//
+//                                    }];
     
 //    [[XTJDownloadManager sharedInstance] downloadFile:@"http://3hmlg.oss-cn-shenzhen.aliyuncs.com/test.pptx"
 //                                    completionHandler:^(BOOL isSuccess, NSString *errMsg) {
@@ -57,7 +56,7 @@ SCNSceneRendererDelegate
 - (IBAction)tap2:(UIButton *)sender {
     [sender setTitle:@"清空doc" forState:UIControlStateNormal];
     
-    [[XTJ3DManager sharedInstance] removeDocFile];
+//    [[XTJ3DManager sharedInstance] removeDocFile];
 }
 
 - (IBAction)tap3:(UIButton *)sender {
@@ -234,11 +233,11 @@ SCNSceneRendererDelegate
 //                                    position:SCNVector3Make(0, 0, 0)];
     
     //裤子
-    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
-                                    isLoacal:YES
-                                    filePath:@"3d/man/man.obj"
-                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
-                                    position:SCNVector3Make(0, 0, 0)];
+//    [[XTJ3DManager sharedInstance] loadModel:self.scene.rootNode
+//                                    isLoacal:YES
+//                                    filePath:@"3d/man/man.obj"
+//                                       sacle:SCNVector3Make(0.5, 0.5, 0.5)
+//                                    position:SCNVector3Make(0, 0, 0)];
 
 
 }
@@ -261,10 +260,10 @@ SCNSceneRendererDelegate
 //                                   targetMaterial:@"07___Default"
 //                                           change:ImageFile(@"image/earth")];
     
-    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
-                                      targetModel:@"Mentor_Street_Upper_Part"
-                                   targetMaterial:@"07___Default"
-                                           change:ImageFile(@"3d/kuzi/SMPL_Wings_color2.tga")];
+//    [[XTJ3DManager sharedInstance] changeMaterial:self.scene.rootNode
+//                                      targetModel:@"Mentor_Street_Upper_Part"
+//                                   targetMaterial:@"07___Default"
+//                                           change:ImageFile(@"3d/kuzi/SMPL_Wings_color2.tga")];
 }
 
 #pragma mark - < SCNSceneRendererDelegate >
