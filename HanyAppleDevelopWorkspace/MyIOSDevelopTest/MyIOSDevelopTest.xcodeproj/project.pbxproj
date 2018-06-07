@@ -215,6 +215,9 @@
 		1415042C1DB62FF100D1737C /* DGCUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 141504271DB62FF100D1737C /* DGCUserInfo.m */; };
 		1429B50D205BDDC8007F3E1A /* MDCAAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1429B50B205BDDC8007F3E1A /* MDCAAnimation.m */; };
 		1429B50E205BDDC8007F3E1A /* MDCAAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1429B50C205BDDC8007F3E1A /* MDCAAnimation.xib */; };
+		142EDFD420C7D4570039ED3D /* timg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 142EDFD320C7D4560039ED3D /* timg.jpg */; };
+		142EDFD620C7D65E0039ED3D /* MDUIScrollView1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142EDFD520C7D65E0039ED3D /* MDUIScrollView1ViewController.xib */; };
+		142EDFD920C7DD740039ED3D /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 142EDFD820C7DD740039ED3D /* UIImage+Scale.m */; };
 		1437D7361DCAF3AE00D96DCF /* MD_UIActivityVC_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437D7341DCAF3AE00D96DCF /* MD_UIActivityVC_VC.m */; };
 		1437D7371DCAF3AE00D96DCF /* MD_UIActivityVC_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1437D7351DCAF3AE00D96DCF /* MD_UIActivityVC_VC.xib */; };
 		1437D73B1DCAF3F200D96DCF /* MD_UIActivityVC_VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437D7391DCAF3F200D96DCF /* MD_UIActivityVC_VC1.m */; };
@@ -787,6 +790,10 @@
 		1429B50A205BDDC8007F3E1A /* MDCAAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCAAnimation.h; sourceTree = "<group>"; };
 		1429B50B205BDDC8007F3E1A /* MDCAAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDCAAnimation.m; sourceTree = "<group>"; };
 		1429B50C205BDDC8007F3E1A /* MDCAAnimation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MDCAAnimation.xib; sourceTree = "<group>"; };
+		142EDFD320C7D4560039ED3D /* timg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpg; sourceTree = "<group>"; };
+		142EDFD520C7D65E0039ED3D /* MDUIScrollView1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MDUIScrollView1ViewController.xib; sourceTree = "<group>"; };
+		142EDFD720C7DD740039ED3D /* UIImage+Scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		142EDFD820C7DD740039ED3D /* UIImage+Scale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		1437D7331DCAF3AE00D96DCF /* MD_UIActivityVC_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_UIActivityVC_VC.h; sourceTree = "<group>"; };
 		1437D7341DCAF3AE00D96DCF /* MD_UIActivityVC_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_UIActivityVC_VC.m; sourceTree = "<group>"; };
 		1437D7351DCAF3AE00D96DCF /* MD_UIActivityVC_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_UIActivityVC_VC.xib; sourceTree = "<group>"; };
@@ -1618,6 +1625,7 @@
 		141502D81DB623D500D1737C /* other */ = {
 			isa = PBXGroup;
 			children = (
+				142EDFD320C7D4560039ED3D /* timg.jpg */,
 				141502D91DB623D500D1737C /* 000.jpg */,
 				141502DA1DB623D500D1737C /* 1111.jpg */,
 				141502DB1DB623D500D1737C /* bg94w100h@2x.png */,
@@ -2958,6 +2966,9 @@
 			children = (
 				14FAA4E11D9507CA002D81CC /* MDUIScrollView1ViewController.h */,
 				14FAA4E21D9507CA002D81CC /* MDUIScrollView1ViewController.m */,
+				142EDFD520C7D65E0039ED3D /* MDUIScrollView1ViewController.xib */,
+				142EDFD720C7DD740039ED3D /* UIImage+Scale.h */,
+				142EDFD820C7DD740039ED3D /* UIImage+Scale.m */,
 			);
 			path = "contentInset、contentOffset、scrollIndicatorInsets";
 			sourceTree = "<group>";
@@ -3810,6 +3821,7 @@
 				14FAA7711D9507CB002D81CC /* MD_Socket_UDP_VC.xib in Resources */,
 				141504091DB623D500D1737C /* Uruguay.png in Resources */,
 				14FAA7761D9507CB002D81CC /* MDWVViewController.xib in Resources */,
+				142EDFD420C7D4570039ED3D /* timg.jpg in Resources */,
 				141503E61DB623D500D1737C /* tabbar_home@2x.png in Resources */,
 				141503C91DB623D500D1737C /* playing55@2x.png in Resources */,
 				14FAA7B31D9507CB002D81CC /* MD_TableView_VC.xib in Resources */,
@@ -3896,6 +3908,7 @@
 				14FAA7A81D9507CB002D81CC /* provinces_cities.plist in Resources */,
 				141503FF1DB623D500D1737C /* NorthKorea.png in Resources */,
 				14FAA7FD1D9507CB002D81CC /* Settings.bundle in Resources */,
+				142EDFD620C7D65E0039ED3D /* MDUIScrollView1ViewController.xib in Resources */,
 				14FAA7D11D9507CB002D81CC /* MD_Responder_VC.xib in Resources */,
 				1415036F1DB623D500D1737C /* Icon-Small-40@3x.png in Resources */,
 				141503A61DB623D500D1737C /* playing23@2x.png in Resources */,
@@ -4109,6 +4122,7 @@
 				14FAA7D41D9507CB002D81CC /* MD_Touch_CustomView.m in Sources */,
 				14FAA8AD1D9507CB002D81CC /* DGCPostManager.m in Sources */,
 				141504101DB6272A00D1737C /* MD_Model2.m in Sources */,
+				142EDFD920C7DD740039ED3D /* UIImage+Scale.m in Sources */,
 				14FAA7DB1D9507CB002D81CC /* MD_Runtime_VC.m in Sources */,
 				14FAA7771D9507CB002D81CC /* MDHybridViewController.m in Sources */,
 				140CAAA81DACA8EF009EE8A7 /* MASLayoutConstraint.m in Sources */,
