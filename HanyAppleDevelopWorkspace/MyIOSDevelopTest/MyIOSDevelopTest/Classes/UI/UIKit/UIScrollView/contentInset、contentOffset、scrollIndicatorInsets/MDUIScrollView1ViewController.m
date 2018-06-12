@@ -10,6 +10,16 @@
 #import "UIImage+Scale.h"
 #define MaxScale 5.0
 #define MinScale 0.5
+
+typedef NS_ENUM(NSInteger,XTJMoveType) {
+    XTJMoveTypeTop,
+    XTJMoveTypeBottom,
+    XTJMoveTypeLeft,
+    XTJMoveTypeRight,
+    XTJMoveTypeAdd,
+    XTJMoveTypeMinus
+};
+
 @interface MDUIScrollView1ViewController ()<UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
@@ -42,6 +52,36 @@
     [self.btn4 setTitle:@"→" forState:UIControlStateNormal];
     [self.btn5 setTitle:@"+" forState:UIControlStateNormal];
     [self.btn6 setTitle:@"-" forState:UIControlStateNormal];
+    
+    UILongPressGestureRecognizer *grTop = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressTop:)];
+    grTop.minimumPressDuration = 0.3;
+    grTop.allowableMovement = 1;
+    [self.btn1 addGestureRecognizer:grTop];
+    
+    UILongPressGestureRecognizer *grBottom = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressBottom:)];
+    grBottom.minimumPressDuration = 0.3;
+    grBottom.allowableMovement = 1;
+    [self.btn2 addGestureRecognizer:grBottom];
+    
+    UILongPressGestureRecognizer *grLeft = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressLeft:)];
+    grLeft.minimumPressDuration = 0.3;
+    grLeft.allowableMovement = 1;
+    [self.btn3 addGestureRecognizer:grLeft];
+    
+    UILongPressGestureRecognizer *grRight = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressRight:)];
+    grRight.minimumPressDuration = 0.3;
+    grRight.allowableMovement = 1;
+    [self.btn4 addGestureRecognizer:grRight];
+    
+    UILongPressGestureRecognizer *grAdd = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAdd:)];
+    grAdd.minimumPressDuration = 0.3;
+    grAdd.allowableMovement = 1;
+    [self.btn5 addGestureRecognizer:grAdd];
+    
+    UILongPressGestureRecognizer *grMinus = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressMinus:)];
+    grMinus.minimumPressDuration = 0.3;
+    grMinus.allowableMovement = 1;
+    [self.btn6 addGestureRecognizer:grMinus];
     
     UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"big.jpg"]];
     CGSize ivSize = iv.frame.size;
@@ -79,8 +119,8 @@
     //滚动条与scrollview之间的距离
     //    scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(10,10,10,10);
     
-    [scrollView setZoomScale:1 animated:NO];
-    [scrollView setContentOffset:CGPointMake(ivSize.width*0.5, ivSize.height*0.5) animated:NO];
+    [scrollView setZoomScale:1.5 animated:NO];
+//    [scrollView setContentOffset:CGPointMake(ivSize.width*0.5, ivSize.height*0.5) animated:NO];
     
     self.scrollView = scrollView;
     
@@ -115,63 +155,205 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     //  NSLog(@"inset:%f,offset:%f",scrollView.contentInset.top,scrollView.contentOffset.y);
-    NSLog(@"contentOffset %f %f",scrollView.contentOffset.x,scrollView.contentOffset.y);
+//    NSLog(@"contentOffset %f %f",scrollView.contentOffset.x,scrollView.contentOffset.y);
     //  NSLog(@"scrollview bound:%@",NSStringFromCGRect(scrollView.bounds));
 }
 
 #pragma mark - action
 
 - (IBAction)tap1:(id)sender {
-    NSLog(@"上...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
-    CGFloat x = self.scrollView.contentOffset.x;
-    CGFloat y = self.scrollView.contentOffset.y+5;
-    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    [self scrollViewTop];
 }
 - (IBAction)tap2:(id)sender {
-    NSLog(@"下...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
-    CGFloat x = self.scrollView.contentOffset.x;
-    CGFloat y = self.scrollView.contentOffset.y-5;
-    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    [self scrollViewBottom];
 }
 - (IBAction)tap3:(id)sender {
-    NSLog(@"左...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
-    CGFloat x = self.scrollView.contentOffset.x+5;
-    CGFloat y = self.scrollView.contentOffset.y;
-    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    [self scrollViewLeft];
 }
 - (IBAction)tap4:(id)sender {
-    NSLog(@"右...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
-    CGFloat x = self.scrollView.contentOffset.x-5;
-    CGFloat y = self.scrollView.contentOffset.y;
-    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    [self scrollViewRight];
 }
 - (IBAction)tap5:(id)sender {
-    self.scrollView.zoomScale += 0.05;
-    NSLog(@"放大。。%f",self.scrollView.zoomScale);
+    [self scrollViewAdd];
 }
 - (IBAction)tap6:(id)sender {
-    self.scrollView.zoomScale -= 0.05;
-    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
+    [self scrollViewMinus];
+}
+
+#pragma mark 定时器
+-(void)startTimer:(XTJMoveType)type{
+    
+    switch (type) {
+        case XTJMoveTypeTop:
+            if (self.topTimer) {
+                return;
+            }
+            break;
+        case XTJMoveTypeBottom:
+            if (self.bottomTimer) {
+                return;
+            }
+            break;
+        case XTJMoveTypeLeft:
+            if (self.leftTimer) {
+                return;
+            }
+            break;
+        case XTJMoveTypeRight:
+            if (self.rightTimer) {
+                return;
+            }
+            break;
+        case XTJMoveTypeAdd:
+            if (self.addTimer) {
+                return;
+            }
+            break;
+        case XTJMoveTypeMinus:
+            if (self.minusTimer) {
+                return;
+            }
+            break;
+        default:
+            break;
+    }
+    
+    __weak typeof(self) weak_self = self;
+    NSTimer *timer = [NSTimer timerWithTimeInterval:0.1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        switch (type) {
+            case XTJMoveTypeTop:
+                [weak_self timerFired_top];
+                break;
+            case XTJMoveTypeBottom:
+                [weak_self timerFired_bottom];
+                break;
+            case XTJMoveTypeLeft:
+                [weak_self timerFired_left];
+                break;
+            case XTJMoveTypeRight:
+                [weak_self timerFired_right];
+                break;
+            case XTJMoveTypeAdd:
+                [weak_self timerFired_add];
+                break;
+            case XTJMoveTypeMinus:
+                [weak_self timerFired_minus];
+                break;
+            default:
+                break;
+        }
+    }];
+    
+    
+    switch (type) {
+        case XTJMoveTypeTop:
+            self.topTimer = timer;
+            break;
+        case XTJMoveTypeBottom:
+            self.bottomTimer = timer;
+            break;
+        case XTJMoveTypeLeft:
+            self.leftTimer = timer;
+            break;
+        case XTJMoveTypeRight:
+            self.rightTimer = timer;
+            break;
+        case XTJMoveTypeAdd:
+            self.addTimer = timer;
+            break;
+        case XTJMoveTypeMinus:
+            self.minusTimer = timer;
+            break;
+        default:
+            break;
+    }
+    
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+-(void)stopTimer:(XTJMoveType)type{
+    
+    switch (type) {
+        case XTJMoveTypeTop:
+            if (self.topTimer) {
+                NSLog(@"关闭top定时器。。");
+                [self.topTimer invalidate];
+                self.topTimer = nil;
+            }
+            break;
+        case XTJMoveTypeBottom:
+            if (self.bottomTimer) {
+                NSLog(@"关闭bottom定时器。。");
+                [self.bottomTimer invalidate];
+                self.bottomTimer = nil;
+            }
+            break;
+        case XTJMoveTypeLeft:
+            if (self.leftTimer) {
+                NSLog(@"关闭left定时器。。");
+                [self.leftTimer invalidate];
+                self.leftTimer = nil;
+            }
+            break;
+        case XTJMoveTypeRight:
+            if (self.rightTimer) {
+                NSLog(@"关闭right定时器。。");
+                [self.rightTimer invalidate];
+                self.rightTimer = nil;
+            }
+            break;
+        case XTJMoveTypeAdd:
+            if (self.addTimer) {
+                NSLog(@"关闭add定时器。。");
+                [self.addTimer invalidate];
+                self.addTimer = nil;
+            }
+            break;
+        case XTJMoveTypeMinus:
+            if (self.minusTimer) {
+                NSLog(@"关闭minus定时器。。");
+                [self.minusTimer invalidate];
+                self.minusTimer = nil;
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)timerFired_top{
+    [self scrollViewTop];
+}
+
+-(void)timerFired_bottom{
+    [self scrollViewBottom];
+}
+
+-(void)timerFired_left{
+    [self scrollViewLeft];
+}
+
+-(void)timerFired_right{
+    [self scrollViewRight];
+}
+
+-(void)timerFired_add{
+    [self scrollViewAdd];
+}
+
+-(void)timerFired_minus{
+    [self scrollViewMinus];
 }
 
 #pragma mark - 长按
 -(void)longPressAdd:(UILongPressGestureRecognizer *)longPress{
-    //    NSLog(@"放大。。%f",self.scrollView.zoomScale);
-    //    self.scrollView.zoomScale = self.scrollView.zoomScale+0.01;
-    //    if (longPress.state == UIGestureRecognizerStateBegan) {
-    //        NSLog(@"放大long pressTap state :begin");
-    //    }else {
-    //        NSLog(@"放大long pressTap state :end");
-    //    }
     
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
-            NSLog(@"放大long pressTap state :begin");
-            [self startTimer:YES];
+            [self startTimer:XTJMoveTypeAdd];
             break;
         case UIGestureRecognizerStateEnded:
-            NSLog(@"放大long pressTap state :end");
-            [self stopTimer:YES];
+            [self stopTimer:XTJMoveTypeAdd];
             break;
         default:
             break;
@@ -179,35 +361,26 @@
 }
 
 -(void)longPressMinus:(UILongPressGestureRecognizer *)longPress{
-    //    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    //    self.scrollView.zoomScale = self.scrollView.zoomScale-0.01;
     
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
-            NSLog(@"缩小long pressTap state :begin");
-            [self startTimer:NO];
+            [self startTimer:XTJMoveTypeMinus];
             break;
         case UIGestureRecognizerStateEnded:
-            NSLog(@"缩小long pressTap state :end");
-            [self stopTimer:NO];
+            [self stopTimer:XTJMoveTypeMinus];
             break;
         default:
             break;
     }
 }
 
--(void)longPressAdd:(UILongPressGestureRecognizer *)longPress{
-    //    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    //    self.scrollView.zoomScale = self.scrollView.zoomScale-0.01;
-    
+-(void)longPressTop:(UILongPressGestureRecognizer *)longPress{
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
-            NSLog(@"缩小long pressTap state :begin");
-            [self startTimer:NO];
+            [self startTimer:XTJMoveTypeTop];
             break;
         case UIGestureRecognizerStateEnded:
-            NSLog(@"缩小long pressTap state :end");
-            [self stopTimer:NO];
+            [self stopTimer:XTJMoveTypeTop];
             break;
         default:
             break;
@@ -215,17 +388,12 @@
 }
 
 -(void)longPressBottom:(UILongPressGestureRecognizer *)longPress{
-    //    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    //    self.scrollView.zoomScale = self.scrollView.zoomScale-0.01;
-    
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
-            NSLog(@"缩小long pressTap state :begin");
-            [self startTimer:NO];
+            [self startTimer:XTJMoveTypeBottom];
             break;
         case UIGestureRecognizerStateEnded:
-            NSLog(@"缩小long pressTap state :end");
-            [self stopTimer:NO];
+            [self stopTimer:XTJMoveTypeBottom];
             break;
         default:
             break;
@@ -233,17 +401,12 @@
 }
 
 -(void)longPressLeft:(UILongPressGestureRecognizer *)longPress{
-    //    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    //    self.scrollView.zoomScale = self.scrollView.zoomScale-0.01;
-    
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
-            NSLog(@"缩小long pressTap state :begin");
-            [self startTimer:NO];
+            [self startTimer:XTJMoveTypeLeft];
             break;
         case UIGestureRecognizerStateEnded:
-            NSLog(@"缩小long pressTap state :end");
-            [self stopTimer:NO];
+            [self stopTimer:XTJMoveTypeLeft];
             break;
         default:
             break;
@@ -251,100 +414,81 @@
 }
 
 -(void)longPressRight:(UILongPressGestureRecognizer *)longPress{
-    //    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    //    self.scrollView.zoomScale = self.scrollView.zoomScale-0.01;
-    
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
-            NSLog(@"缩小long pressTap state :begin");
-            [self startTimer:NO];
+            [self startTimer:XTJMoveTypeRight];
             break;
         case UIGestureRecognizerStateEnded:
-            NSLog(@"缩小long pressTap state :end");
-            [self stopTimer:NO];
+            [self stopTimer:XTJMoveTypeRight];
             break;
         default:
             break;
     }
 }
 
--(void)startTimer:(NSInteger)isAdd{
-    
-    if (isAdd) {
-        if (self.addTimer) {
-            return;
-        }
-    }else{
-        if (self.minusTimer) {
-            return;
-        }
-    }
-    
-    __weak typeof(self) weak_self = self;
-    NSTimer *timer = [NSTimer timerWithTimeInterval:0.1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        if (isAdd) {
-            [weak_self timerFired_add];
-        }else{
-            [weak_self timerFired_minus];
-        }
-    }];
-    
-    
-    if (isAdd) {
-        self.addTimer = timer;
-    }else{
-        self.minusTimer = timer;
-    }
-    
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-}
-
--(void)timerFired_add{
-    NSLog(@"放大。。%f",self.scrollView.zoomScale);
+#pragma mark - move
+-(void)scrollViewAdd{
     self.scrollView.zoomScale += 0.05;
+    NSLog(@"放大。。%f",self.scrollView.zoomScale);
 }
 
--(void)timerFired_minus{
-    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
+-(void)scrollViewMinus{
     self.scrollView.zoomScale -= 0.05;
-}
-
--(void)timerFired_add{
     NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    self.scrollView.zoomScale -= 0.05;
 }
 
--(void)timerFired_bottom{
-    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    self.scrollView.zoomScale -= 0.05;
-}
-
--(void)timerFired_minus{
-    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    self.scrollView.zoomScale -= 0.05;
-}
-
--(void)timerFired_minus{
-    NSLog(@"缩小。。%f",self.scrollView.zoomScale);
-    self.scrollView.zoomScale -= 0.05;
-}
-
--(void)stopTimer:(NSInteger)isAdd{
+-(void)scrollViewTop{
     
-    if (isAdd) {
-        if (self.addTimer) {
-            NSLog(@"关闭add定时器。。");
-            [self.addTimer invalidate];
-            self.addTimer = nil;
-        }
-    }else{
-        if (self.minusTimer) {
-            NSLog(@"关闭minus定时器。。");
-            [self.minusTimer invalidate];
-            self.minusTimer = nil;
-        }
+    CGFloat limit = self.imageView.height - self.scrollView.height;
+    CGFloat x = self.scrollView.contentOffset.x;
+    CGFloat y = self.scrollView.contentOffset.y+5;
+    if (y >= limit) {
+        y = limit;
     }
+    
+    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    NSLog(@"上...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
 }
+
+-(void)scrollViewBottom{
+    
+    CGFloat limit = 0;
+    CGFloat x = self.scrollView.contentOffset.x;
+    CGFloat y = self.scrollView.contentOffset.y-5;
+    if (y <= limit) {
+        y = 0;
+    }
+    
+    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    NSLog(@"下...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
+}
+
+-(void)scrollViewLeft{
+    
+    CGFloat limit = self.imageView.width - self.scrollView.width;
+    CGFloat x = self.scrollView.contentOffset.x+5;
+    CGFloat y = self.scrollView.contentOffset.y;
+    if (x >= limit) {
+        x = limit;
+    }
+    
+    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    NSLog(@"左...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
+}
+
+-(void)scrollViewRight{
+    
+    CGFloat limit = 0;
+    CGFloat x = self.scrollView.contentOffset.x-5;
+    CGFloat y = self.scrollView.contentOffset.y;
+    if (x <= limit) {
+        x = 0;
+    }
+    
+    [self.scrollView setContentOffset:CGPointMake(x, y) animated:NO];
+    NSLog(@"右...%@",NSStringFromCGPoint(self.scrollView.contentOffset));
+}
+
 
 
 @end
