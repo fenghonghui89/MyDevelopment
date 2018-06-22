@@ -70,17 +70,17 @@
     //环境光
     //无方向 位置无穷远 均匀散射
     //如果无任何光源 系统默认添加环境光
-//    SCNLight *ambientLight = [SCNLight light];
-//    ambientLight.type = SCNLightTypeAmbient;
-//    ambientLight.color = [UIColor yellowColor];
-//
-//    SCNNode *lightNode_Ambient = [SCNNode node];
-//    lightNode_Ambient.light = ambientLight;
-//
-//    [scene.rootNode addChildNode:lightNode_Ambient];
+    SCNLight *ambientLight = [SCNLight light];
+    ambientLight.type = SCNLightTypeAmbient;
+    ambientLight.color = [UIColor colorWithWhite:0.67 alpha:1];//亮度未0.67的白光
+
+    SCNNode *lightNode_Ambient = [SCNNode node];
+    lightNode_Ambient.light = ambientLight;
+
+    [scene.rootNode addChildNode:lightNode_Ambient];
     
     
-    //点光源
+    //全向光源
     //360度方向 有位置 会衰减
 //    SCNLight *light = [SCNLight light];
 //    light.type = SCNLightTypeOmni;
@@ -105,7 +105,7 @@
 
     [scene.rootNode addChildNode:lightNode];
     
-    //聚焦光源 具体使用看23-阴影的使用
+    //点光源 具体使用看23-阴影的使用
     //有方向 有位置 有照射区域 可以衰减
 //    SCNLight *light = [SCNLight light];
 //    light.type = SCNLightTypeSpot;
