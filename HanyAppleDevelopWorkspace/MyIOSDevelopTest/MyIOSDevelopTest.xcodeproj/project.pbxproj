@@ -489,7 +489,6 @@
 		14FAA8C41D9507CB002D81CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA6BC1D9507CA002D81CC /* Main.storyboard */; };
 		14FAA8C51D9507CB002D81CC /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA6BE1D9507CA002D81CC /* File.strings */; };
 		14FAA8C61D9507CB002D81CC /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA6C01D9507CA002D81CC /* image.xcassets */; };
-		14FAA8C71D9507CB002D81CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA6C11D9507CA002D81CC /* Info.plist */; };
 		14FAA8C81D9507CB002D81CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA6C21D9507CA002D81CC /* main.m */; };
 		14FAA8C91D9507CB002D81CC /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA6C41D9507CA002D81CC /* LaunchScreen.strings */; };
 		14FAA8CA1D9507CB002D81CC /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA6C61D9507CA002D81CC /* Main.strings */; };
@@ -3916,7 +3915,6 @@
 				141503981DB623D500D1737C /* playing10@2x.png in Resources */,
 				14FAA7791D9507CB002D81CC /* indexJS.html in Resources */,
 				1415039C1DB623D500D1737C /* playing14@2x.png in Resources */,
-				14FAA8C71D9507CB002D81CC /* Info.plist in Resources */,
 				141503EE1DB623D500D1737C /* Brazil.png in Resources */,
 				141503821DB623D500D1737C /* delete_btn@2x.png in Resources */,
 				14FAA7F41D9507CB002D81CC /* MD_NSThread_VC.xib in Resources */,
