@@ -11,7 +11,6 @@
 		14FAA9101D950EC9002D81CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA8F31D950EC9002D81CC /* Assets.xcassets */; };
 		14FAA9111D950EC9002D81CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA8F41D950EC9002D81CC /* LaunchScreen.storyboard */; };
 		14FAA9121D950EC9002D81CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA8F61D950EC9002D81CC /* Main.storyboard */; };
-		14FAA9131D950EC9002D81CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14FAA8F81D950EC9002D81CC /* Info.plist */; };
 		14FAA9141D950EC9002D81CC /* CFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA8FA1D950EC9002D81CC /* CFile.c */; };
 		14FAA9151D950EC9002D81CC /* ViewController_InteractingWithCApis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA8FC1D950EC9002D81CC /* ViewController_InteractingWithCApis.swift */; };
 		14FAA9161D950EC9002D81CC /* OC_Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FAA9001D950EC9002D81CC /* OC_Object.m */; };
@@ -177,8 +176,9 @@
 				TargetAttributes = {
 					14AF34B21C7362AC007DC722 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = ZU3PU58KKD;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -205,7 +205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14FAA9131D950EC9002D81CC /* Info.plist in Resources */,
 				14FAA91F1D950EC9002D81CC /* CustomView.xib in Resources */,
 				14FAA9121D950EC9002D81CC /* Main.storyboard in Resources */,
 				14FAA9101D950EC9002D81CC /* Assets.xcassets in Resources */,
@@ -363,17 +362,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (GYL23S2VPS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MyIOSDevelopTestSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.MyIOSDevelopTestSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidev.MyIOSDevelopTestSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HanyDev;
-				SWIFT_OBJC_BRIDGING_HEADER = "MyDevelopmentSwift/MyDevelopmentSwift-Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyIOSDevelopTestSwift/MyDevelopmentSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -384,17 +384,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MyIOSDevelopTestSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanyAppDev.MyIOSDevelopTestSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidev.MyIOSDevelopTestSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = HanyDev;
-				SWIFT_OBJC_BRIDGING_HEADER = "MyDevelopmentSwift/MyDevelopmentSwift-Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyIOSDevelopTestSwift/MyDevelopmentSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

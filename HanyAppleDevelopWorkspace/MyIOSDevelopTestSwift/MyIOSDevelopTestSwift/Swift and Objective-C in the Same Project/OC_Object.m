@@ -11,7 +11,7 @@
  有时候可能无法识别swift，要多编译几次
  */
 #import "OC_Object.h"
-#import "MyDevelopmentSwift-swift.h"
+//#import "MyDevelopmentSwift-swift.h"
 @interface OC_Object ()
 
 @end
@@ -45,8 +45,8 @@
 //调用swift方法
 -(void)translateToSwift{
   
-  ViewController_Swift *vc = [ViewController_Swift new];
-  [vc sayHello];
+//  ViewController_Swift *vc = [ViewController_Swift new];
+//  [vc sayHello];
 }
 #pragma mark - ************** action ****************
 #pragma mark - ************** callback ****************
