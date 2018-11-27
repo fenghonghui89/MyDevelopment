@@ -8,6 +8,8 @@
 
 #import "RotationDismissAnimation.h"
 #import "UIView+MotionBlur.h"
+#import "ViewController.h"
+#import "PresentedViewController.h"
 
 @implementation RotationDismissAnimation
 
@@ -19,8 +21,8 @@
 //在进行切换的时候将调用该方法，我们对于切换时的UIView的设置和动画都在这个方法中完成
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];//当前vc
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];//上一个vc
+    PresentedViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];//当前vc
+    ViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];//上一个vc
     
     CGRect initRect = [transitionContext initialFrameForViewController:fromVC];//当前vc的初始位置
     CGRect finalRect = CGRectOffset(initRect, 0, [UIScreen mainScreen].bounds.size.height);//dismiss后的位置

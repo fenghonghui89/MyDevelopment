@@ -6,39 +6,44 @@
 //  Copyright © 2018 JiepengZhengDevExtend. All rights reserved.
 //
 
-#import "PresentedViewController.h"
-#import "MagicMoveInverseTransition.h"
-#import "PanInteractiveTransition.h"
+#import "SecondViewController.h"
+
+#import "XTJRootDefine.h"
+
 #import "ViewController.h"
-@interface PresentedViewController ()
+#import "PingInvertTransition.h"
+#import "PanInteractiveTransition.h"
+
+@interface SecondViewController ()
 <
 UINavigationControllerDelegate
 >
 @property(nonatomic,strong)PanInteractiveTransition *percentDrivenTransition;
-
 @end
 
-@implementation PresentedViewController
+@implementation SecondViewController
 
 -(void)dealloc{
+    
     NSLog(@"dealloc...");
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.percentDrivenTransition = [[PanInteractiveTransition alloc] init];
     [self.percentDrivenTransition panToPop:self];
+    
+    self.view.backgroundColor = [UIColor randomColor];
 }
 
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.navigationController.delegate = self;
 }
 
 #pragma mark - action
-
-- (IBAction)tap:(id)sender {
+- (IBAction)popClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -47,19 +52,20 @@ UINavigationControllerDelegate
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC{
-
-    if ([toVC isKindOfClass:[ViewController class]]) {
-        MagicMoveInverseTransition *transition = [[MagicMoveInverseTransition alloc] init];
-        return transition;
+    
+    if (operation == UINavigationControllerOperationPop) {
+        PingInvertTransition *pingInvert = [PingInvertTransition new];
+        return pingInvert;
     }else{
         return nil;
     }
 }
 
+//MARK:手势滑动转场 有时候vc不会消失？
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                           interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
-    if ([animationController isKindOfClass:[MagicMoveInverseTransition class]]) {
-        //MARK:如果点击导航栏或按钮返回，要返回nil，如果依然返回对象，会无效。因此在滑动开始时才赋值属性
+    
+    if ([animationController isKindOfClass:[PingInvertTransition class]]) {
         if (self.percentDrivenTransition.interacting) {
             NSLog(@"yes滑动~%@",self.percentDrivenTransition);
             return self.percentDrivenTransition;
@@ -72,5 +78,9 @@ UINavigationControllerDelegate
         return nil;
     }
 }
+
+
+
+
 
 @end

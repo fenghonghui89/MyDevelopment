@@ -59,6 +59,7 @@ UINavigationControllerDelegate
         }else{
             [self.percentDrivenTransition cancelInteractiveTransition];
         }
+        self.percentDrivenTransition = nil;
     }
     
 }
