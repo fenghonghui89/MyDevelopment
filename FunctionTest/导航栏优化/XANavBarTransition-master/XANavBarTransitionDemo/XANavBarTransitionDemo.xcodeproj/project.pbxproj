@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		382C357E213D372B0027DDA3 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C357D213D372B0027DDA3 /* MessageViewController.m */; };
+		3855DAF61F30602200628B4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DAF51F30602200628B4D /* main.m */; };
+		3855DAF91F30602200628B4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DAF81F30602200628B4D /* AppDelegate.m */; };
+		3855DAFF1F30602200628B4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3855DAFD1F30602200628B4D /* Main.storyboard */; };
+		3855DB011F30602200628B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3855DB001F30602200628B4D /* Assets.xcassets */; };
+		3855DB041F30602200628B4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3855DB021F30602200628B4D /* LaunchScreen.storyboard */; };
+		3855DB0F1F30602200628B4D /* XANavBarTransitionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DB0E1F30602200628B4D /* XANavBarTransitionDemoTests.m */; };
+		3855DB1A1F30602200628B4D /* XANavBarTransitionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DB191F30602200628B4D /* XANavBarTransitionDemoUITests.m */; };
+		3855DB2D1F30622400628B4D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DB271F30622400628B4D /* ThirdViewController.m */; };
+		3855DB2E1F30622400628B4D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DB291F30622400628B4D /* SecondViewController.m */; };
+		3855DB2F1F30622400628B4D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DB2B1F30622400628B4D /* FirstViewController.m */; };
+		3855DB321F30632100628B4D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3855DB311F30632100628B4D /* BaseNavigationController.m */; };
+		5B7110AEA6C0648DA980C3EC /* libPods-XANavBarTransitionDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A76EB4F39A5149D0A0E5B0 /* libPods-XANavBarTransitionDemoUITests.a */; };
+		890B3F951F8913B8FF8AB02B /* libPods-XANavBarTransitionDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4A6A5E407564C42A28759 /* libPods-XANavBarTransitionDemo.a */; };
+		B9B27BC13253DB9933C93ED5 /* libPods-XANavBarTransitionDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EB0D04512D61290B8DA209 /* libPods-XANavBarTransitionDemoTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3855DB0B1F30602200628B4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3855DAE91F30602200628B4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3855DAF01F30602200628B4D;
+			remoteInfo = XANavBarTransitionDemo;
+		};
+		3855DB161F30602200628B4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3855DAE91F30602200628B4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3855DAF01F30602200628B4D;
+			remoteInfo = XANavBarTransitionDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E3000EB05AB2ED00A62D37D /* Pods-XANavBarTransitionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XANavBarTransitionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XANavBarTransitionDemo/Pods-XANavBarTransitionDemo.release.xcconfig"; sourceTree = "<group>"; };
+		242772797557401D319C3274 /* Pods-XANavBarTransitionDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XANavBarTransitionDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XANavBarTransitionDemoTests/Pods-XANavBarTransitionDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		382C357C213D372B0027DDA3 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		382C357D213D372B0027DDA3 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		3855DAF11F30602200628B4D /* XANavBarTransitionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XANavBarTransitionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3855DAF51F30602200628B4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3855DAF71F30602200628B4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3855DAF81F30602200628B4D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3855DAFE1F30602200628B4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3855DB001F30602200628B4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3855DB031F30602200628B4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3855DB051F30602200628B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3855DB0A1F30602200628B4D /* XANavBarTransitionDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XANavBarTransitionDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3855DB0E1F30602200628B4D /* XANavBarTransitionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XANavBarTransitionDemoTests.m; sourceTree = "<group>"; };
+		3855DB101F30602200628B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3855DB151F30602200628B4D /* XANavBarTransitionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XANavBarTransitionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3855DB191F30602200628B4D /* XANavBarTransitionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XANavBarTransitionDemoUITests.m; sourceTree = "<group>"; };
+		3855DB1B1F30602200628B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3855DB271F30622400628B4D /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		3855DB281F30622400628B4D /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		3855DB291F30622400628B4D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3855DB2A1F30622400628B4D /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		3855DB2B1F30622400628B4D /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		3855DB2C1F30622400628B4D /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		3855DB301F30632100628B4D /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		3855DB311F30632100628B4D /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		38DE212B20A8624A0032FCC7 /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		3D8B278EBF8DBEA3F175D110 /* Pods-XANavBarTransitionDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XANavBarTransitionDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XANavBarTransitionDemoUITests/Pods-XANavBarTransitionDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		430F6E049765B75E613F9C2E /* Pods-XANavBarTransitionDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XANavBarTransitionDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XANavBarTransitionDemoUITests/Pods-XANavBarTransitionDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		677852F469786C810E322034 /* Pods-XANavBarTransitionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XANavBarTransitionDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XANavBarTransitionDemo/Pods-XANavBarTransitionDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C5A76EB4F39A5149D0A0E5B0 /* libPods-XANavBarTransitionDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XANavBarTransitionDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDE4A6A5E407564C42A28759 /* libPods-XANavBarTransitionDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XANavBarTransitionDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0A8E11756348D86ABBF9C66 /* Pods-XANavBarTransitionDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XANavBarTransitionDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XANavBarTransitionDemoTests/Pods-XANavBarTransitionDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		F0EB0D04512D61290B8DA209 /* libPods-XANavBarTransitionDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XANavBarTransitionDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3855DAEE1F30602200628B4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890B3F951F8913B8FF8AB02B /* libPods-XANavBarTransitionDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3855DB071F30602200628B4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9B27BC13253DB9933C93ED5 /* libPods-XANavBarTransitionDemoTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3855DB121F30602200628B4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B7110AEA6C0648DA980C3EC /* libPods-XANavBarTransitionDemoUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BDF177E5297075A67643C15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDE4A6A5E407564C42A28759 /* libPods-XANavBarTransitionDemo.a */,
+				F0EB0D04512D61290B8DA209 /* libPods-XANavBarTransitionDemoTests.a */,
+				C5A76EB4F39A5149D0A0E5B0 /* libPods-XANavBarTransitionDemoUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3855DAE81F30602200628B4D = {
+			isa = PBXGroup;
+			children = (
+				3855DAF31F30602200628B4D /* XANavBarTransitionDemo */,
+				3855DB0D1F30602200628B4D /* XANavBarTransitionDemoTests */,
+				3855DB181F30602200628B4D /* XANavBarTransitionDemoUITests */,
+				3855DAF21F30602200628B4D /* Products */,
+				9AC0B09276781BCCCF718904 /* Pods */,
+				0BDF177E5297075A67643C15 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3855DAF21F30602200628B4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3855DAF11F30602200628B4D /* XANavBarTransitionDemo.app */,
+				3855DB0A1F30602200628B4D /* XANavBarTransitionDemoTests.xctest */,
+				3855DB151F30602200628B4D /* XANavBarTransitionDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3855DAF31F30602200628B4D /* XANavBarTransitionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3855DB2C1F30622400628B4D /* FirstViewController.h */,
+				3855DB2B1F30622400628B4D /* FirstViewController.m */,
+				3855DB2A1F30622400628B4D /* SecondViewController.h */,
+				3855DB291F30622400628B4D /* SecondViewController.m */,
+				3855DB281F30622400628B4D /* ThirdViewController.h */,
+				3855DB271F30622400628B4D /* ThirdViewController.m */,
+				382C357C213D372B0027DDA3 /* MessageViewController.h */,
+				382C357D213D372B0027DDA3 /* MessageViewController.m */,
+				3855DB301F30632100628B4D /* BaseNavigationController.h */,
+				3855DB311F30632100628B4D /* BaseNavigationController.m */,
+				38DE212B20A8624A0032FCC7 /* CommonDefine.h */,
+				3855DAFD1F30602200628B4D /* Main.storyboard */,
+				3855DAF41F30602200628B4D /* Supporting Files */,
+			);
+			path = XANavBarTransitionDemo;
+			sourceTree = "<group>";
+		};
+		3855DAF41F30602200628B4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3855DAF71F30602200628B4D /* AppDelegate.h */,
+				3855DAF81F30602200628B4D /* AppDelegate.m */,
+				3855DB001F30602200628B4D /* Assets.xcassets */,
+				3855DB021F30602200628B4D /* LaunchScreen.storyboard */,
+				3855DB051F30602200628B4D /* Info.plist */,
+				3855DAF51F30602200628B4D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3855DB0D1F30602200628B4D /* XANavBarTransitionDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3855DB0E1F30602200628B4D /* XANavBarTransitionDemoTests.m */,
+				3855DB101F30602200628B4D /* Info.plist */,
+			);
+			path = XANavBarTransitionDemoTests;
+			sourceTree = "<group>";
+		};
+		3855DB181F30602200628B4D /* XANavBarTransitionDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3855DB191F30602200628B4D /* XANavBarTransitionDemoUITests.m */,
+				3855DB1B1F30602200628B4D /* Info.plist */,
+			);
+			path = XANavBarTransitionDemoUITests;
+			sourceTree = "<group>";
+		};
+		9AC0B09276781BCCCF718904 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				677852F469786C810E322034 /* Pods-XANavBarTransitionDemo.debug.xcconfig */,
+				0E3000EB05AB2ED00A62D37D /* Pods-XANavBarTransitionDemo.release.xcconfig */,
+				242772797557401D319C3274 /* Pods-XANavBarTransitionDemoTests.debug.xcconfig */,
+				E0A8E11756348D86ABBF9C66 /* Pods-XANavBarTransitionDemoTests.release.xcconfig */,
+				3D8B278EBF8DBEA3F175D110 /* Pods-XANavBarTransitionDemoUITests.debug.xcconfig */,
+				430F6E049765B75E613F9C2E /* Pods-XANavBarTransitionDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3855DAF01F30602200628B4D /* XANavBarTransitionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3855DB1E1F30602200628B4D /* Build configuration list for PBXNativeTarget "XANavBarTransitionDemo" */;
+			buildPhases = (
+				FAFF57F19AA361A7AD05C3CC /* [CP] Check Pods Manifest.lock */,
+				3855DAED1F30602200628B4D /* Sources */,
+				3855DAEE1F30602200628B4D /* Frameworks */,
+				3855DAEF1F30602200628B4D /* Resources */,
+				380844A2210AEB4700F2DE8A /* Integrate Reveal Server */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XANavBarTransitionDemo;
+			productName = XANavBarTransitionDemo;
+			productReference = 3855DAF11F30602200628B4D /* XANavBarTransitionDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3855DB091F30602200628B4D /* XANavBarTransitionDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3855DB211F30602200628B4D /* Build configuration list for PBXNativeTarget "XANavBarTransitionDemoTests" */;
+			buildPhases = (
+				D48B2E3D1E2D5F87B074CC05 /* [CP] Check Pods Manifest.lock */,
+				3855DB061F30602200628B4D /* Sources */,
+				3855DB071F30602200628B4D /* Frameworks */,
+				3855DB081F30602200628B4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3855DB0C1F30602200628B4D /* PBXTargetDependency */,
+			);
+			name = XANavBarTransitionDemoTests;
+			productName = XANavBarTransitionDemoTests;
+			productReference = 3855DB0A1F30602200628B4D /* XANavBarTransitionDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3855DB141F30602200628B4D /* XANavBarTransitionDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3855DB241F30602200628B4D /* Build configuration list for PBXNativeTarget "XANavBarTransitionDemoUITests" */;
+			buildPhases = (
+				F59E8FE609348DFCE3B0C7F7 /* [CP] Check Pods Manifest.lock */,
+				3855DB111F30602200628B4D /* Sources */,
+				3855DB121F30602200628B4D /* Frameworks */,
+				3855DB131F30602200628B4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3855DB171F30602200628B4D /* PBXTargetDependency */,
+			);
+			name = XANavBarTransitionDemoUITests;
+			productName = XANavBarTransitionDemoUITests;
+			productReference = 3855DB151F30602200628B4D /* XANavBarTransitionDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3855DAE91F30602200628B4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Lan;
+				TargetAttributes = {
+					3855DAF01F30602200628B4D = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = ZU3PU58KKD;
+						ProvisioningStyle = Automatic;
+					};
+					3855DB091F30602200628B4D = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2LN2G9AVN9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3855DAF01F30602200628B4D;
+					};
+					3855DB141F30602200628B4D = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2LN2G9AVN9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3855DAF01F30602200628B4D;
+					};
+				};
+			};
+			buildConfigurationList = 3855DAEC1F30602200628B4D /* Build configuration list for PBXProject "XANavBarTransitionDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3855DAE81F30602200628B4D;
+			productRefGroup = 3855DAF21F30602200628B4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3855DAF01F30602200628B4D /* XANavBarTransitionDemo */,
+				3855DB091F30602200628B4D /* XANavBarTransitionDemoTests */,
+				3855DB141F30602200628B4D /* XANavBarTransitionDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3855DAEF1F30602200628B4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3855DB041F30602200628B4D /* LaunchScreen.storyboard in Resources */,
+				3855DB011F30602200628B4D /* Assets.xcassets in Resources */,
+				3855DAFF1F30602200628B4D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3855DB081F30602200628B4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3855DB131F30602200628B4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		380844A2210AEB4700F2DE8A /* Integrate Reveal Server */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Reveal Server";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi";
+		};
+		D48B2E3D1E2D5F87B074CC05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XANavBarTransitionDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F59E8FE609348DFCE3B0C7F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XANavBarTransitionDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAFF57F19AA361A7AD05C3CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XANavBarTransitionDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3855DAED1F30602200628B4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3855DB2E1F30622400628B4D /* SecondViewController.m in Sources */,
+				3855DAF91F30602200628B4D /* AppDelegate.m in Sources */,
+				3855DB321F30632100628B4D /* BaseNavigationController.m in Sources */,
+				3855DB2F1F30622400628B4D /* FirstViewController.m in Sources */,
+				382C357E213D372B0027DDA3 /* MessageViewController.m in Sources */,
+				3855DAF61F30602200628B4D /* main.m in Sources */,
+				3855DB2D1F30622400628B4D /* ThirdViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3855DB061F30602200628B4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3855DB0F1F30602200628B4D /* XANavBarTransitionDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3855DB111F30602200628B4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3855DB1A1F30602200628B4D /* XANavBarTransitionDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3855DB0C1F30602200628B4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3855DAF01F30602200628B4D /* XANavBarTransitionDemo */;
+			targetProxy = 3855DB0B1F30602200628B4D /* PBXContainerItemProxy */;
+		};
+		3855DB171F30602200628B4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3855DAF01F30602200628B4D /* XANavBarTransitionDemo */;
+			targetProxy = 3855DB161F30602200628B4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3855DAFD1F30602200628B4D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3855DAFE1F30602200628B4D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3855DB021F30602200628B4D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3855DB031F30602200628B4D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3855DB1C1F30602200628B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3855DB1D1F30602200628B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3855DB1F1F30602200628B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 677852F469786C810E322034 /* Pods-XANavBarTransitionDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
+				INFOPLIST_FILE = XANavBarTransitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidev.xan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-deprecated-declarations";
+				WARNING_LDFLAGS = "";
+			};
+			name = Debug;
+		};
+		3855DB201F30602200628B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E3000EB05AB2ED00A62D37D /* Pods-XANavBarTransitionDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZU3PU58KKD;
+				INFOPLIST_FILE = XANavBarTransitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baojidev.xan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-deprecated-declarations";
+				WARNING_LDFLAGS = "";
+			};
+			name = Release;
+		};
+		3855DB221F30602200628B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 242772797557401D319C3274 /* Pods-XANavBarTransitionDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2LN2G9AVN9;
+				INFOPLIST_FILE = XANavBarTransitionDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Xangam.XANavBarTransitionDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XANavBarTransitionDemo.app/XANavBarTransitionDemo";
+			};
+			name = Debug;
+		};
+		3855DB231F30602200628B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0A8E11756348D86ABBF9C66 /* Pods-XANavBarTransitionDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2LN2G9AVN9;
+				INFOPLIST_FILE = XANavBarTransitionDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Xangam.XANavBarTransitionDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XANavBarTransitionDemo.app/XANavBarTransitionDemo";
+			};
+			name = Release;
+		};
+		3855DB251F30602200628B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D8B278EBF8DBEA3F175D110 /* Pods-XANavBarTransitionDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 2LN2G9AVN9;
+				INFOPLIST_FILE = XANavBarTransitionDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Xangam.XANavBarTransitionDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XANavBarTransitionDemo;
+			};
+			name = Debug;
+		};
+		3855DB261F30602200628B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 430F6E049765B75E613F9C2E /* Pods-XANavBarTransitionDemoUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 2LN2G9AVN9;
+				INFOPLIST_FILE = XANavBarTransitionDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Xangam.XANavBarTransitionDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XANavBarTransitionDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3855DAEC1F30602200628B4D /* Build configuration list for PBXProject "XANavBarTransitionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3855DB1C1F30602200628B4D /* Debug */,
+				3855DB1D1F30602200628B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3855DB1E1F30602200628B4D /* Build configuration list for PBXNativeTarget "XANavBarTransitionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3855DB1F1F30602200628B4D /* Debug */,
+				3855DB201F30602200628B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3855DB211F30602200628B4D /* Build configuration list for PBXNativeTarget "XANavBarTransitionDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3855DB221F30602200628B4D /* Debug */,
+				3855DB231F30602200628B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3855DB241F30602200628B4D /* Build configuration list for PBXNativeTarget "XANavBarTransitionDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3855DB251F30602200628B4D /* Debug */,
+				3855DB261F30602200628B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3855DAE91F30602200628B4D /* Project object */;
+}

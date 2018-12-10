@@ -1,0 +1,16 @@
+PODS:
+  - XANavBarTransition (1.1.2)
+
+DEPENDENCIES:
+  - XANavBarTransition (from `..`)
+
+EXTERNAL SOURCES:
+  XANavBarTransition:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  XANavBarTransition: b7f23c6a93d0e9d12391cd45fa156744c05311b6
+
+PODFILE CHECKSUM: 942b3f47f45703cc94c01c1e4e3ad33ba530a128
+
+COCOAPODS: 1.5.3
