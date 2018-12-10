@@ -1,280 +1,0 @@
-TBusinessLogicLayer
-v6
-r1
-cCheck dependencies
-cProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.o /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.o /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.o /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLibtool /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a normal armv7
-cLibtool /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a normal armv7s
-cLibtool /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a normal arm64
-cCreateUniversalBinary /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a normal armv7\ armv7s\ arm64
-cPBXCp BusinessLogicLayer/NoteBL.h /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h
-
-N/Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
-c0000000053119F860000000000000132
-t1393663878
-s306
-
-N/Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/SDKSettings.plist
-c000000005311A6B0000000000000036B
-t1393665712
-s875
-
-N/Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/CoreServices/SystemVersion.plist
-c000000005311A6B2000000000000019E
-t1393665714
-s414
-
-N/Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000005311A6B40000000000A90C10
-t1393665716
-s11078672
-
-N/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
-c0000000053100EA20000000000000ADC
-t1393561250
-s2780
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch
-c000000005371F65700000000000000B6
-t1399977559
-s182
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.h
-c000000005371E8BF00000000000001B4
-t1399974079
-s436
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m
-c000000005371E8BF00000000000003D0
-t1399974079
-s976
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/BusinessLogicLayer.LinkFileList
-c000000005371F8D60000000000000090
-t1399978198
-s144
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.o
-t1399978198
-s10068
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a
-t1399978198
-s41624
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/BusinessLogicLayer.LinkFileList
-c000000005371F8D60000000000000090
-t1399978198
-s144
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.o
-t1399978198
-s8712
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a
-t1399978198
-s37232
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/BusinessLogicLayer.LinkFileList
-c000000005371F8D60000000000000091
-t1399978198
-s145
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.o
-t1399978198
-s8712
-
-N/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a
-t1399978198
-s37232
-
-N/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h
-t2
-s0
-
-N/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a
-t2
-s0
-
-N/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libPersistenceLayer.a
-c000000005371F61C00000000000158BC
-t1399977500
-s88252
-
-N/var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.pch
-t1399978198
-s92176
-
-N/var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.pch
-t1399978198
-s92164
-
-N/var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.pch
-t1399978198
-s114784
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies124ae3553022b941^1d730a563022b941^---0#1#1#--18"Check dependencies36"EC3B843D-4F6C-4560-8C27-2E8590E188F9-
-
-CCompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.o /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s421670998.262964
-e421670998.606050
-r1
-xCompileC
-xbuild/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.o
-x/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m
-xnormal
-xarm64
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.h
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/include/Note.h
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/include/NoteManager.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m206"CompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.o BusinessLogicLayer/NoteBL.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compilerf9a043563022b941^f92c9b563022b941^---0#0#1#-19%DVTDocumentLocation2@77"file:///Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m0000000000000000^3638"CompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.o BusinessLogicLayer/NoteBL.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export LANG=en_US.US-ASCII    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-generated-files.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-own-target-headers.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-all-target-headers.hmap -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-project-headers.hmap -iquote/Users/hanyfeng/Desktop/BusinessLogicLayer/include -I/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include -I/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources/arm64 -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources -F/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos -include /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch -MMD -MT dependencies -MF /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.d --serialize-diagnostics /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.dia -c /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m -o /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/NoteBL.o36"D91FDC9D-E4EA-41C5-BF68-890703E138D3-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CCompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.o /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s421670998.262508
-e421670998.606297
-r1
-xCompileC
-xbuild/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.o
-x/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.h
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/include/Note.h
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/include/NoteManager.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m206"CompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.o BusinessLogicLayer/NoteBL.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler1e6e43563022b941^5c399b563022b941^---0#0#1#-19%DVTDocumentLocation2@77"file:///Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m0000000000000000^3638"CompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.o BusinessLogicLayer/NoteBL.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export LANG=en_US.US-ASCII    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-generated-files.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-own-target-headers.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-all-target-headers.hmap -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-project-headers.hmap -iquote/Users/hanyfeng/Desktop/BusinessLogicLayer/include -I/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include -I/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources/armv7 -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources -F/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos -include /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch -MMD -MT dependencies -MF /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.d --serialize-diagnostics /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.dia -c /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m -o /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/NoteBL.o36"31F5B989-7DCA-4D35-8D06-F5FA9DFD88BC-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CCompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.o /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s421670998.262756
-e421670998.606275
-r1
-xCompileC
-xbuild/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.o
-x/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m
-xnormal
-xarmv7s
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.h
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/include/Note.h
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/include/NoteManager.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m208"CompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.o BusinessLogicLayer/NoteBL.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compilera88c43563022b941^d7349b563022b941^---0#0#1#-19%DVTDocumentLocation2@77"file:///Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m0000000000000000^3645"CompileC build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.o BusinessLogicLayer/NoteBL.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export LANG=en_US.US-ASCII    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-generated-files.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-own-target-headers.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-all-target-headers.hmap -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-project-headers.hmap -iquote/Users/hanyfeng/Desktop/BusinessLogicLayer/include -I/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include -I/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources/armv7s -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources -F/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos -include /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch -MMD -MT dependencies -MF /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.d --serialize-diagnostics /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.dia -c /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.m -o /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/NoteBL.o36"FF3EFADE-B854-4841-96D8-3EE7C64AF650-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CCreateUniversalBinary /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a normal armv7\ armv7s\ arm64
-s421670998.620558
-e421670998.636674
-r1
-xCreateUniversalBinary
-x/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a
-xnormal
-xarmv7 armv7s arm64
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection170"Create universal binary /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a196"CreateUniversalBinary /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a normal armv7\ armv7s\ arm642d0a9f563022b941^fcfda2563022b941^---0#0#1#-19%DVTDocumentLocation2@153"file:///Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a00345800dfffdf42^991"CreateUniversalBinary /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a normal armv7\ armv7s\ arm64    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a -o /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/libBusinessLogicLayer.a36"E4A2545E-0B90-417C-8220-645452020F0F-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CLibtool /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a normal arm64
-s421670998.607761
-e421670998.619404
-r1
-xLibtool
-x/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a
-xnormal
-xarm64
-o/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection136"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a normal arm64136"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a normal arm6444be9b563022b941^d49e9e563022b941^-168"/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#1#--996"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a normal arm64    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export IPHONEOS_DEPLOYMENT_TARGET=7.1    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only arm64 -syslibroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -L/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos -filelist /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/BusinessLogicLayer.LinkFileList -ObjC -lPersistenceLayer -framework Foundation -o /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/arm64/libBusinessLogicLayer.a36"BCE5E63F-D0D3-4944-A6AE-716ED0191FA2-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CLibtool /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a normal armv7
-s421670998.607399
-e421670998.619217
-r1
-xLibtool
-x/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a
-xnormal
-xarmv7
-o/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection136"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a normal armv7136"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a normal armv78ec89b563022b941^69909e563022b941^-168"/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#1#--996"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a normal armv7    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export IPHONEOS_DEPLOYMENT_TARGET=7.1    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only armv7 -syslibroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -L/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos -filelist /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/BusinessLogicLayer.LinkFileList -ObjC -lPersistenceLayer -framework Foundation -o /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7/libBusinessLogicLayer.a36"C5491A54-2D00-4EA7-A977-4D43B95CA489-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CLibtool /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a normal armv7s
-s421670998.607602
-e421670998.619499
-r1
-xLibtool
-x/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a
-xnormal
-xarmv7s
-o/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection138"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a normal armv7s138"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a normal armv7sc0cc9b563022b941^40a19e563022b941^-168"/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#1#--1001"Libtool build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a normal armv7s    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export IPHONEOS_DEPLOYMENT_TARGET=7.1    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only armv7s -syslibroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -L/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos -filelist /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/BusinessLogicLayer.LinkFileList -ObjC -lPersistenceLayer -framework Foundation -o /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/Objects-normal/armv7s/libBusinessLogicLayer.a36"A7AAC6EA-0842-4B53-946B-F9DA999E43C3-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CPBXCp BusinessLogicLayer/NoteBL.h /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h
-s421670998.637352
-e421670998.638962
-r1
-xPBXCp
-xBusinessLogicLayer/NoteBL.h
-x/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection163"Copy /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h192"PBXCp BusinessLogicLayer/NoteBL.h /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h2d5fa3563022b941^c894a3563022b941^---0#0#1#-19%DVTDocumentLocation2@165"file:///Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h00345800dfffdf42^576"PBXCp BusinessLogicLayer/NoteBL.h /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer/NoteBL.h    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/NoteBL.h /Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include/BusinessLogicLayer36"5FF55315-B5D5-4CF1-9CE7-B1A3B549932E-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s421670998.045150
-e421670998.261254
-r1
-xProcessPCH
-x/var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.pch
-xBusinessLogicLayer/BusinessLogicLayer-Prefix.pch
-xnormal
-xarmv7s
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Precompile BusinessLogicLayer/BusinessLogicLayer-Prefix.pch351"ProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler60050c563022b941^d5eb42563022b941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch0000000000000000^3816"ProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export LANG=en_US.US-ASCII    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-generated-files.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-own-target-headers.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-all-target-headers.hmap -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-project-headers.hmap -iquote/Users/hanyfeng/Desktop/BusinessLogicLayer/include -I/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include -I/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources/armv7s -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources -F/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos --serialize-diagnostics /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.d -c /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch -o /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-cgibpegcnmhjobdktzpwwhyibqlj/BusinessLogicLayer-Prefix.pch.pch36"EAAE49C3-C12B-4AB4-B4F2-0BB3B1803B91-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s421670998.044702
-e421670998.261238
-r1
-xProcessPCH
-x/var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.pch
-xBusinessLogicLayer/BusinessLogicLayer-Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Precompile BusinessLogicLayer/BusinessLogicLayer-Prefix.pch350"ProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compilerc3f20b563022b941^b1e042563022b941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch0000000000000000^3813"ProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export LANG=en_US.US-ASCII    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-generated-files.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-own-target-headers.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-all-target-headers.hmap -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-project-headers.hmap -iquote/Users/hanyfeng/Desktop/BusinessLogicLayer/include -I/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include -I/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources/armv7 -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources -F/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos --serialize-diagnostics /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.d -c /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch -o /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gcwoyuszdciaoietwtgdzvygfmls/BusinessLogicLayer-Prefix.pch.pch36"F3B2513C-EE8B-4D2A-AAC8-4F922FF241AB-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
-CProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s421670998.046355
-e421670998.261240
-r1
-xProcessPCH
-x/var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.pch
-xBusinessLogicLayer/BusinessLogicLayer-Prefix.pch
-xnormal
-xarm64
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Precompile BusinessLogicLayer/BusinessLogicLayer-Prefix.pch350"ProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler492d0c563022b941^08e842563022b941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch0000000000000000^3813"ProcessPCH /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.pch BusinessLogicLayer/BusinessLogicLayer-Prefix.pch normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hanyfeng/Desktop/BusinessLogicLayer    export LANG=en_US.US-ASCII    /Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode5_1/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-generated-files.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-own-target-headers.hmap -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-all-target-headers.hmap -iquote /Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/BusinessLogicLayer-project-headers.hmap -iquote/Users/hanyfeng/Desktop/BusinessLogicLayer/include -I/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos/include -I/Applications/Xcode5_1/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources/arm64 -I/Users/hanyfeng/Desktop/BusinessLogicLayer/build/BusinessLogicLayer.build/Debug-iphoneos/BusinessLogicLayer.build/DerivedSources -F/Users/hanyfeng/Library/Developer/Xcode/DerivedData/MyWorkspace-gbhszaqvfzdardaspwsrdngorbuq/Build/Products/Debug-iphoneos --serialize-diagnostics /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.d -c /Users/hanyfeng/Desktop/BusinessLogicLayer/BusinessLogicLayer/BusinessLogicLayer-Prefix.pch -o /var/folders/cf/fz_nr1js7bs6b91vdxlvxv0h0000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/5.1-5B130a/Xcode/SharedPrecompiledHeaders/BusinessLogicLayer-Prefix-gqfujaqrznlqinbdwhjhhddodrqt/BusinessLogicLayer-Prefix.pch.pch36"F9CD974F-1213-4E76-B754-1FB743C9EB14-
-bC02781C7-3539-43BB-95BC-2E811B62C5A0
-
