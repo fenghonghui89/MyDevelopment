@@ -9,7 +9,6 @@
 #import "MD_NSThread_VC.h"
 #import "MDCustomThread.h"
 
-
 @interface MD_NSThread_VC()
 @property(nonatomic,strong)UIButton *btn;
 @property(nonatomic,strong)NSLock *lock;
@@ -24,7 +23,7 @@
 
 @implementation MD_NSThread_VC
 
-#pragma mark - < vc lifecycle > -
+
 
 -(void)viewDidLoad{
   
@@ -49,7 +48,6 @@
   [super viewDidDisappear:animated];
 }
 
-#pragma mark - < method > -
 #pragma mark - 方法和属性
 -(void)test_NSThreadBase{
 
@@ -116,8 +114,31 @@
   [self.view addSubview:view];
 }
 
-#pragma mark - 卖票问题(线程同步 加锁)
-#pragma mark 线程加锁方法1 NSLock（也可以用其子类代替）
+
+#pragma mark - 各种锁的性能总结
+/*
+ OSSpinLock                          0.097348s
+ dispatch_semaphore                  0.155043s
+ os_unfair_lock互斥锁                 0.171789s
+ pthread_mutex                       0.262592s
+ NSLock                              0.283196s
+ pthread_mutex(recursive)            0.372398s
+ NSRecursiveLock                     0.473536s
+ NSConditionLock                     0.950285s
+ @synchronized                       1.101924s
+ 注:建议正常锁功能用 pthread_mutex ,os_unfair_lock (适配低版本)
+ */
+#pragma mark - trylock和lock
+/*
+ 当前线程锁失败，也可以继续其它任务，用 trylock 合适
+ 当前线程只有锁成功后，才会做一些有意义的工作，那就 lock，没必要轮询 trylock
+ */
+
+#pragma mark - 线程加锁方法1 NSLock互斥锁（也可以用其子类代替）
+/*
+ NSLock 封装的pthread_mutex的PTHREAD_MUTEX_NORMAL 模式
+ NSRecursiveLock 封装的pthread_mutex的PTHREAD_MUTEX_RECURSIVE 模式
+ */
 -(void)test_saleTickets1{
   
 #pragma 锁 资源
@@ -132,7 +153,6 @@
   
   NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(sale1) object:nil];
   thread2.name = @"2号窗口";
-  //  thread2.threadPriority = 1;//优先级0~1
   thread2.qualityOfService = NSQualityOfServiceUserInitiated;//不久之后会替代前者
   [thread2 start];
   self.thread2 = thread2;
@@ -167,7 +187,13 @@
   
 }
 
-#pragma mark 线程加锁方法2 @synchronized
+#pragma mark - 线程加锁方法2 @synchronized递归锁
+/*
+ @synchronized 指令使用的 obj 为该锁的唯一标识，只有当标识相同时，才为满足互斥，如果线程2中的@synchronized(obj) 改为@synchronized(other) 时，线程2就不会被阻塞，@synchronized 指令实现锁的优点就是我们不需要在代码中显式的创建锁对象，便可以实现锁的机制，但作为一种预防措施，@synchronized 块会隐式的添加一个异常处理例程来保护代码，该处理例程会在异常抛出的时候自动的释放互斥锁。所以如果不想让隐式的异常处理例程带来额外的开销，你可以考虑使用锁对象。
+ 
+ 底层封装的pthread_mutex的PTHREAD_MUTEX_RECURSIVE 模式,
+ 锁对象来表示是否为同一把锁
+ */
 -(void)test_saleTickets2{
   
 #pragma 锁 资源
@@ -205,7 +231,28 @@
   }
 }
 
-#pragma mark 线程加锁方法3 NSCondition 信号控制
+#pragma mark - 线程加锁方法3 NSCondition条件锁 信号控制
+/*
+ wait 进入等待状态
+ waitUntilDate:让一个线程等待一定的时间
+ signal 唤醒一个等待的线程
+ broadcast 唤醒所有等待的线程
+ 注: 所测时间波动太大, 有时候会快于 NSLock, 我取得中间值.
+ 
+ 
+ 在一定条件下,让其等待休眠,并放开锁,等接收到信号或者广播,会从新唤起线程,并重新加锁.
+ pthread_cond_wait(&_cond, &_mutex);
+ // 信号
+ pthread_cond_signal(&_cond);
+ // 广播
+ pthread_cond_broadcast(&_cond);
+ 
+ 像NSCondition封装了pthread_mutex的以上几个函数
+ 
+ 
+ 当我们在使用多线程的时候，有时一把只会 lock 和 unlock 的锁未必就能完全满足我们的使用。因为普通的锁只能关心锁与不锁，而不在乎用什么钥匙才能开锁，而我们在处理资源共享的时候，多数情况是只有满足一定条件的情况下才能打开这把锁
+ 
+ */
 -(void)test_saleTickets3{
   
 #pragma 锁 资源
@@ -262,7 +309,10 @@
 
 }
 
-#pragma mark 线程加锁方法4 NSConditionLock 条件锁
+#pragma mark - 线程加锁方法4 NSConditionLock条件锁
+/*
+ NSConditionLock封装了NSCondition
+ */
 -(void)test_saleTickets4{
   
 #pragma 锁 资源
@@ -314,10 +364,22 @@
   }
 }
 
-#pragma mark NSRecursiveLock 递归锁
+#pragma mark - NSRecursiveLock 递归锁
+/*
+ 注: 递归锁可以被同一线程多次请求，而不会引起死锁。
+ 即在同一线程中在未解锁之前还可以上锁, 执行锁中的代码。
+ 这主要是用在循环或递归操作中。
+ 
+ 递归锁的主要意思是,同一条线程可以加多把锁.什么意思呢,就是相同的线程访问一段代码,
+ 如果是加锁的可以继续加锁,继续往下走,不同线程来访问这段代码时,发现有锁要等待所有锁解开之后才可以继续往下走.
+ NSRecursiveLock 类定义的锁可以在同一线程多次 lock，而不会造成死锁。递归锁会跟踪它被多少次 lock。每次成功的 lock 都必须平衡调用 unlock 操作。只有所有的锁住和解锁操作都平衡的时候，锁才真正被释放给其他线程获得。
+ 
+ NSLock 封装的pthread_mutex的PTHREAD_MUTEX_NORMAL 模式
+ NSRecursiveLock 封装的pthread_mutex的PTHREAD_MUTEX_RECURSIVE 模式
+ */
 -(void)test_NSRecursiveLock{
 
-//  NSLock *lock = [NSLock new];//会死锁
+//  NSLock *lock = [NSLock new];//NSLock在递归场景会出现死锁的情况，这里就得用NSRecursiveLock（递归锁）
   NSRecursiveLock *lock = [NSRecursiveLock new];
   
   static void(^myBlock)(int);//static修饰的变量 可以在block里面修改 哪怕这个变量是个block指针
@@ -351,7 +413,7 @@
   
 }
 
-#pragma mark - < action > -
+#pragma mark - action
 - (IBAction)btn1Tap:(id)sender {
   
   [self.thread1 cancel];

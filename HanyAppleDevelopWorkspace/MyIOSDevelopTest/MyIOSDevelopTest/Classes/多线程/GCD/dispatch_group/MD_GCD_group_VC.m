@@ -17,7 +17,6 @@
 
 @implementation MD_GCD_group_VC
 
-#pragma mark - < vc lifecycle > -
 - (void)viewDidLoad {
   
   [super viewDidLoad];
@@ -43,9 +42,9 @@
 //  [self group2];
 }
 
-#pragma mark - < method > -
 
-#pragma mark 推导
+
+#pragma mark - 推导
 -(void)sync{
   
   dispatch_queue_t myQueue = dispatch_get_global_queue(0, 0);
@@ -76,33 +75,10 @@
   NSLog(@"全部完成");
 }
 
-#pragma mark dispatch_group_wait
--(void)group{
-  
-  dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-  dispatch_group_t myGroup = dispatch_group_create();
-  
-  for (int i = 0; i < 100; i++) {
-    dispatch_group_async(myGroup, myQueue, ^{
-      NSLog(@"下载图片:%d",i);//异步
-    });
-  }
-  
-  //会阻塞当前线程，所以在主线程下不能调用
-//  NSInteger result = dispatch_group_wait(myGroup, DISPATCH_TIME_FOREVER);
-//  NSLog(@"result:%@",result == 0?@"success":@"error");
-  
-  dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC*5);
-  NSInteger result1 = dispatch_group_wait(myGroup, delayTime);
-  NSLog(@"result1:%@",result1 == 0?@"success":@"error");
-  
-  [self finish];
-}
-
-#pragma mark dispatch_group_notify
+#pragma mark - dispatch_group_notify dispatch_group_wait
 -(void)group2{
   
-  dispatch_queue_t myQueue = dispatch_get_global_queue(0, 0);
+  dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
   dispatch_group_t myGroup = dispatch_group_create();
   
   for (int i = 0; i < 100; i++) {
@@ -114,6 +90,10 @@
   dispatch_group_notify(myGroup, myQueue, ^{
     [self finish];
   });
+    
+    // 若想执行完上面的任务再走下面这行代码可以加上下面这句代码
+    // 等待上面的任务全部完成后，往下继续执行（会阻塞当前线程）
+//    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
   
 }
 
@@ -157,4 +137,160 @@
 
 }
 
+#pragma mark - dispatch_group_enter dispatch_group_leave
+//dispatch_group_enter 标志着一个任务追加到 group，执行一次，相当于 group 中未执行完毕任务数+1
+//dispatch_group_leave 标志着一个任务离开了 group，执行一次，相当于 group 中未执行完毕任务数-1。
+//当 group 中未执行完毕任务数为0的时候，才会使dispatch_group_wait解除阻塞，以及执行追加到dispatch_group_notify中的任务。
+-(void)dispatch_group_1{
+    
+    NSLog(@"----start-----当前线程---%@",[NSThread currentThread]);
+    
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        // 第一个任务
+        [NSThread sleepForTimeInterval:2];
+        
+        NSLog(@"----执行第一个任务---当前线程%@",[NSThread currentThread]);
+        
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        // 第二个任务
+        [NSThread sleepForTimeInterval:2];
+        
+        NSLog(@"----执行第二个任务---当前线程%@",[NSThread currentThread]);
+        
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        // 第三个任务
+        [NSThread sleepForTimeInterval:2];
+        
+        NSLog(@"----执行第三个任务---当前线程%@",[NSThread currentThread]);
+        
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"----执行最后的汇总任务---当前线程%@",[NSThread currentThread]);
+    });
+    
+    NSLog(@"----end-----当前线程---%@",[NSThread currentThread]);
+    
+}
+
+#pragma mark - 信号量 dispatch_semaphore_t /dispatch_semaphore_wait /dispatch_semaphore_signal
+
+/*
+ 信号量>0 就不会阻塞
+ dispatch_semaphore_wait注意time的选择
+ 总结:信号量设置的是2，在当前场景下，同一时间内执行的线程就不会超过2，先执行2个线程，等执行完一个，下一个会开始执行。
+ 
+ 当两个线程需要协调特定事件的完成时，为值传递零是有用的。
+ 传递大于零的值对于管理有限的资源池非常有用，其中池大小等于该值。
+ 
+ 从本质意义上讲，信号量与互斥锁是有区别：
+ （1）作用域
+ 信号量：进程间或线程间(linux 仅线程间)
+ 互斥锁：线程间
+ 
+ （2）上锁时
+ 信号量：只要信号量的 value 大于0，其他线程就可以 sem_wait 成功，成功后信号量的 value 减一。若 value 值不大于0，则 sem_wait 阻塞，直到 sem_post 释放后 value 值加一。一句话，信号量的 value>=0。
+ 互斥锁：只要被锁住，其他任何线程都不可以访问被保护的资源。如果没有锁，获得资源成功，否则进行阻塞等待资源可用。一句话，线程互斥锁的 vlaue 可以为负数。
+ */
+-(void)dispatch_semaphore{
+    
+    NSLog(@"----start-----当前线程---%@",[NSThread currentThread]);
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(2);
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    //任务1
+    dispatch_async(queue, ^{
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//用DISPATCH_TIME_NOW会起不到等待效果
+        
+        NSLog(@"----开始执行第一个任务---当前线程%@",[NSThread currentThread]);
+        
+        [NSThread sleepForTimeInterval:2];
+        
+        NSLog(@"----结束执行第一个任务---当前线程%@",[NSThread currentThread]);
+        
+        dispatch_semaphore_signal(semaphore);
+    });
+    
+    //任务2
+    dispatch_async(queue, ^{
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        
+        NSLog(@"----开始执行第二个任务---当前线程%@",[NSThread currentThread]);
+        
+        [NSThread sleepForTimeInterval:1];
+        
+        NSLog(@"----结束执行第二个任务---当前线程%@",[NSThread currentThread]);
+        
+        dispatch_semaphore_signal(semaphore);
+    });
+    
+    //任务3
+    dispatch_async(queue, ^{
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        
+        NSLog(@"----开始执行第三个任务---当前线程%@",[NSThread currentThread]);
+        
+        [NSThread sleepForTimeInterval:2];
+        
+        NSLog(@"----结束执行第三个任务---当前线程%@",[NSThread currentThread]);
+        
+        dispatch_semaphore_signal(semaphore);
+    });
+    
+    NSLog(@"----end-----当前线程---%@",[NSThread currentThread]);
+    
+}
+
+-(void)test_dispatch_semaphore_t{
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.queue.abc", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    
+    dispatch_async(queue, ^{
+        NSLog(@"下载中");
+        sleep(3);
+        dispatch_semaphore_signal(sema);
+    });
+    
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);//用DISPATCH_TIME_NOW会起不到等待效果
+    dispatch_async(queue, ^{
+        NSLog(@"下载完成");
+    });
+    
+    
+    //每2秒输出异步10个数字
+//  dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);//为了让一次输出10个，初始信号量为10；
+//  dispatch_queue_t queue = dispatch_queue_create("com.queue.abc", DISPATCH_QUEUE_CONCURRENT);
+//
+//  for (int i = 0; i <100; i++){
+//    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//每进来1次，信号量-1;进来10次后就一直hold住，直到信号量大于0；
+//    dispatch_async(queue, ^{
+//      NSLog(@"%i",i);
+//      sleep(2);
+//      dispatch_semaphore_signal(semaphore);
+//    });
+//  }
+    
+}
 @end
