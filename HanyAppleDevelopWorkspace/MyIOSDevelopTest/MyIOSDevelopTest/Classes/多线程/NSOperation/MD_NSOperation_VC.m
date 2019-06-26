@@ -17,7 +17,6 @@
 @end
 @implementation MD_NSOperation_VC
 
-#pragma mark - < vc lifecycle > -
 -(void)viewDidLoad{
 
   [super viewDidLoad];
@@ -34,8 +33,6 @@
   [self.queue cancelAllOperations];
   [super viewDidDisappear:animated];
 }
-
-#pragma mark - < method > -
 
 #pragma mark - 创建NSOperationObject
 -(void)test_NSOperationObject{
@@ -413,7 +410,7 @@
     [queue waitUntilAllOperationsAreFinished];//阻塞当前线程，等待queue的所有操作执行完毕
     NSLog(@"主线程");
 }
-#pragma mark - < action > -
+#pragma mark - action
 
 - (IBAction)btn1Tap:(id)sender {
   

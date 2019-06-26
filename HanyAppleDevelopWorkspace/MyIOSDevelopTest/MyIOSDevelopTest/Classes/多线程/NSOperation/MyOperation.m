@@ -23,4 +23,12 @@
   [NSThread sleepForTimeInterval:2];
   NSLog(@"这里是子线程3代码 结束");
 }
+
+-(BOOL)isFinished{
+    return YES;
+}
+
+-(BOOL)isExecuting{
+    return YES;
+}
 @end

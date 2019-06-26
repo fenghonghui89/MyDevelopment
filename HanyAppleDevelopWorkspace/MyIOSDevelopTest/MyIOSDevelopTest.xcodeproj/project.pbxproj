@@ -45,6 +45,10 @@
 		140D50E21DB9BC7F00E5D717 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140D50DE1DB9BC7F00E5D717 /* NSObject+YYModel.m */; };
 		140D50E31DB9BC7F00E5D717 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 140D50E01DB9BC7F00E5D717 /* YYClassInfo.m */; };
 		140D50E81DB9D71000E5D717 /* MD_ModelToJSON_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 140D50E71DB9D71000E5D717 /* MD_ModelToJSON_VC.m */; };
+		1411BA7822B88050000497F4 /* BJRunLoopHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1411BA7422B88050000497F4 /* BJRunLoopHelper.m */; };
+		1411BA7922B88050000497F4 /* BJThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 1411BA7622B88050000497F4 /* BJThread.m */; };
+		1411BA7D22B8835B000497F4 /* MDRunloopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1411BA7B22B8835B000497F4 /* MDRunloopVC.m */; };
+		1411BA7E22B8835B000497F4 /* MDRunloopVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1411BA7C22B8835B000497F4 /* MDRunloopVC.xib */; };
 		141501771DB5D31600D1737C /* MD_Runtime_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141501761DB5D31600D1737C /* MD_Runtime_VC.xib */; };
 		1415017E1DB621E100D1737C /* MD_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415017D1DB621E100D1737C /* MD_Model.m */; };
 		1415036C1DB623D500D1737C /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 141502C71DB623D500D1737C /* Icon-60@2x.png */; };
@@ -242,6 +246,8 @@
 		14B1329220045F45009F5A36 /* MD_CALayer_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B1329020045F45009F5A36 /* MD_CALayer_VC.m */; };
 		14B1329320045F45009F5A36 /* MD_CALayer_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B1329120045F45009F5A36 /* MD_CALayer_VC.xib */; };
 		14B16DBC1D9E474600659FA8 /* MD_NSRange_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */; };
+		14C1F67E22C31C43005A364B /* MD_CF_PageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C1F67C22C31C43005A364B /* MD_CF_PageVC.m */; };
+		14C1F67F22C31C43005A364B /* MD_CF_PageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C1F67D22C31C43005A364B /* MD_CF_PageVC.xib */; };
 		14C8338B1DB474A0009363F9 /* NSDate+Tpages.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833711DB474A0009363F9 /* NSDate+Tpages.m */; };
 		14C8338C1DB474A0009363F9 /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833731DB474A0009363F9 /* NSIndexSet+Convenience.m */; };
 		14C8338D1DB474A0009363F9 /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C833751DB474A0009363F9 /* NSMutableArray+Extension.m */; };
@@ -261,8 +267,6 @@
 		14D3ADE51DF7C387001DED27 /* MD_NSException_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D3ADE31DF7C387001DED27 /* MD_NSException_VC.xib */; };
 		14D5AA211DBEF7CB00085365 /* MD_NSRunLoop_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5AA1F1DBEF7CB00085365 /* MD_NSRunLoop_VC.m */; };
 		14D5AA221DBEF7CB00085365 /* MD_NSRunLoop_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D5AA201DBEF7CB00085365 /* MD_NSRunLoop_VC.xib */; };
-		14D5AA271DBEF8B000085365 /* MD_CFRunLoop_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D5AA251DBEF8B000085365 /* MD_CFRunLoop_VC.m */; };
-		14D5AA281DBEF8B000085365 /* MD_CFRunLoop_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D5AA261DBEF8B000085365 /* MD_CFRunLoop_VC.xib */; };
 		14DE61CF1DE5A0AA001A9968 /* MyString.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DE61CE1DE5A0AA001A9968 /* MyString.m */; };
 		14DE61D21DE5A443001A9968 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DE61D11DE5A443001A9968 /* NSObject+Swizzle.m */; };
 		14F1F2131D1140F30059EDC1 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1F2121D1140F30059EDC1 /* libresolv.tbd */; };
@@ -609,6 +613,13 @@
 		140D50E11DB9BC7F00E5D717 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		140D50E61DB9D71000E5D717 /* MD_ModelToJSON_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_ModelToJSON_VC.h; sourceTree = "<group>"; };
 		140D50E71DB9D71000E5D717 /* MD_ModelToJSON_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_ModelToJSON_VC.m; sourceTree = "<group>"; };
+		1411BA7422B88050000497F4 /* BJRunLoopHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJRunLoopHelper.m; sourceTree = "<group>"; };
+		1411BA7522B88050000497F4 /* BJThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJThread.h; sourceTree = "<group>"; };
+		1411BA7622B88050000497F4 /* BJThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJThread.m; sourceTree = "<group>"; };
+		1411BA7722B88050000497F4 /* BJRunLoopHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJRunLoopHelper.h; sourceTree = "<group>"; };
+		1411BA7A22B8835B000497F4 /* MDRunloopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRunloopVC.h; sourceTree = "<group>"; };
+		1411BA7B22B8835B000497F4 /* MDRunloopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDRunloopVC.m; sourceTree = "<group>"; };
+		1411BA7C22B8835B000497F4 /* MDRunloopVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MDRunloopVC.xib; sourceTree = "<group>"; };
 		141501761DB5D31600D1737C /* MD_Runtime_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_Runtime_VC.xib; sourceTree = "<group>"; };
 		141501781DB5FDDE00D1737C /* runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = runtime.h; sourceTree = "<group>"; };
 		1415017C1DB621E100D1737C /* MD_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_Model.h; sourceTree = "<group>"; };
@@ -834,6 +845,9 @@
 		14B16DBB1D9E474600659FA8 /* MD_NSRange_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRange_VC.m; sourceTree = "<group>"; };
 		14B16DBD1D9E4B9100659FA8 /* NSRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSRange.h; sourceTree = "<group>"; };
 		14BA1C931DE833CB00FF668A /* MyIOSDevelopTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyIOSDevelopTest.entitlements; sourceTree = "<group>"; };
+		14C1F67B22C31C43005A364B /* MD_CF_PageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MD_CF_PageVC.h; sourceTree = "<group>"; };
+		14C1F67C22C31C43005A364B /* MD_CF_PageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MD_CF_PageVC.m; sourceTree = "<group>"; };
+		14C1F67D22C31C43005A364B /* MD_CF_PageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MD_CF_PageVC.xib; sourceTree = "<group>"; };
 		14C833701DB474A0009363F9 /* NSDate+Tpages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Tpages.h"; sourceTree = "<group>"; };
 		14C833711DB474A0009363F9 /* NSDate+Tpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Tpages.m"; sourceTree = "<group>"; };
 		14C833721DB474A0009363F9 /* NSIndexSet+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Convenience.h"; sourceTree = "<group>"; };
@@ -869,9 +883,6 @@
 		14D5AA1E1DBEF7CB00085365 /* MD_NSRunLoop_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_NSRunLoop_VC.h; sourceTree = "<group>"; };
 		14D5AA1F1DBEF7CB00085365 /* MD_NSRunLoop_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_NSRunLoop_VC.m; sourceTree = "<group>"; };
 		14D5AA201DBEF7CB00085365 /* MD_NSRunLoop_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_NSRunLoop_VC.xib; sourceTree = "<group>"; };
-		14D5AA241DBEF8B000085365 /* MD_CFRunLoop_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD_CFRunLoop_VC.h; sourceTree = "<group>"; };
-		14D5AA251DBEF8B000085365 /* MD_CFRunLoop_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD_CFRunLoop_VC.m; sourceTree = "<group>"; };
-		14D5AA261DBEF8B000085365 /* MD_CFRunLoop_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MD_CFRunLoop_VC.xib; sourceTree = "<group>"; };
 		14DE61CD1DE5A0AA001A9968 /* MyString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyString.h; sourceTree = "<group>"; };
 		14DE61CE1DE5A0AA001A9968 /* MyString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyString.m; sourceTree = "<group>"; };
 		14DE61D01DE5A443001A9968 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
@@ -1570,6 +1581,20 @@
 			path = "模型转换";
 			sourceTree = "<group>";
 		};
+		1411BA7322B88050000497F4 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				1411BA7722B88050000497F4 /* BJRunLoopHelper.h */,
+				1411BA7422B88050000497F4 /* BJRunLoopHelper.m */,
+				1411BA7522B88050000497F4 /* BJThread.h */,
+				1411BA7622B88050000497F4 /* BJThread.m */,
+				1411BA7A22B8835B000497F4 /* MDRunloopVC.h */,
+				1411BA7B22B8835B000497F4 /* MDRunloopVC.m */,
+				1411BA7C22B8835B000497F4 /* MDRunloopVC.xib */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
 		141502C51DB623D500D1737C /* LocalResource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1983,16 +2008,6 @@
 			path = NSRunLoop;
 			sourceTree = "<group>";
 		};
-		14D5AA231DBEF89300085365 /* CFRunLoop */ = {
-			isa = PBXGroup;
-			children = (
-				14D5AA241DBEF8B000085365 /* MD_CFRunLoop_VC.h */,
-				14D5AA251DBEF8B000085365 /* MD_CFRunLoop_VC.m */,
-				14D5AA261DBEF8B000085365 /* MD_CFRunLoop_VC.xib */,
-			);
-			path = CFRunLoop;
-			sourceTree = "<group>";
-		};
 		14F1967D1E57121600211A01 /* MyIOSDevelopTest-UnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2059,8 +2074,10 @@
 		14FAA39D1D9507C9002D81CC /* CoreFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				14D5AA231DBEF89300085365 /* CFRunLoop */,
 				14FAA39E1D9507C9002D81CC /* CFBase.h */,
+				14C1F67B22C31C43005A364B /* MD_CF_PageVC.h */,
+				14C1F67C22C31C43005A364B /* MD_CF_PageVC.m */,
+				14C1F67D22C31C43005A364B /* MD_CF_PageVC.xib */,
 			);
 			path = CoreFoundation;
 			sourceTree = "<group>";
@@ -3371,6 +3388,7 @@
 		14FAA58D1D9507CA002D81CC /* 多线程 */ = {
 			isa = PBXGroup;
 			children = (
+				1411BA7322B88050000497F4 /* RunLoop */,
 				14FAA58E1D9507CA002D81CC /* GCD */,
 				14FAA5961D9507CA002D81CC /* group.h */,
 				14FAA5971D9507CA002D81CC /* NSLock.h */,
@@ -3774,6 +3792,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -3879,6 +3898,7 @@
 				14FAA7731D9507CB002D81CC /* MDWebviewUserAgentViewController.xib in Resources */,
 				141503A81DB623D500D1737C /* playing25@2x.png in Resources */,
 				141503C41DB623D500D1737C /* playing50@2x.png in Resources */,
+				1411BA7E22B8835B000497F4 /* MDRunloopVC.xib in Resources */,
 				141503D91DB623D500D1737C /* navigationbar_friendsearch@2x.png in Resources */,
 				141503EA1DB623D500D1737C /* tabbar_profile_selected@2x.png in Resources */,
 				14FAA7FA1D9507CB002D81CC /* my.plist in Resources */,
@@ -3904,6 +3924,7 @@
 				141503C31DB623D500D1737C /* playing4@2x.png in Resources */,
 				141503F11DB623D500D1737C /* CoteDIvoire.png in Resources */,
 				14FAA75A1D9507CA002D81CC /* MD_FreeTest_VC.xib in Resources */,
+				14C1F67F22C31C43005A364B /* MD_CF_PageVC.xib in Resources */,
 				14FAA7A81D9507CB002D81CC /* provinces_cities.plist in Resources */,
 				141503FF1DB623D500D1737C /* NorthKorea.png in Resources */,
 				14FAA7FD1D9507CB002D81CC /* Settings.bundle in Resources */,
@@ -3950,7 +3971,6 @@
 				141504031DB623D500D1737C /* Slovakia.png in Resources */,
 				1415038D1DB623D500D1737C /* Shapes.jpg in Resources */,
 				141504011DB623D500D1737C /* Portugal.png in Resources */,
-				14D5AA281DBEF8B000085365 /* MD_CFRunLoop_VC.xib in Resources */,
 				141503F81DB623D500D1737C /* Holland.png in Resources */,
 				141503CE1DB623D500D1737C /* playing5@2x.png in Resources */,
 				141503861DB623D500D1737C /* icon.jpg in Resources */,
@@ -4138,7 +4158,6 @@
 				14FAA75B1D9507CA002D81CC /* MD_AFNetwork_VC.m in Sources */,
 				14FAA7DA1D9507CB002D81CC /* MD_NSObject_VC.m in Sources */,
 				14FAA7451D9507CA002D81CC /* MD_NSInvocation_VC.m in Sources */,
-				14D5AA271DBEF8B000085365 /* MD_CFRunLoop_VC.m in Sources */,
 				14FAA7841D9507CB002D81CC /* URLCache.m in Sources */,
 				14FAA7601D9507CA002D81CC /* CustomURLProtocol.m in Sources */,
 				14FAA74E1D9507CA002D81CC /* MD_NSTimer_VC2.m in Sources */,
@@ -4189,6 +4208,7 @@
 				14FAA7751D9507CB002D81CC /* MDWVViewController.m in Sources */,
 				14FAA8B11D9507CB002D81CC /* ReachabilityManager.m in Sources */,
 				14C833931DB474A0009363F9 /* UICollectionView+Convenience.m in Sources */,
+				1411BA7922B88050000497F4 /* BJThread.m in Sources */,
 				14FAA76E1D9507CB002D81CC /* MD_Socket_Server_VC.m in Sources */,
 				14FAA7E21D9507CB002D81CC /* MD_PhotoLibrary_GridVC.m in Sources */,
 				140CAA9E1DACA8EF009EE8A7 /* UIImageView+AFNetworking.m in Sources */,
@@ -4229,6 +4249,7 @@
 				14C833901DB474A0009363F9 /* NSString+Sha1.m in Sources */,
 				140CAAA71DACA8EF009EE8A7 /* MASConstraintMaker.m in Sources */,
 				14FAA7551D9507CA002D81CC /* TouchDrawView.m in Sources */,
+				1411BA7D22B8835B000497F4 /* MDRunloopVC.m in Sources */,
 				14FAA7ED1D9507CB002D81CC /* MD_GCD_group_VC.m in Sources */,
 				14FAA7F61D9507CB002D81CC /* MD_NSThread_Game_VC.m in Sources */,
 				14C833971DB474A0009363F9 /* UIView+STKit.m in Sources */,
@@ -4245,6 +4266,7 @@
 				14DE61D21DE5A443001A9968 /* NSObject+Swizzle.m in Sources */,
 				14FAA8ED1D9507CB002D81CC /* ZTCameraView.m in Sources */,
 				14FAA76A1D9507CA002D81CC /* MD_Socket_SendFile_TVC.m in Sources */,
+				1411BA7822B88050000497F4 /* BJRunLoopHelper.m in Sources */,
 				14FAA8E81D9507CB002D81CC /* MD_UICustom_VC.m in Sources */,
 				14D3ADE41DF7C387001DED27 /* MD_NSException_VC.m in Sources */,
 				14FAA7561D9507CA002D81CC /* TouchDrawViewController.m in Sources */,
@@ -4293,6 +4315,7 @@
 				14FAA8031D9507CB002D81CC /* MDKVO_View.m in Sources */,
 				1415042A1DB62FF100D1737C /* DGCPlaceInfo.m in Sources */,
 				14AA41B21F6B8A4A0048C6B5 /* XTJSonClass.m in Sources */,
+				14C1F67E22C31C43005A364B /* MD_CF_PageVC.m in Sources */,
 				1415042B1DB62FF100D1737C /* DGCPostInfo.m in Sources */,
 				14FAA7AC1D9507CB002D81CC /* MDUIScrollView3ViewController.m in Sources */,
 				14FAA7861D9507CB002D81CC /* MD_RNCURLCache_VC.m in Sources */,

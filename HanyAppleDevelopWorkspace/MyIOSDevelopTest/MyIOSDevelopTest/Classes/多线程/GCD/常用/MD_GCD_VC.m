@@ -315,7 +315,7 @@
  如果循环里面执行的代码相互独立，可以用dispatch_apply结合并行线程队列，提高效能
  会创建新的线程，并发执行
  size_t：一种用来记录大小的“整形”数据类型，sizeof(xxx)返回的就是size_t 这里相当于当前循环次数
- dispatch_apply和普通for循环一样，执行完才会返回，所以会阻塞进程
+ 无论是在串行队列，还是异步队列中，dispatch_apply 都会等待全部任务执行完毕
  正确使用方法：为了不阻塞主线程，一般把dispatch_apply放在并行队列中调用，然后执行完成后通知主线程
  */
 -(void)test_apply{
@@ -353,8 +353,9 @@
 /*
  必须为dispatch_queue_t创建的并行队列才有效，其他队列相当于dispatch_async
  
- 隔断方法：当前面的写入操作全部完成之后，再执行后面的读取任务。
+ 隔断方法：当前面的写入操作全部完成之后，再执行后面的读取任务。在执行完栅栏前面的操作之后，才执行栅栏操作，最后再执行栅栏后边的操作
  当然也可以用Dispatch Group和dispatch_set_target_queue,只是比较而言，dispatch_barrier_async会更加顺滑
+ 
  */
 -(void)test_barrier{
 
@@ -404,6 +405,9 @@
 }
 
 #pragma mark - dispatch_async_f
+/*
+ 把函数添加到队列 对应dispatch_async 第二个参数是传给这个函数的参数
+ */
 -(void)test_async_f{
 
   dispatch_queue_t queue = dispatch_queue_create("com.queue.test", DISPATCH_QUEUE_CONCURRENT);
