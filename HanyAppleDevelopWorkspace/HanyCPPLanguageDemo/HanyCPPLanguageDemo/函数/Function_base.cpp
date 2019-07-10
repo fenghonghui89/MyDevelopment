@@ -9,7 +9,7 @@
 #include "Function_base.hpp"
 #include <iostream>
 #include <stdio.h>
-#include <list.h>
+
 using namespace std;
 
 #pragma mark - *********** knowledge ***********

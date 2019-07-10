@@ -128,7 +128,7 @@ private prefix func +++ (vector: inout Vector2D) -> Vector2D {
  infix标识可以指定结合性和优先级，默认值none 100
  prefix/postfix无需指定infix，默认postfix优先
  */
-infix operator +- { associativity left precedence 140 }
+infix operator +-
 private func +- (left: Vector2D, right: Vector2D) -> Vector2D {
   return Vector2D(x: left.x + right.x, y: left.y - right.y)
 }

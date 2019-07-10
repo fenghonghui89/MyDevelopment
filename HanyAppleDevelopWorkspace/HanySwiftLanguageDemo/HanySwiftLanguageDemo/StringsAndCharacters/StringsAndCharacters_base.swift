@@ -132,15 +132,15 @@ private func kl_ExtendCharacter(){
 private func kl_CharacterCount() {
   
   let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪"
-  print("unusualMenagerie has \(unusualMenagerie.characters.count) characters")
+  print("unusualMenagerie has \(unusualMenagerie.count) characters")
   
   var word = "cafe"
-  print("the number of characters in \(word) is \(word.characters.count)")
+  print("the number of characters in \(word) is \(word.count)")
   // Prints "the number of characters in cafe is 4"
   
   word += "\u{301}"    // COMBINING ACUTE ACCENT, U+0301
   
-  print("the number of characters in \(word) is \(word.characters.count)")
+  print("the number of characters in \(word) is \(word.count)")
 }
 
 //MARK:通过index查找字符串的字符
@@ -148,10 +148,10 @@ private func kl_AccessAndChangeString(){
   
   let greeting:String = "Guten Tag!"
   var result =  greeting[greeting.startIndex] // G
-  result = greeting[greeting.characters.index(before: greeting.endIndex)] // 上一个 ! endIndex是最后一个字符的下一个位置，最好不要直接用
-  result = greeting[greeting.characters.index(after: greeting.startIndex)] // 下一个 u
+  result = greeting[greeting.index(before: greeting.endIndex)] // 上一个 ! endIndex是最后一个字符的下一个位置，最好不要直接用
+  result = greeting[greeting.index(after: greeting.startIndex)] // 下一个 u
   
-  let index = greeting.characters.index(greeting.startIndex, offsetBy: 7)//7
+  let index = greeting.index(greeting.startIndex, offsetBy: 7)//7
   result = greeting[index]// a
 //  result = greeting[String.characters.index(before: index)]//T
 //  result = greeting.characters.index(before: index);
@@ -159,7 +159,7 @@ private func kl_AccessAndChangeString(){
   print("~\(result)~")
   
   //indices 索引的集合
-  for index in greeting.characters.indices {
+  for index in greeting.indices {
     print("\(greeting[index])", terminator: "~")
   }
 }
@@ -172,15 +172,15 @@ private func kl_InsertAndRemove(){
   // welcome now equals "hello!"
   
   
-  welcome.insert(contentsOf: " there".characters, at: welcome.characters.index(before: welcome.endIndex))
+  welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
   // welcome now equals "hello there!"
   
   
-  welcome.remove(at: welcome.characters.index(before: welcome.endIndex))
+  welcome.remove(at: welcome.index(before: welcome.endIndex))
   // welcome now equals "hello there"
   
   
-  let range = welcome.characters.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+  let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
   welcome.removeSubrange(range)
   // welcome now equals "hello"
   
@@ -334,12 +334,12 @@ private func kl_unicode() {
   let dogString = "Dog‼🐶"
   
   //遍历
-  for a in dogString.characters{
+  for a in dogString{
     print(a);
   }
   print("")
   
-  for index in dogString.characters.indices {
+  for index in dogString.indices {
     print("\(dogString[index])")
   }
   print("")

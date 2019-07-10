@@ -58,7 +58,7 @@ private func func1_2() {
 //MARK:枚举字符串中的所有字符
 private func func1_3() {
   
-  for character in "Hello World".characters
+  for character in "Hello World"
   {
     print("<\(character)>");
   }

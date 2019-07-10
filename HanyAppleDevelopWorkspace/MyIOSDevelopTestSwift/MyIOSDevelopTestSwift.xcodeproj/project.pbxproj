@@ -69,16 +69,16 @@
 			isa = PBXGroup;
 			children = (
 				14FAA8F11D950EC9002D81CC /* MyIOSDevelopTestSwift */,
-				14AF34B41C7362AC007DC722 /* Products */,
+				14AF34B41C7362AC007DC722 /* 3.0 */,
 			);
 			sourceTree = "<group>";
 		};
-		14AF34B41C7362AC007DC722 /* Products */ = {
+		14AF34B41C7362AC007DC722 /* 3.0 */ = {
 			isa = PBXGroup;
 			children = (
 				14AF34B31C7362AC007DC722 /* MyIOSDevelopTestSwift.app */,
 			);
-			name = Products;
+			name = 3.0;
 			sourceTree = "<group>";
 		};
 		14FAA8F11D950EC9002D81CC /* MyIOSDevelopTestSwift */ = {
@@ -187,11 +187,12 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = 14AF34AA1C7362AC007DC722;
-			productRefGroup = 14AF34B41C7362AC007DC722 /* Products */;
+			productRefGroup = 14AF34B41C7362AC007DC722 /* 3.0 */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -375,7 +376,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyIOSDevelopTestSwift/MyDevelopmentSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -396,7 +397,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyIOSDevelopTestSwift/MyDevelopmentSwift-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

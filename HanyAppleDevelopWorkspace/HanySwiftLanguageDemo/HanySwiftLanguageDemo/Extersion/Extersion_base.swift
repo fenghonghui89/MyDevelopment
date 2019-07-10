@@ -89,7 +89,7 @@ private func func_NestedTypes(){
   
   let str:String = "Hello"
   
-  for char in str.characters {
+  for char in str {
     switch char.kind {
     case .vowel:
       print("Vowel")
