@@ -14,9 +14,6 @@
       location = "group:HanySwiftLanguageDemo/HanySwiftLanguageDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:MyIOSDevelopTest/MyIOSDevelopTest.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:MyIOSDevelopTestSwift/MyIOSDevelopTestSwift.xcodeproj">
    </FileRef>
 </Workspace>
