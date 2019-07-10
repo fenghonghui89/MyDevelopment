@@ -9,13 +9,13 @@
 import Foundation
 
 func root_Base_Assertions() {
-  kl_assert();
+    kl_assert();
 }
 
 //MARK:断言
 private func kl_assert(){
-  
-  let value = -3;
-  assert(value >= 0)
-  assert(value >= 0,"value要大于0");
+    
+    let value = -3;
+    assert(value >= 0)
+    assert(value >= 0,"value要大于0");
 }
