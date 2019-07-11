@@ -82,7 +82,7 @@ private func kl_nil(_ str:String?) {
 
 private func kl_nilString(_ paramaDic:NSDictionary?){
     
-    //****************** as?
+    //****************** as? 如果转换不成功的时候便会返回一个 nil 对象。成功的话返回可选类型值（optional）
     //有值 as?
     var dic = NSDictionary()
     dic = ["xxx":"hello"]
@@ -101,16 +101,16 @@ private func kl_nilString(_ paramaDic:NSDictionary?){
     let dicn = NSDictionary()
     
     let vn = dicn.object(forKey: "xxx") as? String
-    //  let vn1:String = dicn.objectForKey("xxx") as! String
     let vn2:String? = dicn.object(forKey: "xxx") as? String
+    //  let vn1:String = dicn.objectForKey("xxx") as! String
     //  let vn3:String! = dicn.objectForKey("xxx") as? String
     
     print(vn)//nil
-    //  print(vn1)//崩
     print(vn2)//nil
+    //  print(vn1)//崩
     //  print(vn3)//崩
     
-    //****************** as!
+    //****************** as! 强制类型转换，向下转型（Downcasting）时使用,如果转换失败会报 runtime 运行错误
     //有值 as!
     var dicy = NSDictionary()
     dicy = ["xxx":"hello"]
@@ -179,102 +179,76 @@ private func kl_ForcedUnwrapping() {
 //MARK:可选绑定
 /*
  表示：如果返回的可选包含一个值，创建一个新常量并将可选包含的值赋给它。
- 注意左边的变量不能加？!，否则会判断异常(有值但为nil)
+ 注意左边的变量不能加？!，否则会判断异常(无值会判断为有值但为nil)
  */
 private func kl_OptionalBinding(_ str:String) {
     
-    //  //***********************  有值
-    //  if let value = Int("123") {
-    //    print("有值 \(value)");//有值 123
-    //  }else{
-    //    print("无值 nil");
-    //  }
-    //
-    //  if let value:Int = Int("123") {
-    //    print("有值 \(value)");//有值 123
-    //  }else{
-    //    print("无值 nil");
-    //  }
-    //
-    //  if let value:Int? = Int("123") {
-    //    print("有值 \(value)");//有值 Optional(123)
-    //  }else{
-    //    print("无值 nil");
-    //  }
-    //
-    //  if let value:Int! = Int("123") {
-    //    print("有值 \(value)");//有值 Optional(123)
-    //  }else{
-    //    print("无值 nil");
-    //  }
-    //
-    //  //***********************  无值
-    //  if let value = Int("123x") {
-    //    print("有值 \(value)");
-    //  }else{
-    //    print("无值 nil");//无值 nil
-    //  }
-    //
-    //  if let value:Int = Int("123x") {
-    //    print("有值 \(value)");
-    //  }else{
-    //    print("无值 nil");//无值 nil
-    //  }
-    //
-    //  if let value:Int? = Int("123x") {
-    //    print("有值 \(value)");//有值 nil
-    //  }else{
-    //    print("无值 nil");
-    //  }
-    //
-    //  if let value:Int! = Int("123x") {
-    //    print("有值 \(value)");//有值 nil
-    //  }else{
-    //    print("无值 nil");
-    //  }
-    //
-    //
-    //  //***********************  可以同时判断多个
-    //  if let b = Int("123"),let bb = Int("3a") {
-    //    print("有值 \(b) \(bb)");
-    //  }else{
-    //    print("无值 nil");
-    //  }
+    //***********************  有值
+    if let value = Int("123") {
+        print("有值 \(value)");//有值 123
+    }else{
+        print("无值 nil");
+    }
     
-    //***********************  参数传值 无值时
-    if let value = Int(str) {
+    if let value:Int = Int("123") {
+        print("有值 \(value)");//有值 123
+    }else{
+        print("无值 nil");
+    }
+    
+    if let value:Int? = Int("123") {
+        print("有值 \(value)");//有值 Optional(123)
+    }else{
+        print("无值 nil");
+    }
+    
+    if let value:Int! = Int("123") {
+        print("有值 \(value)");//有值 Optional(123)
+    }else{
+        print("无值 nil");
+    }
+    
+    //***********************  无值
+    if let value = Int("123x") {
         print("有值 \(value)");
     }else{
         print("无值 nil");//无值 nil
     }
     
-    if let value:Int = Int(str) {
+    if let value:Int = Int("123x") {
         print("有值 \(value)");
     }else{
         print("无值 nil");//无值 nil
     }
     
-    if let value:Int? = Int(str) {
+    if let value:Int? = Int("123x") {
         print("有值 \(value)");//有值 nil
     }else{
         print("无值 nil");
     }
     
-    if let value:Int? = Int(str) {
+    if let value:Int! = Int("123x") {
         print("有值 \(value)");//有值 nil
     }else{
         print("无值 nil");
     }
     
+    
+    //***********************  可以同时判断多个
+    if let b = Int("123"),let bb = Int("3a") {
+        print("有值 \(b) \(bb)");
+    }else{
+        print("无值 nil");
+    }
 }
 
 
-//MARK:隐式解析可选
+//MARK:自动解析
 /*
  表示：第一次被赋值之后，可以确定一个可选总会有值
- 如果一个变量之后可能变成nil的话请不要使用隐式解析可选。
+ 如果一个变量之后可能变成nil的话请不要使用自动解析。
  如果你需要在变量的生命周期中判断是否是nil的话，请使用普通可选类型。
- 注：隐式可选也是可选类型
+ 注：自动解析也是可选类型
  */
 private func kl_ImplicitlyUnwrappedOptionals(){
     
