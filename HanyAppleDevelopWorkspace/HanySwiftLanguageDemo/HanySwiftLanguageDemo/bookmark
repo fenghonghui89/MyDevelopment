@@ -1,6 +1,6 @@
 等号左右两边要有空格
 数值可读性，例如120_000_000
-字符串不带@
+字符串不带@，可带#
 字符串比较很简单，可以直接 == > <
 新增元组类型，可选类型
 正常情况下溢出会过不了编译，如果要过编译，要用加&运算符，例如a&*b
@@ -24,6 +24,7 @@ as 向下转型
 Swift为不确定类型提供了两种特殊类型别名：
 AnyObject可以代表任何class类型的实例
 Any可以表示任何类型，除了方法类型（function types）
+AnyHashable主要是用在Dictionary和Set需要的键的类型中，因为键要求是遵循Hashable protocol的类型
 
 swift没有readwrite和readonly 对应有let var
 

@@ -189,24 +189,24 @@ private func kl_OptionalBinding(_ str:String) {
     }else{
         print("无值 nil");
     }
-    
+
     if let value:Int = Int("123") {
         print("有值 \(value)");//有值 123
     }else{
         print("无值 nil");
     }
-    
+
     if let value:Int? = Int("123") {
         print("有值 \(value)");//有值 Optional(123)
     }else{
         print("无值 nil");
     }
-    
-    if let value:Int! = Int("123") {
-        print("有值 \(value)");//有值 Optional(123)
-    }else{
-        print("无值 nil");
-    }
+
+//    if let value:Int! = Int("123") {
+//        print("有值 \(value)");//有值 Optional(123)
+//    }else{
+//        print("无值 nil");
+//    }
     
     //***********************  无值
     if let value = Int("123x") {
@@ -214,24 +214,24 @@ private func kl_OptionalBinding(_ str:String) {
     }else{
         print("无值 nil");//无值 nil
     }
-    
+
     if let value:Int = Int("123x") {
         print("有值 \(value)");
     }else{
         print("无值 nil");//无值 nil
     }
-    
+
     if let value:Int? = Int("123x") {
         print("有值 \(value)");//有值 nil
     }else{
         print("无值 nil");
     }
-    
-    if let value:Int! = Int("123x") {
-        print("有值 \(value)");//有值 nil
-    }else{
-        print("无值 nil");
-    }
+//
+//    if let value:Int! = Int("123x") {
+//        print("有值 \(value)");//有值 nil
+//    }else{
+//        print("无值 nil");
+//    }
     
     
     //***********************  可以同时判断多个

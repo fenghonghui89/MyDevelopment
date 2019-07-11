@@ -10,7 +10,7 @@ import Foundation
 
 func root_CollectionTypes() {
   
-//  root_CollectionTypes_Array()
+  root_CollectionTypes_Array()
 //  root_CollectionTypes_dictionary()
 //  root_CollectionTypes_Set()
 }
