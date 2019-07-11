@@ -71,10 +71,15 @@ private func kl_print(){
     
     let strs = ["a","b","c","d","e"]
     for char in strs {
-        print(char, terminator: "~")
+        print(char, terminator: "~")//不会换行
     }//a~b~c~d~e~
     
     print("aa","bb","cc", separator: "_", terminator: "~")//aa_bb_cc~
+    
+    let a = 33;
+    print("a is \(a)");//a is 33
+    print(#"a is \#(a)"#);//a is 33
+    print(#"a is \(a)"#);//a is \(a)
 }
 
 //MARK:字符串和字符的连接
