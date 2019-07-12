@@ -13,7 +13,7 @@ func root_Closures_base() {
 }
 
 //MARK:- < 推导例子 闭包的写法 尾随闭包 >
-//MARK:推导例子 - 排序
+//MARK:- 推导例子 - 排序
 private func func1() {
     
     let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"];
@@ -21,13 +21,10 @@ private func func1() {
     var reversed:[String];
     
     //方法1：函数做参数
-    func backwards(_ s1: String, s2: String) -> Bool {
+    func backwards(s1: String, s2: String) -> Bool {
         return s1 < s2
     }
-    
     reversed = names.sorted(by: backwards);
-    
-    
     
     //方法2：闭包
     reversed = names.sorted(by: {(s1: String, s2: String) -> Bool in
@@ -65,7 +62,7 @@ private func func1() {
 
 
 
-//MARK:闭包的写法 - 转换数字为对应英文
+//MARK:- 闭包的写法 - 转换数字为对应英文
 /*
  
  
@@ -87,12 +84,11 @@ private func func_closures() {
     let numbers = [16, 510, 58];
     
     
-    let strings = numbers.map {
-        (number) -> String in //参数 返回值（参数名自己定，类型系统会自己推导）
+    let strings = numbers.map { (number) -> String in //参数 返回值（参数名自己定，类型系统会自己推导）
         
         //函数体
         var output = "";
-        var num = number;
+        var num = number;//用临时变量方便修改
         while num > 0 {
             output = digitNames[num % 10]! + output;
             num /= 10;
@@ -104,20 +100,24 @@ private func func_closures() {
 }
 
 
-//MARK:trailing闭包（尾随闭包）
+//MARK:- trailing闭包（尾随闭包）
 private func func_trailingClosures() {
     
     //标准 fun(闭包)
-    func2_1({print("~~")});
+    func2_1(block:{print("~~")});
     
     //trailing闭包 fun()闭包 当函数的最后一个参数是闭包时可用
-    func2_1(){print("@@@")};
+    func2_1(){
+        print("@@@")
+    };
     
     //无参数可以把()去掉
-    func2_1{print("@@@")};
+    func2_1{
+        print("@@@");
+    };
 }
 
-private func func2_1(_ block:()->()){
+private func func2_1(block:()->()){
     for _ in 0...2 {
         block();
     }
@@ -128,27 +128,25 @@ private func func3_result() {
     
     
     //捕获值
-    var function = func3_2_2(forIncrement: 2);//~0
-    var result = function(10);//12
-    result = function(10);//24
+    var function = func3_2_2(amount: 2);//~0
+    var result = function(10);//12=0+2+10
+    result = function(10);//24=12+2+10
     print(result);
     
     //新的变量拥有新的引用 跟上面的不相关
-    function = func3_2_2(forIncrement: 7);//~0
-    result = function(7);//14
-    result = function(7);//28
+    function = func3_2_2(amount: 7);//~0
+    result = function(7);//14=0+7+7
+    result = function(7);//28=14+7+7
     print(result);
     
 }
 
-
-//MARK:捕获值
-private func func3_2_2(forIncrement amount:Int)->((Int)->Int){
+private func func3_2_2(amount:Int)->((Int)->Int){
     
     var runningTotal:Int = 0;
     print("~\(runningTotal)")//只输出1次
     
-    func func3_2_2_base(_ value:Int) -> Int {
+    func func3_2_2_base(value:Int) -> Int {
         runningTotal += amount;//捕获runningTotal和amount的值
         runningTotal += value;
         return runningTotal;
@@ -159,7 +157,7 @@ private func func3_2_2(forIncrement amount:Int)->((Int)->Int){
 
 
 //MARK:- <用闭包定义变量的两种方式 做函数参数 做返回值 做属性>
-//MARK:用闭包定义变量的两种方式
+//MARK:- 用闭包定义变量的两种方式
 private func func4_1() {
     
     let name:String = {
@@ -179,7 +177,7 @@ private func func4_1() {
     
 }
 
-//MARK:闭包做返回值
+//MARK:- 闭包做返回值
 private func funcResult5() {
     
     let result:String = func5_1()();
@@ -198,8 +196,7 @@ private func func5_1() -> (()->String) {
     }
     
     //或者这样
-    bb = {
-        ()->String in
+    bb = {()->String in
         return "name1111~"
     }
     
@@ -208,16 +205,10 @@ private func func5_1() -> (()->String) {
 }
 
 //返回值 稍复杂
-private func func5_2base(name:String,age:Int) -> (reName:String,reAge:String) {
-    return(name,String(age));
-}
-
 func func5_2() -> ((String,Int)->(String,String)) {
     
     var bb:(String,Int)->(String,String)
-    
-    bb = {
-        (str:String,num:Int)->(String,String)in
+    bb = {(str:String,num:Int)->(String,String)in
         return(str,String(num));
     }
     
@@ -228,36 +219,39 @@ func func5_2() -> ((String,Int)->(String,String)) {
     return bb;
 }
 
-//MARK:闭包做参数
+private func func5_2base(name:String,age:Int) -> (reName:String,reAge:String) {
+    return(name,String(age));
+}
+
+//MARK:- 闭包做参数
 private func func5_4Result() {
     
-    let bb:(Int)->Int = {
-        (num:Int)->Int in
+    let bb:(Int)->Int = {(num:Int)->Int in
         return num*num;
     }
     print(bb(5));
     
-    let result = func5_4_1(bb);
+    let result = func5_4_1(block:bb);
     print(result);
     
     
-    func5_4_2({print("hello~")});
+    func5_4_2(block:{print("hello~")});
     func5_4_2{print("~~~~")}
     
 }
 
-private func func5_4_1(_ block:(Int)->Int) -> Int{
+private func func5_4_1(block:(Int)->Int) -> Int{
     let result = block(2);
     return result;
 }
 
-private func func5_4_2(_ block:()->()){
+private func func5_4_2(block:()->()){
     for _ in 0...2 {
         block()
     }
 }
 
-//MARK:闭包做属性
+//MARK:- 闭包做属性
 private func kl_blockParama(){
     
     let ftc = FTC()
@@ -290,31 +284,51 @@ private func kl_blockParama(){
     }
 }
 
-
-//MARK:- < @noescape >
+//MARK:- < @noescape 非逃逸闭包(已废弃) @escaping 逃逸闭包 @autoclosure 自动闭包 >
 /*
- 修饰的闭包在函数结束后也会随之结束，用于告诉编译器优化性能
+ @noescape 非逃逸闭包
+ 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则开发者可以将这个闭包声明成非逃逸的，即告诉系统当此函数结束后，这个闭包的生命周期也将结束，这样做的好处是可以提高代码性能，将闭包声明成非逃逸的类型使用@noescape关键。
  
- 什么情况下一个闭包参数会跳出函数的生命期呢？
- 很简单，我们在函数实现内，将一个闭包用 dispatch_async嵌套，这样这个闭包就会在另外一个线程中存在，从而跳出了当前函数的生命期。
- 这样做主要是可以帮助编译器做性能的优化。
+ @escaping 逃逸闭包
+ 逃逸的闭包常用于异步的操作，这类函数会在异步操作开始之后立刻返回，但是闭包直到异步操作结束后才会被调用。例如这个闭包是异步处理一个网络请求，只有当请求结束后，闭包的生命周期才结束。当闭包作为函数的参数传入时，很有可能这个闭包在函数返回之后才会被执行。
+ 对于可以逃逸的闭包参数，其实现内部必须显式使用 self 引用，而非逃逸闭包参数则可以隐式使用 self 引用。
+ 
+ @autoclosure 自动闭包
+ (1)默认非逃逸
+ (2)闭包也可以被自动的生成，这种闭包被称为自动闭包，自动闭包自动将表达式封装成闭包。
+ (3)自动闭包不接收任何参数，被调用时会返回被包装在其中的表达式的值。
+ (4)当闭包作为函数参数时，可以将参数标记 @autoclosure 来接收自动闭包。
+ (5)自动闭包能够延迟求值,因为代码段不会被执行直到你调用这个闭包。
+ (6)自动闭包默认是非逃逸的，如果要使用逃逸的闭包，需要手动声明: @autoclosure @escaping
+ @autoclosure 并不支持带有输入参数的写法，也就是说只有形如 () -> T 的参数才能使用这个特性进行简化。另外因为调用者往往很容易忽视 @autoclosure 这个特性，所以在写接受 @autoclosure 的方法时还请特别小心，如果在容易产生歧义或者误解的时候，还是使用完整的闭包写法会比较好。
+ 
  */
-private func func_noescape() {
+
+
+//MARK:@escaping 逃逸闭包
+private func someFunctionWithNonescapingClosure(closure: () -> Void) {
+    closure()
+}
+
+var completionHandlers: [() -> Void] = []
+private func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+    //eg.网络回调
+    completionHandlers.append(completionHandler)
+}
+
+private class SomeClass {
     
-    let instance = SomeClass()
+    var x = 10
     
-    instance.doSomething()
-    print(instance.x)
-    // Prints "200"
+    func doSomething() {
+        someFunctionWithNonescapingClosure { x = 200 }//默认是noescape标识闭包 可以隐式引用self
+        someFunctionWithEscapingClosure { self.x = 100 }//逃逸闭包内部必须显式调用self
+    }
     
-    completionHandlers.first?()
-    print(instance.x)
-    // Prints "100"
     
 }
 
-//MARK:- < 自动闭包 @autoclosure @autoclosure(escaping) >
-//自动闭包 @autoclosure
+//MARK:@autoclosure 自动闭包
 private func func_autoClosures(){
     
     var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
@@ -341,10 +355,12 @@ private func func_autoClosures(){
     // Prints "4"
     
     
-    //显示闭包
+    
+    
+    //显式闭包
     // customersInLine is ["Alex", "Ewa", "Barry", "Daniella"]
-    func serve(customer customerProvider: () -> String) {
-        print("Now serving \(customerProvider())!")
+    func serve(customer: () -> String) {
+        print("Now serving \(customer())!")
     }
     
     serve(customer: {
@@ -353,44 +369,22 @@ private func func_autoClosures(){
     // Prints "Now serving Alex!"
     
     
-    //@autoclosure（标识后可以不用写大括号，尽量少用，因为可能会使逻辑难以理解）
-    //  // customersInLine is ["Ewa", "Barry", "Daniella"]
-    //  func serve(customer customerProvider: @autoclosure () -> String) {
-    //    print("Now serving \(customerProvider())!")
-    //  }
-    //  serve(customer: customersInLine.removeAtIndex(0))
-    //  // Prints "Now serving Ewa!"
+    
+    
+    //@autoclosure
+    // customersInLine is ["Ewa", "Barry", "Daniella"]
+    func serve1(customer: @autoclosure () -> String) {
+        print("Now serving \(customer())!")
+    }
+    serve1(customer: "hhhh~");
+    // Prints "hhhh~"
     
 }
 
-//@autoclosure(escaping) 未看得明。。。
+
 
 
 //MARK:- ****************************** class ******************************
-
-//@noescape
-private func someFunctionWithNonescapingClosure(_ closure: () -> Void) {
-    closure()
-}
-
-var completionHandlers: [() -> Void] = []
-private func someFunctionWithEscapingClosure(_ completionHandler: @escaping () -> Void) {
-    completionHandlers.append(completionHandler)
-}
-
-private class SomeClass {
-    
-    var x = 10
-    
-    func doSomething() {
-        someFunctionWithNonescapingClosure { x = 200 }//用@noescape标识闭包 可以隐式引用self
-        someFunctionWithEscapingClosure { self.x = 100 }
-    }
-    
-    
-}
-
-
 //闭包做属性
 private typealias rootblock = (_ value:Int)->Void
 private typealias myblock = (_ value:Bool,_ block:rootblock)->String
@@ -402,9 +396,7 @@ private class FTC{
     
     //eg3
     init(){
-        self.block1 = {
-            (flag:Bool,block:rootblock)->String in
-            
+        self.block1 = {(flag:Bool,block:rootblock)->String in
             print("值:\(flag)")
             block(13)
             return "a"
