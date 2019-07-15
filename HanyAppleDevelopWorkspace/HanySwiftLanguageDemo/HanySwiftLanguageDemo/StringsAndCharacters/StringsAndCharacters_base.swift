@@ -67,7 +67,7 @@ private func kl_print(){
     print(message);
     print("\(t1)  \(t2) \(t3) \(t4) \(t5)");
     print(t1,t2,t3,t4,t5);
-    print(t5+" "+t6);
+    print(t5+" "+t6);//+只能用于连接字符串
     
     let strs = ["a","b","c","d","e"]
     for char in strs {

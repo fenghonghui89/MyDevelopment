@@ -89,7 +89,7 @@ private func func1_4(){
     }
     
     for (index, value) in array.enumerated() where index > 2 && value > 3 {
-        print("下标:\(index), 值：\(value)")
+        print("下标:\(index), 值：\(value)")// 4 5 6
     }
     
     

@@ -107,7 +107,7 @@ private func func4_5() {
         str += "but also is int";
     }
     
-    print(str);
+    print(str);//the number 5 is a prime number but also is int
     
     
 }
