@@ -23,8 +23,7 @@ class SuperClass{
     var parents:Parents?
     var ssss:String = {
         return ""
-        
-    }()
+    }()//用闭包定义变量的两种方式
     
     
     
@@ -61,7 +60,7 @@ class SuperClass{
     
     lazy var lazyBlock1:String = {
         return self.storeProperty;
-    }()
+    }()//用闭包定义变量的两种方式
     
     //--- 类属性 类方法---
     //class修饰
@@ -81,7 +80,7 @@ class SuperClass{
     
     static var classProperty1:String = {
         return "classProperty1"
-    }()
+    }()//用闭包定义变量的两种方式
     
     static var cp2:(_ value:String)->String = {
         (value) -> String in

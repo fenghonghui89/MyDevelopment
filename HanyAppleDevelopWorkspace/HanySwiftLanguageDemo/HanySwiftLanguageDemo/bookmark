@@ -31,7 +31,7 @@ swift没有readwrite和readonly 对应有let var
 /*
 类 关键字
 
-mutating
+mutating(允许改变隐藏参数self的属性)
 类不能用这个关键字 因为不像struct/enum有变异方法 也没必要有变异方法
 
 final
@@ -145,14 +145,14 @@ indirect
 
 在Objective-C中，对象的引用可以是值为NULL的原始指针（同样也是Objective-C中的nil）。而在Swift中，所有的值–包括结构体与对象的引用–都被保证为非空
 
-闭包与 blocks 语义上想通但是在一个地方不同：变量是可以直接改变的，而不是像 block 那样会拷贝变量。换句话说，Swift 中变量的默认行为与 Objective-C 中 __block 变量一致。
+闭包与 blocks 语义上相同但是在一个地方不同：变量是可以直接改变的，而不是像 block 那样会拷贝变量。换句话说，Swift 中变量的默认行为与 Objective-C 中 __block 变量一致。
 
 
 dynamic
 用于oc runtime
 
 
-module是个代码发布单元(如Framework或者应用程序), 通过使用import关键字导入使用
+module是代码发布单元(如Framework或者应用程序), 通过使用import关键字导入使用
 所有 Objective-C 的对象都是AnyObject类型的
 oc层触发的异常必须在oc层处理 不能抛给swift处理
 
