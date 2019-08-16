@@ -52,7 +52,7 @@ class SuperClass{
         
     };
     
-    //延时加载型
+    //延时加载型(也是存储型属性的一种)
     lazy var lazyProperty:String = "lazyProperty";
     lazy var lazyBlock:()->String = {
         return self.storeProperty;

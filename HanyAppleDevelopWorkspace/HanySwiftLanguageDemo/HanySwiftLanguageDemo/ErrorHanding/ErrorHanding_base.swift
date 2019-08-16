@@ -5,6 +5,10 @@
 //  Created by 冯鸿辉 on 16/7/4.
 //  Copyright © 2016年 MD. All rights reserved.
 //异常捕获
+//do catch try throws throw defer guard
+//func fetchDataFromServer()throws -> String
+//try? - 方便处理所有异常  try! - ???
+//try? or try! 不需要do catch
 
 import Foundation
 
@@ -145,4 +149,31 @@ private func doSomething()->String?{
 //MARK:- fatalError 无条件打印日志并终止执行
 private func func_fatalError() {
   fatalError("init(coder:) has not been implemented")
+}
+
+
+//MARK:- 例子 error.code 不能用泛型因为泛型不支持非对象类型
+enum TestEnum:Int {
+    case first = 0,
+    second = 1,
+    third = 2,
+    defaultTest = 3
+}
+
+func test() {
+    
+    var errorResult:NSError?
+    let error:NSError = NSError.init(domain: NSURLErrorDomain, code: 4, userInfo: nil)
+    errorResult = error
+    
+    var result:TestEnum?
+    result = (errorResult?.code).map { TestEnum(rawValue: $0) }!
+    
+    print(".....\(result ?? TestEnum.defaultTest)");
+    
+    if let result = result  {
+        print("\(result)")
+    }else{
+        print("\(error.code)")
+    }
 }

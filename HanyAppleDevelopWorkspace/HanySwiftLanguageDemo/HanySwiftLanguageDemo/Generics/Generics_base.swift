@@ -230,3 +230,25 @@ private protocol Container {
   var count: Int { get }
   subscript(i: Int) -> ItemType { get }
 }
+
+
+//MARK:- 例子
+/*
+ 泛型不支持非对象类型
+ */
+private func swapTwoValues<T:testClass>(_ a: T, _ b: T)->Int where T:testProtocol1 {
+    return 1;
+}
+
+protocol testProtocol1:NSObjectProtocol {
+    func value1() -> Int
+}
+
+protocol testProtocol2:NSObjectProtocol {
+    func value1() -> Int
+}
+
+
+class testClass: NSObject {
+    
+}

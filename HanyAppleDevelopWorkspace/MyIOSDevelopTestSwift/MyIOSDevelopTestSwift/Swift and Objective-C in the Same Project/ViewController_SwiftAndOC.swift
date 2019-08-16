@@ -16,7 +16,7 @@ class ViewController_SwiftAndOC:UIViewController {
   }
   
   /*
-   swift调用oc，要在桥接文件里import oc的.h头文件
+   swift调用oc，要在桥接文件里import oc的.h头文件，桥接文件会在第一次创建oc文件时提示创建
    在build setting - Objective-C Bridging Header 指定桥接文件
    */
   func func_oc(){

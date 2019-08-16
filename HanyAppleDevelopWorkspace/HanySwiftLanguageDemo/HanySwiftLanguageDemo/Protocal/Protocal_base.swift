@@ -12,7 +12,6 @@ func root_Protocal_base() {
   
 }
 
-//MARK:- <<< method >>>
 //MARK:- 协议属性
 private func func_PropertyRequirements(){
   //协议属性 协议方法

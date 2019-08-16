@@ -9,6 +9,11 @@
 /*
  oc调用swift方法，要手动import "Product Module Name-swift.h"头文件
  有时候可能无法识别swift，要多编译几次
+ 
+ 参考
+ https://www.jianshu.com/p/8ca966dd8f52
+ https://www.jianshu.com/p/31e01b160675
+ https://www.jianshu.com/p/2d1f50dbad88 oc使用swift的全局变量
  */
 #import "OC_Object.h"
 //#import "MyDevelopmentSwift-swift.h"
