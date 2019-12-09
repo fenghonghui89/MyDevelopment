@@ -7,7 +7,7 @@
 //
 
 #import "MDTool.h"
-#import "NSString+Category.h"
+#import "NSString+VerifyRegex.h"
 #import "IPAddress.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <sys/utsname.h>

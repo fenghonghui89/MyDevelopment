@@ -9,7 +9,7 @@
 
 #import "MD_Scocket_ClientServer_VC.h"
 #import "AsyncSocket.h"
-#import "NSString+Category.h"
+#import "NSString+VerifyRegex.h"
 @interface MD_Scocket_ClientServer_VC ()<AsyncSocketDelegate,UITextViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;

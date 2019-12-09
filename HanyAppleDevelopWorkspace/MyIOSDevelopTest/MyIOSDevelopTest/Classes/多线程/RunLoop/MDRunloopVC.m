@@ -74,7 +74,7 @@
 -(void)updateUI{
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(arc4random()%300+50, arc4random()%300+50, 20, 20)];
-    [view setBackgroundColor:[UIColor randomColor]];
+    [view setBackgroundColor:[UIColor redColor]];
     
     [self.view addSubview:view];
 }

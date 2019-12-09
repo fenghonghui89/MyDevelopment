@@ -9,7 +9,7 @@
 
 #import "MD_Socket_SendFile_VC.h"
 #import "AsyncSocket.h"
-#import "NSString+Category.h"
+#import "NSString+VerifyRegex.h"
 #import "MD_Socket_SendFile_TVC.h"
 @interface MD_Socket_SendFile_VC ()<AsyncSocketDelegate,UITextViewDelegate,UITextFieldDelegate>
 

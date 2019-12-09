@@ -172,3 +172,10 @@ Interacting with C APIs
 在c、oc里面没有用NS_ENUM或者NS_OPTION标识的枚举，在swift里面都作为结构体被加入
 用NS_OPTION标识的枚举在swift都是以选项设置（Option Set）形式出现
 Unions 、 Bit Fields 、 Unnamed Structure and Union Fields 未看
+
+
+Swift 中的protocol 所有方法都必须被实现，不存在@optional 这样的概念。为了实现可选接口有两个办法：
+（一）协议前面@objc 或者:class，这是因为 Swift 的 protocol 是可以被除了 class 以外的其他类型遵守的，想要在 Swift 中使用 weak delegate，我们就需要将 protocol 限制在 class 内
+（二）可选方法放在协议扩展
+如果要用respondsToSelector，则协议要继承NSObjectProtocol;其实不用判断，直接self.delegate?.xxxx可选类型判断足矣
+可以用闭包代替protocol

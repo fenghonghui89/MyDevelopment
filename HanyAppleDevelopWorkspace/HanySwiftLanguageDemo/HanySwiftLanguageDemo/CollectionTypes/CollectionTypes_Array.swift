@@ -9,7 +9,7 @@
 import Foundation
 
 func root_CollectionTypes_Array() {
-    func1_6();
+    func1_11();
 }
 
 //MARK: - <<< 数组 >>> -
@@ -164,4 +164,25 @@ private func func1_10(){
         print("0...1 not same elements");
     }
     
+}
+
+
+
+//MARK:遍历array然后delete一个item
+
+private func func1_11(){
+    
+    var b = [1,2,3,4];
+    
+    for(index,obj) in b.enumerated().reversed(){
+        
+        if obj == 2 {
+            print("fine")
+            b.remove(at: index)
+            break
+        }else{
+            print("go on..")
+        }
+    }
+    print("..\(b)")
 }

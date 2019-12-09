@@ -8,7 +8,7 @@
 
 #import "BJRunLoopHelper.h"
 
-#import "XTJRootDefine.h"
+#import "BJRootDefine.h"
 #import "BJThread.h"
 
 

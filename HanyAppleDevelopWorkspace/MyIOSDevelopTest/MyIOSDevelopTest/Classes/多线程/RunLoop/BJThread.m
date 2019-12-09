@@ -8,11 +8,11 @@
 
 #import "BJThread.h"
 
-#import "XTJRootDefine.h"
+#import "BJRootDefine.h"
 
 @implementation BJThread
 
 -(void)dealloc{
-    DDLogInfo(@"♻️dealloc..");
+    NSLog(@"♻️dealloc..");
 }
 @end

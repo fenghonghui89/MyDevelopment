@@ -4,7 +4,7 @@
 //
 //  Created by 冯鸿辉 on 16/5/3.
 //  Copyright © 2016年 MD. All rights reserved.
-//
+//Swift 中的protocol 所有方法都必须被实现，不存在@optional 这样的概念。为了实现可选接口有两个办法：（一）@objc 、（二）协议扩展
 
 import Foundation
 

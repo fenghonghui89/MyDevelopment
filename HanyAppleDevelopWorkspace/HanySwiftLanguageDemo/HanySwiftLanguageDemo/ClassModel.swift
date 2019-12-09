@@ -16,18 +16,19 @@ struct Parents {
 }
 class SuperClass{
     
+    let readonlyProperty:String = "ss" //无法override
+    
     //--- 实例属性 ---
-    //存储型
+    //存储型 -> 延时加载型(lazy)也算存储型
     final var storeProperty:String = "storeProperty";
     var storeProperty1:String = "storeProperty";
     var parents:Parents?
     var ssss:String = {
         return ""
-    }()//用闭包定义变量的两种方式
+    }()//用闭包定义变量的两种方式，加lazy后闭包里面可以用self
     
     
-    
-    //计算型
+    //计算型 不能加lazy 里面可以用self
     var computeProperty:String = "computeProperty";
     var computeProperty1:String{
         get{

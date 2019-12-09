@@ -231,38 +231,38 @@
 //  BadBoyModel *badBoy = [[BadBoyModel alloc] initWithDictionary:dic];
 //  [badBoy displayCurrentModleProperty];
   
-  NSString *urlString = @"http://op.juhe.cn/onebox/weather/query?cityname=北京&dtype=json&key=31d9b0a8a3e3d4086ad3c6dd1bfeb7ed";
-  urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
-  NSURL *url = [NSURL URLWithString:urlString];
-  NSURLRequest *request = [NSURLRequest requestWithURL:url];
-  DRLog(@"url..%@",urlString);
-  
-  NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
-  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
-  AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
-  responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];//application/json;charset=utf-8会报错
-  manager.responseSerializer = responseSerializer;
-  
-  NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-    if (error) {
-      NSLog(@"error response:%@",response);
-    }else{
-      NSError *dataError = nil;
-      NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
-      if (dataError) {
-        DRLog(@"dateError response..:%@",response);
-      }else{
-        
-        NSArray *arr = [[[data objectForKey:@"result"] objectForKey:@"data"] objectForKey:@"weather"];
-        DRLog(@"get arr count..%lu",(unsigned long)arr.count);
-        
-        MDWeather *weather = [MDWeather yy_modelWithJSON:[arr objectAtIndex:0]];
-        DRLog(@"weather..%@",weather);
-        [weather displayCurrentModleProperty];
-      }
-    }
-  }];
-  [dataTask resume];
+//  NSString *urlString = @"http://op.juhe.cn/onebox/weather/query?cityname=北京&dtype=json&key=31d9b0a8a3e3d4086ad3c6dd1bfeb7ed";
+//  urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+//  NSURL *url = [NSURL URLWithString:urlString];
+//  NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//  DRLog(@"url..%@",urlString);
+//  
+//  NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
+//  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
+//  AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
+//  responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];//application/json;charset=utf-8会报错
+//  manager.responseSerializer = responseSerializer;
+//  
+//  NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+//    if (error) {
+//      NSLog(@"error response:%@",response);
+//    }else{
+//      NSError *dataError = nil;
+//      NSDictionary *data = [NSJSONSerialization JSONObjectWithData:(NSData *)responseObject options:NSJSONReadingAllowFragments error:&dataError];
+//      if (dataError) {
+//        DRLog(@"dateError response..:%@",response);
+//      }else{
+//        
+//        NSArray *arr = [[[data objectForKey:@"result"] objectForKey:@"data"] objectForKey:@"weather"];
+//        DRLog(@"get arr count..%lu",(unsigned long)arr.count);
+//        
+//        MDWeather *weather = [MDWeather yy_modelWithJSON:[arr objectAtIndex:0]];
+//        DRLog(@"weather..%@",weather);
+//        [weather displayCurrentModleProperty];
+//      }
+//    }
+//  }];
+//  [dataTask resume];
 
 }
 
