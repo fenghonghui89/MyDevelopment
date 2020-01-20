@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,39 +22,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRJ-Fe-MzA">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRJ-Fe-MzA">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                     <subviews>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-pH-SKa" customClass="ColorPiker">
-                            <rect key="frame" x="10" y="10" width="47" height="47"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-pH-SKa" customClass="ColorPiker">
+                            <rect key="frame" x="10" y="10" width="55" height="55"/>
                             <color key="backgroundColor" red="1" green="0.56871769910000003" blue="0.52114213310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wJw-pH-SKa" secondAttribute="height" multiplier="1:1" id="cH5-Nq-sXG"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghu-Z3-fSE" customClass="ColorPiker">
-                            <rect key="frame" x="67" y="10" width="47" height="47"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghu-Z3-fSE" customClass="ColorPiker">
+                            <rect key="frame" x="75" y="10" width="55" height="55"/>
                             <color key="backgroundColor" red="0.45226977629999998" green="1" blue="0.40349993639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ghu-Z3-fSE" secondAttribute="height" multiplier="1:1" id="jJK-5A-Xv1"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-GB-47k" customClass="ColorPiker">
-                            <rect key="frame" x="124" y="10" width="47" height="47"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-GB-47k" customClass="ColorPiker">
+                            <rect key="frame" x="140" y="10" width="55" height="55"/>
                             <color key="backgroundColor" red="0.44376772669999998" green="0.4203983905" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="7gp-GB-47k" secondAttribute="height" multiplier="1:1" id="gBf-dJ-vQJ"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-V4-cRN" customClass="ColorPiker">
-                            <rect key="frame" x="181" y="10" width="47" height="47"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-V4-cRN" customClass="ColorPiker">
+                            <rect key="frame" x="205" y="10" width="55" height="55"/>
                             <color key="backgroundColor" red="0.97623391130000003" green="1" blue="0.37962458269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="OdU-V4-cRN" secondAttribute="height" multiplier="1:1" id="TWY-Lc-hVm"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ys6-ah-0Ol">
-                            <rect key="frame" x="10" y="67" width="47" height="47"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ys6-ah-0Ol">
+                            <rect key="frame" x="10" y="75" width="55" height="55"/>
                             <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Ys6-ah-0Ol" secondAttribute="height" multiplier="1:1" id="lYa-xS-JBf"/>
@@ -67,16 +64,16 @@
                                 <action selector="undoBtnTap:" destination="-1" eventType="touchUpInside" id="nst-mw-f4K"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-cR-SR3">
-                            <rect key="frame" x="67" y="67" width="47" height="47"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-cR-SR3">
+                            <rect key="frame" x="75" y="75" width="55" height="55"/>
                             <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" image="redo.png"/>
                             <connections>
                                 <action selector="redoBtnTap:" destination="-1" eventType="touchUpInside" id="mgC-u5-ecT"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-Nx-4nB">
-                            <rect key="frame" x="124" y="67" width="47" height="47"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvE-Nx-4nB">
+                            <rect key="frame" x="140" y="75" width="55" height="55"/>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="YvE-Nx-4nB" secondAttribute="height" multiplier="1:1" id="TQf-fP-3WP"/>
@@ -116,8 +113,8 @@
                         <constraint firstItem="7gp-GB-47k" firstAttribute="top" secondItem="wJw-pH-SKa" secondAttribute="top" id="zrF-hF-lCI"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqM-hi-ENZ" customClass="TouchDrawView">
-                    <rect key="frame" x="0.0" y="142" width="320" height="426"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqM-hi-ENZ" customClass="TouchDrawView">
+                    <rect key="frame" x="0.0" y="167" width="375" height="500"/>
                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
@@ -133,6 +130,7 @@
                 <constraint firstAttribute="bottom" secondItem="cqM-hi-ENZ" secondAttribute="bottom" id="ySd-Xj-T5d"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="132" y="153"/>
         </view>
     </objects>
     <resources>
