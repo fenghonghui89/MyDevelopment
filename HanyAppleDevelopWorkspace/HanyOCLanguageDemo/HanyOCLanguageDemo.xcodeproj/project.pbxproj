@@ -28,6 +28,11 @@
 		14A101891D2BAC90002069D2 /* Root_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A101881D2BAC90002069D2 /* Root_Block.m */; };
 		14A1018D1D2BAD05002069D2 /* Block_base.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A1018C1D2BAD05002069D2 /* Block_base.m */; };
 		14A101901D2BAE78002069D2 /* Block_value.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A1018F1D2BAE78002069D2 /* Block_value.m */; };
+		14C579F32518949D00120603 /* XXClassInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14C579F22518949D00120603 /* XXClassInfo.mm */; };
+		14C579FA2518990400120603 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C579F92518990400120603 /* libc++.tbd */; };
+		14C57A092518ACCD00120603 /* ObjcTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C57A082518ACCD00120603 /* ObjcTest.m */; };
+		14C57A0D2518AD6100120603 /* Student3.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C57A042518ACA600120603 /* Student3.m */; };
+		14C57A0F2518AD6300120603 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C57A052518ACA600120603 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +94,15 @@
 		14A1018C1D2BAD05002069D2 /* Block_base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block_base.m; sourceTree = "<group>"; };
 		14A1018E1D2BAE78002069D2 /* Block_value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block_value.h; sourceTree = "<group>"; };
 		14A1018F1D2BAE78002069D2 /* Block_value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block_value.m; sourceTree = "<group>"; };
+		14C579F12518949D00120603 /* XXClassInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXClassInfo.h; sourceTree = "<group>"; };
+		14C579F22518949D00120603 /* XXClassInfo.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XXClassInfo.mm; sourceTree = "<group>"; };
+		14C579F92518990400120603 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		14C57A032518ACA600120603 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		14C57A042518ACA600120603 /* Student3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student3.m; sourceTree = "<group>"; };
+		14C57A052518ACA600120603 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		14C57A062518ACA600120603 /* Student3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student3.h; sourceTree = "<group>"; };
+		14C57A072518ACCD00120603 /* ObjcTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcTest.h; sourceTree = "<group>"; };
+		14C57A082518ACCD00120603 /* ObjcTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C579FA2518990400120603 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +131,7 @@
 			children = (
 				14A101201D2B96B1002069D2 /* HanyOCLanguageDemo */,
 				14A1011F1D2B96B1002069D2 /* Products */,
+				14C579F82518990400120603 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				14A101211D2B96B1002069D2 /* main.m */,
+				14C57A022518ACA600120603 /* Objc */,
+				14C579F02518946A00120603 /* Class */,
 				14A1012F1D2B9762002069D2 /* root */,
 				1457B43F1D93772600507486 /* 宏 */,
 				14A1018A1D2BACA5002069D2 /* Block */,
@@ -258,6 +276,36 @@
 			path = Block;
 			sourceTree = "<group>";
 		};
+		14C579F02518946A00120603 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				14C579F12518949D00120603 /* XXClassInfo.h */,
+				14C579F22518949D00120603 /* XXClassInfo.mm */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		14C579F82518990400120603 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14C579F92518990400120603 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14C57A022518ACA600120603 /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				14C57A032518ACA600120603 /* Person.h */,
+				14C57A052518ACA600120603 /* Person.m */,
+				14C57A062518ACA600120603 /* Student3.h */,
+				14C57A042518ACA600120603 /* Student3.m */,
+				14C57A072518ACCD00120603 /* ObjcTest.h */,
+				14C57A082518ACCD00120603 /* ObjcTest.m */,
+			);
+			path = Objc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +345,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 14A101151D2B96B1002069D2;
@@ -316,6 +365,7 @@
 			files = (
 				14A1012E1D2B972D002069D2 /* TRMyClass.m in Sources */,
 				14A101511D2B9FCE002069D2 /* MDModel_Category.m in Sources */,
+				14C579F32518949D00120603 /* XXClassInfo.mm in Sources */,
 				14A1018D1D2BAD05002069D2 /* Block_base.m in Sources */,
 				14A101901D2BAE78002069D2 /* Block_value.m in Sources */,
 				14A1017E1D2BA7B8002069D2 /* MDAnimal.m in Sources */,
@@ -324,11 +374,14 @@
 				14A101571D2BA130002069D2 /* Category_base.m in Sources */,
 				1457B4451D9378F300507486 /* Define_base.m in Sources */,
 				14A101221D2B96B1002069D2 /* main.m in Sources */,
+				14C57A0D2518AD6100120603 /* Student3.m in Sources */,
+				14C57A0F2518AD6300120603 /* Person.m in Sources */,
 				14A1017F1D2BA7B8002069D2 /* MDCat.m in Sources */,
 				14A101891D2BAC90002069D2 /* Root_Block.m in Sources */,
 				14A1014D1D2B9DBA002069D2 /* MDModel_Extersion.m in Sources */,
 				14A101811D2BA7B8002069D2 /* XYPoint.m in Sources */,
 				14A101541D2B9FEC002069D2 /* MDModel_Category+MyCategory.m in Sources */,
+				14C57A092518ACCD00120603 /* ObjcTest.m in Sources */,
 				1457B4421D9377DA00507486 /* Root_Define.m in Sources */,
 				14A101861D2BA8B3002069D2 /* Root_ParamaAndInit.m in Sources */,
 				14A101831D2BA7B8002069D2 /* Student1.m in Sources */,

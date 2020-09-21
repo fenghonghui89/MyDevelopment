@@ -4,7 +4,13 @@
 //
 //  Created by 冯鸿辉 on 16/4/12.
 //  Copyright © 2016年 hanyfeng. All rights reserved.
-//
+/*
+ 同步 异步 控制的是 “是否创建新的线程”
+ 同步不创建新线程；异步创建线程，创建多少个线程看队列是串行还是并行
+ 
+ 串行 并行 控制的是 “线程的个数”
+ 串行队列最多为2，并行队列>=2
+ */
 
 #import "MD_GCD_VC.h"
 
@@ -70,13 +76,13 @@
   
 }
 
-#pragma mark - 不同队列下的异步执行
+#pragma mark - 异步执行 不同队列下
 -(void)test_concurrentBlock{
 
   /*
    不管是串行队列还是并行队列，dispatch_async提交block后都会马上返回，都不会阻塞线程
-   串行队列会执行完一个再执行下一个
-   并行队列下都是同时执行
+   串行队列会执行完一个再执行下一个；创建一个新的线程，在新的线程上面执行串行任务，当前线程个数为2
+   并行队列下都是同时执行；创建n个新的线程，在新的线程上执行并行任务，当前线程个数>=2
    */
   
   dispatch_queue_t serialQueue = dispatch_queue_create("com.myqueue.serialQueue", DISPATCH_QUEUE_SERIAL);
@@ -109,11 +115,11 @@
   });
 }
 
-#pragma mark - 不同队列下的同步执行
+#pragma mark - 同步执行 不同队列下
 -(void)test_serialBlock{
   
   /*
-   不管是串行队列还是并行队列，dispatch_sync提交block后都要等block执行完才返回，都阻塞线程，如果在主线程调用就会阻塞程序
+   不管是串行队列还是并行队列，dispatch_sync提交block后都要等block执行完才返回，都阻塞线程，如果在主线程调用就会阻塞程序；不创建新的线程，当前线程个数为1
    */
   dispatch_queue_t serialQueue = dispatch_queue_create("com.myqueue.serialQueue", DISPATCH_QUEUE_SERIAL);
   dispatch_queue_t concurrentQueue = dispatch_queue_create("com.myqueue.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);

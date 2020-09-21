@@ -57,7 +57,8 @@ static void knowledge_block(){
 static int knowlede_exit(){
   
   printf("终止程序");
-  exit(0);//终止程序，终止所有函数；exit(0)在stdlib.h头文件内 return 0;return只会终止当前函数。
+//  exit(0);//终止程序，终止所有函数；exit(0)在stdlib.h头文件内 return 0;return只会终止当前函数。
+    return 0;
 }
 
 #pragma mark - *********** test **************
