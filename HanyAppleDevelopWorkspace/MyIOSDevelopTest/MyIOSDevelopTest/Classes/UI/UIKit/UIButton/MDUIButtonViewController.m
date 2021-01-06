@@ -75,7 +75,7 @@
 //    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//文字水平排列：居中、左右、充满
     
     //设置背景
-    [btn setBackgroundColor:[MDTool TColor:@"0x1177ff"]];
+    [btn setBackgroundColor:HexColor(@"0x1177ff")];
 //    [btn setBackgroundImage:[UIImage imageNamed:@"button.png"] forState:UIControlStateNormal];
     
     //设置坐标

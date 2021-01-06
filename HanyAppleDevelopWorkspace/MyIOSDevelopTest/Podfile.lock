@@ -1,23 +1,27 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - CocoaLumberjack (3.5.3):
     - CocoaLumberjack/Core (= 3.5.3)
   - CocoaLumberjack/Core (3.5.3)
   - FFRouter (1.1.1)
+  - HFCommon (1.6)
+  - HFNetwork (1.6):
+    - AFNetworking (= 4.0.1)
+    - HFCommon
   - IQKeyboardManager (6.5.0)
   - JTCalendar (2.2.4)
   - Masonry (1.1.0)
@@ -33,9 +37,9 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - AFNetworking
   - CocoaLumberjack
   - FFRouter
+  - HFNetwork
   - IQKeyboardManager
   - JTCalendar
   - Masonry
@@ -47,8 +51,13 @@ DEPENDENCIES:
   - YYModel
 
 SPEC REPOS:
-  trunk:
+  https://gitee.com/hanyfeng89/OSC_HFCommon_Spec.git:
+    - HFCommon
+  https://gitee.com/hanyfeng89/OSC_HFNetwork_Spec.git:
+    - HFNetwork
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+  trunk:
     - CocoaLumberjack
     - FFRouter
     - IQKeyboardManager
@@ -62,9 +71,11 @@ SPEC REPOS:
     - YYModel
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   FFRouter: dfda137b8f6817ca92dc9a1151727449548abfd3
+  HFCommon: 17cb0617f21eaa9ccda05a0ce5d6f805ca692e5e
+  HFNetwork: 9b0af79bae712812b04d3b84fa2bf56e1c52335b
   IQKeyboardManager: 700e5155d6a292383b54e8678aec769e14fc78fc
   JTCalendar: dce40e7e278b2d9ce747ca45d7fd369f2fda6f57
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -75,6 +86,6 @@ SPEC CHECKSUMS:
   SDWebImage: 609192dcf3898c910a2848032372ead951e66364
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 22c719be6e834251e947f6c9b7fe461248de7f46
+PODFILE CHECKSUM: 90a2d1c7f4ec4c067d06c554c4acf37b08a1a726
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.10.0

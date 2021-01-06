@@ -11,9 +11,14 @@
 #ifndef MDRootDefine_h
 #define MDRootDefine_h
 
-#import "MDTool.h"
+//通用工具
+#import <HFCommon/XTJTool.h>
+
 #import "MDQuickDevelopDefine.h"
 #import "MDSpecialDefine.h"
 #import "MDGlobalManager.h"
+
+#import "UIDevice+XTJ.h"
+#import "UIColor+XTJ.h"
 
 #endif /* MDRootDefine_h */

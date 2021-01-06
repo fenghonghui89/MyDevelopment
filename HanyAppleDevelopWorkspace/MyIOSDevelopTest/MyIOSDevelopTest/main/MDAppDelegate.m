@@ -32,20 +32,20 @@
 
 #pragma mark * 后台延时
 - (void) endBackgroundTask{
-  
-  dispatch_queue_t mainQueue = dispatch_get_main_queue();
-  
-  dispatch_async(mainQueue, ^(void) {
     
-    [self.myTimer invalidate];
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
     
-    //标记任务停止
-    [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTaskIdentifier];
-    
-    //销毁后台任务标识符
-    self.backgroundTaskIdentifier = UIBackgroundTaskInvalid;
-    
-  });
+    dispatch_async(mainQueue, ^(void) {
+        
+        [self.myTimer invalidate];
+        
+        //标记任务停止
+        [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTaskIdentifier];
+        
+        //销毁后台任务标识符
+        self.backgroundTaskIdentifier = UIBackgroundTaskInvalid;
+        
+    });
 }
 
 
@@ -55,131 +55,134 @@
  @param paramSender paramSender
  */
 - (void)timerMethod:(NSTimer *)paramSender{
-  
-  //backgroundTimeRemaining 属性包含了程序留给的我们的时间
-  NSTimeInterval backgroundTimeRemaining = [[UIApplication sharedApplication] backgroundTimeRemaining];
-  if (backgroundTimeRemaining == DBL_MAX){
-    NSLog(@"Background Time Remaining = Undetermined");
-  } else {
-    NSLog(@"Background Time Remaining = %.02f Seconds", backgroundTimeRemaining);
-  }
+    
+    //backgroundTimeRemaining 属性包含了程序留给的我们的时间
+    NSTimeInterval backgroundTimeRemaining = [[UIApplication sharedApplication] backgroundTimeRemaining];
+    if (backgroundTimeRemaining == DBL_MAX){
+        NSLog(@"Background Time Remaining = Undetermined");
+    } else {
+        NSLog(@"Background Time Remaining = %.02f Seconds", backgroundTimeRemaining);
+    }
 }
 
 #pragma mark - < callback >
 #pragma mark UIApplicationDelegate
 #pragma mark * app lifecycle
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-
-  //开启日志输出
-  [MDGlobalManager sharedInstance].openLog = YES;
-  
-  //默认启动摇晃
-  [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
-  
-  //输出设备信息
-  [[MDTool sharedInstance] showDeviceInfo];
-  
-  /*
-   第一次运行时，向用户获取通知授权
-    - 允许，系统推送打开，服务器发送推送，本地作标识
-    - 不允许，系统推送不打开，服务器不发送推送，本地作标识
-   */
-  if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
-    [[MDPushNotificationManager sharedInstance] start];
-  }
-  
-  //修改标识
-  if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
-    ULog(@"第一次运行，初始化完成");
-    [MDGlobalManager sharedInstance].hasFirstLaunch = YES;
-  }else{
-    ULog(@"不是第一次运行，初始化完成");
-  }
-  
-  return YES;
+    
+    //开启日志输出
+    [MDGlobalManager sharedInstance].openLog = YES;
+    
+    //默认启动摇晃
+    [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
+    
+    //输出设备信息
+    
+    /*
+     第一次运行时，向用户获取通知授权
+     - 允许，系统推送打开，服务器发送推送，本地作标识
+     - 不允许，系统推送不打开，服务器不发送推送，本地作标识
+     */
+    if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
+        [[MDPushNotificationManager sharedInstance] start];
+    }
+    
+    //修改标识
+    if ([MDGlobalManager sharedInstance].hasFirstLaunch == NO) {
+        ULog(@"第一次运行，初始化完成");
+        [MDGlobalManager sharedInstance].hasFirstLaunch = YES;
+    }else{
+        ULog(@"不是第一次运行，初始化完成");
+    }
+    
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-  
-  //setup rootvc
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  [self.window setBackgroundColor:[UIColor whiteColor]];
-  
-  MDClassesViewController *vc = [[MDClassesViewController alloc] init];
-  vc.data = [MDTool getPlistDataByName:@"TitleList"];
-  MDNavigationController *navi = [[MDNavigationController alloc] initWithRootViewController:vc];
-  
-  self.window.rootViewController = navi;
-  [self.window makeKeyAndVisible];
-  
-  return YES;
+    
+    //setup rootvc
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    
+    MDClassesViewController *vc = [[MDClassesViewController alloc] init];
+    
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TitleList" ofType:@"plist"];
+    
+    NSArray *data = [NSArray arrayWithContentsOfFile:plistPath];
+    vc.data = data;
+    MDNavigationController *navi = [[MDNavigationController alloc] initWithRootViewController:vc];
+    
+    self.window.rootViewController = navi;
+    [self.window makeKeyAndVisible];
+    
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-  ULog(@"applicationWillResignActive..");
+    ULog(@"applicationWillResignActive..");
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-  ULog(@"applicationDidEnterBackground..");
-  //后台延时
-  
-  //  self.backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^(void) {
-  //    NSLog(@"停止后台任务");
-  //    [self endBackgroundTask];
-  //  }];
-  //
-  //  //模拟一个Long-Running Task
-  //  self.myTimer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerMethod:) userInfo:nil repeats:YES];
-  
+    ULog(@"applicationDidEnterBackground..");
+    //后台延时
+    
+    //  self.backgroundTaskIdentifier = [application beginBackgroundTaskWithExpirationHandler:^(void) {
+    //    NSLog(@"停止后台任务");
+    //    [self endBackgroundTask];
+    //  }];
+    //
+    //  //模拟一个Long-Running Task
+    //  self.myTimer =[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerMethod:) userInfo:nil repeats:YES];
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-  ULog(@"applicationWillEnterForeground..");
+    ULog(@"applicationWillEnterForeground..");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  ULog(@"applicationDidBecomeActive..");
+    ULog(@"applicationDidBecomeActive..");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-  ULog(@"applicationWillTerminate..");
+    ULog(@"applicationWillTerminate..");
 }
 
 
 #pragma mark * 推送
 #pragma mark -- [8,9] 推送授权
 -(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
-  
-  [[MDPushNotificationManager sharedInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
+    
+    [[MDPushNotificationManager sharedInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
 #pragma mark -- [8,~] 远程推送
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-  
-  [[MDPushNotificationManager sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    
+    [[MDPushNotificationManager sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-  [[MDPushNotificationManager sharedInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+    [[MDPushNotificationManager sharedInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-  [[MDPushNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo];
+    [[MDPushNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo];
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-  [[MDPushNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+    [[MDPushNotificationManager sharedInstance] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
 #pragma mark -- [8,9] 本地推送
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-  
-  [[MDPushNotificationManager sharedInstance] application:application didReceiveLocalNotification:notification];
+    
+    [[MDPushNotificationManager sharedInstance] application:application didReceiveLocalNotification:notification];
 }
 
 -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler{
-  
-  [[MDPushNotificationManager sharedInstance] application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
+    
+    [[MDPushNotificationManager sharedInstance] application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
 }
 
 @end

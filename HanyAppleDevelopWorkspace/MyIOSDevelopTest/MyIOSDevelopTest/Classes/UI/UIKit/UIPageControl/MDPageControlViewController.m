@@ -7,7 +7,6 @@
 //
 
 #import "MDPageControlViewController.h"
-#import "MDTool.h"
 @interface MDPageControlViewController ()<UIScrollViewDelegate>
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,strong)UIPageControl* pageControl;
@@ -74,7 +73,7 @@
     UIPageControl* pageControl = [[UIPageControl alloc] init];
     pageControl.numberOfPages = self.imageNames.count;
 //    pageControl.userInteractionEnabled = NO;//取消小圆点与用户互动
-    pageControl.frame = CGRectMake(0, [MDTool screenHeight]-[MDTool navigationBarHeight] - 40, [MDTool screenWidth], 20);
+    pageControl.frame = CGRectMake(0, screenH-naviH - 40, screenW, 20);
     [pageControl addTarget:self action:@selector(pageControlValueChanged) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:pageControl];
     self.pageControl = pageControl;
@@ -91,7 +90,7 @@
 {
     [UIView animateWithDuration:0.3f animations:^{
         NSInteger whichPage = self.pageControl.currentPage;
-        self.scrollView.contentOffset = CGPointMake([MDTool screenWidth]*whichPage, 0.0f);
+        self.scrollView.contentOffset = CGPointMake(screenW*whichPage, 0.0f);
     }];
 }
 
@@ -100,7 +99,7 @@
 {
     CGPoint offset = scrollView.contentOffset;//提取拖动时相对于contentsize的坐标（内容错位）
     NSLog(@"%.2f",offset.x);
-    NSInteger index = round(offset.x/[MDTool screenWidth]);//四舍五入得出拖动时的下标
+    NSInteger index = round(offset.x/screenW);//四舍五入得出拖动时的下标
     self.pageControl.currentPage = index;
 }
 @end

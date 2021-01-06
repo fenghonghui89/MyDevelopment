@@ -1,5 +1,10 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+
+source 'https://gitee.com/hanyfeng89/OSC_HFCommon_Spec.git'
+source 'https://gitee.com/hanyfeng89/OSC_HFNetwork_Spec.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '12.0'
 inhibit_all_warnings!
 
 target 'MyIOSDevelopTest' do
@@ -7,7 +12,6 @@ target 'MyIOSDevelopTest' do
   # use_frameworks!
 
   # Pods for XTJMall
-  pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'MBProgressHUD'
   pod 'Masonry'
@@ -26,4 +30,6 @@ target 'MyIOSDevelopTest' do
   # pod 'MLeaksFinder'
   # pod 'FBMemoryProfiler'
   # pod 'NSLogger'
+  
+  pod 'HFNetwork'
 end

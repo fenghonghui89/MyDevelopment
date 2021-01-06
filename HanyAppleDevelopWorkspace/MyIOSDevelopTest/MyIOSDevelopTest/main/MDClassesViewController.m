@@ -78,12 +78,12 @@
     bgViewY = stateH + naviH;
     bgViewH = viewH - stateH - naviH;
   }
-  [bgView setFrame:[MDTool setRectX:0 y:bgViewY w:bgViewW h:bgViewH]];
+    [bgView setFrame:CGRectMake(0, bgViewY, bgViewW, bgViewH)];
   [self.view addSubview:bgView];
   self.bgView = bgView;
   
   //tv
-  UITableView *tv = [[UITableView alloc] initWithFrame:[MDTool setRectX:0 y:0 w:bgViewW h:bgViewH] style:UITableViewStyleGrouped];
+  UITableView *tv = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, bgViewW, bgViewH) style:UITableViewStyleGrouped];
   [tv setBackgroundColor:[UIColor greenColor]];
   tv.delegate = self;
   tv.dataSource = self;

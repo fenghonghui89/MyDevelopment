@@ -48,11 +48,12 @@
   self.serverSocket = [[AsyncSocket alloc] initWithDelegate:self];
   [self.serverSocket acceptOnPort:8000 error:nil];
   
-  if ([[[MDTool sharedInstance] machineName] isEqualToString:@"iPhone7,2"]) {
-    self.ip = @"192.168.5.157";
-  }else{
-    self.ip = @"192.168.5.142";
-  }
+    
+//  if ([[[MDTool sharedInstance] machineName] isEqualToString:@"iPhone7,2"]) {
+//    self.ip = @"192.168.5.157";
+//  }else{
+//    self.ip = @"192.168.5.142";
+//  }
   
   self.userNameTextField.returnKeyType = UIReturnKeyDone;
   self.userNameTextField.text = [NSString stringWithFormat:@"%d号",arc4random()%20];

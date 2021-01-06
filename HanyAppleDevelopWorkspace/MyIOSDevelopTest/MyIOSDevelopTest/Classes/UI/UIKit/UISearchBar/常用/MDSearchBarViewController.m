@@ -7,7 +7,6 @@
 //
 
 #import "MDSearchBarViewController.h"
-#import "MDTool.h"
 @interface MDSearchBarViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate, UISearchDisplayDelegate>
 @property (nonatomic, strong) NSArray *listTeams;
 @property (nonatomic, strong) NSMutableArray *listFilterTeams;
@@ -42,7 +41,7 @@
     tv.dataSource = self;
     [self.view addSubview:tv];
     
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [MDTool screenWidth], 44)];
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, screenW, 44)];
     [searchBar setShowsScopeBar:NO];
     [searchBar setScopeButtonTitles:@[@"中文",@"英文"]];
     [searchBar setPlaceholder:@"Search for Name"];

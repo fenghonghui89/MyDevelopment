@@ -9,6 +9,7 @@
 #import "MD_Responder_VC.h"
 #import "UIView+STKit.h"
 #import "MDCustomXIBView.h"
+#import "MDRootDefine.h"
 
 @interface MD_Responder_VC ()
 @property(nonatomic,strong)MDCustomXIBView *xibView;
@@ -20,36 +21,36 @@
 #pragma mark - **************** vc lifecycle **************
 
 - (void)viewDidLoad {
-  
-  [super viewDidLoad];
-
+    
+    [super viewDidLoad];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-
-  [super viewDidAppear:animated];
-  
-  [self customInitUI];
+    
+    [super viewDidAppear:animated];
+    
+    [self customInitUI];
 }
 
 #pragma mark - ************** method ****************
 -(void)customInitUI{
-
-  MDCustomXIBView *cv = [[[NSBundle mainBundle] loadNibNamed:@"MDCustomXIBView" owner:self options:nil] lastObject];
-  cv.frame = CGRectMake(100, 100, 50, 50);
-  [self.view addSubview:cv];
-  self.xibView = cv;
-  
+    
+    MDCustomXIBView *cv = [[[NSBundle mainBundle] loadNibNamed:@"MDCustomXIBView" owner:self options:nil] lastObject];
+    cv.frame = CGRectMake(100, 100, 50, 50);
+    [self.view addSubview:cv];
+    self.xibView = cv;
+    
 }
 #pragma mark - ************* action ****************
 
 - (IBAction)btnTap:(id)sender {
-  
-  STLogResponderChain(self.xibView);
-  
-  UIViewController *vc = self.xibView.btn.viewController;
-  NSLog(@"%@",vc);
-  NSLog(@"%@",self.xibView.btn.findFirstResponder);
+    
+//    [XTJTool showResponderChain:self.xibView];
+    
+    UIViewController *vc = self.xibView.btn.viewController;
+    NSLog(@"%@",vc);
+    NSLog(@"%@",self.xibView.btn.findFirstResponder);
 }
 
 
