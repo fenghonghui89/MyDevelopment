@@ -170,17 +170,30 @@ private func func_RawValues(){
     
 }
 
-//MARK:- 关联值(类似元组) if判断(类似元组的元组分解)
+//MARK:- 关联值(类似元组) if判断(类似元组的元组分解) 枚举的计算属性
 private func func_AssociatedValues() {
     
     //eg1
     enum Barcode{
         case upca(p1:Int,p2:Int,p3:Int);
         case qrCode(p:String);
+        
+        var mess:String{
+            switch self{
+            case .qrCode(p: _):
+            return "...."
+            case .upca(p1: 1, p2: 1, p3: 1):
+            return "match!!!"
+            case .upca(p1: let p1, p2: let p2, p3: let p3):
+                return "other..\(p1),\(p2),\(p3)"
+            }
+        }
+        
     }
     
     var productBarcode = Barcode.upca(p1:1, p2:2, p3:3);
     productBarcode = .qrCode(p:"abc");//只能保留一个，所以会替换上面的
+    print("productBarcode...\(productBarcode.mess)")
     
     switch productBarcode {
     case let .upca(numberSystem, identifier, check):
@@ -192,6 +205,8 @@ private func func_AssociatedValues() {
     if case let Barcode.qrCode(p: "") = productBarcode {
 
     }
+    
+    
 
     
     //eg2

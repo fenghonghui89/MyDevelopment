@@ -240,11 +240,11 @@ private func kl_nilString_hasValue(){
     //    print("无值 nil")
     //  }
     
-    if let value:String = (dic.object(forKey: "xxx") as! String) {
-        print("有值 \(value)")//有值 hello
-    }else{
-        print("无值 nil")
-    }
+//    if let value:String = (dic.object(forKey: "xxx") as! String) {
+//        print("有值 \(value)")//有值 hello
+//    }else{
+//        print("无值 nil")
+//    }
     
     if let value:String? = (dic.object(forKey: "xxx") as! String) {
         print("有值 \(value)")//有值 Optional("hello")
