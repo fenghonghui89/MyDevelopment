@@ -257,21 +257,21 @@ private func kl_blockParama(){
     let ftc = FTC()
     
     //eg1
-    //  ftc.block = {
-    //    (value:Int)->Void in
-    //    print("值:\(value)")
-    //  }
+    ftc.block = {
+        (value:Int)->Void in
+        print("值:\(value)")
+    }
     
     //eg2
-    //  ftc.block1 = {
-    //    (flag:Bool,block:rootblock)->String in
-    //
-    //    print("值:\(flag)")
-    //    block(value: 13)
-    //    return "a"
-    //  }
-    //
-    //  ftc.blocktest()
+    ftc.block1 = {
+        (flag:Bool,block:rootblock)->String in
+        
+        print("值:\(flag)")
+        block(13)
+        return "a"
+    }
+    
+    ftc.blocktest()
     
     //eg3
     ftc.block1!(true,{(value:Int)->Void in
@@ -281,6 +281,10 @@ private func kl_blockParama(){
     //eg3 尾随闭包形式
     ftc.block1!(true){(value:Int)->Void in
         print("value:\(value)")
+    }
+    
+    ftc.block2 = {
+        ()->Void in
     }
 }
 
@@ -393,6 +397,8 @@ private class FTC{
     
     var block:rootblock?
     var block1:myblock?
+    var block2:(()->Void)?
+    
     
     //eg3
     init(){
