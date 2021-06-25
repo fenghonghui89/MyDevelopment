@@ -3262,29 +3262,12 @@
 		14FAA5AF1D9507CA002D81CC /* 存储 */ = {
 			isa = PBXGroup;
 			children = (
-				14FAA5B01D9507CA002D81CC /* coredata */,
-				14FAA5B11D9507CA002D81CC /* keychain */,
 				14FAA5B21D9507CA002D81CC /* plist */,
 				14FAA5B71D9507CA002D81CC /* SettingBundle */,
-				14FAA5BC1D9507CA002D81CC /* userdefault */,
 				14FAA5BD1D9507CA002D81CC /* 常用路径 */,
 				14FAA5C01D9507CA002D81CC /* 归档反归档 */,
 			);
 			path = "存储";
-			sourceTree = "<group>";
-		};
-		14FAA5B01D9507CA002D81CC /* coredata */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = coredata;
-			sourceTree = "<group>";
-		};
-		14FAA5B11D9507CA002D81CC /* keychain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = keychain;
 			sourceTree = "<group>";
 		};
 		14FAA5B21D9507CA002D81CC /* plist */ = {
@@ -3307,13 +3290,6 @@
 				14FAA5BB1D9507CA002D81CC /* Settings.bundle */,
 			);
 			path = SettingBundle;
-			sourceTree = "<group>";
-		};
-		14FAA5BC1D9507CA002D81CC /* userdefault */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = userdefault;
 			sourceTree = "<group>";
 		};
 		14FAA5BD1D9507CA002D81CC /* 常用路径 */ = {

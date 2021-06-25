@@ -92,7 +92,7 @@
   });
     
     // 若想执行完上面的任务再走下面这行代码可以加上下面这句代码
-    // 等待上面的任务全部完成后，往下继续执行（会阻塞当前线程）
+    // 等待上面的任务全部完成后，往下继续执行（注意会阻塞当前线程）
 //    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
   
 }
@@ -189,6 +189,47 @@
     
 }
 
+-(void)gcd_group_2{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_t group = dispatch_group_create();
+            
+    dispatch_group_async(group, queue, ^{
+        sleep(2);
+        NSLog(@"1");
+    });
+    dispatch_group_async(group, queue, ^{
+        sleep(2);
+        NSLog(@"2");
+    });
+    dispatch_group_async(group, queue, ^{
+        sleep(2);
+        NSLog(@"3");
+    });
+    dispatch_group_async(group, queue, ^{
+        sleep(2);
+        NSLog(@"4");
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        sleep(2);
+        NSLog(@"6");
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        sleep(2);
+        NSLog(@"7");
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);//会阻塞当前线程
+    NSLog(@"123");
+    dispatch_group_notify(group, queue, ^{
+        NSLog(@"5");
+    });
+}
 #pragma mark - 信号量 dispatch_semaphore_t /dispatch_semaphore_wait /dispatch_semaphore_signal
 
 /*

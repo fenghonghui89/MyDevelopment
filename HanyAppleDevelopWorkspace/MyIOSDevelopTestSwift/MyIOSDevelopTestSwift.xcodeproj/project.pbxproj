@@ -69,16 +69,16 @@
 			isa = PBXGroup;
 			children = (
 				14FAA8F11D950EC9002D81CC /* MyIOSDevelopTestSwift */,
-				14AF34B41C7362AC007DC722 /* 3.0 */,
+				14AF34B41C7362AC007DC722 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		14AF34B41C7362AC007DC722 /* 3.0 */ = {
+		14AF34B41C7362AC007DC722 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				14AF34B31C7362AC007DC722 /* MyIOSDevelopTestSwift.app */,
 			);
-			name = 3.0;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		14FAA8F11D950EC9002D81CC /* MyIOSDevelopTestSwift */ = {
@@ -192,7 +192,7 @@
 				Base,
 			);
 			mainGroup = 14AF34AA1C7362AC007DC722;
-			productRefGroup = 14AF34B41C7362AC007DC722 /* 3.0 */;
+			productRefGroup = 14AF34B41C7362AC007DC722 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

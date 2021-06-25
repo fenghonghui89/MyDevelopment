@@ -27,33 +27,40 @@ private func func1() {
     reversed = names.sorted(by: backwards);
     
     //方法2：闭包
-    reversed = names.sorted(by: {(s1: String, s2: String) -> Bool in
+    let block = {(s1: String, s2: String) -> Bool in
         return s1 > s2
-    });//闭包
+    }
+    reversed = names.sorted(by: block);//闭包
     
+    //Inferring Type From Context(从上下文推断类型)
     reversed = names.sorted(by: {s1, s2 in
         return s1 > s2
-    });//Inferring Type From Context(从上下文推断类型)
+    });
     
+    //Implicit Returns from Single-Expression Closures(单个表达式闭包可以隐式return)
     reversed = names.sorted(by: {s1, s2 in
         s1 > s2
-    });//Implicit Returns from Single-Expression Closures(单个表达式闭包可以隐式return)
+    });
     
+    //Shorthand Argument Names(用速记参数名可以省略参数列表)
     reversed = names.sorted(by: {
         $0 > $1
-    });//Shorthand Argument Names(用速记参数名可以省略参数列表)
+    });
     
+    //Trailing Closures(尾随闭包，当最后参数是闭包时可用，把闭包放到括号后面，可以不写参数列表)
     reversed = names.sorted(){
         $0 > $1
-    }//Trailing Closures(尾随闭包，当最后参数是闭包时可用，把闭包放到括号后面，可以不写参数列表)
+    }
     
+    //如果方法只有一个闭包参数，可以把括号去掉
     reversed = names.sorted{
         $0>$1
-    }//如果方法只有一个闭包参数，可以把括号去掉
+    }
     
+    //swift字符串定义了>是作为一个函数（Operator Functions运算符重载）
     reversed = names.sorted(
         by: >
-    );//swift字符串定义了>是作为一个函数（Operator Functions运算符重载）
+    )
     
     for i in reversed {
         print(i);
